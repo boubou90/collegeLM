@@ -1,0 +1,52 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Dans cette séquence, les élèves apprennent à comprendre les réseaux et leur fonctionnement, des différents composants nécessaires pour créer un réseau informatique jusqu'à la circulation des informations à l'intérieur.";
+
+const activities = [
+  {
+    title: "Lancement de séquence",
+    description: "Comment afficher sur mon ordinateur la page de garde stockée sur le serveur du collège ?"
+  },
+  {
+    title: "Les composants d'un réseau",
+    description: "Comment se connecter au réseau du collège ?"
+  },
+  {
+    title: "Fonctionnement d'un réseau",
+    description: "Comment simuler la circulation des informations dans un réseau local comme celui du collège ?"
+  },
+  {
+    title: "Fiches de connaissance",
+    description: "Fiches de connaissance sur les réseaux informatiques"
+  },
+  {
+    title: "Ressources",
+    description: "Ressources complémentaires sur les réseaux"
+  }
+];
+---
+
+<ClassLayout title="Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme" />
+  <h1>Séquence 1</h1>
+  
+  <SequencePresentation 
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={1} activities={activities} level="5eme" />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

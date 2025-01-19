@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Les outils du cahier des charges (suite)",
+    pdfUrl: "/documents/4eme/sequence-2/outils-cdc-suite.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 2 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Activité 2 - Les outils du cahier des charges (suite)</h1>
+  
+  <ActivitySection
+    title="Diagramme 'Pieuvre' et critères de performance"
+    description="Cette activité formalise le diagramme 'Pieuvre' et précise les critères et niveaux de performance associés aux fonctions du portail automatisé."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

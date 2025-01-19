@@ -1,0 +1,35 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Guide de cybersécurité",
+    pdfUrl: "/documents/5eme/sequence-2/activite-4/cybersecurite.pdf"
+  },
+  {
+    title: "Propriété intellectuelle",
+    pdfUrl: "/documents/5eme/sequence-2/activite-4/propriete-intellectuelle.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 2 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-2" />
+  <h1>Activité 4 - Sécurité numérique</h1>
+  
+  <ActivitySection
+    title="Se protéger et protéger ses données"
+    description="Apprenez les règles essentielles de la cybersécurité et du respect de la propriété intellectuelle pour une utilisation sûre et responsable du numérique."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

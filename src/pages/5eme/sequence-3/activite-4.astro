@@ -1,0 +1,42 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const evaluationDocuments = [
+  {
+    title: "Évaluation des compétences",
+    description: "Évaluation portant sur l'évolution des objets techniques",
+    pdfUrl: "/documents/5eme/sequence-3/activite-4/evaluation-competences.pdf"
+  },
+  {
+    title: "Grille d'évaluation",
+    description: "Grille détaillant les critères d'évaluation",
+    pdfUrl: "/documents/5eme/sequence-3/activite-4/grille-evaluation.pdf"
+  },
+  {
+    title: "Documents ressources",
+    description: "Documents supports pour l'évaluation",
+    pdfUrl: "/documents/5eme/sequence-3/activite-4/documents-ressources.pdf"
+  }
+];
+---
+
+<ClassLayout title="Évaluation - Séquence 3 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-3" />
+  <h1>Activité 4 - Évaluation</h1>
+  
+  <ActivitySection
+    title="Évaluation des compétences"
+    description="Cette évaluation porte sur les compétences acquises concernant l'évolution des objets techniques, leur analyse et leur comparaison. Elle permettra de vérifier votre compréhension des concepts clés abordés dans la séquence."
+    documents={evaluationDocuments}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

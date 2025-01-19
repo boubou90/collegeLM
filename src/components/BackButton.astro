@@ -1,0 +1,46 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+
+// Extraire le niveau du href (5eme, 4eme, 3eme)
+const level = href.split('/')[1];
+---
+
+<a href={href} class="back-button" data-aos="fade-right" data-level={level}>
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M19 12H5"></path>
+    <path d="m12 19-7-7 7-7"></path>
+  </svg>
+  Retour
+</a>
+
+<style>
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+  }
+
+  .back-button:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateX(-5px);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+</style>

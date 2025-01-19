@@ -1,0 +1,39 @@
+---
+// Optimize background pattern by reducing number of icons
+const iconCount = 10; // Reduced from 25
+---
+<div class="background-pattern">
+  <div class="tech-icons">
+    {[...Array(iconCount)].map(() => (
+      <>
+        <svg class="icon circuit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2v20"></path>
+        </svg>
+      </>
+    ))}
+  </div>
+</div>
+
+<style>
+  .background-pattern {
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 2rem;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .tech-icons {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+
+const level = "5eme";
+const programDescription = `Le programme de Technologie en classe de 5e au collège permet aux élèves de découvrir les objets techniques, leur fonctionnement, et les matériaux utilisés pour leur fabrication. Ils apprennent à analyser des objets, à identifier leurs fonctions et à comprendre les systèmes techniques qui les composent. L'accent est mis sur la démarche de projet, où les élèves doivent concevoir et fabriquer un prototype en suivant un cahier des charges, tout en apprenant à manipuler des matériaux et à utiliser des outils de transformation (découpe, collage, assemblage, etc.).
+
+Les élèves sont également sensibilisés aux enjeux écologiques et sociaux des objets techniques, en abordant des questions telles que l'impact environnemental des technologies et les questions liées à leur recyclage. Ils développent des compétences en représentation graphique, en communication technique et dans l'utilisation d'outils numériques pour concevoir et présenter des projets. Le programme inclut également des travaux pratiques et des projets, parfois axés sur la robotique, pour renforcer l'apprentissage par l'expérimentation.`;
+---
+
+<ClassLayout title="Technologie 5ème" level={level}>
+  <h1>Programme de Technologie - 5ème</h1>
+  
+  <ProgramPresentation 
+    title="Présentation du Programme"
+    description={programDescription}
+  />
+
+  <SequenceButtons count={10} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

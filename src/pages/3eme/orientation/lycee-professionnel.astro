@@ -1,0 +1,243 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import { lyceesProf } from '../../../data/lyceesProf';
+
+function formatDates(dates: string[]): string {
+  return dates.join(', ');
+}
+---
+
+<ClassLayout title="Lycées Professionnels - Paris" level="3eme">
+  <div class="container">
+    <BackButton href="/3eme/orientation/lycees-parisiens" />
+    <h1>Lycées Professionnels</h1>
+
+    <div class="introduction" data-aos="fade-up">
+      <p>
+        Découvrez les lycées professionnels de Paris, leurs formations et spécialités.
+        Consultez les dates des portes ouvertes et des mini-stages pour préparer votre orientation.
+      </p>
+    </div>
+
+    <div class="lycees-grid">
+      {lyceesProf.map(lycee => (
+        <div class="lycee-card" data-aos="fade-up">
+          <div class="card-header">
+            <h3>{lycee.name}</h3>
+            <span class={`type-badge ${lycee.type}`}>
+              {lycee.type}
+            </span>
+          </div>
+
+          {lycee.specialties.length > 0 && (
+            <div class="section">
+              <h4>Spécialités :</h4>
+              <ul>
+                {lycee.specialties.map(specialty => (
+                  <li>{specialty}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {lycee.openHouse && (
+            <div class="section">
+              <h4>Portes Ouvertes :</h4>
+              <p class="date">{lycee.openHouse.date}</p>
+              {lycee.openHouse.time && <p class="time">{lycee.openHouse.time}</p>}
+              {lycee.openHouse.description && <p class="description">{lycee.openHouse.description}</p>}
+            </div>
+          )}
+
+          {lycee.miniStages && lycee.miniStages.length > 0 && (
+            <div class="section">
+              <h4>Mini-stages :</h4>
+              {lycee.miniStages.map(stage => (
+                <div class="mini-stage">
+                  <p><strong>Dates :</strong> {formatDates(stage.dates)}</p>
+                  {stage.duration && <p><strong>Durée :</strong> {stage.duration}</p>}
+                  <p class="description">{stage.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <a 
+            href={`https://${lycee.website}`} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="website-link"
+          >
+            Accéder au site
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</ClassLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .introduction p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .lycees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .lycee-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .lycee-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .type-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .type-badge.public {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .type-badge.privé {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  .section {
+    margin-bottom: 1.5rem;
+  }
+
+  .section h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  li::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+  }
+
+  .date, .time {
+    color: #4b5563;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .description {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .mini-stage {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mini-stage p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #4b5563;
+  }
+
+  .website-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .website-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    .lycees-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card-header {
+      flex-direction: column;
+    }
+
+    .type-badge {
+      align-self: flex-start;
+    }
+  }
+</style>

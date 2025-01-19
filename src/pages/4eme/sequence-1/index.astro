@@ -1,0 +1,58 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette première séquence, nous découvrons les systèmes automatiques et leur fonctionnement. Nous étudierons :
+- Les différents types de systèmes automatiques
+- Les composants d'un système automatique
+- Les chaînes d'information et d'énergie
+- La programmation de base des systèmes`;
+
+const activities = [
+  {
+    title: "Découverte des systèmes automatiques",
+    description: "Comment fonctionne un système automatique ?"
+  },
+  {
+    title: "Chaînes d'information et d'énergie",
+    description: "Comment l'information et l'énergie circulent dans un système automatique ?"
+  },
+  {
+    title: "Programmation de base",
+    description: "Comment programmer un système automatique simple ?"
+  },
+  {
+    title: "Projet - Barrière automatique",
+    description: "Conception et programmation d'une barrière automatique"
+  },
+  {
+    title: "Ressources",
+    description: "Documents et ressources sur les systèmes automatiques"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 1 - Les systèmes automatiques</h1>
+  
+  <SequencePresentation 
+    title="Introduction aux systèmes automatiques"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={1} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

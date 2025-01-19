@@ -1,0 +1,39 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Le réseau local et Internet",
+    pdfUrl: "/documents/5eme/sequence-1/activite-4/fiche-1-reseaux.pdf"
+  },
+  {
+    title: "Les composants d'un réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-4/fiche-2-composants.pdf"
+  },
+  {
+    title: "Les adresses IP et le routage",
+    pdfUrl: "/documents/5eme/sequence-1/activite-4/fiche-3-adresses-ip.pdf"
+  }
+];
+---
+
+<ClassLayout title="Fiches de connaissance - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Fiches de connaissance - Les réseaux</h1>
+  
+  <ActivitySection
+    title="Fiches de connaissance sur les réseaux informatiques"
+    description="Ces fiches de connaissance résument les concepts essentiels sur les réseaux informatiques, leur structure et leur fonctionnement. Elles couvrent le réseau local et Internet, les composants d'un réseau, ainsi que les adresses IP et le routage."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

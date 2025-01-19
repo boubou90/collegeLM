@@ -1,0 +1,175 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import { lycees, getLyceesByGroup } from '../../../data/lycees';
+
+const groups = ['Nord-Est', 'Est', 'Nord', 'Ouest', 'Sud'];
+---
+
+<ClassLayout title="Lycées Généraux et Technologiques - Paris" level="3eme">
+  <div class="container">
+    <BackButton href="/3eme/orientation/lycees-parisiens" />
+    <h1>Lycées Généraux et Technologiques</h1>
+
+    <div class="introduction" data-aos="fade-up">
+      <p>
+        Découvrez les lycées généraux et technologiques de Paris, classés par secteur géographique.
+        Pour chaque lycée, vous trouverez les spécialités proposées et les informations pratiques.
+      </p>
+    </div>
+
+    {groups.map(group => {
+      const groupLycees = getLyceesByGroup(group);
+      return (
+        <section class="group-section" data-aos="fade-up">
+          <h2>Secteur {group}</h2>
+          <div class="lycees-grid">
+            {groupLycees.map(lycee => (
+              <div class="lycee-card">
+                <h3>{lycee.name}</h3>
+                <p class="address">{lycee.address} - Paris {lycee.arrondissement}</p>
+                <div class="specialties">
+                  <h4>Spécialités :</h4>
+                  <ul>
+                    {lycee.specialties.map(specialty => (
+                      <li>{specialty}</li>
+                    ))}
+                  </ul>
+                </div>
+                <a href={`https://${lycee.website}`} target="_blank" rel="noopener noreferrer" class="website-link">
+                  Accéder au site
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    })}
+  </div>
+</ClassLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .introduction p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .group-section {
+    margin-top: 3rem;
+  }
+
+  .group-section h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+  }
+
+  .lycees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .lycee-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .lycee-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .lycee-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .address {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .specialties h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .specialties ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .specialties li {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .specialties li::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+  }
+
+  .website-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .website-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    .lycees-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

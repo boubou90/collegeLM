@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Comparaison des principes techniques",
+    pdfUrl: "/documents/5eme/sequence-3/activite-3/comparaison-technique.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 3 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-3" />
+  <h1>Activité 3 - Comparaison technique</h1>
+  
+  <ActivitySection
+    title="Comment regrouper et comparer les objets techniques ?"
+    description="Découvrez les méthodes pour comparer différents principes techniques répondant à une même fonction. Apprenez à analyser les avantages et inconvénients de chaque solution."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import BackgroundPattern from '../components/BackgroundPattern.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="La technologie au collège" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- Google AdSense -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<BackgroundPattern />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #2563eb;
+		--primary-dark: #1e3a8a;
+		--background: #f8fafc;
+		--text: #1e293b;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--background);
+		color: var(--text);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		line-height: 1.6;
+	}
+
+	main {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+</style>

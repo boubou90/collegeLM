@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  documents?: {
+    title: string;
+    pdfUrl: string;
+  }[];
+}
+
+const { title, description, documents = [] } = Astro.props;
+
+import PDFViewer from './PDFViewer.astro';
+---
+
+<section class="activity-section" data-aos="fade-up">
+  <h2>{title}</h2>
+  <p class="description">{description}</p>
+  
+  {documents.length > 0 && (
+    <div class="documents">
+      {documents.map(doc => (
+        <PDFViewer title={doc.title} pdfUrl={doc.pdfUrl} />
+      ))}
+    </div>
+  )}
+</section>
+
+<style>
+  .activity-section {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .description {
+    color: #1e293b;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .documents {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>

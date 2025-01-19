@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="La technologie au collège">
+	<main>
+		<header class="hero" data-aos="fade-down">
+			<div class="logos">
+				<a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel" target="_blank" rel="noopener noreferrer">
+					<img src="/images/logo-college.svg" alt="Logo du collège" class="logo logo-college floating" />
+				</a>
+				<a href="https://www.ac-paris.fr/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/logo-academie.svg" alt="Logo de l'académie de Paris" class="logo logo-academie floating" />
+				</a>
+				<a href="https://www.parisclassenumerique.fr/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/logo-pcn.png" alt="Logo Paris Classe Numérique" class="logo logo-pcn floating" />
+				</a>
+			</div>
+			<h1 class="title">La technologie au collège</h1>
+		</header>
+
+		<section class="presentation" data-aos="fade-up">
+			<h2>Découvrez la technologie</h2>
+			<p>La technologie peut être définie comme la « science de l'artificiel ». Par opposition aux « sciences de la nature », elle est
+			le résultat de l'activité de l'Homme, elle est au centre de sa culture, de son histoire et de son évolution.</p>
+			<p>En effet les objets et systèmes pluritechnologiques sont toujours inventés pour l'Homme et par l'Homme pour pallier ses
+			insuffisances physiques, pour effectuer des travaux complexes ou répétitifs, pour améliorer son confort ou pour satisfaire
+			des besoins plus ou moins vitaux ... comme se nourrir, se loger, se protéger, se déplacer, communiquer....</p>
+		</section>
+
+		<nav class="level-navigation">
+			<a href="/5eme" class="level-button" data-aos="fade-up" data-aos-delay="100">
+				<span class="level-number">5</span>
+				<span class="level-text">ème</span>
+			</a>
+			<a href="/4eme" class="level-button" data-aos="fade-up" data-aos-delay="200">
+				<span class="level-number">4</span>
+				<span class="level-text">ème</span>
+			</a>
+			<a href="/3eme" class="level-button" data-aos="fade-up" data-aos-delay="300">
+				<span class="level-number">3</span>
+				<span class="level-text">ème</span>
+			</a>
+		</nav>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 3rem;
+		background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+		color: white;
+		border-radius: 1rem;
+		margin-bottom: 2rem;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+	}
+
+	.logos {
+		display: flex;
+		gap: 2rem;
+		margin-right: 2rem;
+		align-items: center;
+	}
+
+	.logos a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease;
+	}
+
+	.logos a:hover {
+		transform: scale(1.1);
+	}
+
+	.logo {
+		height: 80px;
+		width: auto;
+		object-fit: contain;
+	}
+
+	.logo-pcn {
+		height: 60px;
+	}
+
+	.floating {
+		animation: float 3s ease-in-out infinite;
+	}
+
+	.logo-academie {
+		animation-delay: 1s;
+	}
+
+	.logo-pcn {
+		animation-delay: 2s;
+	}
+
+	.title {
+		font-size: 3.5rem;
+		font-weight: 800;
+		text-align: center;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	}
+
+	.presentation {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+		background: white;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+	}
+
+	.presentation h2 {
+		color: var(--primary-dark);
+		margin-bottom: 1rem;
+		font-size: 2rem;
+	}
+
+	.presentation p {
+		margin-bottom: 1rem;
+		line-height: 1.8;
+	}
+
+	.level-navigation {
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+		margin-top: 4rem;
+	}
+
+	.level-button {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem;
+		background: white;
+		border-radius: 1rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+	}
+
+	.level-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+		background: var(--primary);
+	}
+
+	.level-number {
+		font-size: 3rem;
+		font-weight: 800;
+		color: var(--primary);
+		line-height: 1;
+	}
+
+	.level-button:hover .level-number {
+		color: white;
+	}
+
+	.level-text {
+		font-size: 1.5rem;
+		color: var(--text);
+	}
+
+	.level-button:hover .level-text {
+		color: white;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			flex-direction: column;
+			text-align: center;
+			padding: 2rem;
+		}
+
+		.logos {
+			margin-right: 0;
+			margin-bottom: 2rem;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.logo {
+			height: 60px;
+		}
+
+		.logo-pcn {
+			height: 45px;
+		}
+
+		.title {
+			font-size: 2.5rem;
+		}
+
+		.level-navigation {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+	}
+
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

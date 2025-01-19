@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+
+const level = "4eme";
+const programDescription = `En classe de quatrième, le programme de technologie se concentre sur l'étude des systèmes automatiques et leur programmation. Les élèves découvrent comment les systèmes techniques évoluent pour répondre aux besoins de la société. Ils apprennent à :
+
+- Analyser le fonctionnement des systèmes automatiques
+- Comprendre les principes de la programmation
+- Étudier les solutions techniques et leur impact environnemental
+- Concevoir et réaliser des projets techniques`;
+
+---
+
+<ClassLayout title="Technologie 4ème" level={level}>
+  <h1>Programme de Technologie - 4ème</h1>
+  
+  <ProgramPresentation 
+    title="Présentation du Programme"
+    description={programDescription}
+  />
+
+  <SequenceButtons count={6} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

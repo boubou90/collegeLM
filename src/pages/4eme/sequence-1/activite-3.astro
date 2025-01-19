@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Introduction à la programmation",
+    pdfUrl: "/documents/4eme/sequence-1/activite-3/programmation.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 3 - Programmation de base</h1>
+  
+  <ActivitySection
+    title="Comment programmer un système automatique simple ?"
+    description="Introduction aux concepts de base de la programmation des systèmes automatiques. Nous apprendrons à créer des programmes simples pour contrôler un système automatique."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

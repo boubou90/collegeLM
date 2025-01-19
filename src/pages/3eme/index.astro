@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+
+const programDescription = `En classe de troisième, le programme de technologie comprend l'étude des objets techniques, l'analyse de leur fonctionnement et leur impact sur la société. On aborde également des activités pratiques qui relient les sciences à la technologie, souvent à travers des projets de design et de conception. Ce programme vise à amener les élèves à développer une compréhension critique des technologies et de leurs applications dans divers domaines, y compris des liaisons avec les sciences de la vie et de la terre (SVT) et la physique-chimie.`;
+
+---
+
+<ClassLayout title="Technologie 3ème" level="3eme">
+  <h1>Programme de Technologie - 3ème</h1>
+  
+  <ProgramPresentation 
+    title="Présentation du Programme"
+    description={programDescription}
+  />
+
+  <SequenceButtons count={10} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,69 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import BrevetCalculator from '../../../components/Brevet/BrevetCalculator';
+import '../../../styles/brevet-calculator.css';
+
+---
+
+<ClassLayout title="Calculateur de moyenne - Brevet" level="3eme">
+  <div class="calculator-container">
+    <BackButton href="/3eme/orientation" />
+    <h1>Calculateur de moyenne du Brevet</h1>
+    
+    <div class="instructions" data-aos="fade-up">
+      <h2>Comment calculer votre moyenne ?</h2>
+      <ol>
+        <li>Entrez vos notes sur 100 pour chaque matière</li>
+        <li>Cliquez sur "Calculer ma moyenne"</li>
+        <li>Votre moyenne sur 20 et votre mention s'afficheront automatiquement</li>
+      </ol>
+    </div>
+
+    <BrevetCalculator client:load />
+  </div>
+</ClassLayout>
+
+<style>
+  .calculator-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+
+  .instructions {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .instructions h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .instructions ol {
+    list-style-position: inside;
+    color: #64748b;
+  }
+
+  .instructions li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .calculator-container {
+      padding: 1rem;
+    }
+  }
+</style>

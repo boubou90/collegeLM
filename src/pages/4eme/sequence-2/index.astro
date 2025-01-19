@@ -1,0 +1,50 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const description = `Cette séquence vise à enseigner aux élèves comment exprimer un besoin technique à travers l'analyse fonctionnelle et l'utilisation des outils du cahier des charges. Les élèves apprendront à :
+- Utiliser le diagramme "Bête à Cornes" pour exprimer la fonction d'usage
+- Créer des cartes mentales pour identifier les contraintes
+- Maîtriser le diagramme "Pieuvre"
+- Définir les critères et niveaux de performance`;
+
+const activities = [
+  {
+    title: "Les outils du cahier des charges",
+    description: "Analyse fonctionnelle avec le diagramme 'Bête à Cornes' et carte mentale pour un portail automatisé"
+  },
+  {
+    title: "Les outils du cahier des charges (suite)",
+    description: "Utilisation du diagramme 'Pieuvre' et définition des critères de performance"
+  },
+  {
+    title: "Ressources",
+    description: "Documents et ressources sur l'analyse fonctionnelle"
+  }
+];
+---
+
+<ClassLayout title="Séquence 2 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 2 - Analyse fonctionnelle</h1>
+  
+  <SequencePresentation 
+    title="Expression du besoin technique"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={2} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>
