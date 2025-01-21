@@ -20,17 +20,6 @@ import GoogleAd from '../components/GoogleAd.astro';
 			<h1 class="title">La technologie au collège</h1>
 		</header>
 
-		<section class="presentation" data-aos="fade-up">
-			<h2>Découvrez la technologie</h2>
-			<p>La technologie peut être définie comme la « science de l'artificiel ». Par opposition aux « sciences de la nature », elle est
-			le résultat de l'activité de l'Homme, elle est au centre de sa culture, de son histoire et de son évolution.</p>
-			<p>En effet les objets et systèmes pluritechnologiques sont toujours inventés pour l'Homme et par l'Homme pour pallier ses
-			insuffisances physiques, pour effectuer des travaux complexes ou répétitifs, pour améliorer son confort ou pour satisfaire
-			des besoins plus ou moins vitaux ... comme se nourrir, se loger, se protéger, se déplacer, communiquer....</p>
-		</section>
-
-		<GoogleAd slot="homepage-ad" format="horizontal" />
-
 		<nav class="level-navigation">
 			<a href="/5eme" class="level-button" data-aos="fade-up" data-aos-delay="100">
 				<span class="level-number">5</span>
@@ -45,6 +34,17 @@ import GoogleAd from '../components/GoogleAd.astro';
 				<span class="level-text">ème</span>
 			</a>
 		</nav>
+
+		<section class="presentation" data-aos="fade-up">
+			<h2>Découvrez la technologie</h2>
+			<p>La technologie peut être définie comme la « science de l'artificiel ». Par opposition aux « sciences de la nature », elle est
+			le résultat de l'activité de l'Homme, elle est au centre de sa culture, de son histoire et de son évolution.</p>
+			<p>En effet les objets et systèmes pluritechnologiques sont toujours inventés pour l'Homme et par l'Homme pour pallier ses
+			insuffisances physiques, pour effectuer des travaux complexes ou répétitifs, pour améliorer son confort ou pour satisfaire
+			des besoins plus ou moins vitaux ... comme se nourrir, se loger, se protéger, se déplacer, communiquer....</p>
+		</section>
+
+		<GoogleAd slot="homepage-ad" format="horizontal" />
 	</main>
 </Layout>
 
@@ -108,31 +108,11 @@ import GoogleAd from '../components/GoogleAd.astro';
 		text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 	}
 
-	.presentation {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 2rem;
-		background: white;
-		border-radius: 1rem;
-		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-	}
-
-	.presentation h2 {
-		color: var(--primary-dark);
-		margin-bottom: 1rem;
-		font-size: 2rem;
-	}
-
-	.presentation p {
-		margin-bottom: 1rem;
-		line-height: 1.8;
-	}
-
 	.level-navigation {
 		display: flex;
 		justify-content: center;
 		gap: 3rem;
-		margin-top: 4rem;
+		margin-bottom: 4rem;
 	}
 
 	.level-button {
@@ -171,6 +151,26 @@ import GoogleAd from '../components/GoogleAd.astro';
 
 	.level-button:hover .level-text {
 		color: white;
+	}
+
+	.presentation {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+		background: white;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+	}
+
+	.presentation h2 {
+		color: var(--primary-dark);
+		margin-bottom: 1rem;
+		font-size: 2rem;
+	}
+
+	.presentation p {
+		margin-bottom: 1rem;
+		line-height: 1.8;
 	}
 
 	@media (max-width: 768px) {
