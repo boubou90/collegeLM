@@ -1,6 +1,6 @@
 export const techColors = {
-  circuit: '#2563eb', // Bleu
-  chip: '#16a34a',    // Vert
-  gear: '#9333ea',    // Violet
-  robotics: '#dc2626' // Rouge
+  circuit: '#1e40af', // Darker Blue
+  chip: '#166534',    // Darker Green
+  gear: '#6b21a8',    // Darker Purple
+  robotics: '#991b1b' // Darker Red
 };
