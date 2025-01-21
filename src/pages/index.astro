@@ -35,6 +35,8 @@ import GoogleAd from '../components/GoogleAd.astro';
 			</a>
 		</nav>
 
+		<GoogleAd slot="homepage-ad" format="horizontal" />
+
 		<section class="presentation" data-aos="fade-up">
 			<h2>Découvrez la technologie</h2>
 			<p>La technologie peut être définie comme la « science de l'artificiel ». Par opposition aux « sciences de la nature », elle est
@@ -43,8 +45,6 @@ import GoogleAd from '../components/GoogleAd.astro';
 			insuffisances physiques, pour effectuer des travaux complexes ou répétitifs, pour améliorer son confort ou pour satisfaire
 			des besoins plus ou moins vitaux ... comme se nourrir, se loger, se protéger, se déplacer, communiquer....</p>
 		</section>
-
-		<GoogleAd slot="homepage-ad" format="horizontal" />
 	</main>
 </Layout>
 
@@ -112,7 +112,7 @@ import GoogleAd from '../components/GoogleAd.astro';
 		display: flex;
 		justify-content: center;
 		gap: 3rem;
-		margin-bottom: 4rem;
+		margin-bottom: 2rem;
 	}
 
 	.level-button {
@@ -156,6 +156,7 @@ import GoogleAd from '../components/GoogleAd.astro';
 	.presentation {
 		max-width: 800px;
 		margin: 0 auto;
+		margin-top: 2rem;
 		padding: 2rem;
 		background: white;
 		border-radius: 1rem;
