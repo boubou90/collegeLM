@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://votre-site.netlify.app',
+  site: 'https://collegelouisemichel.netlify.app',
   integrations: [
     react(), 
     tailwind(),
