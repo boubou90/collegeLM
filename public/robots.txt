@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://votre-site.netlify.app/sitemap-index.xml
+Sitemap: https://collegelouisemichel.netlify.app/sitemap-index.xml
