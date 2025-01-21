@@ -4,16 +4,25 @@ interface Props {
   format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle';
 }
 
-const { slot = '', format = 'auto' } = Astro.props;
+const { slot = '5227967907', format = 'auto' } = Astro.props;
+
+// Define ad sizes based on format
+const adStyle = {
+  'auto': 'display: block; min-width: 250px; width: 100%; height: 90px;',
+  'horizontal': 'display: block; width: 728px; height: 90px;',
+  'vertical': 'display: block; width: 160px; height: 600px;',
+  'rectangle': 'display: block; width: 300px; height: 250px;'
+}[format];
 ---
 
 <div class="ad-container">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-2885775986633981"
-       data-ad-slot={slot}
-       data-ad-format={format}
-       data-full-width-responsive="true"></ins>
+  <ins 
+    class="adsbygoogle"
+    style={adStyle}
+    data-ad-client="ca-pub-2885775986633981"
+    data-ad-slot={slot}
+    data-ad-format={format}
+    data-full-width-responsive="true"></ins>
 </div>
 
 <style>
@@ -23,9 +32,19 @@ const { slot = '', format = 'auto' } = Astro.props;
     align-items: center;
     margin: 2rem 0;
     min-height: 100px;
+    min-width: 250px;
+    width: 100%;
     background: #f8fafc;
     border-radius: 0.5rem;
     overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .ad-container ins {
+      width: 100% !important;
+      min-width: 250px !important;
+      height: 100px !important;
+    }
   }
 </style>
 
