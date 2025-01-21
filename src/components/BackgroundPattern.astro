@@ -1,9 +1,16 @@
-// Import tech colors
-import { techColors } from '../styles/colors';
-
+---
 // Optimize background pattern by reducing number of icons
 const iconCount = 25; // Number of icons to display
+
+// Define colors directly in the component for now
+const colors = {
+  circuit: '#1e40af', // Darker Blue
+  chip: '#166534',    // Darker Green
+  gear: '#6b21a8',    // Darker Purple
+  robotics: '#991b1b' // Darker Red
+};
 ---
+
 <div class="background-pattern">
   <div class="tech-icons">
     {[...Array(iconCount)].map(() => (
@@ -28,10 +35,10 @@ const iconCount = 25; // Number of icons to display
 </div>
 
 <style define:vars={{ 
-  circuitColor: techColors.circuit,
-  chipColor: techColors.chip,
-  gearColor: techColors.gear,
-  roboticsColor: techColors.robotics 
+  circuitColor: colors.circuit,
+  chipColor: colors.chip,
+  gearColor: colors.gear,
+  roboticsColor: colors.robotics 
 }}>
   .background-pattern {
     position: fixed;
