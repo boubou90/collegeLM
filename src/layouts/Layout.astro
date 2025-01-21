@@ -1,25 +1,46 @@
 ---
 import BackgroundPattern from '../components/BackgroundPattern.astro';
+import SEO from '../components/SEO.astro';
 
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { 
+	title,
+	description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème."
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="La technologie au collège" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		
+		<SEO title={title} description={description} />
+
 		<!-- Google AdSense -->
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
      crossorigin="anonymous"></script>
+
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "EducationalOrganization",
+				"name": "La technologie au collège",
+				"description": "Ressources pédagogiques pour les cours de technologie au collège",
+				"url": "https://votre-site.netlify.app",
+				"sameAs": [
+					"https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
+					"https://www.ac-paris.fr/"
+				]
+			}
+		</script>
 	</head>
 	<body>
 		<BackgroundPattern />
