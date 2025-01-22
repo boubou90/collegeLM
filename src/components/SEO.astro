@@ -4,6 +4,7 @@ interface Props {
   description: string;
   image?: string;
   canonicalURL?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -11,9 +12,16 @@ const {
   description,
   image = '/images/og-image.jpg',
   canonicalURL = Astro.url.href,
+  noindex = false
 } = Astro.props;
 
 const siteName = "La technologie au collège";
+const domain = "collegelouisemichel.com";
+
+// Ensure canonical URL is absolute
+const absoluteCanonicalURL = canonicalURL.startsWith('http') 
+  ? canonicalURL 
+  : `https://${domain}${canonicalURL}`;
 ---
 
 <!-- Primary Meta Tags -->
@@ -22,22 +30,32 @@ const siteName = "La technologie au collège";
 <meta name="description" content={description} />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={absoluteCanonicalURL} />
+
+{noindex && (
+  <meta name="robots" content="noindex,follow" />
+)}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={canonicalURL} />
+<meta property="og:url" content={absoluteCanonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image} />
+<meta property="og:site_name" content={siteName} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:url" content={absoluteCanonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
 <!-- Additional SEO tags -->
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
 <meta name="language" content="French" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+
+<!-- Alternate language versions if needed -->
+<link rel="alternate" href={`https://${domain}`} hreflang="fr-FR" />
