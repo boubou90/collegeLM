@@ -4,6 +4,7 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
+const level = "5eme";
 const description = `Cette séquence est consacrée à la modélisation 3D avec le logiciel SketchUp et à l'analyse technique. Elle permet aux élèves de découvrir les outils de conception assistée par ordinateur tout en apprenant à analyser et comparer des solutions techniques.
 
 Les élèves progressent à travers plusieurs étapes :
@@ -34,8 +35,8 @@ const activities = [
 ];
 ---
 
-<ClassLayout title="Séquence 4 - 5ème" level="5eme">
-  <BackButton href="/5eme" />
+<ClassLayout title="Séquence 4 - 5ème" level={level}>
+  <BackButton href={`/${level}`} />
   <h1>Séquence 4</h1>
   
   <SequencePresentation 
@@ -44,7 +45,7 @@ const activities = [
     activities={activities.map(a => a.description)}
   />
 
-  <ActivityLinks sequenceNumber={4} activities={activities} />
+  <ActivityLinks sequenceNumber={4} activities={activities} level={level} />
 </ClassLayout>
 
 <style>
