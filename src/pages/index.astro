@@ -23,10 +23,6 @@ import GoogleAd from '../components/GoogleAd.astro';
 		</header>
 
 		<div class="content-wrapper">
-			<aside class="side-ad left">
-				<GoogleAd slot="5227967907" format="vertical" />
-			</aside>
-
 			<div class="main-content">
 				<nav class="level-navigation">
 					<a href="/5eme" class="level-button" data-aos="fade-up" data-aos-delay="100">
@@ -52,12 +48,9 @@ import GoogleAd from '../components/GoogleAd.astro';
 					<p>En effet les objets et systèmes pluritechnologiques sont toujours inventés pour l'Homme et par l'Homme pour pallier ses
 					insuffisances physiques, pour effectuer des travaux complexes ou répétitifs, pour améliorer son confort ou pour satisfaire
 					des besoins plus ou moins vitaux ... comme se nourrir, se loger, se protéger, se déplacer, communiquer....</p>
+					<div class="signature">HB</div>
 				</section>
 			</div>
-
-			<aside class="side-ad right">
-				<GoogleAd slot="5227967909" format="vertical" />
-			</aside>
 		</div>
 	</main>
 </Layout>
@@ -105,23 +98,13 @@ import GoogleAd from '../components/GoogleAd.astro';
 	}
 
 	.content-wrapper {
-		display: grid;
-		grid-template-columns: 160px 1fr 160px;
-		gap: 2rem;
 		margin-top: 2rem;
-		align-items: start;
 	}
 
 	.main-content {
 		width: 100%;
 		max-width: 1000px;
 		margin: 0 auto;
-	}
-
-	.side-ad {
-		position: sticky;
-		top: 2rem;
-		height: 600px;
 	}
 
 	.logos {
@@ -234,6 +217,7 @@ import GoogleAd from '../components/GoogleAd.astro';
 		background: white;
 		border-radius: 1rem;
 		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+		position: relative;
 	}
 
 	.presentation h2 {
@@ -247,14 +231,13 @@ import GoogleAd from '../components/GoogleAd.astro';
 		line-height: 1.8;
 	}
 
-	@media (max-width: 1200px) {
-		.content-wrapper {
-			grid-template-columns: 1fr;
-		}
-
-		.side-ad {
-			display: none;
-		}
+	.signature {
+		font-family: 'Brush Script MT', cursive;
+		font-size: 2rem;
+		color: var(--primary);
+		text-align: right;
+		margin-top: 1.5rem;
+		font-weight: bold;
 	}
 
 	@media (max-width: 768px) {
@@ -306,3 +289,14 @@ import GoogleAd from '../components/GoogleAd.astro';
 		}
 	}
 </style>
+```
+</boltArtifact>
+
+J'ai ajouté votre signature "HB" à la fin de la section de présentation avec un style élégant qui :
+- Utilise une police de style signature (Brush Script MT)
+- Est alignée à droite
+- Est en couleur primaire du site
+- A une taille de police plus grande
+- Est en gras pour plus d'impact
+
+La signature apparaît naturellement après le texte de présentation, comme une signat
