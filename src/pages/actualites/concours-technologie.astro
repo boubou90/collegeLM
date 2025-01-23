@@ -1,1 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
 
+<Layout title="Concours de Technologie">
+	<main>
+		<header class="article-header">
+			<h1>Concours de Technologie</h1>
+			<p class="date">Publié le 15 octobre 2023</p>
+		</header>
+
+		<article class="article-content">
+			<img src="/images/news/concours-techno.jpg" alt="Concours technologie" class="article-image" />
+			<p>
+				Le collège Louise Michel organise un grand concours de technologie ouvert à tous les élèves de l'établissement. 
+				Ce concours a pour objectif de stimuler la créativité et l'innovation chez les jeunes.
+			</p>
+			<p>
+				Les participants devront concevoir un projet technologique en équipe, en utilisant des matériaux recyclés 
+				ou des composants électroniques simples. Les projets seront évalués par un jury composé de professeurs 
+				et de professionnels du secteur.
+			</p>
+			<p>
+				Les inscriptions sont ouvertes jusqu'au 30 novembre 2023. Les équipes gagnantes recevront des prix 
+				et auront l'opportunité de présenter leur projet lors d'un événement spécial.
+			</p>
+		</article>
+
+		<a href="/" class="back-link">Retour à l'accueil</a>
+	</main>
+</Layout>
+
+<style>
+	.article-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.article-header h1 {
+		font-size: 2.5rem;
+		color: var(--primary-dark);
+	}
+
+	.article-header .date {
+		color: var(--text-light);
+		font-size: 0.9rem;
+	}
+
+	.article-content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+
+	.article-image {
+		width: 100%;
+		height: auto;
+		border-radius: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.back-link {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 0.5rem 1rem;
+		background: var(--primary);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: background 0.3s ease;
+	}
+
+	.back-link:hover {
+		background: var(--primary-dark);
+	}
+</style>
