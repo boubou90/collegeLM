@@ -1,1 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
 
+<Layout title="RoboCup 2025">
+	<main>
+		<header class="article-header">
+			<h1>RoboCup 2025</h1>
+			<p class="date">Publié le 20 octobre 2023</p>
+		</header>
+
+		<article class="article-content">
+			<img src="/images/robocup-2025.jpg" alt="RoboCup 2025" class="article-image" />
+			<p>
+				La RoboCup est une compétition internationale annuelle qui réunit des milliers de participants formant des centaines d'équipes venant d'une cinquantaine de pays. C'est l’un des événements technologiques les plus importants au monde en matière de recherche et d'éducation en robotique.
+			</p>
+
+			<h2>Chiffres Clés</h2>
+			<ul>
+				<li><strong>3500 participants</strong></li>
+				<li><strong>45 nations</strong></li>
+				<li><strong>Des milliers de robots</strong></li>
+				<li><strong>450 équipes</strong></li>
+				<li><strong>30 000 m²</strong> d'espace dédié</li>
+			</ul>
+
+			<h2>Une Communauté Engagée</h2>
+			<p>
+				La RoboCup est avant tout une communauté. Les participants échangent tout au long de l'événement, et de nombreuses technologies développées sont open source. Chaque édition est également l’occasion d’un Symposium International, où sont présentées des contributions scientifiques dans les domaines de la robotique et de l’intelligence artificielle.
+			</p>
+
+			<h2>La France et la RoboCup</h2>
+			<p>
+				La France et la RoboCup sont liées depuis longtemps. La seconde édition de la compétition a été organisée par Dominique Duhaut à la Cité des Sciences en 1998. La France a contribué au plus haut niveau, avec des victoires notables comme celle de Pierre Blazevic en 1999 et l'équipe Rhoban menée par Olivier Ly, qui a remporté la ligue Humanoïd Kid-Size quatre années consécutives (2016-2019).
+			</p>
+
+			<h2>Les Ligues de la RoboCup</h2>
+			<h3>Soccer</h3>
+			<p>
+				Le football est l'épreuve historique, introduite à la première édition de la RoboCup en 1997. Les robots doivent être totalement autonomes et interagir dans un environnement dynamique.
+			</p>
+
+			<h3>@Home</h3>
+			<p>
+				La ligue @Home vise à développer un robot compagnon pour la maison. Les robots interagissent avec les utilisateurs et effectuent des tâches ménagères.
+			</p>
+
+			<h3>Rescue</h3>
+			<p>
+				La ligue Rescue met les robots au défi de sauver des personnes dans un site de catastrophe reconstitué.
+			</p>
+
+			<h3>Robotique Industrielle</h3>
+			<p>
+				La RoboCup inclut également des ligues dédiées à la robotique industrielle, comme @Work (sponsorisée par Kuka) et @Logistic (sponsorisée par Festo).
+			</p>
+
+			<h3>Junior</h3>
+			<p>
+				La RoboCupJunior est dédiée aux enfants et adolescents de 13 à 19 ans. Elle compte des milliers d'équipes à travers le monde et joue un rôle éducatif majeur.
+			</p>
+		</article>
+
+		<a href="/" class="back-link">Retour à l'accueil</a>
+	</main>
+</Layout>
+
+<style>
+	.article-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.article-header h1 {
+		font-size: 2.5rem;
+		color: var(--primary-dark);
+	}
+
+	.article-header .date {
+		color: var(--text-light);
+		font-size: 0.9rem;
+	}
+
+	.article-content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+
+	.article-image {
+		width: 100%;
+		height: auto;
+		border-radius: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.back-link {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 0.5rem 1rem;
+		background: var(--primary);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: background 0.3s ease;
+	}
+
+	.back-link:hover {
+		background: var(--primary-dark);
+	}
+</style>
