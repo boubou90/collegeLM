@@ -1,8 +1,11 @@
 ---
+// src/pages/robocup-2025.astro
 import Layout from '../../layouts/Layout.astro';
+import AOS from '../../components/AOS.astro';
 ---
 
 <Layout title="RoboCup 2025">
+  <AOS client:only />
 	<main>
 		<!-- Hero Section -->
 		<section class="hero" data-aos="fade-down">
