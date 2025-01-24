@@ -23,6 +23,10 @@ const adStyle = {
     data-ad-slot={slot}
     data-ad-format={format}
     data-full-width-responsive="true"></ins>
+  <!-- Fallback for ad blockers -->
+  <div class="ad-fallback">
+    <p>Please consider disabling your ad blocker to support us.</p>
+  </div>
 </div>
 
 <style>
@@ -31,12 +35,34 @@ const adStyle = {
     justify-content: center;
     align-items: center;
     margin: 2rem 0;
-    min-height: 100px;
+    min-height: 90px;
     min-width: 250px;
     width: 100%;
     background: #f8fafc;
     border-radius: 0.5rem;
     overflow: hidden;
+    position: relative;
+  }
+
+  .ad-fallback {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f8fafc;
+    color: #666;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ad-container ins {
+    display: block;
+    margin: 0 auto;
   }
 
   @media (max-width: 768px) {
@@ -45,9 +71,23 @@ const adStyle = {
       min-width: 250px !important;
       height: 100px !important;
     }
+
+    .ad-fallback {
+      display: flex;
+    }
   }
 </style>
 
-<script>
-  (window.adsbygoogle = window.adsbygoogle || []).push({});
+<script is:inline>
+  try {
+    // Wait for the DOM to be fully loaded
+    window.addEventListener('load', () => {
+      // Ensure adsbygoogle is defined
+      if (window.adsbygoogle) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }
+    });
+  } catch (error) {
+    console.warn('AdSense error:', error);
+  }
 </script>
