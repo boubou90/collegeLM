@@ -3,7 +3,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Initialiser AOS côté client
+// Ensure this runs only on the client
 if (typeof window !== 'undefined') {
   AOS.init({
     offset: 120, // Déclenche l'animation 120px avant l'élément
@@ -15,4 +15,4 @@ if (typeof window !== 'undefined') {
 }
 ---
 
-<!-- Ce composant ne fait rien côté serveur -->
+<!-- This component does nothing on the server -->
