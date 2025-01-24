@@ -3,80 +3,95 @@ import BackgroundPattern from '../components/BackgroundPattern.astro';
 import SEO from '../components/SEO.astro';
 
 interface Props {
-	title: string;
-	description?: string;
+  title: string;
+  description?: string;
 }
 
 const { 
-	title,
-	description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème."
+  title,
+  description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème."
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<SEO title={title} description={description} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <SEO title={title} description={description} />
 
-		<!-- Google AdSense -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
+    <!-- Load AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-		<!-- Structured Data -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "EducationalOrganization",
-				"name": "La technologie au collège",
-				"description": "Ressources pédagogiques pour les cours de technologie au collège",
-				"url": "https://votre-site.netlify.app",
-				"sameAs": [
-					"https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
-					"https://www.ac-paris.fr/"
-				]
-			}
-		</script>
-	</head>
-	<body>
-		<BackgroundPattern />
-		<slot />
-	</body>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "La technologie au collège",
+        "description": "Ressources pédagogiques pour les cours de technologie au collège",
+        "url": "https://votre-site.netlify.app",
+        "sameAs": [
+          "https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
+          "https://www.ac-paris.fr/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <BackgroundPattern />
+    <slot />
+
+    <!-- Initialize AOS on the client side -->
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        offset: 120, // Déclenche l'animation 120px avant l'élément
+        delay: 0, // Délai avant l'animation (en ms)
+        duration: 400, // Durée de l'animation (en ms)
+        easing: 'ease', // Type d'animation
+        once: true, // L'animation ne se déclenche qu'une fois
+      });
+    </script>
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		--primary: #2563eb;
-		--primary-dark: #1e3a8a;
-		--background: #f8fafc;
-		--text: #1e293b;
-	}
-	
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+    --background: #f8fafc;
+    --text: #1e293b;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-	html {
-		font-family: system-ui, sans-serif;
-		background: var(--background);
-		color: var(--text);
-		scroll-behavior: smooth;
-	}
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    scroll-behavior: smooth;
+  }
 
-	body {
-		min-height: 100vh;
-		line-height: 1.6;
-	}
+  body {
+    min-height: 100vh;
+    line-height: 1.6;
+  }
 
-	main {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 2rem;
-	}
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 </style>
