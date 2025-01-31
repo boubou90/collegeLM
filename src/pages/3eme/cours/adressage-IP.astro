@@ -1,108 +1,138 @@
----
-import Layout from 'src/layouts/Layout.astro';
----
-
-<Layout title="Cours : Les adressage IP">
+<Layout title="Cours : Adressage IP sur un réseau">
   <main>
-    <h1 style="text-align: center; font-weight: bold;">Cours : Chaînes d'Énergie et d'Information</h1>
+    <h1 style="text-align: center; font-weight: bold;">Cours : Adressage IP sur un réseau</h1>
 
     <section>
       <h2>Introduction</h2>
       <p>
-       Comme pour le courrier postal, dans le réseau informatique du collège on utilise une adresse pour identifier chaque station de travail et certains autres éléments telle qu’une imprimante, le téléphone ...
-       Cette adresse appelée <strong>adresse IP (Internet Protocol)<strong> est la solution internationale retenue pour permettre l’identification d’une machine sur le réseau informatique INTERNET.
+        Dans ce cours, nous allons explorer le concept d'<strong>adressage IP</strong>, essentiel pour comprendre comment les appareils communiquent sur un réseau. L'adresse IP est une identité unique attribuée à chaque appareil connecté à un réseau, permettant ainsi de l'identifier et de lui envoyer des données.
       </p>
     </section>
 
     <section>
-      <h2>1. La Chaîne d'Énergie</h2>
+      <h2>1. Identification d’un poste sur un réseau</h2>
       <p>
-        La <strong>chaîne d'énergie</strong> décrit les différentes étapes nécessaires pour qu'un objet technique fonctionne. Chaque objet a besoin d'énergie pour réaliser une action spécifique. Cette énergie doit souvent être stockée, convertie, distribuée et transmise avant d'être utilisée.
+        Pour identifier un poste informatique (ou un objet connecté) sur un réseau, il est nécessaire d'organiser un plan d'adressage. L'adresse IP est la solution internationale utilisée pour cette identification.
       </p>
 
-      <h3>Les Éléments de la Chaîne d'Énergie</h3>
-      <ul>
-        <li><strong>Alimenter</strong> : Apporter l'énergie nécessaire au système.</li>
-        <li><strong>Stocker</strong> : Stocker l'énergie en vue de la restituer.</li>
-        <li><strong>Distribuer</strong> : Commander, contrôler et répartir la quantité d'énergie nécessaire.</li>
-        <li><strong>Convertir</strong> : Transformer une énergie en une autre nécessaire à l'effet attendu.</li>
-        <li><strong>Transmettre</strong> : Transporter l'énergie d'un lieu à un autre.</li>
-      </ul>
-
-      <h3>Schéma de la Chaîne d'Énergie</h3>
-      <div class="schema">
-  <img src="/images/la-chaine-d-energie.png" alt="Schéma de la chaîne d'énergie" class="schema-image" />
-  <p class="caption">Schéma de la chaîne d'énergie</p>
-</div>
-    </section>
-
-
-    <section>
-      <h2>2. La Chaîne d'Information</h2>
+      <h3>Exemple d'adressage IP</h3>
       <p>
-        La <strong>chaîne d'information</strong> est la partie du système qui décide des ordres à donner à la chaîne d'énergie. Elle acquiert des informations, les traite et communique les ordres nécessaires.
+        Une adresse IP est composée de 4 parties séparées par un point. Chaque partie peut aller de 0 à 255, mais les valeurs 0 et 255 sont réservées à un usage spécifique.
       </p>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>IP : 19.18.7.3</strong></li>
+          <li><strong>IP : 19.19.6.1</strong></li>
+          <li><strong>IP : 19.11.1.1</strong></li>
+        </ul>
+      </div>
 
-      <h3>Les Éléments de la Chaîne d'Information</h3>
-      <ul>
-        <li><strong>Acquérir</strong> : Prélever des informations à l'aide de capteurs.</li>
-        <li><strong>Traiter</strong> : Utiliser les informations acquises pour faire évoluer un programme qui va fournir des ordres.</li>
-        <li><strong>Communiquer</strong> : Donner les ordres de commande à la chaîne d'énergie et apporter des informations à l'utilisateur.</li>
-      </ul>
-
-      <h3>Schéma de la Chaîne d'Information</h3>
-      <div class="schema">
-        <img src="/images/la-chaine-d-information.png" alt="Schéma de la chaîne d'information" class="schema-image" />
-        <p class="caption">Schéma de la chaîne d'information</p>
+      <h3>Structure d'une adresse IP</h3>
+      <p>
+        Une adresse IP peut être décomposée en plusieurs parties pour identifier un réseau, une zone, une salle et un poste spécifique.
+      </p>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>IP : COLLEGE . ZONE . SALLE . N° DU POSTE</strong></li>
+          <li><strong>IP : 19 . 1 . 2 . 7</strong></li>
+        </ul>
       </div>
     </section>
 
     <section>
-      <h2>3. Exemple Intégré : Chauffage d'une Habitation</h2>
+      <h2>2. Adresse IP et communication sur un réseau</h2>
       <p>
-        Prenons l'exemple d'un système de chauffage pour illustrer les deux chaînes.
+        L'adresse IP permet à deux postes de communiquer sur un réseau. Chaque paquet de données contient l'adresse IP de l'émetteur, l'adresse IP du destinataire et l'information à transmettre.
       </p>
 
-      <h3>Chaîne d'Information</h3>
-      <ul>
-        <li><strong>Acquérir</strong> : Le capteur de température mesure la température de la pièce.</li>
-        <li><strong>Traiter</strong> : La centrale de régulation compare la température mesurée avec la température souhaitée.</li>
-        <li><strong>Communiquer</strong> : La centrale envoie l'ordre de démarrer ou d'arrêter le chauffage.</li>
-      </ul>
+      <h3>Structure d'un paquet de données</h3>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>IP de l'émetteur : 19.1.2.7</strong></li>
+          <li><strong>IP du destinataire : 19.1.2.10</strong></li>
+          <li><strong>Information : Fichier texte ou image</strong></li>
+        </ul>
+      </div>
 
-      <h3>Chaîne d'Énergie</h3>
-      <ul>
-        <li><strong>Alimenter</strong> : L'énergie est fournie par une source électrique ou un réservoir de carburant.</li>
-        <li><strong>Stocker</strong> : L'énergie est stockée dans une batterie ou un réservoir.</li>
-        <li><strong>Distribuer</strong> : Le thermostat contrôle la quantité d'énergie nécessaire.</li>
-        <li><strong>Convertir</strong> : Le moteur ou la résistance chauffante convertit l'énergie en chaleur.</li>
-        <li><strong>Transmettre</strong> : La chaleur est transmise à travers les tuyaux ou les radiateurs.</li>
-      </ul>
-
-      <h3>Schéma Intégré</h3>
+      <h3>Schéma de communication</h3>
       <div class="schema">
-        <img src="/images/chaines-integree.png" alt="Schéma intégré des chaînes d'énergie et d'information" class="schema-image" />
-        <p class="caption">Schéma intégré des chaînes d'énergie et d'information</p>
+        <img src="/images/communication-reseau.png" alt="Schéma de communication sur un réseau" class="schema-image" />
+        <p class="caption">Schéma de communication entre deux postes sur un réseau</p>
       </div>
     </section>
 
     <section>
-      <h2>Conclusion</h2>
+      <h2>3. Codage binaire d'une adresse IP</h2>
       <p>
-        Les chaînes d'énergie et d'information sont essentielles pour comprendre le fonctionnement des objets techniques. La chaîne d'énergie gère les flux d'énergie nécessaires à l'action, tandis que la chaîne d'information prend les décisions en fonction des informations acquises. En combinant ces deux chaînes, on peut concevoir des systèmes complexes et automatisés.
+        Une adresse IP est codée sur 4 octets, soit 32 bits. Chaque octet est représenté en binaire et peut prendre une valeur décimale allant de 0 à 255.
       </p>
+
+      <h3>Exemple de conversion binaire/décimal</h3>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>Binaire : 00001010 . 00000001 . 00000010 . 00000111</strong></li>
+          <li><strong>Décimal : 10 . 1 . 2 . 7</strong></li>
+        </ul>
+      </div>
+
+      <h3>Limites de l'adressage IPv4</h3>
+      <p>
+        Avec 32 bits, l'adressage IPv4 permet environ 4,2 milliards d'adresses différentes. Cependant, avec l'augmentation du nombre d'appareils connectés, cette norme atteint ses limites. Une nouvelle norme, IPv6, codée sur 128 bits, est en cours de déploiement.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Masque sous-réseau</h2>
+      <p>
+        Le masque sous-réseau est une information essentielle pour dissocier l'identification du réseau et l'identification de la machine. Il effectue un ET logique entre l'adresse IP de la machine et lui-même.
+      </p>
+
+      <h3>Exemple de masque sous-réseau</h3>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>Adresse IP : 10.1.2.7</strong></li>
+          <li><strong>Masque réseau : 255.255.255.0</strong></li>
+          <li><strong>Identification réseau : 10.1.2.0</strong></li>
+          <li><strong>Identification machine : 0.0.0.7</strong></li>
+        </ul>
+      </div>
+
+      <h3>Tableau de correspondance</h3>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Adresse IP</th>
+              <th>Masque réseau</th>
+              <th>Identification réseau</th>
+              <th>Identification machine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10.1.2.7</td>
+              <td>255.255.255.0</td>
+              <td>10.1.2.0</td>
+              <td>0.0.0.7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="summary">
       <h2>Résumé</h2>
       <ul>
-        <li>La <strong>chaîne d'énergie</strong> gère les flux d'énergie nécessaires au fonctionnement d'un système.</li>
-        <li>La <strong>chaîne d'information</strong> prend des décisions basées sur les informations acquises.</li>
-        <li>Les deux chaînes travaillent ensemble pour permettre à un système technique de fonctionner efficacement.</li>
+        <li>Une <strong>adresse IP</strong> est composée de 4 octets (32 bits) et permet d'identifier un appareil sur un réseau.</li>
+        <li>Le <strong>masque sous-réseau</strong> permet de dissocier l'identification du réseau et de la machine.</li>
+        <li>L'adressage IPv4 est limité à 4,2 milliards d'adresses, et IPv6 (128 bits) est en cours de déploiement.</li>
       </ul>
     </section>
-
-    
   </main>
 </Layout>
 
@@ -146,6 +176,14 @@ import Layout from 'src/layouts/Layout.astro';
     margin: 0.5rem 0;
   }
 
+  .example {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+  }
+
   .schema {
     text-align: center;
     margin: 2rem 0;
@@ -185,40 +223,31 @@ import Layout from 'src/layouts/Layout.astro';
     margin: 0.5rem 0;
   }
 
-  .quiz {
-    background: #f9fafb;
-    padding: 1.5rem;
+  .comparison-table {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
     border-radius: 0.5rem;
-    margin: 2rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .quiz h3 {
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
   }
 
-  .quiz ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .quiz li {
-    margin: 0.5rem 0;
-  }
-
-  .submit-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary);
+  th {
+    background: #4f46e5;
     color: white;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
   }
 
-  .submit-button:hover {
-    background: var(--primary-dark);
+  tr:hover {
+    background: #f3f4f6;
   }
 </style>
