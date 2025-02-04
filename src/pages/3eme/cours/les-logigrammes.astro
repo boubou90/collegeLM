@@ -1,1 +1,181 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import BackButton from '../../../components/BackButton.astro';
+---
 
+<Layout title="Cours : Les Organigrammes">
+  <main>
+    <h1 style="text-align: center; font-weight: bold;">Cours : Les Organigrammes</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Un <strong>organigramme</strong> (ou logigramme) est un outil visuel qui décrit une suite d'instructions structurées pour résoudre un problème ou programmer un système. Il permet de représenter graphiquement la logique d'un processus.
+      </p>
+      <div class="schema">
+        <img src="/images/organigramme-exemple.png" alt="Exemple d'organigramme simple" class="schema-image" />
+        <p class="caption">Organigramme de décision simple</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>1. Symboles et Normes de Base</h2>
+      <p>
+        Les organigrammes utilisent des symboles standardisés pour garantir une compréhension universelle :
+      </p>
+
+      <div class="schema">
+        <img src="/images/organigramme-symboles.png" alt="Symboles des organigrammes" class="schema-image" />
+        <p class="caption">Symboles fondamentaux</p>
+      </div>
+
+      <h3>Règles Essentielles</h3>
+      <ul>
+        <li>✅ Toujours commencer par le symbole <strong>Début</strong></li>
+        <li>✅ Les flux se lisent <strong>de haut en bas</strong></li>
+        <li>✅ Utiliser des flèches pour les connexions</li>
+        <li>✅ Terminer par <strong>Fin</strong> quand c'est pertinent</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Boîtes d'Action et de Test</h2>
+
+      <h3>Boîte d'Action</h3>
+      <ul>
+        <li>📥 1 entrée (en haut)</li>
+        <li>📤 1 sortie (en bas)</li>
+        <li>Décrit une action simple : <em>"Allumer le moteur"</em></li>
+      </ul>
+
+      <h3>Boîte de Test</h3>
+      <ul>
+        <li>📥 1 entrée (en haut)</li>
+        <li>📤 2 sorties (Oui/Non)</li>
+        <li>Contient une question : <em>"Température > 25°C ?"</em></li>
+      </ul>
+
+      <div class="schema">
+        <img src="/images/boites-action-test.png" alt="Différence entre boîtes d'action et de test" class="schema-image" />
+        <p class="caption">Comparaison des boîtes d'action et de test</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Gestion des Sous-Problèmes</h2>
+      <p>
+        Pour des problèmes complexes, on décompose en sous-organigrammes :
+      </p>
+
+      <div class="schema">
+        <img src="/images/sous-problemes.png" alt="Exemple de sous-problèmes" class="schema-image" />
+        <p class="caption">Décomposition modulaire</p>
+      </div>
+
+      <h3>Avantages</h3>
+      <ul>
+        <li>🔄 Réutilisabilité des modules</li>
+        <li>🔍 Lisibilité améliorée</li>
+        <li>🐞 Débogage facilité</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Exemple Concret : Robot Éviteur d'Obstacles</h2>
+      <p>
+        Créons un organigramme pour un robot qui évite les obstacles :
+      </p>
+
+      <div class="schema">
+        <img src="/images/exemple-robot.png" alt="Organigramme pour robot éviteur d'obstacles" class="schema-image" />
+        <p class="caption">Logique de fonctionnement du robot</p>
+      </div>
+
+      <h3>Décomposition</h3>
+      <ol>
+        <li>Démarrage du système</li>
+        <li>Lecture continue du capteur de distance</li>
+        <li>Si obstacle détecté → Rotation à droite</li>
+        <li>Sinon → Avancer tout droit</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>
+        Les organigrammes sont des outils puissants pour structurer la pensée algorithmique. Ils permettent de visualiser clairement les enchaînements logiques et les prises de décision dans tout système automatisé.
+      </p>
+    </section>
+
+    <section class="summary">
+      <h2>Résumé</h2>
+      <ul>
+        <li>📊 Un organigramme modélise des processus via des symboles standardisés</li>
+        <li>⚙️ Deux éléments clés : <strong>boîtes d'action</strong> (1 entrée/1 sortie) et <strong>boîtes de test</strong> (1 entrée/2 sorties)</li>
+        <li>🧩 La décomposition en sous-problèmes améliore l'efficacité</li>
+        <li>🔁 Toujours respecter le flux <strong>haut → bas</strong> et commencer par "Début"</li>
+      </ul>
+    </section>
+
+   
+
+  </main>
+</Layout>
+
+<style>
+  /* Styles identiques au cours précédent pour l'homogénéité */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-top: 2rem;
+  }
+
+  .schema {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .schema-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .summary {
+    background: #f0f4f8;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .quiz {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .submit-button {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+  }
+</style>
