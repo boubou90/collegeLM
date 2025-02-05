@@ -1,1 +1,182 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import BackButton from '../../../components/BackButton.astro';
+---
 
+<Layout title="Cours : Formes et Sources d'Énergie">
+  <main>
+    <h1 style="text-align: center; font-weight: bold;">Cours : Formes et Sources d'Énergie</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Le mot <strong>énergie</strong> vient du grec "energia" signifiant <em>"force en action"</em>. 
+        C'est ce qui permet d'agir sur notre environnement : produire de la chaleur, de la lumière, 
+        mettre en mouvement des objets ou communiquer. L'énergie est omniprésente dans la nature 
+        et les activités humaines.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Les Formes d'Énergie</h2>
+      <p>
+        L'énergie peut se présenter sous différentes formes, souvent converties pour nos besoins :
+      </p>
+
+      <ul>
+        <li>🔥 <strong>Énergie thermique</strong> : Chaleur (ex: convecteur électrique)</li>
+        <li>💡 <strong>Énergie lumineuse</strong> : Lumière (ex: ampoules)</li>
+        <li>⚡ <strong>Énergie électrique</strong> : Courant électrique</li>
+        <li>🏃 <strong>Énergie de mouvement</strong> : Energie mécanique (ex: lave-linge)</li>
+        <li>⚗️ <strong>Énergie chimique</strong> : Stockée dans les molécules (ex: aliments, pétrole)</li>
+      </ul>
+
+      <div class="schema">
+        <img src="/images/formes-energie.png" alt="Diagramme des formes d'énergie" class="schema-image" />
+        <p class="caption">Les principales formes d'énergie</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Les Sources d'Énergie</h2>
+      <p>
+        Les sources d'énergie peuvent être classées en deux catégories selon leur disponibilité :
+      </p>
+
+      <h3>Énergies Non-Renouvelables</h3>
+      <ul>
+        <li>⛽ Pétrole</li>
+        <li>⚫ Charbon</li>
+        <li>💨 Gaz naturel</li>
+        <li>☢️ Uranium</li>
+        <p class="note">Stocks limités - Impact environnemental important</p>
+      </ul>
+
+      <h3>Énergies Renouvelables</h3>
+      <ul>
+        <li>☀️ Energie solaire</li>
+        <li>🌬️ Energie éolienne</li>
+        <li>🌱 Biomasse (végétaux, animaux)</li>
+        <li>🌋 Géothermie</li>
+        <p class="note">Inépuisables à échelle humaine - Plus écologiques</p>
+      </ul>
+
+      <div class="schema">
+        <img src="/images/sources-energie.png" alt="Comparatif énergies renouvelables/non-renouvelables" class="schema-image" />
+        <p class="caption">Répartition des sources d'énergie</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Utilisation de l'Énergie au Quotidien</h2>
+      
+      <h3>À la Maison</h3>
+      <ul>
+        <li>🧺 Lave-linge : Énergie électrique → thermique + mouvement</li>
+        <li>💡 Ampoule à incandescence : 15% lumière + 85% chaleur (peu efficace)</li>
+        <li>🔥 Convecteur électrique : Conversion directe en chaleur</li>
+      </ul>
+
+      <h3>Pour les Transports</h3>
+      <ul>
+        <li>⛽ Voiture à essence : Energie chimique → mouvement</li>
+        <li>🔋 Véhicule électrique : Energie électrique → mouvement</li>
+      </ul>
+
+      <div class="schema">
+        <img src="/images/utilisation-energie.png" alt="Exemples d'utilisation d'énergie" class="schema-image" />
+        <p class="caption">Applications domestiques de l'énergie</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Cas Pratique : Analyse d'une Ampoule</h2>
+      <p>
+        Prenons l'exemple d'une ampoule à incandescence traditionnelle :
+      </p>
+      <ul>
+        <li>Source d'énergie : Électricité (peut venir du charbon, nucléaire ou renouvelable)</li>
+        <li>Conversion d'énergie : Électrique → Lumineuse (15%) + Thermique (85%)</li>
+        <li>Problématique : Gaspillage énergétique dû à la production de chaleur non souhaitée</li>
+      </ul>
+      <p>
+        Ce cas montre l'importance de l'<strong>efficacité énergétique</strong> dans le choix des technologies.
+      </p>
+    </section>
+
+    <section class="summary">
+      <h2>Synthèse</h2>
+      <ul>
+        <li>Deux critères clés : <strong>forme</strong> (utilisation) vs <strong>source</strong> (origine)</li>
+        <li>Distinction cruciale entre ressources <strong>renouvelables</strong> et <strong>non-renouvelables</strong></li>
+        <li>Importance des conversions d'énergie et des pertes lors de l'utilisation</li>
+      </ul>
+    </section>
+
+    <BackButton href="/cours" />
+  </main>
+</Layout>
+
+<style>
+  /* Réutilisation des styles de l'exemple pour cohérence */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-top: 2rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-top: 1.5rem;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .schema {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .schema-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .summary {
+    background: #f0f4f8;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .note {
+    color: #e53e3e;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+</style>
