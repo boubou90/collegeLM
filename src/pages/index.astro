@@ -19,27 +19,9 @@ import GoogleAd from '../components/GoogleAd.astro';
 					</a>
 				</div>
 				<h1 class="title">La technologie au collège</h1>
-				<!-- Bouton de Connexion -->
 				<button id="openLoginModal" class="login-button">Connexion</button>
 			</div>
 		</header>
-
-		<!-- Fenêtre Modale de Connexion -->
-		<div id="loginModal" class="modal">
-			<div class="modal-content">
-				<span id="closeLoginModal" class="close">&times;</span>
-				<h2>Connexion</h2>
-				<form id="loginForm">
-					<label for="username">Nom d'utilisateur (pnom) :</label>
-					<input type="text" id="username" name="username" required>
-
-					<label for="password">Mot de passe (date de naissance JJMMAAAA) :</label>
-					<input type="password" id="password" name="password" required>
-
-					<button type="submit">Se connecter</button>
-				</form>
-			</div>
-		</div>
 
 		<div class="content-wrapper">
 			<div class="main-content">
@@ -61,12 +43,27 @@ import GoogleAd from '../components/GoogleAd.astro';
 				<GoogleAd slot="5227967908" format="horizontal" />
 
 				<section class="presentation" data-aos="fade-up">
-					<h2>Découvrez la technologie</h2>
-					<p>La technologie peut être définie comme la « science de l'artificiel ». Par opposition aux « sciences de la nature », elle est
-					le résultat de l'activité de l'Homme, elle est au centre de sa culture, de son histoire et de son évolution.</p>
-					<p>En effet les objets et systèmes pluritechnologiques sont toujours inventés pour l'Homme et par l'Homme pour pallier ses
-					insuffisances physiques, pour effectuer des travaux complexes ou répétitifs, pour améliorer son confort ou pour satisfaire
-					des besoins plus ou moins vitaux ... comme se nourrir, se loger, se protéger, se déplacer, communiquer....</p>
+					<h2>La technologie au collège : une discipline essentielle</h2>
+					<div class="presentation-content">
+						<p>
+							La technologie est une discipline fondamentale qui permet aux élèves de comprendre le monde qui les entoure. Elle développe :
+						</p>
+						<ul class="benefits-list">
+							<li>La créativité et l'innovation à travers des projets concrets</li>
+							<li>L'esprit critique et la démarche scientifique</li>
+							<li>Les compétences numériques essentielles</li>
+							<li>La capacité à travailler en équipe</li>
+						</ul>
+						<p>
+							Notre approche pédagogique combine théorie et pratique, permettant aux élèves de :
+						</p>
+						<ul class="approach-list">
+							<li>Réaliser des projets techniques innovants</li>
+							<li>Utiliser des outils numériques modernes</li>
+							<li>Comprendre les enjeux technologiques actuels</li>
+							<li>Développer des compétences pour leur futur</li>
+						</ul>
+					</div>
 					<div class="signature">HB</div>
 				</section>
 
@@ -82,7 +79,7 @@ import GoogleAd from '../components/GoogleAd.astro';
 							</div>
 						</article>
 						<article class="news-card">
-							<img src="/images/concours-techno.jpg" alt="Concours technologie" class="news-image" />
+							<img src="/images/news/concours-techno.jpg" alt="Concours technologie" class="news-image" />
 							<div class="news-content">
 								<h3>Concours de Technologie</h3>
 								<p>Participez au grand concours de technologie inter-collèges. Inscriptions ouvertes !</p>
@@ -267,9 +264,38 @@ import GoogleAd from '../components/GoogleAd.astro';
 		font-size: 2rem;
 	}
 
-	.presentation p {
-		margin-bottom: 1rem;
-		line-height: 1.8;
+	.presentation-content {
+		margin-top: 1.5rem;
+	}
+
+	.benefits-list, .approach-list {
+		list-style: none;
+		padding-left: 1.5rem;
+		margin: 1rem 0;
+	}
+
+	.benefits-list li, .approach-list li {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.75rem;
+		line-height: 1.6;
+		color: #1e293b;
+	}
+
+	.benefits-list li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--primary);
+		font-weight: bold;
+	}
+
+	.approach-list li::before {
+		content: "→";
+		position: absolute;
+		left: 0;
+		color: var(--primary);
+		font-weight: bold;
 	}
 
 	.signature {
@@ -355,73 +381,10 @@ import GoogleAd from '../components/GoogleAd.astro';
 		transition: background 0.3s ease;
 		margin-top: 1rem;
 		cursor: pointer;
+		border: none;
 	}
 
 	.login-button:hover {
-		background: var(--primary-dark);
-	}
-
-	/* Styles pour la fenêtre modale */
-	.modal {
-		display: none;
-		position: fixed;
-		z-index: 1000;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		justify-content: center;
-		align-items: center;
-	}
-
-	.modal-content {
-		background: white;
-		padding: 2rem;
-		border-radius: 1rem;
-		width: 100%;
-		max-width: 400px;
-		position: relative;
-	}
-
-	.close {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		font-size: 1.5rem;
-		cursor: pointer;
-	}
-
-	.modal h2 {
-		margin-bottom: 1.5rem;
-		color: var(--primary-dark);
-	}
-
-	.modal label {
-		display: block;
-		margin-bottom: 0.5rem;
-		color: var(--text);
-	}
-
-	.modal input {
-		width: 100%;
-		padding: 0.75rem;
-		margin-bottom: 1rem;
-		border: 1px solid #ddd;
-		border-radius: 0.5rem;
-	}
-
-	.modal button[type="submit"] {
-		width: 100%;
-		padding: 0.75rem;
-		background: var(--primary);
-		color: white;
-		border: none;
-		border-radius: 0.5rem;
-		cursor: pointer;
-	}
-
-	.modal button[type="submit"]:hover {
 		background: var(--primary-dark);
 	}
 
@@ -478,26 +441,3 @@ import GoogleAd from '../components/GoogleAd.astro';
 		}
 	}
 </style>
-
-<script>
-	// Gestion de la fenêtre modale
-	const openLoginModal = document.getElementById('openLoginModal');
-	const closeLoginModal = document.getElementById('closeLoginModal');
-	const loginModal = document.getElementById('loginModal');
-
-	// Ouvrir la fenêtre modale
-	openLoginModal.addEventListener('click', () => {
-		loginModal.style.display = 'flex';
-	});
-
-	// Fermer la fenêtre modale
-	closeLoginModal.addEventListener('click', () => {
-		loginModal.style.display = 'none';
-	});
-
-	// Fermer la fenêtre modale si l'utilisateur clique en dehors
-	window.addEventListener('click', (event) => {
-		if (event.target === loginModal) {
-			loginModal.style.display = 'none';
-		}
-	});
