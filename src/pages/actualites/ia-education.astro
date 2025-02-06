@@ -1,1 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
 
+<Layout title="L'IA au service de l'éducation">
+  <main>
+    <header class="article-header">
+      <h1>L'IA au service de l'éducation</h1>
+      <p class="date">Publié le 15 mars 2024</p>
+    </header>
+
+    <article class="article-content">
+      <img src="/images/news/ia-education.jpg" alt="IA dans l'éducation" class="article-image" />
+      
+      <section class="introduction">
+        <p>
+          L'intelligence artificielle révolutionne le monde de l'éducation en offrant des possibilités 
+          d'apprentissage personnalisé et adaptatif. Découvrez comment cette technologie transforme 
+          l'expérience éducative des élèves et des enseignants.
+        </p>
+      </section>
+
+      <section class="main-content">
+        <h2>Les applications concrètes de l'IA en classe</h2>
+        <ul>
+          <li>
+            <strong>Tutorat personnalisé</strong> : Des systèmes d'IA qui s'adaptent au rythme 
+            d'apprentissage de chaque élève
+          </li>
+          <li>
+            <strong>Évaluation automatisée</strong> : Analyse rapide des travaux avec retours 
+            détaillés
+          </li>
+          <li>
+            <strong>Contenus adaptatifs</strong> : Ressources pédagogiques qui évoluent selon 
+            les progrès
+          </li>
+        </ul>
+
+        <h2>Avantages pour les enseignants</h2>
+        <ul>
+          <li>Réduction des tâches administratives</li>
+          <li>Meilleur suivi des progrès des élèves</li>
+          <li>Création facilitée de contenus pédagogiques</li>
+        </ul>
+
+        <h2>Perspectives d'avenir</h2>
+        <p>
+          Les experts prévoient une intégration croissante de l'IA dans l'éducation, avec des 
+          systèmes toujours plus sophistiqués capables de :
+        </p>
+        <ul>
+          <li>Prédire les difficultés potentielles des élèves</li>
+          <li>Suggérer des parcours d'apprentissage optimisés</li>
+          <li>Faciliter la collaboration entre élèves</li>
+        </ul>
+      </section>
+    </article>
+
+    <a href="/" class="back-link">Retour à l'accueil</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .article-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+  }
+
+  .date {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .introduction {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  .main-content h2 {
+    color: var(--primary-dark);
+    margin: 2rem 0 1rem;
+  }
+
+  .main-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+
+  .main-content li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .main-content li::before {
+    content: "→";
+    position: absolute;
+    left: -1.5rem;
+    color: var(--primary);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .back-link:hover {
+    background: var(--primary-dark);
+  }
+</style>
