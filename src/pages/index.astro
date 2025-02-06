@@ -86,6 +86,38 @@ import GoogleAd from '../components/GoogleAd.astro';
 								<a href="/actualites/concours-technologie" class="read-more">Lire la suite</a>
 							</div>
 						</article>
+						<article class="news-card">
+							<img src="/images/news/ia-education.jpg" alt="IA dans l'éducation" class="news-image" />
+							<div class="news-content">
+								<h3>L'IA au service de l'éducation</h3>
+								<p>Découvrez comment l'intelligence artificielle transforme l'apprentissage et ouvre de nouvelles perspectives pédagogiques.</p>
+								<a href="/actualites/ia-education" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/news/innovation-durable.jpg" alt="Innovation durable" class="news-image" />
+							<div class="news-content">
+								<h3>Innovations pour un futur durable</h3>
+								<p>Les dernières avancées technologiques en matière de développement durable et d'énergie renouvelable.</p>
+								<a href="/actualites/innovation-durable" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/news/metaverse-education.jpg" alt="Métavers éducatif" class="news-image" />
+							<div class="news-content">
+								<h3>Le Métavers éducatif</h3>
+								<p>Exploration des possibilités offertes par la réalité virtuelle et augmentée dans l'enseignement.</p>
+								<a href="/actualites/metavers-education" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/news/robotique-avancee.jpg" alt="Robotique avancée" class="news-image" />
+							<div class="news-content">
+								<h3>Les robots collaboratifs</h3>
+								<p>Les dernières avancées en robotique collaborative et leur impact sur l'industrie du futur.</p>
+								<a href="/actualites/robotique-collaborative" class="read-more">Lire la suite</a>
+							</div>
+						</article>
 					</div>
 				</section>
 			</div>
@@ -322,6 +354,8 @@ import GoogleAd from '../components/GoogleAd.astro';
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
+		margin: 0 auto;
+		max-width: 1200px;
 	}
 
 	.news-card {
@@ -330,10 +364,14 @@ import GoogleAd from '../components/GoogleAd.astro';
 		overflow: hidden;
 		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 		transition: transform 0.3s ease;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.news-card:hover {
 		transform: translateY(-5px);
+		box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 	}
 
 	.news-image {
@@ -344,31 +382,40 @@ import GoogleAd from '../components/GoogleAd.astro';
 
 	.news-content {
 		padding: 1.5rem;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.news-content h3 {
 		color: var(--primary-dark);
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.75rem;
 		font-size: 1.25rem;
+		line-height: 1.4;
 	}
 
 	.news-content p {
-		color: var(--text);
-		margin-bottom: 1rem;
+		color: #4b5563;
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
+		flex-grow: 1;
 	}
 
 	.read-more {
 		display: inline-block;
-		padding: 0.5rem 1rem;
+		padding: 0.75rem 1.5rem;
 		background: var(--primary);
 		color: white;
 		text-decoration: none;
 		border-radius: 0.5rem;
-		transition: background 0.3s ease;
+		transition: all 0.3s ease;
+		align-self: flex-start;
+		font-weight: 500;
 	}
 
 	.read-more:hover {
 		background: var(--primary-dark);
+		transform: translateX(5px);
 	}
 
 	.login-button {
