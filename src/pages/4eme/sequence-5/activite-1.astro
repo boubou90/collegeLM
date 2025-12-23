@@ -1,0 +1,45 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Fiche de lancement de séquence",
+    pdfUrl: "/documents/4eme/sequence-5/4ème - Séquence 5-Activité 1- Fiche de lancement de séquence - Maison domotisée.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 5 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 5 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="1036627649"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <h1>Activité 1 - Comment une maison domotique gère-t-elle automatiquement l'éclairage, l'ouverture des volets, le chauffage… pour optimiser le confort et l'efficacité énergétique ?</h1>
+  
+  <ActivitySection
+    title="Fiche de lancement de séquence "
+    description="Léo et sa sœur Mila viennent d’emménager avec leurs parents dans une nouvelle maison. C’est une maison domotisée"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

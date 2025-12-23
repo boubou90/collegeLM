@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+  type?: string;
+  keywords?: string;
+}
+
+const {
+  title,
+  description,
+  image = '/images/og-image.jpg',
+  canonicalURL = Astro.url.href,
+  noindex = false,
+  type = 'website',
+  keywords = 'technologie, collège, cours, activités, 5ème, 4ème, 3ème, brevet'
+} = Astro.props;
+
+const siteName = "La technologie au collège";
+const domain = "collegelouisemichel.com";
+
+// Ensure canonical URL is absolute
+const absoluteCanonicalURL = canonicalURL.startsWith('http')
+  ? canonicalURL
+  : `https://${domain}${canonicalURL}`;
+
+// Ensure image URL is absolute
+const absoluteImageURL = image.startsWith('http')
+  ? image
+  : `https://${domain}${image}`;
+---
+
+<!-- Primary Meta Tags -->
+<title>{title} | {siteName}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Collège Louise Michel" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={absoluteCanonicalURL} />
+
+<!-- Robots -->
+<meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
+<meta name="googlebot" content={noindex ? "noindex,follow" : "index,follow"} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={absoluteCanonicalURL} />
+<meta property="og:title" content={`${title} | ${siteName}`} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={absoluteImageURL} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="fr_FR" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={absoluteCanonicalURL} />
+<meta name="twitter:title" content={`${title} | ${siteName}`} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={absoluteImageURL} />
+
+<!-- Additional SEO tags -->
+<meta name="language" content="French" />
+<meta name="theme-color" content="#2563eb" />
+<link rel="alternate" href={absoluteCanonicalURL} hreflang="fr-FR" />
+
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" />

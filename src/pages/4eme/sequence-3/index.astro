@@ -1,0 +1,55 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, nous découvrons comment piloter un éclairage connecté et comprendre les contraintes d’usage d’un système domotique.
+(Gestion de l’éclairage à distance avec Tapo)`;
+
+const activities = [
+  {
+    title: "Fiche de lancement de séquence",
+    description: "Les éclairages allumés dans la maison"
+  },
+  {
+    title: "Décription pilotage lampes connectées",
+    description: "Comprendre comment fonctionne l’éclairage connecté ?"
+  },
+  {
+    title: "Choix et connexion des ampoules",
+    description: "Comment bien choisir et installer une ampoule connectée ?"
+  },
+  {
+    title: "Fiches de connaissances",
+    description: "Fiches de connaissances sur les objets techniques et leur environement"
+  },
+  {
+    title: "Ressources",
+    description: "Ressources complémentaires"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 3 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 3 - Comprendre les enjeux de la maison connectée (Gestion de l’éclairage)</h1>
+  
+  <SequencePresentation 
+    title="Comprendre les enjeux de la maison connectée (Gestion de l’éclairage)"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={3} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

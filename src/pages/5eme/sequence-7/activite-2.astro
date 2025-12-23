@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Identifier les différentes formes d’énergies « Reconnaître les différentes formes d’énergie ",
+    pdfUrl: "/documents/5eme/sequence-7/activite-1/Identifier-les-differentes-formes-d-energies.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-7" />
+  <h1>Activité 2 - Identifier les différentes formes d’énergies « Reconnaître les différentes formes d’énergie </h1>
+  
+  <ActivitySection
+    title=" Identifier les différentes formes d’énergies « Reconnaître les différentes formes d’énergie "
+    description=": Cette activité consiste à tester un panneau solaire à l’aide d’une Micro:bit pour mettre en évidence la conversion d’énergie et les différentes formes d’énergies."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

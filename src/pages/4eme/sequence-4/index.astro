@@ -1,0 +1,54 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, Les élèves apprennent à choisir un système de chauffage d'appoint pour un local technique, compatible avec la domotique TAPO:`;
+
+const activities = [
+  {
+    title: "Un lancement de séquence pour faire émerger la problématique générale : « Quel type de chauffage pour mon habitation domotisée? »",
+    description: "Lancement de séquence : Quel type de chauffage pour mon habitation domotique ?"
+  },
+  {
+    title: "Choisir le chauffage compatible avec le système TAPO",
+    description: "Comment choisir un système de chauffage compatible avec le système TAPO ?"
+  },
+  {
+    title: "Tester la performance des systèmes de chauffage",
+    description: "Comment tester la performance des systèmes de chauffage ?"
+  },
+  {
+    title: "Ressources",
+    description: "Ressources complémentaires"
+  },
+  {
+    title: "Fiches de connaissances",
+    description: "Fiches de connaissances sur les objets techniques et leurs critères de performance"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 4 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 4 - Les systèmes automatiques</h1>
+  
+  <SequencePresentation 
+    title="Gestion du chauffage avec le système domotique TAPO"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={4} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

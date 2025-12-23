@@ -1,0 +1,88 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Fonctionnement d'un réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-3/activite-3.pdf"
+  },
+  {
+    title: "Exercice de mapping réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-3/mapping-reseau.pdf"
+  },
+  {
+    title: "Correction du mapping",
+    pdfUrl: "/documents/5eme/sequence-1/activite-3/correction-mapping.pdf"
+  }
+];
+
+const objectives = [
+  "Comprendre comment les informations circulent dans un réseau local",
+  "Apprendre à représenter un réseau sous forme de schéma",
+  "Identifier le chemin des données entre différents équipements",
+  "Simuler la transmission des paquets de données"
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Activité 3 - Fonctionnement d'un réseau</h1>
+  
+  <ActivitySection
+    title="Comment simuler la circulation des informations dans un réseau local comme celui du collège ?"
+    description="Dans cette activité, nous allons comprendre comment les informations circulent dans un réseau local. À travers une simulation et des exercices de mapping, nous découvrirons le parcours des données entre les différents équipements du réseau du collège."
+    documents={documents}
+  />
+
+  <section class="objectives" data-aos="fade-up">
+    <h2>Objectifs de l'activité</h2>
+    <ul>
+      {objectives.map(objective => (
+        <li>{objective}</li>
+      ))}
+    </ul>
+  </section>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+
+  .objectives {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #1e293b;
+  }
+
+  li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+</style>

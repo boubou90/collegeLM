@@ -1,0 +1,39 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const activity = {
+  title: "Ressources",
+  description: "La souris ergonomique",
+  videoFile: "/videos/souris_ergonomique.mp4"
+};
+---
+
+<ClassLayout title="Activité 5 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 5 : {activity.title}</h1>
+  
+  <p>{activity.description}</p>
+
+  {activity.videoFile && (
+    <video width="560" height="315" controls>
+      <source src={activity.videoFile} type="video/mp4" />
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+  )}
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+
+  video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+</style>

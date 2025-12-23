@@ -1,0 +1,37 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Utiliser l’Intelligence Artificielle Générative (IAG), comme assistant personnel",
+    pdfUrl: "/documents/4eme/sequence-1/activite-1/4ème - Séquence 0-Activité 1.pdf"
+  },
+{
+    title: "Fiche Eleve - Créer un prompt efficace avec la méthode ACTIF",
+    pdfUrl: "/documents/4eme/sequence-1/activite-1/Fiche Eleve - Créer un prompt efficace avec la méthode ACTIF.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Séquence 0 (Préalable) – Utiliser l’Intelligence Artificielle Générative (IAG), comme assistant personnel</h1>
+  
+  <ActivitySection
+    title="Comment faire bon usage de l'IAG (Intelligence Artificiel Générative) ?"
+    description="Dans cette première séquence, nous découvrons l'utilisation de  l’IA Générative comme assistant personnel."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import KnowledgeSheet from '../../../components/KnowledgeSheet.astro';
+
+const level = "3eme";
+
+const resources = [
+  {
+    title: "Les chaînes d'énergie",
+    description: "Document de synthèse sur les chaînes d'énergie",
+    pdfUrl: "/documents/3eme/sequence-1/resources/chaines-energie.pdf"
+  },
+  {
+    title: "Les chaînes d'information",
+    description: "Document de synthèse sur les chaînes d'information",
+    pdfUrl: "/documents/3eme/sequence-1/resources/chaines-information.pdf"
+  },
+  {
+    title: "Guide d'analyse",
+    description: "Méthodologie pour analyser les chaînes dans un système technique",
+    pdfUrl: "/documents/3eme/sequence-1/resources/guide-analyse.pdf"
+  }
+];
+---
+
+<ClassLayout title="Ressources - Séquence 1 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Ressources - Chaînes d'énergie et d'information</h1>
+
+  <section class="resources-section" data-aos="fade-up">
+    <h2>Documents de cours</h2>
+    <div class="knowledge-sheets">
+      {resources.map(resource => (
+        <KnowledgeSheet
+          title={resource.title}
+          description={resource.description}
+          pdfUrl={resource.pdfUrl}
+        />
+      ))}
+    </div>
+  </section>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+
+  .resources-section {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .knowledge-sheets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

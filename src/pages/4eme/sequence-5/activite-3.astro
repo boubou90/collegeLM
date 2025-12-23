@@ -1,0 +1,45 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Analyser les flux et conversions d’énergie dans une chaîne d’énergie.",
+    pdfUrl: "/documents/4eme/sequence-5/4ème - Séquence 5-Activité 3 - Maison domotique - Constituant de la chaine d_énergie et leur fonctions - transformation d_énergie.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 5 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 8 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="3738812600"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <h1>Activité 3 - Quelles sont les énergies utilisées ? Quels constituants permettent de convertir l’énergie ?</h1>
+  
+  <ActivitySection
+    title="Analyser les flux et conversions d’énergie dans une chaîne d’énergie."
+    description="Mila est restée à l’intérieur. Elle entend les volets s’ouvrir tout seuls. En s’approchant, elle voit les lames s’enrouler lentement.. Elle s’exclame : Trop cool !"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

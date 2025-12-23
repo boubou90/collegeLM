@@ -1,0 +1,67 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves apprennent à comprendre le fonctionnement d’une maison domotique en analysant les systèmes automatisés (lumière, volets, chauffage), en identifiant les chaînes d'information et d'énergie, et en associant forme et procédé de fabrication :`;
+
+const activities = [
+  {
+    title: "Fiche de lancement",
+    description: "Activité 1 : Comment une maison domotique gère-t-elle automatiquement l'éclairage, l'ouverture des volets, le chauffage… pour optimiser le confort et l'efficacité énergétique ?"
+  },
+  {
+    title: "Identifier les constituants d’une chaîne d’information et comprendre leur rôle",
+    description: "Activité 2 : A quoi sert une chaîne d’information et de quoi se compose t-elle ?"
+  },
+  {
+    title: "Analyser les flux et conversions d’énergie dans une chaîne d’énergie.",
+    description: "Activité 3 : Quelles sont les énergies utilisées ? Quels constituants permettent de convertir l’énergie ?"
+  },
+  {
+    title: "Choisir un procédé de fabrication adapté à la forme d’une pièce",
+    description: "Activité 4 : Comment identifier et choisir un procédé de fabrication ?"
+  },
+  {
+    title: "Fiches de connaissances",
+    description: "Fiches de connaissances sur les objets techniques leurs mises en forme et les énergies utilisées"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 5 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 5 - Comprendre la structure et le fonctionnement de la maison connectée</h1>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 11 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="1499608173"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  <SequencePresentation 
+    title="Comprendre la structure et le fonctionnement de la maison connectée"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={5} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

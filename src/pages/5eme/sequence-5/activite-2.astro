@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Identifier les composants du réseau informatique",
+    pdfUrl: "/documents/5eme/sequence-5/activite-2/Identifier-les-interacteurs-exterieurs.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 2 - La souris : son interaction avec son environnement</h1>
+  
+  <ActivitySection
+    title="Comment identifier les composants du réseau informatique ?"
+    description="La souris d’ordinateur a des interactions avec plusieurs éléments extérieurs. Pour bien choisir ma souris, je dois les identifier ou les définir."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

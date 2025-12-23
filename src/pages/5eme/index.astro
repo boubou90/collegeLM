@@ -1,0 +1,56 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+
+const level = "5eme";
+const programDescription = `Le programme de Technologie en classe de 5e au collège permet aux élèves de découvrir les objets techniques, leur fonctionnement, et les matériaux utilisés pour leur fabrication. Ils apprennent à analyser des objets, à identifier leurs fonctions et à comprendre les systèmes techniques qui les composent. L'accent est mis sur la démarche de projet, où les élèves doivent concevoir et fabriquer un prototype en suivant un cahier des charges, tout en apprenant à manipuler des matériaux et à utiliser des outils de transformation (découpe, collage, assemblage, etc.).
+
+Les élèves sont également sensibilisés aux enjeux écologiques et sociaux des objets techniques, en abordant des questions telles que l'impact environnemental des technologies et les questions liées à leur recyclage. Ils développent des compétences en représentation graphique, en communication technique et dans l'utilisation d'outils numériques pour concevoir et présenter des projets. Le programme inclut également des travaux pratiques et des projets, parfois axés sur la robotique, pour renforcer l'apprentissage par l'expérimentation.
+
+Séquence 1 : Exploiter le réseau informatique pour travailler
+Séquence 2 : Faire bon usage des outils numériques
+Séquence 3 : Comprendre l’évolution des objets et systèmes techniques (OST)
+Séquence 4 : La souris : son intéraction avec son environnement
+Séquence 5 : Choisir un OST en fonction de critères – Lampes
+Séquence 6 : Un défi énergétique en zone isolée (Alimenter un habitat en énergie)
+Séquence 7 : Le fonctionnement d’une station météo connectée
+Séquence 8 : La réparation de la fixation d’une station météo
+Séquence 9 : La programmation d’un feu arrière de vélo intelligent
+Séquence 10 : La conception d’un guide de balle pour robot
+Séquence 11 : La fabrication d’un guide de balle pour jouer au foot
+Séquence 12 : Programmation d’un robot pour jouer au foot
+Séquence 13 : Eclairage automatisé d’une résidence`;
+---
+
+<ClassLayout title="Technologie 5ème" level={level}>
+  <h1>Programme de Technologie - 5ème</h1>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 3 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="7545345618"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  <ProgramPresentation 
+    title="Présentation du Programme"
+    description={programDescription}
+  />
+
+  <SequenceButtons count={10} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

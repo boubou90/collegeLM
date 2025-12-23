@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Guide SketchUp",
+    pdfUrl: "/documents/5eme/sequence-4/resources/guide-sketchup.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 4 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-4" />
+  <h1>Activité 4 - Guide SketchUp</h1>
+  
+  <ActivitySection
+    title="Guide d'utilisation de SketchUp"
+    description="Ce guide complet vous permettra de maîtriser les fonctionnalités essentielles de SketchUp pour la modélisation 3D. Il couvre les outils de base, les techniques de construction et les bonnes pratiques pour réaliser vos projets."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

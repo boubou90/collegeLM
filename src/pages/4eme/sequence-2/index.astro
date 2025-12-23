@@ -1,0 +1,49 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const description = `Dans cette séquence, les élèves apprennent à comprendre les facteurs qui influencent l’évolution des objets techniques (invention, innovation, 
+développement durable), et justifier leurs transformations en lien avec les usages et les besoins sociétaux.
+- Lancement de séquence – Le drone, quelle évolution ! 
+- Analyser un objet technique et justifier son évolution à partir des besoins `;
+
+const activities = [
+  {
+    title: "Lancement de séquence – Le drone, quelle évolution ! ",
+    description: "Pourquoi les objets évoluent à travers le temps ?"
+  },
+  {
+    title: "Analyser un objet technique et justifier son évolution à partir des besoins",
+    description: "Cette activité consiste à identifier les éléments qui participent à l’évolution des besoins (invention, innovation, développement durable)"
+  },
+  {
+    title: "Ressources",
+    description: "Documents ressources"
+  }
+];
+---
+
+<ClassLayout title="Séquence 2 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 2 - L'évolution des objets techniques</h1>
+  
+  <SequencePresentation 
+    title="L'évolution du drone à travers le temps"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={2} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves de 4e apprennent à identifier, relever, traiter et exploiter des données météorologiques issues d’un objet technique (station Weather:bit), afin de comprendre comment l’information est acquise, transformée et représentée dans un système numérique.`;
+
+const activities = [
+  {
+    title: "Fiche de lancement",
+    description: "Activité 1 : Lors de la dernière réunion du CVC, les élèves ont émis le souhait de créer un club jardin lors de la pause méridienne. Ils souhaiteraient pouvoir suivre la croissance des cultures en fonction de la météo."
+  },
+  {
+    title: "Cette activité consiste à faire un rappel sur les différents constituants de la maquette météo Weather:Bit abordée en classe de 5°.",
+    description: "Activité 2 : Comment faire fonctionner la station météo Weather-bit ?"
+  },
+  {
+    title: "Cette activité consiste à décrire et analyser la transformation des données téléchargées ou issues la station weather:bit.",
+    description: "Activité 3 : Comment relever et analyser les données issues de la station météo Weather-bit?"
+  },
+  {
+    title: "Cette activité consiste à identifier, expliquer ce qu’est une table de données, un tableur, analyser son contenu et l’exploiter pour en tirer des représentations synthétiques (graphiques)",
+    description: "Activité 4 : Comment exploiter une base de données avec un tableur ?"
+  },
+  {
+    title: "Ressources",
+    description: "Documents ressources à exploiter"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 6 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 6 - La station météo et la gestion des données</h1>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 12 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="7167755879"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  <SequencePresentation 
+    title="La station météo et la gestion des données"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={6} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

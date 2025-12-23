@@ -1,0 +1,70 @@
+---
+interface Props {
+  label: string;
+  id: string;
+  total: number;
+  isTotal?: boolean;
+}
+
+const { label, id, total, isTotal = false } = Astro.props;
+---
+
+<div class={`result-card ${isTotal ? 'total' : ''}`}>
+  <div class="result-content">
+    <span class="result-label">{label}</span>
+    <div class="result-value">
+      <span id={id}>0</span>
+      <span class="total">/{total}</span>
+    </div>
+  </div>
+  {isTotal && <div class="mention" id="mention"></div>}
+</div>
+
+<style>
+  .result-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .total {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  }
+
+  .result-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .result-label {
+    font-weight: 500;
+    color: #1e293b;
+  }
+
+  .result-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .total .result-value {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .total {
+    color: white;
+  }
+
+  .mention {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+    text-align: center;
+  }
+</style>

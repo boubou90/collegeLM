@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Identifier et mesurer les critères de performance",
+    pdfUrl: "/documents/5eme/sequence-6/activite-4/Identifier-les-critères-de-choix.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-6" />
+  <h1>Activité 3 - Identifier et mesurer les critères de performance</h1>
+  
+  <ActivitySection
+    title="Identifier et mesurer les critères de performance "
+    description="Je dois maintenant remplacer l’ampoule défectueuse chez moi, mais j’ai un très grand nombre de choix possibles."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

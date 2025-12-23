@@ -1,0 +1,197 @@
+---
+interface Props {
+  showLoginButton?: boolean;
+}
+
+const { showLoginButton = true } = Astro.props;
+---
+
+<header class="hero" data-aos="fade-down">
+  <div class="hero-content">
+    <div class="logos">
+      <a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel" target="_blank" rel="noopener noreferrer" aria-label="Site du collège Louise Michel">
+        <img src="/images/logo-college.svg" alt="Logo du collège Louise Michel" class="logo logo-college floating" />
+      </a>
+      <a href="https://www.ac-paris.fr/" target="_blank" rel="noopener noreferrer" aria-label="Site de l'académie de Paris">
+        <img src="/images/logo-academie.svg" alt="Logo de l'académie de Paris" class="logo logo-academie floating" />
+      </a>
+      <a href="https://www.parisclassenumerique.fr/" target="_blank" rel="noopener noreferrer" aria-label="Paris Classe Numérique">
+        <img src="/images/logo-pcn.png" alt="Logo Paris Classe Numérique" class="logo logo-pcn floating" />
+      </a>
+    </div>
+    <h1 class="title">La technologie au collège</h1>
+    {showLoginButton && (
+      <button id="openLoginModal" class="login-button" aria-label="Se connecter">Connexion</button>
+    )}
+  </div>
+</header>
+
+<style>
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+    border-radius: 1.5rem;
+    margin: 1rem auto;
+    max-width: 1000px;
+    overflow: hidden;
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.1),
+      inset 0 -10px 30px rgba(255,255,255,0.1);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(29, 78, 216, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 1;
+  }
+
+  .logos {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .logos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .logos a:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .logos a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+  }
+
+  .logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+
+  .logo-pcn {
+    height: 45px;
+  }
+
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .logo-academie {
+    animation-delay: 1s;
+  }
+
+  .logo-pcn {
+    animation-delay: 2s;
+  }
+
+  .title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .login-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .login-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .login-button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      margin: 0.5rem;
+      border-radius: 1rem;
+    }
+
+    .hero-content {
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .logos {
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .logo-pcn {
+      height: 37.5px;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+</style>

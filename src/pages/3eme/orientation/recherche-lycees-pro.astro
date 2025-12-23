@@ -1,0 +1,51 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import LyceeProfSearch from '../../../components/Orientation/LyceeProfSearch';
+import { lyceesProf } from '../../../data/lyceesProf';
+---
+
+<ClassLayout title="Recherche de Lycées Professionnels" level="3eme">
+  <div class="search-container">
+    <BackButton href="/3eme/orientation" />
+    <h1>Recherche de Lycées Professionnels</h1>
+    
+    <div class="introduction" data-aos="fade-up">
+      <p>
+        Utilisez les filtres ci-dessous pour trouver les lycées professionnels qui correspondent 
+        à votre projet d'orientation. Vous pouvez filtrer par type d'établissement, spécialités 
+        et niveaux de formation.
+      </p>
+    </div>
+
+    <LyceeProfSearch client:only="react" lycees={lyceesProf} />
+  </div>
+</ClassLayout>
+
+<style>
+  .search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+
+  .introduction {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .introduction p {
+    color: #64748b;
+    line-height: 1.6;
+  }
+</style>

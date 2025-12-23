@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+
+const documents = [
+  {
+    title: "Évaluation des compétences",
+    pdfUrl: "/documents/3eme/sequence-1/activite-4/evaluation.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 1 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 4 - Évaluation</h1>
+  
+  <ActivitySection
+    title="Évaluation des compétences"
+    description="Évaluation portant sur les chaînes d'énergie et d'information, leur analyse et leur compréhension."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

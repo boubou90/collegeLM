@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Fiche de lancement de séquence",
+    pdfUrl: "/documents/4eme/sequence-3/Activite1-éclairage domotisé - 4ème-Activité 1-ELEVE-Fiche de lancement de séquence.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 3 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Activité 1 - Mr Machin a laissé l'éclairage allumé dans sa maison</h1>
+  
+  <ActivitySection
+    title="Fiche de lancement de séquence "
+    description="Dans quelle circonstance avons nous besoin d'utiliser une lampe connectée ?"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

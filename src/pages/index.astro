@@ -1,0 +1,821 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GoogleAd from '../components/GoogleAd.astro';
+import RSSFeed from '../components/RSSFeed.astro';
+import Search from '../components/Search';
+---
+
+<Layout title="La technologie au collège" description="Ressources pédagogiques complètes pour les cours de technologie au collège. Découvrez nos programmes détaillés, activités pratiques et supports de cours pour les classes de 5ème, 4ème et 3ème.">
+	<main>
+		<header class="hero" data-aos="fade-down">
+			<div class="hero-content">
+				<div class="logos">
+					<a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel" target="_blank" rel="noopener noreferrer">
+						<img src="/images/logo-college.svg" alt="Logo du collège" class="logo logo-college floating" />
+					</a>
+					<a href="https://www.ac-paris.fr/" target="_blank" rel="noopener noreferrer">
+						<img src="/images/logo-academie.svg" alt="Logo de l'académie de Paris" class="logo logo-academie floating" />
+					</a>
+					<a href="https://www.parisclassenumerique.fr/" target="_blank" rel="noopener noreferrer">
+						<img src="/images/logo-pcn.png" alt="Logo Paris Classe Numérique" class="logo logo-pcn floating" />
+					</a>
+				</div>
+				<h1 class="title">La technologie au collège</h1>
+				<button id="openLoginModal" class="login-button">Connexion</button>
+			</div>
+		</header>
+
+		<!-- Barre de recherche en haut de page (sticky) -->
+		<Search client:load />
+
+		<div class="content-wrapper">
+			<div class="main-content">
+				<section class="intro-section" data-aos="fade-up">
+					<h2>Bienvenue sur le site de technologie du Collège Louise Michel</h2>
+					<p class="intro-text">
+						Ce site est dédié aux élèves, parents et enseignants qui souhaitent approfondir leurs connaissances en technologie au collège. Vous y trouverez des ressources pédagogiques complètes, des activités pratiques et des supports de cours pour les classes de 5ème, 4ème et 3ème.
+					</p>
+					<p class="intro-text">
+						La technologie est une discipline essentielle qui permet de comprendre le monde qui nous entoure et de développer des compétences cruciales pour l'avenir. Notre approche pédagogique combine théorie et pratique pour une meilleure compréhension des concepts.
+					</p>
+				</section>
+
+				<!-- Publicité après l'introduction -->
+				<GoogleAd slot="4342760910" format="auto" />
+
+				<nav class="level-navigation">
+					<a href="/5eme" class="level-button" data-aos="fade-up" data-aos-delay="100">
+						<span class="level-number">5</span>
+						<span class="level-text">ème</span>
+						<p class="level-description">Découverte des réseaux, objets techniques et modélisation 3D</p>
+					</a>
+					<a href="/4eme" class="level-button" data-aos="fade-up" data-aos-delay="200">
+						<span class="level-number">4</span>
+						<span class="level-text">ème</span>
+						<p class="level-description">Systèmes automatiques, programmation et analyse fonctionnelle</p>
+					</a>
+					<a href="/3eme" class="level-button" data-aos="fade-up" data-aos-delay="300">
+						<span class="level-number">3</span>
+						<span class="level-text">ème</span>
+						<p class="level-description">Préparation au Brevet, orientation et projets techniques avancés</p>
+					</a>
+				</nav>
+				
+				<section class="presentation" data-aos="fade-up">
+					<h2>La technologie au collège : une discipline essentielle</h2>
+					<div class="presentation-content">
+						<p>
+							La technologie est une discipline fondamentale qui permet aux élèves de comprendre le monde qui les entoure. Elle développe :
+						</p>
+						<ul class="benefits-list">
+							<li><strong>La créativité et l'innovation</strong> à travers des projets concrets comme la conception d'objets techniques, la programmation de robots ou la modélisation 3D</li>
+							<li><strong>L'esprit critique et la démarche scientifique</strong> par l'analyse de systèmes techniques, la résolution de problèmes et l'expérimentation</li>
+							<li><strong>Les compétences numériques essentielles</strong> incluant la programmation, la modélisation et l'utilisation d'outils de conception assistée par ordinateur</li>
+							<li><strong>La capacité à travailler en équipe</strong> grâce à des projets collaboratifs qui simulent des situations professionnelles réelles</li>
+						</ul>
+						<p>
+							Notre approche pédagogique combine théorie et pratique, permettant aux élèves de :
+						</p>
+						<ul class="approach-list">
+							<li><strong>Réaliser des projets techniques innovants</strong> qui répondent à des problématiques concrètes et actuelles</li>
+							<li><strong>Utiliser des outils numériques modernes</strong> comme les logiciels de CAO, les plateformes de programmation et les imprimantes 3D</li>
+							<li><strong>Comprendre les enjeux technologiques actuels</strong> tels que le développement durable, l'intelligence artificielle et la robotique</li>
+							<li><strong>Développer des compétences pour leur futur</strong> qui seront valorisées dans leurs études supérieures et leur vie professionnelle</li>
+						</ul>
+					</div>
+					<div class="signature">HB</div>
+				</section>
+
+				<section class="program-highlights" data-aos="fade-up">
+					<h2>Points forts du programme</h2>
+					<div class="highlights-grid">
+						<div class="highlight-card">
+							<h3>Classe de 5ème</h3>
+							<ul>
+								<li>Découverte des réseaux informatiques et de leur fonctionnement</li>
+								<li>Analyse des objets techniques et de leur évolution</li>
+								<li>Initiation à la modélisation 3D avec SketchUp</li>
+								<li>Sensibilisation aux enjeux de la sécurité numérique</li>
+							</ul>
+						</div>
+						<div class="highlight-card">
+							<h3>Classe de 4ème</h3>
+							<ul>
+								<li>Étude des systèmes automatiques et de leur programmation</li>
+								<li>Analyse fonctionnelle avec les diagrammes "Bête à Cornes" et "Pieuvre"</li>
+								<li>Projets pratiques comme la conception d'une barrière automatique</li>
+								<li>Découverte des principes de l'électronique et de la domotique</li>
+							</ul>
+						</div>
+						<div class="highlight-card">
+							<h3>Classe de 3ème</h3>
+							<ul>
+								<li>Préparation aux épreuves de technologie du Brevet</li>
+								<li>Projets techniques avancés intégrant programmation et conception</li>
+								<li>Orientation post-3ème et découverte des filières technologiques</li>
+								<li>Approfondissement des chaînes d'énergie et d'information</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section class="methodology" data-aos="fade-up">
+					<h2>Notre méthodologie pédagogique</h2>
+					<div class="methodology-content">
+						<p>
+							Notre enseignement de la technologie repose sur une approche par compétences qui permet aux élèves de développer des savoir-faire concrets et transférables. Nous privilégions :
+						</p>
+						<div class="methodology-grid">
+							<div class="methodology-item">
+								<h3>L'apprentissage par projet</h3>
+								<p>Les élèves travaillent sur des projets concrets qui les amènent à résoudre des problèmes techniques réels, depuis l'analyse du besoin jusqu'à la réalisation d'un prototype fonctionnel.</p>
+							</div>
+							<div class="methodology-item">
+								<h3>La démarche d'investigation</h3>
+								<p>Nous encourageons les élèves à observer, questionner, expérimenter et analyser pour construire leurs connaissances de manière active et développer leur esprit critique.</p>
+							</div>
+							<div class="methodology-item">
+								<h3>L'interdisciplinarité</h3>
+								<p>Nos activités font appel à des connaissances et compétences issues de différentes disciplines (mathématiques, physique, arts plastiques...) pour montrer les liens entre la technologie et les autres domaines.</p>
+							</div>
+							<div class="methodology-item">
+								<h3>L'évaluation formative</h3>
+								<p>Nous privilégions une évaluation qui accompagne l'apprentissage, avec des retours réguliers permettant aux élèves d'identifier leurs points forts et leurs axes d'amélioration.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Publicité entre les sections -->
+				<GoogleAd slot="4342760910" format="horizontal" className="my-8" />
+
+				<section class="news" data-aos="fade-up">
+					<h2>Actualités</h2>
+					<div class="news-grid">
+						<article class="news-card">
+							<img src="/images/projet-robotique.jpg" alt="Projet robotique" class="news-image" />
+							<div class="news-content">
+								<h3>Projet Robotique 2024</h3>
+								<p>Les élèves de 4ème participent à un projet innovant de robotique. Découvrez leurs créations et suivez leur progression dans ce projet qui combine programmation, conception mécanique et résolution de problèmes.</p>
+								<a href="/actualites/projet-robotique-2024" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/concours-techno.jpg" alt="Concours technologie" class="news-image" />
+							<div class="news-content">
+								<h3>Concours de Technologie</h3>
+								<p>Participez au grand concours de technologie inter-collèges. Cette compétition permet aux élèves de mettre en pratique leurs compétences techniques et créatives dans un cadre stimulant et collaboratif.</p>
+								<a href="/actualites/concours-technologie" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/ia-education.jpg" alt="IA dans l'éducation" class="news-image" />
+							<div class="news-content">
+								<h3>L'IA au service de l'éducation</h3>
+								<p>Découvrez comment l'intelligence artificielle transforme l'apprentissage et ouvre de nouvelles perspectives pédagogiques. Cet article explore les applications concrètes de l'IA dans l'enseignement de la technologie.</p>
+								<a href="/actualites/ia-education" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/innovation-durable.jpg" alt="Innovation durable" class="news-image" />
+							<div class="news-content">
+								<h3>Innovations pour un futur durable</h3>
+								<p>Les dernières avancées technologiques en matière de développement durable et d'énergie renouvelable. Cet article présente des solutions innovantes pour répondre aux défis environnementaux actuels.</p>
+								<a href="/actualites/innovation-durable" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/metaverse-education.jpg" alt="Métavers éducatif" class="news-image" />
+							<div class="news-content">
+								<h3>Le Métavers éducatif</h3>
+								<p>Exploration des possibilités offertes par la réalité virtuelle et augmentée dans l'enseignement. Découvrez comment ces technologies immersives peuvent enrichir l'apprentissage de la technologie.</p>
+								<a href="/actualites/metavers-education" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+						<article class="news-card">
+							<img src="/images/robotique-avancee.jpg" alt="Robotique avancée" class="news-image" />
+							<div class="news-content">
+								<h3>Les robots collaboratifs</h3>
+								<p>Les dernières avancées en robotique collaborative et leur impact sur l'industrie du futur. Cet article analyse comment ces technologies transforment les méthodes de production et créent de nouveaux métiers.</p>
+								<a href="/actualites/robotique-collaborative" class="read-more">Lire la suite</a>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Publicité avant les ressources -->
+				<GoogleAd slot="4342760910" format="rectangle" className="mx-auto" />
+
+				<section class="resources-section" data-aos="fade-up">
+					<h2>Ressources pédagogiques</h2>
+					<p class="resources-intro">
+						Notre site propose une variété de ressources pédagogiques pour accompagner l'apprentissage de la technologie :
+					</p>
+					<div class="resources-grid">
+						<div class="resource-card">
+							<h3>Fiches de cours</h3>
+							<p>Documents synthétiques présentant les notions essentielles du programme de technologie, avec des explications claires et des illustrations.</p>
+							<a href="/5eme/sequence-1/resources" class="resource-link">Voir un exemple</a>
+						</div>
+						<div class="resource-card">
+							<h3>Activités pratiques</h3>
+							<p>Exercices et travaux pratiques permettant d'appliquer les connaissances théoriques à des situations concrètes et de développer des compétences techniques.</p>
+							<a href="/4eme/sequence-1/activite-4" class="resource-link">Voir un exemple</a>
+						</div>
+						<div class="resource-card">
+							<h3>Préparation au Brevet</h3>
+							<p>Sujets d'entraînement, fiches de révision et conseils méthodologiques pour réussir l'épreuve de technologie du Brevet des collèges.</p>
+							<a href="/3eme/brevet" class="resource-link">Accéder aux ressources</a>
+						</div>
+						<div class="resource-card">
+							<h3>Orientation</h3>
+							<p>Informations sur les filières technologiques post-3ème, les lycées professionnels et généraux, et les métiers liés à la technologie.</p>
+							<a href="/3eme/orientation" class="resource-link">Découvrir les options</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 1600px;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+
+	.hero {
+		position: relative;
+		background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+		border-radius: 1.5rem;
+		margin: 1rem auto;
+		max-width: 1000px;
+		overflow: hidden;
+		box-shadow: 
+			0 20px 40px rgba(0,0,0,0.1),
+			inset 0 -10px 30px rgba(255,255,255,0.1);
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
+			radial-gradient(circle at 80% 50%, rgba(29, 78, 216, 0.2) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	.hero-content {
+		position: relative;
+		padding: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 3rem;
+		z-index: 1;
+	}
+
+	.content-wrapper {
+		margin-top: 2rem;
+	}
+
+	.main-content {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.logos {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.logos a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease;
+		background: rgba(255, 255, 255, 0.1);
+		padding: 0.75rem;
+		border-radius: 1rem;
+		backdrop-filter: blur(8px);
+	}
+
+	.logos a:hover {
+		transform: scale(1.1);
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.logo {
+		height: 60px;
+		width: auto;
+		object-fit: contain;
+		filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+	}
+
+	.logo-pcn {
+		height: 45px;
+	}
+
+	.floating {
+		animation: float 3s ease-in-out infinite;
+	}
+
+	.logo-academie {
+		animation-delay: 1s;
+	}
+
+	.logo-pcn {
+		animation-delay: 2s;
+	}
+
+	.title {
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		font-weight: 800;
+		text-align: center;
+		background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+		letter-spacing: -0.02em;
+		margin: 0;
+		padding: 0;
+	}
+
+	.intro-section {
+		background: white;
+		padding: 2rem;
+		border-radius: 1rem;
+		margin-bottom: 2rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+	}
+
+	.intro-section h2 {
+		color: var(--primary-dark);
+		margin-bottom: 1rem;
+		font-size: 1.8rem;
+		text-align: center;
+	}
+
+	.intro-text {
+		color: #4b5563;
+		line-height: 1.8;
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
+
+	.level-navigation {
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+		margin-bottom: 2rem;
+	}
+
+	.level-button {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem;
+		background: white;
+		border-radius: 1rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.level-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+		background: var(--primary);
+	}
+
+	.level-number {
+		font-size: 3rem;
+		font-weight: 800;
+		color: var(--primary);
+		line-height: 1;
+	}
+
+	.level-button:hover .level-number {
+		color: white;
+	}
+
+	.level-text {
+		font-size: 1.5rem;
+		color: var(--text);
+	}
+
+	.level-button:hover .level-text {
+		color: white;
+	}
+
+	.level-description {
+		margin-top: 1rem;
+		text-align: center;
+		color: #4b5563;
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+
+	.level-button:hover .level-description {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.presentation {
+		max-width: 800px;
+		margin: 2rem auto 0;
+		padding: 2rem;
+		background: white;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+		position: relative;
+	}
+
+	.presentation h2 {
+		color: var(--primary-dark);
+		margin-bottom: 1rem;
+		font-size: 2rem;
+	}
+
+	.presentation-content {
+		margin-top: 1.5rem;
+	}
+
+	.benefits-list, .approach-list {
+		list-style: none;
+		padding-left: 1.5rem;
+		margin: 1rem 0;
+	}
+
+	.benefits-list li, .approach-list li {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.75rem;
+		line-height: 1.6;
+		color: #1e293b;
+	}
+
+	.benefits-list li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--primary);
+		font-weight: bold;
+	}
+
+	.approach-list li::before {
+		content: "→";
+		position: absolute;
+		left: 0;
+		color: var(--primary);
+		font-weight: bold;
+	}
+
+	.signature {
+		font-family: 'Brush Script MT', cursive;
+		font-size: 2rem;
+		color: var(--primary);
+		text-align: right;
+		margin-top: 1.5rem;
+		font-weight: bold;
+	}
+
+	.program-highlights {
+		margin-top: 4rem;
+	}
+
+	.program-highlights h2 {
+		color: var(--primary-dark);
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.highlights-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.highlight-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+	}
+
+	.highlight-card h3 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+		border-bottom: 2px solid var(--primary);
+		padding-bottom: 0.5rem;
+	}
+
+	.highlight-card ul {
+		list-style: none;
+		padding-left: 1.5rem;
+	}
+
+	.highlight-card li {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.75rem;
+		line-height: 1.6;
+		color: #1e293b;
+	}
+
+	.highlight-card li::before {
+		content: "•";
+		position: absolute;
+		left: 0;
+		color: var(--primary);
+		font-weight: bold;
+	}
+
+	.methodology {
+		margin-top: 4rem;
+	}
+
+	.methodology h2 {
+		color: var(--primary-dark);
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.methodology-content p {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 2rem;
+		color: #4b5563;
+		line-height: 1.8;
+	}
+
+	.methodology-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.methodology-item {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease;
+	}
+
+	.methodology-item:hover {
+		transform: translateY(-5px);
+	}
+
+	.methodology-item h3 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+		font-size: 1.2rem;
+	}
+
+	.methodology-item p {
+		color: #4b5563;
+		line-height: 1.6;
+	}
+
+	.news {
+		margin-top: 4rem;
+	}
+
+	.news h2 {
+		color: var(--primary-dark);
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+
+	.news-card {
+		background: white;
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.news-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+	}
+
+	.news-image {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.news-content {
+		padding: 1.5rem;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.news-content h3 {
+		color: var(--primary-dark);
+		margin-bottom: 0.75rem;
+		font-size: 1.25rem;
+		line-height: 1.4;
+	}
+
+	.news-content p {
+		color: #4b5563;
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
+		flex-grow: 1;
+	}
+
+	.read-more {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: var(--primary);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: all 0.3s ease;
+		align-self: flex-start;
+		font-weight: 500;
+	}
+
+	.read-more:hover {
+		background: var(--primary-dark);
+		transform: translateX(5px);
+	}
+
+	.resources-section {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
+
+	.resources-section h2 {
+		color: var(--primary-dark);
+		margin-bottom: 1rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.resources-intro {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 2rem;
+		color: #4b5563;
+		line-height: 1.8;
+	}
+
+	.resources-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.resource-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resource-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.resource-card h3 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+		font-size: 1.2rem;
+	}
+
+	.resource-card p {
+		color: #4b5563;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		flex-grow: 1;
+	}
+
+	.resource-link {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background: var(--primary);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: all 0.3s ease;
+		font-size: 0.9rem;
+		text-align: center;
+	}
+
+	.resource-link:hover {
+		background: var(--primary-dark);
+	}
+
+	.login-button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: var(--primary);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: background 0.3s ease;
+		margin-top: 1rem;
+		cursor: pointer;
+		border: none;
+	}
+
+	.login-button:hover {
+		background: var(--primary-dark);
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			margin: 0.5rem;
+			border-radius: 1rem;
+		}
+
+		.hero-content {
+			flex-direction: column;
+			padding: 1.5rem;
+			gap: 1.5rem;
+		}
+
+		.logos {
+			margin: 0;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+		}
+
+		.logo {
+			height: 50px;
+		}
+
+		.logo-pcn {
+			height: 37.5px;
+		}
+
+		.title {
+			font-size: 2rem;
+		}
+
+		.level-navigation {
+			flex-direction: column;
+			gap: 1.5rem;
+			align-items: center;
+		}
+
+		.level-button {
+			width: 100%;
+		}
+
+		.news-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.highlights-grid,
+		.methodology-grid,
+		.resources-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+</style>

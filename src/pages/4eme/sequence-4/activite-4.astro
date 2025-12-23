@@ -1,0 +1,47 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Documents ressources - Sources et Formes d'énergie",
+    pdfUrl: "/documents/4eme/sequence-4/Seq.4 Sources et formes d_energie.pdf"
+  },
+  {
+    title: "Documents ressources - Conversion d'énergie",
+    pdfUrl: "/documents/4eme/sequence-4/Seq.4-Conversion d_energie.mp4"
+  },
+  {
+    title: "Documents ressources - Conversion d'énergie PDF",
+    pdfUrl: "/documents/4eme/sequence-4/Seq.4-Conversion d_energie.pdf"
+  },
+  {
+    title: "Documents ressources - Descriptif appareils de mesure",
+    pdfUrl: "/documents/4eme/sequence-4/Seq.4-Descriptif appareils de mesures.pdf"
+  },
+  {
+    title: "Documents ressources - Protocole test",
+    pdfUrl: "/documents/4eme/sequence-3/vidéo- installer un ampoule connectée Tapo.mp4"
+  }
+];
+---
+
+<ClassLayout title="Documents ressources - Séquence 3 - 4ème" level="4eme">
+  <BackButton href="/4eme/sequence-4" />
+  <h1>Documents resources</h1>
+  
+  <ActivitySection
+    title="Documents ressources - Séquence 4"
+    description="Documents ressources à exploiter pour bien répondre aux questions de l'activité."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

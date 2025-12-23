@@ -1,0 +1,49 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Dans cette séquence, les élèves apprennent à reconnaître les différentes formes d’énergie, expliquer comment s'effectuent les conversions d’énergie des constituants  de la chaîne d’énergie et associer une solution à une fonction.";
+
+const activities = [
+  {
+    title: " Un lancement de séquence pour faire émerger la problématique générale",
+    description: "Pourquoi et comment alimenter en énergie électrique un habitat ?"
+  },
+  {
+    title: "Identifier les différentes formes d’énergies",
+    description: "Comment reconnaître les différentes forme d’énergie ?"
+  },
+  {
+    title: "Identifier constituants de la chaîne d’énergie d’un objet technique",
+    description: "Comment les panneaux solaires sont reliés à l’habitat ?"
+  },
+    {
+    title: "Ressources",
+    description: "Fiche ressource Critères",
+    pdfUrl: "/documents/5eme/sequence-6/activite-5/Fiche-ressource-criteres.pdf"
+  }
+];
+---
+
+<ClassLayout title="Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme" />
+  <h1>Séquence 7</h1>
+  
+  <SequencePresentation 
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={7} activities={activities} level="5eme" />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

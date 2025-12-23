@@ -1,0 +1,135 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  documents?: {
+    title: string;
+    pdfUrl?: string;
+    imageUrl?: string;
+  }[];
+}
+
+const { title, description, documents = [] } = Astro.props;
+
+// Log pour déboguer
+console.log("Documents reçus:", documents);
+---
+
+<section class="activity-section" data-aos="fade-up">
+  <h2>{title}</h2>
+  <p class="description">{description}</p>
+  
+  {documents && documents.length > 0 && (
+    <div class="documents">
+      {documents.map(doc => {
+        // Log pour déboguer
+        console.log("Traitement du document:", doc);
+        return (
+          <div class="document-card">
+            <h3>{doc.title}</h3>
+            {doc.imageUrl ? (
+              // Afficher l'image si imageUrl est présent
+              <img src={doc.imageUrl} alt={doc.title} class="document-image" />
+            ) : doc.pdfUrl ? (
+              // Afficher un lien de téléchargement si pdfUrl est présent
+              <a 
+                href={doc.pdfUrl} 
+                class="download-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Voir le document
+              </a>
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
+  )}
+</section>
+
+<style>
+  .activity-section {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .description {
+    color: #1e293b;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .documents {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .document-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .document-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .download-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  @media (max-width: 768px) {
+    .activity-section {
+      padding: 1.5rem;
+    }
+  }
+</style>

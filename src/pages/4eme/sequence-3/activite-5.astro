@@ -1,0 +1,47 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Documents ressources - Choix ampoules",
+    pdfUrl: "/documents/4eme/sequence-3/Doc ressources - Choix ampoules.pdf"
+  },
+  {
+    title: "Documents ressources - Pilotage ampoules connectées",
+    pdfUrl: "/documents/4eme/sequence-3/Doc ressources - Pilotage ampoules connectées.pdf"
+  },
+  {
+    title: "Documents ressources - Utilisation DIGICARD",
+    pdfUrl: "/documents/4eme/sequence-3/Doc ressources - Utilisation DIGICARD.pdf"
+  },
+  {
+    title: "Capsule vidéo- croquis-schéma",
+    pdfUrl: "/documents/4eme/sequence-3/Capsule vidéo- croquis-schéma.mp4"
+  },
+  {
+    title: "Vidéo- installer un ampoule connectée Tapo",
+    pdfUrl: "/documents/4eme/sequence-3/vidéo- installer un ampoule connectée Tapo.mp4"
+  }
+];
+---
+
+<ClassLayout title="Documents ressources - Séquence 3 - 4ème" level="4eme">
+  <BackButton href="/4eme/sequence-3" />
+  <h1>Documents resources</h1>
+  
+  <ActivitySection
+    title="Documents ressources - Séquence 3"
+    description="Documents ressources à exploiter pour bien répondre aux questions de l'activité."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

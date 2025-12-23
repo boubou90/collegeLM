@@ -1,0 +1,52 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Dans cette séquence, les élèves sont sensibilisés et reconnaissent les actions réciproques s'exerçant entre l’objet et son environnement extérieur…";
+
+const activities = [
+  {
+    title: "Lancement de séquence",
+    description: "Comment bien choisir ma souris informatique ?"
+  },
+  {
+    title: "identifier les composants du réseau informatique",
+    description: "Comment Identifier les composants du réseau informatique ?"
+  },
+  {
+    title: "Utiliser facilement et en sécurité l’objet technique, communiquer sur sa forme",
+    description: "omment éviter les douleurs au poignet lors de l'utilisation d'une souris informatique ?"
+  },
+  {
+    title: "Fiches de connaissance",
+    description: "OST dans son environnement"
+  },
+  {
+    title: "Ressources",
+    description: "La souris ergonomique"
+  }
+];
+---
+
+<ClassLayout title="Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme" />
+  <h1>Séquence 5</h1>
+  
+  <SequencePresentation 
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={5} activities={activities} level="5eme" />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

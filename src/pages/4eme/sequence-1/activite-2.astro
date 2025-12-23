@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Le numérique au quotidien, savoir l’utiliser sans danger",
+    pdfUrl: "/documents/4eme/sequence-1/activite-1/4ème - Séquence 1-Activité 2- Fiche d'activité - Fiche Eleves - Le numérique au quotidien _ savoir l’utiliser sans danger.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 2 - Le numérique au quotidien, savoir l’utiliser sans danger</h1>
+  
+  <ActivitySection
+    title="Le numérique au quotidien, savoir l’utiliser sans danger"
+    description="Dans cette première séquence, nous découvrons l'utilisation de  l’IA Générative comme assistant personnel."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

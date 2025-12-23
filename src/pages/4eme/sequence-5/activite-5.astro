@@ -1,0 +1,56 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Les différentes formes d’énergie : électrique, cinétique, potentielle, thermique, lumineuse (rayonnement)",
+    pdfUrl: "/documents/4eme/sequence-5/SFC1a-les-differentes-formes-denergie-_-electrique-cinetique-potentielle-thermique-lumineuse-rayonnement.pdf"
+  },
+  {
+    title: "Les conversions d’énergie des constituants suivants : moteur électrique, lampe, radiateur, génératrice, vérin",
+    pdfUrl: "/documents/4eme/sequence-5/SFC1b-les-conversions-denergie-des-constituants-suivants-_-moteur-electrique-lampe-radiateur-generatrice-verin.pdf"
+  },
+  {
+    title: "Les caractéristiques des procédés de mise en forme disponibles dans le laboratoire",
+    pdfUrl: "/documents/4eme/sequence-5/SFC1f-les-caracteristiques-des-procedes-de-mise-en-forme-disponibles-dans-le-laboratoire.pdf"
+  },
+  {
+    title: "Les fonctions des constituants suivants : capteurs (température, présence, distance, etc.), microcontrôleur, composants d’une interface entre l’humain et la machine (IHM) : boutons, afficheurs, etc…",
+    pdfUrl: "/documents/4eme/sequence-5/SFC1i-Les-fonctions-des-constituants-suivants.pdf"
+  }
+];
+---
+
+<ClassLayout title="Fiches de connaissances - Séquence 4 - 4ème" level="4eme">
+  <BackButton href="/4eme/sequence-5" />
+  <h1>Fiches de connaissances- Les objets et systèmes techniques</h1>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 10 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="4125771517"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  <ActivitySection
+    title="Fiches de connaissances - Séquence 5"
+    description="Ces fiches de connaissances vous aides à approfondir vos connaissances sur les éléments à retenir."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

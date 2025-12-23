@@ -1,0 +1,93 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  activities?: string[];
+}
+
+const { title, description, activities } = Astro.props;
+
+// Process description to add bold to important words
+const enhancedDescription = description
+  .replace(/réseaux/g, '<strong>réseaux</strong>')
+  .replace(/réseau informatique/g, '<strong>réseau informatique</strong>')
+  .replace(/composants/g, '<strong>composants</strong>')
+  .replace(/circulation des informations/g, '<strong>circulation des informations</strong>');
+---
+
+<section class="sequence-presentation" data-aos="fade-up">
+  <h2>{title}</h2>
+  <p class="description" set:html={enhancedDescription} />
+  
+  {activities && activities.length > 0 && (
+    <div class="activities" data-aos="fade-up" data-aos-delay="100">
+      <h3>Activités</h3>
+      <ol>
+        {activities.map(activity => (
+          <li set:html={activity} />
+        ))}
+      </ol>
+    </div>
+  )}
+</section>
+
+<style>
+  .sequence-presentation {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .description {
+    color: #1e293b;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .activities {
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  ol {
+    list-style-position: inside;
+    color: #1e293b;
+  }
+
+  li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  :global(strong) {
+    color: var(--primary);
+    font-weight: 600;
+  }
+</style>

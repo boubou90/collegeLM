@@ -1,0 +1,45 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Comment faire communiquer les ordinateurs entre eux ?",
+    pdfUrl: "/documents/4eme/sequence-7/4ème - Séquence 7-Activité 3- Fiche d_activité -  Créer un réseau local associé à une borne Wifi.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 7 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 20 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="7572694956"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <h1>Activité 3 - Comment faire communiquer les ordinateurs entre eux ?</h1>
+  
+  <ActivitySection
+    title="Configurer un réseau mixte filaire et sans fil avec des postes supplémentaires"
+    description="Pour augmenter le nombre de postes disponibles, le professeur décide d’utiliser la classe mobile."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

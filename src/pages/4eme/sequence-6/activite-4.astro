@@ -1,0 +1,45 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Fiche de lancement de séquence",
+    pdfUrl: "/documents/4eme/sequence_6/4ème - Séquence 6-Activité 3-Fiche d_activité - Exploiter une table de données.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 6 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 16 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="8609664206"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <h1>Activité 4 - Exploiter une table de données</h1>
+  
+  <ActivitySection
+    title="Exploiter une table de données"
+    description="Cette activité consiste à identifier, expliquer ce qu’est une table de données, un tableur, analyser son contenu et l’exploiter pour en tirer des représentations synthétiques (graphiques)."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

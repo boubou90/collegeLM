@@ -1,0 +1,54 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Dans cette séquence, les élèves découvrent les chaînes d'énergie et d'information dans les systèmes techniques. Ils apprennent à analyser le fonctionnement des objets techniques et à comprendre les flux d'énergie et d'information.";
+
+const activities = [
+  {
+    title: "Lancement de séquence",
+    description: "Découverte des chaînes d'énergie et d'information"
+  },
+  {
+    title: "Analyse des chaînes",
+    description: "Comment identifier et analyser les chaînes d'énergie et d'information ?"
+  },
+  {
+    title: "Étude de cas",
+    description: "Application sur un système technique réel"
+  },
+  {
+    title: "Évaluation",
+    description: "Évaluation des compétences acquises"
+  },
+  {
+    title: "Ressources",
+    description: "Documents et ressources complémentaires"
+  }
+];
+
+const level = "3eme";
+---
+
+<ClassLayout title="Séquence 1 - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 1 - Chaînes d'énergie et d'information</h1>
+  
+  <SequencePresentation 
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={1} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

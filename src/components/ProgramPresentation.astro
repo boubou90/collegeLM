@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+// Process description to add bold to important words
+const enhancedDescription = description
+  .replace(/objets techniques/g, '<strong>objets techniques</strong>')
+  .replace(/démarche de projet/g, '<strong>démarche de projet</strong>')
+  .replace(/prototype/g, '<strong>prototype</strong>')
+  .replace(/cahier des charges/g, '<strong>cahier des charges</strong>')
+  .replace(/enjeux écologiques/g, '<strong>enjeux écologiques</strong>')
+  .replace(/enjeux sociaux/g, '<strong>enjeux sociaux</strong>')
+  .replace(/impact environnemental/g, '<strong>impact environnemental</strong>')
+  .replace(/recyclage/g, '<strong>recyclage</strong>')
+  .replace(/représentation graphique/g, '<strong>représentation graphique</strong>')
+  .replace(/communication technique/g, '<strong>communication technique</strong>')
+  .replace(/outils numériques/g, '<strong>outils numériques</strong>')
+  .replace(/robotique/g, '<strong>robotique</strong>')
+  .replace(/expérimentation/g, '<strong>expérimentation</strong>');
+---
+
+<section class="program-presentation" data-aos="fade-up">
+  <h2>{title}</h2>
+  <p set:html={enhancedDescription} />
+</section>
+
+<style>
+  .program-presentation {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: #1e293b;
+    line-height: 1.8;
+    white-space: pre-line;
+  }
+
+  :global(p strong) {
+    color: var(--primary);
+    font-weight: 600;
+  }
+</style>

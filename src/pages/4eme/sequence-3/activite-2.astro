@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Comment fonctionne un éclairage connecté ?",
+    pdfUrl: "/documents/4eme/sequence-3/Activite2-éclairage domotisé - 4ème-Activité 2- ELEVE-Fiche d_activité -decription pilotage lampes connectées.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 3 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Activité 1 - Comment fonctionne un éclairage connecté ?</h1>
+  
+  <ActivitySection
+    title="Comment piloter une ampoule à distance"
+    description="Identifier les interacteurs et représenter le fonctionnement d’un système d’éclairage connecté."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

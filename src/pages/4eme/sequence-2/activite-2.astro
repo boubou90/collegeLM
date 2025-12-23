@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Analyser un objet technique et justifier son évolution à partir des besoins",
+    pdfUrl: "/documents/4eme/sequence-2/4ème - Séquence 2-Activité 2- Fiche d_activité élèves -.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 2 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Activité 2 - Les outils du cahier des charges (suite)</h1>
+  
+  <ActivitySection
+    title="Identifier les éléments qui participent à l’évolution des besoins"
+    description="Cette activité nous amène à découvrir pourquoi les droones ont-ils évolués à travers le temps."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

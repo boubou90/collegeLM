@@ -1,0 +1,45 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Fiche de lancement de séquence",
+    pdfUrl: "/documents/4eme/sequence_6/4ème - Séquence 6-Activité 1- Fiche d_activité - Identifier les composants de la station météo.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 6 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 14 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="7709298462"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <h1>Activité 2 - Comment faire fonctionner la station météo Weather:bit ?</h1>
+  
+  <ActivitySection
+    title="Comment faire fonctionner la station météo Weather:bit ?"
+    description="Cette activité consiste à faire un rappel sur les différents constituants de la maquette météo Weather:Bit abordée en classe de 5°."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

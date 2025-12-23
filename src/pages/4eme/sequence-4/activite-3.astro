@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Mesurer la performance des systèmes de chauffage",
+    pdfUrl: "/documents/4eme/sequence-4/Seq4-gestion chauffage-Activité 3- Fiche d_activité - Tester la performance des systèmes de chauffage.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 4 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Activité 3 - Comment mesurer les performances d'un système de chauffage ?</h1>
+  
+  <ActivitySection
+    title="Mesurer la performance des systèmes de chauffage"
+    description="Dans le laboratoire de technologie, un chauffage d’appoint est installé. Les élèves souhaitent savoir s’il est performant."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

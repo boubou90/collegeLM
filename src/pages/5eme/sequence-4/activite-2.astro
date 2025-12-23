@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Structures adaptées",
+    pdfUrl: "/documents/5eme/sequence-4/activite-2/structures-adaptees.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 4 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-4" />
+  <h1>Activité 2 - Choix d'une structure adaptée</h1>
+  
+  <ActivitySection
+    title="Comment choisir une structure adaptée à un usage ?"
+    description="Apprentissage des méthodes d'analyse technique avec les diagrammes 'Bête à Cornes' et 'Pieuvre'. Cette activité permet de comprendre comment choisir et comparer des solutions techniques en fonction d'un cahier des charges."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>
