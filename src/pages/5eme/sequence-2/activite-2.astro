@@ -1,0 +1,35 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Guide - Organisation des fichiers",
+    pdfUrl: "/documents/5eme/sequence-2/activite-2/guide-organisation.pdf"
+  },
+  {
+    title: "Exercices pratiques",
+    pdfUrl: "/documents/5eme/sequence-2/activite-2/exercices.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 2 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-2" />
+  <h1>Activité 2 - Sauvegarde et organisation</h1>
+  
+  <ActivitySection
+    title="Comment sauvegarder et organiser ses données numériques ?"
+    description="Apprenez à organiser vos fichiers efficacement, à créer une arborescence claire et à mettre en place une stratégie de sauvegarde de vos données."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

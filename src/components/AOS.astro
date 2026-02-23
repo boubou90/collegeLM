@@ -1,0 +1,18 @@
+---
+// src/components/AOS.astro
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// Ensure this runs only on the client
+if (typeof window !== 'undefined') {
+  AOS.init({
+    offset: 120, // Déclenche l'animation 120px avant l'élément
+    delay: 0, // Délai avant l'animation (en ms)
+    duration: 400, // Durée de l'animation (en ms)
+    easing: 'ease', // Type d'animation
+    once: true, // L'animation ne se déclenche qu'une fois
+  });
+}
+---
+
+<!-- This component does nothing on the server -->

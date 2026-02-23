@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Identifier les étapes du cycle de vie d’un OST",
+    pdfUrl: "/documents/5eme/sequence-6/activite-4/cycle-de-vie.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-6" />
+  <h1>Activité 2 - Identifier les étapes du cycle de vie d’un OST</h1>
+  
+  <ActivitySection
+    title="Identifier les étapes du cycle de vie d’un OST "
+    description="Après avoir jeté mon ampoule, une entreprise la récupère pour s’occuper de son recyclage"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

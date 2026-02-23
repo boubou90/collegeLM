@@ -1,0 +1,228 @@
+---
+interface Props {
+  productTitle: string;
+  productDescription: string;
+  productImage: string;
+  amazonLink: string;
+  price?: string;
+  className?: string;
+}
+
+const {
+  productTitle,
+  productDescription,
+  productImage,
+  amazonLink,
+  price = "Voir le prix",
+  className = ""
+} = Astro.props;
+---
+
+<div class={`amazon-recommendation ${className}`}>
+  <div class="amazon-badge">
+    <svg class="amazon-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.525.13.12.174.09.336-.12.48-.256.19-.6.41-1.006.654-1.244.743-2.64 1.316-4.185 1.726-1.53.406-3.045.608-4.544.608-2.44 0-4.73-.375-6.87-1.125-2.14-.75-4.032-1.82-5.676-3.21-.12-.104-.194-.21-.222-.315-.028-.104.007-.193.105-.264zm23.63-5.006c0 1.32-.478 2.45-1.434 3.386-.956.936-2.11 1.404-3.464 1.404-1.354 0-2.51-.467-3.466-1.404-.956-.936-1.434-2.065-1.434-3.386 0-1.32.478-2.45 1.434-3.386.956-.936 2.112-1.404 3.466-1.404 1.354 0 2.508.467 3.464 1.404.956.936 1.434 2.065 1.434 3.386zm-2.97 1.968c-.108.324-.324.594-.645.81-.32.216-.688.324-1.103.324-.415 0-.783-.108-1.103-.324-.32-.216-.537-.486-.645-.81-.108-.324-.162-.684-.162-1.08 0-.396.054-.756.162-1.08.108-.324.324-.594.645-.81.32-.216.688-.324 1.103-.324.415 0 .783.108 1.103.324.32.216.537.486.645.81.108.324.162.684.162 1.08 0 .396-.054.756-.162 1.08z"/>
+    </svg>
+    📚 Recommandation Amazon
+  </div>
+
+  <a href={amazonLink} target="_blank" rel="nofollow noopener" class="product-link">
+    <div class="product-content">
+      <div class="product-image-wrapper">
+        <img src={productImage} alt={productTitle} class="product-image" />
+      </div>
+
+      <div class="product-info">
+        <h3 class="product-title">{productTitle}</h3>
+        <p class="product-description">{productDescription}</p>
+
+        <div class="product-footer">
+          <span class="price-badge">{price}</span>
+          <button class="amazon-button">
+            Voir sur Amazon →
+          </button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <p class="affiliate-disclaimer">
+    💡 Lien affilié : En achetant via ce lien, vous soutenez ce site gratuit sans frais supplémentaires
+  </p>
+</div>
+
+<style>
+  .amazon-recommendation {
+    background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+    border: 2px solid #ffa41c;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(255, 164, 28, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  [data-theme="dark"] .amazon-recommendation {
+    background: linear-gradient(135deg, rgba(255, 164, 28, 0.1) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border-color: rgba(255, 164, 28, 0.4);
+  }
+
+  .amazon-recommendation:hover {
+    box-shadow: 0 6px 20px rgba(255, 164, 28, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .amazon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ffa41c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .amazon-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .product-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-image-wrapper {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] .product-image-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .product-title {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  [data-theme="dark"] .product-title {
+    color: #f1f5f9;
+  }
+
+  .product-description {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  [data-theme="dark"] .product-description {
+    color: #cbd5e1;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .price-badge {
+    background: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .amazon-button {
+    background: #ffa41c;
+    color: #111;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .amazon-button:hover {
+    background: #ff8c00;
+    transform: translateX(5px);
+  }
+
+  .affiliate-disclaimer {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 164, 28, 0.2);
+  }
+
+  [data-theme="dark"] .affiliate-disclaimer {
+    color: #94a3b8;
+  }
+
+  @media (max-width: 768px) {
+    .product-content {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .product-image-wrapper {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .product-footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .amazon-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

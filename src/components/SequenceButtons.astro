@@ -1,0 +1,73 @@
+---
+import { sequenceColors } from '../styles/sequence-colors';
+
+interface Props {
+  count: number;
+  level: string;
+}
+
+const { count, level } = Astro.props;
+---
+
+<div class="sequence-grid" data-aos="fade-up">
+  {Array.from({ length: count }, (_, i) => (
+    <a 
+      href={`/${level}/sequence-${i + 1}`} 
+      class="sequence-button"
+      style={`--button-color: ${sequenceColors[i].bg}; --button-hover: ${sequenceColors[i].hover}`}
+      data-aos="fade-up"
+      data-aos-delay={i * 100}
+    >
+      <span>Séquence {i + 1}</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .sequence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .sequence-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: var(--button-color);
+    color: white;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+  }
+
+  .sequence-button:hover {
+    transform: translateY(-2px);
+    background: var(--button-hover);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    animation: none;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sequence-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "5eme";
+const description = `Cette séquence est consacrée à la modélisation 3D avec le logiciel SketchUp et à l'analyse technique. Elle permet aux élèves de découvrir les outils de conception assistée par ordinateur tout en apprenant à analyser et comparer des solutions techniques.
+
+Les élèves progressent à travers plusieurs étapes :
+- Découverte des outils de visualisation de SketchUp
+- Apprentissage des méthodes d'analyse technique (diagrammes "Bête à Cornes" et "Pieuvre")
+- Maîtrise des techniques de construction 3D (points de construction, extrusion)
+- Application des connaissances pour modéliser un auvent de terrasse
+
+Un accent particulier est mis sur la méthodologie de travail, avec l'élaboration d'une "feuille de route" avant la modélisation, permettant aux élèves de structurer leur démarche et d'anticiper les étapes de construction.`;
+
+const activities = [
+  {
+    title: "Fiche de lancement de séquence",
+    description: "S4-A1-Fiche de lancement de séquence"
+  },
+  {
+    title: "Choix d'une structure adaptée",
+    description: "S4-A2-Comment-choisir-une-structure-adaptée-à-un-usage"
+  },
+  {
+    title: "Modification d'une modélisation",
+    description: "S4-A3-Comment-modifier-une-modélisation-de-structure"
+  },
+  {
+    title: "Ressources",
+    description: "Documents et ressources complémentaires"
+  }
+];
+---
+
+<ClassLayout title="Séquence 4 - 5ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 4</h1>
+  
+  <SequencePresentation 
+    title="Modélisation 3D et Analyse Technique"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={4} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

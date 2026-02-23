@@ -1,0 +1,238 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+import GoogleAd from '../../components/GoogleAd.astro';
+
+const programDescription = `En classe de troisième, le programme de technologie comprend l'étude des objets techniques, l'analyse de leur fonctionnement et leur impact sur la société. On aborde également des activités pratiques qui relient les sciences à la technologie, souvent à travers des projets de design et de conception. Ce programme vise à amener les élèves à développer une compréhension critique des technologies et de leurs applications dans divers domaines, y compris des liaisons avec les sciences de la vie et de la terre (SVT) et la physique-chimie.
+
+`;
+---
+
+<ClassLayout title="Cours de technologie — 3ème" level="3eme" description="Cours de technologie en 3ème : préparation au Brevet, projets techniques avancés et orientation post-3ème. Collège Louise Michel, Paris.">
+  <h1>Programme de Technologie - 3ème</h1>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 4 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="6232263946"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  <div class="navigation-buttons">
+    <!-- Bouton Séquences -->
+    <div class="nav-dropdown">
+      <button class="nav-button sequences-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        Séquences
+      </button>
+      <div class="dropdown-content sequences-dropdown">
+        {Array.from({ length: 10 }, (_, i) => (
+          <a href={`/3eme/sequence-${i + 1}`} class={`dropdown-item sequence-${i + 1}`}>
+            Séquence {i + 1}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bouton Cours -->
+    <div class="nav-dropdown">
+      <button class="nav-button cours-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        Cours
+      </button>
+      <div class="dropdown-content cours-dropdown">
+        <a href="/3eme/cours/cours-chaine-energie-information" class="dropdown-item chaine-energie">
+          Chaînes d'Énergie et d'Information
+        </a>
+        <a href="/3eme/cours/adressage-IP" class="dropdown-item adressage-ip">
+          Adressage IP
+        </a>
+        <a href="/3eme/cours/la-bete-a-cornes" class="dropdown-item bete-a-cornes">
+          La Bête à Cornes
+        </a>
+        <a href="/3eme/cours/etude-du-besoin" class="dropdown-item etude-besoin">
+          Étude du Besoin
+        </a>
+        <a href="/3eme/cours/les-logigrammes" class="dropdown-item les-logigrammes">
+          Les Logigrammes
+        </a>
+        <a href="/3eme/cours/les-formes-d-energies" class="dropdown-item les-formes-d-energies">
+          Les Formes d'Energies
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="program-container">
+    <ProgramPresentation 
+      title="Présentation du Programme"
+      description={programDescription}
+    />
+  </div>
+
+  <GoogleAd slot="5227967907" format="horizontal" />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+
+  .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .sequences-button {
+    background: #2563eb;
+  }
+
+  .sequences-button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+  }
+
+  .cours-button {
+    background: #7c3aed;
+  }
+
+  .cours-button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(-10px);
+  }
+
+  .nav-dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Ajout d'une zone tampon pour éviter la perte du hover */
+  .dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  /* Couleurs pour les séquences */
+  .sequence-1 { background: #2563eb; }
+  .sequence-2 { background: #16a34a; }
+  .sequence-3 { background: #9333ea; }
+  .sequence-4 { background: #dc2626; }
+  .sequence-5 { background: #ea580c; }
+  .sequence-6 { background: #0891b2; }
+  .sequence-7 { background: #4f46e5; }
+  .sequence-8 { background: #db2777; }
+  .sequence-9 { background: #84cc16; }
+  .sequence-10 { background: #7c3aed; }
+
+  /* Couleurs pour les cours */
+  .chaine-energie { background: #ef4444; }
+  .adressage-ip { background: #3b82f6; }
+  .bete-a-cornes { background: #10b981; }
+  .etude-besoin { background: #f59e0b; }
+  .les-logigrammes { background: #ef4444; }
+  .les-formes-d-energies { background: #3b82f6; }
+
+  .dropdown-item:hover {
+    filter: brightness(90%);
+    transform: translateX(5px);
+  }
+
+  .program-container {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .navigation-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-dropdown {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .nav-button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .dropdown-content {
+      width: 100%;
+    }
+  }
+</style>

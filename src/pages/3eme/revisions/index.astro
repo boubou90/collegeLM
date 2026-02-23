@@ -1,0 +1,109 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import KnowledgeSheet from '../../../components/KnowledgeSheet.astro';
+
+const revisionSheets = [
+  {
+    title: "Adressage IP",
+    description: "Les bases de l'adressage IP et du routage",
+    pdfUrl: "/documents/3eme/revisions/Adressage-ip.pdf"
+  },
+  {
+    title: "Objet connecté",
+    description: "Comprendre les objets connectés et leur fonctionnement",
+    pdfUrl: "/documents/3eme/revisions/Objet-connecte.pdf"
+  },
+  {
+    title: "Chaîne d'énergie",
+    description: "Les composants et le fonctionnement d'une chaîne d'énergie",
+    pdfUrl: "/documents/3eme/revisions/Chaine-d-energie.pdf"
+  },
+  {
+    title: "Chaîne d'information",
+    description: "Les composants et le fonctionnement d'une chaîne d'information",
+    pdfUrl: "/documents/3eme/revisions/Chaine-d-information.pdf"
+  },
+  {
+    title: "Besoin et bête à cornes",
+    description: "Méthode d'analyse du besoin avec la bête à cornes",
+    pdfUrl: "/documents/3eme/revisions/Besoin-bete-a-cornes.pdf"
+  },
+  {
+    title: "Sources et formes d'énergie",
+    description: "Les différentes sources et formes d'énergie",
+    pdfUrl: "/documents/3eme/revisions/Sources-formes-energie.pdf"
+  },
+  {
+    title: "Besoins, contraintes et normes",
+    description: "Comprendre les besoins, contraintes et normes en technologie",
+    pdfUrl: "/documents/3eme/revisions/Besoin-contrainte-norme.pdf"
+  },
+  {
+    title: "Chaîne d'information et programmation",
+    description: "La programmation dans la chaîne d'information",
+    pdfUrl: "/documents/3eme/revisions/Chaine-info-programmation.pdf"
+  },
+  {
+    title: "Organigramme et logigramme",
+    description: "Comprendre et utiliser les organigrammes et logigrammes",
+    pdfUrl: "/documents/3eme/revisions/Organigramme-ou-logigramme.pdf"
+  },
+  {
+    title: "Architecture réseau et Internet",
+    description: "Les bases de l'architecture réseau et d'Internet",
+    pdfUrl: "/documents/3eme/revisions/Architecture-reseau-internet.pdf"
+  },
+  {
+    title: "Capteurs, actionneurs et interfaces",
+    description: "Le rôle des capteurs, actionneurs et interfaces",
+    pdfUrl: "/documents/3eme/revisions/Capteur-actionneur-interface.pdf"
+  },
+  {
+    title: "Forme et transmission d'un signal",
+    description: "Les différentes formes de signal et leur transmission",
+    pdfUrl: "/documents/3eme/revisions/Forme-et-transmission-d-un-signal.pdf"
+  },
+  {
+    title: "Flux et chaînes d'énergie - Fiche brevet",
+    description: "Révisions sur les flux et chaînes d'énergie pour le brevet",
+    pdfUrl: "/documents/3eme/revisions/Flux-chaines-d-energie-fiche-brevet.pdf"
+  },
+  {
+    title: "Programmation par blocs ou organigramme",
+    description: "Les différentes méthodes de programmation",
+    pdfUrl: "/documents/3eme/revisions/Progr_par_bloc_ou_progr_par_organigramme.pdf"
+  }
+];
+---
+
+<ClassLayout title="Fiches de révision - 3ème" level="3eme">
+  <BackButton href="/3eme" />
+  <h1>Fiches de révision</h1>
+
+  <div class="revision-sheets">
+    {revisionSheets.map(sheet => (
+      <KnowledgeSheet
+        title={sheet.title}
+        description={sheet.description}
+        pdfUrl={sheet.pdfUrl}
+      />
+    ))}
+  </div>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+
+  .revision-sheets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>

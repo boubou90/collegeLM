@@ -1,0 +1,43 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Les interacteurs extérieurs : usagers, données, autres objets, éléments de l’environnement",
+    pdfUrl: "/documents/4eme/sequence-3/OST2a-les-interacteurs-exterieurs-_-usagers-donnees-autres-objets-elements-de-lenvironnement-1.docx.pdf"
+  },
+  {
+    title: "Les modes de représentation : croquis, schéma, graphique, algorithme, modélisation",
+    pdfUrl: "/documents/4eme/sequence-3/OST2b-les-modes-de-representation-_-croquis-schema-graphique-algorithme-modelisation-1.docx.pdf"
+  },
+  {
+    title: "Les contraintes : prise en compte des exigences issues des normes ou d'un cahier des charges, labels et certifications",
+    pdfUrl: "/documents/4eme/sequence-3/OST2c-les-contraintes-_-prise-en-compte-des-exigences-issues-des-normes-ou-dun-cahier-des-charges-labels-et-certifications-1.docx.pdf"
+  },
+  {
+    title: "L’ergonomie liée à l’usage",
+    pdfUrl: "/documents/4eme/sequence-3/OST2d-lergonomie-liee-a-lusage.pdf"
+  }
+];
+---
+
+<ClassLayout title="Fiches de connaissances - Séquence 3 - 4ème" level="4eme">
+  <BackButton href="/4eme/sequence-3" />
+  <h1>Fiches de connaissances - Les objets et systèmes techniques</h1>
+  
+  <ActivitySection
+    title="Fiches de connaissances sur les objets techniques et leur environnement"
+    description="Ces fiches de connaissances résument les concepts essentiels sur les objets techniques, leur environnement et leur fonctionnement."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

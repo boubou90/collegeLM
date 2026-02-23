@@ -1,0 +1,254 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+---
+
+<ClassLayout title="Affectation en 2de générale et technologique" level="3eme">
+  <div class="container">
+    <BackButton href="/3eme/orientation" />
+    <h1>Affectation en 2de générale et technologique</h1>
+
+    <div class="introduction" data-aos="fade-up">
+      <p>
+        L'affectation en seconde générale et technologique est une étape importante de votre orientation. 
+        Pour vous aider dans votre choix, consultez la carte interactive des lycées de l'académie de Paris 
+        qui vous permettra de visualiser les établissements et leurs secteurs de recrutement.
+      </p>
+    </div>
+
+    <div class="info-section" data-aos="fade-up">
+      <h2>Accéder à la carte interactive</h2>
+      <div class="access-card">
+        <div class="card-content">
+          <h3>Carte des lycées de l'académie</h3>
+          <p>Visualisez les lycées et leurs secteurs de recrutement pour la rentrée 2024</p>
+          <a 
+            href="https://rectoratparis.maps.arcgis.com/apps/webappviewer/index.html?id=d3ce515bc126417bae46f8ace91b0db2" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="primary-button"
+          >
+            Ouvrir la carte interactive
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section" data-aos="fade-up">
+      <h2>Comment utiliser la carte</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Localisation</h3>
+          <p>Zoomez sur votre quartier pour voir les lycées à proximité de votre domicile</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Information</h3>
+          <p>Cliquez sur un établissement pour voir ses spécialités et options proposées</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Filtres</h3>
+          <p>Utilisez les filtres pour afficher uniquement les lycées qui correspondent à vos critères</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Secteurs</h3>
+          <p>Consultez les secteurs de recrutement pour connaître les lycées de votre zone</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="resources-section" data-aos="fade-up">
+      <h2>Ressources complémentaires</h2>
+      <div class="resources-grid">
+        <a href="https://www.ac-paris.fr/l-affectation-au-lycee-121693" target="_blank" rel="noopener noreferrer" class="resource-card">
+          <h3>Guide de l'affectation</h3>
+          <p>Consultez le guide complet de l'affectation au lycée sur le site de l'académie</p>
+        </a>
+        <a href="https://www.education.gouv.fr/reussir-au-lycee/la-classe-de-seconde-generale-et-technologique-9812" target="_blank" rel="noopener noreferrer" class="resource-card">
+          <h3>La classe de seconde</h3>
+          <p>Découvrez l'organisation de la classe de seconde générale et technologique</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</ClassLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .introduction {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .introduction p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .info-section, .guide-section, .resources-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .access-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    color: white;
+  }
+
+  .access-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .access-card p {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .step-card {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    position: relative;
+  }
+
+  .step-number {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .step-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .step-card p {
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .resource-card {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .resource-card:hover {
+    transform: translateY(-5px);
+    background: var(--primary);
+    color: white;
+  }
+
+  .resource-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .resource-card p {
+    color: #4b5563;
+  }
+
+  .resource-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pdfUrl: string;
+}
+
+const { title, description, pdfUrl } = Astro.props;
+---
+
+<div class="knowledge-sheet" data-aos="fade-up">
+  <div class="content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+  <a 
+    href={pdfUrl} 
+    class="download-button" 
+    download={title + ".pdf"}
+    type="application/pdf"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+    Télécharger la fiche
+  </a>
+</div>
+
+<style>
+  .knowledge-sheet {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .download-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .download-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  @media (max-width: 640px) {
+    .knowledge-sheet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .download-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

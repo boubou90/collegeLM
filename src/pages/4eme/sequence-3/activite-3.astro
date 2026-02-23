@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Choix et installation d’une ampoule connectée",
+    pdfUrl: "/documents/4eme/sequence-3/Activite3-éclairage domotisé - 4ème-Activité 3- élève-Fiche d_activité - Choix et connexion ampoule.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 3 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Activité 1 - Comment bien choisir son ampoule connectée</h1>
+  
+  <ActivitySection
+    title="Choix et installation d’une ampoule connectée"
+    description="Cette activité consiste à vérifier que l’ampoule connectée achetée est compatible avec le système de gestion d’éclairage domotique installé."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

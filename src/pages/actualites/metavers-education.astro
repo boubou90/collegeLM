@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Le Métavers éducatif">
+  <main>
+    <header class="article-header">
+      <h1>Le Métavers éducatif</h1>
+      <p class="date">Publié le 10 mars 2024</p>
+    </header>
+
+    <article class="article-content">
+      <img src="/images/metaverse-education.jpg" alt="Métavers éducatif" class="article-image" />
+      
+      <section class="introduction">
+        <p>
+          Le métavers ouvre de nouvelles perspectives pour l'éducation en créant des environnements 
+          d'apprentissage immersifs et interactifs. Explorez comment cette technologie transforme 
+          l'expérience éducative.
+        </p>
+      </section>
+
+      <section class="main-content">
+        <h2>Apprentissage immersif</h2>
+        <ul>
+          <li>
+            <strong>Visites virtuelles</strong> : Exploration de sites historiques et musées
+          </li>
+          <li>
+            <strong>Laboratoires virtuels</strong> : Expériences scientifiques sans risques
+          </li>
+          <li>
+            <strong>Simulations réalistes</strong> : Formation technique et professionnelle
+          </li>
+        </ul>
+
+        <h2>Collaboration virtuelle</h2>
+        <ul>
+          <li>Travail en équipe à distance</li>
+          <li>Échanges culturels virtuels</li>
+          <li>Projets collaboratifs internationaux</li>
+        </ul>
+
+        <h2>Avantages pédagogiques</h2>
+        <p>
+          Le métavers éducatif permet de :
+        </p>
+        <ul>
+          <li>Visualiser des concepts complexes en 3D</li>
+          <li>Apprendre par l'expérience directe</li>
+          <li>Personnaliser l'environnement d'apprentissage</li>
+        </ul>
+      </section>
+    </article>
+
+    <a href="/" class="back-link">Retour à l'accueil</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .article-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+  }
+
+  .date {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .introduction {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  .main-content h2 {
+    color: var(--primary-dark);
+    margin: 2rem 0 1rem;
+  }
+
+  .main-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+
+  .main-content li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .main-content li::before {
+    content: "→";
+    position: absolute;
+    left: -1.5rem;
+    color: var(--primary);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .back-link:hover {
+    background: var(--primary-dark);
+  }
+</style>

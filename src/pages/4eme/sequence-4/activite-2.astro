@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Choisir le type de chauffage compatible avec le système TAPO",
+    pdfUrl: "/documents/4eme/sequence-4/Seq4-gestion chauffage-Activité 2- Fiche d_activité - Choisir le type de chauffage compatible avec le système TAPO.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 4 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Activité 2 - Quel type de chauffage pour mon habitation domotisée ?</h1>
+  
+  <ActivitySection
+    title="Choisir le type de chauffage compatible avec le système TAPO"
+    description="Le professeur souhaite installer un chauffage d’appoint programmable dans la réserve du laboratoire."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

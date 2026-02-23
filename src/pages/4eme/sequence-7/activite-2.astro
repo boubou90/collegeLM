@@ -1,0 +1,45 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Analyser le réseau existant – Identifier les causes de dysfonctionnement",
+    pdfUrl: "/documents/4eme/sequence-7/4ème - Séquence 7-Activité 2- Fiche d_activité -  Créer un réseau local associé à une borne Wifi.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 7 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 19 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="7398307272"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <h1>Activité 1 - Analyser le réseau existant – Identifier les causes de dysfonctionnement</h1>
+  
+  <ActivitySection
+    title="Analyser le réseau existant – Identifier les causes de dysfonctionnement"
+    description="Une classe mobile est installée, mais les ordinateurs portables ne parviennent pas à se connecter au réseau de la salle."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

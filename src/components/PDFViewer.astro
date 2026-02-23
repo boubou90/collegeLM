@@ -1,0 +1,83 @@
+---
+interface Props {
+  title: string;
+  pdfUrl: string;
+}
+
+const { title, pdfUrl } = Astro.props;
+---
+
+<div class="pdf-container" data-aos="fade-up">
+  <h3>{title}</h3>
+  <div class="pdf-wrapper">
+    <iframe src={pdfUrl} title={title}></iframe>
+  </div>
+  <a href={pdfUrl} download class="download-button">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+    Télécharger le PDF
+  </a>
+</div>
+
+<style>
+  .pdf-container {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .pdf-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 141.4%; /* A4 aspect ratio */
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .download-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .download-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+</style>

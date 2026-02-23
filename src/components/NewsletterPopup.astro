@@ -1,0 +1,388 @@
+---
+// Configuration
+const delaySeconds = 15; // Afficher après 15 secondes
+const daysBeforeReshow = 7; // Ne pas réafficher pendant 7 jours si fermé
+---
+
+<div id="newsletter-popup" class="newsletter-popup" style="display: none;">
+  <div class="newsletter-overlay"></div>
+  <div class="newsletter-modal">
+    <button id="close-newsletter" class="close-button" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="newsletter-content">
+      <div class="newsletter-icon">
+        📧
+      </div>
+
+      <h2 class="newsletter-title">Recevez les nouveaux cours gratuitement !</h2>
+
+      <p class="newsletter-description">
+        Rejoignez nos élèves qui reçoivent chaque semaine :
+      </p>
+
+      <ul class="newsletter-benefits">
+        <li>✅ Les nouveaux cours et activités</li>
+        <li>✅ Des fiches de révision exclusives</li>
+        <li>✅ Des conseils pour le Brevet</li>
+        <li>✅ Des ressources gratuites</li>
+      </ul>
+
+      <form id="newsletter-form" class="newsletter-form">
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="Votre adresse email"
+          required
+          class="newsletter-input"
+        />
+        <button type="submit" class="newsletter-submit">
+          S'inscrire gratuitement
+        </button>
+      </form>
+
+      <p class="newsletter-privacy">
+        🔒 1 email par semaine. Désinscription en 1 clic. Vos données sont protégées.
+      </p>
+
+      <div id="newsletter-success" class="newsletter-success" style="display: none;">
+        🎉 <strong>Merci !</strong> Vérifiez votre boîte mail pour confirmer votre inscription.
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .newsletter-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .newsletter-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  .newsletter-modal {
+    position: relative;
+    background: white;
+    border-radius: 1.5rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease-out;
+  }
+
+  [data-theme="dark"] .newsletter-modal {
+    background: #1e293b;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 1;
+  }
+
+  [data-theme="dark"] .close-button {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .close-button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotate(90deg);
+  }
+
+  [data-theme="dark"] .close-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .close-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #64748b;
+  }
+
+  [data-theme="dark"] .close-button svg {
+    color: #cbd5e1;
+  }
+
+  .newsletter-content {
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .newsletter-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 1s ease-in-out infinite;
+  }
+
+  .newsletter-title {
+    color: #1e293b;
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  [data-theme="dark"] .newsletter-title {
+    color: #f1f5f9;
+  }
+
+  .newsletter-description {
+    color: #475569;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  [data-theme="dark"] .newsletter-description {
+    color: #cbd5e1;
+  }
+
+  .newsletter-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+  }
+
+  .newsletter-benefits li {
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+    font-weight: 500;
+  }
+
+  [data-theme="dark"] .newsletter-benefits li {
+    background: rgba(51, 65, 85, 0.5);
+    color: #f1f5f9;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-input {
+    padding: 1rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: white;
+    color: #1e293b;
+  }
+
+  [data-theme="dark"] .newsletter-input {
+    background: rgba(51, 65, 85, 0.5);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #f1f5f9;
+  }
+
+  .newsletter-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .newsletter-submit {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  }
+
+  .newsletter-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .newsletter-submit:active {
+    transform: translateY(0);
+  }
+
+  .newsletter-privacy {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  [data-theme="dark"] .newsletter-privacy {
+    color: #94a3b8;
+  }
+
+  .newsletter-success {
+    background: #10b981;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .newsletter-content {
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .newsletter-title {
+      font-size: 1.5rem;
+    }
+
+    .newsletter-icon {
+      font-size: 3rem;
+    }
+  }
+</style>
+
+<script is:inline define:vars={{ delaySeconds, daysBeforeReshow }}>
+  // Fonction pour vérifier si la popup doit être affichée
+  function shouldShowPopup() {
+    const lastClosed = localStorage.getItem('newsletter-closed');
+    if (!lastClosed) return true;
+
+    const daysSinceClosed = (Date.now() - parseInt(lastClosed)) / (1000 * 60 * 60 * 24);
+    return daysSinceClosed >= daysBeforeReshow;
+  }
+
+  // Afficher la popup après le délai
+  if (shouldShowPopup()) {
+    setTimeout(() => {
+      const popup = document.getElementById('newsletter-popup');
+      if (popup) {
+        popup.style.display = 'flex';
+      }
+    }, delaySeconds * 1000);
+  }
+
+  // Fermer la popup
+  const closeButton = document.getElementById('close-newsletter');
+  const overlay = document.querySelector('.newsletter-overlay');
+
+  function closePopup() {
+    const popup = document.getElementById('newsletter-popup');
+    if (popup) {
+      popup.style.display = 'none';
+      localStorage.setItem('newsletter-closed', Date.now().toString());
+    }
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closePopup);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closePopup);
+  }
+
+  // Gérer la soumission du formulaire
+  const form = document.getElementById('newsletter-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const emailInput = document.getElementById('newsletter-email');
+      const email = emailInput.value;
+
+      // TODO: Intégrer avec votre service d'emailing (Mailchimp, Sendinblue, etc.)
+      console.log('Email soumis:', email);
+
+      // Afficher le message de succès
+      const successMessage = document.getElementById('newsletter-success');
+      if (successMessage) {
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+
+        // Fermer automatiquement après 3 secondes
+        setTimeout(() => {
+          closePopup();
+        }, 3000);
+      }
+    });
+  }
+
+  // Fermer avec la touche Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closePopup();
+    }
+  });
+</script>

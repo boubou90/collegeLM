@@ -1,0 +1,153 @@
+---
+import BackgroundPattern from '../components/BackgroundPattern.astro';
+import SEO from '../components/SEO.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import DonationButton from '../components/DonationButton.astro';
+import NewsletterPopup from '../components/NewsletterPopup.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <SEO title={title} description={description} />
+
+    <!-- Load AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <!-- Load Search CSS -->
+    <style>
+      @import '../styles/search.css';
+    </style>
+
+    <!-- Google AdSense -->
+    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "La technologie au collège",
+        "description": "Ressources pédagogiques pour les cours de technologie au collège",
+        "url": "https://collegelouisemichel.net",
+        "sameAs": [
+          "https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
+          "https://www.ac-paris.fr/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <BackgroundPattern />
+    <ThemeToggle />
+    <DonationButton username="collegelm" />
+    <NewsletterPopup />
+    <slot />
+
+    <footer class="site-footer">
+      <a href="/politique-confidentialite">Politique de confidentialité</a>
+    </footer>
+
+    <!-- Initialize AOS on the client side -->
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        duration: 800,
+        once: false
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+    --background: #f8fafc;
+    --text: #1e293b;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+  }
+
+  [data-theme="dark"] {
+    --primary: #3b82f6;
+    --primary-dark: #60a5fa;
+    --background: #0f172a;
+    --text: #f1f5f9;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Améliorer le contraste des cartes en mode sombre */
+  [data-theme="dark"] .news-card,
+  [data-theme="dark"] .highlight-card,
+  [data-theme="dark"] .resource-card,
+  [data-theme="dark"] .methodology-item,
+  [data-theme="dark"] .intro-section,
+  [data-theme="dark"] .presentation {
+    background: var(--card-bg);
+  }
+
+  [data-theme="dark"] .level-button {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+  }
+
+  .site-footer a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+</style>

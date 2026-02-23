@@ -1,0 +1,55 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+
+const level = "4eme";
+const programDescription = `En classe de quatrième, le programme de technologie se concentre sur l'étude des systèmes automatiques et leur programmation. Les élèves découvrent comment les systèmes techniques évoluent pour répondre aux besoins de la société. Ils apprennent à :
+
+Séquence 1 :  Utiliser l’Intelligence Artificielle Générative (IAG), comme assistant personnel
+Séquence 2 : Comprendre l’évolution des drones en réponse aux besoins de la société (Concours drone)
+Séquence 3 : Comprendre les enjeux de la maison connectée (Gestion de l’éclairage)
+Séquence 4 : Gestion du chauffage avec un système domotique
+Séquence 5 : Comprendre la structure et le fonctionnement de la maison connectée
+Séquence 6 : La station météo et la gestion des données
+Séquence 7 : Créer un réseau local associé à une borne Wifi
+Séquence 8 : Toy Rescue
+Séquence 9 : Explorer le rétro gaming en créant un jeu vidéo (Concours)
+Séquence 10 : Modifier un robot pour réaliser des missions
+Séquence 11 : Fabriquer un prototype de robot
+Séquence 12 : Programmer un robot pour réaliser des missions
+Séquence 13 : Développer ses réflexes`;
+ 
+---
+
+
+<ClassLayout title="Cours de technologie — 4ème" level={level} description="Cours de technologie en 4ème : systèmes automatiques, programmation Python et analyse fonctionnelle. Collège Louise Michel, Paris.">
+  <h1>Programme de Technologie - 4ème</h1>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+     crossorigin="anonymous"></script>
+<!-- bloc 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2885775986633981"
+     data-ad-slot="2953711527"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  <ProgramPresentation 
+    title="Présentation du Programme"
+    description={programDescription}
+  />
+
+  <SequenceButtons count={10} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

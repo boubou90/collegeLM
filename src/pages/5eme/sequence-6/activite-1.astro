@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Choisir un OST selon des critères",
+    pdfUrl: "/documents/5eme/sequence-6/activite-4/Fiche-de-lancement-de-séquence-Choisir-un-objet-technique-Lampes.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-6" />
+  <h1>Activité 1 - Choisir un OST selon des critères</h1>
+  
+  <ActivitySection
+    title="Fiche ressource Activité 3 Critères 5emes "
+    description="L’ampoule de mon salon vient de s’éteindre toute seule et elle ne se rallume plus, elle est vraisemblablement “grillée”. Je vais au magasin en racheter une mais le choix est vaste …. Le magasin me propose aussi un bac où la jeter pour pouvoir la recycler"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

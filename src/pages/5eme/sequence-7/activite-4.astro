@@ -1,0 +1,35 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Porte de garage",
+    imageUrl: "/documents/5eme/sequence-7/activite-1/Copie-de-Porte-garage.PNG"
+  },
+  {
+    title: "Chaine d'énergie",
+    imageUrl: "/documents/5eme/sequence-7/activite-1/Chaine-energie.PNG"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-7" />
+  <h1>Ressources</h1>
+  
+  <ActivitySection
+    title="Ressources"
+    description="Image corespondant aux ressources de la séquence"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Lancement de séquence – Alimenter un habitat en énergie ",
+    pdfUrl: "/documents/5eme/sequence-7/activite-1/Comment-alimenter-un-habitat-en-energie.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-7" />
+  <h1>Activité 1 - Lancement de séquence – Alimenter un habitat en énergie </h1>
+  
+  <ActivitySection
+    title=" Lancement de séquence – Alimenter un habitat en énergie "
+    description=": Identifier les différentes formes d’énergies. Reconnaître les différentes formes d’énergie, Indiquer la nature des énergies en entrée et en sortie des constituants de la chaîne d’énergie."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

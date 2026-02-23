@@ -1,0 +1,43 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Les interacteurs extérieurs : usagers, données, autres objets, éléments de l’environnement",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/les-interacteurs.pdf"
+  },
+  {
+    title: "Les modes de représentation : croquis, schéma, graphique, algorithme, modélisation",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/les-modes-de-representation.pdf"
+  },
+  {
+    title: "Les contraintes : prise en compte des exigences issues des normes ou d'un cahier des charges, labels et certifications",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/les-contraintes.pdf"
+  },
+  {
+    title: "L’ergonomie liée à l’usage",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/ergonomie-liee-a-lusage.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 4 - Fiches de connaissance</h1>
+  
+  <ActivitySection
+    title="Fiches de connaissance sur les réseaux informatiques"
+    description="Ces fiches de connaissance résument les concepts essentiels les objets et systèmes techniques : leurs usages et leurs indications à découvrir et analyser"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

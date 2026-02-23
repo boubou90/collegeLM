@@ -1,0 +1,42 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette première séquence, nous découvrons l'utilisation de  l’IA Générative comme assistant personnel :`;
+
+const activities = [
+  {
+    title: "Utiliser l’IA Générative comme assistant personnel",
+    description: "Comment faire bon usage de l'IAG (Intelligence Artificiel Générative ?"
+  },
+  {
+    title: "Le numérique au quotidien, savoir l’utiliser sans danger",
+    description: "Comment utiliser les outils numérique au quotidien ?"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 1 - Les systèmes automatiques</h1>
+  
+  <SequencePresentation 
+    title="L’Intelligence artificielle générative, la sécurité des données"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={1} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "5eme";
+const documents = [
+  {
+    title: "Fiche de lancement",
+    pdfUrl: "/documents/5eme/sequence-4/activite-1/fiche-lancement.pdf"
+  }
+];
+
+// Log pour déboguer
+console.log("Documents de l'activité:", documents);
+---
+
+<ClassLayout title="Activité 1 - Séquence 4 - 5ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Activité 1 - Lancement de séquence</h1>
+  
+  <ActivitySection
+    title="Introduction à la modélisation 3D"
+    description="Découverte du logiciel SketchUp et de ses outils de visualisation. Cette activité permet de comprendre les bases de la modélisation 3D et l'importance de l'analyse technique dans la conception."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,130 @@
+---
+interface Props {
+  sequenceNumber: number;
+  activities: {
+    title: string;
+    description: string;
+    videoFile?: string;
+  }[];
+  level: string;
+}
+
+const { sequenceNumber, activities, level } = Astro.props;
+---
+
+<nav class="activity-links">
+  {activities.map((activity, index) => (
+    <a 
+      href={`/${level}/sequence-${sequenceNumber}/activite-${index + 1}`}
+      class="activity-link"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
+      <div class="activity-number">{index + 1}</div>
+      <div class="activity-content">
+        <h3>{activity.title}</h3>
+        <p>{activity.description}</p>
+        {activity.videoFile && (
+          <div class="video-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+            </svg>
+            <span>Vidéo disponible</span>
+          </div>
+        )}
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </a>
+  ))}
+</nav>
+
+
+<style>
+  .activity-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .activity-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .activity-link:hover {
+    transform: translateX(10px);
+    background: var(--primary);
+    color: white;
+  }
+
+  .activity-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .activity-link:hover .activity-number {
+    background: white;
+    color: var(--primary);
+  }
+
+  .activity-content {
+    flex: 1;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .activity-link:hover p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .arrow-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .activity-link:hover .arrow-icon {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .activity-link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .arrow-icon {
+      align-self: flex-end;
+    }
+  }
+</style>

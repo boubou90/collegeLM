@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: " Le drone, quelle évolution !",
+    pdfUrl: "/documents/4eme/sequence-2/4ème - Séquence 2-Activité 1- Fiche de lancement de séquence.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 2 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Activité 1 - L'évolution des objets techniques</h1>
+  
+  <ActivitySection
+    title="Comment le drone a-t-il évolué à travers le temps ? "
+    description="Dans cette activité, nous allons découvrir dans quelles circonstances le drone a-t-il évolué."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

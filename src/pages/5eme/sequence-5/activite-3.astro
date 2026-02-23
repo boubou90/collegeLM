@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Identifier les composants du réseau informatique",
+    pdfUrl: "/documents/5eme/sequence-5/activite-3/Expliquer-les-choix-de-conception.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 3 - Utiliser facilement et en sécurité l’objet technique, communiquer sur sa forme</h1>
+  
+  <ActivitySection
+    title="Comment éviter les douleurs au poignet lors de l'utilisation d'une souris informatique ? "
+    description="Cette activité consiste à comprendre l’impact des contraintes lors de la conception d’une souris ergonomique."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

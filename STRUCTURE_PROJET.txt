@@ -1,0 +1,228 @@
+# 📁 Structure complète du projet CollegeLM v2.0.0
+
+## 🎯 Fichiers racine
+.
+├── README.md                    ✅ Documentation principale
+├── GUIDE_UTILISATION.md         ✅ Guide d'utilisation
+├── EXEMPLE_INTEGRATION.md       ✅ Exemples de code
+├── CHANGELOG.md                 ✅ Historique des changements
+├── DEMARRAGE_RAPIDE.md          ✅ Guide de démarrage
+├── RESUME_AMELIORATIONS.md      ✅ Résumé des améliorations
+├── package.json                 Dépendances du projet
+├── package-lock.json            Lockfile npm
+├── astro.config.mjs             ⚡ Configuration Astro optimisée
+├── tailwind.config.mjs          Configuration Tailwind
+├── tsconfig.json                Configuration TypeScript
+├── vercel.json                  Configuration Vercel
+├── .gitignore                   ⚡ Filtres Git optimisés
+└── ads.txt                      Google AdSense
+
+## 📦 Composants (src/components/)
+src/components/
+├── Header.astro                 ✨ NOUVEAU - En-tête réutilisable
+├── Search.tsx                   ✨ NOUVEAU - Barre de recherche
+├── ThemeToggle.astro            ✨ NOUVEAU - Mode sombre
+├── SEO.astro                    ⚡ AMÉLIORÉ - Meta tags enrichis
+├── BackButton.astro             Bouton retour
+├── BackgroundPattern.astro      Pattern de fond
+├── Card.astro                   Carte générique
+├── GoogleAd.astro               Publicité Google
+├── KnowledgeSheet.astro         Fiche de connaissance
+├── PDFViewer.astro              Visualiseur PDF
+├── ProgramPresentation.astro    Présentation programme
+├── RSSFeed.astro                Flux RSS
+├── SequenceButtons.astro        Boutons de séquence
+├── SequencePresentation.astro   Présentation séquence
+├── VideoResource.astro          Ressource vidéo
+├── ActivityLinks.astro          Liens d'activités
+├── ActivitySection.astro        Section d'activité
+├── AOS.astro                    Animation On Scroll
+├── Brevet/
+│   ├── BrevetCalculator.tsx     Calculateur Brevet
+│   ├── BrevetNavButton.astro    Navigation Brevet
+│   ├── BrevetSection.astro      Section Brevet
+│   ├── EpreuveCard.astro        Carte d'épreuve
+│   ├── GradeInput.astro         Saisie de note
+│   ├── ResultCard.astro         Carte de résultat
+│   └── SubjectGroup.astro       Groupe de matières
+└── Orientation/
+    ├── LyceeCard.astro          Carte de lycée
+    ├── LyceeProfCard.astro      Carte lycée pro
+    ├── LyceeProfSearch.tsx      Recherche lycée pro
+    ├── LyceeSearch.tsx          Recherche lycée
+    └── OrientationCard.astro    Carte d'orientation
+
+## 🎨 Styles (src/styles/)
+src/styles/
+├── search.css                   ✨ NOUVEAU - Styles recherche
+├── brevet-calculator.css        Styles calculateur Brevet
+├── quiz.css                     Styles quiz
+├── quiz-validation.css          Validation quiz
+├── colors.ts                    Palette de couleurs
+└── sequence-colors.ts           Couleurs par séquence
+
+## 🏗️ Layouts (src/layouts/)
+src/layouts/
+├── Layout.astro                 ⚡ AMÉLIORÉ - Mode sombre + CSS
+└── ClassLayout.astro            Layout pour les classes
+
+## 📄 Pages (src/pages/)
+src/pages/
+├── index.astro                  ⚡ AMÉLIORÉ - Recherche intégrée
+├── 5eme/                        Pages 5ème (7 séquences)
+│   ├── index.astro
+│   ├── sequence-1/
+│   ├── sequence-2/
+│   ├── sequence-3/
+│   ├── sequence-4/
+│   ├── sequence-5/
+│   ├── sequence-6/
+│   └── sequence-7/
+├── 4eme/                        Pages 4ème (10 séquences)
+│   ├── index.astro
+│   ├── sequence-1/
+│   ├── sequence-2/
+│   ├── sequence-3/
+│   ├── sequence-4/
+│   ├── sequence-5/
+│   ├── sequence-6/
+│   ├── sequence-7/
+│   ├── sequence-8/
+│   ├── sequence-9/
+│   └── sequence-10/
+├── 3eme/                        Pages 3ème
+│   ├── index.astro
+│   ├── brevet/                  Préparation Brevet
+│   ├── cours/                   Cours de 3ème
+│   ├── orientation/             Orientation
+│   ├── revisions/               Révisions
+│   └── sequence-1/
+└── actualites/                  Actualités
+    ├── concours-technologie.astro
+    ├── ia-education.astro
+    ├── innovation-durable.astro
+    ├── metavers-education.astro
+    ├── projet-robotique-2024.astro
+    └── robotique-collaborative.astro
+
+## 🗂️ Données (src/data/)
+src/data/
+├── lycees.ts                    Liste des lycées généraux
+├── lyceesProf.ts                Liste des lycées pro
+├── pdf-resources.ts             Ressources PDF
+├── quizzes.ts                   Données des quiz
+└── sequence-3-resources.ts      Ressources séquence 3
+
+## 🔧 Utilitaires (src/utils/)
+src/utils/
+├── brevet.ts                    Calculs Brevet
+├── brevetCalculations.ts        Calculs détaillés Brevet
+└── quiz.ts                      Logique quiz
+
+## 📘 Types (src/types/)
+src/types/
+├── lycee.ts                     Types pour lycées
+└── aos.d.ts                     ✨ NOUVEAU - Types AOS
+
+## 🎬 Scripts (src/scripts/)
+src/scripts/
+└── aos.ts                       Script AOS
+
+## 🖼️ Assets publics (public/)
+public/
+├── favicon.svg
+├── robots.txt
+├── ads.txt
+├── documents/                   📚 PDFs pédagogiques
+│   ├── 5eme/                    Documents 5ème
+│   │   ├── sequence-1/
+│   │   ├── sequence-2/
+│   │   ├── sequence-3/
+│   │   ├── sequence-4/
+│   │   ├── sequence-5/
+│   │   ├── sequence-6/
+│   │   └── sequence-7/
+│   ├── 4eme/                    Documents 4ème
+│   │   ├── sequence-1/
+│   │   ├── sequence-2/
+│   │   ├── sequence-3/
+│   │   ├── sequence-4/
+│   │   ├── sequence-5/
+│   │   ├── sequence_6/
+│   │   └── sequence-7/
+│   └── 3eme/                    Documents 3ème
+│       ├── brevet/              ~30 sujets de Brevet
+│       ├── revisions/           Fiches de révision
+│       └── sequence-1/
+├── images/                      🖼️ Images et logos
+│   ├── logo-college.svg
+│   ├── logo-academie.svg
+│   ├── logo-pcn.png
+│   ├── bete-a-cornes.png
+│   ├── chaines-integree.png
+│   ├── communication-reseau.png
+│   ├── formes-energie.png
+│   ├── la-chaine-d-energie.png
+│   ├── la-chaine-d-information.png
+│   ├── organigramme-exemple.png
+│   ├── sources-energie.png
+│   ├── concours-techno.jpg
+│   ├── ia-education.jpg
+│   ├── innovation-durable.jpg
+│   ├── metaverse-education.jpg
+│   ├── projet-robotique.jpg
+│   └── robotique-avancee.jpg
+└── videos/                      🎥 Ressources vidéo
+    ├── projet-robotique-2024.mp4
+    └── souris_ergonomique.mp4
+
+## 📊 Statistiques du projet
+
+Total de fichiers:
+- 📦 Composants: 18 (dont 3 nouveaux)
+- 📄 Pages: ~80+ pages
+- 📚 Documents PDF: ~100+ fichiers
+- 🖼️ Images: ~25 fichiers
+- 🎥 Vidéos: 2 fichiers
+- 📝 Documentation: 6 fichiers
+
+Lignes de code ajoutées: ~1500+
+Lignes de documentation: ~800+
+
+## 🎯 Nouveaux fichiers créés (v2.0.0)
+
+Composants:
+✨ src/components/Header.astro
+✨ src/components/Search.tsx
+✨ src/components/ThemeToggle.astro
+
+Styles:
+✨ src/styles/search.css
+
+Types:
+✨ src/types/aos.d.ts
+
+Documentation:
+✨ README.md (réécrit)
+✨ GUIDE_UTILISATION.md
+✨ EXEMPLE_INTEGRATION.md
+✨ CHANGELOG.md
+✨ DEMARRAGE_RAPIDE.md
+✨ RESUME_AMELIORATIONS.md
+
+## ⚡ Fichiers modifiés (v2.0.0)
+
+Configuration:
+⚡ astro.config.mjs
+⚡ .gitignore
+
+Layout & Composants:
+⚡ src/layouts/Layout.astro
+⚡ src/components/SEO.astro
+
+Pages:
+⚡ src/pages/index.astro
+
+---
+Généré le: 22 décembre 2025
+Version: 2.0.0

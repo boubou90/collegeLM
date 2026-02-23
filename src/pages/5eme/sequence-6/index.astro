@@ -1,0 +1,49 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Dans cette séquence, les élèves apprennent à choisir un objet ou un système technique en prenant en compte divers critères, y compris les matériaux, l'énergie, l'impact environnemental et la qualité";
+
+const activities = [
+  {
+    title: " Un lancement de séquence pour faire émerger la problématique générale",
+    description: "Comment évaluer et choisir un OST, en particulier son impact sur l’environnement ?"
+  },
+  {
+    title: "Identifier les étapes du cycle de vie d’un OST influencées par les choix de matériaux et d’énergie",
+    description: "Quelles sont les différentes étapes du cycle de vie d’un OST, quelle est l’influence des choix de matériaux et d’énergie ?"
+  },
+  {
+    title: " Identifier et mesurer les critères de performance",
+    description: "Quels sont les différentes informations qui permettent de classer des objets?"
+  },
+    {
+    title: "Ressources",
+    description: "Fiche ressource Critères",
+    pdfUrl: "/documents/5eme/sequence-6/activite-5/Fiche-ressource-criteres.pdf"
+  }
+];
+---
+
+<ClassLayout title="Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme" />
+  <h1>Séquence 6</h1>
+  
+  <SequencePresentation 
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={6} activities={activities} level="5eme" />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

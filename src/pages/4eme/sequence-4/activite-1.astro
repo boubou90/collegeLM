@@ -1,0 +1,33 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Fiche de lancement de séquence",
+    pdfUrl: "/documents/4eme/sequence-4/Seq4-gestion chauffage-Activité 1- Fiche de lancement de séquence - Quel type de chauffage pour mon habitation domotisée _.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 4 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Activité 1 - Quel type de chauffage pour mon habitation domotisée ?</h1>
+  
+  <ActivitySection
+    title="Fiche de lancement de séquence "
+    description="Dans le laboratoire de technologie, il fait très froid en hiver. L’établissement souhaite installer un système de chauffage d’appoint."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

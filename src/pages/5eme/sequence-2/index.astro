@@ -1,0 +1,56 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Dans cette séquence, les élèves apprennent à faire bon usage des outils numériques. L'accent est mis sur la sécurité numérique, la gestion des données et la responsabilité en ligne.";
+
+const activities = [
+  {
+    title: "Lancement de séquence",
+    description: "Un couple se fait cambrioler et voler son ordinateur : Exploiter les outils numériques et en faire bon usage"
+  },
+  {
+    title: "Sauvegarde et organisation",
+    description: "Comment sauvegarder et organiser ses données numériques ?"
+  },
+  {
+    title: "Systèmes d'information",
+    description: "Décrire le rôle des systèmes d'information dans le partage d'information"
+  },
+  {
+    title: "Sécurité numérique",
+    description: "Se protéger et protéger ses données"
+  },
+  {
+    title: "Cyber-violence",
+    description: "Agir face à la cyber violence"
+  },
+  {
+    title: "Ressources",
+    description: "Ressources complémentaires sur la sécurité numérique"
+  }
+];
+---
+
+<ClassLayout title="Séquence 2 - 5ème" level="5eme">
+  <BackButton href="/5eme" />
+  <h1>Séquence 2</h1>
+  
+  <SequencePresentation 
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={2} activities={activities} level="5eme" />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

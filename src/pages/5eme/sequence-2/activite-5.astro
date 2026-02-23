@@ -1,0 +1,31 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Guide - Prévention cyberviolence",
+    pdfUrl: "/documents/5eme/sequence-2/activite-5/prevention-cyberviolence.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 5 - Séquence 2 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-2" />
+  <h1>Activité 5 - Cyber-violence</h1>
+  
+  <ActivitySection
+    title="Agir face à la cyber violence"
+    description="Comprendre les différentes formes de cyberviolence, leurs impacts et apprendre à réagir de manière appropriée face à ces situations."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>
