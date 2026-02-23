@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import GoogleAd from '../components/GoogleAd.astro';
 import RSSFeed from '../components/RSSFeed.astro';
 import Search from '../components/Search';
+import ProfileSelector from '../components/ProfileSelector';
+import Quiz from '../components/Quiz';
 ---
 
 <Layout title="La technologie au collège" description="Ressources pédagogiques complètes pour les cours de technologie au collège. Découvrez nos programmes détaillés, activités pratiques et supports de cours pour les classes de 5ème, 4ème et 3ème.">
@@ -35,6 +37,8 @@ import Search from '../components/Search';
 
 		<div class="content-wrapper">
 			<div class="main-content">
+				<ProfileSelector client:load />
+
 				<section class="intro-section" data-aos="fade-up">
 					<h2>Bienvenue sur le site de technologie du Collège Louise Michel</h2>
 					<p class="intro-text">
@@ -65,7 +69,9 @@ import Search from '../components/Search';
 						<p class="level-description">Préparation au Brevet, orientation et projets techniques avancés</p>
 					</a>
 				</nav>
-				
+
+				<Quiz client:load />
+
 				<section class="presentation" data-aos="fade-up">
 					<h2>La technologie au collège : une discipline essentielle</h2>
 					<div class="presentation-content">
