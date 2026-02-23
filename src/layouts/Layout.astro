@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import DonationButton from '../components/DonationButton.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
+import GoogleAd from '../components/GoogleAd.astro';
 
 interface Props {
   title: string;
@@ -61,8 +62,32 @@ const {
     <NewsletterPopup />
     <slot />
 
+    <!-- T9 : Ad avant footer (optimisation AdSense) -->
+    <div class="footer-ad">
+      <GoogleAd slot="5227967907" format="auto" lazy={true} />
+    </div>
+
     <footer class="site-footer">
+      <!-- T10 : Bannière Tipeee -->
+      <div class="tipeee-banner">
+        <a
+          href="https://fr.tipeee.com/collegelm"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tipeee-link"
+        >
+          <span class="tipeee-heart">❤️</span>
+          <div class="tipeee-text">
+            <span class="tipeee-title">Soutenir ce site</span>
+            <span class="tipeee-sub">Contribuez sur Tipeee — 1 € aide déjà !</span>
+          </div>
+          <span class="tipeee-arrow">→</span>
+        </a>
+      </div>
+
       <a href="/politique-confidentialite">Politique de confidentialité</a>
+      <span class="footer-sep">·</span>
+      <a href="/materiel-recommande">Matériel recommandé</a>
     </footer>
 
     <!-- Initialize AOS on the client side -->
@@ -135,12 +160,85 @@ const {
     border: 1px solid var(--border-color);
   }
 
+  .footer-ad {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
   .site-footer {
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+    margin-top: 1rem;
     border-top: 1px solid var(--border-color);
     font-size: 0.85rem;
+  }
+
+  .tipeee-banner {
+    margin-bottom: 1rem;
+  }
+
+  .tipeee-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+    color: #3730a3;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #c7d2fe;
+    transition: all 0.25s ease;
+  }
+
+  .tipeee-link:hover {
+    background: linear-gradient(135deg, #c7d2fe 0%, #ddd6fe 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.25);
+    text-decoration: none;
+  }
+
+  [data-theme="dark"] .tipeee-link {
+    background: linear-gradient(135deg, #1e1b4b 0%, #2e1065 100%);
+    color: #c4b5fd;
+    border-color: #4338ca40;
+  }
+
+  [data-theme="dark"] .tipeee-link:hover {
+    background: linear-gradient(135deg, #312e81 0%, #4c1d95 100%);
+  }
+
+  .tipeee-heart {
+    font-size: 1.1rem;
+  }
+
+  .tipeee-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .tipeee-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .tipeee-sub {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .tipeee-arrow {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .footer-sep {
+    margin: 0 0.5rem;
+    color: var(--border-color);
   }
 
   .site-footer a {

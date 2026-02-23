@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GoogleAd from '../components/GoogleAd.astro';
+
+// Remplacez "collegeLM21-21" par votre tag d'affiliation Amazon France
+const AFFILIATE_TAG = 'collegeLM21-21';
+
+const products = [
+  {
+    id: 1,
+    emoji: '🧮',
+    name: 'Calculatrice Casio FX-92+ Spéciale Collège',
+    description: 'La calculatrice officielle pour les cours de maths et de technologie au collège. Validée pour le Brevet.',
+    price: '~20 €',
+    category: 'Calcul',
+    categoryColor: '#3B82F6',
+    search: 'calculatrice+casio+fx-92+college',
+    badge: '⭐ Recommandée',
+  },
+  {
+    id: 2,
+    emoji: '📐',
+    name: 'Set de géométrie scolaire',
+    description: 'Règle, compas, rapporteur, équerres — indispensables pour les activités de dessin technique en technologie.',
+    price: '~8 €',
+    category: 'Géométrie',
+    categoryColor: '#10B981',
+    search: 'set+géométrie+compas+regle+equerre+college',
+    badge: null,
+  },
+  {
+    id: 3,
+    emoji: '💾',
+    name: 'Clé USB 32 Go',
+    description: 'Pour sauvegarder ses travaux de modélisation 3D, fiches de cours et documents numériques.',
+    price: '~8 €',
+    category: 'Informatique',
+    categoryColor: '#6366F1',
+    search: 'clé+USB+32+go+école',
+    badge: null,
+  },
+  {
+    id: 4,
+    emoji: '📓',
+    name: 'Cahier grands carreaux A4 (lot de 3)',
+    description: 'Pour prendre des notes, dessiner des schémas techniques et rédiger des comptes-rendus de TP.',
+    price: '~6 €',
+    category: 'Papeterie',
+    categoryColor: '#F59E0B',
+    search: 'cahier+grands+carreaux+A4+lot+3',
+    badge: null,
+  },
+  {
+    id: 5,
+    emoji: '🎧',
+    name: 'Casque audio scolaire filaire',
+    description: 'Indispensable pour suivre les cours en ligne et les activités numériques en salle informatique.',
+    price: '~15 €',
+    category: 'Audio',
+    categoryColor: '#EC4899',
+    search: 'casque+audio+filaire+scolaire+enfant',
+    badge: null,
+  },
+  {
+    id: 6,
+    emoji: '🤖',
+    name: 'Kit découverte électronique / micro:bit',
+    description: 'Initiation à l\'électronique et à la programmation pour les passionnés. Idéal pour prolonger les projets du cours.',
+    price: '~30 €',
+    category: 'Électronique',
+    categoryColor: '#F97316',
+    search: 'microbit+kit+electronique+enfant+programmation',
+    badge: '🎁 Idée cadeau',
+  },
+];
+---
+
+<Layout
+  title="Matériel scolaire recommandé — Technologie collège"
+  description="Sélection de matériel scolaire recommandé pour les cours de technologie au collège : calculatrice, compas, clé USB, casque audio et kits électronique."
+>
+  <main class="page-container">
+    <header class="page-header">
+      <h1>📦 Matériel recommandé</h1>
+      <p class="page-subtitle">Tout le matériel utile pour réussir en technologie au collège</p>
+    </header>
+
+    <div class="disclaimer">
+      <span class="disclaimer-icon">ℹ️</span>
+      <p>
+        Ces liens sont des <strong>liens d'affiliation Amazon</strong>. Si vous achetez via ces liens,
+        une petite commission nous est reversée sans coût supplémentaire pour vous.
+        Cela aide à financer ce site gratuit. Merci ! 🙏
+      </p>
+    </div>
+
+    <GoogleAd slot="5227967907" format="auto" />
+
+    <div class="products-grid">
+      {products.map(p => (
+        <div class="product-card">
+          {p.badge && (
+            <span class="product-badge" style={`background: ${p.categoryColor};`}>{p.badge}</span>
+          )}
+          <div class="product-emoji">{p.emoji}</div>
+          <span class="category-tag" style={`background: ${p.categoryColor}18; color: ${p.categoryColor}; border: 1px solid ${p.categoryColor}30;`}>
+            {p.category}
+          </span>
+          <h2 class="product-name">{p.name}</h2>
+          <p class="product-description">{p.description}</p>
+          <div class="product-footer">
+            <span class="product-price">{p.price}</span>
+            <a
+              href={`https://www.amazon.fr/s?k=${p.search}&tag=${AFFILIATE_TAG}`}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              class="product-cta"
+              style={`background: ${p.categoryColor};`}
+            >
+              Voir sur Amazon →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <GoogleAd slot="5227967907" format="horizontal" />
+
+    <section class="tips-section">
+      <h2>💡 Conseils pour bien s'équiper</h2>
+      <ul class="tips-list">
+        <li>La calculatrice Casio FX-92+ est souvent exigée lors du Brevet — vérifiez avec votre professeur.</li>
+        <li>Une clé USB personnelle permet de sauvegarder ses travaux entre les séances en salle informatique.</li>
+        <li>Le set de géométrie sert aussi bien en maths qu'en technologie pour les représentations graphiques.</li>
+        <li>Pour les projets Arduino/micro:bit, vérifiez d'abord avec l'enseignant si le matériel est déjà fourni.</li>
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header h1 {
+    color: var(--primary-dark);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+  }
+
+  .disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #78350f;
+    line-height: 1.6;
+  }
+
+  .disclaimer-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .disclaimer p {
+    margin: 0;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-card {
+    position: relative;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  }
+
+  [data-theme="dark"] .product-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: -0.6rem;
+    right: 1rem;
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  .product-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .category-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+    align-self: flex-start;
+  }
+
+  .product-name {
+    color: #1e293b;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  [data-theme="dark"] .product-name {
+    color: #f1f5f9;
+  }
+
+  .product-description {
+    color: #475569;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  [data-theme="dark"] .product-description {
+    color: #94a3b8;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  [data-theme="dark"] .product-footer {
+    border-top-color: var(--border-color);
+  }
+
+  .product-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1e293b;
+  }
+
+  [data-theme="dark"] .product-price {
+    color: #f1f5f9;
+  }
+
+  .product-cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .product-cta:hover {
+    filter: brightness(90%);
+    transform: translateY(-1px);
+  }
+
+  .tips-section {
+    background: #f8fafc;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+  }
+
+  [data-theme="dark"] .tips-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  .tips-section h2 {
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .tips-list {
+    padding-left: 1.5rem;
+    color: #475569;
+    line-height: 1.8;
+  }
+
+  .tips-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  [data-theme="dark"] .tips-list {
+    color: #94a3b8;
+  }
+
+  @media (max-width: 640px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    .page-container {
+      padding: 1rem;
+    }
+  }
+</style>
