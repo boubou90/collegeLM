@@ -1,0 +1,50 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+
+const activities = [
+  {
+    title: "Lancement de séquence",
+    description: "Activité de lancement — contenu à venir"
+  },
+  {
+    title: "Activité 2",
+    description: "Contenu à venir"
+  },
+  {
+    title: "Activité 3",
+    description: "Contenu à venir"
+  },
+  {
+    title: "Ressources",
+    description: "Documents et ressources complémentaires"
+  }
+];
+
+const level = "3eme";
+---
+
+<ClassLayout title="Séquence 6 - 3ème" level={level}>
+  <BackButton href="/3eme" />
+  <h1>Séquence 6</h1>
+
+  <SequencePresentation
+    title="Présentation de la séquence"
+    description={description}
+    activities={activities.map(a => a.description)}
+  />
+
+  <ActivityLinks sequenceNumber={6} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>
