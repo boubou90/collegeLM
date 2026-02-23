@@ -8,6 +8,29 @@ interface Props {
   sequenceNumber: number;
 }
 
+type ShuffledQ = { q: string; a: string[]; c: number };
+
+function shuffleQuestions(questions: Q[]): ShuffledQ[] {
+  // Fisher-Yates shuffle on a copy of the array
+  const arr = [...questions];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.map(q => {
+    const indexed = q.a.map((text, i) => ({ text, isCorrect: i === q.c }));
+    for (let i = indexed.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indexed[i], indexed[j]] = [indexed[j], indexed[i]];
+    }
+    return {
+      q: q.q,
+      a: indexed.map(x => x.text),
+      c: indexed.findIndex(x => x.isCorrect),
+    };
+  });
+}
+
 function Stars({ score, total }: { score: number; total: number }) {
   const pct = score / total;
   const filled = pct >= 0.8 ? 3 : pct >= 0.5 ? 2 : pct >= 0.2 ? 1 : 0;
@@ -40,6 +63,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
   const [bestScore, setBestScore] = useState<number | null>(null);
   const [started, setStarted] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [deck, setDeck] = useState<ShuffledQ[]>([]);
 
   const storageKey = `quiz-${level}-seq${sequenceNumber}`;
   const accentColor = LEVEL_COLORS[level] ?? '#6366f1';
@@ -55,13 +79,13 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
   const handleAnswer = (idx: number) => {
     if (selected !== null) return;
     setSelected(idx);
-    if (questions[current].c === idx) {
+    if (deck[current].c === idx) {
       setScore(s => s + 1);
     }
   };
 
   const handleNext = () => {
-    if (current + 1 >= questions.length) {
+    if (current + 1 >= deck.length) {
       setFinished(true);
       setTimeout(() => {
         setScore(s => {
@@ -83,6 +107,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
     setScore(0);
     setFinished(false);
     setStarted(true);
+    setDeck(shuffleQuestions(questions));
   };
 
   const container: React.CSSProperties = {
@@ -129,7 +154,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
             </p>
           )}
           <button
-            onClick={() => setStarted(true)}
+            onClick={() => { setDeck(shuffleQuestions(questions)); setStarted(true); }}
             style={{
               padding: '0.75rem 2rem',
               background: `linear-gradient(135deg, ${accentColor} 0%, ${accentColor}cc 100%)`,
@@ -198,8 +223,9 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
     );
   }
 
-  const q = questions[current];
-  const progress = (current / questions.length) * 100;
+  if (deck.length === 0) return null;
+  const q = deck[current];
+  const progress = (current / deck.length) * 100;
 
   return (
     <section style={container}>
@@ -213,7 +239,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
           {LEVEL_LABELS[level]} — Séq. {sequenceNumber}
         </span>
         <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>
-          {current + 1} / {questions.length}
+          {current + 1} / {deck.length}
         </span>
       </div>
 
@@ -292,7 +318,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
               fontSize: '0.95rem', fontWeight: 700, cursor: 'pointer',
             }}
           >
-            {current + 1 >= questions.length ? 'Voir mon score →' : 'Suivant →'}
+            {current + 1 >= deck.length ? 'Voir mon score →' : 'Suivant →'}
           </button>
         </div>
       )}
