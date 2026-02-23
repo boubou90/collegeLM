@@ -89,8 +89,12 @@ const {
     <footer class="site-footer">
       <!-- T10 : Bannière Tipeee -->
       <div class="tipeee-banner">
+        <p class="tipeee-description">
+          Ce site est <strong>100&nbsp;% gratuit</strong> et sans publicité intrusive.<br class="tipeee-br" />
+          Si les cours vous ont aidé, un petit coup de pouce fait vraiment la différence&nbsp;!
+        </p>
         <a
-          href="https://fr.tipeee.com/collegelm"
+          href="https://fr.tipeee.com/revizon/"
           target="_blank"
           rel="noopener noreferrer"
           class="tipeee-link"
@@ -98,7 +102,7 @@ const {
           <span class="tipeee-heart">❤️</span>
           <div class="tipeee-text">
             <span class="tipeee-title">Soutenir ce site</span>
-            <span class="tipeee-sub">Contribuez sur Tipeee — 1 € aide déjà !</span>
+            <span class="tipeee-sub">Contribuez sur Tipeee — 1&nbsp;€ aide déjà&nbsp;!</span>
           </div>
           <span class="tipeee-arrow">→</span>
         </a>
@@ -195,6 +199,27 @@ const {
 
   .tipeee-banner {
     margin-bottom: 1rem;
+  }
+
+  .tipeee-description {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  [data-theme="dark"] .tipeee-description {
+    color: #94a3b8;
+  }
+
+  .tipeee-br {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    .tipeee-br {
+      display: inline;
+    }
   }
 
   .tipeee-link {

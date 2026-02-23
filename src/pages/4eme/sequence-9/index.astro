@@ -4,33 +4,37 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette première séquence, nous découvrons l'utilisation de  l’IA Générative comme assistant personnel :`;
+const description = `Dans cette séquence, les élèves explorent l'histoire du jeu vidéo et conçoivent leur propre jeu rétro en utilisant des outils de programmation. Du concept au prototype jouable :`;
 
 const activities = [
   {
-    title: "Utiliser l’IA Générative comme assistant personnel",
-    description: "Comment faire bon usage de l'IAG (Intelligence Artificiel Générative ?"
+    title: "Histoire et évolution du jeu vidéo",
+    description: "Comment le jeu vidéo a-t-il évolué depuis ses débuts jusqu'aux jeux actuels ?"
   },
   {
-    title: "Le numérique au quotidien, savoir l’utiliser sans danger",
-    description: "Comment utiliser les outils numérique au quotidien ?"
+    title: "Conception et game design",
+    description: "Comment concevoir les règles, les niveaux et l'interface d'un jeu vidéo rétro ?"
+  },
+  {
+    title: "Programmation du jeu",
+    description: "Comment programmer et tester son propre jeu vidéo ?"
   }
 ];
 
 const level = "4eme";
 ---
 
-<ClassLayout title="Séquence 1 - 4ème" level={level}>
+<ClassLayout title="Séquence 9 — Rétro gaming - 4ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 1 - Les systèmes automatiques</h1>
-  
-  <SequencePresentation 
-    title="L’Intelligence artificielle générative, la sécurité des données"
+  <h1>Séquence 9 — Rétro gaming : créer son jeu vidéo</h1>
+
+  <SequencePresentation
+    title="Rétro gaming : explorer l'histoire du jeu vidéo et créer son propre jeu"
     description={description}
     activities={activities.map(a => a.description)}
   />
 
-  <ActivityLinks sequenceNumber={1} activities={activities} level={level} />
+  <ActivityLinks sequenceNumber={9} activities={activities} level={level} />
 </ClassLayout>
 
 <style>

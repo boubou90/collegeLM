@@ -2,90 +2,147 @@
 import Layout from '../layouts/Layout.astro';
 import GoogleAd from '../components/GoogleAd.astro';
 
-// Remplacez "collegeLM21-21" par votre tag d'affiliation Amazon France
 const AFFILIATE_TAG = 'kennymac-21';
 
-const products = [
+const levels = [
   {
-    id: 1,
-    emoji: '🧮',
-    name: 'Calculatrice Casio FX-92+ Spéciale Collège',
-    description: 'La calculatrice officielle pour les cours de maths et de technologie au collège. Validée pour le Brevet.',
-    price: '~20 €',
-    category: 'Calcul',
-    categoryColor: '#3B82F6',
-    search: 'calculatrice+casio+fx-92+college',
-    badge: '⭐ Recommandée',
+    id: 'all',
+    label: 'Tous niveaux',
+    emoji: '📦',
+    color: '#6366F1',
+    light: '#EEF2FF',
+    products: [
+      {
+        emoji: '🧮',
+        name: 'Calculatrice Casio FX-92+ Spéciale Collège',
+        description: 'La calculatrice officielle pour les cours de maths et de technologie au collège. Validée pour le Brevet des collèges.',
+        price: '~20 €',
+        search: 'calculatrice+casio+fx-92+college',
+        badge: '⭐ Recommandée',
+      },
+      {
+        emoji: '📐',
+        name: 'Set de géométrie scolaire',
+        description: 'Règle, compas, rapporteur, équerres — indispensables pour les activités de dessin technique en technologie.',
+        price: '~8 €',
+        search: 'set+géométrie+compas+regle+equerre+college',
+        badge: null,
+      },
+      {
+        emoji: '💾',
+        name: 'Clé USB 32 Go',
+        description: 'Pour sauvegarder ses travaux de modélisation 3D, fiches de cours et documents numériques.',
+        price: '~8 €',
+        search: 'clé+USB+32+go+école',
+        badge: null,
+      },
+      {
+        emoji: '📓',
+        name: 'Cahier grands carreaux A4 (lot de 3)',
+        description: 'Pour prendre des notes, dessiner des schémas techniques et rédiger des comptes-rendus de TP.',
+        price: '~6 €',
+        search: 'cahier+grands+carreaux+A4+lot+3',
+        badge: null,
+      },
+      {
+        emoji: '🎧',
+        name: 'Casque audio scolaire filaire',
+        description: 'Indispensable pour suivre les cours en ligne et les activités numériques en salle informatique.',
+        price: '~15 €',
+        search: 'casque+audio+filaire+scolaire+enfant',
+        badge: null,
+      },
+    ],
   },
   {
-    id: 2,
-    emoji: '📐',
-    name: 'Set de géométrie scolaire',
-    description: 'Règle, compas, rapporteur, équerres — indispensables pour les activités de dessin technique en technologie.',
-    price: '~8 €',
-    category: 'Géométrie',
-    categoryColor: '#10B981',
-    search: 'set+géométrie+compas+regle+equerre+college',
-    badge: null,
+    id: '5eme',
+    label: '5ème — Réseaux & Objets techniques',
+    emoji: '🌐',
+    color: '#3B82F6',
+    light: '#EFF6FF',
+    products: [
+      {
+        emoji: '🔌',
+        name: 'Câble réseau RJ45 Cat.6 (lot de 2)',
+        description: 'Indispensable pour la séquence sur le réseau informatique. Permet de comprendre les connexions physiques d\'un réseau local.',
+        price: '~8 €',
+        search: 'câble+réseau+RJ45+cat6+lot',
+        badge: '📡 Séquence 1',
+      },
+      {
+        emoji: '🔧',
+        name: 'Kit tournevis de précision',
+        description: 'Pour démonter et analyser la souris en classe (séquence sur les objets techniques). Torx, cruciforme, plat.',
+        price: '~10 €',
+        search: 'tournevis+précision+kit+démontage+informatique',
+        badge: '🖱️ Séquence 4',
+      },
+    ],
   },
   {
-    id: 3,
-    emoji: '💾',
-    name: 'Clé USB 32 Go',
-    description: 'Pour sauvegarder ses travaux de modélisation 3D, fiches de cours et documents numériques.',
-    price: '~8 €',
-    category: 'Informatique',
-    categoryColor: '#6366F1',
-    search: 'clé+USB+32+go+école',
-    badge: null,
+    id: '4eme',
+    label: '4ème — Domotique & Programmation',
+    emoji: '🏠',
+    color: '#10B981',
+    light: '#ECFDF5',
+    products: [
+      {
+        emoji: '🤖',
+        name: 'Kit BBC micro:bit V2',
+        description: 'La carte de programmation utilisée dans les cours de 4ème. Idéal pour prolonger les projets de domotique et de robotique à la maison.',
+        price: '~30 €',
+        search: 'microbit+v2+kit+programmation+enfant',
+        badge: '🎁 Idée cadeau',
+      },
+      {
+        emoji: '📡',
+        name: 'Switch réseau 5 ports + câbles RJ45',
+        description: 'Pour les séquences sur le réseau local et le WiFi (séquence 7). Comprendre l\'architecture d\'un réseau réel.',
+        price: '~20 €',
+        search: 'switch+réseau+5+ports+RJ45+bureau',
+        badge: '📡 Séquence 7',
+      },
+    ],
   },
   {
-    id: 4,
-    emoji: '📓',
-    name: 'Cahier grands carreaux A4 (lot de 3)',
-    description: 'Pour prendre des notes, dessiner des schémas techniques et rédiger des comptes-rendus de TP.',
-    price: '~6 €',
-    category: 'Papeterie',
-    categoryColor: '#F59E0B',
-    search: 'cahier+grands+carreaux+A4+lot+3',
-    badge: null,
-  },
-  {
-    id: 5,
-    emoji: '🎧',
-    name: 'Casque audio scolaire filaire',
-    description: 'Indispensable pour suivre les cours en ligne et les activités numériques en salle informatique.',
-    price: '~15 €',
-    category: 'Audio',
-    categoryColor: '#EC4899',
-    search: 'casque+audio+filaire+scolaire+enfant',
-    badge: null,
-  },
-  {
-    id: 6,
-    emoji: '🤖',
-    name: 'Kit découverte électronique / micro:bit',
-    description: 'Initiation à l\'électronique et à la programmation pour les passionnés. Idéal pour prolonger les projets du cours.',
-    price: '~30 €',
-    category: 'Électronique',
-    categoryColor: '#F97316',
-    search: 'microbit+kit+electronique+enfant+programmation',
-    badge: '🎁 Idée cadeau',
+    id: '3eme',
+    label: '3ème — Préparation Brevet',
+    emoji: '🎓',
+    color: '#F97316',
+    light: '#FFF7ED',
+    products: [
+      {
+        emoji: '📚',
+        name: 'Annales Brevet Technologie — sujets corrigés',
+        description: 'Recueil des sujets du Brevet des collèges en technologie avec corrigés détaillés. Indispensable pour les révisions de 3ème.',
+        price: '~10 €',
+        search: 'annales+brevet+technologie+3eme+corrigés',
+        badge: '🎓 Brevet',
+      },
+      {
+        emoji: '⚡',
+        name: 'Kit Arduino UNO starter',
+        description: 'Pour approfondir la programmation de systèmes automatisés vue en 3ème. Capteurs, LED, moteurs — parfait pour les projets avancés.',
+        price: '~35 €',
+        search: 'arduino+uno+kit+starter+composants+électronique',
+        badge: '🎁 Idée cadeau',
+      },
+    ],
   },
 ];
 ---
 
 <Layout
   title="Matériel Recommandé pour les Cours de Technologie Collège"
-  description="Matériel recommandé pour les cours de technologie au collège : kits Arduino, SketchUp, robotique et livres sélectionnés par notre enseignant."
+  description="Matériel recommandé pour les cours de technologie au collège : calculatrice, câbles RJ45, kit micro:bit, Arduino et annales Brevet, sélectionnés par notre enseignant."
 >
   <main class="page-container">
-    <header class="page-header">
+    <header class="page-header" data-aos="fade-up">
       <h1>📦 Matériel recommandé</h1>
-      <p class="page-subtitle">Tout le matériel utile pour réussir en technologie au collège</p>
+      <p class="page-subtitle">Tout le matériel utile pour réussir en technologie au collège — sélectionné par l'enseignant</p>
     </header>
 
-    <div class="disclaimer">
+    <div class="disclaimer" data-aos="fade-up">
       <span class="disclaimer-icon">ℹ️</span>
       <p>
         Ces liens sont des <strong>liens d'affiliation Amazon</strong>. Si vous achetez via ces liens,
@@ -96,43 +153,50 @@ const products = [
 
     <GoogleAd slot="5227967907" format="auto" />
 
-    <div class="products-grid">
-      {products.map(p => (
-        <div class="product-card">
-          {p.badge && (
-            <span class="product-badge" style={`background: ${p.categoryColor};`}>{p.badge}</span>
-          )}
-          <div class="product-emoji">{p.emoji}</div>
-          <span class="category-tag" style={`background: ${p.categoryColor}18; color: ${p.categoryColor}; border: 1px solid ${p.categoryColor}30;`}>
-            {p.category}
-          </span>
-          <h2 class="product-name">{p.name}</h2>
-          <p class="product-description">{p.description}</p>
-          <div class="product-footer">
-            <span class="product-price">{p.price}</span>
-            <a
-              href={`https://www.amazon.fr/s?k=${p.search}&tag=${AFFILIATE_TAG}`}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              class="product-cta"
-              style={`background: ${p.categoryColor};`}
-            >
-              Voir sur Amazon →
-            </a>
-          </div>
+    {levels.map((lvl, li) => (
+      <section class="level-section" data-aos="fade-up" data-aos-delay={li * 80}>
+        <div class="level-header" style={`--lvl-color: ${lvl.color}; --lvl-light: ${lvl.light};`}>
+          <span class="level-emoji">{lvl.emoji}</span>
+          <h2 class="level-title">{lvl.label}</h2>
         </div>
-      ))}
-    </div>
+
+        <div class="products-grid">
+          {lvl.products.map(p => (
+            <div class="product-card">
+              {p.badge && (
+                <span class="product-badge" style={`background: ${lvl.color};`}>{p.badge}</span>
+              )}
+              <div class="product-emoji">{p.emoji}</div>
+              <h3 class="product-name">{p.name}</h3>
+              <p class="product-description">{p.description}</p>
+              <div class="product-footer">
+                <span class="product-price">{p.price}</span>
+                <a
+                  href={`https://www.amazon.fr/s?k=${p.search}&tag=${AFFILIATE_TAG}`}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  class="product-cta"
+                  style={`background: ${lvl.color};`}
+                >
+                  Voir sur Amazon →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
 
     <GoogleAd slot="5227967907" format="horizontal" />
 
-    <section class="tips-section">
+    <section class="tips-section" data-aos="fade-up">
       <h2>💡 Conseils pour bien s'équiper</h2>
       <ul class="tips-list">
         <li>La calculatrice Casio FX-92+ est souvent exigée lors du Brevet — vérifiez avec votre professeur.</li>
         <li>Une clé USB personnelle permet de sauvegarder ses travaux entre les séances en salle informatique.</li>
         <li>Le set de géométrie sert aussi bien en maths qu'en technologie pour les représentations graphiques.</li>
-        <li>Pour les projets Arduino/micro:bit, vérifiez d'abord avec l'enseignant si le matériel est déjà fourni.</li>
+        <li>Pour les projets micro:bit ou Arduino, vérifiez d'abord avec l'enseignant si le matériel est déjà fourni en classe.</li>
+        <li>Les annales Brevet sont recommandées dès le début de la 3ème pour s'entraîner régulièrement.</li>
       </ul>
     </section>
   </main>
@@ -161,6 +225,10 @@ const products = [
     font-size: 1.1rem;
   }
 
+  [data-theme="dark"] .page-subtitle {
+    color: #94a3b8;
+  }
+
   .disclaimer {
     display: flex;
     align-items: flex-start;
@@ -176,6 +244,12 @@ const products = [
     line-height: 1.6;
   }
 
+  [data-theme="dark"] .disclaimer {
+    background: #1c1400;
+    border-color: #78350f;
+    color: #fde68a;
+  }
+
   .disclaimer-icon {
     font-size: 1.2rem;
     flex-shrink: 0;
@@ -186,11 +260,42 @@ const products = [
     margin: 0;
   }
 
+  /* Level sections */
+  .level-section {
+    margin-bottom: 3rem;
+  }
+
+  .level-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--lvl-light);
+    border-left: 5px solid var(--lvl-color);
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  [data-theme="dark"] .level-header {
+    background: rgba(255,255,255,0.05);
+  }
+
+  .level-emoji {
+    font-size: 1.5rem;
+  }
+
+  .level-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--lvl-color);
+    margin: 0;
+  }
+
+  /* Products grid */
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 2rem;
   }
 
   .product-card {
@@ -230,16 +335,6 @@ const products = [
   .product-emoji {
     font-size: 2.5rem;
     line-height: 1;
-  }
-
-  .category-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    letter-spacing: 0.03em;
-    align-self: flex-start;
   }
 
   .product-name {
@@ -307,6 +402,7 @@ const products = [
     transform: translateY(-1px);
   }
 
+  /* Tips */
   .tips-section {
     background: #f8fafc;
     border-radius: 1rem;

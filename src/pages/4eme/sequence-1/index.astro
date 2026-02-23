@@ -4,32 +4,32 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette première séquence, nous découvrons l'utilisation de  l’IA Générative comme assistant personnel :`;
+const description = `Dans cette première séquence, les élèves découvrent l’Intelligence Artificielle générative (IAG) et apprennent à l’utiliser comme assistant personnel de façon efficace et critique. Ils développent un regard éclairé sur ses avantages, ses limites et ses biais :`;
 
 const activities = [
   {
     title: "Utiliser l’IA Générative comme assistant personnel",
-    description: "Comment faire bon usage de l'IAG (Intelligence Artificiel Générative ?"
+    description: "Comment faire bon usage de l’IAG (Intelligence Artificielle Générative) ?"
   },
   {
     title: "Le numérique au quotidien, savoir l’utiliser sans danger",
-    description: "Comment utiliser les outils numérique au quotidien ?"
+    description: "Comment utiliser les outils numériques au quotidien de façon sûre et responsable ?"
   },
-{
-    title: "Ressources",
-    description: " Les intelligences artificielles génératives (IAG), prompts, avantages et biais (Hors programme)"
+  {
+    title: "Ressources — IAG, prompts et biais",
+    description: "Les intelligences artificielles génératives (IAG), prompts, avantages et biais (approfondissement)"
   }
 ];
 
 const level = "4eme";
 ---
 
-<ClassLayout title="Séquence 1 - 4ème" level={level}>
+<ClassLayout title="Séquence 1 — L’Intelligence Artificielle - 4ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 1 - L’évolution des Objets et Systèmes</h1>
-  
-  <SequencePresentation 
-    title="Les objets et les systèmes techniques : leurs usages et leurs interactions à découvrir et à analyser"
+  <h1>Séquence 1 — L’Intelligence Artificielle</h1>
+
+  <SequencePresentation
+    title="L’Intelligence Artificielle générative : utiliser l’IA comme assistant personnel"
     description={description}
     activities={activities.map(a => a.description)}
   />
