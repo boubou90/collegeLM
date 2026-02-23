@@ -8,6 +8,8 @@ import Search from '../components/Search';
 <Layout title="La technologie au collège" description="Ressources pédagogiques complètes pour les cours de technologie au collège. Découvrez nos programmes détaillés, activités pratiques et supports de cours pour les classes de 5ème, 4ème et 3ème.">
 	<main>
 		<header class="hero" data-aos="fade-down">
+			<div class="hero-gear hero-gear-left">⚙</div>
+			<div class="hero-gear hero-gear-right">⚙</div>
 			<div class="hero-content">
 				<div class="logos">
 					<a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel" target="_blank" rel="noopener noreferrer">
@@ -20,8 +22,11 @@ import Search from '../components/Search';
 						<img src="/images/logo-pcn.png" alt="Logo Paris Classe Numérique" class="logo logo-pcn floating" />
 					</a>
 				</div>
-				<h1 class="title">La technologie au collège</h1>
-				<button id="openLoginModal" class="login-button">Connexion</button>
+				<div class="hero-text">
+					<h1 class="title">La technologie au collège</h1>
+					<p class="hero-subtitle">Découvre, comprends, crée</p>
+					<a href="#level-navigation" class="hero-cta">Accède à tes cours →</a>
+				</div>
 			</div>
 		</header>
 
@@ -43,18 +48,18 @@ import Search from '../components/Search';
 				<!-- Publicité après l'introduction -->
 				<GoogleAd slot="4342760910" format="auto" />
 
-				<nav class="level-navigation">
-					<a href="/5eme" class="level-button" data-aos="fade-up" data-aos-delay="100">
+				<nav class="level-navigation" id="level-navigation">
+					<a href="/5eme" class="level-button level-5eme" data-aos="fade-up" data-aos-delay="100">
 						<span class="level-number">5</span>
 						<span class="level-text">ème</span>
 						<p class="level-description">Découverte des réseaux, objets techniques et modélisation 3D</p>
 					</a>
-					<a href="/4eme" class="level-button" data-aos="fade-up" data-aos-delay="200">
+					<a href="/4eme" class="level-button level-4eme" data-aos="fade-up" data-aos-delay="200">
 						<span class="level-number">4</span>
 						<span class="level-text">ème</span>
 						<p class="level-description">Systèmes automatiques, programmation et analyse fonctionnelle</p>
 					</a>
-					<a href="/3eme" class="level-button" data-aos="fade-up" data-aos-delay="300">
+					<a href="/3eme" class="level-button level-3eme" data-aos="fade-up" data-aos-delay="300">
 						<span class="level-number">3</span>
 						<span class="level-text">ème</span>
 						<p class="level-description">Préparation au Brevet, orientation et projets techniques avancés</p>
@@ -194,7 +199,7 @@ import Search from '../components/Search';
 
 	.hero {
 		position: relative;
-		background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+		background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
 		border-radius: 1.5rem;
 		margin: 1rem auto;
 		max-width: 1000px;
@@ -293,6 +298,7 @@ import Search from '../components/Search';
 		letter-spacing: -0.02em;
 		margin: 0;
 		padding: 0;
+		animation: fadeInUp 0.8s ease-out both;
 	}
 
 	.intro-section {
@@ -341,14 +347,27 @@ import Search from '../components/Search';
 	.level-button:hover {
 		transform: translateY(-5px);
 		box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-		background: var(--primary);
 	}
+
+	/* Couleurs par niveau */
+	.level-5eme { border-top: 4px solid #3B82F6; }
+	.level-4eme { border-top: 4px solid #10B981; }
+	.level-3eme { border-top: 4px solid #F97316; }
+
+	.level-5eme .level-number { color: #3B82F6; }
+	.level-4eme .level-number { color: #10B981; }
+	.level-3eme .level-number { color: #F97316; }
+
+	.level-5eme:hover { background: #3B82F6; }
+	.level-4eme:hover { background: #10B981; }
+	.level-3eme:hover { background: #F97316; }
 
 	.level-number {
 		font-size: 3rem;
 		font-weight: 800;
 		color: var(--primary);
 		line-height: 1;
+		transition: color 0.3s ease;
 	}
 
 	.level-button:hover .level-number {
@@ -604,27 +623,84 @@ import Search from '../components/Search';
 		background: var(--primary-dark);
 	}
 
-	.login-button {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		background: var(--primary);
-		color: white;
-		text-decoration: none;
-		border-radius: 0.5rem;
-		transition: background 0.3s ease;
-		margin-top: 1rem;
-		cursor: pointer;
-		border: none;
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
 	}
 
-	.login-button:hover {
-		background: var(--primary-dark);
+	.hero-subtitle {
+		color: rgba(255, 255, 255, 0.85);
+		font-size: 1.3rem;
+		font-weight: 400;
+		letter-spacing: 0.05em;
+		animation: fadeInUp 0.8s ease-out 0.3s both;
+	}
+
+	.hero-cta {
+		display: inline-block;
+		padding: 0.75rem 2rem;
+		background: rgba(255, 255, 255, 0.15);
+		color: white;
+		text-decoration: none;
+		border-radius: 2rem;
+		font-weight: 600;
+		font-size: 1rem;
+		border: 2px solid rgba(255, 255, 255, 0.4);
+		transition: all 0.3s ease;
+		animation: fadeInUp 0.8s ease-out 0.5s both;
+		backdrop-filter: blur(8px);
+	}
+
+	.hero-cta:hover {
+		background: rgba(255, 255, 255, 0.25);
+		border-color: rgba(255, 255, 255, 0.7);
+		transform: translateY(-2px);
+	}
+
+	.hero-gear {
+		position: absolute;
+		font-size: 8rem;
+		opacity: 0.07;
+		user-select: none;
+		pointer-events: none;
+		top: 50%;
+	}
+
+	.hero-gear-left {
+		left: 1rem;
+		animation: spinLeft 25s linear infinite;
+	}
+
+	.hero-gear-right {
+		right: 1rem;
+		animation: spinRight 25s linear infinite;
+	}
+
+	@keyframes spinLeft {
+		from { transform: translateY(-50%) rotate(0deg); }
+		to { transform: translateY(-50%) rotate(360deg); }
+	}
+
+	@keyframes spinRight {
+		from { transform: translateY(-50%) rotate(0deg); }
+		to { transform: translateY(-50%) rotate(-360deg); }
+	}
+
+	@keyframes fadeInUp {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
 	}
 
 	@media (max-width: 768px) {
 		.hero {
 			margin: 0.5rem;
 			border-radius: 1rem;
+		}
+
+		.hero-gear {
+			display: none;
 		}
 
 		.hero-content {

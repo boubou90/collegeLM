@@ -7,18 +7,25 @@ interface Props {
 }
 
 const { count, level } = Astro.props;
+const levelLabel = level === '5eme' ? '5ème' : level === '4eme' ? '4ème' : '3ème';
 ---
 
 <div class="sequence-grid" data-aos="fade-up">
   {Array.from({ length: count }, (_, i) => (
-    <a 
-      href={`/${level}/sequence-${i + 1}`} 
+    <a
+      href={`/${level}/sequence-${i + 1}`}
       class="sequence-button"
       style={`--button-color: ${sequenceColors[i].bg}; --button-hover: ${sequenceColors[i].hover}`}
       data-aos="fade-up"
-      data-aos-delay={i * 100}
+      data-aos-delay={i * 80}
     >
-      <span>Séquence {i + 1}</span>
+      <span class="seq-badge">{levelLabel}</span>
+      <svg class="seq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+      <span class="seq-title">Séquence {i + 1}</span>
+      <span class="seq-progress">{i + 1} / {count}</span>
     </a>
   ))}
 </div>
@@ -26,48 +33,70 @@ const { count, level } = Astro.props;
 <style>
   .sequence-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
     margin-top: 2rem;
   }
 
   .sequence-button {
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem 1rem;
     background: var(--button-color);
     color: white;
     border-radius: 0.75rem;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s infinite;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
   }
 
   .sequence-button:hover {
-    transform: translateY(-2px);
+    transform: scale(1.02);
     background: var(--button-hover);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    animation: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
+  .seq-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.22);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(4px);
+  }
+
+  .seq-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    opacity: 0.9;
+  }
+
+  .seq-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .seq-progress {
+    font-size: 0.72rem;
+    opacity: 0.75;
+    font-weight: 500;
   }
 
   @media (max-width: 768px) {
     .sequence-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
   }
 </style>
