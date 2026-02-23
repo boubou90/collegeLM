@@ -42,26 +42,31 @@ const cours = [
     description={programDescription}
   />
 
-  <SequenceButtons count={1} level={level} />
-
-  <div class="cours-grid" data-aos="fade-up">
+  <!-- COURS -->
+  <h2 class="section-title" data-aos="fade-up">Cours</h2>
+  <div class="card-grid" data-aos="fade-up">
     {cours.map((c, i) => (
       <a
         href={c.href}
-        class="cours-card"
+        class="card"
         style={`--c: ${c.color}`}
         data-aos="fade-up"
         data-aos-delay={i * 80}
       >
-        <span class="cours-badge">3ème</span>
-        <svg class="cours-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <span class="card-badge">3ème</span>
+        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
         </svg>
-        <span class="cours-label">{c.label}</span>
+        <span class="card-label">{c.label}</span>
       </a>
     ))}
   </div>
+
+  <!-- SÉQUENCES -->
+  <h2 class="section-title" data-aos="fade-up">Séquences</h2>
+  <SequenceButtons count={1} level={level} />
+
 </ClassLayout>
 
 <style>
@@ -71,14 +76,24 @@ const cours = [
     margin-bottom: 2rem;
   }
 
-  .cours-grid {
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid #e2e8f0;
+    letter-spacing: 0.01em;
+  }
+
+  .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
-    margin-top: 2rem;
   }
 
-  .cours-card {
+  .card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -91,18 +106,18 @@ const cours = [
     border-radius: 0.75rem;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
     overflow: hidden;
   }
 
-  .cours-card:hover {
+  .card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     filter: brightness(1.08);
   }
 
-  .cours-badge {
+  .card-badge {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
@@ -116,22 +131,21 @@ const cours = [
     backdrop-filter: blur(4px);
   }
 
-  .cours-icon {
+  .card-icon {
     width: 1.8rem;
     height: 1.8rem;
     opacity: 0.9;
   }
 
-  .cours-label {
+  .card-label {
     font-size: 0.875rem;
     font-weight: 700;
     text-align: center;
     line-height: 1.3;
-    letter-spacing: 0.01em;
   }
 
   @media (max-width: 768px) {
-    .cours-grid {
+    .card-grid {
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
   }
