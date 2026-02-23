@@ -8,6 +8,15 @@ const level = "3eme";
 const programDescription = `En classe de troisième, le programme de technologie comprend l'étude des objets techniques, l'analyse de leur fonctionnement et leur impact sur la société. On aborde également des activités pratiques qui relient les sciences à la technologie, souvent à travers des projets de design et de conception. Ce programme vise à amener les élèves à développer une compréhension critique des technologies et de leurs applications dans divers domaines, y compris des liaisons avec les sciences de la vie et de la terre (SVT) et la physique-chimie.
 
 Séquence 1 : Les chaînes d'énergie et d'information`;
+
+const cours = [
+  { label: "Chaînes d'énergie et d'information", href: "/3eme/cours/cours-chaine-energie-information", color: "#ef4444" },
+  { label: "Adressage IP",                        href: "/3eme/cours/adressage-IP",                   color: "#3b82f6" },
+  { label: "La Bête à Cornes",                    href: "/3eme/cours/la-bete-a-cornes",               color: "#10b981" },
+  { label: "Étude du Besoin",                     href: "/3eme/cours/etude-du-besoin",                color: "#f59e0b" },
+  { label: "Les Logigrammes",                     href: "/3eme/cours/les-logigrammes",                color: "#8b5cf6" },
+  { label: "Les Formes d'Énergies",               href: "/3eme/cours/les-formes-d-energies",          color: "#0891b2" },
+];
 ---
 
 <ClassLayout title="Cours de technologie — 3ème" level={level} description="Cours de technologie en 3ème : préparation au Brevet, projets techniques avancés et orientation post-3ème. Collège Louise Michel, Paris.">
@@ -35,29 +44,24 @@ Séquence 1 : Les chaînes d'énergie et d'information`;
 
   <SequenceButtons count={1} level={level} />
 
-  <section class="cours-section" data-aos="fade-up">
-    <h2 class="cours-title">📚 Fiches de cours</h2>
-    <div class="cours-grid">
-      <a href="/3eme/cours/cours-chaine-energie-information" class="cours-card" style="--c: #ef4444">
-        Chaînes d'énergie et d'information
+  <div class="cours-grid" data-aos="fade-up">
+    {cours.map((c, i) => (
+      <a
+        href={c.href}
+        class="cours-card"
+        style={`--c: ${c.color}`}
+        data-aos="fade-up"
+        data-aos-delay={i * 80}
+      >
+        <span class="cours-badge">3ème</span>
+        <svg class="cours-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        <span class="cours-label">{c.label}</span>
       </a>
-      <a href="/3eme/cours/adressage-IP" class="cours-card" style="--c: #3b82f6">
-        Adressage IP
-      </a>
-      <a href="/3eme/cours/la-bete-a-cornes" class="cours-card" style="--c: #10b981">
-        La Bête à Cornes
-      </a>
-      <a href="/3eme/cours/etude-du-besoin" class="cours-card" style="--c: #f59e0b">
-        Étude du Besoin
-      </a>
-      <a href="/3eme/cours/les-logigrammes" class="cours-card" style="--c: #8b5cf6">
-        Les Logigrammes
-      </a>
-      <a href="/3eme/cours/les-formes-d-energies" class="cours-card" style="--c: #0891b2">
-        Les Formes d'Énergies
-      </a>
-    </div>
-  </section>
+    ))}
+  </div>
 </ClassLayout>
 
 <style>
@@ -67,43 +71,63 @@ Séquence 1 : Les chaînes d'énergie et d'information`;
     margin-bottom: 2rem;
   }
 
-  .cours-section {
-    margin-top: 2.5rem;
-  }
-
-  .cours-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 1rem;
-  }
-
   .cours-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.75rem;
+    gap: 1rem;
+    margin-top: 2rem;
   }
 
   .cours-card {
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 0.9rem 1rem;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem 1rem;
     background: var(--c);
     color: white;
     border-radius: 0.75rem;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 1.4;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
   }
 
   .cours-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.08);
+  }
+
+  .cours-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.22);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(4px);
+  }
+
+  .cours-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    opacity: 0.9;
+  }
+
+  .cours-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
   }
 
   @media (max-width: 768px) {
