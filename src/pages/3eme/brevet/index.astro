@@ -3,6 +3,7 @@ import ClassLayout from '../../../layouts/ClassLayout.astro';
 import BrevetSection from '../../../components/Brevet/BrevetSection.astro';
 import EpreuveCard from '../../../components/Brevet/EpreuveCard.astro';
 import BackButton from '../../../components/BackButton.astro';
+import BrevetQuiz from '../../../components/BrevetQuiz';
 
 const epreuves = [
   {
@@ -295,6 +296,13 @@ const brevetSubjects = [
           <EpreuveCard {...epreuve} />
         ))}
       </div>
+    </BrevetSection>
+
+    <BrevetSection
+      title="🎯 Quiz type Brevet — Technologie"
+      description="5 questions sur les thèmes clés du programme : chaînes d'énergie, logigrammes, analyse fonctionnelle et réseaux. Avec explications détaillées pour chaque réponse."
+    >
+      <BrevetQuiz client:load />
     </BrevetSection>
   </div>
 </ClassLayout>

@@ -6,30 +6,35 @@ const QUESTIONS = [
     a: ["Afficher des images", "Relier des réseaux et diriger les données", "Stocker des fichiers", "Imprimer des documents"],
     c: 1,
     level: '5ème',
+    explanation: "Un routeur lit l'adresse IP des paquets de données et les envoie vers le bon réseau destinataire. C'est lui qui relie le réseau du collège à Internet.",
   },
   {
     q: "Qu'est-ce qu'un diagramme « Bête à Cornes » en technologie ?",
     a: ["Un schéma électrique", "Un plan architectural en 3D", "Un outil d'analyse fonctionnelle du besoin", "Un diagramme de circuits"],
     c: 2,
     level: '3ème',
+    explanation: "La bête à cornes répond à 3 questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ? C'est un outil d'analyse du besoin.",
   },
   {
     q: "Que signifie l'acronyme CAO ?",
     a: ["Calcul Automatique d'Objets", "Conception Assistée par Ordinateur", "Commande d'Accès Ouvert", "Création d'Applications Originales"],
     c: 1,
     level: '5ème',
+    explanation: "La CAO (Conception Assistée par Ordinateur) désigne les logiciels de modélisation 3D comme SketchUp ou SolidWorks, utilisés pour concevoir des objets techniques.",
   },
   {
     q: "Dans une chaîne d'énergie, quelle est la fonction qui fournit l'énergie au système ?",
     a: ["Transmettre", "Stocker", "Convertir", "Alimenter"],
     c: 3,
     level: '3ème',
+    explanation: "La chaîne d'énergie suit l'ordre : Alimenter → Distribuer → Convertir → Transmettre. La fonction 'Alimenter' est la source d'énergie du système (pile, secteur, panneau solaire…).",
   },
   {
     q: "Quel langage de programmation est principalement enseigné en 4ème ?",
     a: ["JavaScript", "Java", "Python", "C++"],
     c: 2,
     level: '4ème',
+    explanation: "Python est utilisé en 4ème car il est lisible et simple à apprendre. Il est idéal pour contrôler des systèmes automatiques et est très utilisé dans la domotique et la robotique.",
   },
 ];
 
@@ -74,9 +79,6 @@ export default function Quiz() {
 
   const handleNext = () => {
     if (current + 1 >= QUESTIONS.length) {
-      const finalScore = score + (selected === QUESTIONS[current].c ? 1 : 0);
-      // score already updated via setScore, but we need to use the functional update
-      // Use setTimeout to ensure score state has settled
       setFinished(true);
       setTimeout(() => {
         setScore(s => {
@@ -111,7 +113,6 @@ export default function Quiz() {
     margin: '2rem auto',
   };
 
-  // Intro screen
   if (!started) {
     return (
       <section style={container}>
@@ -133,12 +134,8 @@ export default function Quiz() {
             style={{
               padding: '0.75rem 2rem',
               background: 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)',
-              color: 'white',
-              border: 'none',
-              borderRadius: '2rem',
-              fontSize: '1rem',
-              fontWeight: 700,
-              cursor: 'pointer',
+              color: 'white', border: 'none', borderRadius: '2rem',
+              fontSize: '1rem', fontWeight: 700, cursor: 'pointer',
               boxShadow: '0 4px 14px rgba(99,102,241,0.4)',
             }}
           >
@@ -149,12 +146,10 @@ export default function Quiz() {
     );
   }
 
-  // Finished screen
   if (finished) {
-    const msg = score >= 4 ? 'Excellent ! Tu maîtrises bien le programme 🎉' :
-                score >= 3 ? 'Bien joué ! Continue comme ça 👍' :
-                score >= 2 ? 'Pas mal, encore un peu de révisions 📖' :
-                'Courage ! Retourne voir tes cours 💪';
+    const msg = score >= 5 ? 'Parfait ! Tu maîtrises le programme 🌟' :
+                score >= 3 ? 'Très bien ! Relis les parties manquées 📚' :
+                'Courage ! Reprends le cours et réessaie 💪';
     return (
       <section style={container}>
         <div style={{ textAlign: 'center' }}>
@@ -183,8 +178,7 @@ export default function Quiz() {
             <a
               href="/3eme/revisions"
               style={{
-                padding: '0.65rem 1.5rem',
-                background: '#f1f5f9',
+                padding: '0.65rem 1.5rem', background: '#f1f5f9',
                 color: '#1e3a8a', borderRadius: '2rem',
                 fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none',
                 border: '2px solid #e2e8f0',
@@ -199,7 +193,8 @@ export default function Quiz() {
   }
 
   const q = QUESTIONS[current];
-  const progress = ((current) / QUESTIONS.length) * 100;
+  const progress = (current / QUESTIONS.length) * 100;
+  const isCorrect = selected !== null && selected === q.c;
 
   return (
     <section style={container}>
@@ -218,11 +213,9 @@ export default function Quiz() {
       {/* Progress bar */}
       <div style={{ background: '#e2e8f0', borderRadius: '999px', height: '6px', marginBottom: '1.5rem', overflow: 'hidden' }}>
         <div style={{
-          width: `${progress}%`,
-          height: '100%',
+          width: `${progress}%`, height: '100%',
           background: 'linear-gradient(90deg, #1e40af, #7c3aed)',
-          borderRadius: '999px',
-          transition: 'width 0.4s ease',
+          borderRadius: '999px', transition: 'width 0.4s ease',
         }} />
       </div>
 
@@ -259,7 +252,6 @@ export default function Quiz() {
                 padding: '0.9rem 1.2rem', textAlign: 'left',
                 fontSize: '0.95rem', fontWeight: 500,
                 cursor, transition: 'all 0.2s ease',
-                transform: selected === null ? undefined : undefined,
               }}
               onMouseEnter={e => { if (selected === null) (e.currentTarget as HTMLButtonElement).style.borderColor = '#6366f1'; }}
               onMouseLeave={e => { if (selected === null) (e.currentTarget as HTMLButtonElement).style.borderColor = '#e2e8f0'; }}
@@ -279,9 +271,23 @@ export default function Quiz() {
         })}
       </div>
 
+      {/* Explanation */}
+      {selected !== null && q.explanation && (
+        <div style={{
+          marginTop: '1rem', padding: '0.85rem 1rem',
+          background: isCorrect ? '#f0fdf4' : '#fef2f2',
+          border: `1px solid ${isCorrect ? '#bbf7d0' : '#fecaca'}`,
+          borderRadius: '0.625rem', fontSize: '0.88rem',
+          color: isCorrect ? '#166534' : '#991b1b', lineHeight: 1.5,
+        }}>
+          <strong>{isCorrect ? '✅ Bonne réponse !' : '❌ Pas tout à fait…'}</strong>
+          {' '}{q.explanation}
+        </div>
+      )}
+
       {/* Next button */}
       {selected !== null && (
-        <div style={{ marginTop: '1.25rem', textAlign: 'right' }}>
+        <div style={{ marginTop: '1rem', textAlign: 'right' }}>
           <button
             onClick={handleNext}
             style={{
