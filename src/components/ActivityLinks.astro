@@ -39,6 +39,23 @@ const { sequenceNumber, activities, level } = Astro.props;
       </svg>
     </a>
   ))}
+
+  <a
+    href={`/${level}/sequence-${sequenceNumber}/quiz`}
+    class="quiz-link"
+    data-aos="fade-up"
+    data-aos-delay={activities.length * 100}
+  >
+    <div class="quiz-icon">🎯</div>
+    <div class="quiz-content">
+      <h3>Teste tes connaissances</h3>
+      <p>20 questions pour vérifier ce que tu as retenu sur cette séquence</p>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 12h14"></path>
+      <path d="m12 5 7 7-7 7"></path>
+    </svg>
+  </a>
 </nav>
 
 
@@ -116,8 +133,65 @@ const { sequenceNumber, activities, level } = Astro.props;
     transform: translateX(5px);
   }
 
+  .quiz-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    margin-top: 0.5rem;
+  }
+
+  .quiz-link:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  }
+
+  .quiz-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .quiz-content {
+    flex: 1;
+  }
+
+  .quiz-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: white;
+  }
+
+  .quiz-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .quiz-link .arrow-icon {
+    stroke: white;
+  }
+
   @media (max-width: 768px) {
     .activity-link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .quiz-link {
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;

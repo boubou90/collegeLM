@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SequenceQuiz from '../../../components/SequenceQuiz';
+import { quizData } from '../../../data/quizData';
+
+export function getStaticPaths() {
+  return Object.keys(quizData['4eme']).map(n => ({ params: { n } }));
+}
+
+const { n } = Astro.params;
+const seqNum = parseInt(n);
+const quiz = quizData['4eme'][seqNum];
+---
+
+<Layout title={`Quiz Séquence ${seqNum} – 4ème`} description={`Teste tes connaissances sur : ${quiz.title}`}>
+  <main style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
+    <nav style="margin-bottom: 1.5rem;">
+      <a href={`/4eme/sequence-${seqNum}`} style="color: #10B981; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;">
+        ← Retour à la séquence {seqNum}
+      </a>
+    </nav>
+    <SequenceQuiz
+      client:load
+      questions={quiz.questions}
+      sequenceTitle={quiz.title}
+      level="4eme"
+      sequenceNumber={seqNum}
+    />
+  </main>
+</Layout>
