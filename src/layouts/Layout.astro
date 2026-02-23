@@ -44,13 +44,32 @@ const {
     <script is:inline type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "La technologie au collège",
-        "description": "Ressources pédagogiques pour les cours de technologie au collège",
-        "url": "https://collegelouisemichel.net",
-        "sameAs": [
-          "https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
-          "https://www.ac-paris.fr/"
+        "@graph": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "La technologie au collège — Collège Louise Michel",
+            "description": "Ressources pédagogiques gratuites pour les cours de technologie au collège",
+            "url": "https://collegelouisemichel.net",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paris",
+              "addressCountry": "FR"
+            },
+            "sameAs": [
+              "https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
+              "https://www.ac-paris.fr/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://collegelouisemichel.net",
+            "name": "La technologie au collège",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://collegelouisemichel.net/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
         ]
       }
     </script>

@@ -18,9 +18,24 @@ const LEVEL_CONFIG: Record<string, { label: string; color: string; gradient: str
   '3eme': { label: '3ème',  color: '#F97316', gradient: 'linear-gradient(135deg, #F97316, #ef4444)' },
 };
 const levelConfig = LEVEL_CONFIG[level] ?? { label: level, color: '#6366f1', gradient: 'linear-gradient(135deg,#6366f1,#8b5cf6)' };
+
+const courseSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": title,
+  "description": description ?? `Cours de technologie en ${levelConfig.label} au Collège Louise Michel Paris.`,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Collège Louise Michel Paris"
+  },
+  "educationalLevel": levelConfig.label,
+  "isAccessibleForFree": true,
+  "url": `https://collegelouisemichel.net${Astro.url.pathname}`
+});
 ---
 
 <Layout title={title} description={description}>
+  <script is:inline type="application/ld+json" set:html={courseSchema}></script>
   <main>
     <nav class="top-nav" data-aos="fade-down">
       <!-- Bouton Accueil -->

@@ -8,7 +8,11 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind(),
-    sitemap()
+    sitemap({
+      lastmod: new Date(),
+      changefreq: 'weekly',
+      priority: 0.7,
+    })
   ],
   output: 'static',
   build: {
