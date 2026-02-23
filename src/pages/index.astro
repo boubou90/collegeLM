@@ -10,12 +10,15 @@ import Quiz from '../components/Quiz';
 <Layout title="Cours Technologie Collège 5e 4e 3e | Collège Louise Michel Paris" description="Cours de technologie gratuits pour les collégiens : 5ème, 4ème, 3ème. Séquences, activités, quiz et préparation au Brevet — Collège Louise Michel Paris.">
 	<main>
 		<header class="hero" data-aos="fade-down">
-			<div class="hero-gear hero-gear-left">⚙</div>
-			<div class="hero-gear hero-gear-right">⚙</div>
+			<!-- Emojis flottants décoratifs -->
+			<div class="hero-emoji" style="left: 4%; top: 18%">⚙️</div>
+			<div class="hero-emoji hero-emoji-2" style="right: 5%; top: 14%">🤖</div>
+			<div class="hero-emoji hero-emoji-3" style="left: 7%; bottom: 16%">💡</div>
+			<div class="hero-emoji hero-emoji-4" style="right: 6%; bottom: 20%">🔬</div>
 			<div class="hero-content">
 				<div class="logos">
 					<a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel" target="_blank" rel="noopener noreferrer">
-						<img src="/images/logo-college.svg" alt="Logo du collège" class="logo logo-college floating" />
+						<img src="/images/logo-college.svg" alt="Logo du collège Louise Michel Paris" class="logo logo-college floating" />
 					</a>
 					<a href="https://www.ac-paris.fr/" target="_blank" rel="noopener noreferrer">
 						<img src="/images/logo-academie.svg" alt="Logo de l'académie de Paris" class="logo logo-academie floating" />
@@ -26,8 +29,11 @@ import Quiz from '../components/Quiz';
 				</div>
 				<div class="hero-text">
 					<h1 class="title">La technologie au collège</h1>
-					<p class="hero-subtitle">Découvre, comprends, crée</p>
-					<a href="#level-navigation" class="hero-cta">Accède à tes cours →</a>
+					<p class="hero-subtitle">Découvre, comprends, crée 🚀</p>
+					<div class="hero-cta-group">
+						<a href="#level-navigation" class="hero-cta hero-cta-primary">Accède à tes cours →</a>
+						<a href="/3eme/brevet" class="hero-cta hero-cta-secondary">Voir la préparation Brevet</a>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -205,12 +211,12 @@ import Quiz from '../components/Quiz';
 
 	.hero {
 		position: relative;
-		background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+		background: linear-gradient(135deg, #1e3a5f 0%, #7c3aed 100%);
 		border-radius: 1.5rem;
 		margin: 1rem auto;
 		max-width: 1000px;
 		overflow: hidden;
-		box-shadow: 
+		box-shadow:
 			0 20px 40px rgba(0,0,0,0.1),
 			inset 0 -10px 30px rgba(255,255,255,0.1);
 	}
@@ -222,11 +228,42 @@ import Quiz from '../components/Quiz';
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: 
+		background:
 			radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
 			radial-gradient(circle at 80% 50%, rgba(29, 78, 216, 0.2) 0%, transparent 50%);
 		pointer-events: none;
+		z-index: 0;
 	}
+
+	.hero::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.06) 50%, transparent 65%);
+		background-size: 200% 100%;
+		animation: shimmer 4s ease-in-out infinite;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	@keyframes shimmer {
+		0%   { background-position: 200% 0; }
+		100% { background-position: -200% 0; }
+	}
+
+	/* Emojis flottants */
+	.hero-emoji {
+		position: absolute;
+		font-size: 2.2rem;
+		opacity: 0.15;
+		pointer-events: none;
+		user-select: none;
+		animation: float 4s ease-in-out infinite;
+		z-index: 0;
+	}
+	.hero-emoji-2 { animation-delay: 1s; }
+	.hero-emoji-3 { animation-delay: 2s; }
+	.hero-emoji-4 { animation-delay: 3s; }
 
 	.hero-content {
 		position: relative;
@@ -235,7 +272,7 @@ import Quiz from '../components/Quiz';
 		align-items: center;
 		justify-content: center;
 		gap: 3rem;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.content-wrapper {
@@ -644,54 +681,47 @@ import Quiz from '../components/Quiz';
 		animation: fadeInUp 0.8s ease-out 0.3s both;
 	}
 
+	.hero-cta-group {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		animation: fadeInUp 0.8s ease-out 0.5s both;
+	}
+
 	.hero-cta {
 		display: inline-block;
-		padding: 0.75rem 2rem;
-		background: rgba(255, 255, 255, 0.15);
-		color: white;
+		padding: 0.75rem 1.75rem;
 		text-decoration: none;
 		border-radius: 2rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 1rem;
-		border: 2px solid rgba(255, 255, 255, 0.4);
-		transition: all 0.3s ease;
-		animation: fadeInUp 0.8s ease-out 0.5s both;
+		transition: all 0.25s ease;
 		backdrop-filter: blur(8px);
 	}
 
-	.hero-cta:hover {
-		background: rgba(255, 255, 255, 0.25);
-		border-color: rgba(255, 255, 255, 0.7);
+	.hero-cta-primary {
+		background: white;
+		color: #6d28d9;
+		border: 2px solid white;
+	}
+
+	.hero-cta-primary:hover {
+		background: #f5f3ff;
+		transform: scale(1.05) translateY(-2px);
+		box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+	}
+
+	.hero-cta-secondary {
+		background: rgba(255, 255, 255, 0.12);
+		color: white;
+		border: 2px solid rgba(255, 255, 255, 0.5);
+	}
+
+	.hero-cta-secondary:hover {
+		background: rgba(255, 255, 255, 0.22);
+		border-color: white;
 		transform: translateY(-2px);
-	}
-
-	.hero-gear {
-		position: absolute;
-		font-size: 8rem;
-		opacity: 0.07;
-		user-select: none;
-		pointer-events: none;
-		top: 50%;
-	}
-
-	.hero-gear-left {
-		left: 1rem;
-		animation: spinLeft 25s linear infinite;
-	}
-
-	.hero-gear-right {
-		right: 1rem;
-		animation: spinRight 25s linear infinite;
-	}
-
-	@keyframes spinLeft {
-		from { transform: translateY(-50%) rotate(0deg); }
-		to { transform: translateY(-50%) rotate(360deg); }
-	}
-
-	@keyframes spinRight {
-		from { transform: translateY(-50%) rotate(0deg); }
-		to { transform: translateY(-50%) rotate(-360deg); }
 	}
 
 	@keyframes fadeInUp {
@@ -705,7 +735,7 @@ import Quiz from '../components/Quiz';
 			border-radius: 1rem;
 		}
 
-		.hero-gear {
+		.hero-emoji {
 			display: none;
 		}
 

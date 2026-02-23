@@ -1,5 +1,6 @@
 ---
 import { sequenceColors } from '../styles/sequence-colors';
+import { sequenceDescriptions } from '../data/sequenceDescriptions';
 
 interface Props {
   count: number;
@@ -8,32 +9,51 @@ interface Props {
 
 const { count, level } = Astro.props;
 const levelLabel = level === '5eme' ? '5ème' : level === '4eme' ? '4ème' : '3ème';
+const seqData = sequenceDescriptions[level] ?? [];
 ---
 
 <div class="sequence-grid" data-aos="fade-up">
-  {Array.from({ length: count }, (_, i) => (
-    <a
-      href={`/${level}/sequence-${i + 1}`}
-      class="sequence-button"
-      style={`--button-color: ${sequenceColors[i].bg}; --button-hover: ${sequenceColors[i].hover}`}
-      data-aos="fade-up"
-      data-aos-delay={i * 80}
-    >
-      <span class="seq-badge">{levelLabel}</span>
-      <svg class="seq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-      </svg>
-      <span class="seq-title">Séquence {i + 1}</span>
-      <span class="seq-progress">{i + 1} / {count}</span>
-    </a>
-  ))}
+  {Array.from({ length: count }, (_, i) => {
+    const info = seqData[i];
+    const progress = Math.round(((i + 1) / count) * 100);
+    return (
+      <a
+        href={`/${level}/sequence-${i + 1}`}
+        class="sequence-button"
+        style={`--button-color: ${sequenceColors[i].bg}; --button-hover: ${sequenceColors[i].hover}; --progress: ${progress}%`}
+        data-aos="fade-up"
+        data-aos-delay={i * 60}
+      >
+        <span class="seq-badge">{levelLabel}</span>
+        <span class="seq-num">#{i + 1}</span>
+        {info ? (
+          <>
+            <span class="seq-emoji">{info.emoji}</span>
+            <span class="seq-title">{info.title}</span>
+            <span class="seq-desc">{info.desc}</span>
+          </>
+        ) : (
+          <>
+            <svg class="seq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span class="seq-title">Séquence {i + 1}</span>
+          </>
+        )}
+        <div class="seq-progress-bar">
+          <div class="seq-progress-fill"></div>
+          <span class="seq-progress-label">{i + 1} / {count}</span>
+        </div>
+      </a>
+    );
+  })}
 </div>
 
 <style>
   .sequence-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
     margin-top: 2rem;
   }
@@ -43,23 +63,22 @@ const levelLabel = level === '5eme' ? '5ème' : level === '4eme' ? '4ème' : '3�
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1.5rem 1rem 1rem;
+    gap: 0.4rem;
+    padding: 1.75rem 1rem 0.75rem;
     background: var(--button-color);
     color: white;
-    border-radius: 0.75rem;
+    border-radius: 0.875rem;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.14);
     overflow: hidden;
   }
 
   .sequence-button:hover {
-    transform: scale(1.02);
+    transform: translateY(-4px);
     background: var(--button-hover);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
   }
 
   .seq-badge {
@@ -68,12 +87,29 @@ const levelLabel = level === '5eme' ? '5ème' : level === '4eme' ? '4ème' : '3�
     right: 0.5rem;
     background: rgba(255, 255, 255, 0.22);
     color: white;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 700;
     padding: 0.15rem 0.5rem;
     border-radius: 999px;
     letter-spacing: 0.03em;
     backdrop-filter: blur(4px);
+  }
+
+  .seq-num {
+    position: absolute;
+    top: 0.55rem;
+    left: 0.6rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    opacity: 0.6;
+    letter-spacing: 0.02em;
+  }
+
+  .seq-emoji {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.1rem;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
   }
 
   .seq-icon {
@@ -83,20 +119,66 @@ const levelLabel = level === '5eme' ? '5ème' : level === '4eme' ? '4ème' : '3�
   }
 
   .seq-title {
-    font-size: 0.95rem;
-    font-weight: 700;
+    font-size: 0.88rem;
+    font-weight: 800;
     letter-spacing: 0.01em;
+    text-align: center;
+    line-height: 1.25;
   }
 
-  .seq-progress {
+  .seq-desc {
     font-size: 0.72rem;
-    opacity: 0.75;
+    font-weight: 400;
+    opacity: 0.85;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 0.1rem;
+    padding: 0 0.25rem;
+  }
+
+  /* Barre de progression */
+  .seq-progress-bar {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .seq-progress-fill {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .seq-progress-fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: var(--progress);
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+  }
+
+  .seq-progress-label {
+    font-size: 0.65rem;
+    opacity: 0.65;
     font-weight: 500;
+    text-align: right;
   }
 
   @media (max-width: 768px) {
     .sequence-grid {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    }
+
+    .seq-desc {
+      display: none;
     }
   }
 </style>
