@@ -34,6 +34,30 @@ Séquence 1 : Les chaînes d'énergie et d'information`;
   />
 
   <SequenceButtons count={1} level={level} />
+
+  <section class="cours-section" data-aos="fade-up">
+    <h2 class="cours-title">📚 Fiches de cours</h2>
+    <div class="cours-grid">
+      <a href="/3eme/cours/cours-chaine-energie-information" class="cours-card" style="--c: #ef4444">
+        Chaînes d'énergie et d'information
+      </a>
+      <a href="/3eme/cours/adressage-IP" class="cours-card" style="--c: #3b82f6">
+        Adressage IP
+      </a>
+      <a href="/3eme/cours/la-bete-a-cornes" class="cours-card" style="--c: #10b981">
+        La Bête à Cornes
+      </a>
+      <a href="/3eme/cours/etude-du-besoin" class="cours-card" style="--c: #f59e0b">
+        Étude du Besoin
+      </a>
+      <a href="/3eme/cours/les-logigrammes" class="cours-card" style="--c: #8b5cf6">
+        Les Logigrammes
+      </a>
+      <a href="/3eme/cours/les-formes-d-energies" class="cours-card" style="--c: #0891b2">
+        Les Formes d'Énergies
+      </a>
+    </div>
+  </section>
 </ClassLayout>
 
 <style>
@@ -41,5 +65,50 @@ Séquence 1 : Les chaînes d'énergie et d'information`;
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .cours-section {
+    margin-top: 2.5rem;
+  }
+
+  .cours-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .cours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .cours-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.9rem 1rem;
+    background: var(--c);
+    color: white;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .cours-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  @media (max-width: 768px) {
+    .cours-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
   }
 </style>
