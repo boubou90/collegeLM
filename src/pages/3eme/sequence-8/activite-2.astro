@@ -15,6 +15,23 @@ const documents = [];
     title="L'adressage IP et les masques de sous-réseau"
     description="Comment fonctionne l'adressage IP et comment configurer un réseau local ? Chaque équipement connecté à un réseau possède une adresse IP unique qui l'identifie. Dans cette activité, tu apprendras à lire et interpréter une adresse IPv4 (4 octets en notation décimale pointée), à comprendre le rôle du masque de sous-réseau et de la passerelle par défaut. Tu configureras les paramètres réseau de machines virtuelles pour créer un réseau local fonctionnel et tu vérifieras la connectivité avec la commande ping. Tu aborderas également la distinction entre adresses IP privées (LAN) et publiques (Internet), et le rôle du protocole DHCP qui attribue les adresses automatiquement."
     documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-8"
+    sequenceLabel="Séquence 8 — Réseaux et communication"
+    retenir={{
+      definitions: [
+        { term: "Adresse IP", def: "Identifiant numérique unique attribué à chaque équipement sur un réseau (ex : 192.168.1.10)." },
+        { term: "Masque de sous-réseau", def: "Valeur associée à l'adresse IP qui distingue la partie réseau de la partie hôte (ex : 255.255.255.0)." },
+        { term: "Passerelle (gateway)", def: "Adresse du routeur qui permet de sortir du réseau local vers Internet." },
+        { term: "DNS (Domain Name System)", def: "Service qui traduit les noms de domaine (ex : google.com) en adresses IP." },
+      ],
+      points: [
+        "Format d'une adresse IPv4 : 4 nombres de 0 à 255 séparés par des points (ex : 192.168.0.1).",
+        "DHCP attribue automatiquement une adresse IP à chaque appareil qui se connecte.",
+        "Sans DNS, il faudrait retenir les adresses IP de tous les sites : c'est le 'annuaire' d'Internet.",
+      ]
+    }}
   />
 </ClassLayout>
 

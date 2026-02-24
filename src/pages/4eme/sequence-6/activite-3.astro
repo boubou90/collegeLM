@@ -15,24 +15,29 @@ const documents = [
 
 <ClassLayout title="Activité 3 - Séquence 6 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-6`} />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 15 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="5812110470"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   <h1>Activité 3 - Relevés et Analyses des données de la station météo</h1>
   
   <ActivitySection
     title="Relevés et Analyses des données de la station météo"
     description="Cette activité consiste à décrire et analyser la transformation des données téléchargées ou issues la station weather:bit."
     documents={documents}
+    activityNumber={3}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-6"
+    sequenceLabel="Séquence 6 — Station météo et données"
+    retenir={{
+      definitions: [
+        { term: "Tableau de données", def: "Organisation structurée de données en lignes (observations) et colonnes (variables) facilitant l'analyse." },
+        { term: "Variable mesurée", def: "Grandeur que l'on observe et enregistre lors d'une expérience (température, humidité, pression…)." },
+        { term: "Unité de mesure", def: "Référence standardisée permettant d'exprimer une grandeur (°C pour la température, % pour l'humidité, hPa pour la pression)." },
+      ],
+      points: [
+        "Consigner les relevés dans un tableau : date/heure, T°(°C), humidité(%), pression(hPa), luminosité(lux).",
+        "Identifier les tendances : T° qui monte le matin, humidité qui baisse par temps sec…",
+        "Repérer les anomalies : valeurs aberrantes pouvant indiquer une erreur de mesure ou un bug.",
+      ],
+    }}
   />
 </ClassLayout>
 

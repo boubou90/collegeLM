@@ -15,6 +15,22 @@ const documents = [];
     title="Découverte et analyse du robot"
     description="Comment analyser les caractéristiques techniques d'un robot mobile ? Dans cette première activité, tu découvres le robot utilisé dans la séquence. Tu réalises une analyse fonctionnelle complète : identification des capteurs (ultrasons, infrarouge, lumière…), des actionneurs (moteurs, servomoteurs), du microcontrôleur et de la source d'énergie. Tu comprendras la chaîne d'information (capteur → traitement → actionneur) et la chaîne d'énergie du robot. Tu renseigneras une fiche technique récapitulative qui servira de référence pour les activités de modification et de programmation."
     documents={documents}
+    activityNumber={1}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-10"
+    sequenceLabel="Séquence 10 — Robot et missions"
+    retenir={{
+      definitions: [
+        { term: "Robot mobile", def: "Robot capable de se déplacer dans son environnement, équipé de roues, pattes ou chenilles." },
+        { term: "Motorisation différentielle", def: "Système de locomotion à 2 moteurs indépendants : varier les vitesses relatives permet d'avancer, reculer et tourner." },
+        { term: "Microcontrôleur embarqué", def: "Cerveau du robot : exécute le programme qui lit les capteurs et contrôle les actionneurs." },
+      ],
+      points: [
+        "Motorisation différentielle : même vitesse → avancer ; vitesse différente → tourner ; sens opposés → pivoter sur place.",
+        "Avant de modifier : analyser complètement le robot (capteurs, actionneurs, alimentation, programme).",
+        "Identifier chaque composant et sa fonction dans la chaîne d'énergie et la chaîne d'information.",
+      ],
+    }}
   />
 </ClassLayout>
 

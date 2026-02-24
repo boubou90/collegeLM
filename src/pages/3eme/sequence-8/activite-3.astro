@@ -15,6 +15,23 @@ const documents = [];
     title="Les protocoles de communication"
     description="Quels sont les protocoles qui permettent aux machines de communiquer sur un réseau ? Un protocole est un ensemble de règles que deux machines doivent respecter pour se comprendre. Dans cette activité, tu étudieras les principaux protocoles de la suite TCP/IP : IP (adressage), TCP (transmission fiable), UDP (transmission rapide), HTTP/HTTPS (web), DNS (noms de domaine), SMTP/IMAP (messagerie). Tu réaliseras une analogie avec les règles de la communication humaine pour mieux comprendre ces protocoles. Tu apprendras également à utiliser des outils d'analyse réseau pour observer les échanges de données entre machines, et tu comprendras pourquoi le chiffrement (HTTPS) est essentiel pour la sécurité sur Internet."
     documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-8"
+    sequenceLabel="Séquence 8 — Réseaux et communication"
+    retenir={{
+      definitions: [
+        { term: "Protocole de communication", def: "Ensemble de règles définissant comment les données sont échangées entre équipements sur un réseau." },
+        { term: "TCP/IP", def: "Protocole fondamental d'Internet : TCP garantit la livraison des données, IP gère leur acheminement." },
+        { term: "HTTP/HTTPS", def: "Protocoles du Web : HTTP = non chiffré, HTTPS = chiffré et sécurisé (cadenas dans le navigateur)." },
+        { term: "Paquet de données", def: "Unité de transmission : les données sont découpées en paquets numérotés, envoyés séparément et réassemblés à l'arrivée." },
+      ],
+      points: [
+        "TCP/IP = protocole de base d'Internet : toutes les communications l'utilisent.",
+        "Les données voyagent en paquets (et non en un bloc) → plus efficace et résistant aux pannes.",
+        "Toujours privilégier HTTPS (cadenas vert) pour les sites où tu entres des informations personnelles.",
+      ]
+    }}
   />
 </ClassLayout>
 

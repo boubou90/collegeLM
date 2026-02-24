@@ -15,6 +15,22 @@ const documents = [];
     title="Programmation du jeu"
     description="Comment programmer et tester son propre jeu vidéo ? C'est l'étape de réalisation : tu vas coder ton jeu rétro à l'aide d'un outil de programmation (Scratch, Python avec Pygame, ou tout autre environnement adapté). Tu implémenterai les mécaniques de jeu définies dans le game design : déplacements, collisions, score, niveaux et conditions de victoire/défaite. Tu apprendras à tester et déboguer ton programme. La séquence se conclut par une présentation des jeux de la classe : chaque groupe joue au jeu des autres et donne un retour constructif."
     documents={documents}
+    activityNumber={3}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-9"
+    sequenceLabel="Séquence 9 — Rétro gaming"
+    retenir={{
+      definitions: [
+        { term: "Boucle de jeu (game loop)", def: "Structure centrale d'un jeu vidéo : Afficher → Lire les entrées → Mettre à jour → Recommencer, indéfiniment." },
+        { term: "Sprite", def: "Image 2D représentant un personnage ou un élément du jeu (joueur, ennemi, obstacle, fond…)." },
+        { term: "Collision", def: "Détection du contact entre deux éléments du jeu (ex : balle qui touche le mur, joueur qui attrape un bonus)." },
+      ],
+      points: [
+        "La boucle de jeu = la structure de base de tout jeu : afficher → lire entrées → mettre à jour → recommencer.",
+        "Gérer les collisions : si sprite A touche sprite B → déclencher une action (perdre une vie, gagner des points…).",
+        "Tester à chaque nouvelle fonctionnalité ajoutée : ne pas attendre la fin pour tester.",
+      ],
+    }}
   />
 </ClassLayout>
 

@@ -36,10 +36,11 @@ const level = "3eme";
   <BackButton href={`/${level}`} />
   <h1>Séquence 1 - Chaînes d'énergie et d'information</h1>
   
-  <SequencePresentation 
+  <SequencePresentation
     title="Présentation de la séquence"
     description={description}
     activities={activities.map(a => a.description)}
+    question="Comment un système technique transforme-t-il l'énergie et l'information pour rendre service à l'utilisateur ?"
   />
 
   <ActivityLinks sequenceNumber={1} activities={activities} level={level} />

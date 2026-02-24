@@ -21,6 +21,23 @@ const documents = [
     title="Comment identifier et analyser les chaînes d'énergie et d'information ?"
     description="Apprenez à identifier et analyser les différents composants des chaînes d'énergie et d'information dans un système technique."
     documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-1"
+    sequenceLabel="Séquence 1 — Chaînes d'énergie et d'information"
+    retenir={{
+      definitions: [
+        { term: "Alimenter", def: "Bloc qui fournit l'énergie nécessaire au système (ex : batterie, prise secteur)." },
+        { term: "Distribuer", def: "Bloc qui répartit ou interrompt l'énergie selon les ordres reçus (ex : interrupteur, relais)." },
+        { term: "Convertir", def: "Bloc qui change la nature de l'énergie (ex : moteur électrique → énergie mécanique)." },
+        { term: "Transmettre/Adapter", def: "Bloc qui adapte et transmet le mouvement vers l'effecteur (ex : engrenage, courroie)." },
+      ],
+      points: [
+        "ACTE = Alimenter → Commander → Transmettre → Effectuer : l'ordre des blocs dans la chaîne d'énergie.",
+        "ATC = Acquérir → Traiter → Communiquer : l'ordre des blocs dans la chaîne d'information.",
+        "Chaque bloc a une entrée (ce qu'il reçoit) et une sortie (ce qu'il produit).",
+      ]
+    }}
   />
 </ClassLayout>
 

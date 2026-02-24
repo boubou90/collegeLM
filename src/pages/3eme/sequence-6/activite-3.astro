@@ -15,6 +15,23 @@ const documents = [];
     title="Programmer un système automatisé"
     description="Comment programmer un microcontrôleur pour contrôler un système automatisé ? Dans cette activité de synthèse, tu programmes un microcontrôleur (Arduino, micro:bit ou similaire) pour qu'il pilote un système réel. Le système pourra être une maquette de feu tricolore, un détecteur d'intrusion avec alarme, ou un système de régulation de température. Tu écriras le programme complet en partant du logigramme, en le traduisant en code, puis en le testant sur le matériel. Tu apprendras à utiliser les entrées/sorties numériques et analogiques, et à interfacer le microcontrôleur avec des capteurs et des actionneurs."
     documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-6"
+    sequenceLabel="Séquence 6 — Programmation avancée"
+    retenir={{
+      definitions: [
+        { term: "Microcontrôleur", def: "Petit ordinateur intégré sur une puce, capable d'exécuter un programme et de contrôler des composants électroniques." },
+        { term: "void setup()", def: "Fonction Arduino exécutée une seule fois au démarrage : configure les broches et initialise le système." },
+        { term: "void loop()", def: "Fonction Arduino exécutée en boucle infinie : contient le programme principal." },
+        { term: "pinMode() / digitalWrite() / digitalRead()", def: "Fonctions Arduino pour configurer une broche, envoyer un signal numérique ou en lire un." },
+      ],
+      points: [
+        "setup() = configuration initiale (une seule fois) ; loop() = programme principal (en boucle).",
+        "pinMode(broche, OUTPUT) ou INPUT pour configurer ; digitalWrite(broche, HIGH/LOW) pour écrire.",
+        "Tester chaque composant (LED, capteur, moteur) séparément avant d'intégrer le tout.",
+      ]
+    }}
   />
 </ClassLayout>
 

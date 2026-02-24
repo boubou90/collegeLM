@@ -27,23 +27,25 @@ const documents = [
   <BackButton href="/4eme/sequence-5" />
   <h1>Fiches de connaissances- Les objets et systèmes techniques</h1>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 10 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="4125771517"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   
   <ActivitySection
     title="Fiches de connaissances - Séquence 5"
     description="Ces fiches de connaissances vous aides à approfondir vos connaissances sur les éléments à retenir."
     documents={documents}
+    activityNumber={5}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-5"
+    sequenceLabel="Séquence 5 — Maison connectée — Structure et fonctionnement"
+    retenir={{
+      definitions: [
+        { term: "Mise en forme des matériaux", def: "Ensemble des procédés permettant de donner une forme à une pièce à partir d'une matière brute." },
+      ],
+      points: [
+        "Fiches de connaissances sur les systèmes automatisés, chaînes d'énergie/info et procédés disponibles.",
+        "Synthèse de la séquence : relier chaîne d'info + chaîne d'énergie + procédés pour chaque composant de la maison domotique.",
+      ],
+    }}
   />
 </ClassLayout>
 

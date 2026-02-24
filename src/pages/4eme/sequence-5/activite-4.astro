@@ -15,24 +15,29 @@ const documents = [
 
 <ClassLayout title="Activité 4 - Séquence 5 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-5`} />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 9 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="7738547611"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   <h1>Activité 4 - Comment identifier et choisir un procédé de fabrication ?</h1>
   
   <ActivitySection
     title="Choisir un procédé de fabrication adapté à la forme d’une pièce."
     description="Lors d’une manipulation, les élèves constatent qu’un battant de volet ne se ferme plus correctement. Une pièce de fixation semble cassée."
     documents={documents}
+    activityNumber={4}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-5"
+    sequenceLabel="Séquence 5 — Maison connectée — Structure et fonctionnement"
+    retenir={{
+      definitions: [
+        { term: "Procédé de fabrication", def: "Technique utilisée pour donner une forme à une pièce (moulage, usinage, découpe laser, impression 3D…)." },
+        { term: "Moulage", def: "Procédé qui consiste à couler une matière en fusion dans un moule pour lui donner sa forme finale." },
+        { term: "Usinage", def: "Procédé qui consiste à enlever de la matière par coupe (tournage, fraisage, perçage…) pour obtenir la forme souhaitée." },
+      ],
+      points: [
+        "Le choix du procédé dépend : du matériau, de la forme, de la série de fabrication et du coût.",
+        "Forme cylindrique → tournage ; forme plane → fraisage ; forme complexe → moulage ou impression 3D.",
+        "Associer chaque composant de la maison domotique à son procédé de fabrication probable.",
+      ],
+    }}
   />
 </ClassLayout>
 

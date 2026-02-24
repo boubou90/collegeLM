@@ -15,24 +15,29 @@ const documents = [
 
 <ClassLayout title="Activité 2 - Séquence 6 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-6`} />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 14 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="7709298462"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   <h1>Activité 2 - Comment faire fonctionner la station météo Weather:bit ?</h1>
   
   <ActivitySection
     title="Comment faire fonctionner la station météo Weather:bit ?"
     description="Cette activité consiste à faire un rappel sur les différents constituants de la maquette météo Weather:Bit abordée en classe de 5°."
     documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-6"
+    sequenceLabel="Séquence 6 — Station météo et données"
+    retenir={{
+      definitions: [
+        { term: "micro:bit", def: "Microcontrôleur éducatif (carte électronique programmable) développé par la BBC pour enseigner l'informatique." },
+        { term: "MakeCode", def: "IDE (Environnement de Développement Intégré) en blocs pour programmer le micro:bit, accessible en ligne." },
+        { term: "Calibration", def: "Réglage d'un capteur pour qu'il donne des mesures précises et fiables, souvent comparées à une valeur de référence." },
+      ],
+      points: [
+        "Programmer la Weather:Bit avec MakeCode (blocs) : initialiser les capteurs → lire les valeurs → afficher sur l'écran LED.",
+        "Les blocs de code correspondent à des instructions : 'lire température' → valeur en °C.",
+        "Toujours vérifier la cohérence des mesures (ex: T° = -50°C = erreur de capteur ou de code).",
+      ],
+    }}
   />
 </ClassLayout>
 

@@ -15,6 +15,22 @@ const documents = [];
     title="Réparation et remise en état"
     description="Comment réparer et remettre en état de marche un jouet en panne ? Après avoir localisé la panne lors de l'activité précédente, tu passes à la réparation : remplacement du composant défectueux, soudure si nécessaire, remontage et tests de fonctionnement. Tu rédigeras un compte-rendu d'intervention expliquant les actions effectuées, les difficultés rencontrées et les résultats obtenus. En cas de réussite, le jouet fonctionnera à nouveau ! Cette activité développe ton sens de la méthode, de la précision et de la persévérance."
     documents={documents}
+    activityNumber={3}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-8"
+    sequenceLabel="Séquence 8 — Toy Rescue"
+    retenir={{
+      definitions: [
+        { term: "Soudure", def: "Technique d'assemblage électronique consistant à lier un composant à la piste du PCB avec un alliage conducteur fondu (étain)." },
+        { term: "Soudure froide", def: "Défaut de soudure (aspect terne et granuleux) causant une connexion intermittente ou un circuit ouvert." },
+        { term: "Multimètre", def: "Appareil de mesure électronique permettant de mesurer tension (V), intensité (A), résistance (Ω) et continuité." },
+      ],
+      points: [
+        "Tester avec le multimètre en mode continuité (bip) : si ça bipe, le circuit est fermé (bon).",
+        "Réparer = remplacer le composant défectueux OU refaire la soudure froide.",
+        "Après réparation : tester le jouet et vérifier que toutes les fonctions marchent à nouveau.",
+      ],
+    }}
   />
 </ClassLayout>
 

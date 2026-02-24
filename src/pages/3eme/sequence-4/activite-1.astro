@@ -15,6 +15,23 @@ const documents = [];
     title="Représentation et dessin technique"
     description="Comment représenter et décrire une solution technique avec le dessin technique ? Le dessin technique est le langage universel des ingénieurs et des techniciens. Dans cette activité, tu découvriras les conventions du dessin de définition : les différentes vues (de face, de dessus, de profil), le trait fort pour les arêtes visibles et le trait mixte fin pour les arêtes cachées. Tu apprendras à lire et à interpréter un dessin technique existant avant de réaliser tes propres croquis. Tu travailleras sur des objets simples (support, équerre, pièce mécanique) pour maîtriser la représentation en projection orthogonale."
     documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-4"
+    sequenceLabel="Séquence 4 — Conception et modélisation"
+    retenir={{
+      definitions: [
+        { term: "Vue de face", def: "Vue principale du dessin technique, représentant la face la plus représentative de l'objet." },
+        { term: "Projection orthogonale", def: "Méthode de représentation où l'objet est projeté perpendiculairement sur des plans." },
+        { term: "Trait fort", def: "Trait plein épais représentant les arêtes et contours visibles." },
+        { term: "Trait interrompu court (pointillés)", def: "Représente les arêtes et contours cachés (non visibles depuis le point de vue)." },
+      ],
+      points: [
+        "Un dessin technique en projection orthogonale utilise 3 vues : face, dessus, gauche (ou droite).",
+        "Les vues sont alignées : vue de dessus sous la vue de face ; vue de gauche à droite de la vue de face.",
+        "Trait fort = visible ; pointillés = caché ; trait mixte fin = axe de symétrie.",
+      ]
+    }}
   />
 </ClassLayout>
 

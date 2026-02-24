@@ -15,24 +15,30 @@ const documents = [
 
 <ClassLayout title="Activité 2 - Séquence 5 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-5`} />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 7 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="7087810922"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   <h1>Activité 2 - A quoi sert une chaîne d’information et de quoi se compose t-elle ?</h1>
   
   <ActivitySection
     title="Identifier les constituants d’une chaîne d’information et comprendre leur rôle."
     description="Léo rentre à la maison. Il n’appuie sur aucun interrupteur : la lumière du couloir s’allume automatiquement, une alerte s’affiche sur la tablette des parents Léo est bien rentré !»"
     documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-5"
+    sequenceLabel="Séquence 5 — Maison connectée — Structure et fonctionnement"
+    retenir={{
+      definitions: [
+        { term: "Chaîne d'information", def: "Succession de blocs qui permettent d'acquérir, traiter et communiquer des informations pour commander un système." },
+        { term: "Acquérir", def: "Premier maillon : recueillir une information de l'environnement via un capteur (température, présence, lumière…)." },
+        { term: "Traiter", def: "Deuxième maillon : analyser et prendre une décision à partir de l'information reçue (microcontrôleur, smartphone)." },
+        { term: "Communiquer", def: "Troisième maillon : transmettre l'ordre à l'actionneur (signal WiFi, câble, infrarouge…)." },
+      ],
+      points: [
+        "ATC = Acquérir → Traiter → Communiquer : les 3 fonctions de la chaîne d'information.",
+        "Capteur = Acquérir ; microcontrôleur/smartphone = Traiter ; signal/câble = Communiquer.",
+        "Lier avec la séquence 1 (3ème) ou 7 (5ème) : même concept, appliqué à la maison domotique.",
+      ],
+    }}
   />
 </ClassLayout>
 

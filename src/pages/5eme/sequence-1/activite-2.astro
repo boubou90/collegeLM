@@ -19,6 +19,22 @@ const documents = [
     title="Comment se connecter au réseau du collège ?"
     description="Dans cette activité, nous allons identifier et comprendre le rôle des différents composants qui permettent de créer un réseau informatique fonctionnel. Nous étudierons notamment les équipements nécessaires pour se connecter au réseau du collège."
     documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Commutateur (Switch)", def: "Équipement réseau qui relie les appareils dans un réseau local et dirige les données vers le bon destinataire." },
+        { term: "Câble Ethernet (RJ45)", def: "Câble réseau filaire permettant de relier deux équipements à une vitesse pouvant atteindre 1 Gb/s." },
+        { term: "Carte réseau (NIC)", def: "Composant électronique (intégré ou ajouté) permettant à un équipement de se connecter à un réseau." },
+      ],
+      points: [
+        "Switch = concentrateur intelligent dans un réseau local ; routeur = relie plusieurs réseaux.",
+        "Câble RJ45 = fiable et rapide (jusqu'à 1 Gb/s) ; WiFi = pratique mais plus lent et sensible aux interférences.",
+        "Chaque carte réseau a une adresse MAC unique gravée lors de sa fabrication.",
+      ],
+    }}
   />
 </ClassLayout>
 

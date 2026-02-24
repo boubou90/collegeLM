@@ -1,26 +1,36 @@
 ---
 import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const activity = {
-  title: "Ressources",
-  description: "La souris ergonomique",
-  videoFile: "/videos/souris_ergonomique.mp4"
-};
+const level = "5eme";
+
+const documents = [];
 ---
 
-<ClassLayout title="Activité 5 - Séquence 5 - 5ème" level="5eme">
-  <BackButton href="/5eme/sequence-5" />
-  <h1>Activité 5 : {activity.title}</h1>
+<ClassLayout title="Activité 5 - Séquence 5 - 5ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Activité 5 — Ressources ergonomiques et synthèse</h1>
   
-  <p>{activity.description}</p>
-
-  {activity.videoFile && (
-    <video width="560" height="315" controls>
-      <source src={activity.videoFile} type="video/mp4" />
-      Votre navigateur ne supporte pas la lecture de vidéos.
-    </video>
-  )}
+  <ActivitySection
+    title="Ressources complémentaires — Ergonomie et normes"
+    description="Ressources sur l'ergonomie du poste de travail, les normes CE et la synthèse de l'analyse fonctionnelle de la souris."
+    documents={documents}
+    activityNumber={5}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-5"
+    sequenceLabel="Séquence 5 — La souris et l'OST"
+    retenir={{
+      definitions: [
+        { term: "Norme CE", def: "Marquage obligatoire en Europe attestant qu'un produit respecte les exigences de sécurité, santé et environnement." },
+        { term: "Guide ergonomique", def: "Document de recommandations pour configurer un poste de travail informatique en réduisant les risques de TMS." },
+      ],
+      points: [
+        "Ressources complémentaires sur l'ergonomie du poste de travail et le choix des périphériques.",
+        "Synthèse : appliquer l'analyse fonctionnelle complète (bête à cornes + pieuvre) à la souris.",
+      ]
+    }}
+  />
 </ClassLayout>
 
 <style>
@@ -28,12 +38,5 @@ const activity = {
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
-  }
-
-  video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 1rem;
   }
 </style>

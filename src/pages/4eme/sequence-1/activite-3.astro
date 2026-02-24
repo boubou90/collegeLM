@@ -1,35 +1,42 @@
 ---
 import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
-import KnowledgeSheet from '../../../components/KnowledgeSheet.astro';
 
 const level = "4eme";
 
-const resources = [
+const documents = [
   {
     title: "OST1w - Les intelligences artificielles génératives (IAG), prompts, avantages et biais (Hors programme)",
-    description: "Document synthèse",
     pdfUrl: "/documents/4eme/sequence-1/activite-1/OST1w - Les intelligences artificielles génératives (IAG), prompts, avantages et biais (Hors programme).pdf"
   }
 ];
 ---
 
-<ClassLayout title="Ressources - Séquence 1 - 4ème" level={level}>
+<ClassLayout title="Activité 3 - Séquence 1 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-1`} />
   <h1>Ressources - Les intelligences artificielles génératives (IAG)</h1>
-
-  <section class="resources-section" data-aos="fade-up">
-    <h2>Documents de cours</h2>
-    <div class="knowledge-sheets">
-      {resources.map(resource => (
-        <KnowledgeSheet
-          title={resource.title}
-          description={resource.description}
-          pdfUrl={resource.pdfUrl}
-        />
-      ))}
-    </div>
-  </section>
+  
+  <ActivitySection
+    title="Ressources complémentaires — Biais algorithmiques et LLM"
+    description="Fiches ressources sur les IAG, les prompts et les biais algorithmiques."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-1"
+    sequenceLabel="Séquence 1 — L'Intelligence Artificielle"
+    retenir={{
+      definitions: [
+        { term: "Biais algorithmique", def: "Erreur systématique d'une IA qui favorise certains résultats en raison des données sur lesquelles elle a été entraînée." },
+        { term: "LLM (Large Language Model)", def: "Modèle de langage de grande taille entraîné sur d'immenses corpus de textes pour générer du langage naturel." },
+      ],
+      points: [
+        "Fiches ressources IAG, prompts et biais disponibles dans cette activité.",
+        "Approfondir : comment fonctionne ChatGPT ? Quels sont ses biais les plus connus ?",
+        "Relier avec l'activité 1 : un meilleur prompt réduit (mais n'élimine pas) les hallucinations.",
+      ]
+    }}
+  />
 </ClassLayout>
 
 <style>
@@ -37,25 +44,5 @@ const resources = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
-  }
-
-  .resources-section {
-    background: linear-gradient(145deg, #ffffff, #f8fafc);
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-top: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-  }
-
-  h2 {
-    color: var(--primary-dark);
-    margin-bottom: 1.5rem;
-    font-size: 1.6rem;
-  }
-
-  .knowledge-sheets {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
   }
 </style>

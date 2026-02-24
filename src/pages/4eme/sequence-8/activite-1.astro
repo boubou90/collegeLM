@@ -15,6 +15,22 @@ const documents = [];
     title="Fiche de lancement — Toy Rescue"
     description="Comment diagnostiquer la panne d'un jouet électronique ? Dans cette activité de lancement, tu reçois un jouet électronique en panne. Tu dois observer son comportement, formuler des hypothèses sur l'origine de la panne, puis rédiger une fiche de diagnostic. Tu identifieras les symptômes (le jouet ne s'allume pas, ne répond plus, fait un bruit anormal…) et tu proposeras une première démarche pour localiser le problème. L'objectif est d'adopter une démarche rigoureuse d'investigation technique avant toute intervention."
     documents={documents}
+    activityNumber={1}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-8"
+    sequenceLabel="Séquence 8 — Toy Rescue"
+    retenir={{
+      definitions: [
+        { term: "Diagnostic de panne", def: "Processus méthodique consistant à observer les symptômes, émettre des hypothèses et les tester pour identifier la cause d'un dysfonctionnement." },
+        { term: "Symptôme", def: "Manifestation observable d'un défaut (ex : LED qui ne s'allume pas, moteur qui ne tourne plus)." },
+        { term: "Chaîne d'énergie du jouet", def: "Succession des éléments qui transforment l'énergie de la pile jusqu'à l'effecteur (moteur, haut-parleur, LED)." },
+      ],
+      points: [
+        "Méthode de diagnostic : Observer → Formuler une hypothèse → Tester → Conclure.",
+        "Identifier si la panne est dans la chaîne d'énergie (alimentation, moteur) ou dans la chaîne d'information (bouton, capteur, électronique).",
+        "Commencer par les causes les plus simples : pile déchargée, interrupteur cassé, fil coupé.",
+      ],
+    }}
   />
 </ClassLayout>
 

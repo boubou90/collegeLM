@@ -21,6 +21,22 @@ const documents = [
     title="Comment piloter une ampoule à distance"
     description="Identifier les interacteurs et représenter le fonctionnement d’un système d’éclairage connecté."
     documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-3"
+    sequenceLabel="Séquence 3 — Maison connectée — Éclairage"
+    retenir={{
+      definitions: [
+        { term: "Protocole WiFi", def: "Protocole de communication sans fil (IEEE 802.11) permettant de relier des appareils à Internet via une box." },
+        { term: "Application TAPO", def: "Application de TP-Link permettant de piloter les équipements connectés TAPO (ampoules, prises, caméras)." },
+        { term: "Scénario domotique", def: "Séquence d'actions automatiques déclenchées par une condition (heure, présence, température…)." },
+      ],
+      points: [
+        "L'ampoule connectée reçoit les commandes via le WiFi depuis l'application → cloud → ampoule.",
+        "On peut créer des scénarios : allumer à 18h, éteindre à 23h, s'allumer quand on entre dans la pièce.",
+        "Avantage : pilotage à distance même hors du logement (si WiFi actif).",
+      ],
+    }}
   />
 </ClassLayout>
 

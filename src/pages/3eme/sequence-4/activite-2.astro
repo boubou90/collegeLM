@@ -15,6 +15,23 @@ const documents = [];
     title="La cotation et les normes"
     description="Comment coter un dessin technique en respectant les normes ? La cotation est l'ensemble des indications chiffrées portées sur un dessin pour définir complètement la forme et les dimensions d'une pièce. Tu apprendras les règles de cotation normalisées : placement des lignes de cote, utilisation des symboles (diamètre ∅, rayon R, tolérance), et règles d'écriture des valeurs numériques. Tu coteras des pièces techniques simples en veillant à ne coter qu'une seule fois chaque dimension et à ne pas créer de surabondance. La maîtrise de la cotation est essentielle pour que ta pièce puisse être fabriquée correctement."
     documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-4"
+    sequenceLabel="Séquence 4 — Conception et modélisation"
+    retenir={{
+      definitions: [
+        { term: "Cote", def: "Valeur numérique indiquant une dimension (longueur, largeur, hauteur, diamètre…) en millimètres." },
+        { term: "Ligne de cote", def: "Ligne mince avec flèches aux extrémités, parallèle à la dimension qu'elle indique." },
+        { term: "Ligne d'attache", def: "Ligne mince perpendiculaire à la ligne de cote, délimitant la dimension." },
+        { term: "Tolérance dimensionnelle", def: "Écart maximal autorisé sur une cote (ex : 50 ± 0,5 mm)." },
+      ],
+      points: [
+        "Toutes les cotes sont en millimètres (mm) sauf indication contraire.",
+        "Ne jamais croiser les lignes de cote entre elles.",
+        "Coter en priorité les dimensions fonctionnelles (celles qui ont une importance pour l'assemblage ou l'usage).",
+      ]
+    }}
   />
 </ClassLayout>
 

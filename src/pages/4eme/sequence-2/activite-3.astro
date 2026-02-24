@@ -1,40 +1,45 @@
 ---
 import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
-import KnowledgeSheet from '../../../components/KnowledgeSheet.astro';
 
 const level = "4eme";
 
-const resources = [
+const documents = [
   {
     title: "Un monde en évolution : de hier à aujourd'hui",
-    description: "L'évolution des drones",
     pdfUrl: "/documents/4eme/sequence-2/diaporama_drone_evolution.pptx"
   },
   {
-    title: "Synthèse",
-    description: "Les elements qui participent à levolution des besoins",
+    title: "Synthèse — Les éléments qui participent à l'évolution des besoins",
     pdfUrl: "/documents/4eme/sequence-2/OST1a-Les-elements-qui-participent-a-levolution-des-besoins.pdf"
   }
 ];
 ---
 
-<ClassLayout title="Ressources - Séquence 2 - 4ème" level={level}>
+<ClassLayout title="Activité 3 - Séquence 2 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-2`} />
-  <h1>Ressources - Analyse fonctionnelle</h1>
-
-  <section class="resources-section" data-aos="fade-up">
-    <h2>Documents de cours</h2>
-    <div class="knowledge-sheets">
-      {resources.map(resource => (
-        <KnowledgeSheet
-          title={resource.title}
-          description={resource.description}
-          pdfUrl={resource.pdfUrl}
-        />
-      ))}
-    </div>
-  </section>
+  <h1>Ressources - L'évolution des objets techniques</h1>
+  
+  <ActivitySection
+    title="Ressources complémentaires — Frise chronologique et principes de solution"
+    description="Ressources complémentaires sur l'évolution des objets techniques : frise chronologique du drone et principes de solution."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-2"
+    sequenceLabel="Séquence 2 — L'évolution des objets techniques"
+    retenir={{
+      definitions: [
+        { term: "Frise chronologique", def: "Représentation graphique des étapes d'évolution d'un objet technique sur un axe du temps." },
+        { term: "Principe de solution", def: "Manière choisie pour réaliser une fonction technique (ex : relier deux pièces par vis, colle ou soudure)." },
+      ],
+      points: [
+        "Ressources complémentaires sur l'évolution des objets techniques disponibles dans cette activité.",
+        "Retravailler la frise chronologique du drone avec les dates clés des innovations.",
+      ]
+    }}
+  />
 </ClassLayout>
 
 <style>
@@ -42,25 +47,5 @@ const resources = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
-  }
-
-  .resources-section {
-    background: linear-gradient(145deg, #ffffff, #f8fafc);
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-top: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-  }
-
-  h2 {
-    color: var(--primary-dark);
-    margin-bottom: 1.5rem;
-    font-size: 1.6rem;
-  }
-
-  .knowledge-sheets {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
   }
 </style>

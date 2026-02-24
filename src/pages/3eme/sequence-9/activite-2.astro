@@ -15,6 +15,23 @@ const documents = [];
     title="Capteurs, actionneurs et effecteurs"
     description="Quel est le rôle des capteurs, actionneurs et effecteurs dans un système automatisé ? Dans tout système automatisé, la chaîne d'information commence par les capteurs (qui perçoivent l'environnement), se poursuit par l'unité de traitement (qui prend des décisions), et aboutit aux actionneurs (qui agissent sur l'environnement). Dans cette activité, tu réaliseras des expériences pour comprendre le fonctionnement de différents capteurs (ultrasons, infrarouge, température, luminosité) et actionneurs (moteurs DC, servomoteurs, LEDs). Tu mesureras les grandeurs physiques d'entrée et de sortie, et tu établiras les lois de fonctionnement de chaque composant avant de les intégrer dans ton programme."
     documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-9"
+    sequenceLabel="Séquence 9 — Robotique et automatismes"
+    retenir={{
+      definitions: [
+        { term: "Capteur ultrason (HC-SR04)", def: "Mesure une distance en envoyant une impulsion sonore et en mesurant le temps de retour de l'écho." },
+        { term: "Servomoteur", def: "Moteur à position contrôlée : il peut tourner d'un angle précis (0° à 180° pour un servo standard)." },
+        { term: "Moteur DC", def: "Moteur à courant continu qui tourne en continu ; sa vitesse est contrôlée par la tension ou un signal PWM." },
+        { term: "Effecteur", def: "Organe terminal du robot qui agit directement sur l'environnement (pince, roue, hélice…)." },
+      ],
+      points: [
+        "Capteur = entrée (acquiert info) ; actionneur = sortie (produit un effet) ; effecteur = agit sur la MO.",
+        "Savoir brancher un capteur ultrason et lire sa valeur avec Arduino (bibliothèque ou calcul direct).",
+        "Servomoteur : angle précis mais rotation limitée ; moteur DC : rotation continue mais position non contrôlée.",
+      ]
+    }}
   />
 </ClassLayout>
 

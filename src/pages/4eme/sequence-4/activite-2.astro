@@ -21,6 +21,22 @@ const documents = [
     title="Choisir le type de chauffage compatible avec le système TAPO"
     description="Le professeur souhaite installer un chauffage d’appoint programmable dans la réserve du laboratoire."
     documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-4"
+    sequenceLabel="Séquence 4 — Maison connectée — Chauffage"
+    retenir={{
+      definitions: [
+        { term: "Puissance nominale (W)", def: "Puissance électrique consommée par un appareil en fonctionnement normal, indiquée sur l'étiquette." },
+        { term: "Inertie thermique", def: "Capacité d'un radiateur à accumuler la chaleur et à la restituer progressivement après extinction." },
+        { term: "Compatibilité TAPO", def: "La prise TAPO P100 supporte jusqu'à 2300 W : seuls les appareils < 2300 W peuvent y être branchés." },
+      ],
+      points: [
+        "Vérifier la puissance de l'appareil (en watts) : elle doit être inférieure à la limite de la prise TAPO.",
+        "Radiateur à inertie = confort thermique supérieur car la chaleur reste même après extinction.",
+        "Comparer les options selon : puissance, inertie, bruit, compatibilité TAPO, coût d'achat.",
+      ],
+    }}
   />
 </ClassLayout>
 

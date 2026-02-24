@@ -15,6 +15,22 @@ const documents = [];
     title="Programmation des missions"
     description="Comment programmer un robot pour qu'il réalise des missions précises de façon autonome ? C'est l'activité finale et la plus ambitieuse : tu programmes le robot pour qu'il accomplisse la mission définie. Tu utiliseras un environnement de programmation par blocs ou en Python pour écrire un algorithme capable de lire les capteurs, prendre des décisions et agir sur les actionneurs. La séquence se conclut par une compétition ou une démonstration : chaque robot doit réussir sa mission en conditions réelles. Tu rédigeras un bilan des difficultés rencontrées et des améliorations possibles."
     documents={documents}
+    activityNumber={3}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-10"
+    sequenceLabel="Séquence 10 — Robot et missions"
+    retenir={{
+      definitions: [
+        { term: "Mission robotique", def: "Tâche précise que le robot doit accomplir de façon autonome (suivre une ligne, éviter des obstacles, récupérer un objet…)." },
+        { term: "Algorithme de navigation", def: "Ensemble d'instructions permettant au robot de se déplacer intelligemment dans son environnement." },
+        { term: "Asservissement", def: "Mécanisme de correction automatique : le robot compare son état actuel à l'objectif et ajuste ses actionneurs en continu." },
+      ],
+      points: [
+        "Décomposer la mission en sous-tâches simples : 1. avancer 2. détecter 3. éviter 4. reprendre.",
+        "Méthode itérative : coder → tester → analyser → corriger → recommencer jusqu'au succès.",
+        "L'asservissement = le robot se corrige lui-même grâce aux capteurs (ex: capteur de ligne).",
+      ],
+    }}
   />
 </ClassLayout>
 

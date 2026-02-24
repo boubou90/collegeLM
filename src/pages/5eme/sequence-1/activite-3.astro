@@ -34,6 +34,22 @@ const objectives = [
     title="Comment simuler la circulation des informations dans un réseau local comme celui du collège ?"
     description="Dans cette activité, nous allons comprendre comment les informations circulent dans un réseau local. À travers une simulation et des exercices de mapping, nous découvrirons le parcours des données entre les différents équipements du réseau du collège."
     documents={documents}
+    activityNumber={3}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Protocole TCP/IP", def: "Ensemble de règles permettant aux ordinateurs de communiquer sur Internet : TCP gère la fiabilité, IP gère le routage." },
+        { term: "Adresse IP", def: "Identifiant numérique unique attribué à chaque équipement sur un réseau (ex : 192.168.1.5)." },
+        { term: "Paquet de données", def: "Petit fragment de données envoyé indépendamment sur le réseau et réassemblé à destination." },
+      ],
+      points: [
+        "TCP/IP = protocole universel d'Internet : tous les appareils connectés l'utilisent.",
+        "Les données sont découpées en paquets numérotés, envoyés séparément et réassemblés à l'arrivée.",
+        "L'adresse IP identifie CHAQUE équipement : deux appareils ne peuvent pas avoir la même IP sur le même réseau.",
+      ],
+    }}
   />
 
   <section class="objectives" data-aos="fade-up">

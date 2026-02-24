@@ -21,6 +21,22 @@ const documents = [
     title="Choix et installation d’une ampoule connectée"
     description="Cette activité consiste à vérifier que l’ampoule connectée achetée est compatible avec le système de gestion d’éclairage domotique installé."
     documents={documents}
+    activityNumber={3}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-3"
+    sequenceLabel="Séquence 3 — Maison connectée — Éclairage"
+    retenir={{
+      definitions: [
+        { term: "Flux lumineux", def: "Quantité totale de lumière émise par une source, mesurée en lumens (lm)." },
+        { term: "Température de couleur", def: "Teinte de la lumière exprimée en Kelvin (K) : < 3000 K = lumière chaude/orangée, > 5000 K = froide/bleue." },
+        { term: "Culot", def: "Partie d'une ampoule qui s'insère dans la douille. E27 = grand culot (ø 27 mm), E14 = petit culot (ø 14 mm)." },
+      ],
+      points: [
+        "Critères de choix d'une ampoule connectée : culot (E27/E14), flux lumineux (lm), compatibilité TAPO, puissance (W).",
+        "Plus de lumens = plus lumineux (et non plus de watts : les watts indiquent la consommation).",
+        "Vérifier la puissance max supportée par la douille et la compatibilité avec le système TAPO.",
+      ],
+    }}
   />
 </ClassLayout>
 

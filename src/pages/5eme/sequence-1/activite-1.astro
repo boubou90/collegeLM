@@ -19,6 +19,22 @@ const documents = [
     title="Comment afficher sur mon ordinateur la page de garde stockée sur le serveur du collège ?"
     description="Dans cette activité, nous allons découvrir les bases des réseaux informatiques et comprendre comment les informations circulent entre les différents appareils connectés. Cette activité servira de lancement pour la séquence sur les réseaux."
     documents={documents}
+    activityNumber={1}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Réseau informatique", def: "Ensemble d'équipements (ordinateurs, serveurs, imprimantes…) interconnectés pour partager des ressources et communiquer." },
+        { term: "Serveur", def: "Ordinateur puissant qui stocke des données ou des programmes et les fournit aux autres équipements (clients) du réseau." },
+        { term: "Client", def: "Équipement (ordinateur, smartphone…) qui envoie des requêtes au serveur pour obtenir des données ou des services." },
+      ],
+      points: [
+        "Un réseau = des équipements qui communiquent selon des règles communes (protocoles).",
+        "Modèle client-serveur : le client demande, le serveur répond.",
+        "Exemple concret : le navigateur (client) demande la page au serveur du collège via HTTP.",
+      ],
+    }}
   />
 </ClassLayout>
 

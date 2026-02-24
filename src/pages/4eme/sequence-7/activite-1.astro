@@ -15,24 +15,29 @@ const documents = [
 
 <ClassLayout title="Activité 1 - Séquence 7 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-7`} />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 18 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="1902438011"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   <h1>Activité 1 - Pourquoi ajouter des postes au réseau ?</h1>
   
   <ActivitySection
     title="Fiche de lancement de séquence "
     description="Le principal annonce la venue d’une certification PIX, mais il n’y a pas assez d’ordinateurs disponibles. Les élèves doivent proposer des solutions pour connecter des ordinateurs portables au réseau existant."
     documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/4eme/sequence-7"
+    sequenceLabel="Séquence 7 — Réseau local WiFi"
+    retenir={{
+      definitions: [
+        { term: "Réseau local (LAN)", def: "Réseau informatique limité à une zone géographique réduite (salle, bâtiment) permettant de partager ressources et connexion Internet." },
+        { term: "Classe mobile", def: "Ensemble d'ordinateurs portables sur un chariot, déplaçable dans différentes salles pour être utilisés en cours." },
+        { term: "Borne WiFi (point d'accès)", def: "Équipement réseau qui permet aux appareils sans fil de se connecter au réseau local via la technologie WiFi." },
+      ],
+      points: [
+        "Un réseau local permet de partager : imprimantes, fichiers, connexion Internet.",
+        "Problème : les PC de la classe mobile ne communiquent pas car leurs paramètres IP ne correspondent pas au réseau existant.",
+        "Révision 5ème : un réseau = des équipements + des liens (câbles/WiFi) + des protocoles communs.",
+      ],
+    }}
   />
 </ClassLayout>
 

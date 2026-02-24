@@ -3,9 +3,10 @@ interface Props {
   title: string;
   description: string;
   activities?: string[];
+  question?: string;
 }
 
-const { title, description, activities } = Astro.props;
+const { title, description, activities, question } = Astro.props;
 
 // Process description to add bold to important words
 const enhancedDescription = description
@@ -16,6 +17,12 @@ const enhancedDescription = description
 ---
 
 <section class="sequence-presentation" data-aos="fade-up">
+  {question && (
+    <div class="problematique">
+      <span class="problematique-label">Problématique</span>
+      <p class="problematique-text">{question}</p>
+    </div>
+  )}
   <h2>{title}</h2>
   <p class="description" set:html={enhancedDescription} />
   
@@ -89,5 +96,43 @@ const enhancedDescription = description
   :global(strong) {
     color: var(--primary);
     font-weight: 600;
+  }
+
+  .problematique {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    border-left: 4px solid #f97316;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .problematique-label {
+    display: inline-block;
+    background: #f97316;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .problematique-text {
+    color: #9a3412;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  :global([data-theme="dark"]) .problematique {
+    background: linear-gradient(135deg, #431407, #7c2d12);
+    border-left-color: #fb923c;
+  }
+
+  :global([data-theme="dark"]) .problematique-text {
+    color: #fed7aa;
   }
 </style>

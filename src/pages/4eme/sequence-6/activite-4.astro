@@ -15,24 +15,29 @@ const documents = [
 
 <ClassLayout title="Activité 4 - Séquence 6 - 4ème" level={level}>
   <BackButton href={`/${level}/sequence-6`} />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
-     crossorigin="anonymous"></script>
-<!-- bloc 16 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2885775986633981"
-     data-ad-slot="8609664206"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
   <h1>Activité 4 - Exploiter une table de données</h1>
   
   <ActivitySection
     title="Exploiter une table de données"
     description="Cette activité consiste à identifier, expliquer ce qu’est une table de données, un tableur, analyser son contenu et l’exploiter pour en tirer des représentations synthétiques (graphiques)."
     documents={documents}
+    activityNumber={4}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-6"
+    sequenceLabel="Séquence 6 — Station météo et données"
+    retenir={{
+      definitions: [
+        { term: "Tableur", def: "Logiciel (LibreOffice Calc, Excel) permettant d'organiser des données en tableau et d'effectuer des calculs automatisés." },
+        { term: "Graphique", def: "Représentation visuelle de données (courbe, histogramme, secteurs) facilitant l'analyse et la comparaison." },
+        { term: "Formule", def: "Instruction dans un tableur calculant automatiquement une valeur à partir d'autres cellules (ex : =MOYENNE(A1:A10))." },
+      ],
+      points: [
+        "Importer les données CSV de la station → créer des colonnes claires → faire des graphiques.",
+        "Fonctions essentielles : =MOYENNE() ; =MAX() ; =MIN() ; =NB() ; graphique de type 'courbe'.",
+        "Un graphique en courbe permet de visualiser l'évolution d'une grandeur dans le temps.",
+      ],
+    }}
   />
 </ClassLayout>
 

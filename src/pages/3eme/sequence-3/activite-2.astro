@@ -15,6 +15,23 @@ const documents = [];
     title="Le diagramme pieuvre"
     description="Comment lister les fonctions de service avec le diagramme pieuvre ? Le diagramme pieuvre (ou diagramme des interacteurs) permet d'identifier toutes les fonctions de service d'un objet technique en analysant ses interactions avec son environnement (utilisateurs, normes, milieu ambiant, énergie, etc.). Tu distingueras les fonctions principales (FP) — qui justifient l'existence de l'objet — et les fonctions contraintes (FC) — imposées par l'environnement. Tu réaliseras un diagramme pieuvre complet pour au moins deux objets techniques, en justifiant chaque fonction identifiée."
     documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-3"
+    sequenceLabel="Séquence 3 — Analyse fonctionnelle"
+    retenir={{
+      definitions: [
+        { term: "Diagramme pieuvre", def: "Outil graphique qui représente toutes les fonctions de service d'un produit avec son environnement." },
+        { term: "Fonction principale (FP)", def: "Met en relation deux milieux extérieurs en passant par le produit : FP1 = milieu A — produit — milieu B." },
+        { term: "Fonction contrainte (FC)", def: "Relie le produit à un seul milieu extérieur : c'est une contrainte à respecter." },
+        { term: "Milieu extérieur (ME)", def: "Tout élément de l'environnement du produit qui interagit avec lui : utilisateur, norme, air, sol…" },
+      ],
+      points: [
+        "FP = relie 2 milieux extérieurs via le produit (il y a 2 'pattes' de la pieuvre).",
+        "FC = relie le produit à 1 seul milieu extérieur (1 seule 'patte').",
+        "Numéroter : FP1, FC1, FC2, FC3… pour chaque fonction identifiée.",
+      ]
+    }}
   />
 </ClassLayout>
 
