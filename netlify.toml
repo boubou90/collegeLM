@@ -18,6 +18,12 @@
   force = true
 
 [[redirects]]
+  from = "https://www.collegelouisemichel.net/*"
+  to = "https://collegelouisemichel.net/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
