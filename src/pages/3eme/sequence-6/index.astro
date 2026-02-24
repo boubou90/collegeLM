@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves approfondissent la programmation pour contrôler des systèmes automatisés. Ils maîtrisent les logigrammes, les variables, les boucles et les conditions, puis programment un microcontrôleur pour piloter un système réel :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Les logigrammes et les algorithmes",
+    description: "Comment représenter un algorithme sous forme de logigramme ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "Variables, boucles et conditions",
+    description: "Comment utiliser les variables, boucles et conditions en programmation ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Programmer un système automatisé",
+    description: "Comment programmer un microcontrôleur pour contrôler un système automatisé ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Programmation avancée",
+    description: "Documents et ressources complémentaires sur la programmation et les algorithmes"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 6 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 6</h1>
+<ClassLayout title="Séquence 6 — Programmation avancée - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 6 — Programmation avancée</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Approfondir la programmation pour contrôler des systèmes automatisés"
     description={description}
     activities={activities.map(a => a.description)}
   />

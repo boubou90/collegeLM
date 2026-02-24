@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 8 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Toy Rescue · Activité 1</h1>
+
+  <ActivitySection
+    title="Fiche de lancement — Toy Rescue"
+    description="Comment diagnostiquer la panne d'un jouet électronique ? Dans cette activité de lancement, tu reçois un jouet électronique en panne. Tu dois observer son comportement, formuler des hypothèses sur l'origine de la panne, puis rédiger une fiche de diagnostic. Tu identifieras les symptômes (le jouet ne s'allume pas, ne répond plus, fait un bruit anormal…) et tu proposeras une première démarche pour localiser le problème. L'objectif est d'adopter une démarche rigoureuse d'investigation technique avant toute intervention."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

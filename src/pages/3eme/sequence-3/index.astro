@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves s'approprient les outils de l'analyse fonctionnelle : la bête à cornes pour identifier le besoin, le diagramme pieuvre pour lister les fonctions de service, et le cahier des charges fonctionnel (CDCF) pour formaliser les exigences d'un projet technique :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "La bête à cornes",
+    description: "Comment identifier le besoin d'un objet technique avec la bête à cornes ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "Le diagramme pieuvre",
+    description: "Comment lister les fonctions de service avec le diagramme pieuvre ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Le cahier des charges fonctionnel (CDCF)",
+    description: "Comment rédiger un cahier des charges fonctionnel ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Analyse fonctionnelle",
+    description: "Documents et ressources complémentaires sur l'analyse fonctionnelle"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 3 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 3</h1>
+<ClassLayout title="Séquence 3 — Analyse fonctionnelle - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 3 — Analyse fonctionnelle</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Appliquer les outils d'analyse fonctionnelle : bête à cornes, pieuvre, CDCF"
     description={description}
     activities={activities.map(a => a.description)}
   />

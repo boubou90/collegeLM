@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves conçoivent et programment des systèmes robotisés et automatisés. Ils analysent le rôle des capteurs et des actionneurs, puis programment des comportements autonomes pour relever un défi robotique en équipe :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Analyse d'un système robotisé",
+    description: "Comment analyser la structure et les composants d'un système robotisé ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "Capteurs, actionneurs et effecteurs",
+    description: "Quel est le rôle des capteurs, actionneurs et effecteurs dans un système automatisé ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Défi robotique — programmer l'autonomie",
+    description: "Comment programmer un robot pour qu'il réalise une mission en autonomie ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Robotique et automatismes",
+    description: "Documents et ressources complémentaires sur la robotique et les systèmes automatisés"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 9 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 9</h1>
+<ClassLayout title="Séquence 9 — Robotique et automatismes - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 9 — Robotique et automatismes</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Concevoir et programmer des systèmes robotisés et automatisés"
     description={description}
     activities={activities.map(a => a.description)}
   />

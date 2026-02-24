@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 9 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Rétro gaming · Activité 3</h1>
+
+  <ActivitySection
+    title="Programmation du jeu"
+    description="Comment programmer et tester son propre jeu vidéo ? C'est l'étape de réalisation : tu vas coder ton jeu rétro à l'aide d'un outil de programmation (Scratch, Python avec Pygame, ou tout autre environnement adapté). Tu implémenterai les mécaniques de jeu définies dans le game design : déplacements, collisions, score, niveaux et conditions de victoire/défaite. Tu apprendras à tester et déboguer ton programme. La séquence se conclut par une présentation des jeux de la classe : chaque groupe joue au jeu des autres et donne un retour constructif."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

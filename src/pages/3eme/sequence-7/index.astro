@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves analysent les différentes formes d'énergies, leurs transformations et les enjeux du développement durable. Ils comparent les solutions énergétiques fossiles et renouvelables pour proposer des choix responsables et argumentés :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Les formes d'énergies et leurs transformations",
+    description: "Comment les énergies se transforment-elles dans les systèmes techniques ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "L'efficacité énergétique",
+    description: "Comment mesurer et améliorer l'efficacité énergétique d'un système ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Les énergies renouvelables et le bilan carbone",
+    description: "Pourquoi et comment passer aux énergies renouvelables pour réduire notre empreinte carbone ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Énergie et développement durable",
+    description: "Documents et ressources complémentaires sur l'énergie et le développement durable"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 7 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 7</h1>
+<ClassLayout title="Séquence 7 — Énergie et développement durable - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 7 — Énergie et développement durable</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Analyser les enjeux énergétiques et explorer les solutions durables"
     description={description}
     activities={activities.map(a => a.description)}
   />

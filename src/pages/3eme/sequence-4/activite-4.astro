@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 4 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Séquence 4 — Conception et modélisation · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Conception et modélisation"
+    description="Retrouve ici les documents et ressources complémentaires sur la conception technique et la modélisation. Tu y trouveras des fiches méthode sur le dessin de définition, les conventions de cotation, et la prise en main des logiciels de CAO. Des tutoriels vidéo et des exercices progressifs te permettront de t'entraîner à lire et produire des dessins techniques. Ces compétences sont évaluées au Brevet dans la partie construction et représentation des systèmes."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

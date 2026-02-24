@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 7 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+  <h1>Séquence 7 — Énergie et développement durable · Activité 3</h1>
+
+  <ActivitySection
+    title="Les énergies renouvelables et le bilan carbone"
+    description="Pourquoi et comment passer aux énergies renouvelables pour réduire notre empreinte carbone ? Les énergies fossiles (pétrole, gaz, charbon) sont épuisables et émettrices de CO₂, principal responsable du changement climatique. Dans cette activité, tu compares les différentes sources d'énergie renouvelable (solaire, éolien, hydraulique, géothermie, biomasse) selon leurs avantages, leurs limites et leur bilan carbone sur l'ensemble du cycle de vie. Tu calculeras l'empreinte carbone de ta classe ou de ta maison et tu réfléchiras aux solutions techniques et comportementales pour la réduire. Une réflexion sur la transition énergétique et les choix de société qu'elle implique concluera la séquence."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

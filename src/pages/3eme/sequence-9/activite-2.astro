@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 9 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Robotique et automatismes · Activité 2</h1>
+
+  <ActivitySection
+    title="Capteurs, actionneurs et effecteurs"
+    description="Quel est le rôle des capteurs, actionneurs et effecteurs dans un système automatisé ? Dans tout système automatisé, la chaîne d'information commence par les capteurs (qui perçoivent l'environnement), se poursuit par l'unité de traitement (qui prend des décisions), et aboutit aux actionneurs (qui agissent sur l'environnement). Dans cette activité, tu réaliseras des expériences pour comprendre le fonctionnement de différents capteurs (ultrasons, infrarouge, température, luminosité) et actionneurs (moteurs DC, servomoteurs, LEDs). Tu mesureras les grandeurs physiques d'entrée et de sortie, et tu établiras les lois de fonctionnement de chaque composant avant de les intégrer dans ton programme."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Activité 2</h1>
+
+  <ActivitySection
+    title="Variables, boucles et conditions"
+    description="Comment utiliser les variables, boucles et conditions en programmation ? Cette activité approfondit les structures fondamentales de la programmation. Tu travailleras sur les variables (stocker et modifier une valeur), les conditions (si… alors… sinon…) et les boucles (répéter… tant que…). À travers des exercices progressifs sur Scratch ou Python, tu programmeras des comportements de plus en plus complexes : clignotement d'une LED selon un capteur, comptage d'événements, affichage d'un message selon une condition. Chaque programme sera testé et débogué. L'objectif est de comprendre que tout comportement automatique repose sur ces trois structures de base."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Activité 1</h1>
+
+  <ActivitySection
+    title="Bilan des notions clés"
+    description="Quelles sont les notions essentielles à maîtriser pour l'épreuve de technologie du Brevet ? Cette activité est une révision structurée de toutes les notions vues en 3ème. Tu rempliras des fiches de révision thématiques : chaînes d'énergie et d'information, analyse fonctionnelle (bête à cornes, pieuvre, CDCF), conception et modélisation, programmation et logigrammes, réseaux et adressage IP, robotique et automatismes, énergie et développement durable. Pour chaque thème, tu identifieras les points encore fragiles et tu te concentreras sur leur consolidation. Un QCM de positionnement te permettra d'évaluer tes acquis et de prioriser tes révisions."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

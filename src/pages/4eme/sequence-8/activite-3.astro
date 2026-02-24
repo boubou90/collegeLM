@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 8 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Toy Rescue · Activité 3</h1>
+
+  <ActivitySection
+    title="Réparation et remise en état"
+    description="Comment réparer et remettre en état de marche un jouet en panne ? Après avoir localisé la panne lors de l'activité précédente, tu passes à la réparation : remplacement du composant défectueux, soudure si nécessaire, remontage et tests de fonctionnement. Tu rédigeras un compte-rendu d'intervention expliquant les actions effectuées, les difficultés rencontrées et les résultats obtenus. En cas de réussite, le jouet fonctionnera à nouveau ! Cette activité développe ton sens de la méthode, de la précision et de la persévérance."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

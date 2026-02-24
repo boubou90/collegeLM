@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Révisions Brevet"
+    description="Retrouve ici toutes les ressources pour te préparer au mieux à l'épreuve de technologie du Brevet des collèges. Tu y trouveras des fiches de révision synthétiques par thème, des annales classées par sujet (domotique, robotique, réseaux, énergie…), des mémos des notions clés à connaître par cœur, et des conseils de méthode. Consulte également la page dédiée au Brevet de technologie sur ce site, ainsi que le glossaire pour réviser les définitions. N'oublie pas de faire les quiz de chaque séquence pour tester tes connaissances en conditions d'examen !"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves découvrent les outils de conception et de modélisation technique. De la représentation 2D au dessin coté, jusqu'à la maquette numérique réalisée avec un logiciel de CAO, ils apprennent à concrétiser et formaliser leurs solutions techniques :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Représentation et dessin technique",
+    description: "Comment représenter et décrire une solution technique avec le dessin technique ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "La cotation et les normes",
+    description: "Comment coter un dessin technique en respectant les normes ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "La maquette numérique (CAO)",
+    description: "Comment réaliser une maquette numérique d'un objet avec un logiciel de CAO ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Conception technique",
+    description: "Documents et ressources complémentaires sur la conception et la modélisation"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 4 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 4</h1>
+<ClassLayout title="Séquence 4 — Conception et modélisation - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 4 — Conception et modélisation</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Concevoir et modéliser des solutions techniques innovantes"
     description={description}
     activities={activities.map(a => a.description)}
   />

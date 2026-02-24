@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves étudient les réseaux de communication numériques : leur architecture, leur topologie, et les protocoles qui permettent aux machines de communiquer. Ils maîtrisent les notions d'adressage IP essentielles pour comprendre le fonctionnement d'Internet :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Architecture et topologie des réseaux",
+    description: "Comment sont organisés les réseaux informatiques et quelles sont leurs topologies ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "L'adressage IP et les masques de sous-réseau",
+    description: "Comment fonctionne l'adressage IP et comment configurer un réseau local ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Les protocoles de communication",
+    description: "Quels sont les protocoles qui permettent aux machines de communiquer sur un réseau ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Réseaux et communication",
+    description: "Documents et ressources complémentaires sur les réseaux et leurs protocoles"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 8 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 8</h1>
+<ClassLayout title="Séquence 8 — Réseaux et communication - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 8 — Réseaux et communication</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Étudier les réseaux de communication et leurs protocoles"
     description={description}
     activities={activities.map(a => a.description)}
   />

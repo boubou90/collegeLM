@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 2 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Séquence 2 — Systèmes techniques · Activité 2</h1>
+
+  <ActivitySection
+    title="Structure et composants d'un système"
+    description="Comment identifier et décrire les composants d'un système technique ? Dans cette activité, tu approfondis l'analyse structurelle d'un système en décomposant ses sous-systèmes et ses composants élémentaires. Tu utiliseras un schéma de décomposition (arbre ou tableau) pour représenter la hiérarchie du système étudié. Chaque composant sera décrit : nature, rôle, matériau ou technologie. Tu apprendras à faire la distinction entre la partie commande (qui traite l'information) et la partie opérative (qui effectue l'action). Cette méthode de décomposition systémique est fondamentale en technologie et en ingénierie."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

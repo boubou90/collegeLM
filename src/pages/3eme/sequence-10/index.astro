@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Cette dernière séquence est entièrement dédiée à la consolidation de toutes les notions du programme de 3ème en vue de l'épreuve de technologie du Brevet des collèges. Méthode, révisions thématiques et entraînement sur annales au programme :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Bilan des notions clés",
+    description: "Quelles sont les notions essentielles à maîtriser pour l'épreuve de technologie du Brevet ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "Méthode pour l'épreuve écrite",
+    description: "Comment aborder et réussir l'épreuve de technologie du Brevet des collèges ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Entraînement sur annales",
+    description: "Comment s'entraîner efficacement avec les sujets des années précédentes ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Révisions Brevet",
+    description: "Fiches de révision, annales et ressources complémentaires pour le Brevet"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 10 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 10</h1>
+<ClassLayout title="Séquence 10 — Révisions Brevet - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 10 — Révisions Brevet</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Consolider toutes les notions pour réussir l'épreuve de technologie au Brevet"
     description={description}
     activities={activities.map(a => a.description)}
   />

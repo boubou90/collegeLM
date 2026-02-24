@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Activité 1</h1>
+
+  <ActivitySection
+    title="Les logigrammes et les algorithmes"
+    description="Comment représenter un algorithme sous forme de logigramme ? Un logigramme est une représentation graphique d'un algorithme qui utilise des symboles normalisés : ovale pour le début/fin, rectangle pour une action, losange pour une condition (test), et flèches pour le sens du déroulement. Dans cette activité, tu apprendras à lire et à construire des logigrammes pour des situations variées : allumer une lampe en fonction de la luminosité, déclencher une alarme si un capteur détecte une intrusion, gérer l'ouverture automatique d'une barrière. Tu découvriras comment passer d'un problème exprimé en langage naturel à un algorithme rigoureux représenté graphiquement."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

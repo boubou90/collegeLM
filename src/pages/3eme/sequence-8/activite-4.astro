@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 8 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Réseaux et communication · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Réseaux et communication"
+    description="Retrouve ici les documents et ressources complémentaires sur les réseaux informatiques et leurs protocoles. Tu y trouveras des fiches sur les topologies de réseaux, des exercices d'adressage IP avec corrigés, des tutoriels pour configurer un réseau local, et des ressources sur les protocoles TCP/IP. Consulte également le cours dédié à l'adressage IP disponible dans la section Cours de 3ème. Des simulateurs de réseaux en ligne (Filius, Cisco Packet Tracer) te permettront de pratiquer la configuration réseau de manière interactive sans matériel physique."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

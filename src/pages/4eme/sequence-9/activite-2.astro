@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 9 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Rétro gaming · Activité 2</h1>
+
+  <ActivitySection
+    title="Conception et game design"
+    description="Comment concevoir les règles, les niveaux et l'interface d'un jeu vidéo rétro ? Dans cette activité de game design, tu définis le concept de ton jeu : thème, personnages, objectifs, règles, niveaux de difficulté et interface utilisateur. Tu réaliseras un document de game design (GDD) présentant ta vision du jeu, des croquis des écrans principaux et un storyboard du déroulement d'une partie. Tu apprendras à penser l'expérience joueur avant de commencer à programmer. C'est l'équivalent de la phase de conception dans tout projet d'ingénierie !"
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

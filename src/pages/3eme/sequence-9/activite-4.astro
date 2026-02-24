@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 9 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Robotique et automatismes · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Robotique et automatismes"
+    description="Retrouve ici les documents et ressources complémentaires sur la robotique et les systèmes automatisés. Tu y trouveras des fiches techniques sur les capteurs et actionneurs courants, des tutoriels de programmation pour différentes plateformes robotiques (LEGO Mindstorms, mBot, Arduino), et des ressources sur les systèmes automatisés industriels. Des vidéos de démonstration de robots réels (usines, chirurgie, exploration spatiale, véhicules autonomes) te permettront de contextualiser les compétences acquises en classe. Consulte également le glossaire pour retrouver les définitions des termes clés de la robotique."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

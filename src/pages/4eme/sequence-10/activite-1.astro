@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 10 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Robot et missions · Activité 1</h1>
+
+  <ActivitySection
+    title="Découverte et analyse du robot"
+    description="Comment analyser les caractéristiques techniques d'un robot mobile ? Dans cette première activité, tu découvres le robot utilisé dans la séquence. Tu réalises une analyse fonctionnelle complète : identification des capteurs (ultrasons, infrarouge, lumière…), des actionneurs (moteurs, servomoteurs), du microcontrôleur et de la source d'énergie. Tu comprendras la chaîne d'information (capteur → traitement → actionneur) et la chaîne d'énergie du robot. Tu renseigneras une fiche technique récapitulative qui servira de référence pour les activités de modification et de programmation."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

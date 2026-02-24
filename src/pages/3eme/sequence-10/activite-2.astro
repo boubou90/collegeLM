@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Activité 2</h1>
+
+  <ActivitySection
+    title="Méthode pour l'épreuve écrite"
+    description="Comment aborder et réussir l'épreuve de technologie du Brevet des collèges ? L'épreuve de technologie au DNB est une épreuve écrite de 45 minutes portant sur un dossier technique documenté. Dans cette activité, tu apprendras la méthode pour aborder chaque type de question : analyser un document technique, compléter un schéma, rédiger une explication courte, justifier un choix technique. Tu étudieras les critères d'évaluation des correcteurs et les erreurs les plus fréquentes à éviter. Des conseils pratiques sur la gestion du temps, la présentation des réponses et la vérification en fin d'épreuve te prépareront à aborder le jour J avec confiance."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

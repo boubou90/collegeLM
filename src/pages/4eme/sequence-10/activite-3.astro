@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 10 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Robot et missions · Activité 3</h1>
+
+  <ActivitySection
+    title="Programmation des missions"
+    description="Comment programmer un robot pour qu'il réalise des missions précises de façon autonome ? C'est l'activité finale et la plus ambitieuse : tu programmes le robot pour qu'il accomplisse la mission définie. Tu utiliseras un environnement de programmation par blocs ou en Python pour écrire un algorithme capable de lire les capteurs, prendre des décisions et agir sur les actionneurs. La séquence se conclut par une compétition ou une démonstration : chaque robot doit réussir sa mission en conditions réelles. Tu rédigeras un bilan des difficultés rencontrées et des améliorations possibles."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 9 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Robotique et automatismes · Activité 3</h1>
+
+  <ActivitySection
+    title="Défi robotique — programmer l'autonomie"
+    description="Comment programmer un robot pour qu'il réalise une mission en autonomie ? C'est l'activité finale et le moment le plus attendu de la séquence ! En équipe, tu vas programmer un robot pour qu'il accomplisse une mission autonome : suivre une ligne, éviter des obstacles, cartographier un espace, ou remplir un défi de précision. Tu écriras un programme structuré (algorithme → logigramme → code), tu le téléverseras sur le robot et tu l'ajusteras après chaque test. La séquence se termine par un défi inter-équipes : chaque robot est évalué sur sa capacité à accomplir la mission dans un temps imparti. Un bilan collectif permettra d'identifier les améliorations possibles."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

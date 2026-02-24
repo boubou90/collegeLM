@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 10 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Robot et missions · Activité 2</h1>
+
+  <ActivitySection
+    title="Modifications et adaptations"
+    description="Comment modifier le robot pour qu'il soit capable d'effectuer sa mission ? La mission du robot impose des contraintes spécifiques : naviguer dans un labyrinthe, transporter un objet, éviter des obstacles… Tu devras peut-être ajouter un capteur, modifier la structure mécanique ou adapter le câblage. Tu réaliseras les modifications nécessaires en suivant un protocole et en justifiant chaque choix technique. Cette activité mobilise à la fois des compétences en mécanique, en électronique et en réflexion systémique : chaque modification peut avoir des effets sur d'autres parties du système."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

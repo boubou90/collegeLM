@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Analyse fonctionnelle"
+    description="Retrouve ici les documents et ressources complémentaires sur l'analyse fonctionnelle. Tu y trouveras des fiches méthode sur la bête à cornes et le diagramme pieuvre, des exemples de CDCF rédigés, et des exercices d'application pour t'entraîner. Ces outils sont directement mobilisés à l'épreuve de technologie du Brevet. Consulte également le cours dédié à l'analyse fonctionnelle disponible dans la section Cours de 3ème, ainsi que le glossaire pour retrouver les définitions des termes clés."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

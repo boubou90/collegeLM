@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 8 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Réseaux et communication · Activité 2</h1>
+
+  <ActivitySection
+    title="L'adressage IP et les masques de sous-réseau"
+    description="Comment fonctionne l'adressage IP et comment configurer un réseau local ? Chaque équipement connecté à un réseau possède une adresse IP unique qui l'identifie. Dans cette activité, tu apprendras à lire et interpréter une adresse IPv4 (4 octets en notation décimale pointée), à comprendre le rôle du masque de sous-réseau et de la passerelle par défaut. Tu configureras les paramètres réseau de machines virtuelles pour créer un réseau local fonctionnel et tu vérifieras la connectivité avec la commande ping. Tu aborderas également la distinction entre adresses IP privées (LAN) et publiques (Internet), et le rôle du protocole DHCP qui attribue les adresses automatiquement."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

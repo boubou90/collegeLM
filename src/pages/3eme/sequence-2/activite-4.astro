@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 2 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Séquence 2 — Systèmes techniques · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Systèmes techniques"
+    description="Retrouve ici les documents, fiches de cours et ressources complémentaires sur les systèmes techniques. Tu y trouveras les notions clés de la séquence : définition d'un système technique, structure et décomposition, chaînes d'énergie et d'information, distinction partie commande / partie opérative. Ces ressources te permettront de consolider tes connaissances et de te préparer aux évaluations. Consulte également le cours dédié aux chaînes d'énergie et d'information disponible dans la section Cours de 3ème."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

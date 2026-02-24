@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 2 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Séquence 2 — Systèmes techniques · Activité 3</h1>
+
+  <ActivitySection
+    title="Fonctions et interactions"
+    description="Comment analyser les interactions entre les composants d'un système technique ? Dans cette activité, tu traces les flux d'énergie et d'information qui circulent entre les composants du système. Tu réaliseras des schémas de chaînes d'énergie (source → convertisseur → transmetteur → actionneur) et de chaînes d'information (capteur → traitement → commande). Tu identifieras les grandeurs physiques échangées (tension, courant, force, vitesse…) et tu expliqueras comment chaque composant contribue à la réalisation de la fonction globale du système. Cette activité prépare aux questions de l'épreuve du Brevet."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

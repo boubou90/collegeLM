@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 8 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Toy Rescue · Activité 2</h1>
+
+  <ActivitySection
+    title="Démontage et identification des composants"
+    description="Comment identifier les composants d'un jouet et localiser la panne ? Dans cette activité, tu démonteras méthodiquement le jouet en suivant un protocole précis. Tu identifieras chaque composant (moteur, batterie, carte électronique, capteurs, interrupteurs…) et tu dresseras un schéma annoté de la structure interne. À l'aide d'un multimètre et de tests simples, tu localiseras le composant défectueux. Cette activité t'initie aux gestes professionnels du technicien de maintenance et à la lecture d'un schéma technique."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

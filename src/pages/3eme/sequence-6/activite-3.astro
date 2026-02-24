@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Activité 3</h1>
+
+  <ActivitySection
+    title="Programmer un système automatisé"
+    description="Comment programmer un microcontrôleur pour contrôler un système automatisé ? Dans cette activité de synthèse, tu programmes un microcontrôleur (Arduino, micro:bit ou similaire) pour qu'il pilote un système réel. Le système pourra être une maquette de feu tricolore, un détecteur d'intrusion avec alarme, ou un système de régulation de température. Tu écriras le programme complet en partant du logigramme, en le traduisant en code, puis en le testant sur le matériel. Tu apprendras à utiliser les entrées/sorties numériques et analogiques, et à interfacer le microcontrôleur avec des capteurs et des actionneurs."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Activité 3</h1>
+
+  <ActivitySection
+    title="Entraînement sur annales"
+    description="Comment s'entraîner efficacement avec les sujets des années précédentes ? La meilleure préparation à un examen est de s'entraîner dans les conditions réelles. Dans cette activité, tu travailleras sur des sujets du Brevet des années précédentes : tu liras attentivement le dossier technique, tu répondras aux questions dans le temps imparti (45 minutes), puis tu corrigeras tes réponses en utilisant les grilles de correction officielles. Tu analyseras tes erreurs pour identifier les thèmes à renforcer. Plusieurs sujets d'annales couvrant différents thèmes (domotique, robotique, énergie, réseaux…) seront disponibles pour un entraînement complet. Consulte également la page Brevet pour des ressources supplémentaires."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

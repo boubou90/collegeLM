@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Activité 1</h1>
+
+  <ActivitySection
+    title="La bête à cornes"
+    description="Comment identifier le besoin d'un objet technique avec la bête à cornes ? La bête à cornes est un outil graphique qui permet de définir le besoin auquel répond un objet technique en répondant à trois questions fondamentales : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ? Tu apprendras à construire ce diagramme pour différents objets techniques du quotidien, puis tu l'appliqueras à un objet de ton choix. Cet outil est incontournable au Brevet de technologie et te permettra de justifier l'existence d'un objet technique de façon rigoureuse."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

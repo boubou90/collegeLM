@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 4 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Séquence 4 — Conception et modélisation · Activité 1</h1>
+
+  <ActivitySection
+    title="Représentation et dessin technique"
+    description="Comment représenter et décrire une solution technique avec le dessin technique ? Le dessin technique est le langage universel des ingénieurs et des techniciens. Dans cette activité, tu découvriras les conventions du dessin de définition : les différentes vues (de face, de dessus, de profil), le trait fort pour les arêtes visibles et le trait mixte fin pour les arêtes cachées. Tu apprendras à lire et à interpréter un dessin technique existant avant de réaliser tes propres croquis. Tu travailleras sur des objets simples (support, équerre, pièce mécanique) pour maîtriser la représentation en projection orthogonale."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

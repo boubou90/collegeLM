@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 4 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Séquence 4 — Conception et modélisation · Activité 3</h1>
+
+  <ActivitySection
+    title="La maquette numérique (CAO)"
+    description="Comment réaliser une maquette numérique d'un objet avec un logiciel de CAO ? La Conception Assistée par Ordinateur (CAO) permet de modéliser des objets en 3D de façon précise avant de les fabriquer. Tu utiliseras un logiciel de CAO (OnShape, Tinkercad, ou similaire) pour créer le modèle 3D d'une pièce définie par son dessin technique. Tu apprendras à extruder un profil, à effectuer des opérations booléennes (enlèvement de matière, ajout), et à obtenir les vues 2D automatiquement depuis le modèle 3D. Cette compétence numérique est de plus en plus demandée dans les métiers de l'industrie et du design."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Programmation avancée"
+    description="Retrouve ici les documents et ressources complémentaires sur la programmation et les algorithmes. Tu y trouveras des fiches méthode sur les logigrammes, des tutoriels pour prendre en main Scratch et Python, des exercices corrigés sur les variables, boucles et conditions, et des guides pour programmer un Arduino ou un micro:bit. Ces ressources te permettront de pratiquer en autonomie et d'aller plus loin dans la maîtrise de la programmation. Consulte également le cours sur les logigrammes disponible dans la section Cours de 3ème."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

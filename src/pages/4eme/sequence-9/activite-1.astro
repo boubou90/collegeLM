@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 9 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Rétro gaming · Activité 1</h1>
+
+  <ActivitySection
+    title="Histoire et évolution du jeu vidéo"
+    description="Comment le jeu vidéo a-t-il évolué depuis ses débuts jusqu'aux jeux actuels ? Dans cette première activité, tu exploreras l'histoire du jeu vidéo des années 1970 à aujourd'hui : des premières bornes d'arcade aux jeux mobiles et en réalité virtuelle. Tu analyseras l'évolution des technologies (processeurs, graphismes, interfaces), des usages et des modèles économiques. À partir de documents et de vidéos, tu réaliseras une frise chronologique interactive des grandes étapes du jeu vidéo. Cette culture technique t'aidera à concevoir ton propre jeu dans les activités suivantes."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

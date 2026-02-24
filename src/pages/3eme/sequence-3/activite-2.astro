@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Activité 2</h1>
+
+  <ActivitySection
+    title="Le diagramme pieuvre"
+    description="Comment lister les fonctions de service avec le diagramme pieuvre ? Le diagramme pieuvre (ou diagramme des interacteurs) permet d'identifier toutes les fonctions de service d'un objet technique en analysant ses interactions avec son environnement (utilisateurs, normes, milieu ambiant, énergie, etc.). Tu distingueras les fonctions principales (FP) — qui justifient l'existence de l'objet — et les fonctions contraintes (FC) — imposées par l'environnement. Tu réaliseras un diagramme pieuvre complet pour au moins deux objets techniques, en justifiant chaque fonction identifiée."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

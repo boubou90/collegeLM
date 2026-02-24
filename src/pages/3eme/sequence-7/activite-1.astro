@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 7 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+  <h1>Séquence 7 — Énergie et développement durable · Activité 1</h1>
+
+  <ActivitySection
+    title="Les formes d'énergies et leurs transformations"
+    description="Comment les énergies se transforment-elles dans les systèmes techniques ? L'énergie existe sous de nombreuses formes : électrique, mécanique, thermique, chimique, lumineuse, nucléaire… Dans cette activité, tu étudies comment les systèmes techniques transforment l'énergie d'une forme à une autre. À travers des exemples concrets (moteur électrique, panneau solaire, pile, ampoule), tu traceras les chaînes de conversion énergétique et identifieras les pertes (rendement). Tu comprendras pourquoi aucune transformation n'est parfaite et comment maximiser l'efficacité d'un système pour limiter le gaspillage d'énergie."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

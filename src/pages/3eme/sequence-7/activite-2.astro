@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 7 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+  <h1>Séquence 7 — Énergie et développement durable · Activité 2</h1>
+
+  <ActivitySection
+    title="L'efficacité énergétique"
+    description="Comment mesurer et améliorer l'efficacité énergétique d'un système ? L'efficacité énergétique (ou rendement) mesure la proportion d'énergie utile produite par rapport à l'énergie consommée. Dans cette activité, tu calcules le rendement de différents systèmes (ampoule LED vs incandescente, moteur électrique, chaudière…) et tu compares leurs performances. Tu réaliseras une enquête sur la consommation énergétique du collège et proposeras des solutions pour la réduire. Tu apprendras à lire une étiquette énergie européenne, à interpréter des données de consommation et à argumenter pour des choix technologiques plus sobres en énergie."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

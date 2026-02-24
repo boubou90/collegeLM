@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Activité 3</h1>
+
+  <ActivitySection
+    title="Le cahier des charges fonctionnel (CDCF)"
+    description="Comment rédiger un cahier des charges fonctionnel ? Le CDCF est un document de référence qui formalise toutes les exigences auxquelles doit répondre un objet technique. Pour chaque fonction de service identifiée avec le diagramme pieuvre, tu préciseras les critères d'appréciation (comment mesurer que la fonction est bien remplie ?) et les niveaux exigés (valeurs limites acceptables). Tu rédigeras un CDCF complet pour un objet technique de ton choix, en utilisant un tableau normalisé. Ce document est à la base de tout projet de conception en entreprise ou en bureau d'études."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

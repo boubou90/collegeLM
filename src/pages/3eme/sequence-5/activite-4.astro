@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 5 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Séquence 5 — Innovation et société · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Innovation et société"
+    description="Retrouve ici les documents et ressources complémentaires sur l'innovation technologique et son impact sociétal. Tu y trouveras des articles, documentaires et études de cas sur les grandes inventions qui ont transformé notre monde, ainsi que des outils pour développer ta réflexion éthique sur les technologies. Des fiches méthode pour la présentation orale de ton projet d'innovation sont également disponibles. Ces ressources t'aideront à enrichir ton argumentation et à adopter un regard critique et éclairé sur les technologies d'aujourd'hui et de demain."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

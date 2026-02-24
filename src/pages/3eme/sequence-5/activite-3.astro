@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 5 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Séquence 5 — Innovation et société · Activité 3</h1>
+
+  <ActivitySection
+    title="Projet : innover pour un besoin réel"
+    description="Comment proposer une solution innovante pour répondre à un besoin identifié ? En équipe, tu vas mener un mini-projet d'innovation : identifier un problème concret du quotidien (au collège, dans ta ville, dans ta famille), proposer une solution technologique originale, et la présenter sous forme d'un exposé ou d'une affiche. Tu utiliseras les outils de l'analyse fonctionnelle (bête à cornes) pour valider que ton innovation répond bien au besoin identifié, et tu réfléchiras aux impacts de ta solution sur la société et l'environnement. Ce projet de créativité technique prépare aux concours d'innovation et à l'esprit entrepreneurial."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

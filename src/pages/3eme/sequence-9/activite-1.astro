@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 9 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Robotique et automatismes · Activité 1</h1>
+
+  <ActivitySection
+    title="Analyse d'un système robotisé"
+    description="Comment analyser la structure et les composants d'un système robotisé ? Dans cette activité de découverte, tu étudies un robot réel (ou une maquette) en réalisant son analyse fonctionnelle complète. Tu identifieras sa structure mécanique (liaisons, degrés de liberté), ses actionneurs (moteurs, vérins, servomoteurs), ses capteurs (distance, couleur, contact, lumière) et son unité de traitement (microcontrôleur ou processeur). Tu renseigneras une fiche technique détaillée et tu traceras les chaînes d'énergie et d'information du robot. Cette analyse préalable est indispensable avant de modifier ou programmer le système dans les activités suivantes."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 4 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Séquence 4 — Conception et modélisation · Activité 2</h1>
+
+  <ActivitySection
+    title="La cotation et les normes"
+    description="Comment coter un dessin technique en respectant les normes ? La cotation est l'ensemble des indications chiffrées portées sur un dessin pour définir complètement la forme et les dimensions d'une pièce. Tu apprendras les règles de cotation normalisées : placement des lignes de cote, utilisation des symboles (diamètre ∅, rayon R, tolérance), et règles d'écriture des valeurs numériques. Tu coteras des pièces techniques simples en veillant à ne coter qu'une seule fois chaque dimension et à ne pas créer de surabondance. La maîtrise de la cotation est essentielle pour que ta pièce puisse être fabriquée correctement."
+    documents={documents}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

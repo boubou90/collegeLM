@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves étudient la structure et le fonctionnement des systèmes techniques. Ils apprennent à identifier les différents éléments d'un système, à comprendre comment ils interagissent pour réaliser une fonction, et à appliquer les notions de chaîne d'énergie et d'information à des cas concrets :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "Qu'est-ce qu'un système technique ?",
+    description: "Comment reconnaître et définir un système technique ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "Structure et composants d'un système",
+    description: "Comment identifier et décrire les composants d'un système technique ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Fonctions et interactions",
+    description: "Comment analyser les interactions entre les composants d'un système ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Systèmes techniques",
+    description: "Documents et ressources complémentaires sur les systèmes techniques"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 2 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 2</h1>
+<ClassLayout title="Séquence 2 — Les systèmes techniques - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 2 — Les systèmes techniques</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Étudier la structure et le fonctionnement des systèmes techniques"
     description={description}
     activities={activities.map(a => a.description)}
   />

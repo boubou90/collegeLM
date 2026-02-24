@@ -4,36 +4,36 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Cette séquence est en cours de préparation. Le contenu sera disponible prochainement.";
+const description = `Dans cette séquence, les élèves explorent l'histoire de l'innovation technologique et analysent son impact sur la société. Ils comprennent comment les innovations répondent à des besoins sociaux, économiques et environnementaux, et imaginent eux-mêmes une solution innovante :`;
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Activité de lancement — contenu à venir"
+    title: "L'histoire de l'innovation",
+    description: "Comment les innovations technologiques ont-elles transformé notre société à travers le temps ?"
   },
   {
-    title: "Activité 2",
-    description: "Contenu à venir"
+    title: "Impact sociétal et éthique",
+    description: "Quels sont les impacts sociaux, économiques et environnementaux des innovations technologiques ?"
   },
   {
-    title: "Activité 3",
-    description: "Contenu à venir"
+    title: "Projet : innover pour un besoin réel",
+    description: "Comment proposer une solution innovante pour répondre à un besoin identifié ?"
   },
   {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
+    title: "Ressources — Innovation et société",
+    description: "Documents et ressources complémentaires sur l'innovation et son impact sociétal"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 5 - 3ème" level={level}>
-  <BackButton href="/3eme" />
-  <h1>Séquence 5</h1>
+<ClassLayout title="Séquence 5 — Innovation et société - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 5 — Innovation et société</h1>
 
   <SequencePresentation
-    title="Présentation de la séquence"
+    title="Comprendre l'impact des innovations technologiques sur notre société"
     description={description}
     activities={activities.map(a => a.description)}
   />
