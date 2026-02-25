@@ -16,45 +16,43 @@ export default function BrevetCountdown() {
     return () => clearInterval(timer);
   }, []);
 
-  if (days === null || days <= 0) return null;
+  if (days === null) return null;
 
   return (
     <div style={{
       background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
       color: 'white',
-      padding: '0.9rem 1.5rem',
+      padding: '1rem 1.5rem',
       textAlign: 'center',
-      fontSize: '1.05rem',
       borderRadius: '0.75rem',
-      marginBottom: '1.5rem',
-      fontWeight: '500',
+      marginBottom: '2rem',
       boxShadow: '0 4px 14px rgba(249,115,22,0.35)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '0.5rem',
     }}>
-      <span style={{ fontSize: '1.3rem' }}>⏳</span>
-      <span>
-        Brevet dans{' '}
-        <strong style={{ fontSize: '1.3rem', fontWeight: '800' }}>{days}</strong>
-        {' '}jours — Commence à réviser !
-      </span>
+      <p style={{ fontSize: '1.2rem', fontWeight: '800', margin: 0 }}>
+        ⏳ Brevet dans{' '}
+        <span style={{ fontSize: '1.8rem' }}>
+          {days > 0 ? days : "0 — C'est aujourd'hui !"}
+        </span>
+        {days > 0 ? ' jours' : ''}
+      </p>
+      <p style={{ fontSize: '0.85rem', marginTop: '0.35rem', opacity: 0.9 }}>
+        Commence à réviser maintenant — chaque jour compte !
+      </p>
       <a
-        href="/3eme/brevet"
+        href="/3eme/brevet/"
         style={{
-          marginLeft: '0.75rem',
-          background: 'rgba(255,255,255,0.2)',
-          color: 'white',
-          padding: '0.3rem 0.9rem',
-          borderRadius: '999px',
+          display: 'inline-block',
+          marginTop: '0.75rem',
+          background: 'white',
+          color: '#ea580c',
+          padding: '0.4rem 1rem',
+          borderRadius: '0.5rem',
           textDecoration: 'none',
           fontSize: '0.9rem',
-          fontWeight: '600',
-          whiteSpace: 'nowrap',
+          fontWeight: '700',
         }}
       >
-        Réviser →
+        📚 Accéder aux sujets corrigés →
       </a>
     </div>
   );
