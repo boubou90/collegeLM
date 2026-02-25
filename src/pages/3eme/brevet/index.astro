@@ -2,465 +2,564 @@
 import ClassLayout from '../../../layouts/ClassLayout.astro';
 import BrevetSection from '../../../components/Brevet/BrevetSection.astro';
 import EpreuveCard from '../../../components/Brevet/EpreuveCard.astro';
-import BackButton from '../../../components/BackButton.astro';
 import BrevetQuiz from '../../../components/BrevetQuiz';
 
 const epreuves = [
-  {
-    title: "Français",
-    coefficient: 1,
-    duration: "3h",
-    points: 100
-  },
-  {
-    title: "Mathématiques",
-    coefficient: 1,
-    duration: "2h",
-    points: 100
-  },
-  {
-    title: "Histoire-Géographie-EMC",
-    coefficient: 1,
-    duration: "2h",
-    points: 50
-  },
-  {
-    title: "Sciences",
-    coefficient: 1,
-    duration: "1h",
-    points: 50
-  }
+  { title: "Français",           coefficient: 3, duration: "3h",   points: 100 },
+  { title: "Mathématiques",      coefficient: 3, duration: "2h",   points: 100 },
+  { title: "Histoire-Géo-EMC",   coefficient: 3, duration: "2h",   points: 50  },
+  { title: "Sciences",           coefficient: 1, duration: "1h",   points: 50  },
+  { title: "Technologie ★",      coefficient: 1, duration: "1h30", points: 50  },
 ];
 
-const brevetSubjects = [
-  {
-    name: "Aspirateur",
-    subject: "/documents/3eme/brevet/aspirateur-sujet.pdf",
-    correction: "/documents/3eme/brevet/aspirateur-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: false,
-    programmation: false,
-    reseau: true
-  },
-  { 
-    name: "Freinage ABS",
-    subject: "/documents/3eme/brevet/abs-sujet.pdf",
-    correction: "/documents/3eme/brevet/abs-correction.pdf",
-    analyseFonctionnelle: false,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: true
-  },
-  {
-    name: "Irrigation en Afrique",
-    subject: "/documents/3eme/brevet/irrigation-sujet.pdf",
-    correction: "/documents/3eme/brevet/irrigation-correction.pdf",
-    analyseFonctionnelle: false,
-    chainesEnergie: false,
-    programmation: true,
-    reseau: false
-  },
-  { 
-    name: "Hydrolienne",
-    subject: "/documents/3eme/brevet/Hydrolienne-sujet.pdf",
-    correction: "/documents/3eme/brevet/Hydrolienne-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: false,
-    programmation: true,
-    reseau: false
-  },
-  {
-    name: "Piscine",
-    subject: "/documents/3eme/brevet/Piscine-sujet.pdf",
-    correction: "/documents/3eme/brevet/Piscine-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false
-  },
-  {
-    name: "Serre automatisée",
-    subject: "/documents/3eme/brevet/Serre-automatisée-sujet.pdf",
-    correction: "/documents/3eme/brevet/Serre-automatisée-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false
-  },
-  {
-    name: "Sirop d'érable",
-    subject: "/documents/3eme/brevet/Sirop-d-érable-sujet.pdf",
-    correction: "/documents/3eme/brevet/Sirop-d-érable-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: false,
-    programmation: false,
-    reseau: false
-  },
-  {
-    name: "Bioanalyseur",
-    subject: "/documents/3eme/brevet/Bioanalyseur-sujet.pdf",
-    correction: "/documents/3eme/brevet/Bioanalyseur-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: false,
-    reseau: false
-  },
-  {
-    name: "Eclairage collège",
-    subject: "/documents/3eme/brevet/Eclairage-college-sujet.pdf",
-    correction: "/documents/3eme/brevet/Eclairage-college-correction.pdf",
-    analyseFonctionnelle: false,
-    chainesEnergie: false,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Barrage",
-    subject: "/documents/3eme/brevet/Barrage-sujet.pdf",
-    correction: "/documents/3eme/brevet/Barrage-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Echographe 1",
-    subject: "/documents/3eme/brevet/Echographe1-sujet.pdf",
-    correction: "/documents/3eme/brevet/Echographe1-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: false,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Robot explorateur",
-    subject: "/documents/3eme/brevet/Robot-explorateur-sujet.pdf",
-    correction: "/documents/3eme/brevet/Robot-explorateur-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: false,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Microscope",
-    subject: "/documents/3eme/brevet/Microscope-sujet.pdf",
-    correction: "/documents/3eme/brevet/Microscope-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: false,
-    programmation: false,
-    reseau: false 
-  },
-  {
-    name: "La Prise Connectée",
-    subject: "/documents/3eme/brevet/La-prise-connectee.pdf",
-    correction: "/documents/3eme/brevet/La-prise-connectee-correction.pdf",
-    analyseFonctionnelle: false,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: true 
-  },
-  {
-    name: "Le mur végétal",
-    subject: "/documents/3eme/brevet/Le-mur-vegetal.pdf",
-    correction: "/documents/3eme/brevet/Le-mur-vegetal-correction.pdf",
-    analyseFonctionnelle: false,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Le Chauffe eau",
-    subject: "/documents/3eme/brevet/Le-chauffe-eau.pdf",
-    correction: "/documents/3eme/brevet/Le-chauffe-eau-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Le tapis de course",
-    subject: "/documents/3eme/brevet/Le-tapis-de-course.pdf",
-    correction: "/documents/3eme/brevet/Le-tapis-de-course-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: true 
-  },
-  {
-    name: "Le robot collecteur de déchets",
-    subject: "/documents/3eme/brevet/Le-robot-collecteur-de-dechets.pdf",
-    correction: "/documents/3eme/brevet/Le-robot-collecteur-de-dechets-correction.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Le Gyropode",
-    subject: "/documents/3eme/brevet/Brevet-blanc-gyropode.pdf",
-    correction: "/documents/3eme/brevet/Brevet-blanc-corrige-gyropode.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: false,
-    reseau: false 
-  },
-  {
-    name: "Ascenseur",
-    subject: "/documents/3eme/brevet/sujet-Ascenseur.pdf",
-    correction: "/documents/3eme/brevet/sujet-Ascenseur-corrigé.pdf",
-    analyseFonctionnelle: true,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false 
-  },
-  {
-    name: "Récupération de l'eau de pluie",
-    subject: "/documents/3eme/brevet/eau de pluie.pdf",
-    correction: "/documents/3eme/brevet/eau de pluie-correction.pdf",
-    analyseFonctionnelle: false,
-    chainesEnergie: true,
-    programmation: true,
-    reseau: false 
-  }
+interface Subject {
+  name: string;
+  subject: string;
+  correction: string;
+  analyseFonctionnelle: boolean;
+  chainesEnergie: boolean;
+  programmation: boolean;
+  reseau: boolean;
+  _sId: string;
+  _cId: string;
+}
+
+const brevetSubjects: Subject[] = [
+  { name: "Aspirateur",                    subject: "/documents/3eme/brevet/aspirateur-sujet.pdf",                     correction: "/documents/3eme/brevet/aspirateur-correction.pdf",                    analyseFonctionnelle: true,  chainesEnergie: false, programmation: false, reseau: true,  _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Freinage ABS",                  subject: "/documents/3eme/brevet/abs-sujet.pdf",                             correction: "/documents/3eme/brevet/abs-correction.pdf",                           analyseFonctionnelle: false, chainesEnergie: true,  programmation: true,  reseau: true,  _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Irrigation en Afrique",         subject: "/documents/3eme/brevet/irrigation-sujet.pdf",                      correction: "/documents/3eme/brevet/irrigation-correction.pdf",                     analyseFonctionnelle: false, chainesEnergie: false, programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Hydrolienne",                   subject: "/documents/3eme/brevet/Hydrolienne-sujet.pdf",                     correction: "/documents/3eme/brevet/Hydrolienne-correction.pdf",                    analyseFonctionnelle: true,  chainesEnergie: false, programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Piscine",                       subject: "/documents/3eme/brevet/Piscine-sujet.pdf",                         correction: "/documents/3eme/brevet/Piscine-correction.pdf",                        analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Serre automatisée",             subject: "/documents/3eme/brevet/Serre-automatisée-sujet.pdf",               correction: "/documents/3eme/brevet/Serre-automatisée-correction.pdf",              analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Sirop d'érable",               subject: "/documents/3eme/brevet/Sirop-d-érable-sujet.pdf",                  correction: "/documents/3eme/brevet/Sirop-d-érable-correction.pdf",                 analyseFonctionnelle: true,  chainesEnergie: false, programmation: false, reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Bioanalyseur",                  subject: "/documents/3eme/brevet/Bioanalyseur-sujet.pdf",                    correction: "/documents/3eme/brevet/Bioanalyseur-correction.pdf",                   analyseFonctionnelle: true,  chainesEnergie: true,  programmation: false, reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Éclairage collège",             subject: "/documents/3eme/brevet/Eclairage-college-sujet.pdf",               correction: "/documents/3eme/brevet/Eclairage-college-correction.pdf",              analyseFonctionnelle: false, chainesEnergie: false, programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Barrage",                       subject: "/documents/3eme/brevet/Barrage-sujet.pdf",                         correction: "/documents/3eme/brevet/Barrage-correction.pdf",                        analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Échographe",                    subject: "/documents/3eme/brevet/Echographe1-sujet.pdf",                     correction: "/documents/3eme/brevet/Echographe1-correction.pdf",                    analyseFonctionnelle: true,  chainesEnergie: false, programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Robot explorateur",             subject: "/documents/3eme/brevet/Robot-explorateur-sujet.pdf",               correction: "/documents/3eme/brevet/Robot-explorateur-correction.pdf",              analyseFonctionnelle: true,  chainesEnergie: false, programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Microscope",                    subject: "/documents/3eme/brevet/Microscope-sujet.pdf",                      correction: "/documents/3eme/brevet/Microscope-correction.pdf",                     analyseFonctionnelle: true,  chainesEnergie: false, programmation: false, reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "La Prise Connectée",            subject: "/documents/3eme/brevet/La-prise-connectee.pdf",                    correction: "/documents/3eme/brevet/La-prise-connectee-correction.pdf",             analyseFonctionnelle: false, chainesEnergie: true,  programmation: true,  reseau: true,  _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Le Mur Végétal",               subject: "/documents/3eme/brevet/Le-mur-vegetal.pdf",                        correction: "/documents/3eme/brevet/Le-mur-vegetal-correction.pdf",                 analyseFonctionnelle: false, chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Le Chauffe-eau",               subject: "/documents/3eme/brevet/Le-chauffe-eau.pdf",                        correction: "/documents/3eme/brevet/Le-chauffe-eau-correction.pdf",                 analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Le Tapis de Course",           subject: "/documents/3eme/brevet/Le-tapis-de-course.pdf",                    correction: "/documents/3eme/brevet/Le-tapis-de-course-correction.pdf",             analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: true,  _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Robot Collecteur de Déchets",  subject: "/documents/3eme/brevet/Le-robot-collecteur-de-dechets.pdf",        correction: "/documents/3eme/brevet/Le-robot-collecteur-de-dechets-correction.pdf", analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Le Gyropode",                  subject: "/documents/3eme/brevet/Brevet-blanc-gyropode.pdf",                 correction: "/documents/3eme/brevet/Brevet-blanc-corrige-gyropode.pdf",             analyseFonctionnelle: true,  chainesEnergie: true,  programmation: false, reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Ascenseur",                    subject: "/documents/3eme/brevet/sujet-Ascenseur.pdf",                       correction: "/documents/3eme/brevet/sujet-Ascenseur-corrigé.pdf",                   analyseFonctionnelle: true,  chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
+  { name: "Récupération Eau de Pluie",    subject: "/documents/3eme/brevet/eau de pluie.pdf",                          correction: "/documents/3eme/brevet/eau de pluie-correction.pdf",                   analyseFonctionnelle: false, chainesEnergie: true,  programmation: true,  reseau: false, _sId: `pdf-${Math.random().toString(36).slice(2,9)}`, _cId: `pdf-${Math.random().toString(36).slice(2,9)}` },
 ];
 ---
 
-<ClassLayout title="Brevet Technologie — Sujets Corrigés & Fiches de Révision" level="3eme" description="Prépare ton Brevet de technologie : sujets corrigés (serre automatisée, freinage ABS, sirop d'érable), fiches de révision et quiz interactifs.">
+<ClassLayout
+  title="Brevet Technologie — 21 Sujets Corrigés à Télécharger"
+  level="3eme"
+  description="Prépare ton Brevet de technologie : 21 sujets corrigés (Gyropode, Ascenseur, Hydrolienne, Robot…), fiches de révision et quiz interactifs. 1h30 · 50 points · Gratuit."
+>
   <div class="brevet-container">
-    <div class="header">
-      <h1>Brevet des Collèges</h1>
-      <button class="brevet-button" onclick="document.getElementById('subjects-modal').style.display='block'">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg>
-        Sujet Brevet Technologie
-      </button>
-    </div>
 
-    <div id="subjects-modal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Sujets de Brevet - Technologie</h2>
-          <span class="close" onclick="document.getElementById('subjects-modal').style.display='none'">&times;</span>
+    <header class="brevet-hero">
+      <h1>Brevet des Collèges — Technologie</h1>
+      <p class="brevet-subtitle">21 sujets corrigés · 1h30 · 50 points · 100&nbsp;% gratuit</p>
+    </header>
+
+    <!-- ── Intro SEO ── -->
+    <section class="brevet-intro" data-aos="fade-up">
+      <h2>L'épreuve de technologie au Brevet</h2>
+      <div class="intro-grid">
+        <div class="intro-block">
+          <h3>📋 Structure de l'épreuve</h3>
+          <p>L'épreuve écrite de technologie dure <strong>1h30</strong> et est notée sur <strong>50 points</strong> (coefficient 1). Elle comporte deux à trois dossiers portant chacun sur un objet ou système technique. Chaque dossier mêle analyse fonctionnelle, chaînes d'énergie et/ou programmation.</p>
         </div>
-        <div class="subjects-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Sujet</th>
-                <th>Sujet PDF</th>
-                <th>Corrigé</th>
-                <th>Analyse fonctionnelle</th>
-                <th>Chaînes d'énergie</th>
-                <th>Programmation</th>
-                <th>Réseau</th>
-              </tr>
-            </thead>
-            <tbody>
-              {brevetSubjects.map(subject => (
-                <tr>
-                  <td>{subject.name}</td>
-                  <td>
-                    <a href={subject.subject} class="pdf-link" target="_blank">PDF</a>
-                  </td>
-                  <td>
-                    <a href={subject.correction} class="pdf-link" target="_blank">PDF</a>
-                  </td>
-                  <td>{subject.analyseFonctionnelle ? "✓" : ""}</td>
-                  <td>{subject.chainesEnergie ? "✓" : ""}</td>
-                  <td>{subject.programmation ? "✓" : ""}</td>
-                  <td>{subject.reseau ? "✓" : ""}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div class="intro-block">
+          <h3>🎯 Thèmes les plus fréquents</h3>
+          <ul>
+            <li><strong>Programmation</strong> — présente dans 76&nbsp;% des sujets</li>
+            <li><strong>Analyse fonctionnelle</strong> — présente dans 71&nbsp;% des sujets</li>
+            <li><strong>Chaînes d'énergie</strong> — présente dans 62&nbsp;% des sujets</li>
+            <li><strong>Réseaux</strong> — présente dans 19&nbsp;% des sujets</li>
+          </ul>
+        </div>
+        <div class="intro-block">
+          <h3>✅ Méthode en 4 étapes</h3>
+          <ol>
+            <li>Lire le <strong>dossier technique</strong> en entier avant de répondre</li>
+            <li>Identifier le <strong>thème principal</strong> (énergie, programmation…)</li>
+            <li>Répondre en vous appuyant <strong>sur les documents fournis</strong></li>
+            <li>Vérifier que chaque réponse est <strong>justifiée</strong></li>
+          </ol>
+        </div>
+        <div class="intro-block">
+          <h3>❓ FAQ</h3>
+          <ul>
+            <li><strong>Calculatrice autorisée ?</strong> Non, sauf indication contraire.</li>
+            <li><strong>Faut-il connaître tous les thèmes ?</strong> Oui — un sujet peut mêler 2 ou 3 domaines.</li>
+            <li><strong>Coefficient technologie ?</strong> 1 (contrôle continu + épreuve écrite).</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
 
+    <!-- ── Épreuves ── -->
     <BrevetSection
-      title="Présentation du DNB"
-      description="Le diplôme national du brevet (DNB) évalue les connaissances et compétences acquises à la fin du collège. Il prend en compte le contrôle continu et les épreuves finales."
-    />
-
-    <BrevetSection
-      title="Épreuves écrites"
-      description="Les épreuves écrites du brevet se déroulent sur deux jours et comportent quatre épreuves principales."
+      title="Épreuves du DNB"
+      description="Le Diplôme National du Brevet (DNB) évalue les connaissances et compétences acquises à la fin du collège. Il combine contrôle continu et épreuves écrites finales."
     >
       <div class="epreuves-grid">
-        {epreuves.map(epreuve => (
-          <EpreuveCard {...epreuve} />
+        {epreuves.map(e => (
+          <EpreuveCard {...e} />
         ))}
       </div>
+      <p class="techno-note">★ La technologie fait partie des épreuves écrites de spécialité — c'est la matière centrale de ce site !</p>
     </BrevetSection>
 
+    <!-- ── 21 sujets en grille ── -->
+    <section class="sujets-section" data-aos="fade-up">
+      <h2>21 Sujets Corrigés — Technologie</h2>
+      <p class="sujets-intro">Tous les sujets sont disponibles en lecture directe et en téléchargement. Filtre par thème grâce aux étiquettes colorées.</p>
+
+      <div class="sujets-grid">
+        {brevetSubjects.map(s => (
+          <article class="sujet-card">
+            <h3 class="sujet-name">{s.name}</h3>
+
+            <div class="sujet-tags">
+              {s.analyseFonctionnelle && <span class="tag tag-af">Analyse fonctionnelle</span>}
+              {s.chainesEnergie       && <span class="tag tag-ce">Chaînes d'énergie</span>}
+              {s.programmation        && <span class="tag tag-prog">Programmation</span>}
+              {s.reseau               && <span class="tag tag-net">Réseau</span>}
+            </div>
+
+            <div class="sujet-actions">
+              <button class="pdf-open-btn btn-sujet" data-pdf-id={s._sId} data-pdf-src={s.subject}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Sujet
+              </button>
+              <button class="pdf-open-btn btn-corrige" data-pdf-id={s._cId} data-pdf-src={s.correction}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Corrigé
+              </button>
+            </div>
+
+            <!-- Modal sujet -->
+            <div id={s._sId} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Sujet : ${s.name}`}>
+              <div class="pdf-backdrop"></div>
+              <div class="pdf-window">
+                <div class="pdf-header">
+                  <div class="pdf-header-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>{s.name} — Sujet</span>
+                  </div>
+                  <div class="pdf-header-right">
+                    <a href={s.subject} download class="pdf-dl-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                      Télécharger
+                    </a>
+                    <button class="pdf-close-btn" aria-label="Fermer">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="pdf-body">
+                  <iframe class="pdf-iframe" data-src={s.subject} title={`${s.name} — Sujet`} loading="lazy"></iframe>
+                  <div class="pdf-fallback">
+                    <p class="fb-emoji">📄</p>
+                    <p class="fb-name">{s.name} — Sujet</p>
+                    <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
+                    <a href={s.subject} download class="fb-dl">📥 Télécharger le PDF</a>
+                    <a href={s.subject} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal corrigé -->
+            <div id={s._cId} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Corrigé : ${s.name}`}>
+              <div class="pdf-backdrop"></div>
+              <div class="pdf-window">
+                <div class="pdf-header">
+                  <div class="pdf-header-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>{s.name} — Corrigé</span>
+                  </div>
+                  <div class="pdf-header-right">
+                    <a href={s.correction} download class="pdf-dl-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                      Télécharger
+                    </a>
+                    <button class="pdf-close-btn" aria-label="Fermer">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="pdf-body">
+                  <iframe class="pdf-iframe" data-src={s.correction} title={`${s.name} — Corrigé`} loading="lazy"></iframe>
+                  <div class="pdf-fallback">
+                    <p class="fb-emoji">✅</p>
+                    <p class="fb-name">{s.name} — Corrigé</p>
+                    <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
+                    <a href={s.correction} download class="fb-dl">📥 Télécharger le corrigé</a>
+                    <a href={s.correction} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── Quiz ── -->
     <BrevetSection
       title="🎯 Quiz type Brevet — Technologie"
       description="5 questions sur les thèmes clés du programme : chaînes d'énergie, logigrammes, analyse fonctionnelle et réseaux. Avec explications détaillées pour chaque réponse."
     >
       <BrevetQuiz client:load />
     </BrevetSection>
+
   </div>
 </ClassLayout>
 
 <style>
   .brevet-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem;
   }
 
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  /* ── Hero ── */
+  .brevet-hero {
+    text-align: center;
     margin-bottom: 2rem;
   }
 
   h1 {
     color: var(--primary-dark);
-    font-size: 2.5rem;
-    margin: 0;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
   }
 
+  .brevet-subtitle {
+    color: #f97316;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  /* ── Intro SEO ── */
+  .brevet-intro {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .brevet-intro h2 {
+    color: #c2410c;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .intro-block {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .intro-block h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #9a3412;
+    margin-bottom: 0.6rem;
+  }
+
+  .intro-block p,
+  .intro-block li {
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.6;
+  }
+
+  .intro-block ul,
+  .intro-block ol {
+    padding-left: 1.1rem;
+  }
+
+  .intro-block li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* ── Épreuves ── */
   .epreuves-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
   }
 
-  .brevet-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  .techno-note {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #f97316;
+    font-weight: 600;
   }
 
-  .brevet-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
+  /* ── Sujets grille ── */
+  .sujets-section {
+    margin: 2rem 0;
   }
 
-  .icon {
-    width: 1.2em;
-    height: 1.2em;
+  .sujets-section h2 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  /* Modal styles */
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-
-  .modal-content {
-    background-color: white;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    max-width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .sujets-intro {
+    color: #64748b;
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
   }
 
-  .close {
-    font-size: 2rem;
-    cursor: pointer;
-    color: #666;
+  .sujets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
   }
 
-  .close:hover {
-    color: #000;
-  }
-
-  /* Table styles */
-  .subjects-table {
-    overflow-x: auto;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-
-  th, td {
-    padding: 0.75rem;
-    text-align: center;
+  .sujet-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.1rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
     border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
 
-  th {
-    background-color: #f8fafc;
-    font-weight: 600;
+  .sujet-card:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+  }
+
+  [data-theme="dark"] .sujet-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+  }
+
+  .sujet-name {
+    font-size: 0.95rem;
+    font-weight: 700;
     color: var(--primary-dark);
+    margin: 0;
+    line-height: 1.3;
   }
 
-  tr:nth-child(even) {
-    background-color: #f8fafc;
+  [data-theme="dark"] .sujet-name { color: #93c5fd; }
+
+  .sujet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
   }
 
-  .pdf-link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #ef4444;
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .tag-af   { background: #dbeafe; color: #1d4ed8; }
+  .tag-ce   { background: #dcfce7; color: #15803d; }
+  .tag-prog { background: #fef3c7; color: #92400e; }
+  .tag-net  { background: #f3e8ff; color: #7e22ce; }
+
+  .sujet-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .btn-sujet,
+  .btn-corrige {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.6rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-sujet  { background: #ef4444; color: white; }
+  .btn-sujet:hover  { background: #dc2626; transform: translateY(-1px); }
+
+  .btn-corrige { background: #22c55e; color: white; }
+  .btn-corrige:hover { background: #16a34a; transform: translateY(-1px); }
+
+  /* ── PDF Modal (pattern KnowledgeSheet) ── */
+  .pdf-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .pdf-modal.is-open { display: flex; }
+
+  .pdf-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    backdrop-filter: blur(4px);
+  }
+
+  .pdf-window {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .pdf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .pdf-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .pdf-header-left span {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pdf-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .pdf-dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #2563eb;
     color: white;
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s;
+    transition: background 0.2s;
+  }
+  .pdf-dl-btn:hover { background: #1d4ed8; }
+
+  .pdf-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #9ca3af;
+    border-radius: 0.375rem;
+    transition: all 0.15s;
+  }
+  .pdf-close-btn:hover { color: #111827; background: #f3f4f6; }
+
+  .pdf-body {
+    flex: 1;
+    background: #f1f5f9;
+    overflow: hidden;
+    position: relative;
   }
 
-  .pdf-link:hover {
-    background-color: #dc2626;
+  .pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
   }
 
-  @media (max-width: 768px) {
-    .brevet-container {
-      padding: 1rem;
-    }
+  .pdf-fallback {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
 
-    .header {
-      flex-direction: column;
-      gap: 1rem;
-      text-align: center;
-    }
+  .fb-emoji { font-size: 3.5rem; margin: 0; }
+  .fb-name  { font-weight: 600; color: #374151; font-size: 1rem; margin: 0; }
+  .fb-info  { font-size: 0.875rem; color: #64748b; margin: 0; }
 
-    h1 {
-      font-size: 2rem;
-    }
+  .fb-dl {
+    background: #2563eb;
+    color: white;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .fb-dl:hover { background: #1d4ed8; }
 
-    .modal-content {
-      margin: 1rem;
-      padding: 1rem;
-    }
+  .fb-open { color: #2563eb; font-size: 0.875rem; text-decoration: none; }
+  .fb-open:hover { text-decoration: underline; }
 
-    th, td {
-      padding: 0.5rem;
-      font-size: 0.875rem;
-    }
+  @media (max-width: 640px) {
+    h1 { font-size: 1.6rem; }
+    .pdf-iframe { display: none; }
+    .pdf-fallback { display: flex; }
+    .pdf-window { height: 80vh; }
+    .sujets-grid { grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  import '../../../scripts/pdfModal';
+</script>
