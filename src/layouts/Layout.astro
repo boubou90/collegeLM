@@ -4,6 +4,7 @@ import SEO from '../components/SEO.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
 import GoogleAd from '../components/GoogleAd.astro';
+import QuickAccessBar from '../components/QuickAccessBar.astro';
 
 interface Props {
   title: string;
@@ -102,6 +103,7 @@ const courseSchema = isCourse ? JSON.stringify({
     )}
   </head>
   <body>
+    <QuickAccessBar />
     <BackgroundPattern />
     <ThemeToggle />
     <NewsletterPopup />

@@ -76,6 +76,34 @@ import Quiz from '../components/Quiz';
 				});
 			</script>
 
+			<!-- Accès rapides -->
+			<section class="quick-access-section" data-aos="fade-up">
+				<h2 class="quick-access-title">🔗 Accès rapides</h2>
+				<div class="quick-access-grid">
+					<a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel"
+					   target="_blank" rel="noopener noreferrer"
+					   class="quick-card">
+						<span class="quick-card-icon">🏫</span>
+						<span class="quick-card-name">Collège Louise Michel</span>
+						<span class="quick-card-sub">Site officiel</span>
+					</a>
+					<a href="https://www.parisclassenumerique.fr/"
+					   target="_blank" rel="noopener noreferrer"
+					   class="quick-card">
+						<span class="quick-card-icon">💻</span>
+						<span class="quick-card-name">PCN / Pronote</span>
+						<span class="quick-card-sub">Notes &amp; absences</span>
+					</a>
+					<a href="https://www.ac-paris.fr/"
+					   target="_blank" rel="noopener noreferrer"
+					   class="quick-card">
+						<span class="quick-card-icon">🎓</span>
+						<span class="quick-card-name">Académie de Paris</span>
+						<span class="quick-card-sub">Infos officielles</span>
+					</a>
+				</div>
+			</section>
+
 				<section class="intro-section" data-aos="fade-up">
 					<h2>Bienvenue sur le site de technologie du Collège Louise Michel</h2>
 					<p class="intro-text">
@@ -238,6 +266,71 @@ import Quiz from '../components/Quiz';
 		max-width: 1600px;
 		margin: 0 auto;
 		padding: 1rem;
+	}
+
+	.quick-access-section {
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.quick-access-title {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #374151;
+		margin-bottom: 0.75rem;
+	}
+
+	.quick-access-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.quick-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.3rem;
+		padding: 0.9rem 0.5rem;
+		background: white;
+		border: 2px solid #e2e8f0;
+		border-radius: 0.75rem;
+		text-decoration: none;
+		transition: transform 0.2s ease, border-color 0.2s ease;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+	}
+
+	.quick-card:hover {
+		transform: translateY(-3px);
+		border-color: #93c5fd;
+	}
+
+	.quick-card-icon { font-size: 1.8rem; }
+
+	.quick-card-name {
+		font-size: 0.78rem;
+		font-weight: 700;
+		color: #1e3a8a;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	.quick-card-sub {
+		font-size: 0.68rem;
+		color: #64748b;
+	}
+
+	@media (max-width: 480px) {
+		.quick-access-grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0.5rem;
+		}
+		.quick-card { padding: 0.7rem 0.3rem; }
+		.quick-card-icon { font-size: 1.4rem; }
+		.quick-card-name { font-size: 0.7rem; }
+		.quick-card-sub { display: none; }
 	}
 
 	.profile-selector-section {
