@@ -68,21 +68,21 @@ import Quiz from '../components/Quiz';
 					<a href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel"
 					   target="_blank" rel="noopener noreferrer"
 					   class="quick-card">
-						<span class="quick-card-icon">🏫</span>
+						<img src="/images/logo-college.svg" alt="Logo Collège Louise Michel" class="quick-card-logo" />
 						<span class="quick-card-name">Collège Louise Michel</span>
 						<span class="quick-card-sub">Site officiel</span>
 					</a>
 					<a href="https://www.parisclassenumerique.fr/"
 					   target="_blank" rel="noopener noreferrer"
 					   class="quick-card">
-						<span class="quick-card-icon">💻</span>
+						<img src="/images/logo-pcn.png" alt="Logo Paris Classe Numérique" class="quick-card-logo" />
 						<span class="quick-card-name">PCN / Pronote</span>
 						<span class="quick-card-sub">Notes &amp; absences</span>
 					</a>
 					<a href="https://www.ac-paris.fr/"
 					   target="_blank" rel="noopener noreferrer"
 					   class="quick-card">
-						<span class="quick-card-icon">🎓</span>
+						<img src="/images/logo-academie.svg" alt="Logo Académie de Paris" class="quick-card-logo" />
 						<span class="quick-card-name">Académie de Paris</span>
 						<span class="quick-card-sub">Infos officielles</span>
 					</a>
@@ -292,7 +292,11 @@ import Quiz from '../components/Quiz';
 		border-color: #93c5fd;
 	}
 
-	.quick-card-icon { font-size: 1.8rem; }
+	.quick-card-logo {
+		height: 52px;
+		width: auto;
+		object-fit: contain;
+	}
 
 	.quick-card-name {
 		font-size: 0.78rem;
