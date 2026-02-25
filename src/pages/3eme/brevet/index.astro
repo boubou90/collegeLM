@@ -116,6 +116,7 @@ const brevetSubjects: Subject[] = [
       <h2>21 Sujets Corrigés — Technologie</h2>
       <p class="sujets-intro">Tous les sujets sont disponibles en lecture directe et en téléchargement. Filtre par thème grâce aux étiquettes colorées.</p>
 
+      <!-- Boucle 1 : cartes uniquement (sans modales pour éviter le bug position:fixed + transform) -->
       <div class="sujets-grid">
         {brevetSubjects.map(s => (
           <article class="sujet-card">
@@ -138,75 +139,77 @@ const brevetSubjects: Subject[] = [
                 Corrigé
               </button>
             </div>
-
-            <!-- Modal sujet -->
-            <div id={s._sId} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Sujet : ${s.name}`}>
-              <div class="pdf-backdrop"></div>
-              <div class="pdf-window">
-                <div class="pdf-header">
-                  <div class="pdf-header-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    <span>{s.name} — Sujet</span>
-                  </div>
-                  <div class="pdf-header-right">
-                    <a href={s.subject} download class="pdf-dl-btn">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                      Télécharger
-                    </a>
-                    <button class="pdf-close-btn" aria-label="Fermer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="pdf-body">
-                  <iframe class="pdf-iframe" data-src={s.subject} title={`${s.name} — Sujet`} loading="lazy"></iframe>
-                  <div class="pdf-fallback">
-                    <p class="fb-emoji">📄</p>
-                    <p class="fb-name">{s.name} — Sujet</p>
-                    <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
-                    <a href={s.subject} download class="fb-dl">📥 Télécharger le PDF</a>
-                    <a href={s.subject} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal corrigé -->
-            <div id={s._cId} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Corrigé : ${s.name}`}>
-              <div class="pdf-backdrop"></div>
-              <div class="pdf-window">
-                <div class="pdf-header">
-                  <div class="pdf-header-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    <span>{s.name} — Corrigé</span>
-                  </div>
-                  <div class="pdf-header-right">
-                    <a href={s.correction} download class="pdf-dl-btn">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                      Télécharger
-                    </a>
-                    <button class="pdf-close-btn" aria-label="Fermer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="pdf-body">
-                  <iframe class="pdf-iframe" data-src={s.correction} title={`${s.name} — Corrigé`} loading="lazy"></iframe>
-                  <div class="pdf-fallback">
-                    <p class="fb-emoji">✅</p>
-                    <p class="fb-name">{s.name} — Corrigé</p>
-                    <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
-                    <a href={s.correction} download class="fb-dl">📥 Télécharger le corrigé</a>
-                    <a href={s.correction} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </article>
         ))}
       </div>
     </section>
+
+    <!-- Boucle 2 : toutes les modales HORS des cartes (position:fixed fonctionne correctement) -->
+    {brevetSubjects.map(s => (
+      <>
+        <div id={s._sId} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Sujet : ${s.name}`}>
+          <div class="pdf-backdrop"></div>
+          <div class="pdf-window">
+            <div class="pdf-header">
+              <div class="pdf-header-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>{s.name} — Sujet</span>
+              </div>
+              <div class="pdf-header-right">
+                <a href={s.subject} download class="pdf-dl-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  Télécharger
+                </a>
+                <button class="pdf-close-btn" aria-label="Fermer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pdf-body">
+              <iframe class="pdf-iframe" data-src={s.subject} title={`${s.name} — Sujet`} loading="lazy"></iframe>
+              <div class="pdf-fallback">
+                <p class="fb-emoji">📄</p>
+                <p class="fb-name">{s.name} — Sujet</p>
+                <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
+                <a href={s.subject} download class="fb-dl">📥 Télécharger le PDF</a>
+                <a href={s.subject} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id={s._cId} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Corrigé : ${s.name}`}>
+          <div class="pdf-backdrop"></div>
+          <div class="pdf-window">
+            <div class="pdf-header">
+              <div class="pdf-header-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>{s.name} — Corrigé</span>
+              </div>
+              <div class="pdf-header-right">
+                <a href={s.correction} download class="pdf-dl-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  Télécharger
+                </a>
+                <button class="pdf-close-btn" aria-label="Fermer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pdf-body">
+              <iframe class="pdf-iframe" data-src={s.correction} title={`${s.name} — Corrigé`} loading="lazy"></iframe>
+              <div class="pdf-fallback">
+                <p class="fb-emoji">✅</p>
+                <p class="fb-name">{s.name} — Corrigé</p>
+                <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
+                <a href={s.correction} download class="fb-dl">📥 Télécharger le corrigé</a>
+                <a href={s.correction} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    ))}
 
     <!-- ── Quiz ── -->
     <BrevetSection
@@ -344,7 +347,6 @@ const brevetSubjects: Subject[] = [
 
   .sujet-card:hover {
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transform: translateY(-2px);
   }
 
   [data-theme="dark"] .sujet-card {
