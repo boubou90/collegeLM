@@ -4,7 +4,6 @@
 
 <div class="quick-bar">
   <div class="quick-bar-inner">
-    <p class="quick-bar-label">🏫 Accès rapides</p>
     <div class="quick-bar-links">
 
       <a
@@ -14,7 +13,8 @@
         class="quick-btn quick-btn-college"
         aria-label="Site officiel du Collège Louise Michel Paris"
       >
-        🏫 <span class="quick-btn-label">Collège</span> ↗
+        <img src="/images/logo-college.svg" alt="Collège Louise Michel" class="quick-logo" />
+        <span class="quick-btn-label">Collège</span> ↗
       </a>
 
       <a
@@ -24,7 +24,8 @@
         class="quick-btn quick-btn-pcn"
         aria-label="Paris Classe Numérique — ENT et Pronote"
       >
-        💻 <span class="quick-btn-label">PCN / Pronote</span> ↗
+        <img src="/images/logo-pcn.png" alt="Paris Classe Numérique" class="quick-logo" />
+        <span class="quick-btn-label">PCN / Pronote</span> ↗
       </a>
 
       <a
@@ -34,7 +35,8 @@
         class="quick-btn quick-btn-academie"
         aria-label="Site de l'Académie de Paris"
       >
-        🎓 <span class="quick-btn-label">Académie de Paris</span> ↗
+        <img src="/images/logo-academie.svg" alt="Académie de Paris" class="quick-logo" />
+        <span class="quick-btn-label">Académie de Paris</span> ↗
       </a>
 
     </div>
@@ -56,16 +58,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .quick-bar-label {
-    font-size: 0.72rem;
-    color: #9ca3af;
-    font-weight: 500;
-    white-space: nowrap;
+    justify-content: center;
   }
 
   .quick-bar-links {
@@ -73,12 +66,13 @@
     gap: 0.5rem;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
 
   .quick-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.4rem;
     font-size: 0.75rem;
     font-weight: 700;
     padding: 0.3rem 0.75rem;
@@ -98,10 +92,16 @@
   .quick-btn-pcn      { background: #7c3aed; }
   .quick-btn-academie { background: #059669; }
 
-  /* Mobile : cacher le texte long, garder emoji + flèche */
+  .quick-logo {
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  /* Mobile : cacher le texte, garder logo + flèche */
   @media (max-width: 420px) {
-    .quick-bar-label { display: none; }
     .quick-btn-label { display: none; }
-    .quick-btn { padding: 0.3rem 0.55rem; font-size: 0.85rem; }
+    .quick-btn { padding: 0.3rem 0.55rem; }
   }
 </style>
