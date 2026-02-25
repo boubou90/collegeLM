@@ -8,12 +8,36 @@ import GoogleAd from '../components/GoogleAd.astro';
 interface Props {
   title: string;
   description?: string;
+  isCourse?: boolean;
+  level?: string;
+  canonicalURL?: string;
 }
 
 const {
   title,
-  description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème."
+  description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème.",
+  isCourse = false,
+  level = '',
+  canonicalURL,
 } = Astro.props;
+
+const pageCanonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://collegelouisemichel.net').href;
+
+const courseSchema = isCourse ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": title,
+  "description": description,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Collège Louise Michel Paris",
+    "url": "https://collegelouisemichel.net"
+  },
+  "educationalLevel": level,
+  "isAccessibleForFree": true,
+  "inLanguage": "fr",
+  "url": pageCanonical
+}) : null;
 ---
 
 <!doctype html>
@@ -72,6 +96,10 @@ const {
         ]
       }
     </script>
+
+    {isCourse && courseSchema && (
+      <script is:inline type="application/ld+json" set:html={courseSchema} />
+    )}
   </head>
   <body>
     <BackgroundPattern />
