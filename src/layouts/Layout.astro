@@ -107,6 +107,24 @@ const courseSchema = isCourse ? JSON.stringify({
     <NewsletterPopup />
     <slot />
 
+    <!-- Section auteur -->
+    <section class="author-section">
+      <div class="author-inner">
+        <div class="author-avatar">👨‍🏫</div>
+        <div class="author-body">
+          <p class="author-name">Créé par un enseignant de technologie</p>
+          <p class="author-desc">
+            Ce site est conçu par un professeur de technologie au Collège Louise Michel à Paris.
+            Toutes les ressources sont alignées sur le programme officiel de l'Éducation Nationale
+            et testées avec de vrais élèves.
+          </p>
+          <a href="/actualites/preparer-brevet-technologie/" class="author-link">
+            Lire le guide complet pour préparer le Brevet →
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- T9 : Ad avant footer (optimisation AdSense) -->
     <div class="footer-ad">
       <GoogleAd slot="5227967907" format="auto" lazy={true} />
@@ -207,6 +225,62 @@ const courseSchema = isCourse ? JSON.stringify({
   [data-theme="dark"] .level-button {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
+  }
+
+  .author-section {
+    background: #f8fafc;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .author-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .author-avatar {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .author-name {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+  }
+
+  .author-desc {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .author-link {
+    color: #2563eb;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .author-link:hover {
+    text-decoration: underline;
+  }
+
+  [data-theme="dark"] .author-section {
+    background: #1e293b;
+  }
+
+  [data-theme="dark"] .author-name {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .author-desc {
+    color: #94a3b8;
   }
 
   .footer-ad {
