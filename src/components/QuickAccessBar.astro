@@ -13,7 +13,7 @@
         class="quick-btn quick-btn-college"
         aria-label="Site officiel du Collège Louise Michel Paris"
       >
-        <img src="/images/logo-college.svg" alt="Collège Louise Michel" class="quick-logo" />
+        <span class="quick-logo-wrap"><img src="/images/logo-college.svg" alt="Collège Louise Michel" class="quick-logo" /></span>
         <span class="quick-btn-label">Collège</span> ↗
       </a>
 
@@ -24,7 +24,7 @@
         class="quick-btn quick-btn-pcn"
         aria-label="Paris Classe Numérique — ENT et Pronote"
       >
-        <img src="/images/logo-pcn.png" alt="Paris Classe Numérique" class="quick-logo" />
+        <span class="quick-logo-wrap"><img src="/images/logo-pcn.png" alt="Paris Classe Numérique" class="quick-logo" /></span>
         <span class="quick-btn-label">PCN / Pronote</span> ↗
       </a>
 
@@ -35,7 +35,7 @@
         class="quick-btn quick-btn-academie"
         aria-label="Site de l'Académie de Paris"
       >
-        <img src="/images/logo-academie.svg" alt="Académie de Paris" class="quick-logo" />
+        <span class="quick-logo-wrap"><img src="/images/logo-academie.svg" alt="Académie de Paris" class="quick-logo" /></span>
         <span class="quick-btn-label">Académie de Paris</span> ↗
       </a>
 
@@ -92,11 +92,20 @@
   .quick-btn-pcn      { background: #7c3aed; }
   .quick-btn-academie { background: #059669; }
 
+  .quick-logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 4px;
+    padding: 2px 4px;
+    height: 22px;
+  }
+
   .quick-logo {
-    height: 18px;
+    height: 16px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
   }
 
   /* Mobile : cacher le texte, garder logo + flèche */
