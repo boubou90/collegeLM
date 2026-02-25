@@ -239,55 +239,6 @@ const courseSchema = isCourse ? JSON.stringify({
     word-spacing: 0.1em !important;
   }
 
-  .dys-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 4.6rem;
-    padding: 0 0.6rem;
-    height: 3rem;
-    background: #f3f4f6;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 600;
-    transition: all 0.2s;
-    white-space: nowrap;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .dys-toggle.active {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
-  }
-
-  [data-theme="dark"] .dys-toggle {
-    background: #1e293b;
-    border-color: #475569;
-    color: #f1f5f9;
-  }
-
-  [data-theme="dark"] .dys-toggle.active {
-    background: #3b82f6;
-    border-color: #3b82f6;
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .dys-toggle {
-      top: 0.6rem;
-      right: 3.6rem;
-      height: 2.5rem;
-      font-size: 0.72rem;
-      padding: 0 0.5rem;
-    }
-  }
-
   * {
     margin: 0;
     padding: 0;

@@ -96,6 +96,36 @@
       </li>
     </ul>
 
+    <!-- Actions (dyslexie + thème) -->
+    <div class="gnav-actions">
+      <button
+        id="dyslexic-toggle"
+        class="gnav-dys-btn"
+        aria-label="Activer le mode dyslexique"
+        aria-pressed="false"
+        title="Mode Dyslexique"
+      >
+        <span>Aa</span><span class="gnav-dys-label"> Dyslexie</span>
+      </button>
+
+      <button id="theme-toggle" class="gnav-theme-btn" aria-label="Basculer thème clair/sombre" title="Changer le thème">
+        <!-- soleil -->
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- lune -->
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+
     <!-- Burger (mobile) -->
     <button class="gnav-burger" id="gnav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="gnav-mobile">
       <span></span>
@@ -292,6 +322,66 @@
   }
   [data-theme="dark"] .gnav-drop-item { color: #cbd5e1; }
   [data-theme="dark"] .gnav-drop-item:hover { background: #0f172a; color: #93c5fd; }
+
+  /* ── Actions (dyslexie + thème) ── */
+  .gnav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .gnav-dys-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0 0.55rem;
+    height: 2rem;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .gnav-dys-btn:hover { background: #e5e7eb; }
+  .gnav-dys-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+  [data-theme="dark"] .gnav-dys-btn { background: #1e293b; border-color: #475569; color: #f1f5f9; }
+  [data-theme="dark"] .gnav-dys-btn.active { background: #3b82f6; border-color: #3b82f6; }
+
+  .gnav-dys-label { display: inline; }
+  @media (max-width: 560px) { .gnav-dys-label { display: none; } }
+
+  .gnav-theme-btn {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .gnav-theme-btn:hover { transform: scale(1.1); }
+
+  .gnav-theme-btn .sun-icon,
+  .gnav-theme-btn .moon-icon {
+    position: absolute;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  .gnav-theme-btn .sun-icon  { opacity: 1; transform: rotate(0deg); }
+  .gnav-theme-btn .moon-icon { opacity: 0; transform: rotate(-90deg); }
+  :global([data-theme="dark"]) .gnav-theme-btn .sun-icon  { opacity: 0; transform: rotate(90deg); }
+  :global([data-theme="dark"]) .gnav-theme-btn .moon-icon { opacity: 1; transform: rotate(0deg); }
 
   /* ── Burger ── */
   .gnav-burger {
