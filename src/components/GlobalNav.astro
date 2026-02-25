@@ -1,0 +1,452 @@
+---
+// GlobalNav — menu de navigation global sticky
+---
+
+<nav class="global-nav" id="global-nav" aria-label="Navigation principale">
+  <div class="gnav-inner">
+
+    <!-- Logo / Accueil -->
+    <a href="/" class="gnav-home" aria-label="Accueil">
+      <svg xmlns="http://www.w3.org/2000/svg" class="gnav-home-icon" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Accueil</span>
+    </a>
+
+    <!-- Liens desktop -->
+    <ul class="gnav-links" role="list">
+
+      <!-- 5ème dropdown -->
+      <li class="gnav-item gnav-has-dropdown">
+        <a href="/5eme" class="gnav-link">
+          5ème
+          <svg class="gnav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 1l4 4 4-4"/>
+          </svg>
+        </a>
+        <ul class="gnav-dropdown" role="list">
+          <li><a href="/5eme/sequence-1" class="gnav-drop-item">Séquence 1</a></li>
+          <li><a href="/5eme/sequence-2" class="gnav-drop-item">Séquence 2</a></li>
+          <li><a href="/5eme/sequence-3" class="gnav-drop-item">Séquence 3</a></li>
+          <li><a href="/5eme/sequence-4" class="gnav-drop-item">Séquence 4</a></li>
+          <li><a href="/5eme/sequence-5" class="gnav-drop-item">Séquence 5</a></li>
+          <li><a href="/5eme/sequence-6" class="gnav-drop-item">Séquence 6</a></li>
+          <li><a href="/5eme/sequence-7" class="gnav-drop-item">Séquence 7</a></li>
+        </ul>
+      </li>
+
+      <!-- 4ème dropdown -->
+      <li class="gnav-item gnav-has-dropdown">
+        <a href="/4eme" class="gnav-link">
+          4ème
+          <svg class="gnav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 1l4 4 4-4"/>
+          </svg>
+        </a>
+        <ul class="gnav-dropdown" role="list">
+          <li><a href="/4eme/sequence-1" class="gnav-drop-item">Séquence 1</a></li>
+          <li><a href="/4eme/sequence-2" class="gnav-drop-item">Séquence 2</a></li>
+          <li><a href="/4eme/sequence-3" class="gnav-drop-item">Séquence 3</a></li>
+          <li><a href="/4eme/sequence-4" class="gnav-drop-item">Séquence 4</a></li>
+          <li><a href="/4eme/sequence-5" class="gnav-drop-item">Séquence 5</a></li>
+          <li><a href="/4eme/sequence-6" class="gnav-drop-item">Séquence 6</a></li>
+          <li><a href="/4eme/sequence-7" class="gnav-drop-item">Séquence 7</a></li>
+          <li><a href="/4eme/sequence-8" class="gnav-drop-item">Séquence 8</a></li>
+          <li><a href="/4eme/sequence-9" class="gnav-drop-item">Séquence 9</a></li>
+          <li><a href="/4eme/sequence-10" class="gnav-drop-item">Séquence 10</a></li>
+        </ul>
+      </li>
+
+      <!-- 3ème dropdown -->
+      <li class="gnav-item gnav-has-dropdown">
+        <a href="/3eme" class="gnav-link">
+          3ème
+          <svg class="gnav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 1l4 4 4-4"/>
+          </svg>
+        </a>
+        <ul class="gnav-dropdown" role="list">
+          <li><a href="/3eme/sequence-1" class="gnav-drop-item">Séquence 1</a></li>
+          <li><a href="/3eme/sequence-2" class="gnav-drop-item">Séquence 2</a></li>
+          <li><a href="/3eme/sequence-3" class="gnav-drop-item">Séquence 3</a></li>
+          <li><a href="/3eme/sequence-4" class="gnav-drop-item">Séquence 4</a></li>
+          <li><a href="/3eme/sequence-5" class="gnav-drop-item">Séquence 5</a></li>
+          <li><a href="/3eme/sequence-6" class="gnav-drop-item">Séquence 6</a></li>
+          <li><a href="/3eme/sequence-7" class="gnav-drop-item">Séquence 7</a></li>
+          <li><a href="/3eme/sequence-8" class="gnav-drop-item">Séquence 8</a></li>
+          <li><a href="/3eme/sequence-9" class="gnav-drop-item">Séquence 9</a></li>
+          <li><a href="/3eme/sequence-10" class="gnav-drop-item">Séquence 10</a></li>
+        </ul>
+      </li>
+
+      <!-- Liens simples -->
+      <li class="gnav-item">
+        <a href="/3eme/brevet" class="gnav-link">Brevet</a>
+      </li>
+      <li class="gnav-item">
+        <a href="/3eme/revisions" class="gnav-link">Révisions</a>
+      </li>
+      <li class="gnav-item">
+        <a href="/glossaire" class="gnav-link">Glossaire</a>
+      </li>
+      <li class="gnav-item">
+        <a href="/materiel-recommande" class="gnav-link">Matériel</a>
+      </li>
+    </ul>
+
+    <!-- Burger (mobile) -->
+    <button class="gnav-burger" id="gnav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="gnav-mobile">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div class="gnav-mobile" id="gnav-mobile" aria-hidden="true">
+    <ul role="list">
+      <li><a href="/" class="gnav-mobile-link">🏠 Accueil</a></li>
+
+      <li class="gnav-mobile-group">
+        <button class="gnav-mobile-toggle" aria-expanded="false">5ème <svg class="gnav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="gnav-mobile-sub">
+          <li><a href="/5eme" class="gnav-mobile-sub-link">↳ Vue d'ensemble</a></li>
+          <li><a href="/5eme/sequence-1" class="gnav-mobile-sub-link">Séquence 1</a></li>
+          <li><a href="/5eme/sequence-2" class="gnav-mobile-sub-link">Séquence 2</a></li>
+          <li><a href="/5eme/sequence-3" class="gnav-mobile-sub-link">Séquence 3</a></li>
+          <li><a href="/5eme/sequence-4" class="gnav-mobile-sub-link">Séquence 4</a></li>
+          <li><a href="/5eme/sequence-5" class="gnav-mobile-sub-link">Séquence 5</a></li>
+          <li><a href="/5eme/sequence-6" class="gnav-mobile-sub-link">Séquence 6</a></li>
+          <li><a href="/5eme/sequence-7" class="gnav-mobile-sub-link">Séquence 7</a></li>
+        </ul>
+      </li>
+
+      <li class="gnav-mobile-group">
+        <button class="gnav-mobile-toggle" aria-expanded="false">4ème <svg class="gnav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="gnav-mobile-sub">
+          <li><a href="/4eme" class="gnav-mobile-sub-link">↳ Vue d'ensemble</a></li>
+          <li><a href="/4eme/sequence-1" class="gnav-mobile-sub-link">Séquence 1</a></li>
+          <li><a href="/4eme/sequence-2" class="gnav-mobile-sub-link">Séquence 2</a></li>
+          <li><a href="/4eme/sequence-3" class="gnav-mobile-sub-link">Séquence 3</a></li>
+          <li><a href="/4eme/sequence-4" class="gnav-mobile-sub-link">Séquence 4</a></li>
+          <li><a href="/4eme/sequence-5" class="gnav-mobile-sub-link">Séquence 5</a></li>
+          <li><a href="/4eme/sequence-6" class="gnav-mobile-sub-link">Séquence 6</a></li>
+          <li><a href="/4eme/sequence-7" class="gnav-mobile-sub-link">Séquence 7</a></li>
+          <li><a href="/4eme/sequence-8" class="gnav-mobile-sub-link">Séquence 8</a></li>
+          <li><a href="/4eme/sequence-9" class="gnav-mobile-sub-link">Séquence 9</a></li>
+          <li><a href="/4eme/sequence-10" class="gnav-mobile-sub-link">Séquence 10</a></li>
+        </ul>
+      </li>
+
+      <li class="gnav-mobile-group">
+        <button class="gnav-mobile-toggle" aria-expanded="false">3ème <svg class="gnav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+        <ul class="gnav-mobile-sub">
+          <li><a href="/3eme" class="gnav-mobile-sub-link">↳ Vue d'ensemble</a></li>
+          <li><a href="/3eme/sequence-1" class="gnav-mobile-sub-link">Séquence 1</a></li>
+          <li><a href="/3eme/sequence-2" class="gnav-mobile-sub-link">Séquence 2</a></li>
+          <li><a href="/3eme/sequence-3" class="gnav-mobile-sub-link">Séquence 3</a></li>
+          <li><a href="/3eme/sequence-4" class="gnav-mobile-sub-link">Séquence 4</a></li>
+          <li><a href="/3eme/sequence-5" class="gnav-mobile-sub-link">Séquence 5</a></li>
+          <li><a href="/3eme/sequence-6" class="gnav-mobile-sub-link">Séquence 6</a></li>
+          <li><a href="/3eme/sequence-7" class="gnav-mobile-sub-link">Séquence 7</a></li>
+          <li><a href="/3eme/sequence-8" class="gnav-mobile-sub-link">Séquence 8</a></li>
+          <li><a href="/3eme/sequence-9" class="gnav-mobile-sub-link">Séquence 9</a></li>
+          <li><a href="/3eme/sequence-10" class="gnav-mobile-sub-link">Séquence 10</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/3eme/brevet" class="gnav-mobile-link">Brevet</a></li>
+      <li><a href="/3eme/revisions" class="gnav-mobile-link">Révisions</a></li>
+      <li><a href="/glossaire" class="gnav-mobile-link">Glossaire</a></li>
+      <li><a href="/materiel-recommande" class="gnav-mobile-link">Matériel</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  /* ── Barre principale ── */
+  .global-nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  [data-theme="dark"] .global-nav {
+    background: #0f172a;
+    border-bottom-color: #334155;
+  }
+
+  .gnav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* ── Accueil ── */
+  .gnav-home {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: color 0.2s;
+  }
+  .gnav-home:hover { color: var(--primary-dark); }
+  .gnav-home-icon { width: 1.1em; height: 1.1em; flex-shrink: 0; }
+
+  /* ── Liste desktop ── */
+  .gnav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+  }
+
+  .gnav-item { position: relative; }
+
+  .gnav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.35rem 0.65rem;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .gnav-link:hover {
+    background: #f1f5f9;
+    color: var(--primary);
+  }
+  [data-theme="dark"] .gnav-link { color: #cbd5e1; }
+  [data-theme="dark"] .gnav-link:hover { background: #1e293b; color: #93c5fd; }
+
+  .gnav-caret {
+    width: 10px;
+    height: 6px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  /* ── Dropdown ── */
+  .gnav-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.6rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 0.4rem 0;
+    min-width: 160px;
+    list-style: none;
+    margin: 0;
+    z-index: 300;
+  }
+
+  [data-theme="dark"] .gnav-dropdown {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .gnav-has-dropdown:hover .gnav-dropdown,
+  .gnav-has-dropdown:focus-within .gnav-dropdown {
+    display: block;
+  }
+
+  .gnav-has-dropdown:hover .gnav-caret {
+    transform: rotate(180deg);
+  }
+
+  .gnav-drop-item {
+    display: block;
+    padding: 0.45rem 1rem;
+    color: #374151;
+    font-size: 0.825rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .gnav-drop-item:hover {
+    background: #f1f5f9;
+    color: var(--primary);
+  }
+  [data-theme="dark"] .gnav-drop-item { color: #cbd5e1; }
+  [data-theme="dark"] .gnav-drop-item:hover { background: #0f172a; color: #93c5fd; }
+
+  /* ── Burger ── */
+  .gnav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    border-radius: 0.4rem;
+  }
+  .gnav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #374151;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  [data-theme="dark"] .gnav-burger span { background: #cbd5e1; }
+
+  /* burger animé quand ouvert */
+  .gnav-burger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .gnav-burger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .gnav-burger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── Menu mobile ── */
+  .gnav-mobile {
+    display: none;
+    border-top: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem 1rem;
+    background: white;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  [data-theme="dark"] .gnav-mobile {
+    background: #0f172a;
+    border-top-color: #334155;
+  }
+  .gnav-mobile[aria-hidden="false"] { display: block; }
+
+  .gnav-mobile > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .gnav-mobile-link {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background 0.15s;
+  }
+  .gnav-mobile-link:hover { background: #f1f5f9; color: var(--primary); }
+  [data-theme="dark"] .gnav-mobile-link { color: #cbd5e1; }
+  [data-theme="dark"] .gnav-mobile-link:hover { background: #1e293b; }
+
+  .gnav-mobile-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.55rem 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: background 0.15s;
+  }
+  .gnav-mobile-toggle:hover { background: #f1f5f9; color: var(--primary); }
+  [data-theme="dark"] .gnav-mobile-toggle { color: #cbd5e1; }
+  [data-theme="dark"] .gnav-mobile-toggle:hover { background: #1e293b; }
+
+  .gnav-mobile-toggle[aria-expanded="true"] .gnav-caret {
+    transform: rotate(180deg);
+  }
+
+  .gnav-mobile-sub {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    display: none;
+  }
+  .gnav-mobile-sub.is-open { display: block; }
+
+  .gnav-mobile-sub-link {
+    display: block;
+    padding: 0.4rem 0.75rem;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background 0.15s;
+  }
+  .gnav-mobile-sub-link:hover { background: #f1f5f9; color: var(--primary); }
+  [data-theme="dark"] .gnav-mobile-sub-link { color: #94a3b8; }
+  [data-theme="dark"] .gnav-mobile-sub-link:hover { background: #1e293b; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .gnav-links { display: none; }
+    .gnav-burger { display: flex; }
+  }
+</style>
+
+<script>
+  function initGlobalNav() {
+    const burger = document.getElementById('gnav-burger');
+    const mobile = document.getElementById('gnav-mobile');
+
+    burger?.addEventListener('click', () => {
+      const isOpen = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!isOpen));
+      mobile?.setAttribute('aria-hidden', String(isOpen));
+    });
+
+    // Sous-menus mobiles
+    document.querySelectorAll<HTMLButtonElement>('.gnav-mobile-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        const sub = btn.nextElementSibling as HTMLElement | null;
+        sub?.classList.toggle('is-open', !isOpen);
+      });
+    });
+
+    // Fermer si clic hors menu
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('global-nav');
+      if (!nav?.contains(e.target as Node)) {
+        burger?.setAttribute('aria-expanded', 'false');
+        mobile?.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  initGlobalNav();
+  document.addEventListener('astro:after-swap', initGlobalNav);
+</script>

@@ -19,6 +19,52 @@ const LEVEL_CONFIG: Record<string, { label: string; color: string; gradient: str
 };
 const levelConfig = LEVEL_CONFIG[level] ?? { label: level, color: '#6366f1', gradient: 'linear-gradient(135deg,#6366f1,#8b5cf6)' };
 
+// ── Breadcrumbs ──────────────────────────────────────────────
+const SLUG_LABELS: Record<string, string> = {
+  '5eme': '5ème', '4eme': '4ème', '3eme': '3ème',
+  'brevet': 'Brevet', 'revisions': 'Révisions', 'orientation': 'Orientation',
+  'cours': 'Cours', 'exercices': 'Exercices', 'glossaire': 'Glossaire',
+  'actualites': 'Actualités', 'resources': 'Ressources',
+};
+
+function slugToLabel(slug: string): string {
+  if (SLUG_LABELS[slug]) return SLUG_LABELS[slug];
+  // sequence-N → Séquence N
+  const seqMatch = slug.match(/^sequence-(\d+)$/);
+  if (seqMatch) return `Séquence ${seqMatch[1]}`;
+  // activite-N → Activité N
+  const actMatch = slug.match(/^activite-(\d+)$/);
+  if (actMatch) return `Activité ${actMatch[1]}`;
+  // sujet-YYYY → Sujet YYYY
+  const sujetMatch = slug.match(/^sujet-(\d+)$/);
+  if (sujetMatch) return `Sujet ${sujetMatch[1]}`;
+  // fallback: capitalise
+  return slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
+}
+
+const BASE_URL = 'https://collegelouisemichel.net';
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+
+interface Crumb { label: string; href: string }
+const crumbs: Crumb[] = [{ label: 'Accueil', href: '/' }];
+let accumulated = '';
+for (const seg of pathSegments) {
+  accumulated += `/${seg}`;
+  crumbs.push({ label: slugToLabel(seg), href: accumulated });
+}
+
+const breadcrumbSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.label,
+    item: `${BASE_URL}${c.href}`,
+  })),
+});
+// ─────────────────────────────────────────────────────────────
+
 const courseSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
@@ -36,7 +82,22 @@ const courseSchema = JSON.stringify({
 
 <Layout title={title} description={description}>
   <script is:inline type="application/ld+json" set:html={courseSchema}></script>
+  <script is:inline type="application/ld+json" set:html={breadcrumbSchema}></script>
   <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <ol>
+        {crumbs.map((c, i) => (
+          <li>
+            {i < crumbs.length - 1
+              ? <a href={c.href}>{c.label}</a>
+              : <span aria-current="page">{c.label}</span>
+            }
+          </li>
+        ))}
+      </ol>
+    </nav>
+
     <nav class="top-nav" data-aos="fade-down">
       <!-- Rangée 1 : accueil · niveau · recherche -->
       <div class="nav-row-top">
@@ -116,6 +177,49 @@ const courseSchema = JSON.stringify({
 </Layout>
 
 <style>
+  /* ── Breadcrumb ── */
+  .breadcrumb {
+    margin-bottom: 0.75rem;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb li + li::before {
+    content: '›';
+    margin-right: 0.25rem;
+    color: #94a3b8;
+  }
+
+  .breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .breadcrumb a:hover { color: var(--primary); text-decoration: underline; }
+
+  .breadcrumb span {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  [data-theme="dark"] .breadcrumb a { color: #94a3b8; }
+  [data-theme="dark"] .breadcrumb a:hover { color: #93c5fd; }
+  [data-theme="dark"] .breadcrumb span { color: #64748b; }
+
   .top-nav {
     display: flex;
     flex-direction: column;
