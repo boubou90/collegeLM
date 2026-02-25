@@ -151,6 +151,21 @@ const levels = [
       </p>
     </div>
 
+    <!-- Bandeau ressources gratuites -->
+    <div class="gratuit-banner" data-aos="fade-up">
+      <div class="gratuit-banner-text">
+        <h2 class="gratuit-title">🎯 Avant d'acheter du matériel...</h2>
+        <p class="gratuit-desc">
+          Les ressources gratuites du site couvrent 90% des besoins en révision.
+          Commence par explorer nos sujets corrigés et fiches de cours !
+        </p>
+      </div>
+      <div class="gratuit-links">
+        <a href="/3eme/brevet/" class="gratuit-btn">📚 24 sujets corrigés →</a>
+        <a href="/glossaire/" class="gratuit-btn">📖 Glossaire →</a>
+      </div>
+    </div>
+
     <GoogleAd slot="5227967907" format="auto" />
 
     {levels.map((lvl, li) => (
@@ -227,6 +242,57 @@ const levels = [
 
   [data-theme="dark"] .page-subtitle {
     color: #94a3b8;
+  }
+
+  .gratuit-banner {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    color: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .gratuit-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+    color: white;
+  }
+
+  .gratuit-desc {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .gratuit-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .gratuit-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: white;
+    color: #1d4ed8;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .gratuit-btn:hover {
+    background: #eff6ff;
   }
 
   .disclaimer {
