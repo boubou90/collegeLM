@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GoogleAd from '../components/GoogleAd.astro';
-import RSSFeed from '../components/RSSFeed.astro';
-import ProfileSelector from '../components/ProfileSelector';
 import Quiz from '../components/Quiz';
 ---
 
@@ -30,7 +28,7 @@ import Quiz from '../components/Quiz';
 					<h1 class="title">La technologie au collège</h1>
 					<p class="hero-subtitle">Découvre, comprends, crée 🚀</p>
 					<div class="hero-cta-group">
-						<a href="#level-navigation" class="hero-cta hero-cta-primary">Accède à tes cours →</a>
+						<a href="#niveaux" class="hero-cta hero-cta-primary">Accède à tes cours →</a>
 						<a href="/3eme/brevet" class="hero-cta hero-cta-secondary">Voir la préparation Brevet</a>
 					</div>
 				</div>
@@ -39,7 +37,44 @@ import Quiz from '../components/Quiz';
 
 		<div class="content-wrapper">
 			<div class="main-content">
-				<ProfileSelector client:load />
+				<!-- Sélecteur de profil -->
+			<section class="profile-selector-section">
+				<p class="profile-label">Bienvenue ! Tu es...</p>
+				<div id="profile-selector">
+					<button data-profile="eleve" data-target="#niveaux" class="profile-btn profile-eleve">
+						👦 Élève
+					</button>
+					<button data-profile="parent" data-target="#ressources" class="profile-btn profile-parent">
+						👨‍👩‍👧 Parent
+					</button>
+					<button data-profile="enseignant" data-target="#methodologie" class="profile-btn profile-enseignant">
+						👩‍🏫 Enseignant
+					</button>
+				</div>
+			</section>
+
+			<script>
+				const saved = localStorage.getItem('userProfile');
+				const buttons = document.querySelectorAll('.profile-btn');
+
+				if (saved) {
+					buttons.forEach(btn => {
+						if ((btn as HTMLButtonElement).dataset.profile === saved) {
+							btn.classList.add('profile-btn--active');
+						}
+					});
+				}
+
+				buttons.forEach(btn => {
+					btn.addEventListener('click', () => {
+						buttons.forEach(b => b.classList.remove('profile-btn--active'));
+						btn.classList.add('profile-btn--active');
+						localStorage.setItem('userProfile', (btn as HTMLButtonElement).dataset.profile!);
+						const target = document.querySelector((btn as HTMLButtonElement).dataset.target!);
+						if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					});
+				});
+			</script>
 
 				<section class="intro-section" data-aos="fade-up">
 					<h2>Bienvenue sur le site de technologie du Collège Louise Michel</h2>
@@ -54,7 +89,7 @@ import Quiz from '../components/Quiz';
 				<!-- Publicité après l'introduction -->
 				<GoogleAd slot="4342760910" format="auto" />
 
-				<nav class="level-navigation" id="level-navigation">
+				<nav class="level-navigation" id="niveaux">
 					<a href="/5eme" class="level-button level-5eme" data-aos="fade-up" data-aos-delay="100">
 						<span class="level-number">5</span>
 						<span class="level-text">ème</span>
@@ -132,7 +167,7 @@ import Quiz from '../components/Quiz';
 					</div>
 				</section>
 
-				<section class="methodology" data-aos="fade-up">
+				<section class="methodology" id="methodologie" data-aos="fade-up">
 					<h2>Notre méthodologie pédagogique</h2>
 					<div class="methodology-content">
 						<p>
@@ -165,7 +200,7 @@ import Quiz from '../components/Quiz';
 				<!-- Publicité avant les ressources -->
 				<GoogleAd slot="4342760910" format="rectangle" className="mx-auto" />
 
-				<section class="resources-section" data-aos="fade-up">
+				<section class="resources-section" id="ressources" data-aos="fade-up">
 					<h2>Ressources pédagogiques</h2>
 					<p class="resources-intro">
 						Notre site propose une variété de ressources pédagogiques pour accompagner l'apprentissage de la technologie :
@@ -203,6 +238,52 @@ import Quiz from '../components/Quiz';
 		max-width: 1600px;
 		margin: 0 auto;
 		padding: 1rem;
+	}
+
+	.profile-selector-section {
+		text-align: center;
+		padding: 1.5rem 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.profile-label {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #64748b;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	#profile-selector {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: center;
+	}
+
+	.profile-btn {
+		padding: 0.75rem 1.75rem;
+		border-radius: 999px;
+		border: 2px solid;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		background: white;
+		transition: all 0.2s ease;
+	}
+
+	.profile-eleve { border-color: #60a5fa; color: #1d4ed8; }
+	.profile-parent { border-color: #34d399; color: #065f46; }
+	.profile-enseignant { border-color: #a78bfa; color: #5b21b6; }
+
+	.profile-eleve:hover { background: #eff6ff; }
+	.profile-parent:hover { background: #ecfdf5; }
+	.profile-enseignant:hover { background: #f5f3ff; }
+
+	.profile-btn--active {
+		outline: 3px solid #3b82f6;
+		outline-offset: 2px;
 	}
 
 	.hero {
