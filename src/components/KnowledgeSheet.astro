@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { title, description, pdfUrl } = Astro.props;
+const id = `pdf-${Math.random().toString(36).slice(2, 9)}`;
 ---
 
 <div class="knowledge-sheet" data-aos="fade-up">
@@ -13,19 +14,61 @@ const { title, description, pdfUrl } = Astro.props;
     <h3>{title}</h3>
     <p>{description}</p>
   </div>
-  <a 
-    href={pdfUrl} 
-    class="download-button" 
-    download={title + ".pdf"}
-    type="application/pdf"
+  <button
+    class="pdf-open-btn view-btn"
+    data-pdf-id={id}
+    data-pdf-src={pdfUrl}
+    aria-label={`Visualiser : ${title}`}
   >
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-      <polyline points="7 10 12 15 17 10"></polyline>
-      <line x1="12" y1="15" x2="12" y2="3"></line>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+      <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
     </svg>
-    Télécharger la fiche
-  </a>
+    Visualiser
+  </button>
+</div>
+
+<!-- Modale PDF -->
+<div id={id} class="pdf-modal" role="dialog" aria-modal="true" aria-label={`Visionneuse : ${title}`}>
+  <div class="pdf-backdrop"></div>
+  <div class="pdf-window">
+    <div class="pdf-header">
+      <div class="pdf-header-left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+             stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        <span>{title}</span>
+      </div>
+      <div class="pdf-header-right">
+        <a href={pdfUrl} download class="pdf-dl-btn" aria-label="Télécharger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2">
+            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Télécharger
+        </a>
+        <button class="pdf-close-btn" aria-label="Fermer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="pdf-body">
+      <iframe class="pdf-iframe" data-src={pdfUrl} title={title} loading="lazy"></iframe>
+      <div class="pdf-fallback">
+        <p class="fb-emoji">📄</p>
+        <p class="fb-name">{title}</p>
+        <p class="fb-info">La visionneuse n'est pas disponible sur mobile.</p>
+        <a href={pdfUrl} download class="fb-dl">📥 Télécharger le PDF</a>
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="fb-open">Ouvrir dans le navigateur →</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -40,9 +83,7 @@ const { title, description, pdfUrl } = Astro.props;
     gap: 1rem;
   }
 
-  .content {
-    flex: 1;
-  }
+  .content { flex: 1; }
 
   h3 {
     color: var(--primary);
@@ -56,39 +97,184 @@ const { title, description, pdfUrl } = Astro.props;
     line-height: 1.4;
   }
 
-  .download-button {
+  .view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 1.1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .view-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ── Modale (même pattern que PDFViewer) ── */
+  .pdf-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .pdf-modal.is-open { display: flex; }
+
+  .pdf-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    backdrop-filter: blur(4px);
+  }
+
+  .pdf-window {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .pdf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .pdf-header-left {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    min-width: 0;
+    flex: 1;
+  }
+  .pdf-header-left span {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .download-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
+  .pdf-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
 
-  .icon {
-    width: 1.2em;
-    height: 1.2em;
+  .pdf-dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #2563eb;
+    color: white;
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
   }
+  .pdf-dl-btn:hover { background: #1d4ed8; }
+
+  .pdf-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #9ca3af;
+    border-radius: 0.375rem;
+    transition: all 0.15s;
+  }
+  .pdf-close-btn:hover { color: #111827; background: #f3f4f6; }
+
+  .pdf-body {
+    flex: 1;
+    background: #f1f5f9;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .pdf-fallback {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .fb-emoji { font-size: 3.5rem; margin: 0; }
+  .fb-name { font-weight: 600; color: #374151; font-size: 1rem; margin: 0; }
+  .fb-info { font-size: 0.875rem; color: #64748b; margin: 0; }
+
+  .fb-dl {
+    background: #2563eb;
+    color: white;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .fb-dl:hover { background: #1d4ed8; }
+
+  .fb-open {
+    color: #2563eb;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  .fb-open:hover { text-decoration: underline; }
 
   @media (max-width: 640px) {
     .knowledge-sheet {
       flex-direction: column;
       align-items: flex-start;
     }
-    
-    .download-button {
-      width: 100%;
-      justify-content: center;
-    }
+    .view-btn { width: 100%; justify-content: center; }
+    .pdf-iframe { display: none; }
+    .pdf-fallback { display: flex; }
+    .pdf-window { height: 80vh; }
   }
 </style>
+
+<script>
+  import '../scripts/pdfModal';
+</script>
