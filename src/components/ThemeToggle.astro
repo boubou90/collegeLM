@@ -2,6 +2,16 @@
 // Composant de bascule entre mode clair et mode sombre
 ---
 
+<button
+  id="dyslexic-toggle"
+  class="dys-toggle"
+  aria-label="Activer le mode dyslexique pour faciliter la lecture"
+  aria-pressed="false"
+  title="Mode Dyslexique"
+>
+  <span>Aa</span><span class="dys-label"> Dyslexie</span>
+</button>
+
 <button id="theme-toggle" class="theme-toggle" aria-label="Basculer entre le mode clair et sombre" title="Changer le thème">
   <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="5"></circle>
@@ -20,6 +30,16 @@
 </button>
 
 <style>
+  .dys-label {
+    display: inline;
+  }
+
+  @media (max-width: 480px) {
+    .dys-label {
+      display: none;
+    }
+  }
+
   .theme-toggle {
     position: fixed;
     top: 1rem;
