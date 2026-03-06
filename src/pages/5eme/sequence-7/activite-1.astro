@@ -1,0 +1,69 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Lancement de séquence – Alimenter un habitat en énergie ",
+    pdfUrl: "/documents/5eme/sequence-7/activite-1/Comment-alimenter-un-habitat-en-energie.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-7" />
+  <h1>Activité 1 - Lancement de séquence – Alimenter un habitat en énergie </h1>
+  
+  <ActivitySection
+    title=" Lancement de séquence – Alimenter un habitat en énergie "
+    description=": Identifier les différentes formes d’énergies. Reconnaître les différentes formes d’énergie, Indiquer la nature des énergies en entrée et en sortie des constituants de la chaîne d’énergie."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-7"
+    sequenceLabel="Séquence 7 — Énergie et habitat"
+    retenir={{
+      definitions: [
+        { term: "Panneau solaire photovoltaïque", def: "Dispositif convertissant l'énergie solaire (lumineuse) en énergie électrique grâce à l'effet photovoltaïque." },
+        { term: "Autonomie énergétique", def: "Capacité d'un habitat à produire et stocker toute l'énergie dont il a besoin sans recourir au réseau électrique." },
+        { term: "Réseau électrique (EDF)", def: "Infrastructure nationale transportant l'électricité des centrales de production jusqu'aux consommateurs." },
+      ],
+      points: [
+        "Un habitat peut s'alimenter via le réseau électrique national OU via des sources locales (solaire, éolien).",
+        "Enjeux de la production locale : réduire la dépendance au réseau, diminuer les émissions de CO₂.",
+        "Les panneaux solaires produisent de l'électricité en courant continu (DC) → nécessite un onduleur.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Comment un habitat est-il alimenté en énergie ?</h3>
+      <p>Un habitat consomme de l'énergie pour de nombreux usages : chauffage, eau chaude, éclairage, électroménager, recharge d'appareils... Cette énergie peut provenir de différentes sources : le <strong>réseau électrique national</strong> (EDF/Enedis), le <strong>gaz naturel</strong>, ou des <strong>sources locales renouvelables</strong> (panneaux solaires, pompe à chaleur).</p>
+
+      <h3>Les sources d'énergie pour un habitat</h3>
+      <ul>
+        <li><strong>Réseau électrique national</strong> : produit principalement par des centrales nucléaires (en France), des barrages hydrauliques, des éoliennes et des centrales thermiques. Distribué via des lignes à haute tension.</li>
+        <li><strong>Gaz naturel</strong> : distribué via un réseau de canalisations. Utilisé pour le chauffage et la cuisine.</li>
+        <li><strong>Panneaux solaires photovoltaïques</strong> : captent l'énergie solaire et la convertissent en électricité. Production locale, propre, renouvelable.</li>
+        <li><strong>Pompe à chaleur (PAC)</strong> : extrait la chaleur de l'air extérieur ou du sol pour chauffer la maison. Très efficace (coefficient de performance > 3).</li>
+        <li><strong>Chauffe-eau solaire thermique</strong> : utilise l'énergie solaire pour chauffer l'eau sanitaire.</li>
+      </ul>
+
+      <h3>Les enjeux énergétiques de l'habitat</h3>
+      <p>Un habitat représente en France environ <strong>28% de la consommation d'énergie finale</strong> et génère 27% des émissions de CO₂. Les enjeux sont donc majeurs :</p>
+      <ul>
+        <li><strong>Rénovation thermique</strong> : isolation, fenêtres double vitrage, pour réduire les besoins de chauffage.</li>
+        <li><strong>Production locale</strong> : panneaux solaires, pour réduire la dépendance au réseau.</li>
+        <li><strong>Pilotage intelligent</strong> : domotique, programmation du chauffage, pour éviter les gaspillages.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

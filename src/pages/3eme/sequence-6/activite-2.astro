@@ -1,0 +1,75 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Activité 2</h1>
+
+  <ActivitySection
+    title="Variables, boucles et conditions"
+    description="Comment utiliser les variables, boucles et conditions en programmation ? Cette activité approfondit les structures fondamentales de la programmation. Tu travailleras sur les variables (stocker et modifier une valeur), les conditions (si… alors… sinon…) et les boucles (répéter… tant que…). À travers des exercices progressifs sur Scratch ou Python, tu programmeras des comportements de plus en plus complexes : clignotement d'une LED selon un capteur, comptage d'événements, affichage d'un message selon une condition. Chaque programme sera testé et débogué. L'objectif est de comprendre que tout comportement automatique repose sur ces trois structures de base."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-6"
+    sequenceLabel="Séquence 6 — Programmation avancée"
+    retenir={{
+      definitions: [
+        { term: "Variable", def: "Espace mémoire nommé qui stocke une valeur (nombre, texte, booléen) pouvant changer au cours du programme." },
+        { term: "Boucle while", def: "Répète un bloc d'instructions tant qu'une condition est vraie." },
+        { term: "Boucle for", def: "Répète un bloc d'instructions un nombre défini de fois." },
+        { term: "Condition if/else", def: "Exécute un bloc si la condition est vraie (if), un autre bloc sinon (else)." },
+      ],
+      points: [
+        "Nommer les variables avec des noms explicites (ex : temperature, compteur, estAllume).",
+        "while = 'tant que' ; for = 'répéter N fois' ; if/else = 'si… alors… sinon…'",
+        "Attention à l'initialisation des variables avant de les utiliser.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les variables — la mémoire du programme</h3>
+      <p>Une <strong>variable</strong> est une case mémoire avec un nom et une valeur qui peut changer au cours du programme. On peut la comparer à une boîte étiquetée : l'étiquette est le nom, le contenu est la valeur. Exemples :</p>
+      <ul>
+        <li><code>temperature = 22</code> → stocke la valeur 22 dans la variable "temperature".</li>
+        <li><code>compteur = 0</code> → initialise un compteur à zéro avant une boucle.</li>
+        <li><code>estAllume = false</code> → variable booléenne (Vrai/Faux) indiquant l'état d'une LED.</li>
+      </ul>
+
+      <h3>Les conditions (if/else)</h3>
+      <p>La structure <strong>if/else</strong> permet d'exécuter des instructions différentes selon une condition :</p>
+      <ul>
+        <li><code>if (temperature &gt; 25) {'{'}  allumerVentilateur(); {'}'} else {'{'}  arreterVentilateur(); {'}'}</code></li>
+        <li>Si la condition est vraie → bloc "if". Si fausse → bloc "else" (facultatif).</li>
+        <li>On peut enchaîner : <code>else if (condition2)</code> pour tester plusieurs cas.</li>
+      </ul>
+
+      <h3>Les boucles (for et while)</h3>
+      <ul>
+        <li><strong>Boucle for</strong> : répète un nombre <em>connu</em> de fois. Ex : <code>for (i=0; i&lt;10; i++)</code> → répète 10 fois.</li>
+        <li><strong>Boucle while</strong> : répète <em>tant qu'</em>une condition est vraie. Ex : <code>while (bouton == APPUYE)</code> → continue tant que le bouton est appuyé.</li>
+      </ul>
+
+      <h3>Règles de bonne pratique</h3>
+      <ul>
+        <li>Toujours <strong>initialiser</strong> les variables avant de les utiliser.</li>
+        <li>Choisir des <strong>noms explicites</strong> : <code>vitesseMoteur</code> plutôt que <code>v</code> ou <code>x</code>.</li>
+        <li>Attention aux boucles infinies : vérifier que la condition de sortie peut être atteinte.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

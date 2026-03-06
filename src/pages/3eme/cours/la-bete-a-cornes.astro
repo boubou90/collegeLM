@@ -1,0 +1,194 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import BackButton from '../../../components/BackButton.astro';
+---
+
+<Layout title="Cours : Expression du besoin - La bête à cornes">
+  <main>
+    <h1 style="text-align: center; font-weight: bold;">Cours : Expression du besoin - La bête à cornes</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Dans ce cours, nous allons explorer l'outil de la <strong>bête à cornes</strong>, une méthode graphique utilisée pour identifier et exprimer clairement un besoin technique. Cet outil est essentiel pour concevoir des objets techniques qui répondent aux attentes des utilisateurs.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Identifier un besoin</h2>
+      <p>
+        Pour concevoir un objet technique qui corresponde aux attentes des futurs utilisateurs, il est crucial d'identifier clairement le besoin. Si le besoin n'est pas bien défini, le produit risque de ne pas satisfaire pleinement les utilisateurs.
+      </p>
+
+      <h3>Exemple de besoin mal défini</h3>
+      <div class="example">
+        <p>
+          Si le besoin n'est pas clairement défini, le produit risque de ne satisfaire qu'à moitié les attentes des utilisateurs.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. La bête à cornes</h2>
+      <p>
+        La <strong>bête à cornes</strong> est un outil graphique qui permet de décrire un besoin en répondant à trois questions clés :
+      </p>
+      <ul>
+        <li><strong>A qui le produit rend-il service ?</strong> (Utilisateur)</li>
+        <li><strong>Sur quoi agit-il ?</strong> (Objet ou environnement)</li>
+        <li><strong>Dans quel but ?</strong> (Fonction principale)</li>
+      </ul>
+
+      <h3>Méthode</h3>
+      <p>
+        Pour utiliser la bête à cornes, suivez ces étapes :
+      </p>
+      <ol>
+        <li>Complétez le schéma de la bête à cornes en indiquant le produit et en répondant aux trois questions.</li>
+        <li>Formulez une phrase qui commence par : <strong>"Le produit permet à..."</strong> en utilisant les réponses des quatre cadres.</li>
+      </ol>
+
+      <h3>Exemple de bête à cornes</h3>
+      <div class="example">
+        <p><strong>Exemple : La souris</strong></p>
+        <ul>
+          <li><strong>A qui le produit rend-il service ?</strong> L'utilisateur.</li>
+          <li><strong>Sur quoi agit-il ?</strong> Le curseur sur l'écran.</li>
+          <li><strong>Dans quel but ?</strong> Déplacer le curseur.</li>
+        </ul>
+        <p><strong>Phrase finale :</strong> La souris permet à l'utilisateur de déplacer le curseur sur l'écran.</p>
+      </div>
+
+      <h3>Schéma de la bête à cornes</h3>
+      <div class="schema">
+        <img src="/images/bete-a-cornes.png" alt="Schéma de la bête à cornes" class="schema-image" />
+        <p class="caption">Schéma de la bête à cornes</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Autres exemples</h2>
+      <p>
+        Voici d'autres exemples d'utilisation de la bête à cornes pour différents produits techniques :
+      </p>
+      <div class="example">
+        <p><strong>Exemple 1 : Le stylo</strong></p>
+        <ul>
+          <li><strong>A qui le produit rend-il service ?</strong> L'utilisateur.</li>
+          <li><strong>Sur quoi agit-il ?</strong> Le papier.</li>
+          <li><strong>Dans quel but ?</strong> Écrire ou dessiner.</li>
+        </ul>
+        <p><strong>Phrase finale :</strong> Le stylo permet à l'utilisateur d'écrire ou de dessiner sur le papier.</p>
+      </div>
+
+      <div class="example">
+        <p><strong>Exemple 2 : La lampe</strong></p>
+        <ul>
+          <li><strong>A qui le produit rend-il service ?</strong> L'utilisateur.</li>
+          <li><strong>Sur quoi agit-il ?</strong> L'environnement.</li>
+          <li><strong>Dans quel but ?</strong> Éclairer.</li>
+        </ul>
+        <p><strong>Phrase finale :</strong> La lampe permet à l'utilisateur d'éclairer l'environnement.</p>
+      </div>
+    </section>
+
+    <section class="summary">
+      <h2>Résumé</h2>
+      <ul>
+        <li>La <strong>bête à cornes</strong> est un outil graphique pour identifier et exprimer un besoin technique.</li>
+        <li>Elle répond à trois questions : <strong>A qui ?</strong>, <strong>Sur quoi ?</strong>, et <strong>Dans quel but ?</strong>.</li>
+        <li>La phrase finale commence par : <strong>"Le produit permet à..."</strong>.</li>
+      </ul>
+    </section>
+  
+<BackButton href="/3eme" />
+  </main>
+</Layout>
+
+<style>
+  /* Styles globaux */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.6;
+    color: #1e293b;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .example {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+  }
+
+  .schema {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .schema-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .summary {
+    background: #f0f4f8;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .summary h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+  }
+
+  .summary ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .summary li {
+    margin: 0.5rem 0;
+  }
+</style>

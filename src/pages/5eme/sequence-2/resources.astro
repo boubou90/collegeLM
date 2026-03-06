@@ -1,0 +1,142 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+import KnowledgeSheet from '../../../components/KnowledgeSheet.astro';
+import VideoResource from '../../../components/VideoResource.astro';
+
+const courseResources = [
+  {
+    title: "Sécurité des données",
+    description: "Les principes fondamentaux de la sécurité numérique",
+    pdfUrl: "/documents/5eme/sequence-2/resources/securite-donnees.pdf"
+  },
+  {
+    title: "Organisation des fichiers",
+    description: "Guide complet sur l'organisation et la sauvegarde des données",
+    pdfUrl: "/documents/5eme/sequence-2/resources/organisation-fichiers.pdf"
+  },
+  {
+    title: "Cybersécurité",
+    description: "Les bonnes pratiques de la cybersécurité",
+    pdfUrl: "/documents/5eme/sequence-2/resources/cybersecurite.pdf"
+  }
+];
+
+const studentResources = [
+  {
+    title: "Trame Page de Garde",
+    description: "Modèle de page de garde à utiliser pour vos documents",
+    pdfUrl: "/documents/5eme/sequence-2/resources/trame-pdg.pdf"
+  },
+  {
+    title: "Guide - Protection des données",
+    description: "Comment protéger ses données personnelles",
+    pdfUrl: "/documents/5eme/sequence-2/resources/guide-protection.pdf"
+  },
+  {
+    title: "Fiche méthode - Mots de passe",
+    description: "Comment créer et gérer des mots de passe sécurisés",
+    pdfUrl: "/documents/5eme/sequence-2/resources/methode-mdp.pdf"
+  },
+  {
+    title: "Exercices supplémentaires",
+    description: "Exercices d'entraînement sur la sécurité numérique",
+    pdfUrl: "/documents/5eme/sequence-2/resources/exercices-supplementaires.pdf"
+  }
+];
+
+const videoResources = [
+  {
+    title: "Les bases de la cybersécurité",
+    description: "Une introduction aux concepts fondamentaux de la sécurité en ligne",
+    videoUrl: "https://www.youtube-nocookie.com/embed/your-video-id"
+  },
+  {
+    title: "Comment protéger ses données personnelles",
+    description: "Guide pratique pour sécuriser vos informations en ligne",
+    videoUrl: "https://www.youtube-nocookie.com/embed/your-video-id-2"
+  }
+];
+---
+
+<ClassLayout title="Ressources - Séquence 2 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-2" />
+  <h1>Ressources - Sécurité numérique</h1>
+
+  <section class="resources-section" data-aos="fade-up">
+    <h2>Vidéos pédagogiques</h2>
+    <div class="video-grid">
+      {videoResources.map(video => (
+        <VideoResource
+          title={video.title}
+          description={video.description}
+          videoUrl={video.videoUrl}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="resources-section" data-aos="fade-up">
+    <h2>Fiches de cours</h2>
+    <div class="knowledge-sheets">
+      {courseResources.map(resource => (
+        <KnowledgeSheet
+          title={resource.title}
+          description={resource.description}
+          pdfUrl={resource.pdfUrl}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="resources-section" data-aos="fade-up">
+    <h2>Ressources pour les élèves</h2>
+    <div class="knowledge-sheets">
+      {studentResources.map(resource => (
+        <KnowledgeSheet
+          title={resource.title}
+          description={resource.description}
+          pdfUrl={resource.pdfUrl}
+        />
+      ))}
+    </div>
+  </section>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+
+  .resources-section {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .knowledge-sheets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .resources-section + .resources-section {
+    margin-top: 2rem;
+  }
+</style>

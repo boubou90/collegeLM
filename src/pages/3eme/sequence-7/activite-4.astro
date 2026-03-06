@@ -1,0 +1,65 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 7 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+  <h1>Séquence 7 — Énergie et développement durable · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Énergie et développement durable"
+    description="Retrouve ici les documents et ressources complémentaires sur l'énergie et le développement durable. Tu y trouveras des fiches sur les formes d'énergies et leurs transformations, des outils de calcul du rendement énergétique, des infographies sur le mix énergétique français et mondial, et des ressources sur les enjeux de la transition énergétique. Consulte également le cours dédié aux formes d'énergies disponible dans la section Cours de 3ème, et le simulateur d'empreinte carbone pour explorer les leviers d'action à l'échelle individuelle."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-7"
+    sequenceLabel="Séquence 7 — Énergie et développement durable"
+    retenir={{
+      definitions: [
+        { term: "kWh (kilowattheure)", def: "Unité d'énergie équivalant à l'énergie consommée par un appareil de 1 000 W pendant 1 heure." },
+        { term: "tCO₂eq (tonne équivalent CO₂)", def: "Unité mesurant l'impact climatique de différents gaz à effet de serre en les ramenant à l'équivalent CO₂." },
+      ],
+      points: [
+        "Fiches de révision 'Énergie et DD' disponibles dans les ressources.",
+        "Relier les notions de rendement (act. 1) et d'efficacité énergétique (act. 2) : même concept, approches différentes.",
+        "Consulter aussi la séquence 5 (innovation) pour le lien avec l'éco-conception.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Synthèse — Énergie et développement durable</h3>
+      <p>La séquence 7 t'a appris à analyser les enjeux énergétiques de notre société et à évaluer les solutions techniques disponibles pour une transition vers un modèle plus durable. Voici les notions clés à maîtriser :</p>
+
+      <h3>Les formules essentielles</h3>
+      <ul>
+        <li><strong>Rendement</strong> : η (%) = (Puissance utile / Puissance consommée) × 100</li>
+        <li><strong>Puissance</strong> : P (W) = U (V) × I (A)</li>
+        <li><strong>Énergie</strong> : E (Wh) = P (W) × t (h) — ou E (kWh) = P (kW) × t (h)</li>
+        <li><strong>Conversion</strong> : 1 kWh = 1 000 Wh = 3 600 000 J</li>
+      </ul>
+
+      <h3>Le mix énergétique français</h3>
+      <p>La France produit environ 70 % de son électricité via le nucléaire (faible émission de CO₂ mais déchets radioactifs), 12 % via l'hydraulique, et le reste via les énergies renouvelables (éolien, solaire) et les fossiles. La part du renouvelable augmente chaque année dans le cadre de la transition énergétique.</p>
+
+      <h3>Liens avec les autres séquences</h3>
+      <ul>
+        <li><strong>Séquence 1</strong> : les formes d'énergie s'inscrivent dans les chaînes d'énergie des systèmes techniques.</li>
+        <li><strong>Séquence 5</strong> : l'éco-conception intègre les critères énergétiques dès la conception.</li>
+        <li>Ces notions sont directement évaluées à l'épreuve de technologie du Brevet.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Activité 1</h1>
+
+  <ActivitySection
+    title="Les logigrammes et les algorithmes"
+    description="Comment représenter un algorithme sous forme de logigramme ? Un logigramme est une représentation graphique d'un algorithme qui utilise des symboles normalisés : ovale pour le début/fin, rectangle pour une action, losange pour une condition (test), et flèches pour le sens du déroulement. Dans cette activité, tu apprendras à lire et à construire des logigrammes pour des situations variées : allumer une lampe en fonction de la luminosité, déclencher une alarme si un capteur détecte une intrusion, gérer l'ouverture automatique d'une barrière. Tu découvriras comment passer d'un problème exprimé en langage naturel à un algorithme rigoureux représenté graphiquement."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-6"
+    sequenceLabel="Séquence 6 — Programmation avancée"
+    retenir={{
+      definitions: [
+        { term: "Algorithme", def: "Suite finie et ordonnée d'instructions permettant de résoudre un problème ou d'accomplir une tâche." },
+        { term: "Logigramme", def: "Représentation graphique d'un algorithme utilisant des symboles normalisés (rectangle = action, losange = condition)." },
+        { term: "Test logique (condition)", def: "Question dont la réponse est Vrai ou Faux, qui oriente le déroulement du programme." },
+      ],
+      points: [
+        "3 structures algorithmiques de base : séquence (instructions à la suite), condition (si/sinon), boucle (répéter).",
+        "Logigramme : rectangle = instruction, losange = condition/test, flèches = déroulement.",
+        "Avant de coder, écrire l'algorithme en langage naturel ou en logigramme.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Algorithme et logigramme — la pensée avant le code</h3>
+      <p>Avant d'écrire une seule ligne de code, un bon programmeur <strong>conçoit l'algorithme</strong> : la suite logique des étapes nécessaires pour résoudre un problème. Le <strong>logigramme</strong> est la représentation graphique de cet algorithme — il permet de visualiser le déroulement du programme et d'identifier les erreurs de logique avant de coder.</p>
+
+      <h3>Les symboles normalisés du logigramme</h3>
+      <ul>
+        <li><strong>Ovale</strong> : début ou fin du programme (DÉBUT / FIN).</li>
+        <li><strong>Rectangle</strong> : action ou instruction à exécuter (ex : "Allumer la LED").</li>
+        <li><strong>Losange</strong> : condition ou test (question à laquelle on répond Vrai/Faux). Deux sorties : OUI et NON.</li>
+        <li><strong>Flèches</strong> : sens du déroulement du programme.</li>
+        <li><strong>Parallélogramme</strong> : entrée/sortie (lire un capteur, afficher un résultat).</li>
+      </ul>
+
+      <h3>Les 3 structures algorithmiques de base</h3>
+      <ol>
+        <li><strong>Séquence</strong> : exécution des instructions les unes après les autres, dans l'ordre.</li>
+        <li><strong>Condition (si/sinon)</strong> : exécuter un bloc ou un autre selon le résultat d'un test. Le losange dans le logigramme.</li>
+        <li><strong>Boucle (répéter)</strong> : répéter un bloc d'instructions un certain nombre de fois ou tant qu'une condition est vraie.</li>
+      </ol>
+
+      <h3>Exemple — Barrière automatique</h3>
+      <p>DÉBUT → Détecter une voiture (capteur) → Si voiture détectée ? OUI → Ouvrir la barrière → Attendre 5 secondes → Fermer la barrière → NON → Rester fermée → Retour au début (boucle). Ce logigramme simple illustre les 3 structures : séquence, condition, boucle.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

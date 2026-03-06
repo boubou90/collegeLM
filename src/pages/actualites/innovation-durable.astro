@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Innovations pour un futur durable">
+  <main>
+    <header class="article-header">
+      <h1>Innovations pour un futur durable</h1>
+      <p class="date">Publié le 12 mars 2024</p>
+    </header>
+
+    <article class="article-content">
+      <img src="/images/innovation-durable.jpg" alt="Innovation durable" class="article-image" />
+      
+      <section class="introduction">
+        <p>
+          Les avancées technologiques jouent un rôle crucial dans la lutte contre le changement 
+          climatique et la préservation de notre environnement. Découvrez les innovations les 
+          plus prometteuses pour un avenir plus durable.
+        </p>
+      </section>
+
+      <section class="main-content">
+        <h2>Énergies renouvelables de nouvelle génération</h2>
+        <ul>
+          <li>
+            <strong>Panneaux solaires transparents</strong> : Intégration dans les fenêtres des 
+            bâtiments
+          </li>
+          <li>
+            <strong>Éoliennes urbaines</strong> : Nouvelles formes adaptées aux environnements 
+            urbains
+          </li>
+          <li>
+            <strong>Stockage d'énergie innovant</strong> : Batteries plus efficaces et durables
+          </li>
+        </ul>
+
+        <h2>Matériaux écologiques innovants</h2>
+        <ul>
+          <li>Plastiques biodégradables à base d'algues</li>
+          <li>Béton qui absorbe le CO2</li>
+          <li>Textiles recyclables à l'infini</li>
+        </ul>
+
+        <h2>Technologies de recyclage avancées</h2>
+        <p>
+          Les nouvelles technologies de recyclage permettent de :
+        </p>
+        <ul>
+          <li>Trier automatiquement les déchets grâce à l'IA</li>
+          <li>Transformer les plastiques en carburant</li>
+          <li>Recycler des matériaux jusqu'ici impossibles à traiter</li>
+        </ul>
+      </section>
+    </article>
+
+    <a href="/" class="back-link">Retour à l'accueil</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .article-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+  }
+
+  .date {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .introduction {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  .main-content h2 {
+    color: var(--primary-dark);
+    margin: 2rem 0 1rem;
+  }
+
+  .main-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+
+  .main-content li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .main-content li::before {
+    content: "→";
+    position: absolute;
+    left: -1.5rem;
+    color: var(--primary);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .back-link:hover {
+    background: var(--primary-dark);
+  }
+</style>

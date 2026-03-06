@@ -1,0 +1,63 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 7 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+  <h1>Séquence 7 — Énergie et développement durable · Activité 3</h1>
+
+  <ActivitySection
+    title="Les énergies renouvelables et le bilan carbone"
+    description="Pourquoi et comment passer aux énergies renouvelables pour réduire notre empreinte carbone ? Les énergies fossiles (pétrole, gaz, charbon) sont épuisables et émettrices de CO₂, principal responsable du changement climatique. Dans cette activité, tu compares les différentes sources d'énergie renouvelable (solaire, éolien, hydraulique, géothermie, biomasse) selon leurs avantages, leurs limites et leur bilan carbone sur l'ensemble du cycle de vie. Tu calculeras l'empreinte carbone de ta classe ou de ta maison et tu réfléchiras aux solutions techniques et comportementales pour la réduire. Une réflexion sur la transition énergétique et les choix de société qu'elle implique concluera la séquence."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-7"
+    sequenceLabel="Séquence 7 — Énergie et développement durable"
+    retenir={{
+      definitions: [
+        { term: "Énergie renouvelable", def: "Énergie dont la source se renouvelle naturellement à l'échelle humaine (solaire, éolien, hydraulique, biomasse)." },
+        { term: "Énergie fossile", def: "Énergie issue de la combustion de ressources non renouvelables formées sur des millions d'années (charbon, pétrole, gaz)." },
+        { term: "Bilan carbone", def: "Quantité totale de gaz à effet de serre émis par une activité, exprimée en tonnes de CO₂ équivalent (tCO₂eq)." },
+      ],
+      points: [
+        "Énergies renouvelables : solaire photovoltaïque, éolien, hydraulique, biomasse, géothermie.",
+        "Les énergies fossiles libèrent du CO₂ stocké depuis des millions d'années → réchauffement climatique.",
+        "Transition énergétique = passer progressivement des fossiles aux renouvelables pour réduire les émissions de CO₂.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Fossiles vs. renouvelables — la différence fondamentale</h3>
+      <ul>
+        <li><strong>Énergies fossiles</strong> (pétrole, gaz naturel, charbon) : formées sur des millions d'années, non renouvelables à l'échelle humaine. Leur combustion libère du CO₂ stocké depuis des millions d'années, amplifiant l'effet de serre.</li>
+        <li><strong>Énergies renouvelables</strong> : leur source se renouvelle naturellement (Soleil, vent, eau, chaleur terrestre, biomasse). Leur bilan carbone sur l'ensemble du cycle de vie est bien inférieur aux fossiles.</li>
+      </ul>
+
+      <h3>Les sources d'énergie renouvelable</h3>
+      <ul>
+        <li><strong>Solaire photovoltaïque</strong> : panneaux convertissent la lumière en électricité. Intermittent (nuit, nuages).</li>
+        <li><strong>Éolien</strong> : turbines convertissent la force du vent en électricité. Intermittent (vent variable).</li>
+        <li><strong>Hydraulique</strong> : barrages convertissent l'énergie des chutes d'eau. Régulable, fiable, mais impact sur les écosystèmes.</li>
+        <li><strong>Géothermie</strong> : chaleur de la Terre convertie en électricité ou chauffage. Continue mais géographiquement limitée.</li>
+        <li><strong>Biomasse</strong> : combustion de matières organiques (bois, déchets). CO₂ neutre si bien géré.</li>
+      </ul>
+
+      <h3>Le bilan carbone et la transition énergétique</h3>
+      <p>Le <strong>bilan carbone</strong> mesure les émissions totales de gaz à effet de serre (en tCO₂eq) sur toute la vie d'un système, de sa fabrication à son démantèlement. Les renouvelables émettent 10 à 50 fois moins de CO₂ que le charbon sur leur cycle de vie. La <strong>transition énergétique</strong> consiste à remplacer progressivement les énergies fossiles par des renouvelables pour atteindre la neutralité carbone.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

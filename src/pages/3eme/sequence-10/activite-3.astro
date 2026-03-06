@@ -1,0 +1,72 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Activité 3</h1>
+
+  <ActivitySection
+    title="Entraînement sur annales"
+    description="Comment s'entraîner efficacement avec les sujets des années précédentes ? La meilleure préparation à un examen est de s'entraîner dans les conditions réelles. Dans cette activité, tu travailleras sur des sujets du Brevet des années précédentes : tu liras attentivement le dossier technique, tu répondras aux questions dans le temps imparti (45 minutes), puis tu corrigeras tes réponses en utilisant les grilles de correction officielles. Tu analyseras tes erreurs pour identifier les thèmes à renforcer. Plusieurs sujets d'annales couvrant différents thèmes (domotique, robotique, énergie, réseaux…) seront disponibles pour un entraînement complet. Consulte également la page Brevet pour des ressources supplémentaires."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-10"
+    sequenceLabel="Séquence 10 — Révisions Brevet"
+    retenir={{
+      definitions: [
+        { term: "Annale", def: "Sujet d'examen des années précédentes, utilisé pour s'entraîner dans les conditions réelles." },
+        { term: "Grille de correction", def: "Document officiel indiquant les réponses attendues et la répartition des points pour chaque question." },
+      ],
+      points: [
+        "S'entraîner en conditions réelles : 45 min chrono, sans aide, comme le jour J.",
+        "Après la correction : analyser chaque erreur pour identifier les notions à retravailler.",
+        "Classer les erreurs par thème pour orienter les révisions vers les points faibles.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Pourquoi s'entraîner sur les annales ?</h3>
+      <p>Les <strong>annales</strong> (sujets des années précédentes) sont l'outil de préparation le plus efficace pour le Brevet. Elles permettent de :</p>
+      <ul>
+        <li>Se familiariser avec le format réel de l'épreuve (présentation du dossier, formulation des questions).</li>
+        <li>Pratiquer la gestion du temps dans les conditions réelles (45 minutes chrono).</li>
+        <li>Identifier les thèmes les plus souvent évalués et les types de questions récurrents.</li>
+        <li>Repérer ses erreurs pour cibler les révisions restantes.</li>
+      </ul>
+
+      <h3>Méthode d'utilisation des annales</h3>
+      <ol>
+        <li><strong>Entraînement en conditions réelles</strong> : chronomètre, sans aide, sans consulter ses cours. Reproduire exactement les conditions du jour J.</li>
+        <li><strong>Auto-correction rigoureuse</strong> : utiliser la grille de correction officielle pour noter chaque question. Ne pas se surévaluer.</li>
+        <li><strong>Analyse des erreurs</strong> : pour chaque erreur, identifier la cause : notion non comprise, erreur de lecture du dossier, calcul incorrect, vocabulaire imprecis.</li>
+        <li><strong>Révision ciblée</strong> : retourner aux fiches de révision des séquences correspondant aux erreurs commises.</li>
+        <li><strong>Second entraînement</strong> : refaire un autre sujet d'annale pour vérifier les progrès.</li>
+      </ol>
+
+      <h3>Thèmes couverts par les sujets de Brevet</h3>
+      <p>Les sujets de Brevet portent sur des systèmes variés mais les thèmes technologiques sont récurrents :</p>
+      <ul>
+        <li><strong>Domotique</strong> : maison connectée, capteurs, automatismes, économies d'énergie.</li>
+        <li><strong>Robotique</strong> : bras robotisé, robot mobile, chaîne d'information et d'énergie.</li>
+        <li><strong>Énergie</strong> : bilan énergétique, rendement, sources renouvelables, puissance et énergie électrique.</li>
+        <li><strong>Réseaux</strong> : adressage IP, protocoles, topologies, sécurité des données.</li>
+        <li><strong>Conception</strong> : lecture de plans, cotation, analyse fonctionnelle, contraintes de conception.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

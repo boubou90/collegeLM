@@ -1,0 +1,73 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Choisir un OST selon des critères",
+    pdfUrl: "/documents/5eme/sequence-6/activite-4/Fiche-de-lancement-de-séquence-Choisir-un-objet-technique-Lampes.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-6" />
+  <h1>Activité 1 - Choisir un OST selon des critères</h1>
+  
+  <ActivitySection
+    title="Fiche ressource Activité 3 Critères 5emes "
+    description="L’ampoule de mon salon vient de s’éteindre toute seule et elle ne se rallume plus, elle est vraisemblablement “grillée”. Je vais au magasin en racheter une mais le choix est vaste …. Le magasin me propose aussi un bac où la jeter pour pouvoir la recycler"
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-6"
+    sequenceLabel="Séquence 6 — Choisir un OST"
+    retenir={{
+      definitions: [
+        { term: "Critère de choix", def: "Caractéristique mesurable permettant de comparer des objets techniques pour en choisir le plus adapté." },
+        { term: "Impact environnemental", def: "Effet d'un produit ou d'une activité sur les composantes de l'environnement (eau, air, sol, biodiversité, climat)." },
+        { term: "Consommation énergétique", def: "Quantité d'énergie consommée par un appareil pendant son utilisation, exprimée en Watts (W) ou kWh." },
+      ],
+      points: [
+        "Méthode pour choisir un OST : identifier les critères → mesurer ou collecter les valeurs → comparer → décider.",
+        "Ne pas choisir uniquement sur le prix : prendre en compte durée de vie, consommation, impact écologique.",
+        "Un OST qui consomme moins d'énergie est souvent plus rentable sur la durée, même s'il coûte plus cher à l'achat.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Comment choisir une ampoule pour remplacer une ampoule grillée ?</h3>
+      <p>Face à un large choix d'ampoules en magasin (incandescentes, halogènes, fluocompactes, LEDs), il faut être capable de <strong>comparer selon des critères objectifs</strong> pour faire le meilleur choix. Cette démarche s'applique à tout objet ou système technique.</p>
+
+      <h3>Les critères de choix d'un OST</h3>
+      <p>Pour choisir rationnellement un OST, on identifie des critères mesurables et on compare les produits :</p>
+      <ul>
+        <li><strong>Critère fonctionnel</strong> : l'objet remplit-il sa fonction ? (luminosité en lumens, culot compatible...)</li>
+        <li><strong>Critère économique</strong> : prix d'achat + coût d'usage sur la durée de vie.</li>
+        <li><strong>Critère environnemental</strong> : consommation énergétique, matériaux, recyclabilité.</li>
+        <li><strong>Critère de durabilité</strong> : durée de vie en heures, résistance.</li>
+        <li><strong>Critère de sécurité</strong> : normes CE, absence de substances dangereuses (mercure).</li>
+      </ul>
+
+      <h3>Comparaison des technologies d'éclairage</h3>
+      <ul>
+        <li><strong>Ampoule à incandescence</strong> : 60W pour 800 lm, durée de vie 1000h. Interdite en UE depuis 2012.</li>
+        <li><strong>Ampoule halogène</strong> : 42W pour 800 lm, durée de vie 2000h. Retirée du marché UE en 2018.</li>
+        <li><strong>Ampoule fluocompacte (LBC)</strong> : 15W pour 800 lm, durée de vie 8000h. Contient du mercure → recyclage obligatoire.</li>
+        <li><strong>Ampoule LED</strong> : 8W pour 800 lm, durée de vie 25000h. Meilleure efficacité, sans mercure, recyclable.</li>
+      </ul>
+
+      <h3>Coût total sur la durée de vie</h3>
+      <p>Une LED à 8W coûte plus cher à l'achat qu'une ampoule fluocompacte, mais sa consommation moindre et sa durée de vie bien supérieure la rendent <strong>bien moins chère sur 10 ans</strong>. Il faut toujours calculer le coût total (achat + énergie consommée) pour faire un choix éclairé.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

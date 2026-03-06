@@ -1,0 +1,73 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 4 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Séquence 4 — Conception et modélisation · Activité 2</h1>
+
+  <ActivitySection
+    title="La cotation et les normes"
+    description="Comment coter un dessin technique en respectant les normes ? La cotation est l'ensemble des indications chiffrées portées sur un dessin pour définir complètement la forme et les dimensions d'une pièce. Tu apprendras les règles de cotation normalisées : placement des lignes de cote, utilisation des symboles (diamètre ∅, rayon R, tolérance), et règles d'écriture des valeurs numériques. Tu coteras des pièces techniques simples en veillant à ne coter qu'une seule fois chaque dimension et à ne pas créer de surabondance. La maîtrise de la cotation est essentielle pour que ta pièce puisse être fabriquée correctement."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-4"
+    sequenceLabel="Séquence 4 — Conception et modélisation"
+    retenir={{
+      definitions: [
+        { term: "Cote", def: "Valeur numérique indiquant une dimension (longueur, largeur, hauteur, diamètre…) en millimètres." },
+        { term: "Ligne de cote", def: "Ligne mince avec flèches aux extrémités, parallèle à la dimension qu'elle indique." },
+        { term: "Ligne d'attache", def: "Ligne mince perpendiculaire à la ligne de cote, délimitant la dimension." },
+        { term: "Tolérance dimensionnelle", def: "Écart maximal autorisé sur une cote (ex : 50 ± 0,5 mm)." },
+      ],
+      points: [
+        "Toutes les cotes sont en millimètres (mm) sauf indication contraire.",
+        "Ne jamais croiser les lignes de cote entre elles.",
+        "Coter en priorité les dimensions fonctionnelles (celles qui ont une importance pour l'assemblage ou l'usage).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Pourquoi coter un dessin ?</h3>
+      <p>Un dessin technique sans <strong>cotation</strong> est incomplet : le fabricant ne peut pas produire la pièce sans connaître ses dimensions exactes. La cotation est l'ensemble des indications chiffrées qui définissent <em>complètement</em> la forme et les dimensions d'une pièce.</p>
+
+      <h3>Les éléments d'une cote</h3>
+      <ul>
+        <li><strong>La valeur numérique</strong> : toujours exprimée en millimètres (mm) sauf indication contraire.</li>
+        <li><strong>Les lignes d'attache</strong> : lignes fines perpendiculaires à la surface cotée, partant de la pièce.</li>
+        <li><strong>La ligne de cote</strong> : ligne fine avec flèches aux extrémités, parallèle à la dimension indiquée.</li>
+        <li><strong>Les flèches</strong> : touches les lignes d'attache et délimitent la dimension.</li>
+      </ul>
+
+      <h3>Les symboles de cotation</h3>
+      <ul>
+        <li><strong>∅ (phi)</strong> : indique un diamètre (cercle complet).</li>
+        <li><strong>R</strong> : indique un rayon (demi-cercle).</li>
+        <li><strong>□</strong> : indique une section carrée.</li>
+        <li><strong>± (tolérance)</strong> : ex. 50 ± 0,5 → la cote peut varier de 49,5 à 50,5 mm.</li>
+      </ul>
+
+      <h3>Règles essentielles</h3>
+      <ol>
+        <li>Coter chaque dimension <strong>une seule fois</strong> (jamais en double).</li>
+        <li>Ne <strong>jamais croiser</strong> les lignes de cote entre elles.</li>
+        <li>Placer les cotes <strong>en dehors</strong> de la pièce, pas sur les traits de contour.</li>
+        <li>Prioriser les <strong>dimensions fonctionnelles</strong> (importantes pour l'assemblage).</li>
+      </ol>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

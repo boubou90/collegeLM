@@ -1,0 +1,116 @@
+---
+// Barre d'accès rapide — visible sur toutes les pages
+---
+
+<div class="quick-bar">
+  <div class="quick-bar-inner">
+    <div class="quick-bar-links">
+
+      <a
+        href="https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="quick-btn quick-btn-college"
+        aria-label="Site officiel du Collège Louise Michel Paris"
+      >
+        <span class="quick-logo-wrap"><img src="/images/logo-college.svg" alt="Collège Louise Michel" class="quick-logo" /></span>
+        <span class="quick-btn-label">Collège</span> ↗
+      </a>
+
+      <a
+        href="https://www.parisclassenumerique.fr/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="quick-btn quick-btn-pcn"
+        aria-label="Paris Classe Numérique — ENT et Pronote"
+      >
+        <span class="quick-logo-wrap"><img src="/images/logo-pcn.png" alt="Paris Classe Numérique" class="quick-logo" /></span>
+        <span class="quick-btn-label">PCN / Pronote</span> ↗
+      </a>
+
+      <a
+        href="https://www.ac-paris.fr/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="quick-btn quick-btn-academie"
+        aria-label="Site de l'Académie de Paris"
+      >
+        <span class="quick-logo-wrap"><img src="/images/logo-academie.svg" alt="Académie de Paris" class="quick-logo" /></span>
+        <span class="quick-btn-label">Académie de Paris</span> ↗
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .quick-bar {
+    width: 100%;
+    background: #111827;
+    color: white;
+    padding: 0.45rem 1rem;
+    position: relative;
+    z-index: 50;
+  }
+
+  .quick-bar-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quick-bar-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quick-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .quick-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .quick-btn-college  { background: #1d4ed8; }
+  .quick-btn-pcn      { background: #7c3aed; }
+  .quick-btn-academie { background: #059669; }
+
+  .quick-logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 4px;
+    padding: 2px 4px;
+    height: 22px;
+  }
+
+  .quick-logo {
+    height: 16px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Mobile : cacher le texte, garder logo + flèche */
+  @media (max-width: 420px) {
+    .quick-btn-label { display: none; }
+    .quick-btn { padding: 0.3rem 0.55rem; }
+  }
+</style>

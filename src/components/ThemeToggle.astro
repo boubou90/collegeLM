@@ -1,0 +1,30 @@
+---
+// Script-only: les boutons sont désormais intégrés dans GlobalNav.astro
+---
+
+<script>
+  // Gestion du thème
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  const getInitialTheme = () => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) return storedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  html.setAttribute('data-theme', getInitialTheme());
+
+  themeToggle?.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    }
+  });
+</script>

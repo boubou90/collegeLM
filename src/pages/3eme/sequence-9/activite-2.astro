@@ -1,0 +1,67 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 9 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Robotique et automatismes · Activité 2</h1>
+
+  <ActivitySection
+    title="Capteurs, actionneurs et effecteurs"
+    description="Quel est le rôle des capteurs, actionneurs et effecteurs dans un système automatisé ? Dans tout système automatisé, la chaîne d'information commence par les capteurs (qui perçoivent l'environnement), se poursuit par l'unité de traitement (qui prend des décisions), et aboutit aux actionneurs (qui agissent sur l'environnement). Dans cette activité, tu réaliseras des expériences pour comprendre le fonctionnement de différents capteurs (ultrasons, infrarouge, température, luminosité) et actionneurs (moteurs DC, servomoteurs, LEDs). Tu mesureras les grandeurs physiques d'entrée et de sortie, et tu établiras les lois de fonctionnement de chaque composant avant de les intégrer dans ton programme."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-9"
+    sequenceLabel="Séquence 9 — Robotique et automatismes"
+    retenir={{
+      definitions: [
+        { term: "Capteur ultrason (HC-SR04)", def: "Mesure une distance en envoyant une impulsion sonore et en mesurant le temps de retour de l'écho." },
+        { term: "Servomoteur", def: "Moteur à position contrôlée : il peut tourner d'un angle précis (0° à 180° pour un servo standard)." },
+        { term: "Moteur DC", def: "Moteur à courant continu qui tourne en continu ; sa vitesse est contrôlée par la tension ou un signal PWM." },
+        { term: "Effecteur", def: "Organe terminal du robot qui agit directement sur l'environnement (pince, roue, hélice…)." },
+      ],
+      points: [
+        "Capteur = entrée (acquiert info) ; actionneur = sortie (produit un effet) ; effecteur = agit sur la MO.",
+        "Savoir brancher un capteur ultrason et lire sa valeur avec Arduino (bibliothèque ou calcul direct).",
+        "Servomoteur : angle précis mais rotation limitée ; moteur DC : rotation continue mais position non contrôlée.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les capteurs — les "sens" du robot</h3>
+      <p>Les <strong>capteurs</strong> permettent au robot de percevoir son environnement et de convertir une grandeur physique en signal électrique exploitable par le microcontrôleur. Chaque capteur mesure une grandeur spécifique :</p>
+      <ul>
+        <li><strong>Capteur ultrason (HC-SR04)</strong> : mesure la distance en envoyant une impulsion sonore et en calculant le temps de retour de l'écho. Portée : 2 cm à 400 cm.</li>
+        <li><strong>Capteur infrarouge</strong> : détecte les obstacles proches ou suit une ligne noire sur fond blanc.</li>
+        <li><strong>Capteur de température (DHT11/DHT22)</strong> : mesure la température et l'humidité ambiantes.</li>
+        <li><strong>Capteur de luminosité (LDR)</strong> : résistance variable selon la lumière reçue.</li>
+      </ul>
+
+      <h3>Les actionneurs et effecteurs</h3>
+      <ul>
+        <li><strong>Moteur DC (courant continu)</strong> : rotation continue, vitesse contrôlée par PWM. Utilisé pour les roues de propulsion.</li>
+        <li><strong>Servomoteur</strong> : rotation précise de 0° à 180°. Utilisé pour diriger les roues ou actionner un bras.</li>
+        <li><strong>LED</strong> : indicateur visuel simple, allumée ou éteinte selon un signal numérique.</li>
+        <li><strong>Buzzer</strong> : actionneur sonore pour alertes et signaux.</li>
+        <li><strong>Effecteur</strong> : l'organe terminal qui agit sur la matière d'œuvre (pince, roue, ventouse…).</li>
+      </ul>
+
+      <h3>Différence actionneur / effecteur</h3>
+      <p>L'<strong>actionneur</strong> convertit l'énergie en mouvement (le moteur). L'<strong>effecteur</strong> est l'organe terminal qui agit sur l'environnement (la pince fixée au moteur). Un bras robotisé a un moteur (actionneur) et une pince (effecteur).</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

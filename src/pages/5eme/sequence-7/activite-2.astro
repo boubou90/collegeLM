@@ -1,0 +1,75 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Identifier les différentes formes d’énergies « Reconnaître les différentes formes d’énergie ",
+    pdfUrl: "/documents/5eme/sequence-7/activite-1/Identifier-les-differentes-formes-d-energies.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-7" />
+  <h1>Activité 2 - Identifier les différentes formes d’énergies « Reconnaître les différentes formes d’énergie </h1>
+  
+  <ActivitySection
+    title=" Identifier les différentes formes d’énergies « Reconnaître les différentes formes d’énergie "
+    description=": Cette activité consiste à tester un panneau solaire à l’aide d’une Micro:bit pour mettre en évidence la conversion d’énergie et les différentes formes d’énergies."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-7"
+    sequenceLabel="Séquence 7 — Énergie et habitat"
+    retenir={{
+      definitions: [
+        { term: "Énergie solaire", def: "Énergie rayonnée par le Soleil sous forme lumineuse et thermique, captée par des panneaux PV ou thermiques." },
+        { term: "Énergie éolienne", def: "Énergie cinétique du vent convertie en énergie électrique par une éolienne." },
+        { term: "Conservation de l'énergie", def: "Principe physique : l'énergie ne se crée pas, ne se détruit pas, elle se transforme d'une forme en une autre." },
+      ],
+      points: [
+        "L'énergie se transforme à chaque maillon de la chaîne, avec des pertes (chaleur, bruit…) → rendement < 100%.",
+        "Formes d'énergie : solaire, éolienne, hydraulique, chimique (pile), électrique, thermique, mécanique.",
+        "Identifier la forme d'énergie à chaque étape de la chaîne d'énergie.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les formes d'énergie</h3>
+      <p>L'énergie peut exister sous plusieurs formes. Le <strong>principe de conservation de l'énergie</strong> (loi de la thermodynamique) stipule que l'énergie ne se crée pas et ne se détruit pas : elle se <strong>transforme</strong> d'une forme en une autre. À chaque transformation, une partie de l'énergie est "perdue" sous forme de chaleur ou de vibrations (rendement &lt; 100%).</p>
+
+      <h3>Les 7 formes d'énergie</h3>
+      <ul>
+        <li><strong>Énergie électrique</strong> : déplacement d'électrons dans un conducteur (réseau EDF, pile, batterie).</li>
+        <li><strong>Énergie lumineuse</strong> : rayonnement électromagnétique (soleil, LED, ampoule).</li>
+        <li><strong>Énergie thermique (chaleur)</strong> : agitation des molécules (chauffage, frottement).</li>
+        <li><strong>Énergie mécanique</strong> : mouvement d'un objet (roue qui tourne, vent, eau qui coule).</li>
+        <li><strong>Énergie chimique</strong> : stockée dans les liaisons chimiques (pile, batterie, carburant, aliments).</li>
+        <li><strong>Énergie sonore</strong> : vibration de la matière (haut-parleur, explosion).</li>
+        <li><strong>Énergie nucléaire</strong> : stockée dans le noyau des atomes (centrale nucléaire).</li>
+      </ul>
+
+      <h3>Les conversions d'énergie dans un habitat</h3>
+      <ul>
+        <li><strong>Panneau solaire PV</strong> : énergie lumineuse → énergie électrique.</li>
+        <li><strong>Chauffe-eau électrique</strong> : énergie électrique → énergie thermique.</li>
+        <li><strong>Ampoule LED</strong> : énergie électrique → énergie lumineuse (+ un peu de thermique).</li>
+        <li><strong>Chaudière à gaz</strong> : énergie chimique → énergie thermique.</li>
+        <li><strong>Moteur électrique (pompe, ventilateur)</strong> : énergie électrique → énergie mécanique.</li>
+      </ul>
+
+      <h3>Expérience avec le panneau solaire et la Micro:bit</h3>
+      <p>En connectant un panneau solaire à une <strong>carte Micro:bit</strong>, on peut mesurer la tension électrique produite en fonction de l'ensoleillement. Cette expérience illustre directement la conversion de l'énergie lumineuse en énergie électrique. Plus la lumière est intense, plus la tension mesurée est élevée : c'est le principe de l'effet photovoltaïque.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

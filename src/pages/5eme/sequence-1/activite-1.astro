@@ -1,0 +1,102 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Introduction aux réseaux",
+    pdfUrl: "/documents/5eme/sequence-1/activite-1/introduction-reseaux.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Activité 1 - Les réseaux informatiques</h1>
+  
+  <ActivitySection
+    title="Comment afficher sur mon ordinateur la page de garde stockée sur le serveur du collège ?"
+    description="Dans cette activité, nous allons découvrir les bases des réseaux informatiques et comprendre comment les informations circulent entre les différents appareils connectés. Cette activité servira de lancement pour la séquence sur les réseaux."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Réseau informatique", def: "Ensemble d'équipements (ordinateurs, serveurs, imprimantes…) interconnectés pour partager des ressources et communiquer." },
+        { term: "Serveur", def: "Ordinateur puissant qui stocke des données ou des programmes et les fournit aux autres équipements (clients) du réseau." },
+        { term: "Client", def: "Équipement (ordinateur, smartphone…) qui envoie des requêtes au serveur pour obtenir des données ou des services." },
+      ],
+      points: [
+        "Un réseau = des équipements qui communiquent selon des règles communes (protocoles).",
+        "Modèle client-serveur : le client demande, le serveur répond.",
+        "Exemple concret : le navigateur (client) demande la page au serveur du collège via HTTP.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Qu'est-ce qu'un réseau informatique ?</h3>
+      <p>
+        Un <strong>réseau informatique</strong> est un ensemble d'équipements numériques (ordinateurs, smartphones, tablettes, imprimantes, serveurs…) reliés entre eux pour s'échanger des données. Dans un collège, tous les ordinateurs de la salle informatique sont reliés entre eux et à Internet : ils forment un réseau local.
+      </p>
+      <p>
+        L'objectif d'un réseau est de permettre le <strong>partage de ressources</strong> (fichiers, imprimantes, connexion Internet) et la <strong>communication</strong> entre les appareils. Sans réseau, chaque ordinateur serait isolé et ne pourrait pas accéder aux données stockées sur le serveur du collège.
+      </p>
+
+      <h3>Le modèle client-serveur</h3>
+      <p>
+        La grande majorité des réseaux fonctionnent selon le <strong>modèle client-serveur</strong>. Ce modèle décrit comment deux types d'équipements interagissent :
+      </p>
+      <ul>
+        <li>
+          <strong>Le client</strong> est l'équipement qui fait une demande. Dans notre exemple, c'est l'ordinateur de l'élève qui ouvre un navigateur et tape une adresse web.
+        </li>
+        <li>
+          <strong>Le serveur</strong> est l'équipement qui répond à la demande. Il stocke les données (pages web, fichiers, courriels) et les envoie au client qui les a demandées.
+        </li>
+      </ul>
+      <p>
+        Cette communication se fait en plusieurs étapes :
+      </p>
+      <ol>
+        <li>L'élève tape l'adresse du site dans son navigateur (le client formule une <strong>requête</strong>).</li>
+        <li>La requête voyage sur le réseau jusqu'au serveur.</li>
+        <li>Le serveur trouve la page demandée et l'envoie en retour (c'est la <strong>réponse</strong>).</li>
+        <li>Le navigateur reçoit la réponse et affiche la page à l'écran.</li>
+      </ol>
+
+      <h3>Comment les données voyagent-elles sur le réseau ?</h3>
+      <p>
+        Sur un réseau informatique, les données ne voyagent pas d'un seul bloc. Elles sont découpées en petits paquets, chacun numéroté, qui empruntent le chemin le plus rapide disponible. À l'arrivée, le destinataire réassemble tous les paquets dans le bon ordre pour reconstituer l'information originale.
+      </p>
+      <p>
+        Pour que cette communication soit possible, tous les équipements du réseau doivent parler le même « langage ». Ces langages communs s'appellent des <strong>protocoles</strong>. Le protocole le plus connu est <strong>HTTP</strong> (HyperText Transfer Protocol), utilisé pour afficher les pages web.
+      </p>
+
+      <h3>Le réseau du collège : un exemple concret</h3>
+      <p>
+        Au collège Louise Michel, voici comment fonctionne l'accès à la page de garde :
+      </p>
+      <ul>
+        <li>Un <strong>serveur</strong> héberge les fichiers de la page de garde (textes, images).</li>
+        <li>Les <strong>ordinateurs des salles</strong> sont les clients.</li>
+        <li>Un <strong>switch</strong> (commutateur) relie physiquement tous les ordinateurs de la salle.</li>
+        <li>Un <strong>routeur</strong> connecte le réseau local du collège à Internet.</li>
+        <li>Des <strong>câbles Ethernet</strong> ou la connexion <strong>WiFi</strong> transportent les données.</li>
+      </ul>
+      <p>
+        Quand tu ouvres le navigateur sur un ordinateur de la salle et que tu tapes l'adresse du site du collège, ton navigateur envoie une requête HTTP qui traverse le switch, atteint le serveur, et reçoit en réponse la page HTML à afficher.
+      </p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

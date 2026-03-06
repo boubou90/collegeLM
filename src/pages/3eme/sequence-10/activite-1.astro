@@ -1,0 +1,73 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Activité 1</h1>
+
+  <ActivitySection
+    title="Bilan des notions clés"
+    description="Quelles sont les notions essentielles à maîtriser pour l'épreuve de technologie du Brevet ? Cette activité est une révision structurée de toutes les notions vues en 3ème. Tu rempliras des fiches de révision thématiques : chaînes d'énergie et d'information, analyse fonctionnelle (bête à cornes, pieuvre, CDCF), conception et modélisation, programmation et logigrammes, réseaux et adressage IP, robotique et automatismes, énergie et développement durable. Pour chaque thème, tu identifieras les points encore fragiles et tu te concentreras sur leur consolidation. Un QCM de positionnement te permettra d'évaluer tes acquis et de prioriser tes révisions."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-10"
+    sequenceLabel="Séquence 10 — Révisions Brevet"
+    retenir={{
+      definitions: [
+        { term: "DNB (Diplôme National du Brevet)", def: "Diplôme de fin de collège obtenu notamment grâce à une épreuve écrite de technologie de 45 minutes." },
+        { term: "Dossier technique", def: "Document fourni lors de l'épreuve décrivant un système technique réel à analyser." },
+        { term: "Compétences évaluées", def: "Analyser un besoin, identifier les fonctions, lire un schéma technique, comprendre un programme, proposer une solution." },
+      ],
+      points: [
+        "5 grands thèmes du programme de 3ème : chaînes d'énergie/info, systèmes techniques, analyse fonctionnelle, réseaux informatiques, programmation/robotique.",
+        "Épreuve : 45 minutes, 1 dossier technique, questions sur plusieurs thèmes.",
+        "Commencer les révisions par les points les moins maîtrisés, identifiés grâce aux quiz de séquence.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les 5 grands thèmes du programme de 3ème</h3>
+      <p>L'épreuve de technologie du DNB porte sur l'ensemble du programme de 3ème. Les <strong>5 grands thèmes</strong> à maîtriser sont :</p>
+      <ol>
+        <li><strong>Chaînes d'énergie et d'information</strong> : identifier les fonctions (alimenter, distribuer, convertir, transmettre, capter, traiter, commander) dans un système réel.</li>
+        <li><strong>Systèmes techniques</strong> : analyse fonctionnelle, partie commande et partie opérative, décomposition en sous-systèmes.</li>
+        <li><strong>Analyse fonctionnelle externe</strong> : bête à cornes (besoin), diagramme pieuvre (fonctions), CDCF (critères et niveaux).</li>
+        <li><strong>Réseaux informatiques</strong> : topologies, adressage IP, masque de sous-réseau, DHCP, DNS, protocoles TCP/IP et HTTP.</li>
+        <li><strong>Programmation et robotique</strong> : logigrammes, variables, conditions, boucles, Arduino, capteurs et actionneurs.</li>
+      </ol>
+
+      <h3>Format et structure de l'épreuve</h3>
+      <p>L'épreuve de technologie au Brevet dure <strong>45 minutes</strong>. Elle s'appuie sur un <strong>dossier technique</strong> décrivant un système réel (domotique, robot, véhicule, système de tri…). Les questions couvrent plusieurs thèmes du programme et testent ces compétences :</p>
+      <ul>
+        <li>Analyser un besoin et identifier les fonctions de service.</li>
+        <li>Lire et compléter un schéma technique ou un logigramme.</li>
+        <li>Identifier les composants d'une chaîne d'énergie ou d'information.</li>
+        <li>Comprendre et modifier un programme simple.</li>
+        <li>Proposer une solution technique justifiée.</li>
+      </ul>
+
+      <h3>Stratégie de révision efficace</h3>
+      <p>Pour réviser efficacement, commence par identifier tes <strong>points faibles</strong> grâce aux quiz de chaque séquence. Voici une méthode en 3 étapes :</p>
+      <ol>
+        <li><strong>Évaluation</strong> : faire un QCM de positionnement pour identifier les lacunes par thème.</li>
+        <li><strong>Consolidation ciblée</strong> : réviser en priorité les thèmes où le score est inférieur à 60%.</li>
+        <li><strong>Entraînement</strong> : s'exercer sur des annales dans les conditions réelles (45 min chrono).</li>
+      </ol>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

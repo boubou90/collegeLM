@@ -1,0 +1,123 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Fonctionnement d'un réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-3/activite-3.pdf"
+  },
+  {
+    title: "Exercice de mapping réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-3/mapping-reseau.pdf"
+  },
+  {
+    title: "Correction du mapping",
+    pdfUrl: "/documents/5eme/sequence-1/activite-3/correction-mapping.pdf"
+  }
+];
+
+const objectives = [
+  "Comprendre comment les informations circulent dans un réseau local",
+  "Apprendre à représenter un réseau sous forme de schéma",
+  "Identifier le chemin des données entre différents équipements",
+  "Simuler la transmission des paquets de données"
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Activité 3 - Fonctionnement d'un réseau</h1>
+  
+  <ActivitySection
+    title="Comment simuler la circulation des informations dans un réseau local comme celui du collège ?"
+    description="Dans cette activité, nous allons comprendre comment les informations circulent dans un réseau local. À travers une simulation et des exercices de mapping, nous découvrirons le parcours des données entre les différents équipements du réseau du collège."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Protocole TCP/IP", def: "Ensemble de règles permettant aux ordinateurs de communiquer sur Internet : TCP gère la fiabilité, IP gère le routage." },
+        { term: "Adresse IP", def: "Identifiant numérique unique attribué à chaque équipement sur un réseau (ex : 192.168.1.5)." },
+        { term: "Paquet de données", def: "Petit fragment de données envoyé indépendamment sur le réseau et réassemblé à destination." },
+      ],
+      points: [
+        "TCP/IP = protocole universel d'Internet : tous les appareils connectés l'utilisent.",
+        "Les données sont découpées en paquets numérotés, envoyés séparément et réassemblés à l'arrivée.",
+        "L'adresse IP identifie CHAQUE équipement : deux appareils ne peuvent pas avoir la même IP sur le même réseau.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>La circulation des données sur un réseau</h3>
+      <p>Sur un réseau informatique, les données ne sont pas envoyées d'un seul bloc. Elles sont découpées en <strong>paquets de données</strong> numérotés. Chaque paquet voyage indépendamment sur le réseau en empruntant le chemin le plus rapide disponible. À l'arrivée, tous les paquets sont réassemblés dans le bon ordre pour reconstituer l'information originale.</p>
+      <p>Ce système présente plusieurs avantages : si un paquet est perdu ou corrompu, seul ce paquet est renvoyé (pas tout le fichier), et le réseau peut router les paquets par des chemins différents pour éviter les congestions.</p>
+
+      <h3>Le protocole TCP/IP</h3>
+      <p>Pour communiquer, tous les équipements d'un réseau doivent suivre les mêmes règles : ces règles s'appellent des <strong>protocoles</strong>. Le protocole fondamental d'Internet est <strong>TCP/IP</strong>, composé de deux couches :</p>
+      <ul>
+        <li><strong>IP (Internet Protocol)</strong> : attribue une adresse unique à chaque équipement et gère l'acheminement des paquets vers la bonne destination.</li>
+        <li><strong>TCP (Transmission Control Protocol)</strong> : garantit que tous les paquets arrivent et les fait renvoyer s'ils sont perdus. Il assure la fiabilité de la transmission.</li>
+      </ul>
+
+      <h3>L'adresse IP : l'identifiant de chaque équipement</h3>
+      <p>Une <strong>adresse IP</strong> est un identifiant numérique unique attribué à chaque équipement sur un réseau. Elle se compose de 4 nombres séparés par des points (ex : 192.168.1.5). Chaque nombre varie de 0 à 255. Sur un même réseau, deux appareils ne peuvent jamais avoir la même adresse IP.</p>
+
+      <h3>Le schéma (mapping) d'un réseau</h3>
+      <p>Représenter un réseau sous forme de schéma permet de visualiser la topologie : quels équipements sont reliés entre eux, par quels équipements intermédiaires, et avec quels liens (filaire, WiFi). Le mapping réseau est un outil indispensable pour les administrateurs réseau et permet de comprendre le chemin parcouru par les données.</p>
+    </div>
+  </ActivitySection>
+
+  <section class="objectives" data-aos="fade-up">
+    <h2>Objectifs de l'activité</h2>
+    <ul>
+      {objectives.map(objective => (
+        <li>{objective}</li>
+      ))}
+    </ul>
+  </section>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+
+  .objectives {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #1e293b;
+  }
+
+  li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+</style>

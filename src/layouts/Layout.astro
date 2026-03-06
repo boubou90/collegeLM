@@ -1,0 +1,448 @@
+---
+import BackgroundPattern from '../components/BackgroundPattern.astro';
+import SEO from '../components/SEO.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import NewsletterPopup from '../components/NewsletterPopup.astro';
+import GoogleAd from '../components/GoogleAd.astro';
+import QuickAccessBar from '../components/QuickAccessBar.astro';
+import GlobalNav from '../components/GlobalNav.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  isCourse?: boolean;
+  level?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description = "Ressources pédagogiques pour les cours de technologie au collège. Découvrez les programmes de 5ème, 4ème et 3ème.",
+  isCourse = false,
+  level = '',
+  canonicalURL,
+} = Astro.props;
+
+const pageCanonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://collegelouisemichel.net').href;
+
+const courseSchema = isCourse ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": title,
+  "description": description,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Collège Louise Michel Paris",
+    "url": "https://collegelouisemichel.net"
+  },
+  "educationalLevel": level,
+  "isAccessibleForFree": true,
+  "inLanguage": "fr",
+  "url": pageCanonical
+}) : null;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="google-site-verification" content="4OsN4oYdMPyqvw4BnIcwIYVVHrwce9zTEkvwO1WV3Ng" />
+
+    <SEO title={title} description={description} />
+
+    <!-- Load AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <!-- Load Search CSS -->
+    <style>
+      @import '../styles/search.css';
+    </style>
+
+    <!-- Google AdSense -->
+    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885775986633981"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "La technologie au collège — Collège Louise Michel",
+            "description": "Ressources pédagogiques gratuites pour les cours de technologie au collège",
+            "url": "https://collegelouisemichel.net",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paris",
+              "addressCountry": "FR"
+            },
+            "sameAs": [
+              "https://pia.ac-paris.fr/serail/jcms/s1_2003410/fr/college-louise-michel",
+              "https://www.ac-paris.fr/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://collegelouisemichel.net",
+            "name": "La technologie au collège",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://collegelouisemichel.net/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
+
+    {isCourse && courseSchema && (
+      <script is:inline type="application/ld+json" set:html={courseSchema} />
+    )}
+  </head>
+  <body>
+    <QuickAccessBar />
+    <GlobalNav />
+    <BackgroundPattern />
+    <ThemeToggle />
+    <NewsletterPopup />
+    <slot />
+
+    <!-- Section auteur -->
+    <section class="author-section">
+      <div class="author-inner">
+        <div class="author-avatar">👨‍🏫</div>
+        <div class="author-body">
+          <p class="author-name">Créé par un enseignant de technologie</p>
+          <p class="author-desc">
+            Ce site est conçu par un professeur de technologie au Collège Louise Michel à Paris.
+            Toutes les ressources sont alignées sur le programme officiel de l'Éducation Nationale
+            et testées avec de vrais élèves.
+          </p>
+          <a href="/actualites/preparer-brevet-technologie/" class="author-link">
+            Lire le guide complet pour préparer le Brevet →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- T9 : Ad avant footer (optimisation AdSense) -->
+    <div class="footer-ad">
+      <GoogleAd slot="5227967907" format="auto" lazy={true} />
+    </div>
+
+    <footer class="site-footer">
+      <!-- T10 : Bannière Tipeee -->
+      <div class="tipeee-banner">
+        <p class="tipeee-description">
+          Ce site est <strong>100&nbsp;% gratuit</strong> et sans publicité intrusive.<br class="tipeee-br" />
+          Si les cours vous ont aidé, un petit coup de pouce fait vraiment la différence&nbsp;!
+        </p>
+        <a
+          href="https://fr.tipeee.com/revizon/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tipeee-link"
+        >
+          <span class="tipeee-heart">❤️</span>
+          <div class="tipeee-text">
+            <span class="tipeee-title">Soutenir ce site</span>
+            <span class="tipeee-sub">Contribuez sur Tipeee — 1&nbsp;€ aide déjà&nbsp;!</span>
+          </div>
+          <span class="tipeee-arrow">→</span>
+        </a>
+      </div>
+
+      <a href="/politique-confidentialite">Politique de confidentialité</a>
+      <span class="footer-sep">·</span>
+      <a href="/materiel-recommande">Matériel recommandé</a>
+    </footer>
+
+    <!-- Initialize AOS on the client side -->
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        duration: 800,
+        once: false
+      });
+    </script>
+
+    <!-- Mode Dyslexique -->
+    <script>
+      const setupDyslexicMode = () => {
+        const btn = document.getElementById('dyslexic-toggle');
+        const body = document.body;
+
+        if (localStorage.getItem('dyslexicMode') === 'enabled') {
+          body.classList.add('dyslexic-mode');
+          btn?.classList.add('active');
+          btn?.setAttribute('aria-pressed', 'true');
+        }
+
+        btn?.addEventListener('click', () => {
+          body.classList.toggle('dyslexic-mode');
+
+          if (body.classList.contains('dyslexic-mode')) {
+            localStorage.setItem('dyslexicMode', 'enabled');
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+          } else {
+            localStorage.setItem('dyslexicMode', 'disabled');
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+          }
+        });
+      };
+
+      setupDyslexicMode();
+      document.addEventListener('astro:after-swap', setupDyslexicMode);
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+    --background: #f8fafc;
+    --text: #1e293b;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+  }
+
+  [data-theme="dark"] {
+    --primary: #3b82f6;
+    --primary-dark: #60a5fa;
+    --background: #0f172a;
+    --text: #f1f5f9;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+  }
+
+  /* ── Mode Dyslexique ── */
+  @font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/npm/opendyslexic@1.0.3/OpenDyslexic-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body.dyslexic-mode {
+    font-family: 'OpenDyslexic', sans-serif !important;
+    font-size: 1.05rem !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.05em !important;
+    word-spacing: 0.1em !important;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Améliorer le contraste des cartes en mode sombre */
+  [data-theme="dark"] .news-card,
+  [data-theme="dark"] .highlight-card,
+  [data-theme="dark"] .resource-card,
+  [data-theme="dark"] .methodology-item,
+  [data-theme="dark"] .intro-section,
+  [data-theme="dark"] .presentation {
+    background: var(--card-bg);
+  }
+
+  [data-theme="dark"] .level-button {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  .author-section {
+    background: #f8fafc;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .author-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .author-avatar {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .author-name {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+  }
+
+  .author-desc {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .author-link {
+    color: #2563eb;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .author-link:hover {
+    text-decoration: underline;
+  }
+
+  [data-theme="dark"] .author-section {
+    background: #1e293b;
+  }
+
+  [data-theme="dark"] .author-name {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .author-desc {
+    color: #94a3b8;
+  }
+
+  .footer-ad {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+  }
+
+  .tipeee-banner {
+    margin-bottom: 1rem;
+  }
+
+  .tipeee-description {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  [data-theme="dark"] .tipeee-description {
+    color: #94a3b8;
+  }
+
+  .tipeee-br {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    .tipeee-br {
+      display: inline;
+    }
+  }
+
+  .tipeee-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+    color: #3730a3;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #c7d2fe;
+    transition: all 0.25s ease;
+  }
+
+  .tipeee-link:hover {
+    background: linear-gradient(135deg, #c7d2fe 0%, #ddd6fe 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.25);
+    text-decoration: none;
+  }
+
+  [data-theme="dark"] .tipeee-link {
+    background: linear-gradient(135deg, #1e1b4b 0%, #2e1065 100%);
+    color: #c4b5fd;
+    border-color: #4338ca40;
+  }
+
+  [data-theme="dark"] .tipeee-link:hover {
+    background: linear-gradient(135deg, #312e81 0%, #4c1d95 100%);
+  }
+
+  .tipeee-heart {
+    font-size: 1.1rem;
+  }
+
+  .tipeee-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .tipeee-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .tipeee-sub {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .tipeee-arrow {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .footer-sep {
+    margin: 0 0.5rem;
+    color: var(--border-color);
+  }
+
+  .site-footer a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+</style>

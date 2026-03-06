@@ -1,0 +1,80 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const evaluationDocuments = [
+  {
+    title: "Évaluation des compétences",
+    description: "Évaluation portant sur l'évolution des objets techniques",
+    pdfUrl: "/documents/5eme/sequence-3/activite-4/evaluation-competences.pdf"
+  },
+  {
+    title: "Grille d'évaluation",
+    description: "Grille détaillant les critères d'évaluation",
+    pdfUrl: "/documents/5eme/sequence-3/activite-4/grille-evaluation.pdf"
+  },
+  {
+    title: "Documents ressources",
+    description: "Documents supports pour l'évaluation",
+    pdfUrl: "/documents/5eme/sequence-3/activite-4/documents-ressources.pdf"
+  }
+];
+---
+
+<ClassLayout title="Évaluation - Séquence 3 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-3" />
+  <h1>Activité 4 - Évaluation</h1>
+  
+  <ActivitySection
+    title="Évaluation des compétences"
+    description="Cette évaluation porte sur les compétences acquises concernant l'évolution des objets techniques, leur analyse et leur comparaison. Elle permettra de vérifier votre compréhension des concepts clés abordés dans la séquence."
+    documents={evaluationDocuments}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-3"
+    sequenceLabel="Séquence 3 — Évolution des objets techniques"
+    retenir={{
+      definitions: [
+        { term: "Évolution incrémentale", def: "Évolution progressive par améliorations successives d'un OT existant, sans en changer le principe de fonctionnement." },
+        { term: "Évolution de rupture", def: "Évolution radicale basée sur un nouveau principe technique, remplaçant complètement la génération précédente." },
+      ],
+      points: [
+        "Ressources sur l'évolution des OT disponibles : fiches méthode, exemples, exercices.",
+        "Appliquer la méthode : identifier → classer → comparer → conclure sur la tendance.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Bilan — Évolution des objets techniques</h3>
+      <p>Cette séquence t'a appris à analyser l'évolution des objets techniques de manière méthodique. Les compétences acquises sont directement utiles dans les séquences suivantes sur la conception et la fabrication.</p>
+
+      <h3>Récapitulatif des notions clés</h3>
+      <ul>
+        <li><strong>Objet technique (OT)</strong> : objet fabriqué par l'être humain pour répondre à un besoin précis.</li>
+        <li><strong>Principe technique</strong> : solution technologique adoptée pour réaliser une fonction.</li>
+        <li><strong>Évolution incrémentale</strong> : amélioration progressive sans changer le principe de base (ex : ampoule halogène vs incandescente).</li>
+        <li><strong>Évolution de rupture</strong> : changement radical de principe technique (ex : LED remplace l'ampoule à filament).</li>
+        <li><strong>Famille d'objets</strong> : groupe d'OT ayant la même fonction principale.</li>
+        <li><strong>Tendances d'évolution</strong> : miniaturisation, numérisation, multifonction, dématérialisation, réduction de l'impact environnemental.</li>
+      </ul>
+
+      <h3>Méthode à retenir</h3>
+      <ol>
+        <li><strong>Identifier</strong> l'OT et sa fonction principale.</li>
+        <li><strong>Rechercher</strong> les différentes générations dans des sources fiables.</li>
+        <li><strong>Classer</strong> sur une frise chronologique.</li>
+        <li><strong>Comparer</strong> dans un tableau avec des critères identiques.</li>
+        <li><strong>Conclure</strong> sur la tendance d'évolution observée.</li>
+      </ol>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

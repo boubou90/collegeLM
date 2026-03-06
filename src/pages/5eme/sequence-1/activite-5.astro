@@ -1,0 +1,69 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Trame PDG",
+    pdfUrl: "/documents/5eme/sequence-1/resources/trame-pdg.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 5 - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Activité 5 - Page de garde</h1>
+  
+  <ActivitySection
+    title="Comment créer une page de garde pour mon document ?"
+    description="Dans cette activité, nous allons apprendre à créer une page de garde professionnelle pour nos documents en utilisant la trame fournie."
+    documents={documents}
+    activityNumber={5}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Simulation réseau", def: "Modélisation virtuelle d'un réseau informatique permettant de tester des configurations sans matériel physique." },
+      ],
+      points: [
+        "Ressources complémentaires sur les réseaux disponibles.",
+        "Simulateurs recommandés : Filius (gratuit) pour simuler un réseau local complet.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>La page de garde : présenter son travail professionnellement</h3>
+      <p>Une <strong>page de garde</strong> est la première page d'un document. Elle donne une première impression et permet d'identifier immédiatement le document : qui l'a fait, pour quelle matière, à quelle date. Un document bien présenté avec une page de garde soignée montre le soin apporté au travail.</p>
+
+      <h3>Éléments d'une page de garde</h3>
+      <ul>
+        <li><strong>Nom et prénom</strong> de l'élève ou du groupe.</li>
+        <li><strong>Classe et niveau</strong> (ex : 5ème B).</li>
+        <li><strong>Titre du document</strong> : nom de la séquence, du projet ou du sujet.</li>
+        <li><strong>Matière</strong> : Technologie.</li>
+        <li><strong>Date</strong> : année scolaire ou date de rendu.</li>
+        <li><strong>Nom de l'établissement</strong> : Collège Louise Michel.</li>
+      </ul>
+
+      <h3>Outils numériques pour créer une page de garde</h3>
+      <p>Les traitements de texte (LibreOffice Writer, Microsoft Word, Google Docs) proposent des modèles de pages de garde prêts à l'emploi. Tu peux aussi créer ta propre mise en page en utilisant les outils de mise en forme : polices, couleurs, encadrés, images. L'objectif est d'obtenir un rendu lisible et professionnel, en lien avec le sujet traité.</p>
+
+      <h3>Simulateurs réseau pour aller plus loin</h3>
+      <p>Pour approfondir tes connaissances sur les réseaux, des simulateurs gratuits permettent de construire et tester un réseau virtuel sans matériel :</p>
+      <ul>
+        <li><strong>Filius</strong> : simulateur simple, idéal pour apprendre les bases du réseau en classe.</li>
+        <li><strong>Cisco Packet Tracer</strong> : outil plus avancé, utilisé en formation professionnelle.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

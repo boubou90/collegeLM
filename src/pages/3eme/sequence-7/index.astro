@@ -1,0 +1,51 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves analysent les différentes formes d'énergies, leurs transformations et les enjeux du développement durable. Ils comparent les solutions énergétiques fossiles et renouvelables pour proposer des choix responsables et argumentés :`;
+
+const activities = [
+  {
+    title: "Les formes d'énergies et leurs transformations",
+    description: "Comment les énergies se transforment-elles dans les systèmes techniques ?"
+  },
+  {
+    title: "L'efficacité énergétique",
+    description: "Comment mesurer et améliorer l'efficacité énergétique d'un système ?"
+  },
+  {
+    title: "Les énergies renouvelables et le bilan carbone",
+    description: "Pourquoi et comment passer aux énergies renouvelables pour réduire notre empreinte carbone ?"
+  },
+  {
+    title: "Ressources — Énergie et développement durable",
+    description: "Documents et ressources complémentaires sur l'énergie et le développement durable"
+  }
+];
+
+const level = "3eme";
+---
+
+<ClassLayout title="Séquence 7 — Énergie et développement durable - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 7 — Énergie et développement durable</h1>
+
+  <SequencePresentation
+    title="Analyser les enjeux énergétiques et explorer les solutions durables"
+    description={description}
+    activities={activities.map(a => a.description)}
+    question="Comment faire des choix énergétiques responsables pour réduire notre impact sur l'environnement ?"
+  />
+
+  <ActivityLinks sequenceNumber={7} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

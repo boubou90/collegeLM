@@ -1,0 +1,71 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Identifier et mesurer les critères de performance",
+    pdfUrl: "/documents/5eme/sequence-6/activite-4/Identifier-les-critères-de-choix.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-6" />
+  <h1>Activité 3 - Identifier et mesurer les critères de performance</h1>
+  
+  <ActivitySection
+    title="Identifier et mesurer les critères de performance "
+    description="Je dois maintenant remplacer l’ampoule défectueuse chez moi, mais j’ai un très grand nombre de choix possibles."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-6"
+    sequenceLabel="Séquence 6 — Choisir un OST"
+    retenir={{
+      definitions: [
+        { term: "Flux lumineux (lumens, lm)", def: "Quantité totale de lumière émise par une source. Plus les lumens sont élevés, plus la source est lumineuse." },
+        { term: "Indice de Rendu de Couleur (IRC)", def: "Note de 0 à 100 indiquant la fidélité des couleurs sous la source lumineuse (IRC > 80 = bon)." },
+        { term: "Efficacité lumineuse (lm/W)", def: "Rapport lumens/watts : indique l'efficacité énergétique d'une lampe. Plus c'est élevé, mieux c'est." },
+      ],
+      points: [
+        "Comparer les lampes sur : lumens (luminosité), lm/W (efficacité), durée de vie, consommation W.",
+        "LED > fluocompacte > halogène > incandescente en termes d'efficacité lumineuse (lm/W).",
+        "Le label énergie (A+++ à G) permet une comparaison rapide : toujours viser A ou mieux.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Mesurer et comparer les performances d'une ampoule</h3>
+      <p>Pour choisir une ampoule de manière éclairée, il faut savoir mesurer et interpréter les critères de performance. Deux appareils de mesure sont utilisés en technologie : le <strong>luxmètre</strong> (mesure l'éclairement reçu) et le <strong>wattmètre</strong> (mesure la puissance électrique consommée).</p>
+
+      <h3>Les grandeurs caractéristiques des lampes</h3>
+      <ul>
+        <li><strong>Puissance (W)</strong> : énergie électrique consommée par seconde. Plus c'est bas, mieux c'est.</li>
+        <li><strong>Flux lumineux (lm - lumens)</strong> : quantité totale de lumière émise. Plus c'est élevé, plus l'ampoule éclaire fort.</li>
+        <li><strong>Efficacité lumineuse (lm/W)</strong> : rapport flux lumineux / puissance consommée. Une LED atteint 100-160 lm/W contre 12 lm/W pour une ampoule à incandescence.</li>
+        <li><strong>Durée de vie (heures)</strong> : nombre d'heures de fonctionnement avant défaillance. LED : 25000h, incandescente : 1000h.</li>
+        <li><strong>Température de couleur (K - Kelvins)</strong> : 2700K = blanc chaud (salon), 4000K = blanc neutre (bureau), 6500K = blanc froid (atelier).</li>
+        <li><strong>IRC (Indice de Rendu de Couleur)</strong> : fidélité des couleurs de 0 à 100. IRC > 80 = bon, IRC > 90 = excellent.</li>
+      </ul>
+
+      <h3>Méthode de comparaison</h3>
+      <ol>
+        <li>Rassembler les fiches techniques de chaque ampoule à comparer.</li>
+        <li>Créer un tableau avec les critères en colonnes et les produits en lignes.</li>
+        <li>Remplir le tableau avec les valeurs mesurées ou lues sur les fiches.</li>
+        <li>Calculer le coût sur 10 ans : (nombre d'heures d'usage / 1000) × puissance (kW) × prix du kWh + prix d'achat × nombre d'ampoules nécessaires.</li>
+        <li>Identifier le meilleur compromis selon les priorités (performance, économie, écologie).</li>
+      </ol>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

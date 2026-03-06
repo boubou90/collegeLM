@@ -1,0 +1,67 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Programmation avancée"
+    description="Retrouve ici les documents et ressources complémentaires sur la programmation et les algorithmes. Tu y trouveras des fiches méthode sur les logigrammes, des tutoriels pour prendre en main Scratch et Python, des exercices corrigés sur les variables, boucles et conditions, et des guides pour programmer un Arduino ou un micro:bit. Ces ressources te permettront de pratiquer en autonomie et d'aller plus loin dans la maîtrise de la programmation. Consulte également le cours sur les logigrammes disponible dans la section Cours de 3ème."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-6"
+    sequenceLabel="Séquence 6 — Programmation avancée"
+    retenir={{
+      definitions: [
+        { term: "IDE Arduino", def: "Environnement de développement intégré pour écrire, compiler et téléverser des programmes sur une carte Arduino." },
+        { term: "Bibliothèque (library)", def: "Ensemble de fonctions pré-écrites facilitant l'utilisation de composants spécifiques (écran, capteur, moteur…)." },
+        { term: "Débogage", def: "Processus de recherche et correction des erreurs dans un programme." },
+      ],
+      points: [
+        "Utiliser le moniteur série (Serial.println()) pour afficher des valeurs et déboguer.",
+        "Documentation officielle Arduino : arduino.cc/reference disponible en français.",
+        "Faire le lien avec la séquence 9 (robotique) où la programmation sera appliquée au robot.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Synthèse — Programmation avancée</h3>
+      <p>La séquence 6 t'a appris à <strong>programmer des systèmes automatisés</strong> en utilisant les trois piliers de l'algorithmique : logigrammes, variables/conditions/boucles, et programmation sur microcontrôleur. Ces compétences sont fondamentales dans un monde où l'automatisation et le numérique sont omniprésents.</p>
+
+      <h3>Les outils disponibles</h3>
+      <ul>
+        <li><strong>IDE Arduino</strong> : pour écrire, compiler et téléverser des programmes sur une carte Arduino.</li>
+        <li><strong>Tinkercad Circuits</strong> (en ligne, gratuit) : pour simuler un montage Arduino sans matériel physique.</li>
+        <li><strong>Scratch</strong> : pour les algorithmes simples avec une interface visuelle par blocs.</li>
+        <li><strong>Python</strong> : langage plus avancé, utilisé en lycée et en professionnels.</li>
+      </ul>
+
+      <h3>Le débogage — trouver et corriger les erreurs</h3>
+      <p>Le <strong>débogage</strong> est une compétence essentielle. Stratégie :</p>
+      <ul>
+        <li>Utiliser <code>Serial.println(valeur)</code> pour afficher des variables dans le moniteur série.</li>
+        <li>Tester chaque partie du programme séparément avant d'assembler.</li>
+        <li>Lire attentivement les messages d'erreur du compilateur — ils indiquent la ligne fautive.</li>
+      </ul>
+
+      <h3>Lien avec la séquence 9</h3>
+      <p>Les compétences acquises ici seront directement appliquées en <strong>séquence 9 (Robotique et automatismes)</strong> : tu programmeras un robot pour qu'il réalise une mission autonome en utilisant exactement les mêmes structures algorithmiques (variables, conditions, boucles) et les mêmes fonctions Arduino.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

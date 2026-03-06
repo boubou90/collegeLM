@@ -1,0 +1,72 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 8 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Réseaux et communication · Activité 1</h1>
+
+  <ActivitySection
+    title="Architecture et topologie des réseaux"
+    description="Comment sont organisés les réseaux informatiques et quelles sont leurs topologies ? Un réseau informatique est un ensemble d'équipements (ordinateurs, serveurs, routeurs, switches…) interconnectés pour partager des ressources et communiquer. Dans cette activité, tu étudieras les différentes topologies de réseaux (en étoile, en bus, en anneau, maillé) et identifieras les équipements d'interconnexion (switch, routeur, point d'accès Wi-Fi). Tu réaliseras le schéma du réseau du collège et tu comprendras la différence entre réseau local (LAN), réseau étendu (WAN) et Internet. Cette activité te donnera une vision concrète de l'infrastructure numérique qui t'entoure au quotidien."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-8"
+    sequenceLabel="Séquence 8 — Réseaux et communication"
+    retenir={{
+      definitions: [
+        { term: "Réseau informatique", def: "Ensemble d'équipements (ordinateurs, serveurs, smartphones…) interconnectés pour partager des ressources et communiquer." },
+        { term: "Topologie", def: "Structure physique ou logique d'un réseau décrivant comment les équipements sont reliés entre eux." },
+        { term: "Switch (commutateur)", def: "Équipement réseau qui relie plusieurs appareils dans un réseau local et dirige les données vers le bon destinataire." },
+        { term: "Routeur", def: "Équipement qui interconnecte plusieurs réseaux et détermine le chemin optimal pour acheminer les données." },
+      ],
+      points: [
+        "3 topologies classiques : étoile (la plus répandue), bus, anneau.",
+        "Réseau local (LAN) : relie des équipements dans un bâtiment ; Internet : réseau mondial de réseaux.",
+        "Switch = dans un réseau local ; Routeur = entre plusieurs réseaux (ex : box internet).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Un réseau informatique — définition et composants</h3>
+      <p>Un <strong>réseau informatique</strong> est un ensemble d'équipements numériques interconnectés pour partager des ressources (fichiers, imprimantes, connexion Internet) et communiquer. Le réseau du collège, ta box Internet à la maison, et Internet lui-même sont des exemples de réseaux de tailles différentes.</p>
+
+      <h3>Les topologies de réseaux</h3>
+      <p>La <strong>topologie</strong> décrit comment les équipements sont reliés entre eux :</p>
+      <ul>
+        <li><strong>Topologie en étoile</strong> (la plus répandue) : tous les équipements sont reliés à un équipement central (switch). Si le switch tombe, tout le réseau est coupé, mais les pannes d'un poste n'affectent pas les autres.</li>
+        <li><strong>Topologie en bus</strong> : tous les équipements partagent un même câble. Simple mais vulnérable — une coupure coupe tout le réseau.</li>
+        <li><strong>Topologie en anneau</strong> : les équipements sont reliés en boucle. Les données circulent dans un sens. Peu utilisée aujourd'hui.</li>
+        <li><strong>Topologie maillée</strong> : chaque équipement est relié à plusieurs autres — très résistante aux pannes, utilisée dans les réseaux militaires et Internet.</li>
+      </ul>
+
+      <h3>Les équipements clés</h3>
+      <ul>
+        <li><strong>Switch (commutateur)</strong> : relie les équipements d'un réseau local. Il lit les adresses MAC pour diriger les données vers le bon destinataire.</li>
+        <li><strong>Routeur</strong> : interconnecte plusieurs réseaux (ex : ton réseau local ↔ Internet). Ta box Internet est un routeur.</li>
+        <li><strong>Point d'accès Wi-Fi</strong> : permet la connexion sans fil dans le réseau local.</li>
+      </ul>
+
+      <h3>LAN, WAN, Internet</h3>
+      <ul>
+        <li><strong>LAN</strong> (Local Area Network) : réseau local d'une salle, d'un bâtiment ou d'un campus.</li>
+        <li><strong>WAN</strong> (Wide Area Network) : réseau étendu sur une grande zone géographique.</li>
+        <li><strong>Internet</strong> : réseau mondial de réseaux, interconnectés via des routeurs et des câbles sous-marins.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

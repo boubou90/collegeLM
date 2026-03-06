@@ -1,0 +1,89 @@
+---
+import ClassLayout from '../../layouts/ClassLayout.astro';
+import ProgramPresentation from '../../components/ProgramPresentation.astro';
+import SequenceButtons from '../../components/SequenceButtons.astro';
+
+const level = "5eme";
+const programDescription = `Le programme de Technologie en classe de 5e au collège permet aux élèves de découvrir les objets techniques, leur fonctionnement, et les matériaux utilisés pour leur fabrication. Ils apprennent à analyser des objets, à identifier leurs fonctions et à comprendre les systèmes techniques qui les composent. L'accent est mis sur la démarche de projet, où les élèves doivent concevoir et fabriquer un prototype en suivant un cahier des charges, tout en apprenant à manipuler des matériaux et à utiliser des outils de transformation (découpe, collage, assemblage, etc.).
+
+Les élèves sont également sensibilisés aux enjeux écologiques et sociaux des objets techniques, en abordant des questions telles que l'impact environnemental des technologies et les questions liées à leur recyclage. Ils développent des compétences en représentation graphique, en communication technique et dans l'utilisation d'outils numériques pour concevoir et présenter des projets. Le programme inclut également des travaux pratiques et des projets, parfois axés sur la robotique, pour renforcer l'apprentissage par l'expérimentation.
+
+Séquence 1 : Exploiter le réseau informatique pour travailler
+Séquence 2 : Faire bon usage des outils numériques
+Séquence 3 : Comprendre l’évolution des objets et systèmes techniques (OST)
+Séquence 4 : La souris : son intéraction avec son environnement
+Séquence 5 : Choisir un OST en fonction de critères – Lampes
+Séquence 6 : Un défi énergétique en zone isolée (Alimenter un habitat en énergie)
+Séquence 7 : Le fonctionnement d’une station météo connectée
+Séquence 8 : La réparation de la fixation d’une station météo
+Séquence 9 : La programmation d’un feu arrière de vélo intelligent
+Séquence 10 : La conception d’un guide de balle pour robot`;
+---
+
+<ClassLayout title="Cours Technologie 5ème — Réseaux, SketchUp, Objets Techniques" level={level} description="Cours de technologie en 5ème : réseaux informatiques, objets techniques et modélisation 3D avec SketchUp. Fiches et activités gratuites.">
+
+  <ProgramPresentation 
+    title="Présentation du Programme"
+    description={programDescription}
+  />
+
+  <SequenceButtons count={10} level={level} />
+
+  <section class="mt-12 p-6 bg-blue-50 rounded-xl" id="programme">
+    <h2 class="text-xl font-bold text-blue-800 mb-4">
+      📚 Programme officiel de technologie en 5ème
+    </h2>
+    <p class="text-gray-700 mb-4">
+      Conformément au programme du Ministère de l'Éducation Nationale, les élèves de 5ème
+      étudient les thèmes suivants en technologie :
+    </p>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="bg-white rounded-lg p-4 border border-blue-100">
+        <h3 class="font-bold text-blue-700 mb-2">🌐 Réseaux informatiques</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Découverte du fonctionnement d'Internet, des protocoles de communication,
+          de la sécurité numérique et des composants d'un réseau local (routeur, switch, serveur).
+          Les élèves apprennent à exploiter les ressources partagées d'un réseau scolaire.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-4 border border-blue-100">
+        <h3 class="font-bold text-blue-700 mb-2">🔧 Objets et systèmes techniques</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Analyse fonctionnelle des objets techniques : identification des fonctions, des solutions
+          techniques et des matériaux. Comparaison de différents objets répondant au même besoin
+          (ex : lampes à incandescence, LED, fluocompactes).
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-4 border border-blue-100">
+        <h3 class="font-bold text-blue-700 mb-2">📐 Modélisation 3D</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Initiation à la modélisation numérique avec des outils comme Onshape ou Tinkercad.
+          Les élèves créent des objets en 3D, apprennent à lire des plans techniques et
+          comprennent les principes de la conception assistée par ordinateur (CAO).
+        </p>
+      </div>
+      <div class="bg-white rounded-lg p-4 border border-blue-100">
+        <h3 class="font-bold text-blue-700 mb-2">💡 Programmation et automatismes</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Premiers pas en algorithmique avec Scratch ou Python. Les élèves programment
+          des séquences simples, des boucles et des conditions pour contrôler des systèmes
+          (robot, feu de signalisation, capteurs). Développement de la pensée logique.
+        </p>
+      </div>
+    </div>
+    <div class="mt-4 p-3 bg-blue-100 rounded-lg">
+      <p class="text-sm text-blue-700 font-medium">
+        💡 En 5ème, la technologie développe l'esprit d'analyse et la créativité à travers
+        des projets concrets. Les compétences acquises servent de base pour les classes de 4ème et 3ème.
+      </p>
+    </div>
+  </section>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

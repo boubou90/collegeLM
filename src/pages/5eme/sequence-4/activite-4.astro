@@ -1,0 +1,71 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Guide SketchUp",
+    pdfUrl: "/documents/5eme/sequence-4/resources/guide-sketchup.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 4 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-4" />
+  <h1>Activité 4 - Guide SketchUp</h1>
+  
+  <ActivitySection
+    title="Guide d'utilisation de SketchUp"
+    description="Ce guide complet vous permettra de maîtriser les fonctionnalités essentielles de SketchUp pour la modélisation 3D. Il couvre les outils de base, les techniques de construction et les bonnes pratiques pour réaliser vos projets."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-4"
+    sequenceLabel="Séquence 4 — Modélisation 3D et SketchUp"
+    retenir={{
+      definitions: [
+        { term: "Tutoriel", def: "Guide pas à pas expliquant comment réaliser une tâche dans un logiciel." },
+        { term: "Mise en plan", def: "Document 2D généré depuis un modèle 3D, avec les différentes vues et cotations nécessaires à la fabrication." },
+      ],
+      points: [
+        "Tutoriels SketchUp disponibles dans les ressources : outils de base, dessin, extrusion, assemblage.",
+        "Lien avec la 4ème (séquence 4 CAO) : même démarche de modélisation.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Récapitulatif — Modélisation 3D avec SketchUp</h3>
+      <p>Cette séquence t'a appris à utiliser SketchUp pour modéliser des objets et structures en 3D. Ces compétences sont directement réutilisables en 4ème pour la modélisation CAO avec des logiciels plus avancés (OnShape, FreeCAD).</p>
+
+      <h3>Les outils SketchUp à maîtriser</h3>
+      <ul>
+        <li><strong>Orbite (O)</strong> : naviguer autour du modèle en 3D.</li>
+        <li><strong>Sélectionner (Espace)</strong> : sélectionner des entités (clic simple = face, double = volume).</li>
+        <li><strong>Tracer des lignes (L)</strong> : créer des arêtes et des surfaces 2D.</li>
+        <li><strong>Pousser/Tirer (P)</strong> : extruder une surface 2D en volume 3D.</li>
+        <li><strong>Rectangle (R)</strong> : créer rapidement des rectangles avec dimensions.</li>
+        <li><strong>Cercle (C)</strong> : créer des cercles et cylindres.</li>
+        <li><strong>Mesure (T)</strong> : vérifier les dimensions et créer des lignes de construction.</li>
+      </ul>
+
+      <h3>Lien avec l'analyse fonctionnelle</h3>
+      <p>La modélisation 3D ne s'effectue pas de manière arbitraire. Elle découle d'une analyse fonctionnelle rigoureuse : le modèle doit respecter les <strong>fonctions de service</strong> identifiées dans la bête à cornes et la pieuvre, et satisfaire les <strong>contraintes</strong> du cahier des charges (dimensions, matériaux, résistance). En 4ème, cette démarche sera approfondie avec le CDCF complet.</p>
+
+      <h3>Ressources pour aller plus loin</h3>
+      <ul>
+        <li><strong>SketchUp Free</strong> (app.sketchup.com) : version gratuite en ligne, accessible sans installation.</li>
+        <li><strong>Tutoriels officiels SketchUp</strong> : disponibles sur le site officiel et YouTube.</li>
+        <li><strong>Tinkercad</strong> (autodesk.com/tinkercad) : alternative très simple pour débuter la modélisation 3D.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

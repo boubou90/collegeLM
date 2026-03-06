@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  videoUrl: string;
+  thumbnail?: string;
+}
+
+const { title, description, videoUrl, thumbnail } = Astro.props;
+---
+
+<div class="video-resource" data-aos="fade-up">
+  <div class="video-wrapper">
+    <iframe 
+      src={videoUrl}
+      title={title}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</div>
+
+<style>
+  .video-resource {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 1rem;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+</style>

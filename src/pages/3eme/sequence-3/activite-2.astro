@@ -1,0 +1,68 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Activité 2</h1>
+
+  <ActivitySection
+    title="Le diagramme pieuvre"
+    description="Comment lister les fonctions de service avec le diagramme pieuvre ? Le diagramme pieuvre (ou diagramme des interacteurs) permet d'identifier toutes les fonctions de service d'un objet technique en analysant ses interactions avec son environnement (utilisateurs, normes, milieu ambiant, énergie, etc.). Tu distingueras les fonctions principales (FP) — qui justifient l'existence de l'objet — et les fonctions contraintes (FC) — imposées par l'environnement. Tu réaliseras un diagramme pieuvre complet pour au moins deux objets techniques, en justifiant chaque fonction identifiée."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-3"
+    sequenceLabel="Séquence 3 — Analyse fonctionnelle"
+    retenir={{
+      definitions: [
+        { term: "Diagramme pieuvre", def: "Outil graphique qui représente toutes les fonctions de service d'un produit avec son environnement." },
+        { term: "Fonction principale (FP)", def: "Met en relation deux milieux extérieurs en passant par le produit : FP1 = milieu A — produit — milieu B." },
+        { term: "Fonction contrainte (FC)", def: "Relie le produit à un seul milieu extérieur : c'est une contrainte à respecter." },
+        { term: "Milieu extérieur (ME)", def: "Tout élément de l'environnement du produit qui interagit avec lui : utilisateur, norme, air, sol…" },
+      ],
+      points: [
+        "FP = relie 2 milieux extérieurs via le produit (il y a 2 'pattes' de la pieuvre).",
+        "FC = relie le produit à 1 seul milieu extérieur (1 seule 'patte').",
+        "Numéroter : FP1, FC1, FC2, FC3… pour chaque fonction identifiée.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Le diagramme pieuvre — identifier toutes les interactions</h3>
+      <p>Après avoir défini le besoin avec la bête à cornes, le <strong>diagramme pieuvre</strong> liste toutes les fonctions de service d'un objet en analysant ses interactions avec son environnement. L'objet est placé au centre et les "pattes de la pieuvre" représentent les relations avec les <strong>milieux extérieurs (ME)</strong>.</p>
+
+      <h3>Les milieux extérieurs (ME)</h3>
+      <p>Les milieux extérieurs sont tous les éléments de l'environnement qui interagissent avec l'objet : utilisateur, normes, sol, air ambiant, source d'énergie, autres objets… Il faut les lister exhaustivement avant de tracer les pattes.</p>
+
+      <h3>FP vs. FC — la distinction fondamentale</h3>
+      <ul>
+        <li><strong>Fonction Principale (FP)</strong> : relie <em>deux</em> milieux extérieurs via l'objet — c'est la raison d'être du produit. Elle a 2 pattes. Exemple pour une lampe : FP1 = "Éclairer l'utilisateur dans la pièce".</li>
+        <li><strong>Fonction Contrainte (FC)</strong> : relie l'objet à <em>un seul</em> milieu extérieur — c'est une contrainte à respecter. Elle a 1 patte. Exemple : FC1 = "Respecter les normes électriques (CE)".</li>
+      </ul>
+
+      <h3>Méthode de construction</h3>
+      <ol>
+        <li>Lister tous les milieux extérieurs autour de l'objet (8 à 12 maximum).</li>
+        <li>Tracer les liaisons entre l'objet et chaque ME.</li>
+        <li>Identifier si chaque liaison relie 1 ME (FC) ou 2 ME (FP).</li>
+        <li>Formuler chaque fonction avec un verbe d'action : "Permettre à… de…", "Résister à…".</li>
+        <li>Numéroter : FP1, FC1, FC2, FC3…</li>
+      </ol>
+      <p>Le diagramme pieuvre alimente ensuite le <strong>CDCF</strong> (activité 3) où chaque fonction sera quantifiée avec des critères et des niveaux.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

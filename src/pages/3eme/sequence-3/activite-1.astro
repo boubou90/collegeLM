@@ -1,0 +1,71 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Activité 1</h1>
+
+  <ActivitySection
+    title="La bête à cornes"
+    description="Comment identifier le besoin d'un objet technique avec la bête à cornes ? La bête à cornes est un outil graphique qui permet de définir le besoin auquel répond un objet technique en répondant à trois questions fondamentales : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ? Tu apprendras à construire ce diagramme pour différents objets techniques du quotidien, puis tu l'appliqueras à un objet de ton choix. Cet outil est incontournable au Brevet de technologie et te permettra de justifier l'existence d'un objet technique de façon rigoureuse."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-3"
+    sequenceLabel="Séquence 3 — Analyse fonctionnelle"
+    retenir={{
+      definitions: [
+        { term: "Bête à cornes", def: "Outil graphique d'analyse fonctionnelle qui répond à 3 questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?" },
+        { term: "Besoin", def: "Manque ressenti par un utilisateur qu'un produit technique doit satisfaire." },
+        { term: "Utilisateur", def: "Personne ou entité à qui le produit rend service directement." },
+      ],
+      points: [
+        "Les 3 questions de la bête à cornes : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?",
+        "Le but = la fonction principale du produit, formulée avec un verbe d'action.",
+        "Il peut y avoir plusieurs utilisateurs (ex : conducteur ET passagers pour une voiture).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Qu'est-ce que la bête à cornes ?</h3>
+      <p>La <strong>bête à cornes</strong> est le premier outil de l'analyse fonctionnelle. Elle permet de définir le besoin auquel répond un objet technique en répondant à <strong>trois questions fondamentales</strong>. Elle se représente sous forme d'un diagramme avec l'objet au centre, encadré de ses deux "cornes".</p>
+
+      <h3>Les trois questions à se poser</h3>
+      <ul>
+        <li><strong>À qui rend-il service ?</strong> → L'utilisateur ou le bénéficiaire direct (personne, animal, organisation…).</li>
+        <li><strong>Sur quoi agit-il ?</strong> → L'objet ou la matière sur laquelle le système agit.</li>
+        <li><strong>Dans quel but ?</strong> → La fonction principale, formulée avec un verbe d'action à l'infinitif.</li>
+      </ul>
+
+      <h3>Exemples concrets</h3>
+      <ul>
+        <li><strong>Vélo</strong> : rend service au cycliste | agit sur le cycliste | dans le but de le déplacer d'un lieu à un autre.</li>
+        <li><strong>Lave-vaisselle</strong> : rend service à l'utilisateur | agit sur la vaisselle sale | dans le but de la laver et de la sécher.</li>
+        <li><strong>Lampe de bureau</strong> : rend service à l'utilisateur | agit sur l'espace de travail | dans le but de l'éclairer.</li>
+      </ul>
+
+      <h3>Règles de construction</h3>
+      <ol>
+        <li>Identifier <em>qui utilise vraiment</em> l'objet (pas qui l'achète !).</li>
+        <li>Formuler le but avec un <strong>verbe d'action</strong> précis : "transporter", "couper", "chauffer"…</li>
+        <li>Il peut y avoir <strong>plusieurs utilisateurs</strong> : une voiture rend service au conducteur ET aux passagers.</li>
+        <li>L'objet au centre est désigné par son nom précis.</li>
+      </ol>
+      <p>Après avoir défini le besoin avec la bête à cornes, on passe au <strong>diagramme pieuvre</strong> pour lister toutes les fonctions de service (activité 2).</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

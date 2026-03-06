@@ -1,0 +1,258 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const sections = [
+  {
+    title: "Qu'est-ce que l'apprentissage ?",
+    content: `L'apprentissage est une formation en alternance qui permet d'apprendre un métier tout en travaillant. 
+    Elle combine :
+    - Des périodes en entreprise
+    - Des périodes en centre de formation (CFA)
+    - Un salaire mensuel
+    - Un diplôme ou une qualification à la clé`
+  },
+  {
+    title: "Les diplômes accessibles",
+    content: `Après la 3ème, vous pouvez préparer :
+    - Un CAP (2 ans)
+    - Un Bac Professionnel (3 ans)
+    - Un BP - Brevet Professionnel (2 ans après un CAP)
+    
+    Ces diplômes peuvent être préparés dans de nombreux domaines : commerce, bâtiment, restauration, mécanique, etc.`
+  },
+  {
+    title: "Comment devenir apprenti ?",
+    content: `Pour devenir apprenti, il faut :
+    1. Avoir entre 16 et 29 ans (15 ans si vous avez terminé la 3ème)
+    2. Trouver une entreprise d'accueil
+    3. S'inscrire dans un CFA
+    4. Signer un contrat d'apprentissage
+    
+    Le contrat peut débuter 3 mois avant ou après le début de la formation en CFA.`
+  },
+  {
+    title: "Les avantages de l'apprentissage",
+    content: `- Formation gratuite et rémunérée
+    - Expérience professionnelle concrète
+    - Diplôme reconnu par l'État
+    - Meilleure insertion professionnelle
+    - Possibilité de poursuivre ses études
+    - Accompagnement par un maître d'apprentissage`
+  },
+  {
+    title: "La rémunération",
+    content: `Le salaire minimum varie selon :
+    - Votre âge
+    - L'année de formation
+    - Le type de contrat
+    
+    Pour les - de 18 ans :
+    - 1ère année : 27% du SMIC
+    - 2ème année : 39% du SMIC
+    - 3ème année : 55% du SMIC`
+  },
+  {
+    title: "Comment trouver une entreprise ?",
+    content: `Plusieurs moyens pour trouver une entreprise :
+    - Contacter directement les entreprises
+    - Consulter les offres sur www.alternance.emploi.gouv.fr
+    - Participer aux salons de l'apprentissage
+    - Se rapprocher de la Chambre des Métiers
+    - Utiliser les réseaux sociaux professionnels
+    - Contacter les CFA qui ont souvent des partenariats avec des entreprises`
+  },
+  {
+    title: "Les CFA à Paris",
+    content: `Quelques CFA parisiens :
+    - CFA des Métiers de la Gastronomie
+    - CFA Stephenson (Commerce, Gestion)
+    - CFA Delépine (Électricité)
+    - CFA du Bâtiment
+    - CFA de la Coiffure
+    - CFA des Métiers de l'Automobile
+    
+    Chaque CFA a ses spécialités et ses entreprises partenaires.`
+  },
+  {
+    title: "Calendrier et démarches",
+    content: `Planning conseillé :
+    - Janvier-Mars : S'informer et choisir un métier
+    - Mars-Avril : Rechercher un CFA
+    - Avril-Juin : Rechercher une entreprise
+    - Juin-Septembre : Signer le contrat
+    
+    N'oubliez pas de faire vos vœux sur Affelnet au cas où !`
+  }
+];
+---
+
+<ClassLayout title="L'apprentissage après la 3ème" level="3eme">
+  <div class="apprentissage-container">
+    <BackButton href="/3eme/orientation" />
+    <h1>L'apprentissage après la 3ème</h1>
+    
+    <div class="introduction" data-aos="fade-up">
+      <p>
+        L'apprentissage est une voie de formation qui permet d'acquérir une expérience professionnelle 
+        tout en préparant un diplôme. C'est une excellente façon d'apprendre un métier et d'entrer 
+        dans le monde du travail.
+      </p>
+    </div>
+
+    <div class="sections">
+      {sections.map(section => (
+        <section class="info-section" data-aos="fade-up">
+          <h2>{section.title}</h2>
+          <div class="content">
+            {section.content.split('\n').map(line => (
+              <p>{line}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div class="resources" data-aos="fade-up">
+      <h2>Ressources utiles</h2>
+      <div class="links">
+        <a href="https://www.alternance.emploi.gouv.fr" target="_blank" rel="noopener noreferrer" class="resource-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Portail de l'alternance
+        </a>
+        <a href="https://www.cma-paris.fr" target="_blank" rel="noopener noreferrer" class="resource-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Chambre des Métiers et de l'Artisanat de Paris
+        </a>
+        <a href="https://www.onisep.fr/formation-et-handicap/se-former-par-l-apprentissage" target="_blank" rel="noopener noreferrer" class="resource-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          ONISEP - Guide de l'apprentissage
+        </a>
+      </div>
+    </div>
+  </div>
+</ClassLayout>
+
+<style>
+  .apprentissage-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+
+  .introduction {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .introduction p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .sections {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .info-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .info-section h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .content {
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  .content p {
+    margin-bottom: 0.5rem;
+  }
+
+  .resources {
+    margin-top: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .resources h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .resource-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  @media (max-width: 768px) {
+    .apprentissage-container {
+      padding: 1rem;
+    }
+
+    .info-section {
+      padding: 1.5rem;
+    }
+
+    .links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Modélisation de structure",
+    pdfUrl: "/documents/5eme/sequence-4/activite-3/modelisation-structure.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 4 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-4" />
+  <h1>Activité 3 - Modification d'une modélisation</h1>
+  
+  <ActivitySection
+    title="Comment modifier une modélisation de structure ?"
+    description="Application des connaissances pour modéliser un auvent sur une terrasse de maison. Cette activité permet de mettre en pratique les techniques de construction 3D (points de construction, extrusion) et d'apprendre à planifier une modélisation avec une feuille de route."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-4"
+    sequenceLabel="Séquence 4 — Modélisation 3D et SketchUp"
+    retenir={{
+      definitions: [
+        { term: "Outil Pousser/Tirer", def: "Outil principal de SketchUp permettant d'extruder (transformer en 3D) une surface 2D en un volume." },
+        { term: "Paramètre dimensionnel", def: "Valeur numérique (longueur, largeur, hauteur) définissant les dimensions d'un élément dans le modèle 3D." },
+        { term: "Vue 3D", def: "Représentation tridimensionnelle de l'objet permettant de le voir sous tous les angles." },
+      ],
+      points: [
+        "Modifier une cote avec l'outil 'Pousser/Tirer' : cliquer sur la face → taper la valeur → Entrée.",
+        "Vérifier les dimensions avec l'outil 'Mesure' après chaque modification importante.",
+        "Exporter en image ou en PDF pour présenter son travail.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Modifier un modèle 3D existant</h3>
+      <p>En conception, on ne part pas toujours de zéro. Il est souvent plus efficace de <strong>modifier un modèle 3D existant</strong> pour l'adapter à de nouvelles contraintes ou dimensions. SketchUp permet de modifier facilement les dimensions, les formes et l'organisation d'un modèle préexistant.</p>
+
+      <h3>L'outil Pousser/Tirer : la technique d'extrusion</h3>
+      <p>L'outil <strong>Pousser/Tirer</strong> est le plus puissant de SketchUp. Il permet de transformer une surface 2D en volume 3D (ou de modifier un volume existant) :</p>
+      <ol>
+        <li>Sélectionner l'outil Pousser/Tirer (raccourci P).</li>
+        <li>Cliquer sur la face à modifier.</li>
+        <li>Glisser la souris dans la direction souhaitée (vers l'intérieur pour creuser, vers l'extérieur pour allonger).</li>
+        <li>Taper la valeur numérique exacte au clavier + Entrée pour une précision parfaite.</li>
+      </ol>
+
+      <h3>La feuille de route de modélisation</h3>
+      <p>Une <strong>feuille de route</strong> liste toutes les étapes dans l'ordre avant de commencer à modéliser. Elle évite les erreurs et permet de s'organiser :</p>
+      <ul>
+        <li>Étape 1 : créer le volume de base (boîte, cylindre…).</li>
+        <li>Étape 2 : appliquer les dimensions précises.</li>
+        <li>Étape 3 : créer les découpes, trous et détails.</li>
+        <li>Étape 4 : assembler les composants si nécessaire.</li>
+        <li>Étape 5 : vérifier toutes les dimensions avec l'outil Mesure.</li>
+      </ul>
+
+      <h3>Présenter et exporter son travail</h3>
+      <p>Une fois le modèle terminé, SketchUp permet d'exporter la modélisation sous différentes formes :</p>
+      <ul>
+        <li><strong>Image PNG/JPG</strong> : capture d'écran du modèle depuis différentes vues.</li>
+        <li><strong>PDF</strong> : mise en plan avec les vues principales.</li>
+        <li><strong>STL</strong> : format pour l'impression 3D (Fused Deposition Modeling).</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

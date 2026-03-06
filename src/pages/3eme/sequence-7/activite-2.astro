@@ -1,0 +1,66 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 7 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-7`} />
+  <h1>Séquence 7 — Énergie et développement durable · Activité 2</h1>
+
+  <ActivitySection
+    title="L'efficacité énergétique"
+    description="Comment mesurer et améliorer l'efficacité énergétique d'un système ? L'efficacité énergétique (ou rendement) mesure la proportion d'énergie utile produite par rapport à l'énergie consommée. Dans cette activité, tu calcules le rendement de différents systèmes (ampoule LED vs incandescente, moteur électrique, chaudière…) et tu compares leurs performances. Tu réaliseras une enquête sur la consommation énergétique du collège et proposeras des solutions pour la réduire. Tu apprendras à lire une étiquette énergie européenne, à interpréter des données de consommation et à argumenter pour des choix technologiques plus sobres en énergie."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-7"
+    sequenceLabel="Séquence 7 — Énergie et développement durable"
+    retenir={{
+      definitions: [
+        { term: "Puissance (P)", def: "Quantité d'énergie transférée par unité de temps. P = U × I (en Watts, W)." },
+        { term: "Énergie consommée (E)", def: "Produit de la puissance par la durée d'utilisation. E = P × t (en Wh ou kWh)." },
+        { term: "Efficacité énergétique", def: "Capacité d'un système à produire le même effet utile en consommant moins d'énergie." },
+      ],
+      points: [
+        "P = U × I (Watts) ; E = P × t (Wattheures) ; 1 kWh = 1000 Wh.",
+        "Améliorer l'efficacité = même service rendu avec moins d'énergie consommée.",
+        "Exemples : LED vs ampoule à incandescence, bâtiments BBC (basse consommation).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Puissance et énergie — les deux grandeurs clés</h3>
+      <p>Ces deux grandeurs sont souvent confondues mais sont bien distinctes :</p>
+      <ul>
+        <li><strong>Puissance (P)</strong> en Watts (W) : quantité d'énergie transférée <em>par unité de temps</em>. C'est "la vitesse à laquelle l'énergie est utilisée". Formule : P = U × I (tension × intensité).</li>
+        <li><strong>Énergie (E)</strong> en Wh ou kWh : quantité totale d'énergie consommée. Formule : E = P × t (puissance × durée).</li>
+      </ul>
+      <p>Exemple : une ampoule de 60 W allumée pendant 5 heures consomme E = 60 × 5 = 300 Wh = 0,3 kWh.</p>
+
+      <h3>Comparaison LED vs. ampoule à incandescence</h3>
+      <ul>
+        <li>Ampoule incandescente 60 W : 8 % de l'énergie → lumière, 92 % → chaleur (très mauvais rendement).</li>
+        <li>Ampoule LED 9 W équivalente : même luminosité, rendement bien supérieur, 85 % moins d'énergie.</li>
+        <li>Sur 1000 h d'utilisation : l'incandescente consomme 60 kWh, la LED seulement 9 kWh.</li>
+      </ul>
+
+      <h3>L'étiquette énergie européenne</h3>
+      <p>L'étiquette énergie (de A à G) permet de comparer rapidement l'efficacité énergétique des appareils électroménagers, ampoules, téléviseurs… La classe A est la plus efficace. Depuis 2021, l'échelle a été révisée : les anciens "A+++" sont devenus "B" ou "C" pour laisser de la place aux futurs progrès technologiques.</p>
+
+      <h3>Agir sur sa consommation</h3>
+      <p>Améliorer l'efficacité énergétique : passer aux LED, améliorer l'isolation thermique des bâtiments, choisir des appareils bien classés, éteindre les veilles. Ces actions réduisent la consommation tout en gardant le même niveau de service.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

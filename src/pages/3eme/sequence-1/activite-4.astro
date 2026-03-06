@@ -1,0 +1,107 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+
+const documents = [
+  {
+    title: "Évaluation des compétences",
+    pdfUrl: "/documents/3eme/sequence-1/activite-4/evaluation.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 1 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 4 - Évaluation</h1>
+  
+  <ActivitySection
+    title="Évaluation des compétences"
+    description="Évaluation portant sur les chaînes d'énergie et d'information, leur analyse et leur compréhension."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-1"
+    sequenceLabel="Séquence 1 — Chaînes d'énergie et d'information"
+    retenir={{
+      definitions: [
+        { term: "Chaîne fonctionnelle", def: "Association de la chaîne d'énergie et de la chaîne d'information pour réaliser une fonction." },
+      ],
+      points: [
+        "Revoir les définitions : chaîne d'énergie (ACTE), chaîne d'information (ATC), matière d'œuvre.",
+        "Savoir compléter un schéma fonctionnel en identifiant chaque bloc (Alimenter, Distribuer, Convertir, Transmettre, Acquérir, Traiter, Communiquer).",
+        "Entraîne-toi à identifier ces chaînes sur des appareils du quotidien : lave-linge, aspirateur, vélo électrique.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Bilan de la séquence 1 — Ce qu'il faut maîtriser</h3>
+      <p>
+        Cette évaluation porte sur l'ensemble de la séquence 1. Avant de commencer, assure-toi de bien connaître les deux chaînes fonctionnelles et de savoir les compléter sur un schéma. Voici un récapitulatif complet de ce qu'il faut savoir.
+      </p>
+
+      <h3>Récapitulatif : la chaîne d'énergie (ACTE)</h3>
+      <p>
+        La chaîne d'énergie suit toujours le même ordre de blocs :
+      </p>
+      <ul>
+        <li><strong>A — Alimenter</strong> : source d'énergie (prise 230 V, batterie, pile, générateur solaire…).</li>
+        <li><strong>C — Commander/Distribuer</strong> : élément de contrôle du flux d'énergie (interrupteur, relais, contacteur, variateur…).</li>
+        <li><strong>T — Transmettre/Convertir</strong> : transformation et transmission de l'énergie (moteur, engrenage, courroie, résistance…).</li>
+        <li><strong>E — Effectuer</strong> : action sur la matière d'œuvre (hélice, tambour, piston, roue…).</li>
+      </ul>
+
+      <h3>Récapitulatif : la chaîne d'information (ATC)</h3>
+      <ul>
+        <li><strong>A — Acquérir</strong> : capteur qui mesure ou détecte (thermomètre, capteur IR, bouton, microphone…).</li>
+        <li><strong>T — Traiter</strong> : unité de traitement qui décide (microcontrôleur, API, ordinateur…).</li>
+        <li><strong>C — Communiquer</strong> : sortie vers la chaîne d'énergie ou l'utilisateur (relais, écran, voyant, buzzer…).</li>
+      </ul>
+
+      <h3>Exercices d'entraînement</h3>
+      <p>
+        Pour t'entraîner avant l'évaluation, essaie d'identifier les deux chaînes sur ces appareils du quotidien :
+      </p>
+      <ul>
+        <li>
+          <strong>Le lave-linge</strong> : quelle est la matière d'œuvre ? Quel est l'effecteur ? Qu'est-ce qui alimente le système ? Quel capteur permet de régler la température ?
+        </li>
+        <li>
+          <strong>L'aspirateur robot</strong> : comment détecte-t-il les obstacles ? Quels moteurs utilise-t-il ? Comment décide-t-il de changer de direction ?
+        </li>
+        <li>
+          <strong>Le vélo électrique</strong> : où est stockée l'énergie ? Comment le moteur est-il commandé ? Quel capteur détecte l'effort du cycliste ?
+        </li>
+      </ul>
+
+      <h3>Conseils méthodologiques pour l'évaluation</h3>
+      <p>
+        Lors de l'évaluation, tu devras probablement compléter un schéma fonctionnel. Voici les conseils pour réussir :
+      </p>
+      <ul>
+        <li>Commence toujours par identifier la <strong>matière d'œuvre</strong> (ce sur quoi agit le système) et la <strong>valeur ajoutée</strong> (ce que le système apporte).</li>
+        <li>Repère l'<strong>effecteur</strong> en premier : c'est la sortie mécanique visible du système.</li>
+        <li>Remonte ensuite vers la source d'énergie pour compléter la chaîne d'énergie.</li>
+        <li>Pour la chaîne d'information, cherche les <strong>capteurs</strong> (éléments d'entrée) et l'<strong>unité de traitement</strong> (microcontrôleur ou automate).</li>
+        <li>Vérifie que la chaîne d'information est bien reliée à la chaîne d'énergie au niveau du bloc Distribuer.</li>
+      </ul>
+
+      <h3>Erreurs fréquentes à éviter</h3>
+      <ul>
+        <li>Confondre <em>Convertir</em> et <em>Transmettre</em> : Convertir change la <strong>nature</strong> de l'énergie ; Transmettre l'achemine sans changer sa nature (ou en adaptant vitesse/couple).</li>
+        <li>Oublier que la chaîne d'information <strong>commande</strong> la chaîne d'énergie : sans ordres, le système ne peut pas fonctionner automatiquement.</li>
+        <li>Ne pas indiquer les grandeurs en entrée/sortie de chaque bloc (nature et unité de l'énergie).</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

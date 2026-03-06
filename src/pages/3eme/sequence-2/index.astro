@@ -1,0 +1,51 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves étudient la structure et le fonctionnement des systèmes techniques. Ils apprennent à identifier les différents éléments d'un système, à comprendre comment ils interagissent pour réaliser une fonction, et à appliquer les notions de chaîne d'énergie et d'information à des cas concrets :`;
+
+const activities = [
+  {
+    title: "Qu'est-ce qu'un système technique ?",
+    description: "Comment reconnaître et définir un système technique ?"
+  },
+  {
+    title: "Structure et composants d'un système",
+    description: "Comment identifier et décrire les composants d'un système technique ?"
+  },
+  {
+    title: "Fonctions et interactions",
+    description: "Comment analyser les interactions entre les composants d'un système ?"
+  },
+  {
+    title: "Ressources — Systèmes techniques",
+    description: "Documents et ressources complémentaires sur les systèmes techniques"
+  }
+];
+
+const level = "3eme";
+---
+
+<ClassLayout title="Séquence 2 — Les systèmes techniques - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 2 — Les systèmes techniques</h1>
+
+  <SequencePresentation
+    title="Étudier la structure et le fonctionnement des systèmes techniques"
+    description={description}
+    activities={activities.map(a => a.description)}
+    question="Comment analyser la structure d'un système technique pour comprendre son fonctionnement ?"
+  />
+
+  <ActivityLinks sequenceNumber={2} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

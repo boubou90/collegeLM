@@ -1,0 +1,64 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 2 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Séquence 2 — Systèmes techniques · Activité 3</h1>
+
+  <ActivitySection
+    title="Fonctions et interactions"
+    description="Comment analyser les interactions entre les composants d'un système technique ? Dans cette activité, tu traces les flux d'énergie et d'information qui circulent entre les composants du système. Tu réaliseras des schémas de chaînes d'énergie (source → convertisseur → transmetteur → actionneur) et de chaînes d'information (capteur → traitement → commande). Tu identifieras les grandeurs physiques échangées (tension, courant, force, vitesse…) et tu expliqueras comment chaque composant contribue à la réalisation de la fonction globale du système. Cette activité prépare aux questions de l'épreuve du Brevet."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-2"
+    sequenceLabel="Séquence 2 — Les systèmes techniques"
+    retenir={{
+      definitions: [
+        { term: "Fonction principale (FP)", def: "Raison d'être du système : le service qu'il rend à l'utilisateur en mettant en relation deux milieux extérieurs." },
+        { term: "Fonction contrainte (FC)", def: "Condition que doit respecter le système vis-à-vis d'un milieu extérieur (norme, sécurité, environnement…)." },
+        { term: "Interaction", def: "Relation d'échange entre deux sous-systèmes ou entre un sous-système et son environnement." },
+      ],
+      points: [
+        "FP = ce que le système fait pour l'utilisateur ; FC = ce à quoi le système doit se conformer.",
+        "Les interactions s'analysent avec le diagramme pieuvre (à approfondir en séquence 3).",
+        "Un système peut avoir plusieurs FP et de nombreuses FC.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les flux dans un système technique</h3>
+      <p>Un système technique est traversé par des <strong>flux</strong> : flux d'énergie (électrique, mécanique, thermique…) et flux d'information (signaux de commande, données des capteurs). Ces flux circulent entre les composants selon des <strong>chaînes</strong> qu'on peut représenter graphiquement.</p>
+
+      <h3>La chaîne d'énergie</h3>
+      <p>La chaîne d'énergie décrit le chemin de l'énergie à travers le système :</p>
+      <ul>
+        <li><strong>Source d'énergie</strong> (batterie, secteur) → <strong>Convertisseur</strong> (moteur, résistance) → <strong>Transmetteur</strong> (courroie, engrenage) → <strong>Actionneur</strong> (roue, bras, ventilateur)</li>
+      </ul>
+      <p>À chaque étape, on précise les grandeurs physiques échangées : <em>tension (V), courant (A), force (N), vitesse (m/s)</em>.</p>
+
+      <h3>La chaîne d'information</h3>
+      <p>La chaîne d'information décrit comment les décisions sont prises :</p>
+      <ul>
+        <li><strong>Capteur</strong> (détecte une information) → <strong>Traitement</strong> (microcontrôleur compare et décide) → <strong>Commande</strong> (envoie l'ordre à la partie opérative)</li>
+      </ul>
+
+      <h3>Fonctions principales et contraintes</h3>
+      <p>Les <strong>fonctions principales (FP)</strong> définissent pourquoi le système existe — elles répondent au besoin de l'utilisateur. Les <strong>fonctions contraintes (FC)</strong> sont des exigences à respecter vis-à-vis de l'environnement : normes de sécurité, résistance à l'eau, poids maximal. Un aspirateur doit aspirer (FP) ET être silencieux, léger et économe (FC). Ces interactions entre composants et fonctions se représentent ensuite avec le diagramme pieuvre (séquence 3).</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

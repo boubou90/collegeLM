@@ -1,0 +1,69 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Identifier les composants du réseau informatique",
+    pdfUrl: "/documents/5eme/sequence-5/activite-2/Identifier-les-interacteurs-exterieurs.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 2 - La souris : son interaction avec son environnement</h1>
+  
+  <ActivitySection
+    title="Comment identifier les composants du réseau informatique ?"
+    description="La souris d’ordinateur a des interactions avec plusieurs éléments extérieurs. Pour bien choisir ma souris, je dois les identifier ou les définir."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-5"
+    sequenceLabel="Séquence 5 — La souris et l'OST"
+    retenir={{
+      definitions: [
+        { term: "Adresse MAC", def: "Identifiant physique unique gravé sur chaque carte réseau (format : A1:B2:C3:D4:E5:F6)." },
+        { term: "Switch (commutateur)", def: "Équipement réseau qui lit les adresses MAC pour diriger les données vers le bon port/équipement." },
+        { term: "Câble RJ45", def: "Câble réseau normalisé à 8 fils torsadés, utilisé pour les connexions Ethernet (jusqu'à 1 Gb/s)." },
+      ],
+      points: [
+        "Chaque appareil du réseau a une adresse MAC unique : c'est son identifiant physique.",
+        "Le switch crée une table d'adresses MAC pour diriger intelligemment les trames vers le bon destinataire.",
+        "Connexion Ethernet (câble RJ45) = plus fiable et rapide que le WiFi pour un réseau de salle.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les interactions de la souris avec son environnement</h3>
+      <p>Tout objet technique interagit avec des <strong>éléments extérieurs</strong> appelés interacteurs. Pour la souris informatique, ces interacteurs sont nombreux : l'utilisateur, l'ordinateur, le tapis de souris, le système d'exploitation, l'écran... Identifier ces interactions est la première étape de l'analyse fonctionnelle.</p>
+
+      <h3>Le diagramme pieuvre de la souris</h3>
+      <p>La souris est au centre du diagramme. Chaque "patte" relie la souris à un interacteur extérieur :</p>
+      <ul>
+        <li><strong>FP (Fonction Principale)</strong> : Permettre à l'utilisateur de contrôler le curseur à l'écran. (2 interacteurs : utilisateur + écran/logiciel)</li>
+        <li><strong>FC1</strong> : S'adapter à la morphologie de la main de l'utilisateur (ergonomie).</li>
+        <li><strong>FC2</strong> : Fonctionner sur différentes surfaces (tapis, bureau).</li>
+        <li><strong>FC3</strong> : Être compatible avec le système d'exploitation (drivers).</li>
+        <li><strong>FC4</strong> : Résister à l'usure et aux manipulations répétées.</li>
+        <li><strong>FC5</strong> : Respecter les normes électriques et environnementales (RoHS, CE).</li>
+      </ul>
+
+      <h3>Le réseau informatique et la souris</h3>
+      <p>Dans un contexte réseau, la souris interagit aussi avec le système d'information du collège. Les données de mouvements sont traitées localement par le pilote (driver) de la souris, puis transmises au système d'exploitation qui met à jour la position du curseur. Dans un environnement réseau, les applications accessibles via le réseau répondent aux clics de souris via le protocole TCP/IP.</p>
+
+      <h3>Adresse MAC et identification réseau</h3>
+      <p>Chaque carte réseau d'un ordinateur possède une <strong>adresse MAC</strong> unique. Le switch du réseau local utilise ces adresses pour diriger les trames de données vers le bon ordinateur. C'est différent de l'adresse IP qui est attribuée logiquement et peut changer, tandis que l'adresse MAC est gravée physiquement sur la carte réseau.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

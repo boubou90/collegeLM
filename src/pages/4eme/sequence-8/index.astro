@@ -1,0 +1,47 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves réalisent un projet technique complet de bout en bout : diagnostiquer une panne sur un jouet électronique, le démonter, identifier les composants défectueux et le remettre en état de marche :`;
+
+const activities = [
+  {
+    title: "Fiche de lancement — Toy Rescue",
+    description: "Comment diagnostiquer la panne d'un jouet électronique ?"
+  },
+  {
+    title: "Démontage et identification des composants",
+    description: "Comment identifier les composants d'un jouet et localiser la panne ?"
+  },
+  {
+    title: "Réparation et remise en état",
+    description: "Comment réparer et remettre en état de marche un jouet en panne ?"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 8 — Toy Rescue - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 8 — Toy Rescue</h1>
+
+  <SequencePresentation
+    title="Toy Rescue : diagnostiquer et réparer un jouet en panne"
+    description={description}
+    activities={activities.map(a => a.description)}
+    question="Comment diagnostiquer une panne sur un objet technique et le réparer pour lui redonner vie ?"
+  />
+
+  <ActivityLinks sequenceNumber={8} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

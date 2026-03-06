@@ -1,0 +1,51 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves explorent l'histoire de l'innovation technologique et analysent son impact sur la société. Ils comprennent comment les innovations répondent à des besoins sociaux, économiques et environnementaux, et imaginent eux-mêmes une solution innovante :`;
+
+const activities = [
+  {
+    title: "L'histoire de l'innovation",
+    description: "Comment les innovations technologiques ont-elles transformé notre société à travers le temps ?"
+  },
+  {
+    title: "Impact sociétal et éthique",
+    description: "Quels sont les impacts sociaux, économiques et environnementaux des innovations technologiques ?"
+  },
+  {
+    title: "Projet : innover pour un besoin réel",
+    description: "Comment proposer une solution innovante pour répondre à un besoin identifié ?"
+  },
+  {
+    title: "Ressources — Innovation et société",
+    description: "Documents et ressources complémentaires sur l'innovation et son impact sociétal"
+  }
+];
+
+const level = "3eme";
+---
+
+<ClassLayout title="Séquence 5 — Innovation et société - 3ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 5 — Innovation et société</h1>
+
+  <SequencePresentation
+    title="Comprendre l'impact des innovations technologiques sur notre société"
+    description={description}
+    activities={activities.map(a => a.description)}
+    question="Dans quelle mesure les innovations technologiques transforment-elles notre société, et comment en évaluer les impacts ?"
+  />
+
+  <ActivityLinks sequenceNumber={5} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

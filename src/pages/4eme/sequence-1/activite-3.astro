@@ -1,0 +1,48 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "OST1w - Les intelligences artificielles génératives (IAG), prompts, avantages et biais (Hors programme)",
+    pdfUrl: "/documents/4eme/sequence-1/activite-1/OST1w - Les intelligences artificielles génératives (IAG), prompts, avantages et biais (Hors programme).pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Ressources - Les intelligences artificielles génératives (IAG)</h1>
+  
+  <ActivitySection
+    title="Ressources complémentaires — Biais algorithmiques et LLM"
+    description="Fiches ressources sur les IAG, les prompts et les biais algorithmiques."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-1"
+    sequenceLabel="Séquence 1 — L'Intelligence Artificielle"
+    retenir={{
+      definitions: [
+        { term: "Biais algorithmique", def: "Erreur systématique d'une IA qui favorise certains résultats en raison des données sur lesquelles elle a été entraînée." },
+        { term: "LLM (Large Language Model)", def: "Modèle de langage de grande taille entraîné sur d'immenses corpus de textes pour générer du langage naturel." },
+      ],
+      points: [
+        "Fiches ressources IAG, prompts et biais disponibles dans cette activité.",
+        "Approfondir : comment fonctionne ChatGPT ? Quels sont ses biais les plus connus ?",
+        "Relier avec l'activité 1 : un meilleur prompt réduit (mais n'élimine pas) les hallucinations.",
+      ]
+    }}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 4 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-4`} />
+  <h1>Séquence 4 — Conception et modélisation · Activité 3</h1>
+
+  <ActivitySection
+    title="La maquette numérique (CAO)"
+    description="Comment réaliser une maquette numérique d'un objet avec un logiciel de CAO ? La Conception Assistée par Ordinateur (CAO) permet de modéliser des objets en 3D de façon précise avant de les fabriquer. Tu utiliseras un logiciel de CAO (OnShape, Tinkercad, ou similaire) pour créer le modèle 3D d'une pièce définie par son dessin technique. Tu apprendras à extruder un profil, à effectuer des opérations booléennes (enlèvement de matière, ajout), et à obtenir les vues 2D automatiquement depuis le modèle 3D. Cette compétence numérique est de plus en plus demandée dans les métiers de l'industrie et du design."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-4"
+    sequenceLabel="Séquence 4 — Conception et modélisation"
+    retenir={{
+      definitions: [
+        { term: "CAO (Conception Assistée par Ordinateur)", def: "Utilisation d'un logiciel pour concevoir, modéliser et simuler des objets techniques en 3D." },
+        { term: "Maquette numérique", def: "Modèle 3D d'un objet ou d'un assemblage créé avec un logiciel de CAO." },
+        { term: "Extrusion", def: "Opération qui transforme un profil 2D en volume 3D en le 'tirant' sur une distance donnée." },
+        { term: "Contrainte d'assemblage", def: "Règle géométrique liant deux pièces dans un assemblage (coïncidence, tangence, concentricité…)." },
+      ],
+      points: [
+        "Logiciels utilisés en classe : SketchUp, Onshape, TinkerCAD, FreeCAD.",
+        "Avantages de la CAO : modification rapide, visualisation 3D, simulation avant fabrication.",
+        "Méthode : esquisse 2D → extrusion → opérations booléennes (union, soustraction) → assemblage.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>La CAO — concevoir en 3D avant de fabriquer</h3>
+      <p>La <strong>Conception Assistée par Ordinateur (CAO)</strong> permet de créer un modèle numérique 3D précis d'un objet avant sa fabrication. On peut tester des modifications virtuellement, détecter des erreurs de conception et générer automatiquement les dessins techniques 2D. Les logiciels les plus utilisés en classe sont <strong>Onshape, TinkerCAD, FreeCAD ou SketchUp</strong>.</p>
+
+      <h3>La démarche de modélisation</h3>
+      <ol>
+        <li><strong>Esquisse 2D</strong> : dessiner le profil de la pièce sur un plan (rectangle, cercle, polygone…).</li>
+        <li><strong>Extrusion</strong> : "tirer" le profil 2D pour lui donner une épaisseur et créer un volume 3D.</li>
+        <li><strong>Opérations booléennes</strong> : ajouter de la matière (bossage) ou en enlever (perçage, chanfrein, congé).</li>
+        <li><strong>Assemblage</strong> : relier plusieurs pièces avec des contraintes (coïncidence, concentricité, plan parallèle…).</li>
+      </ol>
+
+      <h3>Avantages de la CAO</h3>
+      <ul>
+        <li><strong>Modification rapide</strong> : changer une cote modifie automatiquement toute la pièce.</li>
+        <li><strong>Visualisation 3D</strong> : voir l'objet sous tous les angles avant de le fabriquer.</li>
+        <li><strong>Simulation</strong> : tester la résistance mécanique, les assemblages, les mouvements.</li>
+        <li><strong>Mise en plan automatique</strong> : générer les vues 2D et les cotes depuis le modèle 3D.</li>
+      </ul>
+
+      <h3>De la CAO à la fabrication</h3>
+      <p>Le modèle 3D peut être envoyé directement à une <strong>imprimante 3D</strong> (fabrication additive) ou à une <strong>fraiseuse CNC</strong> (fabrication soustractive). Ce lien direct entre la conception numérique et la fabrication est la base de l'industrie 4.0.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

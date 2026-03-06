@@ -1,0 +1,76 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: " Identifier les étapes du cycle de vie d’un OST",
+    pdfUrl: "/documents/5eme/sequence-6/activite-4/cycle-de-vie.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 6 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-6" />
+  <h1>Activité 2 - Identifier les étapes du cycle de vie d’un OST</h1>
+  
+  <ActivitySection
+    title="Identifier les étapes du cycle de vie d’un OST "
+    description="Après avoir jeté mon ampoule, une entreprise la récupère pour s’occuper de son recyclage"
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-6"
+    sequenceLabel="Séquence 6 — Choisir un OST"
+    retenir={{
+      definitions: [
+        { term: "Cycle de vie d'un produit", def: "Ensemble des étapes de la vie d'un produit : extraction des matières premières → fabrication → transport → utilisation → fin de vie." },
+        { term: "ACV (Analyse du Cycle de Vie)", def: "Méthode scientifique évaluant l'impact environnemental d'un produit sur la totalité de son cycle de vie." },
+        { term: "Éco-conception", def: "Démarche intégrant des critères environnementaux dès la conception pour réduire l'impact à chaque étape du cycle de vie." },
+      ],
+      points: [
+        "5 étapes du cycle de vie : extraction → fabrication → transport → utilisation → fin de vie.",
+        "L'ACV permet d'identifier quelle étape est la plus polluante pour agir dessus en priorité.",
+        "Éco-concevoir = réduire les impacts dès la conception : moins de matières, matériaux recyclables, longue durée de vie.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Le cycle de vie d'un produit</h3>
+      <p>Tout produit passe par plusieurs étapes depuis sa création jusqu'à sa disparition : c'est son <strong>cycle de vie</strong>. Comprendre ce cycle permet d'évaluer l'impact environnemental global d'un objet et d'identifier où il est possible de le réduire.</p>
+
+      <h3>Les 5 étapes du cycle de vie</h3>
+      <ol>
+        <li><strong>Extraction des matières premières</strong> : minerais, pétrole, bois... extraits de la nature. Étape souvent très impactante (déforestation, pollution des sols).</li>
+        <li><strong>Fabrication</strong> : transformation des matières premières en produit fini. Consomme de l'énergie, produit des déchets industriels.</li>
+        <li><strong>Transport et distribution</strong> : acheminement du produit jusqu'au consommateur. Impact lié aux émissions de CO₂ des véhicules.</li>
+        <li><strong>Utilisation</strong> : phase d'utilisation par le consommateur. Impact = énergie consommée, produits d'entretien.</li>
+        <li><strong>Fin de vie</strong> : recyclage, réparation, réutilisation ou mise en décharge. Une bonne fin de vie récupère les matières valorisables.</li>
+      </ol>
+
+      <h3>L'ACV — Analyse du Cycle de Vie</h3>
+      <p>L'<strong>ACV</strong> est une méthode scientifique normalisée (ISO 14040) qui quantifie les impacts environnementaux d'un produit sur toutes les étapes de sa vie. Elle permet d'identifier quelle étape est la plus polluante pour agir en priorité. Par exemple, pour un smartphone, la fabrication représente 75% de l'empreinte carbone totale.</p>
+
+      <h3>L'éco-conception</h3>
+      <p>L'<strong>éco-conception</strong> intègre les critères environnementaux dès la phase de conception :</p>
+      <ul>
+        <li>Utiliser moins de matières et des matériaux recyclés ou recyclables.</li>
+        <li>Réduire la consommation d'énergie en utilisation.</li>
+        <li>Concevoir pour une longue durée de vie (réparabilité, indice de réparabilité).</li>
+        <li>Faciliter le démontage et le recyclage en fin de vie.</li>
+      </ul>
+
+      <h3>Le recyclage des ampoules</h3>
+      <p>Les ampoules fluocompactes contiennent du mercure (substance dangereuse) et ne doivent jamais être jetées à la poubelle ordinaire. Elles doivent être déposées dans les points de collecte DEEE (signalés par le symbole poubelle barrée). Les LEDs, sans mercure, sont plus faciles à recycler mais contiennent tout de même des terres rares.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

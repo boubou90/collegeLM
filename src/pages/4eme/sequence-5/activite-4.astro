@@ -1,0 +1,50 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Choisir un procédé de fabrication adapté à la forme d’une pièce.",
+    pdfUrl: "/documents/4eme/sequence-5/4ème - Séquence 5-Activité 4- Fiche d_activité - Procédés de fabrication.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 5 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+
+  <h1>Activité 4 - Comment identifier et choisir un procédé de fabrication ?</h1>
+  
+  <ActivitySection
+    title="Choisir un procédé de fabrication adapté à la forme d’une pièce."
+    description="Lors d’une manipulation, les élèves constatent qu’un battant de volet ne se ferme plus correctement. Une pièce de fixation semble cassée."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-5"
+    sequenceLabel="Séquence 5 — Maison connectée — Structure et fonctionnement"
+    retenir={{
+      definitions: [
+        { term: "Procédé de fabrication", def: "Technique utilisée pour donner une forme à une pièce (moulage, usinage, découpe laser, impression 3D…)." },
+        { term: "Moulage", def: "Procédé qui consiste à couler une matière en fusion dans un moule pour lui donner sa forme finale." },
+        { term: "Usinage", def: "Procédé qui consiste à enlever de la matière par coupe (tournage, fraisage, perçage…) pour obtenir la forme souhaitée." },
+      ],
+      points: [
+        "Le choix du procédé dépend : du matériau, de la forme, de la série de fabrication et du coût.",
+        "Forme cylindrique → tournage ; forme plane → fraisage ; forme complexe → moulage ou impression 3D.",
+        "Associer chaque composant de la maison domotique à son procédé de fabrication probable.",
+      ],
+    }}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

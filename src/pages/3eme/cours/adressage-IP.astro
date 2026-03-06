@@ -1,0 +1,259 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import BackButton from 'src/components/BackButton.astro';
+---
+
+<Layout title="Cours : Adressage IP sur un réseau">
+  <main>
+    <h1 style="text-align: center; font-weight: bold;">Cours : Adressage IP sur un réseau</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Dans ce cours, nous allons explorer le concept d'<strong>adressage IP</strong>, essentiel pour comprendre comment les appareils communiquent sur un réseau. L'adresse IP est une identité unique attribuée à chaque appareil connecté à un réseau, permettant ainsi de l'identifier et de lui envoyer des données.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Identification d’un poste sur un réseau</h2>
+      <p>
+        Pour identifier un poste informatique (ou un objet connecté) sur un réseau, il est nécessaire d'organiser un plan d'adressage. L'adresse IP est la solution internationale utilisée pour cette identification.
+      </p>
+
+      <h3>Exemple d'adressage IP</h3>
+      <p>
+        Une adresse IP est composée de 4 parties séparées par un point. Chaque partie peut aller de 0 à 255, mais les valeurs 0 et 255 sont réservées à un usage spécifique.
+      </p>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>IP : 19.18.7.3</strong></li>
+          <li><strong>IP : 19.19.6.1</strong></li>
+          <li><strong>IP : 19.11.1.1</strong></li>
+        </ul>
+      </div>
+
+      <h3>Structure d'une adresse IP</h3>
+      <p>
+        Une adresse IP peut être décomposée en plusieurs parties pour identifier un réseau, une zone, une salle et un poste spécifique.
+      </p>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>IP : COLLEGE . ZONE . SALLE . N° DU POSTE</strong></li>
+          <li><strong>IP : 19 . 1 . 2 . 7</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Adresse IP et communication sur un réseau</h2>
+      <p>
+        L'adresse IP permet à deux postes de communiquer sur un réseau. Chaque paquet de données contient l'adresse IP de l'émetteur, l'adresse IP du destinataire et l'information à transmettre.
+      </p>
+
+      <h3>Structure d'un paquet de données</h3>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>IP de l'émetteur : 19.1.2.7</strong></li>
+          <li><strong>IP du destinataire : 19.1.2.10</strong></li>
+          <li><strong>Information : Fichier texte ou image</strong></li>
+        </ul>
+      </div>
+
+      <h3>Schéma de communication</h3>
+      <div class="schema">
+        <img src="/images/communication-reseau.png" alt="Schéma de communication sur un réseau" class="schema-image" />
+        <p class="caption">Schéma de communication entre deux postes sur un réseau</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Codage binaire d'une adresse IP</h2>
+      <p>
+        Une adresse IP est codée sur 4 octets, soit 32 bits. Chaque octet est représenté en binaire et peut prendre une valeur décimale allant de 0 à 255.
+      </p>
+
+      <h3>Exemple de conversion binaire/décimal</h3>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>Binaire : 00001010 . 00000001 . 00000010 . 00000111</strong></li>
+          <li><strong>Décimal : 10 . 1 . 2 . 7</strong></li>
+        </ul>
+      </div>
+
+      <h3>Limites de l'adressage IPv4</h3>
+      <p>
+        Avec 32 bits, l'adressage IPv4 permet environ 4,2 milliards d'adresses différentes. Cependant, avec l'augmentation du nombre d'appareils connectés, cette norme atteint ses limites. Une nouvelle norme, IPv6, codée sur 128 bits, est en cours de déploiement.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Masque sous-réseau</h2>
+      <p>
+        Le masque sous-réseau est une information essentielle pour dissocier l'identification du réseau et l'identification de la machine. Il effectue un ET logique entre l'adresse IP de la machine et lui-même.
+      </p>
+
+      <h3>Exemple de masque sous-réseau</h3>
+      <div class="example">
+        <p><strong>Exemple :</strong></p>
+        <ul>
+          <li><strong>Adresse IP : 10.1.2.7</strong></li>
+          <li><strong>Masque réseau : 255.255.255.0</strong></li>
+          <li><strong>Identification réseau : 10.1.2.0</strong></li>
+          <li><strong>Identification machine : 0.0.0.7</strong></li>
+        </ul>
+      </div>
+
+      <h3>Tableau de correspondance</h3>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Adresse IP</th>
+              <th>Masque réseau</th>
+              <th>Identification réseau</th>
+              <th>Identification machine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10.1.2.7</td>
+              <td>255.255.255.0</td>
+              <td>10.1.2.0</td>
+              <td>0.0.0.7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="summary">
+      <h2>Résumé</h2>
+      <ul>
+        <li>Une <strong>adresse IP</strong> est composée de 4 octets (32 bits) et permet d'identifier un appareil sur un réseau.</li>
+        <li>Le <strong>masque sous-réseau</strong> permet de dissocier l'identification du réseau et de la machine.</li>
+        <li>L'adressage IPv4 est limité à 4,2 milliards d'adresses, et IPv6 (128 bits) est en cours de déploiement.</li>
+      </ul>
+    </section>
+ <BackButton href="/3eme" />
+  </main>
+</Layout>
+
+<style>
+  /* Styles globaux */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.6;
+    color: #1e293b;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .example {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+  }
+
+  .schema {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .schema-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .summary {
+    background: #f0f4f8;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .summary h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+  }
+
+  .summary ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .summary li {
+    margin: 0.5rem 0;
+  }
+
+  .comparison-table {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  th {
+    background: #4f46e5;
+    color: white;
+  }
+
+  tr:hover {
+    background: #f3f4f6;
+  }
+</style>

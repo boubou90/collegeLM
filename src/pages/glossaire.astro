@@ -1,0 +1,397 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GoogleAd from '../components/GoogleAd.astro';
+
+const terms = [
+  {
+    id: 'algorithme',
+    emoji: '🔢',
+    term: 'Algorithme',
+    definition: 'Suite d\'instructions précises et ordonnées permettant de résoudre un problème ou d\'accomplir une tâche. En technologie, un algorithme est souvent représenté par un logigramme avant d\'être traduit en code de programmation.',
+    levels: ['4ème', '3ème'],
+    link: '/3eme/sequence-6',
+  },
+  {
+    id: 'analyse-fonctionnelle',
+    emoji: '🔬',
+    term: 'Analyse fonctionnelle',
+    definition: 'Méthode permettant d\'identifier et d\'organiser les fonctions d\'un objet ou système technique. Les principaux outils sont le diagramme bête à cornes (besoin) et le diagramme pieuvre (fonctions de service).',
+    levels: ['3ème'],
+    link: '/3eme/sequence-3',
+  },
+  {
+    id: 'bete-a-cornes',
+    emoji: '🐂',
+    term: 'Bête à cornes',
+    definition: 'Outil graphique d\'analyse fonctionnelle qui exprime le besoin fondamental d\'un objet technique. Il répond à trois questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?',
+    levels: ['3ème'],
+    link: '/3eme/sequence-3',
+  },
+  {
+    id: 'capteur',
+    emoji: '📡',
+    term: 'Capteur',
+    definition: 'Composant qui détecte une grandeur physique (température, lumière, présence, pression…) et la convertit en signal électrique exploitable par un système automatisé. Il fait partie de la chaîne d\'information.',
+    levels: ['4ème', '3ème'],
+    link: '/4eme/sequence-3',
+  },
+  {
+    id: 'cao',
+    emoji: '🖥️',
+    term: 'CAO — Conception Assistée par Ordinateur',
+    definition: 'Utilisation d\'un logiciel (SketchUp, Fusion 360, SolidWorks…) pour créer, modifier et visualiser des objets en trois dimensions. La CAO permet de tester une conception virtuellement avant de la fabriquer.',
+    levels: ['5ème', '4ème'],
+    link: '/5eme/sequence-4',
+  },
+  {
+    id: 'chaine-energie',
+    emoji: '⚡',
+    term: 'Chaîne d\'énergie',
+    definition: 'Représentation du parcours de l\'énergie dans un système technique, de la source jusqu\'à l\'effet produit. Elle comporte quatre blocs : Alimenter → Distribuer → Convertir → Transmettre.',
+    levels: ['3ème'],
+    link: '/3eme/sequence-1',
+  },
+  {
+    id: 'chaine-information',
+    emoji: '📶',
+    term: 'Chaîne d\'information',
+    definition: 'Représentation du traitement de l\'information dans un système automatisé, de l\'acquisition jusqu\'à la commande. Elle comporte : Acquérir (capteur) → Traiter (calculateur) → Communiquer (actionneur).',
+    levels: ['3ème'],
+    link: '/3eme/sequence-1',
+  },
+  {
+    id: 'domotique',
+    emoji: '🏠',
+    term: 'Domotique',
+    definition: 'Ensemble des technologies permettant d\'automatiser et de contrôler les équipements d\'une habitation (éclairage, chauffage, volets, alarme…). Les systèmes domotiques utilisent des capteurs, actionneurs et réseaux de communication.',
+    levels: ['4ème'],
+    link: '/4eme/sequence-3',
+  },
+  {
+    id: 'logigramme',
+    emoji: '📊',
+    term: 'Logigramme',
+    definition: 'Représentation graphique d\'un algorithme ou d\'un programme à l\'aide de symboles normalisés (rectangles pour les actions, losanges pour les conditions). Très utilisé en technologie pour décrire le comportement d\'un système automatisé.',
+    levels: ['4ème', '3ème'],
+    link: '/3eme/sequence-6',
+  },
+  {
+    id: 'microcontroleur',
+    emoji: '🤖',
+    term: 'Microcontrôleur',
+    definition: 'Circuit intégré qui regroupe un processeur, de la mémoire et des entrées/sorties sur une seule puce. Il peut être programmé pour contrôler des systèmes automatisés. Exemples : Arduino, BBC micro:bit, Raspberry Pi.',
+    levels: ['4ème', '3ème'],
+    link: '/4eme/sequence-1',
+  },
+  {
+    id: 'maquette-numerique',
+    emoji: '🖱️',
+    term: 'Maquette numérique',
+    definition: 'Modélisation tridimensionnelle d\'un objet technique réalisée à l\'aide d\'un logiciel de CAO. Elle permet de vérifier l\'aspect, les dimensions et le fonctionnement d\'un objet avant sa fabrication réelle.',
+    levels: ['5ème', '4ème'],
+    link: '/5eme/sequence-3',
+  },
+  {
+    id: 'protocole-reseau',
+    emoji: '🌐',
+    term: 'Protocole réseau',
+    definition: 'Ensemble de règles qui définissent comment les données sont échangées entre appareils dans un réseau informatique. Le protocole IP définit les adresses, TCP assure la fiabilité des échanges, HTTP permet de naviguer sur le web.',
+    levels: ['4ème', '3ème'],
+    link: '/4eme/sequence-7',
+  },
+  {
+    id: 'robot',
+    emoji: '🦾',
+    term: 'Robot',
+    definition: 'Système automatisé capable d\'effectuer des tâches en interagissant avec son environnement, généralement guidé par un programme. Un robot possède des capteurs (chaîne d\'information) et des actionneurs (chaîne d\'énergie).',
+    levels: ['4ème', '3ème'],
+    link: '/4eme/sequence-10',
+  },
+  {
+    id: 'systeme-automatise',
+    emoji: '⚙️',
+    term: 'Système automatisé',
+    definition: 'Système technique capable d\'effectuer des actions sans intervention humaine directe, en réponse à des informations recueillies par des capteurs. Il comprend une partie opérative (effectue les actions) et une partie commande (prend les décisions).',
+    levels: ['3ème'],
+    link: '/3eme/sequence-2',
+  },
+  {
+    id: 'ia',
+    emoji: '🧠',
+    term: 'Intelligence Artificielle (IA)',
+    definition: 'Ensemble de techniques informatiques permettant à une machine d\'effectuer des tâches qui nécessitent normalement de l\'intelligence humaine (reconnaissance d\'images, traduction, génération de texte…). Les IA génératives comme ChatGPT apprennent à partir de grandes quantités de données.',
+    levels: ['4ème'],
+    link: '/4eme/sequence-1',
+  },
+  {
+    id: 'actionneur',
+    emoji: '🔧',
+    term: 'Actionneur',
+    definition: 'Composant qui convertit l\'énergie électrique en action mécanique, lumineuse, sonore ou thermique. Un moteur, une LED, un haut-parleur ou une résistance chauffante sont des actionneurs. Il est situé en sortie de la chaîne d\'information.',
+    levels: ['3ème', '4ème'],
+    link: '/3eme/sequence-1',
+  },
+];
+
+const levelColors: Record<string, string> = {
+  '5ème': '#3B82F6',
+  '4ème': '#10B981',
+  '3ème': '#F97316',
+};
+---
+
+<Layout
+  title="Glossaire Technologie Collège — 16 Termes Clés"
+  description="Glossaire des 16 termes essentiels du cours de technologie au collège : algorithme, chaîne d'énergie, logigramme, capteur, domotique, IA… avec définitions claires et liens vers les séquences."
+>
+  <main class="page-container">
+    <header class="page-header" data-aos="fade-up">
+      <h1>📝 Glossaire de technologie</h1>
+      <p class="page-subtitle">Les 16 termes clés à maîtriser pour réussir en technologie au collège</p>
+      <div class="legend">
+        {Object.entries(levelColors).map(([lvl, color]) => (
+          <span class="legend-item" style={`--lc: ${color};`}>{lvl}</span>
+        ))}
+      </div>
+    </header>
+
+    <GoogleAd slot="5227967907" format="auto" lazy={true} />
+
+    <div class="terms-grid">
+      {terms.map((t, i) => (
+        <article class="term-card" id={t.id} data-aos="fade-up" data-aos-delay={i * 30}>
+          <div class="term-header">
+            <span class="term-emoji">{t.emoji}</span>
+            <div class="term-meta">
+              <h2 class="term-title">{t.term}</h2>
+              <div class="term-levels">
+                {t.levels.map(lvl => (
+                  <span class="level-badge" style={`background: ${levelColors[lvl]}18; color: ${levelColors[lvl]}; border: 1px solid ${levelColors[lvl]}30;`}>
+                    {lvl}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p class="term-definition">{t.definition}</p>
+          <a href={t.link} class="term-link">
+            Voir la séquence →
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <GoogleAd slot="5227967907" format="horizontal" lazy={true} />
+
+    <section class="tip-section" data-aos="fade-up">
+      <h2>💡 Astuce Brevet</h2>
+      <p>
+        Pour le Brevet de technologie, concentrez-vous en priorité sur les termes marqués
+        <span class="badge-inline" style="background:#fff7ed; color:#F97316; border:1px solid #fed7aa;">3ème</span>.
+        Les questions portent souvent sur les <strong>chaînes d'énergie et d'information</strong>,
+        l'<strong>analyse fonctionnelle</strong> et la <strong>lecture de logigrammes</strong>.
+      </p>
+      <a href="/3eme/brevet" class="cta-link">Tester ses connaissances avec le quiz Brevet →</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  [data-theme="dark"] .page-subtitle {
+    color: #94a3b8;
+  }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--lc) 15%, white);
+    color: var(--lc);
+    border: 1px solid color-mix(in srgb, var(--lc) 30%, transparent);
+  }
+
+  /* Grid */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .term-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    scroll-margin-top: 1rem;
+  }
+
+  .term-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  .term-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .term-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .term-meta {
+    flex: 1;
+  }
+
+  .term-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 0.4rem;
+    line-height: 1.3;
+  }
+
+  .term-levels {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .level-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  .term-definition {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  [data-theme="dark"] .term-definition {
+    color: #94a3b8;
+  }
+
+  .term-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .term-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Tip section */
+  .tip-section {
+    background: #f8fafc;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+  }
+
+  [data-theme="dark"] .tip-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  .tip-section h2 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .tip-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+
+  [data-theme="dark"] .tip-section p {
+    color: #94a3b8;
+  }
+
+  .badge-inline {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+
+  .cta-link {
+    display: inline-block;
+    background: #F97316;
+    color: white;
+    padding: 0.55rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+  }
+
+  .cta-link:hover {
+    filter: brightness(90%);
+  }
+
+  @media (max-width: 640px) {
+    .terms-grid {
+      grid-template-columns: 1fr;
+    }
+    .page-container {
+      padding: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,151 @@
+---
+interface Props {
+  slot?: string;
+  format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle';
+  className?: string;
+  lazy?: boolean;
+}
+
+const {
+  slot = '5227967907',
+  format = 'auto',
+  className = '',
+  lazy = true
+} = Astro.props;
+
+// Define ad sizes based on format
+const adStyle = {
+  'auto': 'display: block; min-width: 250px; width: 100%; height: 90px;',
+  'horizontal': 'display: block; width: 728px; height: 90px;',
+  'vertical': 'display: block; width: 160px; height: 600px;',
+  'rectangle': 'display: block; width: 300px; height: 250px;'
+}[format];
+---
+
+<div class={`ad-container ${className}`} data-ad-lazy={lazy}>
+  <ins
+    class="adsbygoogle"
+    style={adStyle}
+    data-ad-client="ca-pub-2885775986633981"
+    data-ad-slot={slot}
+    data-ad-format={format}
+    data-full-width-responsive="true"></ins>
+  <!-- Fallback for ad blockers -->
+  <div class="ad-fallback">
+    <p>Les publicités aident à maintenir ce site gratuit. Merci de désactiver votre bloqueur de publicités.</p>
+  </div>
+</div>
+
+<style>
+  .ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    min-height: 90px;
+    min-width: 250px;
+    width: 100%;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Support du dark mode */
+  [data-theme="dark"] .ad-container {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .ad-fallback {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f8fafc;
+    color: #666;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  [data-theme="dark"] .ad-fallback {
+    background: rgba(30, 41, 59, 0.8);
+    color: #94a3b8;
+  }
+
+  .ad-container ins {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Animation de chargement */
+  .ad-container[data-ad-lazy="true"] {
+    opacity: 0;
+    animation: fadeInAd 0.6s ease-in-out 0.1s forwards;
+  }
+
+  @keyframes fadeInAd {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ad-container ins {
+      width: 100% !important;
+      min-width: 250px !important;
+      height: 100px !important;
+    }
+
+    .ad-fallback {
+      display: flex;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Fonction pour charger une publicité
+  function loadAd(adContainer) {
+    const adElement = adContainer.querySelector('.adsbygoogle');
+    if (adElement && !adElement.dataset.adsbygoogleStatus) {
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {
+        console.warn('AdSense error:', error);
+      }
+    }
+  }
+
+  // Lazy loading avec Intersection Observer pour de meilleures performances
+  if ('IntersectionObserver' in window) {
+    const adContainers = document.querySelectorAll('.ad-container[data-ad-lazy="true"]');
+
+    const adObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Charger la pub quand elle est proche de la vue
+          loadAd(entry.target);
+          adObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '300px' // Charger 300px avant que l'ad soit visible
+    });
+
+    adContainers.forEach(container => adObserver.observe(container));
+  } else {
+    // Fallback pour les navigateurs qui ne supportent pas IntersectionObserver
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.ad-container').forEach(loadAd);
+    });
+  }
+
+  // Fallback non-lazy ads
+  document.querySelectorAll('.ad-container[data-ad-lazy="false"]').forEach(loadAd);
+</script>

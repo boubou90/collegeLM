@@ -1,0 +1,47 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import SequencePresentation from '../../../components/SequencePresentation.astro';
+import ActivityLinks from '../../../components/ActivityLinks.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const description = `Dans cette séquence, les élèves modifient et programment un robot pour lui faire réaliser des missions précises. En combinant analyse technique, modifications mécaniques et programmation, ils mènent le robot jusqu'à la réussite de sa mission :`;
+
+const activities = [
+  {
+    title: "Découverte et analyse du robot",
+    description: "Comment analyser les caractéristiques techniques d'un robot mobile ?"
+  },
+  {
+    title: "Modifications et adaptations",
+    description: "Comment modifier le robot pour qu'il soit capable d'effectuer sa mission ?"
+  },
+  {
+    title: "Programmation des missions",
+    description: "Comment programmer un robot pour qu'il réalise des missions précises de façon autonome ?"
+  }
+];
+
+const level = "4eme";
+---
+
+<ClassLayout title="Séquence 10 — Robot et missions - 4ème" level={level}>
+  <BackButton href={`/${level}`} />
+  <h1>Séquence 10 — Robot et missions</h1>
+
+  <SequencePresentation
+    title="Robot et missions : modifier et programmer un robot pour des tâches précises"
+    description={description}
+    activities={activities.map(a => a.description)}
+    question="Comment modifier et programmer un robot mobile pour lui faire réaliser des missions précises en autonomie ?"
+  />
+
+  <ActivityLinks sequenceNumber={10} activities={activities} level={level} />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

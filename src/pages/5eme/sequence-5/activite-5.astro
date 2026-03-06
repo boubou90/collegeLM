@@ -1,0 +1,71 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "5eme";
+
+const documents = [];
+---
+
+<ClassLayout title="Activité 5 - Séquence 5 - 5ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Activité 5 — Ressources ergonomiques et synthèse</h1>
+  
+  <ActivitySection
+    title="Ressources complémentaires — Ergonomie et normes"
+    description="Ressources sur l'ergonomie du poste de travail, les normes CE et la synthèse de l'analyse fonctionnelle de la souris."
+    documents={documents}
+    activityNumber={5}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-5"
+    sequenceLabel="Séquence 5 — La souris et l'OST"
+    retenir={{
+      definitions: [
+        { term: "Norme CE", def: "Marquage obligatoire en Europe attestant qu'un produit respecte les exigences de sécurité, santé et environnement." },
+        { term: "Guide ergonomique", def: "Document de recommandations pour configurer un poste de travail informatique en réduisant les risques de TMS." },
+      ],
+      points: [
+        "Ressources complémentaires sur l'ergonomie du poste de travail et le choix des périphériques.",
+        "Synthèse : appliquer l'analyse fonctionnelle complète (bête à cornes + pieuvre) à la souris.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Synthèse — La souris et l'OST dans son environnement</h3>
+      <p>Cette activité de synthèse rassemble toutes les connaissances acquises sur l'analyse fonctionnelle d'un objet technique dans son environnement, avec la souris comme fil conducteur.</p>
+
+      <h3>Récapitulatif de l'analyse fonctionnelle de la souris</h3>
+      <ul>
+        <li><strong>Bête à cornes</strong> : À qui = utilisateur d'ordinateur ; Sur quoi = curseur à l'écran ; Pour = naviguer dans une interface graphique.</li>
+        <li><strong>Diagramme pieuvre</strong> : FP = permettre à l'utilisateur de contrôler le curseur ; FC = ergonomie, compatibilité OS, résistance, normes CE.</li>
+        <li><strong>Critères de choix</strong> : type (filaire/sans fil), DPI, ergonomie (droitier/gaucher), poids, préhension.</li>
+      </ul>
+
+      <h3>La norme CE et les certifications</h3>
+      <p>Le marquage <strong>CE (Conformité Européenne)</strong> est obligatoire pour tous les produits vendus dans l'Union Européenne. Il atteste que le produit respecte les exigences essentielles en matière de sécurité, santé et protection de l'environnement. Pour les équipements informatiques, d'autres certifications importantes :</p>
+      <ul>
+        <li><strong>RoHS</strong> : absence de 6 substances dangereuses (plomb, mercure, cadmium…).</li>
+        <li><strong>DEEE</strong> : symbole poubelle barrée = recyclage obligatoire en fin de vie.</li>
+        <li><strong>Energy Star</strong> : efficacité énergétique en mode veille.</li>
+      </ul>
+
+      <h3>Ergonomie du poste de travail : guide complet</h3>
+      <ul>
+        <li>Écran : hauteur = yeux au niveau du bord supérieur, distance = 50-70 cm.</li>
+        <li>Clavier : poignets droits, coudes à 90°.</li>
+        <li>Souris : à côté du clavier, à portée sans étendre le bras.</li>
+        <li>Chaise : dos droit, pieds à plat au sol, cuisses horizontales.</li>
+        <li>Éclairage : éviter les reflets sur l'écran, lumière naturelle sur le côté.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

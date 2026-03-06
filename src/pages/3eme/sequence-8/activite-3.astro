@@ -1,0 +1,62 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 8 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-8`} />
+  <h1>Séquence 8 — Réseaux et communication · Activité 3</h1>
+
+  <ActivitySection
+    title="Les protocoles de communication"
+    description="Quels sont les protocoles qui permettent aux machines de communiquer sur un réseau ? Un protocole est un ensemble de règles que deux machines doivent respecter pour se comprendre. Dans cette activité, tu étudieras les principaux protocoles de la suite TCP/IP : IP (adressage), TCP (transmission fiable), UDP (transmission rapide), HTTP/HTTPS (web), DNS (noms de domaine), SMTP/IMAP (messagerie). Tu réaliseras une analogie avec les règles de la communication humaine pour mieux comprendre ces protocoles. Tu apprendras également à utiliser des outils d'analyse réseau pour observer les échanges de données entre machines, et tu comprendras pourquoi le chiffrement (HTTPS) est essentiel pour la sécurité sur Internet."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-8"
+    sequenceLabel="Séquence 8 — Réseaux et communication"
+    retenir={{
+      definitions: [
+        { term: "Protocole de communication", def: "Ensemble de règles définissant comment les données sont échangées entre équipements sur un réseau." },
+        { term: "TCP/IP", def: "Protocole fondamental d'Internet : TCP garantit la livraison des données, IP gère leur acheminement." },
+        { term: "HTTP/HTTPS", def: "Protocoles du Web : HTTP = non chiffré, HTTPS = chiffré et sécurisé (cadenas dans le navigateur)." },
+        { term: "Paquet de données", def: "Unité de transmission : les données sont découpées en paquets numérotés, envoyés séparément et réassemblés à l'arrivée." },
+      ],
+      points: [
+        "TCP/IP = protocole de base d'Internet : toutes les communications l'utilisent.",
+        "Les données voyagent en paquets (et non en un bloc) → plus efficace et résistant aux pannes.",
+        "Toujours privilégier HTTPS (cadenas vert) pour les sites où tu entres des informations personnelles.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Un protocole — des règles communes pour communiquer</h3>
+      <p>Un <strong>protocole</strong> est un ensemble de règles que deux machines acceptent de respecter pour se comprendre. C'est comme une langue commune : si deux ordinateurs utilisent des protocoles différents, ils ne peuvent pas communiquer. La suite <strong>TCP/IP</strong> est la base de toutes les communications sur Internet.</p>
+
+      <h3>Les principaux protocoles à connaître</h3>
+      <ul>
+        <li><strong>IP</strong> (Internet Protocol) : gère l'adressage et l'acheminement des données. Chaque paquet est routé indépendamment.</li>
+        <li><strong>TCP</strong> (Transmission Control Protocol) : garantit la livraison fiable et dans l'ordre. Utilisé pour le Web, l'email. Lent mais fiable.</li>
+        <li><strong>UDP</strong> (User Datagram Protocol) : transmission rapide sans garantie de livraison. Utilisé pour la vidéo en streaming, les jeux en ligne.</li>
+        <li><strong>HTTP</strong> : protocole du Web — échange de pages web entre navigateur et serveur. Non chiffré.</li>
+        <li><strong>HTTPS</strong> : version sécurisée de HTTP — les données sont chiffrées (cadenas vert). Obligatoire pour les paiements et données personnelles.</li>
+        <li><strong>DNS</strong> : traduit les noms de domaine en adresses IP.</li>
+      </ul>
+
+      <h3>Les données voyagent en paquets</h3>
+      <p>Sur Internet, les données ne voyagent pas en un seul bloc : elles sont découpées en <strong>paquets numérotés</strong>, envoyés séparément par des chemins potentiellement différents, et réassemblés à l'arrivée. Cette technique (commutation de paquets) rend Internet très résistant aux pannes — si un chemin est bloqué, les paquets trouvent un autre itinéraire.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

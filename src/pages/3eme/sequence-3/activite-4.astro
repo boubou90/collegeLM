@@ -1,0 +1,65 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 3 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-3`} />
+  <h1>Séquence 3 — Analyse fonctionnelle · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Analyse fonctionnelle"
+    description="Retrouve ici les documents et ressources complémentaires sur l'analyse fonctionnelle. Tu y trouveras des fiches méthode sur la bête à cornes et le diagramme pieuvre, des exemples de CDCF rédigés, et des exercices d'application pour t'entraîner. Ces outils sont directement mobilisés à l'épreuve de technologie du Brevet. Consulte également le cours dédié à l'analyse fonctionnelle disponible dans la section Cours de 3ème, ainsi que le glossaire pour retrouver les définitions des termes clés."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-3"
+    sequenceLabel="Séquence 3 — Analyse fonctionnelle"
+    retenir={{
+      definitions: [
+        { term: "Analyse fonctionnelle externe (AFE)", def: "Analyse des fonctions du produit vis-à-vis de son environnement (bête à cornes + pieuvre + CDCF)." },
+        { term: "Analyse fonctionnelle interne (AFI)", def: "Analyse des fonctions assurées à l'intérieur du produit par ses composants." },
+      ],
+      points: [
+        "Séquence 3 complète = les 3 outils de l'AFE : bête à cornes → diagramme pieuvre → CDCF.",
+        "Fiches d'analyse fonctionnelle téléchargeables dans les ressources.",
+        "Entraîne-toi à compléter ces outils sur des objets du quotidien (lampe, vélo, sac à dos…).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Synthèse — La démarche d'analyse fonctionnelle</h3>
+      <p>La séquence 3 t'a appris les <strong>trois outils de l'Analyse Fonctionnelle Externe (AFE)</strong>, qui permettent de passer du besoin à la spécification complète d'un produit. Ces outils sont incontournables à l'épreuve de technologie du Brevet.</p>
+
+      <h3>Les trois outils dans l'ordre</h3>
+      <ol>
+        <li><strong>Bête à cornes</strong> → Définir le besoin (qui, sur quoi, dans quel but).</li>
+        <li><strong>Diagramme pieuvre</strong> → Lister toutes les fonctions de service (FP et FC).</li>
+        <li><strong>CDCF</strong> → Quantifier chaque fonction avec critères, niveaux et flexibilités.</li>
+      </ol>
+
+      <h3>Erreurs fréquentes à éviter</h3>
+      <ul>
+        <li>Confondre FP et FC : la FP relie 2 ME, la FC relie 1 ME.</li>
+        <li>Oublier des milieux extérieurs importants : normes, environnement, énergie…</li>
+        <li>Formuler le but sans verbe d'action ("être utile" → non ; "permettre de transporter" → oui).</li>
+        <li>Oublier la flexibilité dans le CDCF : toujours indiquer si le niveau est impératif ou négociable.</li>
+      </ul>
+
+      <h3>Applications au quotidien</h3>
+      <p>Entraîne-toi à appliquer ces outils sur des objets simples : une <strong>bouilloire</strong>, une <strong>sonnette de vélo</strong>, une <strong>calculatrice</strong>, un <strong>stylo à bille</strong>. L'analyse fonctionnelle s'applique à n'importe quel objet technique. Ces compétences sont aussi utiles en dehors du cours de technologie pour argumenter un choix de produit ou évaluer une solution technique.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

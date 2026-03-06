@@ -1,0 +1,65 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 2 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Séquence 2 — Systèmes techniques · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Systèmes techniques"
+    description="Retrouve ici les documents, fiches de cours et ressources complémentaires sur les systèmes techniques. Tu y trouveras les notions clés de la séquence : définition d'un système technique, structure et décomposition, chaînes d'énergie et d'information, distinction partie commande / partie opérative. Ces ressources te permettront de consolider tes connaissances et de te préparer aux évaluations. Consulte également le cours dédié aux chaînes d'énergie et d'information disponible dans la section Cours de 3ème."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-2"
+    sequenceLabel="Séquence 2 — Les systèmes techniques"
+    retenir={{
+      definitions: [
+        { term: "Schéma de principe", def: "Représentation simplifiée du fonctionnement d'un système, sans respecter les proportions réelles." },
+      ],
+      points: [
+        "Fiches de révision 'Systèmes techniques' disponibles dans les ressources.",
+        "Retravailler le vocabulaire clé : système, composant, sous-système, FP, FC.",
+        "Faire le lien avec la séquence 1 : tout système possède une chaîne d'énergie et une chaîne d'information.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Synthèse — Les systèmes techniques en 3ème</h3>
+      <p>Cette séquence t'a permis de maîtriser les outils fondamentaux pour <strong>analyser tout système technique</strong>. Voici les points essentiels à retenir avant l'évaluation :</p>
+
+      <h3>Les trois niveaux d'analyse</h3>
+      <ul>
+        <li><strong>Niveau 1 — Fonctionnel</strong> : identifier la fonction d'usage, la MO d'entrée, la valeur ajoutée et la MO de sortie.</li>
+        <li><strong>Niveau 2 — Structurel</strong> : décomposer en sous-systèmes et composants via une arborescence ; distinguer PC et PO.</li>
+        <li><strong>Niveau 3 — Comportemental</strong> : tracer les chaînes d'énergie et d'information ; identifier FP et FC.</li>
+      </ul>
+
+      <h3>Vocabulaire clé à maîtriser</h3>
+      <ul>
+        <li><strong>Système technique</strong> : ensemble organisé qui transforme une MO pour rendre service.</li>
+        <li><strong>Partie commande</strong> : traite l'information, prend les décisions.</li>
+        <li><strong>Partie opérative</strong> : effectue les actions physiques sur la MO.</li>
+        <li><strong>FP</strong> : fonction qui justifie l'existence du système.</li>
+        <li><strong>FC</strong> : contrainte imposée par l'environnement.</li>
+      </ul>
+
+      <h3>Lien avec les autres séquences</h3>
+      <p>Les notions vues ici sont directement liées aux séquences suivantes : la <strong>séquence 3</strong> approfondit l'analyse fonctionnelle (bête à cornes, pieuvre, CDCF), la <strong>séquence 4</strong> aborde la conception et la modélisation, et la <strong>séquence 9</strong> applique ces connaissances à la robotique. Consulte le cours dédié aux chaînes d'énergie et d'information dans la section Cours de 3ème.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

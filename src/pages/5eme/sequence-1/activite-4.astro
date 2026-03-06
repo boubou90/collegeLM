@@ -1,0 +1,78 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Le réseau local et Internet",
+    pdfUrl: "/documents/5eme/sequence-1/activite-4/fiche-1-reseaux.pdf"
+  },
+  {
+    title: "Les composants d'un réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-4/fiche-2-composants.pdf"
+  },
+  {
+    title: "Les adresses IP et le routage",
+    pdfUrl: "/documents/5eme/sequence-1/activite-4/fiche-3-adresses-ip.pdf"
+  }
+];
+---
+
+<ClassLayout title="Fiches de connaissance - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Fiches de connaissance - Les réseaux</h1>
+  
+  <ActivitySection
+    title="Fiches de connaissance sur les réseaux informatiques"
+    description="Ces fiches de connaissance résument les concepts essentiels sur les réseaux informatiques, leur structure et leur fonctionnement. Elles couvrent le réseau local et Internet, les composants d'un réseau, ainsi que les adresses IP et le routage."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Adresse MAC", def: "Identifiant physique unique d'une carte réseau, gravé en usine (format : 6 paires hexadécimales ex: A1:B2:C3:D4:E5:F6)." },
+      ],
+      points: [
+        "Fiches de connaissance sur les composants et protocoles réseaux disponibles dans cette activité.",
+        "Revoir : switch vs routeur, IP vs MAC, TCP/IP.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Récapitulatif — Les réseaux informatiques</h3>
+      <p>Cette séquence t'a permis de comprendre comment fonctionnent les réseaux informatiques, de l'infrastructure physique (câbles, switch, routeur) aux protocoles logiques (TCP/IP, HTTP). Voici les points essentiels à retenir :</p>
+
+      <h3>Les composants clés</h3>
+      <ul>
+        <li><strong>Switch (commutateur)</strong> : relie les équipements d'un réseau local, dirige les données vers le bon destinataire grâce aux adresses MAC.</li>
+        <li><strong>Routeur</strong> : connecte le réseau local à Internet (ou à un autre réseau), assure le routage des paquets IP.</li>
+        <li><strong>Carte réseau</strong> : interface entre l'équipement et le réseau, identifiée par une adresse MAC unique.</li>
+        <li><strong>Point d'accès WiFi</strong> : permet la connexion sans fil des appareils mobiles.</li>
+      </ul>
+
+      <h3>Les adresses : MAC et IP</h3>
+      <ul>
+        <li><strong>Adresse MAC</strong> : identifiant physique unique de la carte réseau, gravé en usine (ex: A1:B2:C3:D4:E5:F6). Utilisée dans le réseau local.</li>
+        <li><strong>Adresse IP</strong> : identifiant logique attribué à chaque équipement (ex: 192.168.1.5). Peut changer. Utilisée pour le routage sur Internet.</li>
+      </ul>
+
+      <h3>Les protocoles fondamentaux</h3>
+      <ul>
+        <li><strong>TCP/IP</strong> : protocole de base d'Internet (IP = adressage et routage, TCP = fiabilité).</li>
+        <li><strong>HTTP/HTTPS</strong> : protocole d'échange de pages web entre navigateur (client) et serveur.</li>
+        <li><strong>DNS</strong> : traduit les noms de domaine (www.google.com) en adresses IP.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

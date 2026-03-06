@@ -1,0 +1,401 @@
+---
+import Layout from './Layout.astro';
+import BrevetNavButton from '../components/Brevet/BrevetNavButton.astro';
+import GoogleAd from '../components/GoogleAd.astro';
+import Search from '../components/Search';
+
+interface Props {
+  title: string;
+  level: string;
+  description?: string;
+}
+
+const { title, level, description } = Astro.props;
+
+const LEVEL_CONFIG: Record<string, { label: string; color: string; gradient: string }> = {
+  '5eme': { label: '5ème',  color: '#3B82F6', gradient: 'linear-gradient(135deg, #3B82F6, #6366f1)' },
+  '4eme': { label: '4ème',  color: '#10B981', gradient: 'linear-gradient(135deg, #10B981, #0891b2)' },
+  '3eme': { label: '3ème',  color: '#F97316', gradient: 'linear-gradient(135deg, #F97316, #ef4444)' },
+};
+const levelConfig = LEVEL_CONFIG[level] ?? { label: level, color: '#6366f1', gradient: 'linear-gradient(135deg,#6366f1,#8b5cf6)' };
+
+// ── Breadcrumbs ──────────────────────────────────────────────
+const SLUG_LABELS: Record<string, string> = {
+  '5eme': '5ème', '4eme': '4ème', '3eme': '3ème',
+  'brevet': 'Brevet', 'revisions': 'Révisions', 'orientation': 'Orientation',
+  'cours': 'Cours', 'exercices': 'Exercices', 'glossaire': 'Glossaire',
+  'actualites': 'Actualités', 'resources': 'Ressources',
+};
+
+function slugToLabel(slug: string): string {
+  if (SLUG_LABELS[slug]) return SLUG_LABELS[slug];
+  // sequence-N → Séquence N
+  const seqMatch = slug.match(/^sequence-(\d+)$/);
+  if (seqMatch) return `Séquence ${seqMatch[1]}`;
+  // activite-N → Activité N
+  const actMatch = slug.match(/^activite-(\d+)$/);
+  if (actMatch) return `Activité ${actMatch[1]}`;
+  // sujet-YYYY → Sujet YYYY
+  const sujetMatch = slug.match(/^sujet-(\d+)$/);
+  if (sujetMatch) return `Sujet ${sujetMatch[1]}`;
+  // fallback: capitalise
+  return slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ');
+}
+
+const BASE_URL = 'https://collegelouisemichel.net';
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+
+interface Crumb { label: string; href: string }
+const crumbs: Crumb[] = [{ label: 'Accueil', href: '/' }];
+let accumulated = '';
+for (const seg of pathSegments) {
+  accumulated += `/${seg}`;
+  crumbs.push({ label: slugToLabel(seg), href: accumulated });
+}
+
+const breadcrumbSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.label,
+    item: `${BASE_URL}${c.href}`,
+  })),
+});
+// ─────────────────────────────────────────────────────────────
+
+const courseSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": title,
+  "description": description ?? `Cours de technologie en ${levelConfig.label} au Collège Louise Michel Paris.`,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Collège Louise Michel Paris"
+  },
+  "educationalLevel": levelConfig.label,
+  "isAccessibleForFree": true,
+  "url": `https://collegelouisemichel.net${Astro.url.pathname}`
+});
+---
+
+<Layout title={title} description={description}>
+  <script is:inline type="application/ld+json" set:html={courseSchema}></script>
+  <script is:inline type="application/ld+json" set:html={breadcrumbSchema}></script>
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <ol>
+        {crumbs.map((c, i) => (
+          <li>
+            {i < crumbs.length - 1
+              ? <a href={c.href}>{c.label}</a>
+              : <span aria-current="page">{c.label}</span>
+            }
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <nav class="top-nav" data-aos="fade-down">
+      <!-- Rangée 1 : accueil · niveau · recherche -->
+      <div class="nav-row-top">
+        <a href="/" class="home-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Accueil
+        </a>
+
+        <div class="nav-level-title" style={`--grad: ${levelConfig.gradient}; --color: ${levelConfig.color}`}>
+          <span class="nav-level-badge">{levelConfig.label}</span>
+          <span class="nav-level-label">Technologie</span>
+        </div>
+
+        <div class="nav-search">
+          <Search client:load />
+        </div>
+      </div>
+
+      <!-- Rangée 2 : boutons d'action (compacts) -->
+      <div class="nav-buttons">
+        {level === '3eme' && (
+          <>
+            <a href="/3eme/brevet" class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Sujet Brevet
+            </a>
+            <a href="/3eme/orientation" class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Orientation
+            </a>
+            <a href="/3eme/revisions" class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              Révisions
+            </a>
+            <BrevetNavButton />
+          </>
+        )}
+        {level !== '3eme' && (
+          <a href={`/${level}/exercices`} class="nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Exercices
+          </a>
+        )}
+      </div>
+    </nav>
+
+    <!-- Publicité après la navigation -->
+    <GoogleAd format="auto" lazy={false} className="mb-6" />
+
+    <div class="content-wrapper">
+      <slot />
+    </div>
+
+    <!-- Publicité en fin de page -->
+    <GoogleAd format="rectangle" className="mx-auto mt-8 mb-4" />
+  </main>
+</Layout>
+
+<style>
+  /* ── Breadcrumb ── */
+  .breadcrumb {
+    margin-bottom: 0.75rem;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb li + li::before {
+    content: '›';
+    margin-right: 0.25rem;
+    color: #94a3b8;
+  }
+
+  .breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .breadcrumb a:hover { color: var(--primary); text-decoration: underline; }
+
+  .breadcrumb span {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  [data-theme="dark"] .breadcrumb a { color: #94a3b8; }
+  [data-theme="dark"] .breadcrumb a:hover { color: #93c5fd; }
+  [data-theme="dark"] .breadcrumb span { color: #64748b; }
+
+  .top-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.9rem 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+
+  [data-theme="dark"] .top-nav {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  /* Rangée 1 */
+  .nav-row-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .home-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+
+  .home-link:hover {
+    color: var(--primary-dark);
+  }
+
+  .nav-level-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .nav-level-badge {
+    background: var(--grad);
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 10px color-mix(in srgb, var(--color) 35%, transparent);
+  }
+
+  .nav-level-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nav-search {
+    flex: 1;
+    max-width: 400px;
+    margin-left: auto;
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    background: var(--primary);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .nav-dropdown .nav-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 200px;
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .dropdown-item:hover {
+    background: #f8fafc;
+  }
+
+  .nav-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Rangée 2 : boutons compacts */
+  .nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.9rem;
+    color: white;
+    background: var(--primary);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .nav-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+  }
+
+  .icon {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .top-nav {
+      padding: 0.75rem 1rem;
+    }
+
+    .nav-level-title {
+      display: none;
+    }
+
+    .nav-search {
+      max-width: 100%;
+      flex: 1;
+    }
+
+    .nav-buttons {
+      gap: 0.4rem;
+    }
+
+    .nav-button {
+      font-size: 0.78rem;
+      padding: 0.4rem 0.7rem;
+    }
+  }
+
+</style>

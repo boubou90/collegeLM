@@ -1,0 +1,75 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 6 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+  <h1>Séquence 6 — Programmation avancée · Activité 3</h1>
+
+  <ActivitySection
+    title="Programmer un système automatisé"
+    description="Comment programmer un microcontrôleur pour contrôler un système automatisé ? Dans cette activité de synthèse, tu programmes un microcontrôleur (Arduino, micro:bit ou similaire) pour qu'il pilote un système réel. Le système pourra être une maquette de feu tricolore, un détecteur d'intrusion avec alarme, ou un système de régulation de température. Tu écriras le programme complet en partant du logigramme, en le traduisant en code, puis en le testant sur le matériel. Tu apprendras à utiliser les entrées/sorties numériques et analogiques, et à interfacer le microcontrôleur avec des capteurs et des actionneurs."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-6"
+    sequenceLabel="Séquence 6 — Programmation avancée"
+    retenir={{
+      definitions: [
+        { term: "Microcontrôleur", def: "Petit ordinateur intégré sur une puce, capable d'exécuter un programme et de contrôler des composants électroniques." },
+        { term: "void setup()", def: "Fonction Arduino exécutée une seule fois au démarrage : configure les broches et initialise le système." },
+        { term: "void loop()", def: "Fonction Arduino exécutée en boucle infinie : contient le programme principal." },
+        { term: "pinMode() / digitalWrite() / digitalRead()", def: "Fonctions Arduino pour configurer une broche, envoyer un signal numérique ou en lire un." },
+      ],
+      points: [
+        "setup() = configuration initiale (une seule fois) ; loop() = programme principal (en boucle).",
+        "pinMode(broche, OUTPUT) ou INPUT pour configurer ; digitalWrite(broche, HIGH/LOW) pour écrire.",
+        "Tester chaque composant (LED, capteur, moteur) séparément avant d'intégrer le tout.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>L'Arduino — microcontrôleur pour l'éducation</h3>
+      <p>L'<strong>Arduino</strong> est une carte électronique équipée d'un microcontrôleur programmable. Elle peut lire des capteurs (température, distance, lumière) et contrôler des actionneurs (LED, moteur, buzzer). Sa simplicité d'utilisation et son faible coût en font le microcontrôleur de référence dans l'enseignement technologique.</p>
+
+      <h3>Structure d'un programme Arduino</h3>
+      <p>Tout programme Arduino est structuré en deux fonctions obligatoires :</p>
+      <ul>
+        <li><strong>void setup()</strong> : exécutée <em>une seule fois</em> au démarrage. Sert à configurer les broches (INPUT/OUTPUT) et initialiser les composants.</li>
+        <li><strong>void loop()</strong> : exécutée en <em>boucle infinie</em>. Contient le programme principal : lire les capteurs, prendre des décisions, agir sur les actionneurs.</li>
+      </ul>
+
+      <h3>Les fonctions essentielles</h3>
+      <ul>
+        <li><code>pinMode(broche, OUTPUT)</code> → configure la broche en sortie (pour allumer une LED par ex.).</li>
+        <li><code>pinMode(broche, INPUT)</code> → configure la broche en entrée (pour lire un bouton).</li>
+        <li><code>digitalWrite(broche, HIGH)</code> → envoie 5V sur la broche (LED allumée).</li>
+        <li><code>digitalWrite(broche, LOW)</code> → envoie 0V (LED éteinte).</li>
+        <li><code>digitalRead(broche)</code> → lit l'état d'une entrée numérique (HIGH ou LOW).</li>
+        <li><code>delay(1000)</code> → pause de 1000 millisecondes (1 seconde).</li>
+      </ul>
+
+      <h3>Méthode pour programmer un système</h3>
+      <ol>
+        <li>Écrire l'algorithme en langage naturel.</li>
+        <li>Tracer le logigramme.</li>
+        <li>Coder le programme en Arduino C.</li>
+        <li>Tester chaque composant séparément.</li>
+        <li>Intégrer et tester l'ensemble.</li>
+      </ol>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

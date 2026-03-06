@@ -1,0 +1,69 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 1 - Séquence 5 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Séquence 5 — Innovation et société · Activité 1</h1>
+
+  <ActivitySection
+    title="L'histoire de l'innovation"
+    description="Comment les innovations technologiques ont-elles transformé notre société à travers le temps ? Dans cette activité, tu exploreras les grandes révolutions technologiques : la machine à vapeur (XVIIIe siècle), l'électricité (XIXe), le moteur à explosion, l'électronique et l'informatique (XXe), puis le numérique et l'intelligence artificielle (XXIe). Tu construiras une frise chronologique illustrée qui met en relation chaque innovation majeure avec les changements sociaux, économiques et environnementaux qu'elle a entraînés. Cette perspective historique permet de comprendre que les technologies d'aujourd'hui répondent à des besoins humains fondamentaux."
+    documents={documents}
+    activityNumber={1}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-5"
+    sequenceLabel="Séquence 5 — Innovation et société"
+    retenir={{
+      definitions: [
+        { term: "Innovation", def: "Amélioration ou nouveauté technologique introduite avec succès sur le marché ou dans la société." },
+        { term: "Invention", def: "Création d'un dispositif ou d'un procédé nouveau, protégée par un brevet." },
+        { term: "Brevet d'invention", def: "Titre de propriété industrielle qui protège une invention pendant 20 ans." },
+        { term: "Obsolescence", def: "Fait pour un produit de devenir dépassé ou moins utile, souvent à cause d'une innovation." },
+      ],
+      points: [
+        "Innovation ≠ invention : l'invention devient innovation quand elle est adoptée par la société.",
+        "Les innovations s'accélèrent depuis la révolution industrielle (18ᵉ siècle).",
+        "Une innovation peut être de rupture (radicalement nouvelle) ou incrémentale (amélioration progressive).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les grandes révolutions technologiques</h3>
+      <p>L'histoire des innovations technologiques est marquée par des <strong>révolutions</strong> qui ont profondément transformé nos sociétés. Chaque époque a ses innovations emblématiques :</p>
+      <ul>
+        <li><strong>XVIIIe siècle</strong> : machine à vapeur (James Watt, 1769) → révolution industrielle, mécanisation du travail.</li>
+        <li><strong>XIXe siècle</strong> : électricité (Edison, Tesla), téléphone (Bell) → transformation des communications.</li>
+        <li><strong>XXe siècle</strong> : moteur à explosion, électronique, informatique → mobilité de masse, révolution numérique.</li>
+        <li><strong>XXIe siècle</strong> : Internet, smartphone, intelligence artificielle → société de l'information.</li>
+      </ul>
+
+      <h3>Innovation vs. Invention</h3>
+      <p>Il faut distinguer deux notions proches mais différentes :</p>
+      <ul>
+        <li>L'<strong>invention</strong> est la création d'une nouveauté (protégée par un brevet pendant 20 ans).</li>
+        <li>L'<strong>innovation</strong> est une invention qui a été adoptée avec succès par la société. Une invention peut rester sans suite ; l'innovation transforme le marché ou les usages.</li>
+      </ul>
+      <p>Exemple : l'écran tactile a été inventé bien avant le smartphone, mais c'est l'iPhone (2007) qui a véritablement <em>innové</em> en rendant cette technologie accessible et utilisable pour tous.</p>
+
+      <h3>Types d'innovations</h3>
+      <ul>
+        <li><strong>Innovation de rupture</strong> : révolution technologique qui remet en cause les usages existants (ex : passage du courrier papier à l'email).</li>
+        <li><strong>Innovation incrémentale</strong> : amélioration progressive d'une technologie existante (ex : amélioration de la batterie du smartphone chaque année).</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Méthodes de recherche historique",
+    pdfUrl: "/documents/5eme/sequence-3/activite-2/methodes-recherche.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 3 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-3" />
+  <h1>Activité 2 - Collecte et analyse</h1>
+  
+  <ActivitySection
+    title="Comment savoir comment les objets étaient avant ?"
+    description="Apprenez à collecter, trier et analyser des données historiques sur l'évolution des objets techniques. Découvrez les différentes sources d'information et méthodes de recherche."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-3"
+    sequenceLabel="Séquence 3 — Évolution des objets techniques"
+    retenir={{
+      definitions: [
+        { term: "Frise chronologique", def: "Représentation des évolutions d'un objet technique sur un axe du temps avec les dates clés." },
+        { term: "Source documentaire", def: "Document utilisé pour rechercher des informations (livre, article, musée virtuel, site officiel…)." },
+        { term: "Documentation technique", def: "Ensemble des documents décrivant les caractéristiques techniques d'un objet (notice, fiche technique, brevet…)." },
+      ],
+      points: [
+        "Utiliser plusieurs sources pour valider les informations : croiser au moins 2 sources différentes.",
+        "Sur la frise : noter les dates clés, les inventeurs/innovateurs, les changements majeurs.",
+        "Toujours citer ses sources dans un travail de recherche.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Pourquoi consulter des sources historiques ?</h3>
+      <p>Pour retracer l'évolution d'un objet technique, il faut remonter dans le temps en utilisant des <strong>sources documentaires fiables</strong>. Ces sources permettent de connaître les dates d'invention, les inventeurs, les caractéristiques techniques des anciennes générations et le contexte historique de chaque évolution.</p>
+
+      <h3>Les sources documentaires à consulter</h3>
+      <ul>
+        <li><strong>Encyclopédies et livres d'histoire des techniques</strong> : sources sérieuses et vérifiées.</li>
+        <li><strong>Musées virtuels et physiques</strong> : musée des arts et métiers (Paris), musée des sciences...</li>
+        <li><strong>Sites officiels et instituts de recherche</strong> : brevets d'invention (Google Patents, INPI).</li>
+        <li><strong>Articles scientifiques</strong> : publications académiques sur l'histoire des technologies.</li>
+        <li><strong>Sites web</strong> : à croiser avec d'autres sources pour vérifier la fiabilité (Wikipédia = point de départ, pas source unique).</li>
+      </ul>
+
+      <h3>La frise chronologique</h3>
+      <p>La <strong>frise chronologique</strong> est l'outil de représentation idéal pour visualiser l'évolution d'un objet dans le temps. Elle permet de voir d'un coup d'œil l'enchaînement des générations, les périodes d'accélération technologique et les ruptures. Pour la construire :</p>
+      <ol>
+        <li>Dessiner un axe horizontal représentant le temps (avec les dates).</li>
+        <li>Placer les générations de l'OT sur la frise avec leur date d'apparition.</li>
+        <li>Annoter les changements majeurs entre chaque génération.</li>
+        <li>Identifier les événements déclencheurs (inventions, lois, guerres, crises pétrolières...).</li>
+      </ol>
+
+      <h3>Évaluer la fiabilité d'une source</h3>
+      <p>Toutes les sources ne se valent pas. Pour évaluer une source :</p>
+      <ul>
+        <li><strong>Qui ?</strong> L'auteur est-il un expert reconnu ? L'organisme est-il officiel ?</li>
+        <li><strong>Quand ?</strong> La date de publication est-elle récente et cohérente avec le sujet ?</li>
+        <li><strong>Pourquoi ?</strong> La source est-elle objective ou a-t-elle un intérêt commercial ?</li>
+        <li><strong>Vérification croisée</strong> : l'information est-elle confirmée par au moins une autre source indépendante ?</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

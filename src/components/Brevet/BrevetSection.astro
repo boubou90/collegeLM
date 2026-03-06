@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section class="brevet-section" data-aos="fade-up">
+  <h2>{title}</h2>
+  <p>{description}</p>
+  <slot />
+</section>
+
+<style>
+  .brevet-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+</style>

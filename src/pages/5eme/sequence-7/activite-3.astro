@@ -1,0 +1,73 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Identifier des constituants de la chaîne d’énergie d’un objet technique",
+    pdfUrl: "/documents/5eme/sequence-7/activite-1/Identifier-des-constituants-de-la-chaine-d-energie-d-un-objet-technique.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 7 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-7" />
+  <h1>Activité 3 - Identifier des constituants de la chaîne d’énergie d’un objet technique </h1>
+  
+  <ActivitySection
+    title=" Identifier des constituants de la chaîne d’énergie d’un objet technique "
+    description="Cette activité consiste à  découvrir les fonctions et solutions techniques des constituants de la chaîne d’énergie d’un objet ou système technique."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-7"
+    sequenceLabel="Séquence 7 — Énergie et habitat"
+    retenir={{
+      definitions: [
+        { term: "Onduleur", def: "Convertisseur transformant le courant continu (DC) produit par les panneaux solaires en courant alternatif (AC) utilisable dans la maison." },
+        { term: "Compteur bidirectionnel", def: "Compteur électrique mesurant à la fois la consommation depuis le réseau ET l'injection vers le réseau." },
+        { term: "kWc (kilowatt-crête)", def: "Puissance maximale d'un panneau solaire dans des conditions d'ensoleillement standardisées." },
+      ],
+      points: [
+        "Chaîne d'énergie solaire : panneaux PV → courant continu (DC) → onduleur → courant alternatif (AC) → maison.",
+        "L'onduleur = composant clé : il convertit le DC en AC et optimise la production.",
+        "Le surplus d'électricité peut être injecté dans le réseau ou stocké dans des batteries.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>La chaîne d'énergie d'un système solaire</h3>
+      <p>Pour alimenter un habitat en énergie solaire, plusieurs composants s'enchaînent : chacun a une fonction précise dans la <strong>chaîne d'énergie</strong>. La chaîne complète suit le schéma : <strong>Alimenter → Distribuer → Convertir → Transmettre</strong>.</p>
+
+      <h3>Les constituants de la chaîne d'énergie solaire</h3>
+      <ul>
+        <li><strong>Panneaux photovoltaïques</strong> (Alimenter) : captent l'énergie lumineuse du soleil et la convertissent en courant continu (DC). Puissance exprimée en Watt-crête (Wc).</li>
+        <li><strong>Onduleur</strong> (Convertir) : transforme le courant continu DC des panneaux en courant alternatif AC (220V, 50Hz) compatible avec le réseau électrique et les appareils domestiques.</li>
+        <li><strong>Tableau de répartition</strong> (Distribuer) : répartit l'électricité vers les différents circuits de la maison (éclairage, prises, chauffage).</li>
+        <li><strong>Batterie de stockage</strong> (optionnel) : stocke le surplus d'électricité produit pour le restituer la nuit ou par temps nuageux.</li>
+        <li><strong>Compteur bidirectionnel</strong> : mesure la consommation depuis le réseau et le surplus réinjecté dans le réseau.</li>
+      </ul>
+
+      <h3>Dimensionner une installation solaire</h3>
+      <p>Pour dimensionner une installation solaire domestique, on calcule :</p>
+      <ol>
+        <li><strong>Consommation annuelle</strong> : lire le compteur ou les factures EDF (exemple : 3500 kWh/an).</li>
+        <li><strong>Production annuelle</strong> : 1 kWc de panneaux produit environ 900-1200 kWh/an en France selon l'ensoleillement.</li>
+        <li><strong>Surface nécessaire</strong> : 1 kWc ≈ 6-7 m² de panneaux.</li>
+        <li>Un foyer de 4 personnes a typiquement besoin d'une installation de 3 kWc (18-21 m²).</li>
+      </ol>
+
+      <h3>La porte de garage : autre exemple de chaîne d'énergie</h3>
+      <p>La porte de garage automatique est un excellent exemple de chaîne d'énergie dans un habitat : réseau électrique (Alimenter) → motoréducteur (Convertir) → système de levage (Transmettre) → porte (Matière d'œuvre). Un capteur (télécommande, détecteur de présence) fait partie de la chaîne d'information associée.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

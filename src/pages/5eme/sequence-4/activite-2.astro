@@ -1,0 +1,78 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Structures adaptées",
+    pdfUrl: "/documents/5eme/sequence-4/activite-2/structures-adaptees.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 4 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-4" />
+  <h1>Activité 2 - Choix d'une structure adaptée</h1>
+  
+  <ActivitySection
+    title="Comment choisir une structure adaptée à un usage ?"
+    description="Apprentissage des méthodes d'analyse technique avec les diagrammes 'Bête à Cornes' et 'Pieuvre'. Cette activité permet de comprendre comment choisir et comparer des solutions techniques en fonction d'un cahier des charges."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/5eme/sequence-4"
+    sequenceLabel="Séquence 4 — Modélisation 3D et SketchUp"
+    retenir={{
+      definitions: [
+        { term: "Bête à cornes", def: "Outil d'analyse fonctionnelle qui répond à 3 questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?" },
+        { term: "Diagramme pieuvre", def: "Outil représentant les fonctions de service d'un objet vis-à-vis de son environnement." },
+        { term: "Contrainte de conception", def: "Condition que doit respecter la solution technique (matériau, taille, résistance, coût…)." },
+      ],
+      points: [
+        "Bête à cornes : 3 questions → identifier le besoin → choisir la solution adaptée.",
+        "La pieuvre aide à lister toutes les fonctions (FP et FC) avant de concevoir.",
+        "Appliquer l'AF pour justifier le choix d'une structure (auvent, abri, structure modulaire…).",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Choisir une structure : pourquoi analyser le besoin d'abord ?</h3>
+      <p>Avant de concevoir ou choisir une structure technique, il faut comprendre précisément le besoin. Deux outils d'analyse fonctionnelle permettent de le faire : la <strong>bête à cornes</strong> (pour définir le besoin) et le <strong>diagramme pieuvre</strong> (pour identifier toutes les fonctions).</p>
+
+      <h3>La bête à cornes — définir le besoin</h3>
+      <p>La bête à cornes répond à 3 questions fondamentales :</p>
+      <ul>
+        <li><strong>À qui rend-il service ?</strong> → L'utilisateur ou le bénéficiaire.</li>
+        <li><strong>Sur quoi agit-il ?</strong> → La matière d'œuvre (ce qui est transformé ou traité).</li>
+        <li><strong>Dans quel but ?</strong> → La fonction principale, le besoin satisfait.</li>
+      </ul>
+      <p>Exemple pour un auvent de terrasse : à qui = les personnes sur la terrasse ; sur quoi = les personnes et le mobilier ; dans quel but = protéger de la pluie et du soleil.</p>
+
+      <h3>Le diagramme pieuvre — identifier les fonctions</h3>
+      <p>Le diagramme pieuvre représente l'objet au centre et ses interactions avec tous les éléments de son environnement. Chaque trait (patte) représente une fonction :</p>
+      <ul>
+        <li><strong>FP (Fonction Principale)</strong> : relie l'objet à 2 milieux extérieurs. C'est la raison d'être de l'objet.</li>
+        <li><strong>FC (Fonction Contrainte)</strong> : relie l'objet à 1 seul milieu extérieur. Ce sont les contraintes à respecter (normes, esthétique, environnement…).</li>
+      </ul>
+
+      <h3>Les contraintes de conception</h3>
+      <p>Une structure doit répondre à plusieurs contraintes simultanément :</p>
+      <ul>
+        <li><strong>Résistance mécanique</strong> : supporter les charges (poids, vent, neige).</li>
+        <li><strong>Dimensions</strong> : s'adapter à l'espace disponible.</li>
+        <li><strong>Matériaux</strong> : résistance aux intempéries, coût, esthétique.</li>
+        <li><strong>Montage/démontage</strong> : facilité d'installation et d'entretien.</li>
+        <li><strong>Normes et réglementations</strong> : règles d'urbanisme, normes de sécurité.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,43 @@
+export type SeqInfo = { emoji: string; title: string; desc: string };
+
+export const sequenceDescriptions: Record<string, SeqInfo[]> = {
+  '5eme': [
+    { emoji: '🌐', title: 'Le réseau informatique',      desc: 'Exploiter le réseau du collège pour travailler et communiquer efficacement.' },
+    { emoji: '💻', title: 'Les outils numériques',       desc: 'Utiliser correctement et en sécurité les outils numériques au quotidien.' },
+    { emoji: '⚙️', title: 'Évolution des objets',        desc: "Comprendre comment les objets techniques évoluent pour répondre aux besoins." },
+    { emoji: '🖱️', title: 'La souris',                  desc: "Analyser les interactions d'un objet technique avec son environnement." },
+    { emoji: '💡', title: 'Choisir un OST — Lampes',     desc: 'Comparer et choisir un objet technique selon des critères définis.' },
+    { emoji: '⚡', title: 'Défi énergétique',             desc: "Alimenter un habitat en énergie dans une zone isolée : un défi technique réel." },
+    { emoji: '🌡️', title: 'Station météo connectée',    desc: "Étudier le fonctionnement d'une station météo et ses capteurs connectés." },
+    { emoji: '🔧', title: 'Réparation station météo',    desc: "Analyser une panne et réparer la fixation d'une station météo." },
+    { emoji: '🚲', title: 'Feu arrière intelligent',     desc: 'Programmer un feu clignotant intelligent pour améliorer la sécurité routière.' },
+    { emoji: '🤖', title: 'Guide de balle pour robot',   desc: 'Concevoir une pièce technique pour qu\'un robot joue au football.' },
+    { emoji: '⚽', title: 'Fabrication du guide',        desc: 'Fabriquer le guide de balle conçu et le tester avec le robot.' },
+    { emoji: '🎯', title: 'Robot footballeur',           desc: 'Programmer un robot pour qu\'il joue au football avec précision.' },
+    { emoji: '🏠', title: 'Éclairage automatisé',        desc: 'Concevoir un système d\'éclairage automatique pour une résidence.' },
+  ],
+  '4eme': [
+    { emoji: '🤖', title: "L'Intelligence Artificielle", desc: "Utiliser l'IA générative comme assistant personnel pour travailler plus efficacement." },
+    { emoji: '🚁', title: 'Les drones',                  desc: "Comprendre l'évolution des drones en réponse aux besoins de la société." },
+    { emoji: '🏠', title: 'Maison connectée — Éclairage',desc: "Comprendre et gérer l'éclairage automatique d'une maison connectée." },
+    { emoji: '🌡️', title: 'Gestion du chauffage',       desc: 'Programmer un système domotique pour réguler le chauffage intelligemment.' },
+    { emoji: '🔌', title: 'Structure maison connectée',  desc: "Analyser la structure complète d'une maison connectée et ses composants." },
+    { emoji: '☁️', title: 'Station météo & données',    desc: 'Concevoir une station météo et traiter les données collectées.' },
+    { emoji: '📡', title: 'Réseau local & Wifi',         desc: 'Créer et configurer un réseau local associé à une borne Wifi.' },
+    { emoji: '🎮', title: 'Toy Rescue',                  desc: "Réaliser un projet technique de récupération d'un jouet en panne." },
+    { emoji: '👾', title: 'Rétro gaming — Jeu vidéo',   desc: 'Explorer le rétro gaming en créant et programmant son propre jeu vidéo.' },
+    { emoji: '🦾', title: 'Robot et missions',           desc: 'Modifier et programmer un robot pour lui faire réaliser des missions précises.' },
+  ],
+  '3eme': [
+    { emoji: '⚡', title: "Chaînes énergie & information", desc: "Analyser les chaînes d'énergie et d'information dans les systèmes techniques." },
+    { emoji: '⚙️', title: 'Systèmes techniques',          desc: "Étudier la structure et le fonctionnement des systèmes techniques." },
+    { emoji: '🔬', title: 'Analyse fonctionnelle',         desc: "Appliquer les outils d'analyse fonctionnelle (bête à cornes, pieuvre)." },
+    { emoji: '🏗️', title: 'Conception technique',         desc: 'Concevoir et modéliser des solutions techniques innovantes.' },
+    { emoji: '💡', title: 'Innovation et société',         desc: "Comprendre l'impact des innovations technologiques sur notre société." },
+    { emoji: '🖥️', title: 'Programmation avancée',        desc: 'Approfondir la programmation pour contrôler des systèmes automatisés.' },
+    { emoji: '🔋', title: 'Énergie & développement durable', desc: 'Analyser les enjeux énergétiques et explorer les solutions durables.' },
+    { emoji: '📡', title: 'Réseaux & communication',       desc: 'Étudier les réseaux de communication et leurs protocoles.' },
+    { emoji: '🦾', title: 'Robotique & automatismes',      desc: 'Concevoir et programmer des systèmes robotisés et automatisés.' },
+    { emoji: '🎓', title: 'Révisions Brevet',              desc: "Consolider toutes les notions pour réussir l'épreuve de technologie." },
+  ],
+};

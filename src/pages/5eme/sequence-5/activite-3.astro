@@ -1,0 +1,74 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Identifier les composants du réseau informatique",
+    pdfUrl: "/documents/5eme/sequence-5/activite-3/Expliquer-les-choix-de-conception.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 3 - Utiliser facilement et en sécurité l’objet technique, communiquer sur sa forme</h1>
+  
+  <ActivitySection
+    title="Comment éviter les douleurs au poignet lors de l'utilisation d'une souris informatique ? "
+    description="Cette activité consiste à comprendre l’impact des contraintes lors de la conception d’une souris ergonomique."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-5"
+    sequenceLabel="Séquence 5 — La souris et l'OST"
+    retenir={{
+      definitions: [
+        { term: "Trouble musculo-squelettique (TMS)", def: "Douleur ou lésion touchant muscles, tendons ou nerfs due à des postures incorrectes ou des mouvements répétitifs." },
+        { term: "DPI (Dots Per Inch)", def: "Sensibilité d'une souris : nombre de pixels parcourus par le curseur pour 1 cm de déplacement physique de la souris." },
+        { term: "Préhension", def: "Façon de tenir la souris : palmaire (paume posée), digitale (bout des doigts), crayon (tenue fine)." },
+      ],
+      points: [
+        "Bonne posture : coude à 90°, poignet dans l'axe du bras, souris à portée de main sans étirement.",
+        "Régler le DPI : élevé pour les grands écrans, faible pour la précision graphique.",
+        "Faire des pauses régulières et alterner si possible les actions répétitives.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>L'ergonomie : concevoir pour l'humain</h3>
+      <p>L'<strong>ergonomie</strong> est la science qui adapte les outils et postes de travail aux caractéristiques des utilisateurs. Pour une souris informatique, l'ergonomie est cruciale : une mauvaise posture lors d'une utilisation prolongée peut provoquer des <strong>troubles musculo-squelettiques (TMS)</strong> comme le syndrome du canal carpien, les tendinites ou les douleurs cervicales.</p>
+
+      <h3>Les contraintes de conception d'une souris ergonomique</h3>
+      <p>La conception d'une souris ergonomique doit répondre à plusieurs contraintes simultanées :</p>
+      <ul>
+        <li><strong>Forme</strong> : s'adapter à la morphologie de la main (taille, forme de la paume, position des doigts).</li>
+        <li><strong>Matériaux</strong> : surface antidérapante, matériau respirant pour éviter la transpiration.</li>
+        <li><strong>Poids</strong> : ni trop lourd (fatigue) ni trop léger (manque de contrôle).</li>
+        <li><strong>Position des boutons</strong> : accessibles naturellement sans effort particulier.</li>
+        <li><strong>Angle de préhension</strong> : souris inclinée à 30-45° pour maintenir le poignet dans une position neutre.</li>
+      </ul>
+
+      <h3>Les bons gestes pour éviter les TMS</h3>
+      <ul>
+        <li><strong>Posture</strong> : coude à 90°, poignet dans l'axe de l'avant-bras, souris à portée sans étirer le bras.</li>
+        <li><strong>Tapis de souris avec repose-poignet</strong> : maintient le poignet soulevé pour réduire la compression.</li>
+        <li><strong>Réglage du DPI</strong> : un DPI plus élevé réduit les grands mouvements de bras.</li>
+        <li><strong>Pauses régulières</strong> : toutes les 45-60 minutes, exercices d'étirement des poignets.</li>
+        <li><strong>Alterner main gauche/droite</strong> si possible (souris ambidextre).</li>
+      </ul>
+
+      <h3>Communication sur la forme : croquis et schémas</h3>
+      <p>Pour communiquer les choix de conception ergonomique, les ingénieurs utilisent des <strong>croquis annotés</strong> (dessin à main levée avec indications de dimensions et matériaux) et des <strong>schémas explicatifs</strong> (vues en coupe, éclatés). Ces représentations permettent de justifier et valider les choix avant de fabriquer un prototype.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,49 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Le numérique au quotidien, savoir l’utiliser sans danger",
+    pdfUrl: "/documents/4eme/sequence-1/activite-1/4ème - Séquence 1-Activité 2- Fiche d'activité - Fiche Eleves - Le numérique au quotidien _ savoir l’utiliser sans danger.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 1 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 2 - Le numérique au quotidien, savoir l’utiliser sans danger</h1>
+  
+  <ActivitySection
+    title="Le numérique au quotidien, savoir l’utiliser sans danger"
+    description="Dans cette première séquence, nous découvrons l'utilisation de  l’IA Générative comme assistant personnel."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={3}
+    sequenceHref="/4eme/sequence-1"
+    sequenceLabel="Séquence 1 — L'Intelligence Artificielle"
+    retenir={{
+      definitions: [
+        { term: "Cybersécurité", def: "Ensemble des pratiques et outils pour protéger les systèmes informatiques et les données contre les attaques." },
+        { term: "Hameçonnage (phishing)", def: "Tentative d'escroquerie par e-mail ou SMS imitant un organisme officiel pour voler des identifiants." },
+        { term: "RGPD", def: "Règlement Général sur la Protection des Données : loi européenne protégeant la vie privée des utilisateurs." },
+      ],
+      points: [
+        "Ne jamais partager ses mots de passe, même à des amis.",
+        "Vérifier l'URL avant de cliquer : un faux site peut être quasi identique à l'original.",
+        "Tes données personnelles t'appartiennent : tu as le droit de les consulter, corriger et supprimer.",
+      ],
+    }}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

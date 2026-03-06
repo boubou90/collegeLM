@@ -1,0 +1,108 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import OrientationCard from '../../../components/Orientation/OrientationCard.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const orientationOptions = [
+  {
+    title: "Lycées Parisiens",
+    description: "Découvrez les différents lycées de Paris, leurs spécialités et leurs formations",
+    href: "/3eme/orientation/lycees-parisiens"
+  },
+  {
+    title: "Affectation en 2de générale et technologique",
+    description: "Consultez la carte interactive des lycées et leurs secteurs de recrutement",
+    href: "/3eme/orientation/affectation"
+  },
+  {
+    title: "Portes Ouvertes et Mini-stages",
+    description: "Consultez les dates des Journées Portes Ouvertes et inscrivez-vous aux mini-stages de découverte",
+    href: "https://docs.google.com/document/d/1BwSNbI9zxFoYsHXD9YzBCwSzbGbvzppdsGhfyVuE3Gw/edit?usp=sharing"
+  },
+  {
+    title: "Apprentissage",
+    description: "Informez-vous sur l'alternance, les CFA et les métiers accessibles",
+    href: "/3eme/orientation/apprentissage"
+  }
+];
+---
+
+<ClassLayout title="Orientation après la 3ème" level="3eme">
+  <div class="orientation-container">
+   <BackButton href="/3eme/" />
+    <h1>Orientation après la 3ème</h1>
+    
+    <section class="introduction" data-aos="fade-up">
+      <h2>Préparez votre avenir</h2>
+      <p>
+        L'orientation après la 3ème est une étape importante dans votre parcours scolaire. 
+        Découvrez les différentes voies possibles, comparez les filières et trouvez celle 
+        qui correspond le mieux à votre projet professionnel.
+      </p>
+    </section>
+
+    <section class="options-grid">
+      {orientationOptions.map(option => (
+        <OrientationCard
+          title={option.title}
+          description={option.description}
+          href={option.href}
+        />
+      ))}
+    </section>
+  </div>
+</ClassLayout>
+
+<style>
+  .orientation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .introduction h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .introduction p {
+    color: #64748b;
+    line-height: 1.8;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .orientation-container {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .introduction {
+      padding: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Guide de cybersécurité",
+    pdfUrl: "/documents/5eme/sequence-2/activite-4/cybersecurite.pdf"
+  },
+  {
+    title: "Propriété intellectuelle",
+    pdfUrl: "/documents/5eme/sequence-2/activite-4/propriete-intellectuelle.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 2 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-2" />
+  <h1>Activité 4 - Sécurité numérique</h1>
+  
+  <ActivitySection
+    title="Se protéger et protéger ses données"
+    description="Apprenez les règles essentielles de la cybersécurité et du respect de la propriété intellectuelle pour une utilisation sûre et responsable du numérique."
+    documents={documents}
+    activityNumber={4}
+    totalActivities={6}
+    sequenceHref="/5eme/sequence-2"
+    sequenceLabel="Séquence 2 — Outils numériques"
+    retenir={{
+      definitions: [
+        { term: "Mot de passe fort", def: "Mot de passe d'au moins 12 caractères combinant majuscules, minuscules, chiffres et symboles, unique pour chaque service." },
+        { term: "Authentification à deux facteurs (2FA)", def: "Méthode de sécurité nécessitant deux preuves d'identité : mot de passe + code SMS ou application." },
+        { term: "HTTPS", def: "Version sécurisée du protocole HTTP : les données échangées sont chiffrées (cadenas vert dans le navigateur)." },
+      ],
+      points: [
+        "Mot de passe fort = minuscules + MAJUSCULES + chiffres + symboles, au moins 12 caractères.",
+        "Ne jamais réutiliser le même mot de passe sur plusieurs sites.",
+        "Vérifier le HTTPS (cadenas) avant de saisir des informations personnelles ou bancaires.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Créer des mots de passe forts</h3>
+      <p>Un <strong>mot de passe fort</strong> est la première ligne de défense de tes comptes. Pour qu'il soit efficace :</p>
+      <ul>
+        <li>Au moins <strong>12 caractères</strong> (plus c'est long, plus c'est sûr).</li>
+        <li>Mélanger <strong>majuscules, minuscules, chiffres et symboles</strong> (!, @, #, $…).</li>
+        <li><strong>Un mot de passe unique par service</strong> : si un site est piraté, les autres comptes restent protégés.</li>
+        <li>Ne pas utiliser d'informations personnelles (prénom, date de naissance, nom de chien).</li>
+      </ul>
+      <p>Astuce : utilise une <strong>phrase de passe</strong>. Exemple : <code>J'aime3GatouxEnChocolat!</code> — facile à retenir, très difficile à deviner.</p>
+
+      <h3>L'authentification à deux facteurs (2FA)</h3>
+      <p>Le <strong>2FA (Two-Factor Authentication)</strong> ajoute une deuxième vérification après le mot de passe : un code envoyé par SMS, une application d'authentification (Google Authenticator, Authy) ou une clé physique USB. Même si quelqu'un vole ton mot de passe, il ne peut pas se connecter sans le second facteur.</p>
+
+      <h3>Reconnaître les tentatives de phishing</h3>
+      <p>Le <strong>phishing</strong> (hameçonnage) est une technique où des cybercriminels envoient de faux emails ou créent de faux sites pour voler tes identifiants. Signes d'alerte :</p>
+      <ul>
+        <li>L'adresse email de l'expéditeur est bizarre ou ressemble à une vraie (ex : no-reply@g00gle.com).</li>
+        <li>Le lien dans le mail ne correspond pas au site officiel.</li>
+        <li>Le message crée une urgence : "Votre compte sera supprimé dans 24h !"</li>
+        <li>Des fautes d'orthographe et une mise en page étrange.</li>
+      </ul>
+
+      <h3>La propriété intellectuelle et le droit d'auteur</h3>
+      <p>Toute création numérique (texte, image, musique, vidéo, logiciel) est protégée par le <strong>droit d'auteur</strong> dès sa création. Utiliser une image trouvée sur Google sans autorisation peut être illégal. Les licences <strong>Creative Commons</strong> permettent aux auteurs d'indiquer clairement ce qu'ils autorisent (partage, modification, usage commercial ou non).</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Analyser les flux et conversions d’énergie dans une chaîne d’énergie.",
+    pdfUrl: "/documents/4eme/sequence-5/4ème - Séquence 5-Activité 3 - Maison domotique - Constituant de la chaine d_énergie et leur fonctions - transformation d_énergie.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 5 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+
+  <h1>Activité 3 - Quelles sont les énergies utilisées ? Quels constituants permettent de convertir l’énergie ?</h1>
+  
+  <ActivitySection
+    title="Analyser les flux et conversions d’énergie dans une chaîne d’énergie."
+    description="Mila est restée à l’intérieur. Elle entend les volets s’ouvrir tout seuls. En s’approchant, elle voit les lames s’enrouler lentement.. Elle s’exclame : Trop cool !"
+    documents={documents}
+    activityNumber={3}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-5"
+    sequenceLabel="Séquence 5 — Maison connectée — Structure et fonctionnement"
+    retenir={{
+      definitions: [
+        { term: "Chaîne d'énergie", def: "Succession de blocs qui permettent d'alimenter, distribuer, convertir et transmettre l'énergie jusqu'à l'effecteur." },
+        { term: "Convertir", def: "Transformer la nature de l'énergie : électrique → mécanique (moteur), électrique → lumineuse (LED), etc." },
+        { term: "Transmettre", def: "Acheminer l'énergie mécanique jusqu'à l'effecteur en l'adaptant (réducteur, courroie, engrenage…)." },
+      ],
+      points: [
+        "ACTE = Alimenter → (Commander) → Distribuer → Convertir → Transmettre.",
+        "Dans une maison : réseau électrique = Alimenter ; disjoncteur = Distribuer ; moteur volet = Convertir ; mécanisme volet = Transmettre.",
+        "Identifier les conversions d'énergie pour chaque équipement : volet, convecteur, ampoule LED…",
+      ],
+    }}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

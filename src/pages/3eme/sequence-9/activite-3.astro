@@ -1,0 +1,74 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 9 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-9`} />
+  <h1>Séquence 9 — Robotique et automatismes · Activité 3</h1>
+
+  <ActivitySection
+    title="Défi robotique — programmer l'autonomie"
+    description="Comment programmer un robot pour qu'il réalise une mission en autonomie ? C'est l'activité finale et le moment le plus attendu de la séquence ! En équipe, tu vas programmer un robot pour qu'il accomplisse une mission autonome : suivre une ligne, éviter des obstacles, cartographier un espace, ou remplir un défi de précision. Tu écriras un programme structuré (algorithme → logigramme → code), tu le téléverseras sur le robot et tu l'ajusteras après chaque test. La séquence se termine par un défi inter-équipes : chaque robot est évalué sur sa capacité à accomplir la mission dans un temps imparti. Un bilan collectif permettra d'identifier les améliorations possibles."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-9"
+    sequenceLabel="Séquence 9 — Robotique et automatismes"
+    retenir={{
+      definitions: [
+        { term: "Comportement autonome", def: "Capacité d'un robot à prendre des décisions et à agir sans intervention humaine, en réponse à son environnement." },
+        { term: "Évitement d'obstacles", def: "Algorithme permettant à un robot de détecter et contourner les obstacles sur son chemin." },
+        { term: "Itération (démarche de projet)", def: "Processus cyclique : coder → tester → analyser → corriger → recommencer jusqu'à obtenir le résultat souhaité." },
+      ],
+      points: [
+        "Décomposer le défi en sous-problèmes : 1. avancer 2. détecter obstacle 3. éviter 4. reprendre la route.",
+        "Tester chaque partie du programme séparément avant d'intégrer le tout.",
+        "Méthode itérative : coder → tester → corriger → recommencer. Ne pas chercher la perfection dès le 1ᵉʳ essai.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Le défi robotique — l'activité de synthèse</h3>
+      <p>Le défi robotique est le moment où toutes les compétences acquises — analyse fonctionnelle (séq. 2-3), conception (séq. 4), programmation (séq. 6) et robotique (séq. 9) — sont mobilisées pour relever un challenge réel. L'objectif est de programmer un robot pour qu'il accomplisse une <strong>mission autonome</strong> sans intervention humaine.</p>
+
+      <h3>Décomposer le problème</h3>
+      <p>La clé du succès est de <strong>décomposer le défi en sous-problèmes simples</strong>, résolus un par un. Exemple pour un robot suiveur de ligne :</p>
+      <ol>
+        <li>Avancer en ligne droite.</li>
+        <li>Détecter la ligne noire (capteurs infrarouge gauche et droit).</li>
+        <li>Corriger la trajectoire : si capteur gauche détecte la ligne → tourner à gauche ; si droit → tourner à droite.</li>
+        <li>S'arrêter à la fin du parcours (capteur de fin de ligne ou délai).</li>
+      </ol>
+
+      <h3>La méthode itérative</h3>
+      <p>Ne cherche pas la perfection dès le premier essai. Applique la <strong>méthode itérative</strong> :</p>
+      <ul>
+        <li><strong>Coder</strong> : écrire le programme selon le logigramme.</li>
+        <li><strong>Tester</strong> : essayer le programme sur le robot réel.</li>
+        <li><strong>Analyser</strong> : observer ce qui ne fonctionne pas et pourquoi.</li>
+        <li><strong>Corriger</strong> : ajuster le programme (paramètres, logique, seuils).</li>
+        <li><strong>Recommencer</strong> jusqu'à obtenir le résultat voulu.</li>
+      </ul>
+
+      <h3>Conseils pour le défi</h3>
+      <ul>
+        <li>Tester chaque capteur séparément avant de l'intégrer dans le programme complet.</li>
+        <li>Utiliser <code>Serial.println()</code> pour afficher les valeurs des capteurs et comprendre le comportement.</li>
+        <li>Travailler en équipe : se répartir les tâches (mécanique, programmation, tests).</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

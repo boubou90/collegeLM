@@ -1,0 +1,66 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 2 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-2`} />
+  <h1>Séquence 2 — Systèmes techniques · Activité 2</h1>
+
+  <ActivitySection
+    title="Structure et composants d'un système"
+    description="Comment identifier et décrire les composants d'un système technique ? Dans cette activité, tu approfondis l'analyse structurelle d'un système en décomposant ses sous-systèmes et ses composants élémentaires. Tu utiliseras un schéma de décomposition (arbre ou tableau) pour représenter la hiérarchie du système étudié. Chaque composant sera décrit : nature, rôle, matériau ou technologie. Tu apprendras à faire la distinction entre la partie commande (qui traite l'information) et la partie opérative (qui effectue l'action). Cette méthode de décomposition systémique est fondamentale en technologie et en ingénierie."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-2"
+    sequenceLabel="Séquence 2 — Les systèmes techniques"
+    retenir={{
+      definitions: [
+        { term: "Composant", def: "Élément constitutif d'un système qui remplit une fonction précise." },
+        { term: "Sous-système", def: "Partie d'un système qui peut elle-même être décomposée en éléments plus simples." },
+        { term: "Structure fonctionnelle", def: "Décomposition hiérarchique du système en sous-systèmes et composants." },
+      ],
+      points: [
+        "Décomposer un système du global vers le détail : système → sous-systèmes → composants.",
+        "Chaque composant a un rôle précis dans la chaîne d'énergie ou d'information.",
+        "La structure fonctionnelle s'représente sous forme d'arborescence.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>La décomposition structurelle d'un système</h3>
+      <p>Pour analyser un système complexe, on le <strong>décompose du global vers le détail</strong> : système → sous-systèmes → composants élémentaires. Cette démarche, représentée par une <strong>arborescence</strong>, permet de comprendre qui fait quoi dans le système.</p>
+
+      <h3>Partie commande vs. partie opérative</h3>
+      <p>Tout système technique comporte deux parties fondamentales :</p>
+      <ul>
+        <li><strong>Partie commande (PC)</strong> : traite les informations et envoie les ordres. Elle contient le microcontrôleur, les capteurs, les boutons. Ex : le tableau de bord d'une machine à laver.</li>
+        <li><strong>Partie opérative (PO)</strong> : reçoit les ordres et effectue l'action sur la matière d'œuvre. Elle contient les moteurs, les résistances, les pompes. Ex : le tambour et la pompe de la machine à laver.</li>
+      </ul>
+
+      <h3>Les composants et leurs rôles</h3>
+      <p>Chaque composant d'un système a un rôle précis. Pour les décrire, on indique :</p>
+      <ul>
+        <li>Sa <strong>nature</strong> : moteur, capteur, résistance, poulie…</li>
+        <li>Son <strong>rôle</strong> : convertir l'énergie électrique en énergie mécanique, détecter un obstacle…</li>
+        <li>Sa <strong>position dans la chaîne</strong> : partie commande ou partie opérative.</li>
+      </ul>
+
+      <h3>Représentation en arborescence</h3>
+      <p>L'arborescence représente la hiérarchie du système avec des boîtes reliées par des traits. Au sommet : le <strong>système complet</strong>. En dessous : les <strong>sous-systèmes</strong> (alimentation, moteur, interface). Plus bas : les <strong>composants élémentaires</strong> (batterie, câble, bouton). Cette représentation est utilisée en ingénierie industrielle pour documenter les produits complexes.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

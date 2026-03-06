@@ -1,0 +1,116 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+
+const documents = [
+  {
+    title: "Analyse des chaînes",
+    pdfUrl: "/documents/3eme/sequence-1/activite-2/analyse.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 1 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 2 - Analyse des chaînes</h1>
+  
+  <ActivitySection
+    title="Comment identifier et analyser les chaînes d'énergie et d'information ?"
+    description="Apprenez à identifier et analyser les différents composants des chaînes d'énergie et d'information dans un système technique."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-1"
+    sequenceLabel="Séquence 1 — Chaînes d'énergie et d'information"
+    retenir={{
+      definitions: [
+        { term: "Alimenter", def: "Bloc qui fournit l'énergie nécessaire au système (ex : batterie, prise secteur)." },
+        { term: "Distribuer", def: "Bloc qui répartit ou interrompt l'énergie selon les ordres reçus (ex : interrupteur, relais)." },
+        { term: "Convertir", def: "Bloc qui change la nature de l'énergie (ex : moteur électrique → énergie mécanique)." },
+        { term: "Transmettre/Adapter", def: "Bloc qui adapte et transmet le mouvement vers l'effecteur (ex : engrenage, courroie)." },
+      ],
+      points: [
+        "ACTE = Alimenter → Commander → Transmettre → Effectuer : l'ordre des blocs dans la chaîne d'énergie.",
+        "ATC = Acquérir → Traiter → Communiquer : l'ordre des blocs dans la chaîne d'information.",
+        "Chaque bloc a une entrée (ce qu'il reçoit) et une sortie (ce qu'il produit).",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Méthode d'analyse d'un système technique</h3>
+      <p>
+        Pour analyser correctement un système technique, il faut suivre une démarche méthodique. On commence toujours par identifier ce que fait le système (sa fonction globale), puis on décompose son fonctionnement en deux chaînes : la chaîne d'énergie et la chaîne d'information.
+      </p>
+
+      <h3>Analyser la chaîne d'énergie bloc par bloc</h3>
+      <p>
+        Chaque bloc de la chaîne d'énergie transforme ou transmet l'énergie. Voici comment les identifier :
+      </p>
+      <ul>
+        <li>
+          <strong>Bloc Alimenter</strong> — C'est la source d'énergie. Cherchez d'où vient l'énergie qui fait fonctionner le système.
+          <br />Exemples : prise secteur 230 V, batterie lithium-ion, panneau photovoltaïque, pile AA, groupe électrogène.
+        </li>
+        <li>
+          <strong>Bloc Distribuer</strong> — Ce bloc reçoit les ordres de la chaîne d'information et contrôle le flux d'énergie.
+          <br />Exemples : contacteur électromécanique, relais, variateur de vitesse, interrupteur commandé.
+        </li>
+        <li>
+          <strong>Bloc Convertir</strong> — Ce bloc change la forme de l'énergie pour produire l'effet désiré.
+          <br />Exemples : moteur électrique (électrique → mécanique), résistance chauffante (électrique → thermique), haut-parleur (électrique → sonore), LED (électrique → lumineuse).
+        </li>
+        <li>
+          <strong>Bloc Transmettre</strong> — Ce bloc achemine le mouvement ou l'énergie jusqu'à l'effecteur, en l'adaptant si nécessaire (vitesse, couple, direction).
+          <br />Exemples : engrenages, courroie et poulie, arbre de transmission, réducteur, câble.
+        </li>
+      </ul>
+
+      <h3>Analyser la chaîne d'information bloc par bloc</h3>
+      <p>
+        La chaîne d'information collecte les données nécessaires, les traite, et donne les ordres. Voici comment repérer chaque bloc :
+      </p>
+      <ul>
+        <li>
+          <strong>Bloc Acquérir</strong> — Ce sont les capteurs. Ils mesurent des grandeurs physiques et les convertissent en signaux électriques.
+          <br />Exemples : capteur de température (thermistance), capteur de présence (infrarouge), capteur de lumière (LDR), microphone, bouton poussoir.
+        </li>
+        <li>
+          <strong>Bloc Traiter</strong> — C'est le « cerveau » : il compare les données avec une consigne et prend une décision.
+          <br />Exemples : microcontrôleur (Arduino, Raspberry Pi), automate programmable industriel (API), ordinateur, smartphone.
+        </li>
+        <li>
+          <strong>Bloc Communiquer</strong> — Ce bloc envoie les ordres à la chaîne d'énergie et informe l'utilisateur.
+          <br />Exemples : afficheur LCD, voyant LED, buzzer, signal WiFi/Bluetooth, écran tactile.
+        </li>
+      </ul>
+
+      <h3>Application : analyse d'un ventilateur automatique</h3>
+      <p>
+        Imaginons un ventilateur qui s'allume automatiquement quand la température dépasse 25 °C :
+      </p>
+      <ul>
+        <li><strong>Chaîne d'information</strong> : Capteur de température (Acquérir) → Microcontrôleur compare avec 25 °C (Traiter) → Envoie ordre ON/OFF au relais (Communiquer).</li>
+        <li><strong>Chaîne d'énergie</strong> : Prise secteur (Alimenter) → Relais commandé (Distribuer) → Moteur électrique (Convertir) → Arbre + hélice (Transmettre) → déplacement d'air.</li>
+      </ul>
+      <p>
+        Remarque : dans cet exemple, le <em>relais</em> appartient à la fois à la chaîne d'information (il reçoit l'ordre) et à la chaîne d'énergie (il distribue l'énergie). C'est l'<strong>interface</strong> entre les deux chaînes.
+      </p>
+
+      <h3>Représentation schématique</h3>
+      <p>
+        En technologie, on représente ces chaînes sous forme de blocs fonctionnels reliés par des flèches. Chaque flèche indique ce qui entre ou sort du bloc (nature de l'énergie, type de signal). Ce schéma permet de communiquer clairement sur le fonctionnement d'un système entre professionnels.
+      </p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

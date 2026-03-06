@@ -1,0 +1,112 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+
+const documents = [
+  {
+    title: "Étude de cas",
+    pdfUrl: "/documents/3eme/sequence-1/activite-3/etude-cas.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 3 - Séquence 1 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-1`} />
+  <h1>Activité 3 - Étude de cas</h1>
+  
+  <ActivitySection
+    title="Application sur un système technique réel"
+    description="Mettez en pratique vos connaissances sur les chaînes d'énergie et d'information en analysant un système technique réel."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-1"
+    sequenceLabel="Séquence 1 — Chaînes d'énergie et d'information"
+    retenir={{
+      definitions: [
+        { term: "Matière d'œuvre d'entrée (MOE)", def: "Ce que le système reçoit avant traitement (ex : courant électrique, eau froide, signal)." },
+        { term: "Matière d'œuvre de sortie (MOS)", def: "Ce que le système produit après traitement (ex : lumière, eau chaude, rotation)." },
+        { term: "Valeur ajoutée", def: "Ce que le système apporte à la MO : c'est la différence entre la MOS et la MOE." },
+      ],
+      points: [
+        "Pour analyser un système réel : identifier la MOE, la MOS, puis compléter les blocs intermédiaires.",
+        "Chercher d'abord l'effecteur (ce qui agit sur la MO), puis remonter vers la source d'énergie.",
+        "Un même système peut avoir plusieurs chaînes d'énergie fonctionnant en parallèle.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Démarche d'analyse d'un cas réel</h3>
+      <p>
+        Lors d'une étude de cas en technologie, on vous présente un système technique réel (chauffe-eau, portail automatique, vélo électrique…). Votre objectif est de compléter le schéma fonctionnel en identifiant chaque bloc des chaînes. Voici la démarche à suivre étape par étape.
+      </p>
+
+      <h3>Étape 1 : Identifier la matière d'œuvre</h3>
+      <p>
+        Avant tout, demandez-vous : <em>sur quoi agit ce système ?</em> La réponse donne la <strong>matière d'œuvre</strong>.
+      </p>
+      <ul>
+        <li>Un aspirateur agit sur la poussière et les déchets → MO = poussière.</li>
+        <li>Un chauffe-eau agit sur l'eau → MO = eau froide (entrée) / eau chaude (sortie).</li>
+        <li>Un amplificateur audio agit sur le son → MO = signal sonore faible (entrée) / signal puissant (sortie).</li>
+      </ul>
+      <p>
+        La <strong>valeur ajoutée</strong> est ce que le système apporte : eau plus chaude, son plus fort, objet déplacé plus vite, etc.
+      </p>
+
+      <h3>Étape 2 : Repérer l'effecteur</h3>
+      <p>
+        L'effecteur est l'élément qui agit directement sur la matière d'œuvre. C'est souvent le plus facile à identifier car on le « voit » agir.
+      </p>
+      <ul>
+        <li>Aspirateur : la turbine aspire l'air et les poussières → <strong>effecteur = turbine</strong>.</li>
+        <li>Chauffe-eau : la résistance chauffe l'eau → <strong>effecteur = résistance chauffante</strong>.</li>
+        <li>Portail automatique : le vantail se déplace → <strong>effecteur = vantail du portail</strong>.</li>
+      </ul>
+
+      <h3>Étape 3 : Remonter la chaîne d'énergie</h3>
+      <p>
+        Une fois l'effecteur identifié, remontez la chaîne vers la source d'énergie. Cherchez successivement : le bloc Transmettre (ce qui fait tourner ou bouger l'effecteur), le bloc Convertir (le moteur ou l'élément qui change la forme d'énergie), le bloc Distribuer (l'interrupteur ou le relais qui contrôle), et enfin le bloc Alimenter (la source d'énergie).
+      </p>
+
+      <h3>Étude de cas : le portail automatique</h3>
+      <p>
+        Le portail automatique s'ouvre quand un utilisateur appuie sur une télécommande et se ferme automatiquement après 10 secondes.
+      </p>
+      <ul>
+        <li><strong>Matière d'œuvre</strong> : le vantail du portail (passe de fermé à ouvert).</li>
+        <li><strong>Chaîne d'information</strong> :
+          <ul>
+            <li>Acquérir : récepteur radio reçoit le signal de la télécommande.</li>
+            <li>Traiter : microcontrôleur interprète le signal et déclenche le minuteur (10 s).</li>
+            <li>Communiquer : envoie l'ordre d'ouverture/fermeture au contacteur.</li>
+          </ul>
+        </li>
+        <li><strong>Chaîne d'énergie</strong> :
+          <ul>
+            <li>Alimenter : alimentation 24 V (transformateur secteur).</li>
+            <li>Distribuer : contacteur électromécanique.</li>
+            <li>Convertir : moteur électrique.</li>
+            <li>Transmettre : réducteur à vis sans fin + crémaillère → déplacement du vantail.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Cas particulier : systèmes à plusieurs chaînes d'énergie</h3>
+      <p>
+        Certains systèmes complexes comportent plusieurs chaînes d'énergie en parallèle. Par exemple, un robot éducatif peut avoir un moteur pour chaque roue (deux chaînes d'énergie) et un haut-parleur (une troisième chaîne), toutes commandées par la même chaîne d'information. Dans ce cas, on dessine autant de chaînes d'énergie que nécessaire, toutes reliées à la même chaîne d'information centrale.
+      </p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

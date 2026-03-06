@@ -1,0 +1,71 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 4 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Ressources</h1>
+
+  <ActivitySection
+    title="Ressources — Révisions Brevet"
+    description="Retrouve ici toutes les ressources pour te préparer au mieux à l'épreuve de technologie du Brevet des collèges. Tu y trouveras des fiches de révision synthétiques par thème, des annales classées par sujet (domotique, robotique, réseaux, énergie…), des mémos des notions clés à connaître par cœur, et des conseils de méthode. Consulte également la page dédiée au Brevet de technologie sur ce site, ainsi que le glossaire pour réviser les définitions. N'oublie pas de faire les quiz de chaque séquence pour tester tes connaissances en conditions d'examen !"
+    documents={documents}
+    activityNumber={4}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-10"
+    sequenceLabel="Séquence 10 — Révisions Brevet"
+    retenir={{
+      definitions: [
+        { term: "Fiche de révision", def: "Document synthétique résumant les notions essentielles d'un thème, idéal pour mémoriser rapidement." },
+        { term: "Glossaire", def: "Liste alphabétique des termes techniques avec leur définition, à consulter régulièrement." },
+      ],
+      points: [
+        "Utiliser les fiches de révision par thème disponibles dans les ressources de cette séquence.",
+        "Faire les quiz de chaque séquence pour tester ses connaissances en conditions d'examen.",
+        "Page Brevet dédiée sur le site : annales, fiches et conseils supplémentaires disponibles.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les notions incontournables par thème</h3>
+      <p>Voici un mémo des points clés à maîtriser absolument pour l'épreuve :</p>
+      <ul>
+        <li><strong>Chaînes d'énergie et d'information</strong> : Alimenter → Distribuer → Convertir → Transmettre | Capter → Traiter → Communiquer.</li>
+        <li><strong>Analyse fonctionnelle</strong> : bête à cornes (à qui rend service ? sur quoi agit-il ? dans quel but ?) ; pieuvre (FP = 2 milieux extérieurs, FC = 1 milieu extérieur) ; CDCF (fonction, critère, niveau, flexibilité).</li>
+        <li><strong>Adressage IP</strong> : 4 octets de 0 à 255 ; adresses privées (192.168.x.x) ; masque de sous-réseau ; DHCP = attribution automatique ; DNS = traduit les noms en adresses IP.</li>
+        <li><strong>Programmation</strong> : variable (stocke une valeur) ; condition if/else (choix selon une valeur) ; boucle for (nombre connu d'itérations) / while (condition vraie).</li>
+        <li><strong>Énergie</strong> : P = U × I (watts) ; E = P × t (joules ou Wh) ; rendement η = Énergie utile / Énergie absorbée × 100%.</li>
+        <li><strong>Robotique</strong> : capteur = acquiert une info ; actionneur = produit un effet ; effecteur = agit sur la matière d'œuvre.</li>
+      </ul>
+
+      <h3>Ressources disponibles sur ce site</h3>
+      <ul>
+        <li><strong>Fiches de révision</strong> par séquence : disponibles dans les ressources de chaque activité (Activité 4 de chaque séquence).</li>
+        <li><strong>Quiz de séquence</strong> : accessibles depuis chaque page de séquence pour tester ses connaissances.</li>
+        <li><strong>Page Brevet dédiée</strong> : annales, fiches synthèse et conseils supplémentaires.</li>
+        <li><strong>Glossaire</strong> : toutes les définitions des termes techniques du programme.</li>
+      </ul>
+
+      <h3>Conseils de dernière minute</h3>
+      <ul>
+        <li>La veille : relire les fiches de révision synthétiques, ne pas commencer de nouvelles notions.</li>
+        <li>Le jour J : lire tout le dossier avant de répondre, répondre en priorité aux questions dont on est sûr, ne laisser aucune question sans réponse.</li>
+        <li>Pendant l'épreuve : utiliser le vocabulaire technique précis (pas de "machin", "truc", "chose").</li>
+        <li>Après l'épreuve : passer aux autres matières sans ruminer sur les erreurs potentielles.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 5 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Séquence 5 — Innovation et société · Activité 2</h1>
+
+  <ActivitySection
+    title="Impact sociétal et éthique"
+    description="Quels sont les impacts sociaux, économiques et environnementaux des innovations technologiques ? Toute innovation a des effets positifs mais aussi des effets négatifs qu'il faut anticiper. Dans cette activité, tu analyseras des études de cas concrètes : l'essor du smartphone (impacts sur la communication, l'économie, la santé, les données personnelles), l'automatisation de l'industrie (emploi, productivité), ou encore les énergies renouvelables (environnement vs ressources nécessaires à leur fabrication). Tu apprendras à construire une argumentation équilibrée, à distinguer les faits des opinions, et à développer une réflexion éthique sur les technologies."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-5"
+    sequenceLabel="Séquence 5 — Innovation et société"
+    retenir={{
+      definitions: [
+        { term: "Impact environnemental", def: "Effet d'un produit ou d'une activité sur l'environnement naturel (eau, air, sol, biodiversité)." },
+        { term: "Cycle de vie d'un produit", def: "Ensemble des étapes de la vie d'un produit : extraction → fabrication → distribution → utilisation → fin de vie." },
+        { term: "Analyse du cycle de vie (ACV)", def: "Méthode d'évaluation des impacts environnementaux d'un produit sur toutes les étapes de son cycle de vie." },
+        { term: "Éco-conception", def: "Démarche de conception intégrant les critères environnementaux dès le début du projet." },
+      ],
+      points: [
+        "5 phases du cycle de vie : extraction des matières premières, fabrication, distribution, utilisation, fin de vie.",
+        "L'ACV permet de comparer deux produits et d'identifier les étapes les plus polluantes.",
+        "Éco-concevoir = réduire les impacts à chaque étape du cycle de vie.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Chaque innovation a des effets positifs ET négatifs</h3>
+      <p>Toute innovation technologique produit des effets sur la société, l'économie et l'environnement — certains positifs, d'autres négatifs. Un regard critique et équilibré est indispensable pour prendre des décisions responsables en tant que citoyen et futur professionnel.</p>
+
+      <h3>Études de cas</h3>
+      <ul>
+        <li><strong>Le smartphone</strong> : (+) communication instantanée, accès à l'information, commerce en ligne. (-) dépendance, temps d'écran, extraction de métaux rares, obsolescence rapide, données personnelles exposées.</li>
+        <li><strong>L'automatisation industrielle</strong> : (+) productivité, sécurité, qualité constante. (-) suppressions d'emplois, fracture numérique, reconversion difficile.</li>
+        <li><strong>Les énergies renouvelables</strong> : (+) réduction des émissions CO₂, indépendance énergétique. (-) fabrication des panneaux solaires/éoliennes consomme des matières premières et produit des déchets.</li>
+      </ul>
+
+      <h3>Le cycle de vie d'un produit et l'ACV</h3>
+      <p>L'<strong>Analyse du Cycle de Vie (ACV)</strong> évalue l'impact environnemental d'un produit sur <em>toutes</em> ses phases : extraction des matières premières → fabrication → transport → utilisation → fin de vie (recyclage ou déchets). Elle permet d'identifier l'étape la plus polluante et d'agir en priorité dessus.</p>
+
+      <h3>L'éco-conception</h3>
+      <p>L'<strong>éco-conception</strong> intègre les critères environnementaux dès le début du projet : choisir des matériaux recyclables, réduire la consommation d'énergie, augmenter la durée de vie du produit, faciliter le démontage et le recyclage. C'est une démarche qui réduit l'empreinte environnementale sans sacrifier les performances.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

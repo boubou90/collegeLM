@@ -1,0 +1,69 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 3 - Séquence 5 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-5`} />
+  <h1>Séquence 5 — Innovation et société · Activité 3</h1>
+
+  <ActivitySection
+    title="Projet : innover pour un besoin réel"
+    description="Comment proposer une solution innovante pour répondre à un besoin identifié ? En équipe, tu vas mener un mini-projet d'innovation : identifier un problème concret du quotidien (au collège, dans ta ville, dans ta famille), proposer une solution technologique originale, et la présenter sous forme d'un exposé ou d'une affiche. Tu utiliseras les outils de l'analyse fonctionnelle (bête à cornes) pour valider que ton innovation répond bien au besoin identifié, et tu réfléchiras aux impacts de ta solution sur la société et l'environnement. Ce projet de créativité technique prépare aux concours d'innovation et à l'esprit entrepreneurial."
+    documents={documents}
+    activityNumber={3}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-5"
+    sequenceLabel="Séquence 5 — Innovation et société"
+    retenir={{
+      definitions: [
+        { term: "Brainstorming", def: "Technique de groupe pour générer un maximum d'idées sans les juger dans un premier temps." },
+        { term: "Prototype", def: "Modèle expérimental d'un produit, réalisé pour tester et valider des solutions avant la fabrication en série." },
+        { term: "Cahier des charges", def: "Document définissant les besoins et contraintes auxquels la solution doit répondre." },
+      ],
+      points: [
+        "Étapes du projet d'innovation : analyser le besoin → générer des idées → choisir une solution → prototyper → tester → améliorer.",
+        "Le brainstorming = toutes les idées sont acceptées dans un premier temps, puis on sélectionne.",
+        "Le prototype permet de tester la solution avant de la fabriquer définitivement.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>La démarche de projet d'innovation</h3>
+      <p>Un projet d'innovation suit une <strong>démarche structurée en 6 étapes</strong> qui permet de passer d'un problème identifié à une solution testée et améliorée. C'est la même démarche utilisée par les équipes de design et d'ingénierie dans les entreprises innovantes.</p>
+
+      <h3>Les 6 étapes du projet</h3>
+      <ol>
+        <li><strong>Analyser le besoin</strong> : utiliser la bête à cornes pour définir précisément le problème à résoudre.</li>
+        <li><strong>Générer des idées</strong> : brainstorming en équipe — toutes les idées sont notées sans jugement.</li>
+        <li><strong>Choisir une solution</strong> : comparer les idées selon des critères (faisabilité, coût, impact, originalité).</li>
+        <li><strong>Prototyper</strong> : réaliser un prototype simple (carton, impression 3D, maquette numérique) pour tester la solution.</li>
+        <li><strong>Tester et évaluer</strong> : confronter le prototype aux utilisateurs et collecter leurs retours.</li>
+        <li><strong>Améliorer</strong> : modifier la solution en tenant compte des tests. Recommencer si nécessaire.</li>
+      </ol>
+
+      <h3>Le brainstorming — règles d'or</h3>
+      <ul>
+        <li>Toutes les idées sont acceptées, même les plus farfelues.</li>
+        <li>Pas de critique ni de jugement pendant la phase de génération.</li>
+        <li>S'appuyer sur les idées des autres pour en générer de nouvelles.</li>
+        <li>Quantité avant qualité : viser un maximum d'idées en un temps limité.</li>
+      </ul>
+
+      <h3>Le prototype — apprendre en faisant</h3>
+      <p>Le prototype n'a pas besoin d'être parfait — il doit permettre de <strong>tester l'idée</strong> à moindre coût. Un prototype en carton peut suffire pour tester une forme ergonomique. L'objectif est de détecter les problèmes le plus tôt possible pour éviter des erreurs coûteuses en production.</p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

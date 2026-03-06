@@ -1,0 +1,50 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "4eme";
+
+const documents = [
+  {
+    title: "Fiche de lancement de séquence",
+    pdfUrl: "/documents/4eme/sequence_6/4ème - Séquence 6-Activité 0- Fiche de lancement de séquence - Station météo_Relevés températures.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 1 - Séquence 6 - 4ème" level={level}>
+  <BackButton href={`/${level}/sequence-6`} />
+
+  <h1>Activité 1 - Comment une maison domotique gère-t-elle automatiquement l'éclairage, l'ouverture des volets, le chauffage… pour optimiser le confort et l'efficacité énergétique ?</h1>
+  
+  <ActivitySection
+    title="Fiche de lancement de séquence "
+    description="Un lancement de séquence pour faire émerger la problématique générale"
+    documents={documents}
+    activityNumber={1}
+    totalActivities={5}
+    sequenceHref="/4eme/sequence-6"
+    sequenceLabel="Séquence 6 — Station météo et données"
+    retenir={{
+      definitions: [
+        { term: "Station météo connectée", def: "Objet technique qui mesure automatiquement des grandeurs météorologiques (T°, humidité, pression, luminosité…) et les transmet via un réseau." },
+        { term: "Weather:Bit", def: "Extension pour carte micro:bit permettant de mesurer température, humidité, pression atmosphérique et intensité lumineuse." },
+        { term: "Donnée brute", def: "Valeur mesurée par un capteur, non encore traitée ni interprétée." },
+      ],
+      points: [
+        "La station Weather:bit mesure simultanément plusieurs grandeurs météorologiques.",
+        "Les données brutes doivent être traitées (arrondies, converties, moyennées) pour être exploitables.",
+        "Contexte : suivre la météo pour optimiser la croissance d'un jardin scolaire.",
+      ],
+    }}
+  />
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,236 @@
+---
+// src/pages/robocup-2025.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="RoboCup 2025">
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-down">
+      <div class="hero-content">
+        <h1>Projet Robotique 2024</h1>
+        <p class="date">Publié le 20 octobre 2024</p>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <div class="video-container">
+      <video autoplay muted loop class="hero-video">
+        <source src="/videos/projet-robotique-2024.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-content">
+      <img src="/images/projet-robotique.jpg" alt="RoboCup 2025" class="article-image" />
+      <p>
+        La <strong>RoboCup</strong> est une compétition internationale annuelle qui réunit des milliers de participants formant des centaines d'équipes venant d'une cinquantaine de pays. C'est l’un des événements technologiques les plus importants au monde en matière de <strong>recherche</strong> et d’<strong>éducation</strong> en robotique.
+      </p>
+
+      <!-- Chiffres Clés -->
+      <section class="key-facts" data-aos="fade-up">
+        <h2>Chiffres Clés</h2>
+        <ul>
+          <li><strong>3500 participants</strong></li>
+          <li><strong>45 nations</strong></li>
+          <li><strong>Des milliers de robots</strong></li>
+          <li><strong>450 équipes</strong></li>
+          <li><strong>30 000 m² d'espace dédié</strong></li>
+        </ul>
+      </section>
+
+      <!-- Une Communauté Engagée -->
+      <section class="community" data-aos="fade-up">
+        <h2>Une Communauté Engagée</h2>
+        <p>
+          La <strong>RoboCup</strong> est avant tout une communauté. Les participants échangent tout au long de l'événement, et de nombreuses technologies développées sont <strong>open source</strong>. Chaque édition est également l’occasion d’un <strong>Symposium International</strong>, où sont présentées des contributions scientifiques dans les domaines de la <strong>robotique</strong> et de l’<strong>intelligence artificielle</strong>.
+        </p>
+      </section>
+
+      <!-- La France et la RoboCup -->
+      <section class="france" data-aos="fade-up">
+        <h2>La France et la RoboCup</h2>
+        <p>
+          La <strong>France</strong> et la <strong>RoboCup</strong> sont liées depuis longtemps. La seconde édition de la compétition a été organisée par <strong>Dominique Duhaut</strong> à la <strong>Cité des Sciences</strong> en 1998. La France a contribué au plus haut niveau, avec des victoires notables comme celle de <strong>Pierre Blazevic</strong> en 1999 et l'équipe <strong>Rhoban</strong> menée par <strong>Olivier Ly</strong>, qui a remporté la ligue <strong>Humanoïd Kid-Size</strong> quatre années consécutives (2016-2019).
+        </p>
+      </section>
+
+      <!-- Les Ligues de la RoboCup -->
+      <section class="leagues" data-aos="fade-up">
+        <h2>Les Ligues de la RoboCup</h2>
+
+        <div class="league-card" data-aos="fade-right">
+          <h3>Soccer</h3>
+          <p>
+            Le <strong>football</strong> est l'épreuve historique, introduite à la première édition de la RoboCup en 1997. Les robots doivent être totalement autonomes et interagir dans un environnement dynamique.
+          </p>
+        </div>
+
+        <div class="league-card" data-aos="fade-left">
+          <h3>@Home</h3>
+          <p>
+            La ligue <strong>@Home</strong> vise à développer un robot compagnon pour la maison. Les robots interagissent avec les utilisateurs et effectuent des tâches ménagères.
+          </p>
+        </div>
+
+        <div class="league-card" data-aos="fade-right">
+          <h3>Rescue</h3>
+          <p>
+            La ligue <strong>Rescue</strong> met les robots au défi de sauver des personnes dans un site de catastrophe reconstitué.
+          </p>
+        </div>
+
+        <div class="league-card" data-aos="fade-left">
+          <h3>Robotique Industrielle</h3>
+          <p>
+            La <strong>RoboCup</strong> inclut également des ligues dédiées à la <strong>robotique industrielle</strong>, comme <strong>@Work</strong> (sponsorisée par Kuka) et <strong>@Logistic</strong> (sponsorisée par Festo).
+          </p>
+        </div>
+
+        <div class="league-card" data-aos="fade-right">
+          <h3>Junior</h3>
+          <p>
+            La <strong>RoboCupJunior</strong> est dédiée aux enfants et adolescents de 13 à 19 ans. Elle compte des milliers d'équipes à travers le monde et joue un rôle éducatif majeur.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Bouton Retour -->
+    <a href="/" class="back-link">Retour à l'accueil</a>
+  </main>
+</Layout>
+
+<style>
+  /* Variables CSS */
+  :root {
+    --primary: #2563eb; /* Bleu vif */
+    --primary-dark: #1e40af; /* Bleu foncé */
+    --background-light: #f3f4f6; /* Arrière-plan clair */
+    --text: #333; /* Couleur du texte */
+    --text-light: #666; /* Texte secondaire */
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 0; /* Supprime la marge en bas */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero .date {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Video Container */
+  .video-container {
+    width: 100%;
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+    margin-bottom: 2rem; /* Espace entre la vidéo et le contenu suivant */
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que la vidéo couvre tout l'espace */
+  }
+
+  /* Article Content */
+  .article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .article-image {
+    width: 50%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Key Facts Section */
+  .key-facts {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .key-facts h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+  }
+
+  .key-facts ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .key-facts li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* League Cards */
+  .league-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .league-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .league-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Back Link */
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .back-link:hover {
+    background: var(--primary-dark);
+  }
+
+  /* Animations */
+  [data-aos] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  [data-aos="fade-up"] {
+    transform: translateY(20px);
+  }
+
+  [data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

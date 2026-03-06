@@ -1,0 +1,88 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Les interacteurs extérieurs : usagers, données, autres objets, éléments de l’environnement",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/les-interacteurs.pdf"
+  },
+  {
+    title: "Les modes de représentation : croquis, schéma, graphique, algorithme, modélisation",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/les-modes-de-representation.pdf"
+  },
+  {
+    title: "Les contraintes : prise en compte des exigences issues des normes ou d'un cahier des charges, labels et certifications",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/les-contraintes.pdf"
+  },
+  {
+    title: "L’ergonomie liée à l’usage",
+    pdfUrl: "/documents/5eme/sequence-5/activite-4/ergonomie-liee-a-lusage.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 4 - Séquence 5 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-5" />
+  <h1>Activité 4 - Fiches de connaissance</h1>
+  
+  <ActivitySection
+    title="Fiches de connaissance sur les réseaux informatiques"
+    description="Ces fiches de connaissance résument les concepts essentiels les objets et systèmes techniques : leurs usages et leurs indications à découvrir et analyser"
+    documents={documents}
+    activityNumber={4}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-5"
+    sequenceLabel="Séquence 5 — La souris et l'OST"
+    retenir={{
+      definitions: [
+        { term: "Analyse de l'environnement", def: "Identification de tous les éléments extérieurs qui interagissent avec un objet technique (utilisateurs, normes, air, sol…)." },
+      ],
+      points: [
+        "Fiches OST dans son environnement disponibles dans cette activité.",
+        "Retravailler bête à cornes et pieuvre appliqués à la souris informatique.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Bilan — La souris et l'OST dans son environnement</h3>
+      <p>Cette séquence t'a appris à analyser un objet technique (la souris) dans son environnement en utilisant les outils de l'analyse fonctionnelle. Ces méthodes s'appliquent à tout objet ou système technique.</p>
+
+      <h3>Les interacteurs extérieurs d'un OST</h3>
+      <p>Tout objet technique interagit avec plusieurs catégories d'éléments extérieurs :</p>
+      <ul>
+        <li><strong>Usagers</strong> : les personnes qui utilisent l'objet (utilisateur principal, autres utilisateurs).</li>
+        <li><strong>Données</strong> : les informations traitées ou produites par l'objet.</li>
+        <li><strong>Autres objets</strong> : les objets avec lesquels il interagit (ordinateur, tapis, logiciel).</li>
+        <li><strong>Éléments de l'environnement</strong> : conditions physiques (température, humidité, surface, bruit électromagnétique).</li>
+      </ul>
+
+      <h3>Les modes de représentation d'un OST</h3>
+      <ul>
+        <li><strong>Croquis</strong> : dessin à main levée pour communiquer une idée rapidement.</li>
+        <li><strong>Schéma</strong> : représentation symbolique et simplifiée (schéma électrique, schéma de principe).</li>
+        <li><strong>Graphique</strong> : représentation de données chiffrées (courbe, histogramme).</li>
+        <li><strong>Modélisation 3D</strong> : représentation numérique tridimensionnelle (SketchUp, Tinkercad).</li>
+        <li><strong>Algorithme / logigramme</strong> : représentation d'un programme ou d'une logique de fonctionnement.</li>
+      </ul>
+
+      <h3>Les contraintes et labels</h3>
+      <p>La conception d'un OST doit respecter des <strong>normes et réglementations</strong>. Plusieurs labels garantissent la conformité :</p>
+      <ul>
+        <li><strong>CE (Conformité Européenne)</strong> : conformité aux normes européennes de sécurité.</li>
+        <li><strong>RoHS</strong> : absence de substances dangereuses (plomb, mercure) dans les composants électroniques.</li>
+        <li><strong>Energy Star</strong> : label d'efficacité énergétique pour les équipements informatiques.</li>
+        <li><strong>Ergonomie certifiée</strong> : certifications comme TÜV Rheinland pour les équipements ergonomiques.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

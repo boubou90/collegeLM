@@ -1,0 +1,101 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const documents = [
+  {
+    title: "Les composants d'un réseau",
+    pdfUrl: "/documents/5eme/sequence-1/activite-1/5E-Séquence 1 Activité 2- Fiche Eleves - Identifier les composants d_un réseau informatique.pdf"
+  }
+];
+---
+
+<ClassLayout title="Activité 2 - Séquence 1 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-1" />
+  <h1>Activité 2 - Les composants d'un réseau</h1>
+  
+  <ActivitySection
+    title="Comment se connecter au réseau du collège ?"
+    description="Dans cette activité, nous allons identifier et comprendre le rôle des différents composants qui permettent de créer un réseau informatique fonctionnel. Nous étudierons notamment les équipements nécessaires pour se connecter au réseau du collège."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={5}
+    sequenceHref="/5eme/sequence-1"
+    sequenceLabel="Séquence 1 — Les réseaux informatiques"
+    retenir={{
+      definitions: [
+        { term: "Commutateur (Switch)", def: "Équipement réseau qui relie les appareils dans un réseau local et dirige les données vers le bon destinataire." },
+        { term: "Câble Ethernet (RJ45)", def: "Câble réseau filaire permettant de relier deux équipements à une vitesse pouvant atteindre 1 Gb/s." },
+        { term: "Carte réseau (NIC)", def: "Composant électronique (intégré ou ajouté) permettant à un équipement de se connecter à un réseau." },
+      ],
+      points: [
+        "Switch = concentrateur intelligent dans un réseau local ; routeur = relie plusieurs réseaux.",
+        "Câble RJ45 = fiable et rapide (jusqu'à 1 Gb/s) ; WiFi = pratique mais plus lent et sensible aux interférences.",
+        "Chaque carte réseau a une adresse MAC unique gravée lors de sa fabrication.",
+      ],
+    }}
+  >
+    <div class="activity-content">
+      <h3>Les composants physiques d'un réseau local</h3>
+      <p>
+        Pour relier plusieurs ordinateurs entre eux dans une salle de classe ou dans un bâtiment, il faut des équipements spécialisés. Chaque équipement a un rôle précis dans le réseau. Voici les principaux composants que tu peux observer dans la salle informatique du collège.
+      </p>
+
+      <h3>Le commutateur (switch)</h3>
+      <p>
+        Le <strong>commutateur</strong>, souvent appelé <em>switch</em>, est la pièce centrale d'un réseau local. Il possède plusieurs ports (8, 16, 24 ou plus) dans lesquels on branche les câbles des ordinateurs. Son rôle est de <strong>diriger les données</strong> uniquement vers le destinataire concerné, contrairement à l'ancien « hub » qui envoyait les données à tout le monde en même temps.
+      </p>
+      <p>
+        Concrètement : quand l'ordinateur A envoie un fichier à l'ordinateur B, le switch lit l'adresse de destination et achemine les données uniquement vers le port où est branché l'ordinateur B. Cela évite les embouteillages sur le réseau.
+      </p>
+
+      <h3>Le câble Ethernet (RJ45)</h3>
+      <p>
+        Le <strong>câble Ethernet</strong> est le câble filaire standard utilisé pour relier les équipements au switch. Son connecteur s'appelle <strong>RJ45</strong> (il ressemble à une grosse prise téléphonique). À l'intérieur du câble se trouvent 8 fils torsadés par paires, ce qui réduit les interférences électromagnétiques.
+      </p>
+      <ul>
+        <li><strong>Débit</strong> : jusqu'à 1 Gb/s (Gigabit par seconde) avec les câbles Cat5e ou Cat6.</li>
+        <li><strong>Avantages</strong> : connexion stable, rapide, sécurisée et peu sensible aux perturbations.</li>
+        <li><strong>Inconvénient</strong> : nécessite un câblage physique dans le bâtiment.</li>
+      </ul>
+
+      <h3>La carte réseau (NIC)</h3>
+      <p>
+        La <strong>carte réseau</strong> (NIC = Network Interface Card) est le composant électronique qui permet à un ordinateur de se connecter à un réseau. Elle est généralement intégrée directement sur la carte mère des ordinateurs modernes. Elle dispose d'un port RJ45 pour le filaire et/ou d'une antenne pour le WiFi.
+      </p>
+      <p>
+        Chaque carte réseau possède une <strong>adresse MAC</strong> (Media Access Control) unique, gravée en usine lors de sa fabrication. C'est comme un numéro de série : deux cartes réseau dans le monde n'ont jamais la même adresse MAC. Le switch utilise ces adresses pour identifier chaque équipement connecté.
+      </p>
+
+      <h3>Filaire vs WiFi : que choisir ?</h3>
+      <p>
+        Il existe deux façons principales de se connecter à un réseau :
+      </p>
+      <ul>
+        <li>
+          <strong>Filaire (Ethernet / RJ45)</strong> : connexion physique par câble. Plus rapide (jusqu'à 1 Gb/s), plus stable et plus sécurisée. Utilisée en priorité pour les postes fixes comme les ordinateurs de la salle informatique.
+        </li>
+        <li>
+          <strong>Sans fil (WiFi)</strong> : connexion par ondes radio. Plus pratique pour les appareils mobiles (tablettes, smartphones, ordinateurs portables), mais généralement plus lente (100-600 Mb/s en WiFi 5), sensible aux interférences (murs, autres appareils) et légèrement moins sécurisée si le réseau n'est pas protégé.
+        </li>
+      </ul>
+      <p>
+        Au collège, les salles informatiques utilisent des connexions <strong>filaires</strong> pour garantir la stabilité lors des cours, tandis que les espaces communs proposent le <strong>WiFi</strong> pour les tablettes et ordinateurs portables.
+      </p>
+
+      <h3>Le routeur : la porte vers Internet</h3>
+      <p>
+        Le <strong>routeur</strong> est l'équipement qui relie le réseau local du collège (les ordinateurs, le switch) à Internet. Il fait office de « passerelle » entre le réseau interne et l'extérieur. Quand tu accèdes à un site web externe, ta requête passe d'abord par le switch, puis par le routeur, puis voyage sur Internet jusqu'au serveur du site.
+      </p>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

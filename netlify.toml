@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "https://collegelouisemichel.com/*"
+  to = "https://collegelouisemichel.net/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.collegelouisemichel.com/*"
+  to = "https://collegelouisemichel.net/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

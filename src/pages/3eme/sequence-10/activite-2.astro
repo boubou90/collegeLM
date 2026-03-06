@@ -1,0 +1,74 @@
+---
+import ClassLayout from '../../../layouts/ClassLayout.astro';
+import ActivitySection from '../../../components/ActivitySection.astro';
+import BackButton from '../../../components/BackButton.astro';
+
+const level = "3eme";
+const documents = [];
+---
+
+<ClassLayout title="Activité 2 - Séquence 10 - 3ème" level={level}>
+  <BackButton href={`/${level}/sequence-10`} />
+  <h1>Séquence 10 — Révisions Brevet · Activité 2</h1>
+
+  <ActivitySection
+    title="Méthode pour l'épreuve écrite"
+    description="Comment aborder et réussir l'épreuve de technologie du Brevet des collèges ? L'épreuve de technologie au DNB est une épreuve écrite de 45 minutes portant sur un dossier technique documenté. Dans cette activité, tu apprendras la méthode pour aborder chaque type de question : analyser un document technique, compléter un schéma, rédiger une explication courte, justifier un choix technique. Tu étudieras les critères d'évaluation des correcteurs et les erreurs les plus fréquentes à éviter. Des conseils pratiques sur la gestion du temps, la présentation des réponses et la vérification en fin d'épreuve te prépareront à aborder le jour J avec confiance."
+    documents={documents}
+    activityNumber={2}
+    totalActivities={4}
+    sequenceHref="/3eme/sequence-10"
+    sequenceLabel="Séquence 10 — Révisions Brevet"
+    retenir={{
+      definitions: [
+        { term: "Barème", def: "Répartition des points par question dans l'épreuve : les questions à fort coefficient méritent plus de temps." },
+        { term: "Justification", def: "Explication courte et précise appuyée sur le dossier technique pour valider une réponse." },
+        { term: "Analyse de document", def: "Compétence clé : extraire les informations pertinentes d'un schéma, tableau ou texte technique." },
+      ],
+      points: [
+        "Avant de répondre : lire tout le dossier technique (2-3 min) pour avoir une vision globale.",
+        "Chercher les réponses dans les documents fournis, pas seulement dans ses connaissances.",
+        "Gestion du temps : environ 1 minute par point du barème ; vérifier ses réponses en fin d'épreuve.",
+      ]
+    }}
+  >
+    <div class="activity-content">
+      <h3>Avant de commencer : lire le dossier technique</h3>
+      <p>Les 2-3 premières minutes de l'épreuve doivent être consacrées à <strong>lire l'intégralité du dossier technique</strong> sans répondre. Cette lecture rapide te permet de comprendre le système étudié, d'anticiper les questions et de repérer où trouver les informations. La plupart des réponses se trouvent dans le dossier : savoir les extraire est la compétence clé.</p>
+
+      <h3>Les types de questions et comment y répondre</h3>
+      <ul>
+        <li><strong>Identifier / nommer</strong> : donner le nom exact du composant ou de la fonction. Utiliser le vocabulaire technique vu en cours (actionneur, capteur, FP, FC…).</li>
+        <li><strong>Compléter un schéma / logigramme</strong> : lire attentivement ce qui est déjà renseigné pour respecter la logique du schéma.</li>
+        <li><strong>Expliquer / justifier</strong> : rédiger une phrase courte (2-3 lignes max) en s'appuyant sur le dossier. Ne pas paraphraser la question.</li>
+        <li><strong>Proposer une solution</strong> : s'appuyer sur les documents fournis, proposer une solution réaliste et justifiée techniquement.</li>
+        <li><strong>Calculer</strong> : poser le calcul clairement (formule, substitution, résultat + unité). Ne pas se contenter d'un résultat sans démarche.</li>
+      </ul>
+
+      <h3>Gestion du temps (45 minutes)</h3>
+      <p>Applique la règle <strong>1 minute par point du barème</strong>. Par exemple, pour une épreuve sur 20 points, chaque point vaut environ 2 minutes. Répartis ton temps en fonction des coefficients :</p>
+      <ol>
+        <li>Lecture du dossier : 3 minutes.</li>
+        <li>Questions rapides (1 pt) : 1-2 minutes chacune.</li>
+        <li>Questions développées (3-4 pts) : 4-5 minutes chacune.</li>
+        <li>Vérification finale : 3-5 minutes.</li>
+      </ol>
+
+      <h3>Erreurs fréquentes à éviter</h3>
+      <ul>
+        <li>Répondre sans s'appuyer sur le dossier (les documents contiennent les réponses).</li>
+        <li>Confondre actionneur et effecteur, FP et FC, partie commande et partie opérative.</li>
+        <li>Oublier les unités dans les calculs (W, J, V, A, Ω, m/s…).</li>
+        <li>Laisser une question sans réponse : toujours écrire quelque chose, même partiel.</li>
+      </ul>
+    </div>
+  </ActivitySection>
+</ClassLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,85 @@
+---
+import ClassLayout from './ClassLayout.astro';
+import BackButton from '../components/BackButton.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  annee: number | string;
+  duree?: string;
+  points?: number;
+}
+
+const { title, description, annee, duree = '1h30', points = 50 } = Astro.props;
+---
+
+<ClassLayout title={title} description={description} level="3eme">
+  <BackButton href="/3eme/brevet/" />
+
+  <!-- Bannière sujet -->
+  <div class="sujet-banner">
+    <div class="sujet-meta">
+      <span>📅 Session {annee}</span>
+      <span>⏱️ Durée : {duree}</span>
+      <span>📊 Barème : {points} points</span>
+    </div>
+  </div>
+
+  <!-- Contenu de la page -->
+  <slot />
+
+  <!-- Navigation retour -->
+  <div class="back-nav">
+    <p class="back-nav-text">Entraîne-toi sur d'autres sujets :</p>
+    <a href="/3eme/brevet/" class="back-nav-btn">← Voir tous les sujets corrigés</a>
+  </div>
+</ClassLayout>
+
+<style>
+  .sujet-banner {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    border-radius: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sujet-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+    color: #c2410c;
+    font-weight: 600;
+  }
+
+  .back-nav {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    text-align: center;
+  }
+
+  .back-nav-text {
+    color: #64748b;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .back-nav-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: #f97316;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+  }
+
+  .back-nav-btn:hover {
+    background: #ea580c;
+  }
+</style>
