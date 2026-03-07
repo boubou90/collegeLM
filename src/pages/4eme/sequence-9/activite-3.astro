@@ -31,7 +31,31 @@ const documents = [];
         "Tester à chaque nouvelle fonctionnalité ajoutée : ne pas attendre la fin pour tester.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>La boucle de jeu : cœur de tout jeu vidéo</h3>
+      <p>
+        Tout jeu vidéo repose sur une structure fondamentale appelée <strong>boucle de jeu (game loop)</strong>. Elle s'exécute des dizaines de fois par seconde et suit toujours le même schéma : <strong>Lire les entrées</strong> (clavier, manette, souris) → <strong>Mettre à jour</strong> l'état du jeu (positions, scores, collisions) → <strong>Afficher</strong> le résultat à l'écran → recommencer. Comprendre cette boucle est essentiel pour programmer n'importe quel jeu.
+      </p>
+
+      <h3>Programmer avec Scratch ou Python/Pygame</h3>
+      <p>
+        <strong>Scratch</strong> (scratch.mit.edu) est idéal pour débuter : programmation par blocs graphiques, gestion native des sprites, des sons et des collisions. Pour aller plus loin, <strong>Python + Pygame</strong> offre plus de contrôle et prépare à la programmation professionnelle. Dans les deux cas, on code les mêmes concepts : déplacements (coordonnées x/y), détection de collisions, gestion du score et des conditions de fin.
+      </p>
+
+      <h3>Gérer les collisions et les événements</h3>
+      <ul>
+        <li><strong>Collision</strong> : le programme vérifie si deux sprites se touchent. Si oui → déclencher une action (perdre une vie, gagner des points, changer de niveau).</li>
+        <li><strong>Événement clavier</strong> : si la touche « flèche droite » est appuyée → déplacer le sprite de 5 pixels vers la droite.</li>
+        <li><strong>Condition de fin</strong> : si vies = 0 → afficher « Game Over ». Si score ≥ 100 → afficher « Victoire ».</li>
+      </ul>
+
+      <h3>Tester, déboguer et présenter</h3>
+      <p>
+        En programmation, les <strong>bugs</strong> sont inévitables. La méthode : tester après chaque nouvelle fonctionnalité ajoutée (ne pas attendre la fin), identifier le comportement incorrect, isoler la ligne de code responsable et corriger. La séquence se conclut par une <strong>présentation des jeux</strong> : chaque groupe joue au jeu des autres et donne un retour constructif (ce qui fonctionne, ce qui pourrait être amélioré).
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

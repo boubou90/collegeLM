@@ -38,7 +38,36 @@ const documents = [
         "Identifier les conversions d'énergie pour chaque équipement : volet, convecteur, ampoule LED…",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Les volets de Mila : la chaîne d'énergie en action</h3>
+      <p>
+        Mila voit les volets s'ouvrir tout seuls. Derrière ce mouvement, il y a une <strong>chaîne d'énergie</strong> complète qui transforme l'énergie électrique du réseau en mouvement mécanique des lames. La chaîne d'énergie suit toujours le même schéma : <strong>Alimenter → Distribuer → Convertir → Transmettre</strong>.
+      </p>
+
+      <h3>La chaîne d'énergie du volet roulant électrique</h3>
+      <ul>
+        <li><strong>Alimenter</strong> : le réseau électrique 230 V fournit l'énergie nécessaire au fonctionnement du moteur.</li>
+        <li><strong>Distribuer</strong> : le disjoncteur et le relais commandé par la domotique distribuent ou coupent l'énergie vers le moteur.</li>
+        <li><strong>Convertir</strong> : le moteur électrique (tubulaire, situé dans le tube d'enroulement) convertit l'énergie électrique en énergie mécanique de rotation.</li>
+        <li><strong>Transmettre</strong> : le mécanisme d'enroulement transmet la rotation du moteur au tablier du volet, qui monte ou descend.</li>
+      </ul>
+
+      <h3>Les conversions d'énergie dans la maison domotique</h3>
+      <p>
+        Dans une maison connectée, plusieurs conversions d'énergie coexistent :
+      </p>
+      <ul>
+        <li>Ampoule LED : électrique → lumineuse (+ un peu de thermique).</li>
+        <li>Radiateur : électrique → thermique (effet Joule).</li>
+        <li>Moteur de volet : électrique → mécanique (rotation).</li>
+        <li>Panneau solaire (si présent) : lumineuse → électrique.</li>
+      </ul>
+      <p>
+        La chaîne d'information commande la chaîne d'énergie : sans l'ordre du microcontrôleur domotique, le moteur du volet ne démarrerait jamais.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

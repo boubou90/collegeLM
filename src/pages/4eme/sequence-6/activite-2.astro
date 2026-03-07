@@ -38,7 +38,32 @@ const documents = [
         "Toujours vérifier la cohérence des mesures (ex: T° = -50°C = erreur de capteur ou de code).",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Présentation de la Weather:Bit</h3>
+      <p>
+        La <strong>Weather:Bit</strong> est une carte d'extension qui se connecte sur le port edge du micro:bit. Elle embarque plusieurs capteurs de haute qualité :
+      </p>
+      <ul>
+        <li><strong>BME280</strong> : capteur de température (°C), humidité relative (%) et pression atmosphérique (hPa).</li>
+        <li><strong>VEML6075</strong> : capteur UV (indice UV) et luminosité visible (lux).</li>
+        <li><strong>Connecteur Grove</strong> : pour brancher des capteurs supplémentaires (vent, pluviomètre…).</li>
+      </ul>
+
+      <h3>Programmer la Weather:Bit avec MakeCode</h3>
+      <p>
+        <strong>MakeCode</strong> est l'environnement de programmation officiel du micro:bit, accessible depuis un navigateur web. Il propose une interface par blocs glisser-déposer, idéale pour débuter. Pour utiliser la Weather:Bit, on ajoute l'extension « Weather » dans MakeCode, ce qui donne accès aux blocs de lecture des capteurs météo.
+      </p>
+      <p>
+        Programme de base : dans la boucle « toujours », lire la température → afficher sur l'écran LED → attendre 1 seconde. On peut aussi envoyer les données via la liaison série (USB) pour les récupérer sur l'ordinateur.
+      </p>
+
+      <h3>Vérifier la cohérence des mesures</h3>
+      <p>
+        Avant d'analyser les données, il faut vérifier leur cohérence. Une température de -50°C en classe est évidemment une erreur (capteur mal initialisé, bug dans le code ou unité incorrecte). Une pression de 1013 hPa correspond à la pression atmosphérique standard au niveau de la mer. Comparer ses mesures avec celles de Météo France pour la même heure permet de valider le bon fonctionnement de la station.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

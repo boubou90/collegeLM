@@ -39,7 +39,32 @@ const documents = [
         "Lier avec la séquence 1 (3ème) ou 7 (5ème) : même concept, appliqué à la maison domotique.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>La chaîne d'information : le cerveau du système</h3>
+      <p>
+        Quand Léo rentre chez lui, la lumière du couloir s'allume automatiquement et ses parents reçoivent une alerte. Tout cela est géré par la <strong>chaîne d'information</strong>, qui se compose de trois blocs successifs : <strong>Acquérir → Traiter → Communiquer</strong>.
+      </p>
+
+      <h3>Les trois maillons de la chaîne d'information</h3>
+      <ul>
+        <li><strong>Acquérir</strong> : un capteur de présence (infrarouge passif) détecte le mouvement de Léo dans le couloir. D'autres exemples : capteur de température, de luminosité, bouton poussoir, microphone, caméra.</li>
+        <li><strong>Traiter</strong> : le microcontrôleur (ou le serveur domotique) reçoit le signal du capteur, l'analyse et prend une décision : « Présence détectée → allumer la lumière + envoyer alerte ».</li>
+        <li><strong>Communiquer</strong> : l'ordre est transmis à l'ampoule via WiFi (allumage) et une notification push est envoyée sur la tablette des parents via Internet.</li>
+      </ul>
+
+      <h3>Les capteurs dans la maison domotique</h3>
+      <p>
+        Les capteurs sont les « sens » du système domotique. Ils convertissent une grandeur physique en signal électrique interprétable par le microcontrôleur :
+      </p>
+      <ul>
+        <li>Capteur de <strong>présence / mouvement</strong> (PIR) : détecte la chaleur émise par un corps humain.</li>
+        <li>Capteur de <strong>température</strong> : mesure la température ambiante pour réguler le chauffage.</li>
+        <li>Capteur de <strong>luminosité</strong> : adapte l'éclairage artificiel à la lumière naturelle disponible.</li>
+        <li>Capteur d'<strong>ouverture</strong> (porte/fenêtre) : déclenche une alerte si une fenêtre est ouverte alors que l'alarme est activée.</li>
+      </ul>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

@@ -38,7 +38,29 @@ const documents = [
         "Un conflit d'adresse IP se traduit par une icône d'erreur réseau ou l'impossibilité de communiquer.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Les adresses IP : comprendre l'adressage réseau</h3>
+      <p>
+        Une <strong>adresse IP</strong> (Internet Protocol) est une suite de 4 nombres séparés par des points (ex. : 192.168.1.10). Elle identifie de façon unique chaque équipement sur un réseau. Pour que deux machines puissent communiquer, elles doivent être sur le même réseau : les 3 premiers nombres de l'adresse IP doivent être identiques (ex. : 192.168.1.X pour tous les équipements de la salle).
+      </p>
+
+      <h3>Analyser le réseau existant avec ipconfig</h3>
+      <p>
+        La commande <strong>ipconfig</strong> (Windows) ou <strong>ifconfig</strong> (Linux/Mac) affiche la configuration réseau d'un ordinateur : adresse IP, masque de sous-réseau, passerelle par défaut. Pour la lancer : touche Windows → taper « cmd » → Entrée → taper « ipconfig » → Entrée. On note l'adresse IP de chaque poste dans un <strong>plan d'adressage</strong>.
+      </p>
+
+      <h3>Le masque de sous-réseau</h3>
+      <p>
+        Le <strong>masque de sous-réseau</strong> (ex. : 255.255.255.0) indique quelle partie de l'adresse IP identifie le réseau et quelle partie identifie l'équipement. Avec un masque 255.255.255.0 et l'adresse 192.168.1.10 : le réseau est <strong>192.168.1</strong> et l'équipement est <strong>10</strong>. Tous les postes de la salle doivent avoir le même réseau (192.168.1) et des numéros différents (de 1 à 254).
+      </p>
+
+      <h3>Identifier et résoudre les conflits d'adresse IP</h3>
+      <p>
+        Un <strong>conflit d'adresse IP</strong> survient quand deux équipements ont la même adresse. Windows affiche alors une icône d'erreur sur la connexion réseau et la communication est impossible. Pour résoudre : identifier les adresses en double dans le plan d'adressage et en modifier une manuellement.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

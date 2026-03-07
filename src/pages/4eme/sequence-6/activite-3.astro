@@ -38,7 +38,27 @@ const documents = [
         "Repérer les anomalies : valeurs aberrantes pouvant indiquer une erreur de mesure ou un bug.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Collecter et organiser les données météo</h3>
+      <p>
+        Une fois la station Weather:Bit programmée, elle produit des relevés réguliers. Ces données doivent être organisées dans un <strong>tableau structuré</strong> pour être analysées. Chaque ligne représente un relevé (une observation à un instant t), chaque colonne représente une variable mesurée (température, humidité, pression, luminosité). On note toujours l'unité de mesure en en-tête de colonne.
+      </p>
+
+      <h3>Les grandeurs météorologiques et leurs unités</h3>
+      <ul>
+        <li><strong>Température</strong> : en degrés Celsius (°C). Varie typiquement entre -10°C et +40°C en France métropolitaine.</li>
+        <li><strong>Humidité relative</strong> : en pourcentage (%). 0 % = air parfaitement sec, 100 % = air saturé en vapeur d'eau (brouillard, pluie).</li>
+        <li><strong>Pression atmosphérique</strong> : en hectopascals (hPa). La valeur standard au niveau de la mer est 1013,25 hPa. Une pression basse annonce souvent la pluie, une pression haute annonce le beau temps.</li>
+        <li><strong>Luminosité</strong> : en lux (lx). L'éclairage d'un bureau est d'environ 500 lx, le soleil direct dépasse 100 000 lx.</li>
+      </ul>
+
+      <h3>Analyser les tendances et détecter les anomalies</h3>
+      <p>
+        L'analyse des données consiste à repérer des <strong>tendances</strong> (la température qui monte progressivement le matin, l'humidité qui baisse par temps ensoleillé) et des <strong>anomalies</strong> (valeur aberrante soudaine pouvant signaler une erreur de mesure ou un bug). Une anomalie peut aussi être réelle : un pic de température dû à l'ouverture d'une fenêtre, ou une chute de pression avant un orage.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

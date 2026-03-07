@@ -38,7 +38,32 @@ const documents = [
         "Révision 5ème : un réseau = des équipements + des liens (câbles/WiFi) + des protocoles communs.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Problématique : la certification PIX et les ordinateurs manquants</h3>
+      <p>
+        Le principal annonce la venue d'une <strong>certification PIX</strong> (évaluation des compétences numériques des élèves) qui nécessite un ordinateur par élève. La salle d'informatique n'en possède pas assez. La solution : utiliser la <strong>classe mobile</strong> (chariots d'ordinateurs portables) et les connecter au réseau existant de la salle. Mais comment faire communiquer des appareils supplémentaires sur un réseau déjà en place ?
+      </p>
+
+      <h3>Qu'est-ce qu'un réseau local (LAN) ?</h3>
+      <p>
+        Un <strong>réseau local</strong> (LAN – Local Area Network) est un ensemble d'équipements informatiques interconnectés dans une zone géographique limitée : une salle, un bâtiment, un établissement scolaire. Il permet de partager des ressources : connexion Internet, imprimantes, serveurs de fichiers, applications scolaires (ENT, Pronote…).
+      </p>
+
+      <h3>Les équipements d'un réseau local</h3>
+      <ul>
+        <li><strong>Switch (commutateur)</strong> : boîtier qui connecte plusieurs équipements en filaire (câbles Ethernet). Il dirige les données vers le bon destinataire.</li>
+        <li><strong>Borne WiFi (point d'accès)</strong> : permet aux appareils sans fil (laptops, tablettes, smartphones) de rejoindre le réseau.</li>
+        <li><strong>Routeur</strong> : fait la jonction entre le réseau local et Internet.</li>
+        <li><strong>Câble Ethernet (RJ45)</strong> : câble de réseau filaire offrant des débits plus rapides et plus stables que le WiFi.</li>
+      </ul>
+
+      <h3>Pourquoi les portables ne se connectent-ils pas ?</h3>
+      <p>
+        Chaque équipement sur un réseau doit posséder une <strong>adresse IP</strong> unique et compatible avec le réseau. Si les portables de la classe mobile ont des adresses IP différentes du réseau de la salle, ils ne peuvent pas communiquer. C'est la cause principale du dysfonctionnement à résoudre dans les activités suivantes.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

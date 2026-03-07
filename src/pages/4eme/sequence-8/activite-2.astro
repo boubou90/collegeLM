@@ -31,7 +31,33 @@ const documents = [];
         "Repérer visuellement les composants défectueux : brûlé (traces noires), cassé, déconnecté, enflé (condensateur).",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Démonter méthodiquement un jouet</h3>
+      <p>
+        Le démontage est une étape délicate qui nécessite de la méthode. Avant de commencer : <strong>prendre des photos</strong> du jouet intact pour se souvenir de l'assemblage. Utiliser les bons outils (tournevis cruciforme, plat, précision selon les vis). Numéroter ou regrouper les vis par taille. Ne jamais forcer : un boîtier qui résiste cache souvent une vis cachée sous une étiquette ou un cache en caoutchouc.
+      </p>
+
+      <h3>Identifier les composants électroniques</h3>
+      <p>
+        À l'intérieur d'un jouet électronique, on trouve généralement :
+      </p>
+      <ul>
+        <li><strong>Circuit imprimé (PCB)</strong> : la plaque verte (ou bleue) sur laquelle sont soudés tous les composants électroniques.</li>
+        <li><strong>Résistances</strong> : petits cylindres avec des bandes de couleur. Elles limitent le courant.</li>
+        <li><strong>Condensateurs</strong> : cylindres ou disques qui stockent de l'énergie. Les condensateurs « enflés » au sommet sont défectueux.</li>
+        <li><strong>LED</strong> : diodes électroluminescentes qui émettent de la lumière.</li>
+        <li><strong>Moteur DC</strong> : convertit l'énergie électrique en rotation.</li>
+        <li><strong>Microcontrôleur (CI)</strong> : puce noire qui pilote le jouet selon la programmation.</li>
+        <li><strong>Interrupteur / bouton poussoir</strong> : commutateurs mécaniques qui ouvrent ou ferment le circuit.</li>
+      </ul>
+
+      <h3>Utiliser le multimètre pour localiser la panne</h3>
+      <p>
+        Le <strong>multimètre</strong> est l'outil de base du technicien électronique. En mode <strong>continuité</strong> (symbole « ))) » avec bip sonore), il vérifie si un fil ou une piste est interrompue : si ça bipe → circuit fermé (OK) ; si silence → circuit ouvert (coupé). En mode <strong>tension (V)</strong>, il mesure la tension aux bornes de la pile, d'un condensateur ou entre deux points du circuit.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

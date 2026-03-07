@@ -37,7 +37,31 @@ const documents = [
         "Avantage : pilotage à distance même hors du logement (si WiFi actif).",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Les interacteurs d'un système d'éclairage connecté</h3>
+      <p>
+        Un <strong>interacteur</strong> est toute personne ou système qui utilise ou est en relation avec un objet technique. Dans un système d'éclairage connecté, on distingue : l'utilisateur (contrôle via smartphone), la passerelle/hub (centre de commande), l'ampoule connectée (actionneur), les capteurs (présence, luminosité), et les services cloud (stockage des paramètres, contrôle à distance).
+      </p>
+
+      <h3>Architecture d'un système d'éclairage connecté</h3>
+      <p>
+        Un système d'éclairage connecté repose sur plusieurs couches technologiques :
+      </p>
+      <ul>
+        <li><strong>L'ampoule connectée</strong> : récepteur des commandes, elle peut changer de couleur, d'intensité et s'allumer/s'éteindre à distance.</li>
+        <li><strong>Le hub / passerelle</strong> : boîtier central qui coordonne tous les équipements connectés de la maison (ex. : box TAPO, Philips Hue Bridge).</li>
+        <li><strong>Le protocole de communication</strong> : WiFi, Zigbee, Z-Wave ou Bluetooth selon les systèmes.</li>
+        <li><strong>L'application mobile</strong> : interface utilisateur permettant de contrôler l'ensemble du système.</li>
+        <li><strong>Le service cloud</strong> : permet le contrôle à distance même hors du réseau local.</li>
+      </ul>
+
+      <h3>La chaîne d'information dans l'éclairage connecté</h3>
+      <p>
+        Quand l'utilisateur appuie sur « Allumer » dans l'application : <strong>Acquérir</strong> (l'appli détecte la commande) → <strong>Traiter</strong> (le hub interprète la commande et choisit l'ampoule cible) → <strong>Communiquer</strong> (l'ordre est envoyé à l'ampoule via WiFi ou Zigbee) → l'ampoule s'allume (action sur la chaîne d'énergie). C'est la chaîne d'information complète du système.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

@@ -31,7 +31,32 @@ const documents = [];
         "Si une modification ne fonctionne pas : revenir en arrière et chercher la cause.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Pourquoi modifier un robot ?</h3>
+      <p>
+        La mission imposée au robot (parcourir un labyrinthe, transporter un objet, éviter des obstacles colorés…) peut nécessiter des équipements absents sur le robot de base. C'est la démarche réelle de l'ingénierie : analyser les besoins de la mission, identifier les insuffisances du système actuel, concevoir et réaliser les modifications nécessaires, puis tester.
+      </p>
+
+      <h3>Types de modifications possibles</h3>
+      <ul>
+        <li><strong>Ajout d'un capteur</strong> : si la mission nécessite de détecter une couleur → ajouter un capteur de couleur. Si besoin de détecter une ligne → ajouter un capteur infrarouge de sol.</li>
+        <li><strong>Modification mécanique</strong> : ajouter un bras préhenseur pour saisir un objet, modifier le châssis pour augmenter la stabilité, ajouter une structure de transport.</li>
+        <li><strong>Modification du câblage</strong> : connecter le nouveau capteur au bon port du microcontrôleur, respecter les polarités (+/-) et vérifier les niveaux de tension.</li>
+        <li><strong>Mise à jour du programme</strong> : intégrer la lecture du nouveau capteur dans le code et adapter l'algorithme.</li>
+      </ul>
+
+      <h3>Méthode de modification : une étape à la fois</h3>
+      <p>
+        Pour ne pas perdre de temps à déboguer, on modifie une seule chose à la fois et on teste après chaque modification. Si ça fonctionne, on passe à la modification suivante. Si ça ne fonctionne pas, on identifie la cause avant de continuer. Cette approche <strong>itérative</strong> est utilisée par tous les ingénieurs professionnels et évite les erreurs en cascade.
+      </p>
+
+      <h3>Documentation des modifications</h3>
+      <p>
+        On documente chaque modification dans un tableau : ce qui a été changé, pourquoi, comment, et le résultat observé. Cette documentation est essentielle pour partager le travail avec les autres membres du groupe et pour rédiger le bilan final de la séquence.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

@@ -38,7 +38,31 @@ const documents = [
         "Un graphique en courbe permet de visualiser l'évolution d'une grandeur dans le temps.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Qu'est-ce qu'une table de données ?</h3>
+      <p>
+        Une <strong>table de données</strong> est une organisation structurée d'informations en lignes et colonnes. Chaque ligne correspond à un enregistrement (une mesure à un instant t), chaque colonne à une variable (température, humidité…). Les données de la station Weather:Bit peuvent être exportées au format <strong>CSV</strong> (Comma-Separated Values), un fichier texte lisible par n'importe quel tableur.
+      </p>
+
+      <h3>Utiliser un tableur pour analyser les données</h3>
+      <p>
+        Un <strong>tableur</strong> (LibreOffice Calc, Microsoft Excel, Google Sheets) est l'outil idéal pour traiter des données météo. Les fonctions essentielles à connaître :
+      </p>
+      <ul>
+        <li><strong>=MOYENNE(A1:A100)</strong> : calcule la moyenne des valeurs de la plage A1 à A100.</li>
+        <li><strong>=MAX(A1:A100)</strong> : trouve la valeur maximale (la journée la plus chaude).</li>
+        <li><strong>=MIN(A1:A100)</strong> : trouve la valeur minimale (la nuit la plus froide).</li>
+        <li><strong>=NB(A1:A100)</strong> : compte le nombre de valeurs (vérifier qu'il n'y a pas de données manquantes).</li>
+        <li><strong>=SI(B2>25;"Chaud";"Normal")</strong> : condition logique pour catégoriser les données.</li>
+      </ul>
+
+      <h3>Créer et interpréter des graphiques</h3>
+      <p>
+        La représentation graphique rend les données visibles et compréhensibles. Pour des données météo dans le temps, on utilise un <strong>graphique en courbe</strong> (axe horizontal = temps, axe vertical = valeur mesurée). Pour comparer plusieurs villes ou plusieurs grandeurs, on peut utiliser un <strong>histogramme</strong>. L'interprétation d'un graphique consiste à repérer les tendances, les périodes extrêmes et les corrélations (ex. : la luminosité augmente quand la température augmente le matin).
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

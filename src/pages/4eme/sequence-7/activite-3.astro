@@ -38,7 +38,29 @@ const documents = [
         "Vérifier l'accès au serveur du collège (adresse IP du serveur) après la configuration.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Réseau filaire et réseau sans fil : complémentaires</h3>
+      <p>
+        Un réseau peut être <strong>filaire</strong> (câbles Ethernet RJ45 → rapide, stable, sécurisé) ou <strong>sans fil WiFi</strong> (ondes radio → flexible, mobile, mais sensible aux interférences). Dans la salle de technologie, les ordinateurs fixes sont souvent en filaire (switch), tandis que la classe mobile se connecte en WiFi via une borne d'accès. Un réseau <strong>mixte</strong> combine les deux technologies.
+      </p>
+
+      <h3>Configurer une adresse IP statique</h3>
+      <p>
+        Une <strong>adresse IP statique</strong> est configurée manuellement et ne change pas. Contrairement au DHCP (attribution automatique), elle garantit que l'équipement conserve toujours la même adresse. Pour la configurer sous Windows : Panneau de configuration → Réseau → Propriétés de la connexion → Protocole Internet version 4 (TCP/IPv4) → « Utiliser l'adresse IP suivante » → saisir l'IP, le masque et la passerelle.
+      </p>
+
+      <h3>Tester la connectivité avec la commande ping</h3>
+      <p>
+        La commande <strong>ping</strong> teste si deux équipements peuvent communiquer. Syntaxe : <code>ping 192.168.1.5</code> (remplacer par l'adresse cible). Si la réponse affiche des « octets de réponse » → communication OK. Si « délai d'attente dépassé » → problème de connexion (mauvaise IP, câble débranché, pare-feu…). Le temps de réponse (en ms) indique la qualité de la liaison.
+      </p>
+
+      <h3>Vérifier l'accès au serveur et à Internet</h3>
+      <p>
+        Une fois les adresses configurées, on teste l'accès au <strong>serveur du collège</strong> (ENT, Pronote) par son adresse IP, puis l'accès à <strong>Internet</strong> par ping sur une adresse publique. Si le ping vers le serveur local fonctionne mais pas Internet → problème de configuration de la passerelle (routeur). Si rien ne fonctionne → vérifier le masque de sous-réseau.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

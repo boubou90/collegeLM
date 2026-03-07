@@ -31,7 +31,35 @@ const documents = [];
         "L'asservissement = le robot se corrige lui-même grâce aux capteurs (ex: capteur de ligne).",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Programmer un robot autonome</h3>
+      <p>
+        Programmer un robot pour qu'il accomplisse une mission de façon <strong>autonome</strong> (sans intervention humaine) est un défi fascinant. Le programme doit lire les capteurs en permanence, prendre des décisions en fonction de ce qu'ils détectent, et agir sur les moteurs et actionneurs. Cette logique est identique à celle des voitures autonomes, des drones de livraison ou des aspirateurs robots.
+      </p>
+
+      <h3>Structure d'un algorithme de navigation</h3>
+      <p>
+        Un algorithme de navigation robotique se décompose en sous-tâches :
+      </p>
+      <ul>
+        <li><strong>Avancer</strong> : activer les deux moteurs à la même vitesse.</li>
+        <li><strong>Détecter un obstacle</strong> : lire le capteur à ultrasons. Si distance &lt; 20 cm → obstacle détecté.</li>
+        <li><strong>Éviter</strong> : s'arrêter → reculer → tourner → reprendre l'avance.</li>
+        <li><strong>Suivre une ligne</strong> : lire les capteurs infrarouges de sol. Si capteur gauche détecte la ligne → tourner à gauche pour rester dessus.</li>
+      </ul>
+
+      <h3>L'asservissement : le robot se corrige lui-même</h3>
+      <p>
+        L'<strong>asservissement</strong> est la technique qui permet au robot de maintenir un comportement cible en se corrigeant en permanence. Exemple : pour suivre une ligne, le robot mesure en boucle son écart par rapport à la ligne et ajuste la vitesse de chaque moteur en conséquence. Plus il s'écarte, plus il corrige. C'est le même principe que le régulateur de vitesse d'une voiture ou le pilote automatique d'un avion.
+      </p>
+
+      <h3>La compétition finale et le bilan</h3>
+      <p>
+        La séquence se conclut par une <strong>démonstration ou compétition</strong> : chaque robot doit accomplir sa mission en conditions réelles (labyrinthe, parcours, défi de transport). On analyse les résultats : le robot a-t-il réussi ? Quels obstacles ont causé des échecs ? Quelles améliorations apporter ? Ce bilan critique est fondamental dans la démarche d'ingénierie : on améliore toujours à partir de l'expérience.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

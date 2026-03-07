@@ -31,7 +31,30 @@ const documents = [];
         "Identifier chaque composant et sa fonction dans la chaîne d'énergie et la chaîne d'information.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Qu'est-ce qu'un robot mobile ?</h3>
+      <p>
+        Un <strong>robot mobile</strong> est un système automatisé capable de se déplacer dans son environnement pour accomplir des tâches. Contrairement aux robots industriels fixes, il utilise des roues, des chenilles ou des pattes pour naviguer. Il embarque tous les éléments d'un système automatisé : des <strong>capteurs</strong> (ses « sens »), un <strong>microcontrôleur</strong> (son « cerveau »), des <strong>actionneurs</strong> (ses « muscles ») et une <strong>source d'énergie</strong>.
+      </p>
+
+      <h3>Analyse fonctionnelle du robot</h3>
+      <p>
+        Avant toute modification ou programmation, on réalise une <strong>analyse fonctionnelle</strong> complète du robot :
+      </p>
+      <ul>
+        <li><strong>Capteurs embarqués</strong> : ultrasons (mesure la distance des obstacles), infrarouge (détecte les lignes au sol), lumière (photorésistance), contact (bumpers).</li>
+        <li><strong>Actionneurs</strong> : moteurs DC (propulsion des roues), servomoteurs (orientation d'une pièce à angle précis), LED, haut-parleurs.</li>
+        <li><strong>Microcontrôleur</strong> : Arduino, Raspberry Pi, micro:bit selon le robot. Il exécute le programme qui lit les capteurs et contrôle les actionneurs.</li>
+        <li><strong>Alimentation</strong> : batteries rechargeables ou piles. La tension et la capacité déterminent l'autonomie du robot.</li>
+      </ul>
+
+      <h3>La motorisation différentielle</h3>
+      <p>
+        La plupart des robots mobiles utilisent une <strong>motorisation différentielle</strong> : deux moteurs indépendants, un pour chaque roue. En faisant varier les vitesses relatives des deux moteurs, on contrôle le déplacement : même vitesse → avancer en ligne droite ; moteur gauche plus rapide → tourner à droite ; sens opposés → pivoter sur place. C'est le même principe que les chars d'assaut ou les fauteuils roulants motorisés.
+      </p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>
