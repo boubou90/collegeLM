@@ -32,7 +32,38 @@ const documents = [];
         "Tester chaque composant (LED, capteur, moteur) séparément avant d'intégrer le tout.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>L'Arduino — microcontrôleur pour l'éducation</h3>
+      <p>L'<strong>Arduino</strong> est une carte électronique équipée d'un microcontrôleur programmable. Elle peut lire des capteurs (température, distance, lumière) et contrôler des actionneurs (LED, moteur, buzzer). Sa simplicité d'utilisation et son faible coût en font le microcontrôleur de référence dans l'enseignement technologique.</p>
+
+      <h3>Structure d'un programme Arduino</h3>
+      <p>Tout programme Arduino est structuré en deux fonctions obligatoires :</p>
+      <ul>
+        <li><strong>void setup()</strong> : exécutée <em>une seule fois</em> au démarrage. Sert à configurer les broches (INPUT/OUTPUT) et initialiser les composants.</li>
+        <li><strong>void loop()</strong> : exécutée en <em>boucle infinie</em>. Contient le programme principal : lire les capteurs, prendre des décisions, agir sur les actionneurs.</li>
+      </ul>
+
+      <h3>Les fonctions essentielles</h3>
+      <ul>
+        <li><code>pinMode(broche, OUTPUT)</code> → configure la broche en sortie (pour allumer une LED par ex.).</li>
+        <li><code>pinMode(broche, INPUT)</code> → configure la broche en entrée (pour lire un bouton).</li>
+        <li><code>digitalWrite(broche, HIGH)</code> → envoie 5V sur la broche (LED allumée).</li>
+        <li><code>digitalWrite(broche, LOW)</code> → envoie 0V (LED éteinte).</li>
+        <li><code>digitalRead(broche)</code> → lit l'état d'une entrée numérique (HIGH ou LOW).</li>
+        <li><code>delay(1000)</code> → pause de 1000 millisecondes (1 seconde).</li>
+      </ul>
+
+      <h3>Méthode pour programmer un système</h3>
+      <ol>
+        <li>Écrire l'algorithme en langage naturel.</li>
+        <li>Tracer le logigramme.</li>
+        <li>Coder le programme en Arduino C.</li>
+        <li>Tester chaque composant séparément.</li>
+        <li>Intégrer et tester l'ensemble.</li>
+      </ol>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

@@ -31,7 +31,38 @@ const documents = [];
         "Méthode itérative : coder → tester → corriger → recommencer. Ne pas chercher la perfection dès le 1ᵉʳ essai.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Le défi robotique — l'activité de synthèse</h3>
+      <p>Le défi robotique est le moment où toutes les compétences acquises — analyse fonctionnelle (séq. 2-3), conception (séq. 4), programmation (séq. 6) et robotique (séq. 9) — sont mobilisées pour relever un challenge réel. L'objectif est de programmer un robot pour qu'il accomplisse une <strong>mission autonome</strong> sans intervention humaine.</p>
+
+      <h3>Décomposer le problème</h3>
+      <p>La clé du succès est de <strong>décomposer le défi en sous-problèmes simples</strong>, résolus un par un. Exemple pour un robot suiveur de ligne :</p>
+      <ol>
+        <li>Avancer en ligne droite.</li>
+        <li>Détecter la ligne noire (capteurs infrarouge gauche et droit).</li>
+        <li>Corriger la trajectoire : si capteur gauche détecte la ligne → tourner à gauche ; si droit → tourner à droite.</li>
+        <li>S'arrêter à la fin du parcours (capteur de fin de ligne ou délai).</li>
+      </ol>
+
+      <h3>La méthode itérative</h3>
+      <p>Ne cherche pas la perfection dès le premier essai. Applique la <strong>méthode itérative</strong> :</p>
+      <ul>
+        <li><strong>Coder</strong> : écrire le programme selon le logigramme.</li>
+        <li><strong>Tester</strong> : essayer le programme sur le robot réel.</li>
+        <li><strong>Analyser</strong> : observer ce qui ne fonctionne pas et pourquoi.</li>
+        <li><strong>Corriger</strong> : ajuster le programme (paramètres, logique, seuils).</li>
+        <li><strong>Recommencer</strong> jusqu'à obtenir le résultat voulu.</li>
+      </ul>
+
+      <h3>Conseils pour le défi</h3>
+      <ul>
+        <li>Tester chaque capteur séparément avant de l'intégrer dans le programme complet.</li>
+        <li>Utiliser <code>Serial.println()</code> pour afficher les valeurs des capteurs et comprendre le comportement.</li>
+        <li>Travailler en équipe : se répartir les tâches (mécanique, programmation, tests).</li>
+      </ul>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

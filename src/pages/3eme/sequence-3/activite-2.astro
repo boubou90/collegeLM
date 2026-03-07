@@ -32,7 +32,31 @@ const documents = [];
         "Numéroter : FP1, FC1, FC2, FC3… pour chaque fonction identifiée.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Le diagramme pieuvre — identifier toutes les interactions</h3>
+      <p>Après avoir défini le besoin avec la bête à cornes, le <strong>diagramme pieuvre</strong> liste toutes les fonctions de service d'un objet en analysant ses interactions avec son environnement. L'objet est placé au centre et les "pattes de la pieuvre" représentent les relations avec les <strong>milieux extérieurs (ME)</strong>.</p>
+
+      <h3>Les milieux extérieurs (ME)</h3>
+      <p>Les milieux extérieurs sont tous les éléments de l'environnement qui interagissent avec l'objet : utilisateur, normes, sol, air ambiant, source d'énergie, autres objets… Il faut les lister exhaustivement avant de tracer les pattes.</p>
+
+      <h3>FP vs. FC — la distinction fondamentale</h3>
+      <ul>
+        <li><strong>Fonction Principale (FP)</strong> : relie <em>deux</em> milieux extérieurs via l'objet — c'est la raison d'être du produit. Elle a 2 pattes. Exemple pour une lampe : FP1 = "Éclairer l'utilisateur dans la pièce".</li>
+        <li><strong>Fonction Contrainte (FC)</strong> : relie l'objet à <em>un seul</em> milieu extérieur — c'est une contrainte à respecter. Elle a 1 patte. Exemple : FC1 = "Respecter les normes électriques (CE)".</li>
+      </ul>
+
+      <h3>Méthode de construction</h3>
+      <ol>
+        <li>Lister tous les milieux extérieurs autour de l'objet (8 à 12 maximum).</li>
+        <li>Tracer les liaisons entre l'objet et chaque ME.</li>
+        <li>Identifier si chaque liaison relie 1 ME (FC) ou 2 ME (FP).</li>
+        <li>Formuler chaque fonction avec un verbe d'action : "Permettre à… de…", "Résister à…".</li>
+        <li>Numéroter : FP1, FC1, FC2, FC3…</li>
+      </ol>
+      <p>Le diagramme pieuvre alimente ensuite le <strong>CDCF</strong> (activité 3) où chaque fonction sera quantifiée avec des critères et des niveaux.</p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

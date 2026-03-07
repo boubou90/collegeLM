@@ -54,6 +54,8 @@ const docsWithIds = documents.map(doc => ({
   <h2>{title}</h2>
   <p class="description">{description}</p>
 
+  <slot />
+
   {docsWithIds && docsWithIds.length > 0 && (
     <div class="documents">
       {docsWithIds.map(doc => (
@@ -399,6 +401,53 @@ const docsWithIds = documents.map(doc => ({
     font-weight: 700;
     flex-shrink: 0;
     margin-top: 0.05rem;
+  }
+
+  /* Contenu enrichi injecté via slot */
+  :global(.activity-content) {
+    margin-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+  }
+
+  :global(.activity-content h3) {
+    color: #1e3a8a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  :global(.activity-content p) {
+    color: #1e293b;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.activity-content ul),
+  :global(.activity-content ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.activity-content li) {
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 0.35rem;
+  }
+
+  :global(.activity-content ul ul) {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  :global([data-theme="dark"]) :global(.activity-content h3) {
+    color: #93c5fd;
+  }
+
+  :global([data-theme="dark"]) :global(.activity-content p),
+  :global([data-theme="dark"]) :global(.activity-content li) {
+    color: #e2e8f0;
   }
 
   /* Dark mode */

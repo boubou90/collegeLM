@@ -50,7 +50,26 @@ const objectives = [
         "L'adresse IP identifie CHAQUE équipement : deux appareils ne peuvent pas avoir la même IP sur le même réseau.",
       ],
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>La circulation des données sur un réseau</h3>
+      <p>Sur un réseau informatique, les données ne sont pas envoyées d'un seul bloc. Elles sont découpées en <strong>paquets de données</strong> numérotés. Chaque paquet voyage indépendamment sur le réseau en empruntant le chemin le plus rapide disponible. À l'arrivée, tous les paquets sont réassemblés dans le bon ordre pour reconstituer l'information originale.</p>
+      <p>Ce système présente plusieurs avantages : si un paquet est perdu ou corrompu, seul ce paquet est renvoyé (pas tout le fichier), et le réseau peut router les paquets par des chemins différents pour éviter les congestions.</p>
+
+      <h3>Le protocole TCP/IP</h3>
+      <p>Pour communiquer, tous les équipements d'un réseau doivent suivre les mêmes règles : ces règles s'appellent des <strong>protocoles</strong>. Le protocole fondamental d'Internet est <strong>TCP/IP</strong>, composé de deux couches :</p>
+      <ul>
+        <li><strong>IP (Internet Protocol)</strong> : attribue une adresse unique à chaque équipement et gère l'acheminement des paquets vers la bonne destination.</li>
+        <li><strong>TCP (Transmission Control Protocol)</strong> : garantit que tous les paquets arrivent et les fait renvoyer s'ils sont perdus. Il assure la fiabilité de la transmission.</li>
+      </ul>
+
+      <h3>L'adresse IP : l'identifiant de chaque équipement</h3>
+      <p>Une <strong>adresse IP</strong> est un identifiant numérique unique attribué à chaque équipement sur un réseau. Elle se compose de 4 nombres séparés par des points (ex : 192.168.1.5). Chaque nombre varie de 0 à 255. Sur un même réseau, deux appareils ne peuvent jamais avoir la même adresse IP.</p>
+
+      <h3>Le schéma (mapping) d'un réseau</h3>
+      <p>Représenter un réseau sous forme de schéma permet de visualiser la topologie : quels équipements sont reliés entre eux, par quels équipements intermédiaires, et avec quels liens (filaire, WiFi). Le mapping réseau est un outil indispensable pour les administrateurs réseau et permet de comprendre le chemin parcouru par les données.</p>
+    </div>
+  </ActivitySection>
 
   <section class="objectives" data-aos="fade-up">
     <h2>Objectifs de l'activité</h2>

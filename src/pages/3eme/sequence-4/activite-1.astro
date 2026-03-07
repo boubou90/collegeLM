@@ -32,7 +32,37 @@ const documents = [];
         "Trait fort = visible ; pointillés = caché ; trait mixte fin = axe de symétrie.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Le dessin technique — langage universel</h3>
+      <p>Le <strong>dessin technique</strong> est le moyen de communication universel entre ingénieurs, techniciens et fabricants. Contrairement à une photo ou une illustration, il suit des <strong>conventions normalisées</strong> (norme ISO) qui permettent à n'importe quel technicien dans le monde de comprendre et fabriquer la pièce décrite.</p>
+
+      <h3>La projection orthogonale — les 3 vues</h3>
+      <p>En projection orthogonale, on projette l'objet perpendiculairement sur trois plans. Cela donne trois vues complémentaires :</p>
+      <ul>
+        <li><strong>Vue de face</strong> (VF) : vue principale, la plus informative. On la choisit en priorité.</li>
+        <li><strong>Vue de dessus</strong> (VD) : placée <em>sous</em> la vue de face.</li>
+        <li><strong>Vue de gauche</strong> (VG) : placée à <em>droite</em> de la vue de face.</li>
+      </ul>
+      <p>Les vues sont <strong>alignées</strong> et à la même échelle. Une information vue sur une vue se retrouve toujours à la même position dans la vue adjacente.</p>
+
+      <h3>Les types de traits</h3>
+      <ul>
+        <li><strong>Trait fort (plein épais)</strong> : contours et arêtes <em>visibles</em> depuis le point de vue.</li>
+        <li><strong>Trait interrompu court (pointillés fins)</strong> : contours et arêtes <em>cachés</em>.</li>
+        <li><strong>Trait mixte fin (tirets-points)</strong> : axes de symétrie et de révolution.</li>
+        <li><strong>Trait continu fin</strong> : lignes de cote, hachures (coupes).</li>
+      </ul>
+
+      <h3>Lire un dessin technique — méthode</h3>
+      <ol>
+        <li>Identifier les 3 vues et repérer leur position relative.</li>
+        <li>Partir de la vue de face pour comprendre la forme générale.</li>
+        <li>Utiliser les autres vues pour lever les ambiguïtés.</li>
+        <li>Les pointillés indiquent une forme cachée : essaie de la visualiser en 3D.</li>
+      </ol>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

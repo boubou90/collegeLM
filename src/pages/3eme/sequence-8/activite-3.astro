@@ -32,7 +32,25 @@ const documents = [];
         "Toujours privilégier HTTPS (cadenas vert) pour les sites où tu entres des informations personnelles.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Un protocole — des règles communes pour communiquer</h3>
+      <p>Un <strong>protocole</strong> est un ensemble de règles que deux machines acceptent de respecter pour se comprendre. C'est comme une langue commune : si deux ordinateurs utilisent des protocoles différents, ils ne peuvent pas communiquer. La suite <strong>TCP/IP</strong> est la base de toutes les communications sur Internet.</p>
+
+      <h3>Les principaux protocoles à connaître</h3>
+      <ul>
+        <li><strong>IP</strong> (Internet Protocol) : gère l'adressage et l'acheminement des données. Chaque paquet est routé indépendamment.</li>
+        <li><strong>TCP</strong> (Transmission Control Protocol) : garantit la livraison fiable et dans l'ordre. Utilisé pour le Web, l'email. Lent mais fiable.</li>
+        <li><strong>UDP</strong> (User Datagram Protocol) : transmission rapide sans garantie de livraison. Utilisé pour la vidéo en streaming, les jeux en ligne.</li>
+        <li><strong>HTTP</strong> : protocole du Web — échange de pages web entre navigateur et serveur. Non chiffré.</li>
+        <li><strong>HTTPS</strong> : version sécurisée de HTTP — les données sont chiffrées (cadenas vert). Obligatoire pour les paiements et données personnelles.</li>
+        <li><strong>DNS</strong> : traduit les noms de domaine en adresses IP.</li>
+      </ul>
+
+      <h3>Les données voyagent en paquets</h3>
+      <p>Sur Internet, les données ne voyagent pas en un seul bloc : elles sont découpées en <strong>paquets numérotés</strong>, envoyés séparément par des chemins potentiellement différents, et réassemblés à l'arrivée. Cette technique (commutation de paquets) rend Internet très résistant aux pannes — si un chemin est bloqué, les paquets trouvent un autre itinéraire.</p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

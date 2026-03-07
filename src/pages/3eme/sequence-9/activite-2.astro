@@ -32,7 +32,30 @@ const documents = [];
         "Servomoteur : angle précis mais rotation limitée ; moteur DC : rotation continue mais position non contrôlée.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Les capteurs — les "sens" du robot</h3>
+      <p>Les <strong>capteurs</strong> permettent au robot de percevoir son environnement et de convertir une grandeur physique en signal électrique exploitable par le microcontrôleur. Chaque capteur mesure une grandeur spécifique :</p>
+      <ul>
+        <li><strong>Capteur ultrason (HC-SR04)</strong> : mesure la distance en envoyant une impulsion sonore et en calculant le temps de retour de l'écho. Portée : 2 cm à 400 cm.</li>
+        <li><strong>Capteur infrarouge</strong> : détecte les obstacles proches ou suit une ligne noire sur fond blanc.</li>
+        <li><strong>Capteur de température (DHT11/DHT22)</strong> : mesure la température et l'humidité ambiantes.</li>
+        <li><strong>Capteur de luminosité (LDR)</strong> : résistance variable selon la lumière reçue.</li>
+      </ul>
+
+      <h3>Les actionneurs et effecteurs</h3>
+      <ul>
+        <li><strong>Moteur DC (courant continu)</strong> : rotation continue, vitesse contrôlée par PWM. Utilisé pour les roues de propulsion.</li>
+        <li><strong>Servomoteur</strong> : rotation précise de 0° à 180°. Utilisé pour diriger les roues ou actionner un bras.</li>
+        <li><strong>LED</strong> : indicateur visuel simple, allumée ou éteinte selon un signal numérique.</li>
+        <li><strong>Buzzer</strong> : actionneur sonore pour alertes et signaux.</li>
+        <li><strong>Effecteur</strong> : l'organe terminal qui agit sur la matière d'œuvre (pince, roue, ventouse…).</li>
+      </ul>
+
+      <h3>Différence actionneur / effecteur</h3>
+      <p>L'<strong>actionneur</strong> convertit l'énergie en mouvement (le moteur). L'<strong>effecteur</strong> est l'organe terminal qui agit sur l'environnement (la pince fixée au moteur). Un bras robotisé a un moteur (actionneur) et une pince (effecteur).</p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

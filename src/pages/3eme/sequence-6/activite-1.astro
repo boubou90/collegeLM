@@ -31,7 +31,31 @@ const documents = [];
         "Avant de coder, écrire l'algorithme en langage naturel ou en logigramme.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Algorithme et logigramme — la pensée avant le code</h3>
+      <p>Avant d'écrire une seule ligne de code, un bon programmeur <strong>conçoit l'algorithme</strong> : la suite logique des étapes nécessaires pour résoudre un problème. Le <strong>logigramme</strong> est la représentation graphique de cet algorithme — il permet de visualiser le déroulement du programme et d'identifier les erreurs de logique avant de coder.</p>
+
+      <h3>Les symboles normalisés du logigramme</h3>
+      <ul>
+        <li><strong>Ovale</strong> : début ou fin du programme (DÉBUT / FIN).</li>
+        <li><strong>Rectangle</strong> : action ou instruction à exécuter (ex : "Allumer la LED").</li>
+        <li><strong>Losange</strong> : condition ou test (question à laquelle on répond Vrai/Faux). Deux sorties : OUI et NON.</li>
+        <li><strong>Flèches</strong> : sens du déroulement du programme.</li>
+        <li><strong>Parallélogramme</strong> : entrée/sortie (lire un capteur, afficher un résultat).</li>
+      </ul>
+
+      <h3>Les 3 structures algorithmiques de base</h3>
+      <ol>
+        <li><strong>Séquence</strong> : exécution des instructions les unes après les autres, dans l'ordre.</li>
+        <li><strong>Condition (si/sinon)</strong> : exécuter un bloc ou un autre selon le résultat d'un test. Le losange dans le logigramme.</li>
+        <li><strong>Boucle (répéter)</strong> : répéter un bloc d'instructions un certain nombre de fois ou tant qu'une condition est vraie.</li>
+      </ol>
+
+      <h3>Exemple — Barrière automatique</h3>
+      <p>DÉBUT → Détecter une voiture (capteur) → Si voiture détectée ? OUI → Ouvrir la barrière → Attendre 5 secondes → Fermer la barrière → NON → Rester fermée → Retour au début (boucle). Ce logigramme simple illustre les 3 structures : séquence, condition, boucle.</p>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

@@ -32,7 +32,30 @@ const documents = [];
         "Sans DNS, il faudrait retenir les adresses IP de tous les sites : c'est le 'annuaire' d'Internet.",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>L'adresse IP — l'identité numérique</h3>
+      <p>Chaque équipement connecté à un réseau possède une <strong>adresse IP</strong> unique qui l'identifie, comme une adresse postale. En IPv4, une adresse est composée de <strong>4 octets</strong> (valeurs de 0 à 255) séparés par des points : ex. 192.168.1.10.</p>
+
+      <h3>Les plages d'adresses IP privées</h3>
+      <p>Les adresses privées sont utilisées dans les réseaux locaux (non accessibles depuis Internet) :</p>
+      <ul>
+        <li>192.168.0.0 à 192.168.255.255 (la plus courante, utilisée dans les box Internet).</li>
+        <li>172.16.0.0 à 172.31.255.255.</li>
+        <li>10.0.0.0 à 10.255.255.255 (utilisée dans les grandes entreprises).</li>
+      </ul>
+
+      <h3>Le masque de sous-réseau</h3>
+      <p>Le <strong>masque de sous-réseau</strong> (ex : 255.255.255.0) indique quelle partie de l'adresse IP identifie le réseau et quelle partie identifie l'équipement (hôte). Deux machines sur le même réseau local ont la même "partie réseau" dans leur adresse IP.</p>
+
+      <h3>DHCP et DNS — les services réseau essentiels</h3>
+      <ul>
+        <li><strong>DHCP</strong> : attribue automatiquement une adresse IP à chaque appareil qui se connecte. Sans DHCP, il faudrait configurer manuellement chaque adresse IP — très fastidieux !</li>
+        <li><strong>DNS</strong> (Domain Name System) : traduit les noms de domaine lisibles (google.com) en adresses IP (142.250.74.46). C'est l'annuaire téléphonique d'Internet.</li>
+        <li><strong>Passerelle</strong> : adresse du routeur qui permet de "sortir" du réseau local vers Internet (généralement 192.168.1.1 ou 192.168.0.1).</li>
+      </ul>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>

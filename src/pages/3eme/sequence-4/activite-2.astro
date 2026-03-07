@@ -32,7 +32,36 @@ const documents = [];
         "Coter en priorité les dimensions fonctionnelles (celles qui ont une importance pour l'assemblage ou l'usage).",
       ]
     }}
-  />
+  >
+    <div class="activity-content">
+      <h3>Pourquoi coter un dessin ?</h3>
+      <p>Un dessin technique sans <strong>cotation</strong> est incomplet : le fabricant ne peut pas produire la pièce sans connaître ses dimensions exactes. La cotation est l'ensemble des indications chiffrées qui définissent <em>complètement</em> la forme et les dimensions d'une pièce.</p>
+
+      <h3>Les éléments d'une cote</h3>
+      <ul>
+        <li><strong>La valeur numérique</strong> : toujours exprimée en millimètres (mm) sauf indication contraire.</li>
+        <li><strong>Les lignes d'attache</strong> : lignes fines perpendiculaires à la surface cotée, partant de la pièce.</li>
+        <li><strong>La ligne de cote</strong> : ligne fine avec flèches aux extrémités, parallèle à la dimension indiquée.</li>
+        <li><strong>Les flèches</strong> : touches les lignes d'attache et délimitent la dimension.</li>
+      </ul>
+
+      <h3>Les symboles de cotation</h3>
+      <ul>
+        <li><strong>∅ (phi)</strong> : indique un diamètre (cercle complet).</li>
+        <li><strong>R</strong> : indique un rayon (demi-cercle).</li>
+        <li><strong>□</strong> : indique une section carrée.</li>
+        <li><strong>± (tolérance)</strong> : ex. 50 ± 0,5 → la cote peut varier de 49,5 à 50,5 mm.</li>
+      </ul>
+
+      <h3>Règles essentielles</h3>
+      <ol>
+        <li>Coter chaque dimension <strong>une seule fois</strong> (jamais en double).</li>
+        <li>Ne <strong>jamais croiser</strong> les lignes de cote entre elles.</li>
+        <li>Placer les cotes <strong>en dehors</strong> de la pièce, pas sur les traits de contour.</li>
+        <li>Prioriser les <strong>dimensions fonctionnelles</strong> (importantes pour l'assemblage).</li>
+      </ol>
+    </div>
+  </ActivitySection>
 </ClassLayout>
 
 <style>
