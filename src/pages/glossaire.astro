@@ -7,7 +7,7 @@ const terms = [
     id: 'algorithme',
     emoji: '🔢',
     term: 'Algorithme',
-    definition: 'Suite d\'instructions précises et ordonnées permettant de résoudre un problème ou d\'accomplir une tâche. En technologie, un algorithme est souvent représenté par un logigramme avant d\'être traduit en code de programmation.',
+    definition: "Suite d'instructions précises et ordonnées permettant de résoudre un problème ou d'accomplir une tâche. En technologie au collège, un algorithme est étudié à partir de la 4ème et constitue la base de la pensée computationnelle. Il doit être précis (sans ambiguïté), fini (il se termine) et général (il fonctionne pour tous les cas du problème). Avant d'écrire du code, on représente l'algorithme sous forme de logigramme. Par exemple, pour piloter un système de chauffage automatique : si la température mesurée par le capteur dépasse 25 °C, désactiver le radiateur ; sinon, l'activer. En classe, les algorithmes sont implémentés avec Scratch, Python ou la programmation par blocs (MicroPython sur Arduino). Au Brevet technologie, les questions d'algorithme demandent de compléter un logigramme, de lire un programme par blocs, ou de prévoir ce qu'affiche un code donné. La programmation est présente dans 76 % des sujets du DNB.",
     levels: ['4ème', '3ème'],
     link: '/3eme/sequence-6',
   },
@@ -15,7 +15,7 @@ const terms = [
     id: 'analyse-fonctionnelle',
     emoji: '🔬',
     term: 'Analyse fonctionnelle',
-    definition: 'Méthode permettant d\'identifier et d\'organiser les fonctions d\'un objet ou système technique. Les principaux outils sont le diagramme bête à cornes (besoin) et le diagramme pieuvre (fonctions de service).',
+    definition: "Méthode permettant d'identifier et d'organiser les fonctions d'un objet ou système technique. Les principaux outils sont le diagramme bête à cornes (qui exprime le besoin fondamental) et le diagramme pieuvre (qui liste les fonctions de service et les contraintes). L'analyse fonctionnelle est une compétence centrale de la 3ème, directement évaluée au Brevet des Collèges (présente dans 71 % des sujets). Elle s'applique à n'importe quel objet technique : une bouilloire connectée, une hydrolienne, un aspirateur robot. En pratique, l'élève identifie d'abord les utilisateurs et l'environnement du produit, puis formule les fonctions de service (ce que le produit doit faire pour l'utilisateur) et les contraintes (normes, coûts, sécurité). La fonction principale justifie la création du produit : par exemple, « permettre à l'utilisateur de se déplacer en équilibre » pour un gyropode. Les fonctions contraintes précisent les limites à respecter.",
     levels: ['3ème'],
     link: '/3eme/sequence-3',
   },
@@ -23,7 +23,7 @@ const terms = [
     id: 'bete-a-cornes',
     emoji: '🐂',
     term: 'Bête à cornes',
-    definition: 'Outil graphique d\'analyse fonctionnelle qui exprime le besoin fondamental d\'un objet technique. Il répond à trois questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?',
+    definition: "Outil graphique d'analyse fonctionnelle qui exprime le besoin fondamental d'un objet technique. Il est représenté sous forme d'un diagramme à deux cornes et répond à trois questions : À qui rend-il service ? (l'utilisateur ou le bénéficiaire) ; Sur quoi agit-il ? (la matière d'œuvre — l'objet ou l'état transformé) ; Dans quel but ? (la fonction principale, rédigée sous la forme : « Le [produit] permet à [utilisateur] de [verbe d'action] [matière d'œuvre] »). Exemple pour un lave-linge : À qui ? → l'utilisateur. Sur quoi ? → le linge sale. Dans quel but ? → laver son linge. La bête à cornes se distingue du diagramme pieuvre, qui détaille toutes les fonctions de service et les contraintes. Au Brevet technologie, il est fréquent de devoir compléter ou interpréter un diagramme bête à cornes à partir d'une mise en situation décrivant un système technique réel comme un gyropode, un barrage ou une serre automatisée.",
     levels: ['3ème'],
     link: '/3eme/sequence-3',
   },
@@ -31,7 +31,7 @@ const terms = [
     id: 'capteur',
     emoji: '📡',
     term: 'Capteur',
-    definition: 'Composant qui détecte une grandeur physique (température, lumière, présence, pression…) et la convertit en signal électrique exploitable par un système automatisé. Il fait partie de la chaîne d\'information.',
+    definition: "Composant électronique qui détecte une grandeur physique de l'environnement (température, luminosité, présence, pression, distance, humidité…) et la convertit en signal électrique exploitable par un système automatisé. Le capteur se situe en entrée de la chaîne d'information — il est chargé d'acquérir l'information. Par exemple, un capteur DHT11 transmet une valeur numérique de température à un microcontrôleur Arduino, qui décide d'activer un ventilateur si le seuil est dépassé. En domotique, les capteurs sont omniprésents : détecteur de mouvement pour l'éclairage automatique, capteur d'ouverture pour une alarme, capteur de CO₂ pour la ventilation. Il ne faut pas confondre le capteur (qui reçoit une information) et l'actionneur (qui produit une action physique). Au Brevet technologie, on peut demander d'identifier un capteur dans un schéma de chaîne d'information, d'expliquer la grandeur physique qu'il mesure, ou de compléter le bloc « Acquérir ».",
     levels: ['4ème', '3ème'],
     link: '/4eme/sequence-3',
   },
@@ -39,23 +39,23 @@ const terms = [
     id: 'cao',
     emoji: '🖥️',
     term: 'CAO — Conception Assistée par Ordinateur',
-    definition: 'Utilisation d\'un logiciel (SketchUp, Fusion 360, SolidWorks…) pour créer, modifier et visualiser des objets en trois dimensions. La CAO permet de tester une conception virtuellement avant de la fabriquer.',
+    definition: "Utilisation d'un logiciel informatique pour créer, modifier et visualiser des objets techniques en deux ou trois dimensions. En technologie au collège (5ème et 4ème), la CAO permet de concevoir virtuellement un objet avant de le fabriquer, réduisant ainsi les erreurs et les coûts. Les logiciels les plus utilisés en classe sont SketchUp (3D gratuit et intuitif), Fusion 360 (professionnel, gratuit pour l'éducation) et SolidWorks (lycée). Une maquette numérique en CAO permet de vérifier les dimensions, détecter des interférences entre pièces, simuler un mouvement, et générer les fichiers nécessaires à l'impression 3D ou à la découpe laser. La CAO s'inscrit dans le processus de conception technologique : elle succède au cahier des charges et précède la fabrication physique. Elle développe des compétences en représentation spatiale, en géométrie 3D et en modélisation qui seront utiles en lycée général ou professionnel (STI2D, bac pro).",
     levels: ['5ème', '4ème'],
     link: '/5eme/sequence-4',
   },
   {
     id: 'chaine-energie',
     emoji: '⚡',
-    term: 'Chaîne d\'énergie',
-    definition: 'Représentation du parcours de l\'énergie dans un système technique, de la source jusqu\'à l\'effet produit. Elle comporte quatre blocs : Alimenter → Distribuer → Convertir → Transmettre.',
+    term: "Chaîne d'énergie",
+    definition: "Représentation du parcours de l'énergie à travers un système technique, depuis la source d'énergie jusqu'à l'effet utile produit. Elle comporte quatre blocs fonctionnels successifs : Alimenter (fournir l'énergie : batterie, secteur 230 V, panneau solaire…) → Distribuer (réguler et acheminer l'énergie : interrupteur, variateur, contacteur…) → Convertir (changer la forme de l'énergie : moteur électrique → énergie mécanique, résistance → chaleur…) → Transmettre (adapter et déplacer l'énergie : courroie, engrenage, réducteur…). Elle s'applique à tous les objets motorisés : trottinette électrique, lave-linge, hydrolienne. Exemple pour un aspirateur : Alimenter (câble 230 V) → Distribuer (interrupteur) → Convertir (moteur électrique) → Transmettre (turbine d'aspiration). Étudiée à partir de la 3ème, elle est présente dans 62 % des sujets du Brevet. On demande souvent de compléter un tableau ou d'identifier les blocs manquants.",
     levels: ['3ème'],
     link: '/3eme/sequence-1',
   },
   {
     id: 'chaine-information',
     emoji: '📶',
-    term: 'Chaîne d\'information',
-    definition: 'Représentation du traitement de l\'information dans un système automatisé, de l\'acquisition jusqu\'à la commande. Elle comporte : Acquérir (capteur) → Traiter (calculateur) → Communiquer (actionneur).',
+    term: "Chaîne d'information",
+    definition: "Représentation du traitement de l'information dans un système automatisé, depuis la détection d'un phénomène physique jusqu'à la commande d'un actionneur. Elle comprend trois blocs : Acquérir (le capteur détecte une grandeur physique et la transforme en signal électrique) → Traiter (le calculateur — microcontrôleur ou automate — analyse le signal et prend une décision selon le programme) → Communiquer (l'information de commande est transmise à l'actionneur). La chaîne d'information est indissociable de la chaîne d'énergie : la première décide, la seconde agit. Exemple concret d'un système d'arrosage automatique : capteur d'humidité du sol (Acquérir) → Arduino (Traiter) → électrovanne (Communiquer). Étudiée en 3ème, elle est évaluée au Brevet où l'on demande fréquemment de relier capteur, calculateur et actionneur aux bons blocs, ou de compléter un schéma de chaîne d'information à partir d'une description de système technique.",
     levels: ['3ème'],
     link: '/3eme/sequence-1',
   },
@@ -63,7 +63,7 @@ const terms = [
     id: 'domotique',
     emoji: '🏠',
     term: 'Domotique',
-    definition: 'Ensemble des technologies permettant d\'automatiser et de contrôler les équipements d\'une habitation (éclairage, chauffage, volets, alarme…). Les systèmes domotiques utilisent des capteurs, actionneurs et réseaux de communication.',
+    definition: "Ensemble des technologies permettant d'automatiser, contrôler et optimiser les équipements d'une habitation depuis une interface centralisée. Les systèmes domotiques pilotent l'éclairage, le chauffage, les volets roulants, les alarmes, les serrures connectées et les électroménagers via des réseaux sans fil (Wi-Fi, Zigbee, Z-Wave). En 4ème, la domotique illustre concrètement la convergence entre chaînes d'énergie, chaînes d'information et protocoles réseau. Exemple type : un détecteur de présence (capteur) signale une entrée au contrôleur domotique (calculateur), qui allume l'éclairage (actionneur) via une commande Wi-Fi. Les principaux enjeux sont les économies d'énergie (chauffage modulé selon l'occupation), le confort (scènes automatisées) et la sécurité (alarme, caméra connectée). La domotique mobilise les notions de capteur, actionneur, protocole réseau et programmation — tous des thèmes évalués au Brevet technologie.",
     levels: ['4ème'],
     link: '/4eme/sequence-3',
   },
@@ -71,7 +71,7 @@ const terms = [
     id: 'logigramme',
     emoji: '📊',
     term: 'Logigramme',
-    definition: 'Représentation graphique d\'un algorithme ou d\'un programme à l\'aide de symboles normalisés (rectangles pour les actions, losanges pour les conditions). Très utilisé en technologie pour décrire le comportement d\'un système automatisé.',
+    definition: "Représentation graphique d'un algorithme ou d'un programme à l'aide de symboles normalisés. Les principaux symboles sont : le rectangle (action ou instruction), le losange (condition ou test, avec deux sorties : Vrai/Faux ou Oui/Non), l'ovale (début/fin) et les flèches de connexion. Le logigramme décrit le comportement séquentiel ou conditionnel d'un système, indépendamment du langage de programmation. Il précède souvent la phase de codage. Exemple pour piloter l'éclairage d'un couloir : Début → Lire capteur de présence → Si présence Oui → Allumer lumière 30 s → retour début. Si Non → Attendre → retour début. En 4ème et 3ème, le logigramme prépare la programmation d'un microcontrôleur (Arduino, micro:bit). Au Brevet, les questions demandent de le lire (que fait ce programme ?), de le compléter (quel symbole est manquant ?) ou de prévoir la sortie pour une entrée donnée. Il est directement lié à la notion d'algorithme.",
     levels: ['4ème', '3ème'],
     link: '/3eme/sequence-6',
   },
@@ -79,7 +79,7 @@ const terms = [
     id: 'microcontroleur',
     emoji: '🤖',
     term: 'Microcontrôleur',
-    definition: 'Circuit intégré qui regroupe un processeur, de la mémoire et des entrées/sorties sur une seule puce. Il peut être programmé pour contrôler des systèmes automatisés. Exemples : Arduino, BBC micro:bit, Raspberry Pi.',
+    definition: "Circuit intégré miniaturisé qui regroupe sur une seule puce un processeur (unité de calcul), de la mémoire (programme et données) et des entrées/sorties numériques et analogiques. Il peut être programmé pour lire des capteurs, prendre des décisions et commander des actionneurs en temps réel, sans système d'exploitation. En technologie au collège (4ème et 3ème), les microcontrôleurs les plus utilisés sont l'Arduino Uno (programmé en C simplifié via l'IDE Arduino), le BBC micro:bit (programmé par blocs via MakeCode ou en Python) et le Raspberry Pi Pico (MicroPython). Un microcontrôleur est le « cerveau » d'un système automatisé : il reçoit les mesures des capteurs, exécute l'algorithme stocké en mémoire et envoie les commandes aux actionneurs. Exemple : un Arduino lit la température toutes les 5 secondes et allume une LED rouge si elle dépasse 28 °C. Au Brevet, on peut demander d'identifier son rôle dans la chaîne d'information (bloc Traiter).",
     levels: ['4ème', '3ème'],
     link: '/4eme/sequence-1',
   },
@@ -87,7 +87,7 @@ const terms = [
     id: 'maquette-numerique',
     emoji: '🖱️',
     term: 'Maquette numérique',
-    definition: 'Modélisation tridimensionnelle d\'un objet technique réalisée à l\'aide d\'un logiciel de CAO. Elle permet de vérifier l\'aspect, les dimensions et le fonctionnement d\'un objet avant sa fabrication réelle.',
+    definition: "Modélisation tridimensionnelle d'un objet ou d'un bâtiment réalisée à l'aide d'un logiciel de CAO (Conception Assistée par Ordinateur). Contrairement à une maquette physique en carton ou en bois, la maquette numérique peut être modifiée instantanément, visualisée sous tous les angles et simulée en mouvement. En 5ème et 4ème, les élèves créent des maquettes numériques dans SketchUp ou Fusion 360. Les avantages sont nombreux : vérifier les dimensions et proportions, détecter des interférences entre pièces, produire automatiquement les plans de coupe pour l'impression 3D ou la découpe laser, et partager le fichier numériquement. La maquette numérique s'inscrit dans le processus de conception : elle suit la phase de dessin technique et précède la fabrication physique, correspondant à la phase de prototypage virtuel. Un fichier STL exporté depuis la maquette peut directement alimenter une imprimante 3D du fablab du collège.",
     levels: ['5ème', '4ème'],
     link: '/5eme/sequence-3',
   },
@@ -95,7 +95,7 @@ const terms = [
     id: 'protocole-reseau',
     emoji: '🌐',
     term: 'Protocole réseau',
-    definition: 'Ensemble de règles qui définissent comment les données sont échangées entre appareils dans un réseau informatique. Le protocole IP définit les adresses, TCP assure la fiabilité des échanges, HTTP permet de naviguer sur le web.',
+    definition: "Ensemble formalisé de règles qui définissent comment les données sont structurées, adressées, transmises et reçues entre deux appareils communicants. Sans protocole commun, deux appareils ne peuvent pas se comprendre, même physiquement connectés. En 4ème et 3ème, trois protocoles clés sont étudiés : le protocole IP (Internet Protocol), qui attribue une adresse unique à chaque appareil pour acheminer les paquets de données ; le protocole TCP (Transmission Control Protocol), qui garantit la fiabilité de la transmission en vérifiant que tous les paquets sont arrivés ; et le protocole HTTP/HTTPS, qui gère les échanges de pages web entre navigateur et serveur. Dans un objet connecté (maison domotique, capteur météo en ligne), le microcontrôleur utilise un module Wi-Fi et des protocoles réseau pour envoyer ses données vers un serveur. Au Brevet, les questions réseau portent sur l'adressage IP, le rôle d'un routeur ou la distinction réseau local / Internet.",
     levels: ['4ème', '3ème'],
     link: '/4eme/sequence-7',
   },
@@ -103,7 +103,7 @@ const terms = [
     id: 'robot',
     emoji: '🦾',
     term: 'Robot',
-    definition: 'Système automatisé capable d\'effectuer des tâches en interagissant avec son environnement, généralement guidé par un programme. Un robot possède des capteurs (chaîne d\'information) et des actionneurs (chaîne d\'énergie).',
+    definition: "Système automatisé capable d'exécuter des tâches physiques en interagissant avec son environnement, guidé par un programme. Un robot possède obligatoirement une chaîne d'information (capteurs + calculateur + commande) et une chaîne d'énergie (source d'énergie + motorisation). Il se distingue d'un simple mécanisme par sa capacité à adapter son comportement aux informations reçues. En 4ème et 3ème, les robots étudiés incluent les robots industriels (bras articulés pour la soudure ou l'assemblage automobile), les robots explorateurs (Mars Rover, drones sous-marins) et les robots de service (aspirateur Roomba, robot chirurgical). En classe, on programme des robots éducatifs comme Thymio, mBot ou des montages Arduino. Les enjeux sociétaux (emploi, sécurité, éthique) sont également abordés. Au Brevet, les sujets de type « robot explorateur » ou « robot collecteur de déchets » testent la lecture de chaînes d'information et de logigrammes.",
     levels: ['4ème', '3ème'],
     link: '/4eme/sequence-10',
   },
@@ -111,7 +111,7 @@ const terms = [
     id: 'systeme-automatise',
     emoji: '⚙️',
     term: 'Système automatisé',
-    definition: 'Système technique capable d\'effectuer des actions sans intervention humaine directe, en réponse à des informations recueillies par des capteurs. Il comprend une partie opérative (effectue les actions) et une partie commande (prend les décisions).',
+    definition: "Système technique capable d'exécuter des actions sans intervention humaine directe, en analysant les informations de ses capteurs et en répondant selon un programme préétabli. Un système automatisé comprend deux parties : la partie opérative (PO), qui réalise les actions physiques via les actionneurs (moteurs, vérins, pompes…), et la partie commande (PC), qui prend les décisions en exécutant le programme dans le microcontrôleur ou l'automate. Exemple d'une porte coulissante automatique : un capteur infrarouge détecte l'approche d'un client (chaîne d'information), le calculateur commande l'ouverture (PC), le moteur fait glisser la porte (PO + chaîne d'énergie). En 3ème, les systèmes automatisés sont étudiés dans le contexte du développement durable : serres agricoles automatisées, gestion intelligente de l'énergie, voitures autonomes. Les sujets de Brevet sur la serre automatisée ou le chauffe-eau solaire illustrent parfaitement ce concept.",
     levels: ['3ème'],
     link: '/3eme/sequence-2',
   },
@@ -119,7 +119,7 @@ const terms = [
     id: 'ia',
     emoji: '🧠',
     term: 'Intelligence Artificielle (IA)',
-    definition: 'Ensemble de techniques informatiques permettant à une machine d\'effectuer des tâches qui nécessitent normalement de l\'intelligence humaine (reconnaissance d\'images, traduction, génération de texte…). Les IA génératives comme ChatGPT apprennent à partir de grandes quantités de données.',
+    definition: "Ensemble de techniques informatiques permettant à une machine d'effectuer des tâches habituellement réservées à l'intelligence humaine : reconnaître des images, comprendre et générer du texte, traduire des langues, jouer aux échecs, recommander des contenus. En 4ème, l'IA est étudiée comme une évolution majeure des systèmes numériques. On distingue les IA expertes (basées sur des règles programmées) et les IA apprenantes (machine learning), qui s'améliorent grâce à l'analyse de grandes quantités de données. Les IA génératives comme ChatGPT ou Midjourney génèrent du texte ou des images à partir de milliards d'exemples appris pendant une phase d'entraînement. Les questions éthiques (biais algorithmiques, vie privée, emploi, deepfakes) sont intégrées au programme. En classe, des outils comme Machine Learning for Kids permettent d'entraîner un modèle de reconnaissance d'images ou de texte de façon accessible dès la 4ème.",
     levels: ['4ème'],
     link: '/4eme/sequence-1',
   },
@@ -127,7 +127,7 @@ const terms = [
     id: 'actionneur',
     emoji: '🔧',
     term: 'Actionneur',
-    definition: 'Composant qui convertit l\'énergie électrique en action mécanique, lumineuse, sonore ou thermique. Un moteur, une LED, un haut-parleur ou une résistance chauffante sont des actionneurs. Il est situé en sortie de la chaîne d\'information.',
+    definition: "Composant qui convertit un signal de commande électrique en une action physique : mouvement mécanique, émission lumineuse, production sonore ou dégagement thermique. L'actionneur se trouve en sortie de la chaîne d'information et en sortie de la chaîne d'énergie — il est la partie visible de l'action d'un système automatisé. Les actionneurs les plus courants en technologie sont : le moteur électrique (rotation mécanique), la LED ou ampoule (lumière), le haut-parleur ou buzzer (son), la résistance chauffante (chaleur) et le vérin (mouvement linéaire). Il ne faut pas confondre l'actionneur avec le capteur : le capteur reçoit une information de l'environnement, tandis que l'actionneur agit sur l'environnement. Dans un système de chauffage automatique : capteur de température (Acquérir) → microcontrôleur (Traiter) → résistance chauffante ou vanne (Communiquer/actionneur). Au Brevet, on peut demander d'identifier l'actionneur dans un schéma ou d'expliquer la conversion d'énergie qu'il réalise.",
     levels: ['3ème', '4ème'],
     link: '/3eme/sequence-1',
   },
@@ -138,6 +138,28 @@ const levelColors: Record<string, string> = {
   '4ème': '#10B981',
   '3ème': '#F97316',
 };
+
+const definedTermSetSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://collegelouisemichel.net/glossaire#termset",
+  "name": "Glossaire de technologie — Collège",
+  "description": "Les 16 termes essentiels du cours de technologie au collège selon le programme de l'Éducation Nationale française (cycles 3 et 4)",
+  "inLanguage": "fr-FR",
+  "url": "https://collegelouisemichel.net/glossaire",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "@id": "https://collegelouisemichel.net/#organization"
+  },
+  "hasDefinedTerm": terms.map(t => ({
+    "@type": "DefinedTerm",
+    "name": t.term,
+    "description": t.definition,
+    "url": `https://collegelouisemichel.net/glossaire#${t.id}`,
+    "termCode": t.id,
+    "inDefinedTermSet": "https://collegelouisemichel.net/glossaire#termset"
+  }))
+});
 ---
 
 <Layout
@@ -194,6 +216,8 @@ const levelColors: Record<string, string> = {
       <a href="/3eme/brevet" class="cta-link">Tester ses connaissances avec le quiz Brevet →</a>
     </section>
   </main>
+
+  <script is:inline type="application/ld+json" set:html={definedTermSetSchema} />
 </Layout>
 
 <style>

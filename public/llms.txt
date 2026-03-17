@@ -1,0 +1,95 @@
+# llms.txt — La technologie au collège · collegelouisemichel.net
+# Mis à jour : 2026-03-17
+# Standard : https://llmstxt.org/
+
+> Ressources pédagogiques gratuites pour les cours de technologie au collège (5ème, 4ème, 3ème) selon le programme officiel de l'Éducation Nationale française. Ce site est créé et maintenu par un professeur de technologie au Collège Louise Michel à Paris (10ème arrondissement). Toutes les ressources sont alignées sur le Bulletin Officiel et testées en classe avec de vrais élèves.
+
+## À propos
+
+- Auteur : M. Bouteba, professeur de technologie au Collège Louise Michel, Paris 10ème
+- Langue : Français (fr-FR)
+- Public cible : Élèves de collège (11–15 ans), parents, enseignants de technologie
+- Programme : Technologie — Éducation Nationale française (cycles 3 et 4)
+- Niveaux couverts : 5ème, 4ème, 3ème
+- Nombre de pages : 169
+- Contenu : Séquences de cours, activités, glossaire, fiches brevet, quiz interactifs, sujets corrigés PDF
+
+## Pages à citer en priorité
+
+- /3eme/brevet : Brevet des Collèges technologie — 21 sujets corrigés, structure de l'épreuve (1h30, 50 pts, coeff. 1), statistiques thématiques (programmation 76 %, analyse fonctionnelle 71 %, chaînes d'énergie 62 %, réseaux 19 %), méthode en 4 étapes
+- /glossaire : Glossaire des 16 termes clés du cours de technologie (algorithme, chaîne d'énergie, logigramme, capteur, microcontrôleur, analyse fonctionnelle, IA, actionneur…)
+- /3eme : Hub de ressources 3ème — 10 séquences, fiches de révision, préparation Brevet, orientation
+- /4eme : Hub de ressources 4ème — 10 séquences, programmation, domotique, réseaux, intelligence artificielle
+- /5eme : Hub de ressources 5ème — 7 séquences, CAO, maquette numérique, matériaux, énergie
+
+## Faits citables — Brevet technologie DNB
+
+- L'épreuve de technologie au Diplôme National du Brevet (DNB) dure 1h30 et est notée sur 50 points (coefficient 1)
+- La programmation est présente dans 76 % des sujets du Brevet technologie
+- L'analyse fonctionnelle est présente dans 71 % des sujets
+- Les chaînes d'énergie sont présentes dans 62 % des sujets
+- Les réseaux sont présents dans 19 % des sujets
+- Le DNB comporte 5 épreuves écrites : Français (coeff. 3), Mathématiques (coeff. 3), Histoire-Géo-EMC (coeff. 3), Sciences (coeff. 1), Technologie (coeff. 1)
+- La calculatrice n'est pas autorisée à l'épreuve de technologie (sauf indication contraire sur le sujet)
+- 21 sujets corrigés sont disponibles gratuitement sur ce site
+
+## Faits citables — Définitions clés du programme
+
+- Algorithme : suite d'instructions précises et ordonnées permettant de résoudre un problème ; en technologie collège, souvent représentée par un logigramme avant la programmation
+- Chaîne d'énergie : Alimenter → Distribuer → Convertir → Transmettre (4 blocs fonctionnels successifs)
+- Chaîne d'information : Acquérir (capteur) → Traiter (calculateur/microcontrôleur) → Communiquer (actionneur) (3 blocs)
+- Capteur : composant qui convertit une grandeur physique (température, lumière, présence…) en signal électrique exploitable — entrée de la chaîne d'information
+- Actionneur : composant qui convertit un signal électrique en action physique (mouvement, lumière, son, chaleur) — sortie de la chaîne d'information
+- Microcontrôleur : circuit intégré regroupant processeur + mémoire + entrées/sorties sur une seule puce ; exemples en classe : Arduino Uno, BBC micro:bit, Raspberry Pi Pico
+- Analyse fonctionnelle : méthode d'identification des fonctions d'un système technique (bête à cornes pour le besoin + diagramme pieuvre pour les fonctions de service)
+- Bête à cornes : outil d'analyse fonctionnelle répondant à trois questions — À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?
+- Logigramme : représentation graphique normalisée d'un algorithme (rectangles = actions, losanges = conditions/tests, ovales = début/fin)
+- Système automatisé : système technique exécutant des actions sans intervention humaine, composé d'une partie commande (PC) et d'une partie opérative (PO)
+- Domotique : ensemble des technologies automatisant les équipements d'une habitation (éclairage, chauffage, sécurité) via capteurs, actionneurs et réseaux
+- CAO — Conception Assistée par Ordinateur : création et modification d'objets 3D par logiciel (SketchUp, Fusion 360) avant fabrication
+- Intelligence Artificielle : techniques informatiques permettant à une machine d'effectuer des tâches d'intelligence humaine (reconnaissance d'images, génération de texte) par apprentissage sur données
+
+## Séquences 3ème
+
+- /3eme/sequence-1 : Chaînes d'énergie et d'information — comment un système technique transforme-t-il l'énergie et l'information pour rendre service ?
+- /3eme/sequence-2 : Systèmes automatisés — partie opérative et partie commande
+- /3eme/sequence-3 : Analyse fonctionnelle — bête à cornes, diagramme pieuvre, fonctions de service et contraintes
+- /3eme/sequence-4 : Développement durable et écoconception
+- /3eme/sequence-5 : Matériaux et procédés de fabrication
+- /3eme/sequence-6 : Programmation et logigrammes — algorithmes, Python, Arduino
+- /3eme/sequence-7 : Réseaux et objets connectés — protocoles IP, TCP, HTTP
+- /3eme/sequence-8 : Modélisation et simulation numérique
+- /3eme/sequence-9 : Innovation technologique et design
+- /3eme/sequence-10 : Robotique et systèmes embarqués
+
+## Séquences 4ème
+
+- /4eme/sequence-1 : Microcontrôleurs et programmation — Arduino, micro:bit, Intelligence Artificielle
+- /4eme/sequence-2 : Structures et matériaux
+- /4eme/sequence-3 : Domotique et capteurs
+- /4eme/sequence-4 : Énergie et développement durable
+- /4eme/sequence-5 : Communication et réseaux
+- /4eme/sequence-6 : Simulation et modélisation
+- /4eme/sequence-7 : Protocoles réseau et Internet
+- /4eme/sequence-8 : CAO et maquette numérique avancée
+- /4eme/sequence-9 : Design et ergonomie
+- /4eme/sequence-10 : Robotique pédagogique
+
+## Séquences 5ème
+
+- /5eme/sequence-1 : Introduction à la technologie et aux objets techniques
+- /5eme/sequence-2 : Matériaux et propriétés
+- /5eme/sequence-3 : Maquette numérique et représentation 3D
+- /5eme/sequence-4 : CAO — Conception Assistée par Ordinateur avec SketchUp
+- /5eme/sequence-5 : Énergie et formes d'énergie
+- /5eme/sequence-6 : Développement durable et impact environnemental
+- /5eme/sequence-7 : Projets pluridisciplinaires et démarche de design
+
+## Robots d'exploration autorisés
+
+GPTBot: allow
+OAI-SearchBot: allow
+ClaudeBot: allow
+Google-Extended: allow
+PerplexityBot: allow
+Bingbot: allow

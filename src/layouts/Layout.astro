@@ -72,12 +72,15 @@ const courseSchema = isCourse ? JSON.stringify({
         "@graph": [
           {
             "@type": "EducationalOrganization",
+            "@id": "https://collegelouisemichel.net/#organization",
             "name": "La technologie au collège — Collège Louise Michel",
-            "description": "Ressources pédagogiques gratuites pour les cours de technologie au collège",
+            "description": "Ressources pédagogiques gratuites pour les cours de technologie au collège (5ème, 4ème, 3ème), alignées sur le programme officiel de l'Éducation Nationale française.",
             "url": "https://collegelouisemichel.net",
+            "inLanguage": "fr-FR",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Paris",
+              "addressRegion": "Île-de-France",
               "addressCountry": "FR"
             },
             "sameAs": [
@@ -102,6 +105,39 @@ const courseSchema = isCourse ? JSON.stringify({
     {isCourse && courseSchema && (
       <script is:inline type="application/ld+json" set:html={courseSchema} />
     )}
+
+    <!-- Person Schema — Auteur du site -->
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "M. Bouteba",
+        "jobTitle": "Professeur de technologie",
+        "description": "M. Bouteba, enseignant de technologie au Collège Louise Michel à Paris (10ème), auteur de ressources pédagogiques gratuites alignées sur le programme de l'Éducation Nationale française.",
+        "worksFor": {
+          "@type": "EducationalOrganization",
+          "@id": "https://collegelouisemichel.net/#organization",
+          "name": "Collège Louise Michel",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paris",
+            "addressRegion": "Île-de-France",
+            "addressCountry": "FR"
+          }
+        },
+        "knowsAbout": [
+          "Technologie collège",
+          "Programme Éducation Nationale",
+          "Programmation Arduino",
+          "Systèmes automatisés",
+          "Analyse fonctionnelle",
+          "CAO SketchUp",
+          "Robotique pédagogique",
+          "Intelligence Artificielle"
+        ],
+        "url": "https://collegelouisemichel.net"
+      }
+    </script>
   </head>
   <body>
     <QuickAccessBar />
@@ -116,12 +152,13 @@ const courseSchema = isCourse ? JSON.stringify({
       <div class="author-inner">
         <div class="author-avatar">👨‍🏫</div>
         <div class="author-body">
-          <p class="author-name">Créé par un enseignant de technologie</p>
+          <p class="author-name">M. Bouteba — Professeur de technologie au Collège Louise Michel, Paris</p>
           <p class="author-desc">
-            Ce site est conçu par un professeur de technologie au Collège Louise Michel à Paris.
+            Ce site est conçu par M. Bouteba, professeur de technologie au Collège Louise Michel à Paris (10ème).
             Toutes les ressources sont alignées sur le programme officiel de l'Éducation Nationale
-            et testées avec de vrais élèves.
+            et testées avec de vrais élèves en classe.
           </p>
+          <p class="author-meta">Mis à jour : mars 2026 · Ressources gratuites · Programme officiel</p>
           <a href="/actualites/preparer-brevet-technologie/" class="author-link">
             Lire le guide complet pour préparer le Brevet →
           </a>
@@ -317,6 +354,12 @@ const courseSchema = isCourse ? JSON.stringify({
     color: #2563eb;
     font-size: 0.875rem;
     text-decoration: none;
+  }
+
+  .author-meta {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 0.4rem;
   }
 
   .author-link:hover {
