@@ -20,12 +20,12 @@ const enhancedDescription = description
   {question && (
     <div class="problematique">
       <span class="problematique-label">Problématique</span>
-      <p class="problematique-text">{question}</p>
+      <h2 class="problematique-text">{question}</h2>
     </div>
   )}
-  <h2>{title}</h2>
   <p class="description" set:html={enhancedDescription} />
-  
+  <h3 class="seq-title">{title}</h3>
+
   {activities && activities.length > 0 && (
     <div class="activities" data-aos="fade-up" data-aos-delay="100">
       <h3>Activités</h3>
@@ -48,10 +48,11 @@ const enhancedDescription = description
     border: 1px solid rgba(37, 99, 235, 0.1);
   }
 
-  h2 {
+  .seq-title {
     color: var(--primary-dark);
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     background: linear-gradient(90deg, var(--primary-dark), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -60,7 +61,7 @@ const enhancedDescription = description
   .description {
     color: #1e293b;
     line-height: 1.8;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .activities {
@@ -103,7 +104,7 @@ const enhancedDescription = description
     border-left: 4px solid #f97316;
     border-radius: 0.75rem;
     padding: 1.25rem 1.5rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .problematique-label {
@@ -119,10 +120,15 @@ const enhancedDescription = description
     margin-bottom: 0.6rem;
   }
 
-  .problematique-text {
+  /* Override gradient inherited from h3/seq-title for the question heading */
+  .problematique h2.problematique-text {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #9a3412;
     color: #9a3412;
     font-size: 1.05rem;
     font-style: italic;
+    font-weight: 600;
     line-height: 1.6;
     margin: 0;
   }
@@ -132,7 +138,8 @@ const enhancedDescription = description
     border-left-color: #fb923c;
   }
 
-  :global([data-theme="dark"]) .problematique-text {
+  :global([data-theme="dark"]) .problematique h2.problematique-text {
+    -webkit-text-fill-color: #fed7aa;
     color: #fed7aa;
   }
 </style>
