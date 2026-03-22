@@ -53,6 +53,7 @@ const courseSchema = isCourse ? JSON.stringify({
     <meta name="google-site-verification" content="4OsN4oYdMPyqvw4BnIcwIYVVHrwce9zTEkvwO1WV3Ng" />
 
     <SEO title={title} description={description} />
+    <link rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" />
 
     <!-- Load AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
@@ -112,9 +113,11 @@ const courseSchema = isCourse ? JSON.stringify({
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://collegelouisemichel.net/#person",
         "name": "M. Bouteba",
         "jobTitle": "Professeur de technologie",
         "description": "M. Bouteba, enseignant de technologie au Collège Louise Michel à Paris (10ème), auteur de ressources pédagogiques gratuites alignées sur le programme de l'Éducation Nationale française.",
+        "sameAs": ["https://fr.tipeee.com/revizon/"],
         "worksFor": {
           "@type": "EducationalOrganization",
           "@id": "https://collegelouisemichel.net/#organization",

@@ -72,10 +72,17 @@ const courseSchema = JSON.stringify({
   "description": description ?? `Cours de technologie en ${levelConfig.label} au Collège Louise Michel Paris.`,
   "provider": {
     "@type": "EducationalOrganization",
+    "@id": "https://collegelouisemichel.net/#organization",
     "name": "Collège Louise Michel Paris"
+  },
+  "instructor": {
+    "@type": "Person",
+    "@id": "https://collegelouisemichel.net/#person"
   },
   "educationalLevel": levelConfig.label,
   "isAccessibleForFree": true,
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-03-22",
   "url": `https://collegelouisemichel.net${Astro.url.pathname}`
 });
 ---
