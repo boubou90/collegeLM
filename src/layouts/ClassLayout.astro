@@ -68,6 +68,7 @@ const breadcrumbSchema = JSON.stringify({
 const courseSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": `https://collegelouisemichel.net${Astro.url.pathname}#course`,
   "name": title,
   "description": description ?? `Cours de technologie en ${levelConfig.label} au Collège Louise Michel Paris.`,
   "provider": {
