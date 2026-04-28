@@ -1,5 +1,23 @@
 import { useState, useEffect } from 'react';
 
+type ShuffledQ = { q: string; a: string[]; c: number; explanation: string };
+
+function shuffleAll(qs: typeof BREVET_QUESTIONS): ShuffledQ[] {
+  const arr = [...qs];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.map(q => {
+    const indexed = q.a.map((text, i) => ({ text, isCorrect: i === q.c }));
+    for (let i = indexed.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indexed[i], indexed[j]] = [indexed[j], indexed[i]];
+    }
+    return { q: q.q, a: indexed.map(x => x.text), c: indexed.findIndex(x => x.isCorrect), explanation: q.explanation };
+  });
+}
+
 const BREVET_QUESTIONS = [
   {
     q: "Dans une serre automatisée, le capteur de température est dans la chaîne :",
@@ -46,6 +64,7 @@ function Stars({ score, total }: { score: number; total: number }) {
 }
 
 export default function BrevetQuiz() {
+  const [questions, setQuestions] = useState<ShuffledQ[]>([]);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -61,7 +80,7 @@ export default function BrevetQuiz() {
   const handleAnswer = (idx: number) => {
     if (selected !== null) return;
     setSelected(idx);
-    if (BREVET_QUESTIONS[current].c === idx) setScore(s => s + 1);
+    if (questions[current].c === idx) setScore(s => s + 1);
   };
 
   const handleNext = () => {
@@ -82,6 +101,7 @@ export default function BrevetQuiz() {
   };
 
   const handleReset = () => {
+    setQuestions(shuffleAll(BREVET_QUESTIONS));
     setCurrent(0); setSelected(null);
     setScore(0); setFinished(false); setStarted(true);
   };
@@ -111,7 +131,7 @@ export default function BrevetQuiz() {
             </p>
           )}
           <button
-            onClick={() => setStarted(true)}
+            onClick={() => { setQuestions(shuffleAll(BREVET_QUESTIONS)); setStarted(true); }}
             style={{
               padding: '0.75rem 2rem', background: `linear-gradient(135deg, ${accentColor} 0%, #ef4444 100%)`,
               color: 'white', border: 'none', borderRadius: '2rem',
@@ -165,7 +185,8 @@ export default function BrevetQuiz() {
     );
   }
 
-  const q = BREVET_QUESTIONS[current];
+  const q = questions[current];
+  if (!q) return null;
   const progress = (current / BREVET_QUESTIONS.length) * 100;
   const isCorrect = selected !== null && selected === q.c;
 

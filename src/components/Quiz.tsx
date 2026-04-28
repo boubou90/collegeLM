@@ -1,5 +1,23 @@
 import { useState, useEffect } from 'react';
 
+type ShuffledQ = { q: string; a: string[]; c: number; level: string; explanation: string };
+
+function shuffleAll(qs: typeof QUESTIONS): ShuffledQ[] {
+  const arr = [...qs];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.map(q => {
+    const indexed = q.a.map((text, i) => ({ text, isCorrect: i === q.c }));
+    for (let i = indexed.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indexed[i], indexed[j]] = [indexed[j], indexed[i]];
+    }
+    return { q: q.q, a: indexed.map(x => x.text), c: indexed.findIndex(x => x.isCorrect), level: q.level, explanation: q.explanation };
+  });
+}
+
 const QUESTIONS = [
   {
     q: "Quel est le rôle d'un routeur dans un réseau informatique ?",
@@ -57,6 +75,7 @@ function Stars({ score, total }: { score: number; total: number }) {
 }
 
 export default function Quiz() {
+  const [questions, setQuestions] = useState<ShuffledQ[]>([]);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -95,6 +114,7 @@ export default function Quiz() {
   };
 
   const handleReset = () => {
+    setQuestions(shuffleAll(QUESTIONS));
     setCurrent(0);
     setSelected(null);
     setScore(0);
@@ -130,7 +150,7 @@ export default function Quiz() {
             </p>
           )}
           <button
-            onClick={() => setStarted(true)}
+            onClick={() => { setQuestions(shuffleAll(QUESTIONS)); setStarted(true); }}
             style={{
               padding: '0.75rem 2rem',
               background: 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)',
@@ -192,7 +212,8 @@ export default function Quiz() {
     );
   }
 
-  const q = QUESTIONS[current];
+  const q = questions[current];
+  if (!q) return null;
   const progress = (current / QUESTIONS.length) * 100;
   const isCorrect = selected !== null && selected === q.c;
 
