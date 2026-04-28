@@ -27,13 +27,13 @@ const BREVET_QUESTIONS = [
   },
   {
     q: "Quelle est la fonction principale d'un logigramme (organigramme) en programmation ?",
-    a: ["Représenter le schéma électrique d'un circuit", "Décrire graphiquement l'enchaînement des instructions d'un programme", "Modéliser l'aspect 3D d'une pièce", "Calculer la résistance d'un conducteur"],
+    a: ["Représenter le câblage électrique de tous les composants du circuit", "Décrire graphiquement l'enchaînement des instructions d'un programme", "Modéliser en 3D la forme et les cotes d'une pièce mécanique", "Calculer automatiquement la valeur de résistance d'un conducteur"],
     c: 1,
     explanation: "Un logigramme représente graphiquement, sous forme de blocs, l'enchaînement logique des instructions d'un algorithme ou d'un programme. Il est utilisé pour concevoir et communiquer un programme avant de le coder.",
   },
   {
     q: "Dans le système de freinage ABS, quel est le rôle du calculateur électronique ?",
-    a: ["Alimenter les freins en énergie hydraulique", "Traiter les informations des capteurs et commander les actionneurs", "Convertir l'énergie mécanique en énergie électrique", "Stocker l'énergie de freinage"],
+    a: ["Alimenter le circuit hydraulique des freins avec la pression requise", "Traiter les informations des capteurs et commander les actionneurs", "Convertir l'énergie mécanique des roues en énergie électrique utile", "Stocker l'énergie cinétique lors des phases de décélération du véhicule"],
     c: 1,
     explanation: "Le calculateur (ou unité de contrôle) est dans la chaîne d'information : il traite les données des capteurs de vitesse de roue et envoie des ordres aux actionneurs (électrovannes) pour moduler la pression de freinage.",
   },
@@ -45,7 +45,7 @@ const BREVET_QUESTIONS = [
   },
   {
     q: "L'adresse IP 192.168.1.1 avec un masque 255.255.255.0 désigne :",
-    a: ["Un équipement sur Internet accessible depuis le monde entier", "Un équipement sur un réseau local privé", "Un serveur DNS public", "Une adresse IPv6"],
+    a: ["Un serveur web public accessible à tous les internautes du monde", "Un équipement sur un réseau local privé non routable sur Internet", "Un serveur DNS qui traduit les noms de domaine en adresses IP", "Une adresse de format IPv6 codée sur 128 bits au lieu de 32"],
     c: 1,
     explanation: "Les adresses commençant par 192.168.x.x sont des adresses privées (RFC 1918), utilisées uniquement dans les réseaux locaux (LAN). Elles ne sont pas routables sur Internet sans traduction d'adresse (NAT).",
   },

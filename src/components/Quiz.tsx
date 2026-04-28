@@ -21,14 +21,14 @@ function shuffleAll(qs: typeof QUESTIONS): ShuffledQ[] {
 const QUESTIONS = [
   {
     q: "Quel est le rôle d'un routeur dans un réseau informatique ?",
-    a: ["Afficher des images", "Relier des réseaux et diriger les données", "Stocker des fichiers", "Imprimer des documents"],
+    a: ["Afficher les pages web reçues depuis Internet", "Relier des réseaux et diriger les données", "Sauvegarder les fichiers sur un support distant", "Envoyer les documents vers une imprimante réseau"],
     c: 1,
     level: '5ème',
     explanation: "Un routeur lit l'adresse IP des paquets de données et les envoie vers le bon réseau destinataire. C'est lui qui relie le réseau du collège à Internet.",
   },
   {
     q: "Qu'est-ce qu'un diagramme « Bête à Cornes » en technologie ?",
-    a: ["Un schéma électrique", "Un plan architectural en 3D", "Un outil d'analyse fonctionnelle du besoin", "Un diagramme de circuits"],
+    a: ["Un schéma qui représente le câblage électrique d'un circuit", "Un plan en 3D modélisant l'architecture d'un objet technique", "Un outil d'analyse fonctionnelle du besoin", "Un diagramme reliant les composants d'un circuit logique"],
     c: 2,
     level: '3ème',
     explanation: "La bête à cornes répond à 3 questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ? C'est un outil d'analyse du besoin.",
