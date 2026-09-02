@@ -58,8 +58,10 @@ const courseSchema = isCourse ? JSON.stringify({
     <!-- Load AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-    <!-- Load Search CSS -->
-    <style>
+    <!-- Load Search CSS (is:global : Search.tsx est un composant React, ses éléments
+         rendus ne reçoivent jamais l'attribut de scoping Astro — un <style> scopé ici
+         ne s'appliquerait donc jamais à eux) -->
+    <style is:global>
       @import '../styles/search.css';
     </style>
 

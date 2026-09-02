@@ -9,12 +9,6 @@ export const sequenceDescriptions: Record<string, SeqInfo[]> = {
     { emoji: '💡', title: 'Choisir un OST — Lampes',     desc: 'Comparer et choisir un objet technique selon des critères définis.' },
     { emoji: '⚡', title: 'Défi énergétique',             desc: "Alimenter un habitat en énergie dans une zone isolée : un défi technique réel." },
     { emoji: '🌡️', title: 'Station météo connectée',    desc: "Étudier le fonctionnement d'une station météo et ses capteurs connectés." },
-    { emoji: '🔧', title: 'Réparation station météo',    desc: "Analyser une panne et réparer la fixation d'une station météo." },
-    { emoji: '🚲', title: 'Feu arrière intelligent',     desc: 'Programmer un feu clignotant intelligent pour améliorer la sécurité routière.' },
-    { emoji: '🤖', title: 'Guide de balle pour robot',   desc: 'Concevoir une pièce technique pour qu\'un robot joue au football.' },
-    { emoji: '⚽', title: 'Fabrication du guide',        desc: 'Fabriquer le guide de balle conçu et le tester avec le robot.' },
-    { emoji: '🎯', title: 'Robot footballeur',           desc: 'Programmer un robot pour qu\'il joue au football avec précision.' },
-    { emoji: '🏠', title: 'Éclairage automatisé',        desc: 'Concevoir un système d\'éclairage automatique pour une résidence.' },
   ],
   '4eme': [
     { emoji: '🤖', title: "L'Intelligence Artificielle", desc: "Utiliser l'IA générative comme assistant personnel pour travailler plus efficacement." },

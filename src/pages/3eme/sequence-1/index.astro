@@ -22,10 +22,6 @@ const activities = [
   {
     title: "Évaluation",
     description: "Évaluation des compétences acquises"
-  },
-  {
-    title: "Ressources",
-    description: "Documents et ressources complémentaires"
   }
 ];
 
@@ -44,6 +40,18 @@ const level = "3eme";
   />
 
   <ActivityLinks sequenceNumber={1} activities={activities} level={level} />
+
+  <a href={`/${level}/sequence-1/resources`} class="resources-link" data-aos="fade-up">
+    <div class="resources-icon">📁</div>
+    <div class="resources-content">
+      <h3>Ressources</h3>
+      <p>Documents et ressources complémentaires</p>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="resources-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 12h14"></path>
+      <path d="m12 5 7 7-7 7"></path>
+    </svg>
+  </a>
 </ClassLayout>
 
 <style>
@@ -51,5 +59,90 @@ const level = "3eme";
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .resources-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  .resources-link:hover {
+    transform: translateX(10px);
+    background: var(--primary);
+    color: white;
+  }
+
+  .resources-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 0.75rem;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .resources-link:hover .resources-icon {
+    background: white;
+    color: var(--primary);
+  }
+
+  .resources-content {
+    flex: 1;
+  }
+
+  .resources-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .resources-content p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .resources-link:hover .resources-content p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .resources-arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .resources-link:hover .resources-arrow {
+    transform: translateX(5px);
+  }
+
+  :global([data-theme="dark"]) .resources-link {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  @media (max-width: 768px) {
+    .resources-link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .resources-arrow {
+      align-self: flex-end;
+    }
   }
 </style>
