@@ -5,11 +5,27 @@ interface Props {
     title: string;
     description: string;
     videoFile?: string;
+    type?: "activite" | "ressource" | "evaluation" | "cours";
   }[];
   level: string;
 }
 
 const { sequenceNumber, activities, level } = Astro.props;
+
+// Couleur d'accent du badge : réutilise la palette de niveau déjà en place
+// sur le site (ClassLayout, SequenceButtons, Quiz) — pas de nouvelle palette.
+const LEVEL_BADGE_COLORS: Record<string, string> = {
+  '5eme': '#3B82F6',
+  '4eme': '#10B981',
+  '3eme': '#F97316',
+};
+const badgeColor = LEVEL_BADGE_COLORS[level] ?? '#2563eb';
+
+const TYPE_BADGES: Record<string, string> = {
+  ressource: '📚 Ressource',
+  evaluation: '🧪 Évaluation',
+  cours: '📘 Cours',
+};
 ---
 
 <nav class="activity-links">
@@ -22,6 +38,11 @@ const { sequenceNumber, activities, level } = Astro.props;
     >
       <div class="activity-number">{index + 1}</div>
       <div class="activity-content">
+        {activity.type && activity.type !== 'activite' && (
+          <span class="activity-type-badge" style={`--badge-color: ${badgeColor}`}>
+            {TYPE_BADGES[activity.type]}
+          </span>
+        )}
         <h3>{activity.title}</h3>
         <p>{activity.description}</p>
         {activity.videoFile && (
@@ -106,6 +127,19 @@ const { sequenceNumber, activities, level } = Astro.props;
 
   .activity-content {
     flex: 1;
+  }
+
+  .activity-type-badge {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--badge-color, var(--primary));
+    margin-bottom: 0.3rem;
+  }
+
+  .activity-link:hover .activity-type-badge {
+    color: white;
   }
 
   h3 {
