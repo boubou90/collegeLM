@@ -9,5 +9,6 @@ export const sequenceColors = [
   { bg: '#4f46e5', hover: '#4338ca' }, // Indigo
   { bg: '#db2777', hover: '#be185d' }, // Pink
   { bg: '#84cc16', hover: '#65a30d' }, // Lime
-  { bg: '#7c3aed', hover: '#6d28d9' }  // Violet
+  { bg: '#7c3aed', hover: '#6d28d9' }, // Violet
+  { bg: '#0f766e', hover: '#0d6b63' }  // Teal
 ];

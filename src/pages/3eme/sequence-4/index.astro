@@ -4,39 +4,27 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves découvrent les outils de conception et de modélisation technique. De la représentation 2D au dessin coté, jusqu'à la maquette numérique réalisée avec un logiciel de CAO, ils apprennent à concrétiser et formaliser leurs solutions techniques :`;
+const description = `Dans cette séquence, les élèves découvrent comment le développement du numérique et d'Internet a transformé les métiers et la société. À travers la comparaison de deux portraits de livreurs — Marcel en 1995 et Inès aujourd'hui — ils analysent les outils numériques qui ont fait évoluer les pratiques professionnelles, et s'interrogent sur l'impact de l'intelligence artificielle sur l'emploi :`;
 
 const activities = [
   {
-    title: "Représentation et dessin technique",
-    description: "Comment représenter et décrire une solution technique avec le dessin technique ?"
-  },
-  {
-    title: "La cotation et les normes",
-    description: "Comment coter un dessin technique en respectant les normes ?"
-  },
-  {
-    title: "La maquette numérique (CAO)",
-    description: "Comment réaliser une maquette numérique d'un objet avec un logiciel de CAO ?"
-  },
-  {
-    title: "Ressources — Conception technique",
-    description: "Documents et ressources complémentaires sur la conception et la modélisation"
+    title: "Les impacts du numérique sur la société et les métiers",
+    description: "Comment le développement de l'informatique et d'Internet a-t-il permis de transformer le métier de chauffeur-livreur ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 4 — Conception et modélisation - 3ème" level={level}>
+<ClassLayout title="Séquence 4 – Comprendre l'impact du numérique sur la société et les métiers - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 4 — Conception et modélisation</h1>
+  <h1>Séquence 4 – Comprendre l'impact du numérique sur la société et les métiers</h1>
 
   <SequencePresentation
-    title="Concevoir et modéliser des solutions techniques innovantes"
+    title="Du livreur au robot : comment le numérique transforme les métiers"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment représenter et modéliser une solution technique pour pouvoir la fabriquer ?"
+    question="Comment le développement de l'informatique et d'Internet a-t-il permis de transformer le métier de chauffeur-livreur ?"
   />
 
   <ActivityLinks sequenceNumber={4} activities={activities} level={level} />

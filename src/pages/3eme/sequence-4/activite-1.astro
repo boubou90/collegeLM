@@ -4,63 +4,188 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents = [
+  {
+    title: "Activité 1 — Les impacts du numérique sur la société et les métiers",
+    pdfUrl: "/documents/3eme/sequence-4/activite-1/activite-1.pdf"
+  },
+  {
+    title: "Fiche ressource — Fonctionnement du robot livreur autonome",
+    pdfUrl: "/documents/3eme/sequence-4/activite-1/Fiche Ressource - IA et Robotique - Chaîne d_information.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 4 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-4`} />
-  <h1>Séquence 4 — Conception et modélisation · Activité 1</h1>
+  <h1>Séquence 4 – Comprendre l'impact du numérique sur la société et les métiers · Activité 1</h1>
 
   <ActivitySection
-    title="Représentation et dessin technique"
-    description="Comment représenter et décrire une solution technique avec le dessin technique ? Le dessin technique est le langage universel des ingénieurs et des techniciens. Dans cette activité, tu découvriras les conventions du dessin de définition : les différentes vues (de face, de dessus, de profil), le trait fort pour les arêtes visibles et le trait mixte fin pour les arêtes cachées. Tu apprendras à lire et à interpréter un dessin technique existant avant de réaliser tes propres croquis. Tu travailleras sur des objets simples (support, équerre, pièce mécanique) pour maîtriser la représentation en projection orthogonale."
+    title="Les impacts du numérique sur la société et les métiers"
+    description="Durée : 1h30 — Programme : OST1 — Décrire les liens entre usages et évolutions technologiques des objets et des systèmes techniques | T2 — Usages et impacts sociétaux du numérique | OST15 — Exprimer dans un argumentaire court le rôle du développement stratégique du numérique au sein de la société et des environnements professionnels. Comment le développement de l'informatique et d'Internet a-t-il permis de transformer le métier de chauffeur-livreur ?"
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={1}
     sequenceHref="/3eme/sequence-4"
-    sequenceLabel="Séquence 4 — Conception et modélisation"
+    sequenceLabel="Séquence 4 – Comprendre l'impact du numérique sur la société et les métiers"
     retenir={{
       definitions: [
-        { term: "Vue de face", def: "Vue principale du dessin technique, représentant la face la plus représentative de l'objet." },
-        { term: "Projection orthogonale", def: "Méthode de représentation où l'objet est projeté perpendiculairement sur des plans." },
-        { term: "Trait fort", def: "Trait plein épais représentant les arêtes et contours visibles." },
-        { term: "Trait interrompu court (pointillés)", def: "Représente les arêtes et contours cachés (non visibles depuis le point de vue)." },
+        { term: "Application (logiciel)", def: "Programme installé sur un smartphone ou un ordinateur permettant d'accomplir des tâches spécifiques (navigation, gestion de commandes, communication…)." },
+        { term: "Objet connecté", def: "Objet capable de collecter des données et de les transmettre via Internet à d'autres systèmes ou utilisateurs." },
+        { term: "Base de données", def: "Ensemble organisé d'informations stockées et accessibles par un système informatique." },
+        { term: "Microcontrôleur", def: "Composant électronique programmable intégré dans un système technique qui traite des données et pilote des actionneurs." },
+        { term: "Intelligence artificielle (IA)", def: "Système informatique capable d'apprendre à partir de données pour réaliser des tâches nécessitant habituellement l'intelligence humaine." },
+        { term: "Stratégie numérique", def: "Ensemble des choix d'une organisation pour utiliser le numérique comme levier de développement, d'efficacité et de compétitivité." },
       ],
       points: [
-        "Un dessin technique en projection orthogonale utilise 3 vues : face, dessus, gauche (ou droite).",
-        "Les vues sont alignées : vue de dessus sous la vue de face ; vue de gauche à droite de la vue de face.",
-        "Trait fort = visible ; pointillés = caché ; trait mixte fin = axe de symétrie.",
+        "OST1 : décrire les liens entre usages et évolutions technologiques des objets et des systèmes techniques.",
+        "OST15 : argumenter sur le rôle du développement stratégique du numérique dans la société et les environnements professionnels.",
+        "4 types d'outils numériques utilisés par le livreur : application, objet connecté, base de données, logiciel.",
+        "Le robot livreur autonome TransLog utilise : capteurs, microcontrôleur, IA et traitement de données.",
+        "CPS C1.2 — Savoir penser de façon critique — Je compare des solutions techniques.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Le dessin technique — langage universel</h3>
-      <p>Le <strong>dessin technique</strong> est le moyen de communication universel entre ingénieurs, techniciens et fabricants. Contrairement à une photo ou une illustration, il suit des <strong>conventions normalisées</strong> (norme ISO) qui permettent à n'importe quel technicien dans le monde de comprendre et fabriquer la pièce décrite.</p>
 
-      <h3>La projection orthogonale — les 3 vues</h3>
-      <p>En projection orthogonale, on projette l'objet perpendiculairement sur trois plans. Cela donne trois vues complémentaires :</p>
+      <h3>Situation de départ</h3>
+      <p><strong>Marcel, livreur en 1995.</strong> Marcel travaille comme chauffeur-livreur pour une entreprise de messagerie. Chaque matin, il reçoit une liasse de bons de livraison papier. Il consulte une carte routière pour organiser sa tournée, note les adresses à la main et contacte les clients depuis une cabine téléphonique en cas d'absence. Il remplit un récapitulatif papier à la fin de sa journée, que son responsable saisit ensuite manuellement dans un ordinateur. Marcel livre en moyenne 60 colis par jour.</p>
+      <p><strong>Inès, livreuse aujourd'hui.</strong> Inès reçoit ses colis à livrer directement sur une application smartphone. L'application calcule automatiquement l'itinéraire optimisé, lui indique en temps réel les modifications de trafic, envoie une notification au client à l'approche de la livraison et génère une signature électronique à la réception. Chaque livraison est enregistrée instantanément dans la base de données de l'entreprise, accessible par tous les services. Inès livre en moyenne 120 colis par jour.</p>
+
+      <h3>Problématique</h3>
+      <p><strong>Comment le développement de l'informatique et d'Internet a-t-il permis de transformer le métier de chauffeur-livreur ?</strong></p>
+
+      <div class="programme-box">
+        <strong>Programme :</strong>
+        OST1 — Décrire les liens entre usages et évolutions technologiques des objets et des systèmes techniques &nbsp;|&nbsp;
+        T2 — Usages et impacts sociétaux du numérique &nbsp;|&nbsp;
+        OST15 — Exprimer dans un argumentaire court le rôle du développement stratégique du numérique au sein de la société et des environnements professionnels
+      </div>
+
+      <!-- ═══════════════════════════════════════════ N1 ═══════════════════════════════════════════ -->
+      <h2 class="niveau-titre">N1 — Connaissance</h2>
+
+      <div class="question-block">
+        <p class="question-label">N1a —</p>
+        <p>Relis les deux témoignages. Relève tous les outils ou technologies numériques cités par Inès, puis relie chaque mot à sa définition.</p>
+        <table class="activity-table">
+          <thead>
+            <tr><th>Outil / technologie numérique cité par Inès</th><th>Définition correspondante</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Application smartphone</td><td>Programme permettant de gérer les commandes, l'itinéraire et la communication client</td></tr>
+            <tr><td>Objet connecté (smartphone)</td><td>Objet qui collecte et transmet des données via Internet</td></tr>
+            <tr><td>Signature électronique</td><td>Validation numérique d'une livraison, enregistrée sans papier</td></tr>
+            <tr><td>Base de données</td><td>Système de stockage partagé accessible par tous les services de l'entreprise</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="question-block">
+        <p class="question-label">N1b —</p>
+        <p>Parmi les outils numériques listés par Inès, lequel te semble le plus important pour l'entreprise ? Justifie ton choix en une phrase.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════ N2 ═══════════════════════════════════════════ -->
+      <h2 class="niveau-titre">N2 — Compréhension</h2>
+
+      <div class="question-block">
+        <p class="question-label">N2a —</p>
+        <p>Pour chaque tâche, complète le tableau en inscrivant les outils numériques utilisés par Inès.</p>
+        <table class="activity-table">
+          <thead>
+            <tr><th>Tâche</th><th>Outil(s) numérique(s) utilisé(s)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Préparer la tournée</td><td></td></tr>
+            <tr><td>Prévenir d'un retard</td><td></td></tr>
+            <tr><td>Faire signer la livraison</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="question-block">
+        <p class="question-label">N2b —</p>
+        <p>Explique avec tes mots pourquoi l'entreprise a eu intérêt à investir dans ces outils numériques.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <div class="question-block">
+        <p class="question-label">N2c —</p>
+        <p>Combien de colis Inès livre-t-elle par jour par rapport à Marcel ? D'après toi, cela est-il uniquement dû au numérique ? Cite au moins un autre facteur possible et explique pourquoi tu le retiens.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════ N3 ═══════════════════════════════════════════ -->
+      <h2 class="niveau-titre">N3 — Application</h2>
+
+      <h3>Le robot livreur autonome TransLog</h3>
+      <p>L'entreprise a récemment testé un <strong>robot livreur autonome</strong> appelé <strong>TransLog</strong>. Ce robot se déplace sur les trottoirs pour livrer des colis dans un rayon de 3 km autour d'un entrepôt. Il fonctionne grâce à une combinaison de technologies :</p>
       <ul>
-        <li><strong>Vue de face</strong> (VF) : vue principale, la plus informative. On la choisit en priorité.</li>
-        <li><strong>Vue de dessus</strong> (VD) : placée <em>sous</em> la vue de face.</li>
-        <li><strong>Vue de gauche</strong> (VG) : placée à <em>droite</em> de la vue de face.</li>
-      </ul>
-      <p>Les vues sont <strong>alignées</strong> et à la même échelle. Une information vue sur une vue se retrouve toujours à la même position dans la vue adjacente.</p>
-
-      <h3>Les types de traits</h3>
-      <ul>
-        <li><strong>Trait fort (plein épais)</strong> : contours et arêtes <em>visibles</em> depuis le point de vue.</li>
-        <li><strong>Trait interrompu court (pointillés fins)</strong> : contours et arêtes <em>cachés</em>.</li>
-        <li><strong>Trait mixte fin (tirets-points)</strong> : axes de symétrie et de révolution.</li>
-        <li><strong>Trait continu fin</strong> : lignes de cote, hachures (coupes).</li>
+        <li><strong>Capteurs</strong> : caméras, capteurs ultrason et LIDAR pour percevoir l'environnement (obstacles, piétons, véhicules).</li>
+        <li><strong>Microcontrôleur</strong> : composant qui traite les données des capteurs en temps réel et pilote les moteurs du robot.</li>
+        <li><strong>Intelligence artificielle</strong> : algorithme d'apprentissage qui permet au robot de reconnaître les obstacles, d'anticiper les trajectoires et de s'adapter à des situations nouvelles.</li>
+        <li><strong>Traitement des données</strong> : les informations des capteurs sont analysées pour décider du comportement du robot à chaque instant.</li>
       </ul>
 
-      <h3>Lire un dessin technique — méthode</h3>
-      <ol>
-        <li>Identifier les 3 vues et repérer leur position relative.</li>
-        <li>Partir de la vue de face pour comprendre la forme générale.</li>
-        <li>Utiliser les autres vues pour lever les ambiguïtés.</li>
-        <li>Les pointillés indiquent une forme cachée : essaie de la visualiser en 3D.</li>
-      </ol>
+      <div class="question-block">
+        <p class="question-label">N3a —</p>
+        <p>À l'aide du document ressource, identifie une tâche précise que le robot doit accomplir pour effectuer une livraison. Explique comment le numérique (utilisation de capteurs et traitement des données) permet au robot de réaliser cette tâche sans intervention humaine.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <div class="question-block">
+        <p class="question-label">N3b —</p>
+        <p>Tout comme le métier de chauffeur-livreur a été transformé entre l'époque de Marcel et celle d'Inès, l'arrivée du robot TransLog marque une nouvelle évolution. Complète le tableau pour montrer comment le numérique fait disparaître des tâches physiques au profit de tâches automatisées.</p>
+        <table class="activity-table">
+          <thead>
+            <tr><th>Situation</th><th>Tâche réalisée par le livreur humain</th><th>Comment le robot TransLog la réalise-t-il ?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Se déplacer et trouver le bon itinéraire</td><td></td><td></td></tr>
+            <tr><td>Sécuriser la marchandise et la donner au client</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══════════════════════════════════════════ N4 ═══════════════════════════════════════════ -->
+      <h2 class="niveau-titre">N4 — Maîtrise &nbsp;<span class="cps-badge">CPS C1.2 — Savoir penser de façon critique — Je compare des solutions techniques</span></h2>
+
+      <div class="question-block">
+        <p class="question-label">N4a —</p>
+        <p>Rédige un court argumentaire (5 à 8 lignes) pour donner ton avis sur le remplacement des livreurs humains par ces robots. Ta réponse doit obligatoirement inclure :</p>
+        <ul>
+          <li>un <strong>avantage environnemental ou économique</strong> ;</li>
+          <li>un <strong>inconvénient lié au monde du travail ou à la consommation énergétique</strong> des systèmes numériques.</li>
+        </ul>
+        <div class="reponse-zone">Écris ton argumentaire ici…</div>
+      </div>
+
+      <div class="question-block">
+        <p class="question-label">N4b —</p>
+        <p>Cite un autre métier dans lequel nous allons retrouver la même problématique, c'est-à-dire où l'utilisation de l'IA risque de supprimer des emplois. Tu peux faire une recherche sur Internet.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════ SYNTHÈSE ════════════════════════════════════ -->
+      <h2 class="niveau-titre">Synthèse</h2>
+
+      <div class="question-block">
+        <p class="synthese-question">① Que modifie en général l'évolution et l'utilisation du numérique dans les métiers ?</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <div class="question-block">
+        <p class="synthese-question">② Donne deux avantages qui poussent une entreprise à utiliser le numérique et l'IA.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
+      <div class="question-block">
+        <p class="synthese-question">③ Donne deux inconvénients à l'arrivée massive de l'intelligence artificielle (IA) sur certains emplois.</p>
+        <div class="reponse-zone">Écris ta réponse ici…</div>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -70,5 +195,129 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .programme-box {
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 0 0.4rem 0.4rem 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: #1e3a8a;
+    margin: 1.25rem 0 1.5rem;
+    line-height: 1.6;
+  }
+
+  .niveau-titre {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    background: #1e3a8a;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cps-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    letter-spacing: 0.01em;
+  }
+
+  .question-block {
+    margin: 1.25rem 0;
+    padding: 1rem 1.1rem;
+    background: #f8fafc;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .question-label {
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+  }
+
+  .synthese-question {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+  }
+
+  .reponse-zone {
+    margin-top: 0.6rem;
+    min-height: 3rem;
+    background: #fff;
+    border: 1px dashed #93c5fd;
+    border-radius: 0.4rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-style: italic;
+  }
+
+  .activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .activity-table th {
+    background: #1e3a8a;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-weight: 700;
+  }
+
+  .activity-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .activity-table tr:nth-child(even) td {
+    background: #f1f5f9;
+  }
+
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    padding: 0.75rem 1rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .resource-links a {
+    color: #1e3a8a;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resource-links a:hover {
+    color: #2e56b4;
   }
 </style>
