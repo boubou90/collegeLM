@@ -24,8 +24,8 @@ export const sequenceDescriptions: Record<string, SeqInfo[]> = {
   ],
   '3eme': [
     { emoji: '⚡', title: "Chaînes énergie & information", desc: "Analyser les chaînes d'énergie et d'information dans les systèmes techniques." },
-    { emoji: '⚙️', title: 'Systèmes techniques',          desc: "Étudier la structure et le fonctionnement des systèmes techniques." },
-    { emoji: '🔬', title: 'Analyse fonctionnelle',         desc: "Appliquer les outils d'analyse fonctionnelle (bête à cornes, pieuvre)." },
+    { emoji: '📱', title: 'Le smartphone, entre innovation et responsabilité', desc: "Comprendre comment les innovations du smartphone et de l'intelligence artificielle transforment les objets de communication et interrogent leur responsabilité dans la société." },
+    { emoji: '🧭', title: 'Le système de navigation',       desc: "Comprendre comment l'IA a transformé les objets de navigation et comment la société encadre leurs effets." },
     { emoji: '🏗️', title: 'Conception technique',         desc: 'Concevoir et modéliser des solutions techniques innovantes.' },
     { emoji: '💡', title: 'Innovation et société',         desc: "Comprendre l'impact des innovations technologiques sur notre société." },
     { emoji: '🖥️', title: 'Programmation avancée',        desc: 'Approfondir la programmation pour contrôler des systèmes automatisés.' },

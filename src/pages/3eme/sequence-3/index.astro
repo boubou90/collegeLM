@@ -4,39 +4,31 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves s'approprient les outils de l'analyse fonctionnelle : la bête à cornes pour identifier le besoin, le diagramme pieuvre pour lister les fonctions de service, et le cahier des charges fonctionnel (CDCF) pour formaliser les exigences d'un projet technique :`;
+const description = `Dans cette séquence, les élèves étudient l'évolution des objets de navigation, de la carte routière à l'application connectée dotée d'intelligence artificielle. Ils analysent comment l'IA a transformé ces objets et interrogent les effets de cette évolution sur la société et ses règles :`;
 
 const activities = [
   {
-    title: "La bête à cornes",
-    description: "Comment identifier le besoin d'un objet technique avec la bête à cornes ?"
+    title: "Le système de navigation",
+    description: "Comment un objet de navigation a-t-il évolué au point de « savoir » éviter un bouchon en temps réel ?"
   },
   {
-    title: "Le diagramme pieuvre",
-    description: "Comment lister les fonctions de service avec le diagramme pieuvre ?"
-  },
-  {
-    title: "Le cahier des charges fonctionnel (CDCF)",
-    description: "Comment rédiger un cahier des charges fonctionnel ?"
-  },
-  {
-    title: "Ressources — Analyse fonctionnelle",
-    description: "Documents et ressources complémentaires sur l'analyse fonctionnelle"
+    title: "Le système de navigation face aux règles de la société",
+    description: "Comment la société peut-elle encadrer les effets d'une application de navigation sur ceux qui ne l'utilisent pas ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 3 — Analyse fonctionnelle - 3ème" level={level}>
+<ClassLayout title="Séquence 3 – Le système de navigation : entre technologie et règles de la société - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 3 — Analyse fonctionnelle</h1>
+  <h1>Séquence 3 – Le système de navigation : entre technologie et règles de la société</h1>
 
   <SequencePresentation
-    title="Appliquer les outils d'analyse fonctionnelle : bête à cornes, pieuvre, CDCF"
+    title="De la carte routière à l'application connectée : comment la société encadre-t-elle les OST ?"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment identifier et formaliser les fonctions d'un objet technique avec les outils de l'analyse fonctionnelle ?"
+    question="Comment un système de navigation utilise-t-il des technologies numériques pour rendre service à l'utilisateur tout en respectant les règles de la société ?"
   />
 
   <ActivityLinks sequenceNumber={3} activities={activities} level={level} />

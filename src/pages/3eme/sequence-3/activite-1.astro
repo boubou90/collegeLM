@@ -4,60 +4,121 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents = [
+  {
+    title: "Activité 1 — Le système de navigation",
+    pdfUrl: "/documents/3eme/sequence-3/activite-1/activite-1.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 3 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-3`} />
-  <h1>Séquence 3 — Analyse fonctionnelle · Activité 1</h1>
+  <h1>Séquence 3 – Le système de navigation · Activité 1</h1>
 
   <ActivitySection
-    title="La bête à cornes"
-    description="Comment identifier le besoin d'un objet technique avec la bête à cornes ? La bête à cornes est un outil graphique qui permet de définir le besoin auquel répond un objet technique en répondant à trois questions fondamentales : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ? Tu apprendras à construire ce diagramme pour différents objets techniques du quotidien, puis tu l'appliqueras à un objet de ton choix. Cet outil est incontournable au Brevet de technologie et te permettra de justifier l'existence d'un objet technique de façon rigoureuse."
+    title="Le système de navigation"
+    description="Durée : 1h30 — Thématique T1 – L'évolution des OST — Compétences OST11 et OST12. Pour un trajet en voiture, il faut trouver son chemin d'un point de départ jusqu'à une destination. Aujourd'hui, une application sur un smartphone le fait en quelques secondes. Mais il y a 40 ans, on utilisait tout autre chose. Dans cette activité, tu étudieras l'évolution des objets de navigation — de la carte papier au GPS, puis à l'application connectée — et tu comprendras comment l'intelligence artificielle permet à une application de « savoir » éviter un bouchon en temps réel."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={2}
     sequenceHref="/3eme/sequence-3"
-    sequenceLabel="Séquence 3 — Analyse fonctionnelle"
+    sequenceLabel="Séquence 3 — Le système de navigation : entre technologie et règles de la société"
     retenir={{
       definitions: [
-        { term: "Bête à cornes", def: "Outil graphique d'analyse fonctionnelle qui répond à 3 questions : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?" },
-        { term: "Besoin", def: "Manque ressenti par un utilisateur qu'un produit technique doit satisfaire." },
-        { term: "Utilisateur", def: "Personne ou entité à qui le produit rend service directement." },
+        { term: "Intelligence artificielle (IA)", def: "Système informatique capable d'apprendre à partir de données pour réaliser des tâches qui nécessitent habituellement l'intelligence humaine." },
+        { term: "Innovation de rupture", def: "Innovation qui bouleverse radicalement les usages existants et rend les générations précédentes d'objets obsolètes." },
+        { term: "Apprentissage supervisé", def: "L'IA s'entraîne sur des exemples étiquetés (données + réponses correctes attendues)." },
+        { term: "Apprentissage non supervisé", def: "L'IA découvre seule des structures dans les données, sans exemples préétiquetés." },
+        { term: "Apprentissage par renforcement", def: "L'IA apprend par essais et erreurs en recevant des récompenses ou des pénalités selon ses actions." },
       ],
       points: [
-        "Les 3 questions de la bête à cornes : À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?",
-        "Le but = la fonction principale du produit, formulée avec un verbe d'action.",
-        "Il peut y avoir plusieurs utilisateurs (ex : conducteur ET passagers pour une voiture).",
+        "OST11 : identifier les innovations de rupture dans la lignée carte papier → GPS → application IA.",
+        "OST12 : mettre en relation la découverte du GPS (technique spatiale) avec le développement des applications de navigation.",
+        "4 types d'apprentissage : supervisé, non supervisé, par renforcement, auto-supervisé.",
+        "La trilatération (N3/N4) : le smartphone calcule sa position à partir des signaux d'au moins 3 satellites.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Qu'est-ce que la bête à cornes ?</h3>
-      <p>La <strong>bête à cornes</strong> est le premier outil de l'analyse fonctionnelle. Elle permet de définir le besoin auquel répond un objet technique en répondant à <strong>trois questions fondamentales</strong>. Elle se représente sous forme d'un diagramme avec l'objet au centre, encadré de ses deux "cornes".</p>
-
-      <h3>Les trois questions à se poser</h3>
+      <h3>Situation déclenchante</h3>
+      <p>Pour un trajet en voiture, il faut trouver son chemin d'un point de départ jusqu'à une destination. Aujourd'hui, une application sur un smartphone le fait en quelques secondes. Mais il y a 40 ans, on utilisait tout autre chose.</p>
+      <p>Les trois objets étudiés répondent au <strong>même besoin</strong> : aller d'un point A à un point B sans se perdre.</p>
       <ul>
-        <li><strong>À qui rend-il service ?</strong> → L'utilisateur ou le bénéficiaire direct (personne, animal, organisation…).</li>
-        <li><strong>Sur quoi agit-il ?</strong> → L'objet ou la matière sur laquelle le système agit.</li>
-        <li><strong>Dans quel but ?</strong> → La fonction principale, formulée avec un verbe d'action à l'infinitif.</li>
+        <li><strong>Carte routière papier</strong> — l'utilisateur calcule lui-même son trajet avant de partir, sans information en temps réel.</li>
+        <li><strong>GPS des années 2000</strong> — le calcul d'itinéraire est automatisé et le guidage vocal apparaît, mais le GPS ne connaît pas le trafic en temps réel.</li>
+        <li><strong>Application actuelle</strong> — l'application recalcule en temps réel, évite les bouchons et apprend des données de millions d'utilisateurs.</li>
+      </ul>
+      <p><strong>Qu'est-ce qui a vraiment changé dans l'objet, et comment cette application « sait »-elle éviter un bouchon ?</strong></p>
+
+      <h3>Problématique de séance</h3>
+      <p><strong>Comment un objet de navigation a-t-il évolué au point de « savoir » éviter un bouchon en temps réel ?</strong></p>
+
+      <h3>Contenu N1 / N2</h3>
+
+      <h3>Définition de l'intelligence artificielle</h3>
+      <p>L'<strong>intelligence artificielle (IA)</strong> est la capacité d'un système informatique à accomplir des tâches qui nécessitent habituellement l'intelligence humaine : reconnaître une image, traduire un texte, calculer un itinéraire en tenant compte du trafic en temps réel.</p>
+
+      <h3>Les types d'apprentissage de l'IA</h3>
+      <ul>
+        <li><strong>Apprentissage supervisé</strong> : l'IA s'entraîne sur des exemples étiquetés. Exemple : identifier un bouchon à partir de données de trafic classées « fluide / lent / bloqué ».</li>
+        <li><strong>Apprentissage non supervisé</strong> : l'IA découvre seule des structures dans les données sans étiquettes préétablies. Exemple : regrouper des zones par profil de trafic.</li>
+        <li><strong>Apprentissage par renforcement</strong> : l'IA apprend par essais et erreurs avec récompenses. Exemple : l'agent de navigation reçoit une récompense quand il propose un trajet effectivement plus rapide.</li>
+        <li><strong>Apprentissage auto-supervisé</strong> : l'IA génère elle-même ses propres étiquettes à partir de grandes quantités de données brutes.</li>
       </ul>
 
-      <h3>Exemples concrets</h3>
+      <h3>Usages possibles de l'IA dans la navigation</h3>
       <ul>
-        <li><strong>Vélo</strong> : rend service au cycliste | agit sur le cycliste | dans le but de le déplacer d'un lieu à un autre.</li>
-        <li><strong>Lave-vaisselle</strong> : rend service à l'utilisateur | agit sur la vaisselle sale | dans le but de la laver et de la sécher.</li>
-        <li><strong>Lampe de bureau</strong> : rend service à l'utilisateur | agit sur l'espace de travail | dans le but de l'éclairer.</li>
+        <li><strong>Géolocalisation</strong> en temps réel (position + recalcul constant du trajet).</li>
+        <li><strong>Identification</strong> d'incidents : accident, travaux, ralentissement signalé par les utilisateurs.</li>
+        <li><strong>Calcul</strong> d'itinéraire optimal à partir de millions de données de trajets.</li>
+        <li><strong>Traduction</strong> de données brutes (vitesses, positions) en recommandations compréhensibles.</li>
+        <li><strong>Estimation</strong> d'heure d'arrivée en tenant compte du trafic prévu.</li>
       </ul>
 
-      <h3>Règles de construction</h3>
-      <ol>
-        <li>Identifier <em>qui utilise vraiment</em> l'objet (pas qui l'achète !).</li>
-        <li>Formuler le but avec un <strong>verbe d'action</strong> précis : "transporter", "couper", "chauffer"…</li>
-        <li>Il peut y avoir <strong>plusieurs utilisateurs</strong> : une voiture rend service au conducteur ET aux passagers.</li>
-        <li>L'objet au centre est désigné par son nom précis.</li>
-      </ol>
-      <p>Après avoir défini le besoin avec la bête à cornes, on passe au <strong>diagramme pieuvre</strong> pour lister toutes les fonctions de service (activité 2).</p>
+      <h3>Évolution de la lignée d'objets — innovations de rupture</h3>
+      <p>La lignée des objets de navigation illustre des <strong>innovations de rupture</strong> successives :</p>
+      <ul>
+        <li><strong>Carte papier</strong> → usage passif, trajet planifié à l'avance, aucune information en temps réel.</li>
+        <li><strong>GPS autonome (années 2000)</strong> → <em>rupture</em> : calcul automatique de l'itinéraire, guidage vocal. Limite : pas de données trafic.</li>
+        <li><strong>Application connectée avec IA</strong> → <em>rupture</em> : apprentissage continu à partir de données collaboratives, recalcul en temps réel. L'objet « apprend » de ses utilisateurs.</li>
+      </ul>
+
+      <h3>Contenu N3 / N4</h3>
+
+      <h3>Frise d'évolution et trilatération</h3>
+      <p>La <strong>trilatération</strong> est le principe qui permet de localiser un smartphone : il reçoit les signaux d'au moins 3 satellites et calcule sa position à l'intersection des sphères de distances correspondantes. Plus le nombre de satellites est élevé, plus la précision est grande.</p>
+
+      <h3>Mise en relation : découverte scientifique → développement technologique</h3>
+      <p>La technologie GPS est issue de la navigation spatiale (usage militaire à l'origine). Son ouverture progressive au civil a permis le développement des GPS grand public, puis — associée à l'apprentissage automatique et aux réseaux mobiles — de l'application de navigation collaborative actuelle. C'est un exemple direct d'<strong>OST12</strong> : une découverte scientifique (positionnement par satellite) génère un développement technologique (GPS), qui génère lui-même un effet sur la société (modification des flux de circulation).</p>
+
+      <h3>Effets sur la société</h3>
+      <ul>
+        <li>Réduction du temps de trajet pour des millions d'utilisateurs.</li>
+        <li>Modification des flux de circulation : report vers des voies secondaires non prévues pour ce trafic.</li>
+        <li>Collecte massive de données de mobilité sur les utilisateurs.</li>
+        <li>Justification du caractère de rupture : l'objet ne se contente plus de guider, il apprend, anticipe et adapte son comportement.</li>
+      </ul>
+
+      <h3>Ressources</h3>
+      <ul class="resource-links">
+        <li>
+          <strong>Vidéo — Le système de navigation et l'IA</strong><br>
+          <a href="https://edurl.fr/IvXQy6Of" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo</a>
+        </li>
+        <li>
+          <strong>Application interactive</strong><br>
+          <a href="https://edurl.fr/cDYOLPM8" target="_blank" rel="noopener noreferrer">↗ Accéder à l'application interactive</a>
+        </li>
+        <li>
+          <strong>Fiche de connaissances OST1e</strong> — Les grands types d'apprentissage des IA et leurs usages possibles<br>
+          <a href="https://edurl.fr/7GmPWZMP" target="_blank" rel="noopener noreferrer">↗ Accéder à la fiche OST1e</a>
+        </li>
+        <li>
+          <strong>Quiz OST1e</strong> — Vérifier ses connaissances<br>
+          <a href="https://edurl.fr/kliaIIK6" target="_blank" rel="noopener noreferrer">↗ Accéder au quiz OST1e</a>
+        </li>
+      </ul>
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -67,5 +128,34 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    padding: 0.75rem 1rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .resource-links a {
+    color: #1e3a8a;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resource-links a:hover {
+    color: #2e56b4;
   }
 </style>

@@ -4,57 +4,126 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents = [
+  {
+    title: "Activité 2 — Le système de navigation face aux règles de la société",
+    pdfUrl: "/documents/3eme/sequence-3/activite-2/activite-2.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 3 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-3`} />
-  <h1>Séquence 3 — Analyse fonctionnelle · Activité 2</h1>
+  <h1>Séquence 3 – Le système de navigation · Activité 2</h1>
 
   <ActivitySection
-    title="Le diagramme pieuvre"
-    description="Comment lister les fonctions de service avec le diagramme pieuvre ? Le diagramme pieuvre (ou diagramme des interacteurs) permet d'identifier toutes les fonctions de service d'un objet technique en analysant ses interactions avec son environnement (utilisateurs, normes, milieu ambiant, énergie, etc.). Tu distingueras les fonctions principales (FP) — qui justifient l'existence de l'objet — et les fonctions contraintes (FC) — imposées par l'environnement. Tu réaliseras un diagramme pieuvre complet pour au moins deux objets techniques, en justifiant chaque fonction identifiée."
+    title="Le système de navigation face aux règles de la société"
+    description="Durée : 1h30 — Thématique T1 – L'évolution des OST — Compétences OST13 et OST14. Des habitants d'un quartier résidentiel sont excédés par le flot de voitures que l'application de navigation détourne dans leurs rues pour éviter les bouchons. Ils obtiennent de leur mairie un arrêté limitant la circulation de transit. L'algorithme optimise le trajet de chaque automobiliste, mais les riverains n'ont pas été consultés. Dans cette activité, tu analyseras comment la société peut encadrer les effets d'une application de navigation sur ceux qui ne l'utilisent pas."
     documents={documents}
     activityNumber={2}
-    totalActivities={4}
+    totalActivities={2}
     sequenceHref="/3eme/sequence-3"
-    sequenceLabel="Séquence 3 — Analyse fonctionnelle"
+    sequenceLabel="Séquence 3 — Le système de navigation : entre technologie et règles de la société"
     retenir={{
       definitions: [
-        { term: "Diagramme pieuvre", def: "Outil graphique qui représente toutes les fonctions de service d'un produit avec son environnement." },
-        { term: "Fonction principale (FP)", def: "Met en relation deux milieux extérieurs en passant par le produit : FP1 = milieu A — produit — milieu B." },
-        { term: "Fonction contrainte (FC)", def: "Relie le produit à un seul milieu extérieur : c'est une contrainte à respecter." },
-        { term: "Milieu extérieur (ME)", def: "Tout élément de l'environnement du produit qui interagit avec lui : utilisateur, norme, air, sol…" },
+        { term: "Contrainte sociétale", def: "Exigence imposée par la société (lois, normes, valeurs, attentes) qui oriente l'évolution des objets techniques." },
+        { term: "Loi", def: "Règle juridique obligatoire votée par le Parlement, dont le non-respect est sanctionné." },
+        { term: "Norme", def: "Standard technique ou de qualité établi par consensus, qui peut être obligatoire ou volontaire." },
+        { term: "Biais algorithmique", def: "Erreur systématique dans les résultats d'une IA, causée par des données d'entraînement non représentatives ou des choix de conception." },
+        { term: "Incidence sociétale", def: "Effet — positif ou négatif — qu'un objet technique ou un système produit sur la société dans son ensemble." },
       ],
       points: [
-        "FP = relie 2 milieux extérieurs via le produit (il y a 2 'pattes' de la pieuvre).",
-        "FC = relie le produit à 1 seul milieu extérieur (1 seule 'patte').",
-        "Numéroter : FP1, FC1, FC2, FC3… pour chaque fonction identifiée.",
+        "OST13 : argumenter sur l'incidence d'un OST sur la société (effets positifs et négatifs de l'application de navigation).",
+        "OST14 : exprimer comment une contrainte sociétale (arrêté municipal) peut faire évoluer l'OST (modification de l'algorithme).",
+        "Distinguer loi, norme et valeur/attente de la société.",
+        "Un biais algorithmique peut amplifier des inégalités — identifier le biais et proposer une correction font partie des compétences attendues.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Le diagramme pieuvre — identifier toutes les interactions</h3>
-      <p>Après avoir défini le besoin avec la bête à cornes, le <strong>diagramme pieuvre</strong> liste toutes les fonctions de service d'un objet en analysant ses interactions avec son environnement. L'objet est placé au centre et les "pattes de la pieuvre" représentent les relations avec les <strong>milieux extérieurs (ME)</strong>.</p>
+      <h3>Situation déclenchante</h3>
+      <p>Des habitants d'un quartier résidentiel sont excédés par le flot de voitures que l'application de navigation détourne dans leurs rues pour éviter les bouchons sur les axes principaux. Ils obtiennent de leur mairie un <strong>arrêté limitant la circulation de transit</strong>.</p>
+      <p>Le maire explique que les algorithmes optimisent le trajet de chaque automobiliste, mais que <strong>les riverains n'ont pas été consultés</strong> et subissent les conséquences d'une technologie qu'ils n'utilisent pas.</p>
 
-      <h3>Les milieux extérieurs (ME)</h3>
-      <p>Les milieux extérieurs sont tous les éléments de l'environnement qui interagissent avec l'objet : utilisateur, normes, sol, air ambiant, source d'énergie, autres objets… Il faut les lister exhaustivement avant de tracer les pattes.</p>
+      <h3>Problématique</h3>
+      <p><strong>Comment la société peut-elle encadrer les effets d'une application de navigation sur ceux qui ne l'utilisent pas ?</strong></p>
 
-      <h3>FP vs. FC — la distinction fondamentale</h3>
+      <h3>Géolocalisation et collecte de données personnelles</h3>
+      <p>Pour fonctionner en temps réel, l'application de navigation collecte en permanence la <strong>position GPS</strong> des utilisateurs, leur vitesse, et l'heure de leur passage. Ces données sont agrégées et utilisées pour calculer les temps de trajet sur chaque tronçon. Cette collecte soulève des questions sur les <strong>données personnelles</strong> : qui y a accès, combien de temps sont-elles conservées, à qui peuvent-elles être transmises ?</p>
+
+      <h3>Contenu N1 / N2</h3>
+
+      <h3>Définir une contrainte sociétale</h3>
+      <p>Une <strong>contrainte sociétale</strong> est une exigence imposée par la société qui oriente l'évolution des objets techniques. Elle peut prendre trois formes :</p>
       <ul>
-        <li><strong>Fonction Principale (FP)</strong> : relie <em>deux</em> milieux extérieurs via l'objet — c'est la raison d'être du produit. Elle a 2 pattes. Exemple pour une lampe : FP1 = "Éclairer l'utilisateur dans la pièce".</li>
-        <li><strong>Fonction Contrainte (FC)</strong> : relie l'objet à <em>un seul</em> milieu extérieur — c'est une contrainte à respecter. Elle a 1 patte. Exemple : FC1 = "Respecter les normes électriques (CE)".</li>
+        <li><strong>Loi</strong> : règle obligatoire votée par le Parlement, dont le non-respect est sanctionné pénalement ou administrativement. Exemple : l'arrêté municipal limitant le transit.</li>
+        <li><strong>Norme</strong> : standard technique établi par consensus (ISO, NF…), pouvant être obligatoire ou volontaire. Exemple : norme de protection des données personnelles (RGPD).</li>
+        <li><strong>Valeur / attente de la société</strong> : exigence non juridique mais sociale. Exemple : l'attente des riverains d'être consultés avant qu'un algorithme modifie leur cadre de vie.</li>
       </ul>
 
-      <h3>Méthode de construction</h3>
+      <h3>Effets positifs et négatifs de l'IA dans la navigation</h3>
+      <ul>
+        <li><strong>Effets positifs</strong> : réduction du temps de trajet, moins de carburant consommé sur les axes, meilleure répartition du trafic à grande échelle.</li>
+        <li><strong>Effets négatifs</strong> : report de trafic dans des rues résidentielles, nuisances sonores et pollution locale pour les riverains, dépendance accrue à la technologie.</li>
+      </ul>
+
+      <h3>Comment une contrainte sociétale peut faire évoluer un OST</h3>
+      <p>L'arrêté municipal est une contrainte sociétale qui impose à l'application de naviguer différemment : elle doit <strong>intégrer les restrictions de circulation</strong> dans son algorithme. L'objet technique évolue en réponse à la pression sociale et juridique. C'est précisément le sens de la compétence <strong>OST14</strong>.</p>
+
+      <h3>Comment un biais peut apparaître dans une IA</h3>
+      <p>Un <strong>biais algorithmique</strong> apparaît quand l'IA produit des résultats systématiquement désavantageux pour certains groupes. Dans notre cas : l'application optimise pour <em>ses utilisateurs</em> (les automobilistes), mais ignore les <em>non-utilisateurs</em> (les riverains). Ce déséquilibre dans les données d'entraînement — qui ne représentent que les conducteurs — produit un biais au détriment des habitants.</p>
+
+      <h3>Contenu N3 / N4</h3>
+
+      <h3>Identifier la contrainte sociétale dans la situation</h3>
+      <p>La contrainte sociétale est l'<strong>arrêté municipal</strong> : une décision publique légale qui limite la liberté de l'algorithme d'optimiser uniquement pour ses utilisateurs. Elle exprime une valeur collective : le droit des riverains à un cadre de vie préservé prime sur l'optimisation individuelle de chaque trajet.</p>
+
+      <h3>Comment l'application devrait évoluer</h3>
+      <p>Pour respecter cette contrainte, l'application devrait :</p>
+      <ul>
+        <li>Intégrer les zones de restriction dans sa base de données cartographiques.</li>
+        <li>Pondérer les itinéraires de transit pour limiter leur impact sur les zones résidentielles.</li>
+        <li>Permettre aux collectivités locales de signaler des restrictions directement dans le système.</li>
+      </ul>
+
+      <h3>Rédiger un argumentaire court (OST13)</h3>
+      <p>Un argumentaire court sur l'incidence d'un OST doit :</p>
       <ol>
-        <li>Lister tous les milieux extérieurs autour de l'objet (8 à 12 maximum).</li>
-        <li>Tracer les liaisons entre l'objet et chaque ME.</li>
-        <li>Identifier si chaque liaison relie 1 ME (FC) ou 2 ME (FP).</li>
-        <li>Formuler chaque fonction avec un verbe d'action : "Permettre à… de…", "Résister à…".</li>
-        <li>Numéroter : FP1, FC1, FC2, FC3…</li>
+        <li>Nommer l'effet observé (<em>l'application détourne le trafic dans les rues résidentielles</em>).</li>
+        <li>Qualifier cet effet : positif pour les automobilistes, négatif pour les riverains.</li>
+        <li>Proposer une évolution de l'objet pour réduire l'effet négatif.</li>
       </ol>
-      <p>Le diagramme pieuvre alimente ensuite le <strong>CDCF</strong> (activité 3) où chaque fonction sera quantifiée avec des critères et des niveaux.</p>
+
+      <h3>Proposer une solution réduisant un biais sans supprimer l'utilité de l'application</h3>
+      <p>Pour réduire le biais sans empêcher l'application d'aider les conducteurs : intégrer des <strong>données supplémentaires</strong> représentant les riverains (flux piétons, plaintes, arrêtés), et ajouter un <strong>critère d'équité</strong> dans l'algorithme d'optimisation — au lieu de minimiser uniquement le temps de trajet, minimiser aussi l'impact sur les zones sensibles.</p>
+
+      <h3>Ressources</h3>
+      <ul class="resource-links">
+        <li>
+          <strong>Vidéo OST1d</strong> — Les contraintes sociétales<br>
+          <a href="https://edurl.fr/HguXANge" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1d</a>
+        </li>
+        <li>
+          <strong>Vidéo OST1f</strong> — Les incidences sociétales, notamment l'étude du biais et de l'effet de l'usage d'une IA<br>
+          <a href="https://edurl.fr/rmu7cPdx" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1f</a>
+        </li>
+        <li>
+          <strong>Fiche de connaissances OST1d</strong> — Les contraintes sociétales<br>
+          <a href="https://edurl.fr/pLKrXbiy" target="_blank" rel="noopener noreferrer">↗ Accéder à la fiche OST1d</a>
+        </li>
+        <li>
+          <strong>Fiche de connaissances OST1f</strong> — Les incidences sociétales et biais IA<br>
+          <a href="https://edurl.fr/WeIjsI3G" target="_blank" rel="noopener noreferrer">↗ Accéder à la fiche OST1f</a>
+        </li>
+        <li>
+          <strong>Quiz OST1d</strong> — Vérifier ses connaissances sur les contraintes sociétales<br>
+          <a href="https://edurl.fr/LKXg9sgy" target="_blank" rel="noopener noreferrer">↗ Accéder au quiz OST1d</a>
+        </li>
+        <li>
+          <strong>Quiz OST1f</strong> — Vérifier ses connaissances sur les incidences sociétales et biais<br>
+          <a href="https://edurl.fr/JzYA9Ftd" target="_blank" rel="noopener noreferrer">↗ Accéder au quiz OST1f</a>
+        </li>
+      </ul>
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -64,5 +133,34 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    padding: 0.75rem 1rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .resource-links a {
+    color: #1e3a8a;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resource-links a:hover {
+    color: #2e56b4;
   }
 </style>
