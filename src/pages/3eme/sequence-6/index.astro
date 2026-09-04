@@ -4,39 +4,31 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves approfondissent la programmation pour contrôler des systèmes automatisés. Ils maîtrisent les logigrammes, les variables, les boucles et les conditions, puis programment un microcontrôleur pour piloter un système réel :`;
+const description = `Dans cette séquence, les élèves analysent l'environnement d'un objet ou système technique en identifiant ses interacteurs extérieurs, puis apprennent à choisir un OST selon plusieurs critères grâce à une démarche multicritère. Le support d'étude est le Raspberry Pi 5 :`;
 
 const activities = [
   {
-    title: "Les logigrammes et les algorithmes",
-    description: "Comment représenter un algorithme sous forme de logigramme ?"
+    title: "Le Raspberry Pi 5 : interacteurs, choix raisonné et mesure de performance",
+    description: "Comment identifier les interacteurs extérieurs d'un objet technique et analyser ses interactions avec son environnement ?"
   },
   {
-    title: "Variables, boucles et conditions",
-    description: "Comment utiliser les variables, boucles et conditions en programmation ?"
-  },
-  {
-    title: "Programmer un système automatisé",
-    description: "Comment programmer un microcontrôleur pour contrôler un système automatisé ?"
-  },
-  {
-    title: "Ressources — Programmation avancée",
-    description: "Documents et ressources complémentaires sur la programmation et les algorithmes"
+    title: "Comparer pour mieux choisir",
+    description: "Comment choisir entre plusieurs modèles d'un même objet technique en utilisant une démarche multicritère ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 6 — Programmation avancée - 3ème" level={level}>
+<ClassLayout title="Séquence 6 – L'OST idéal : L'ordinateur Raspberry Pi - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 6 — Programmation avancée</h1>
+  <h1>Séquence 6 – L'OST idéal : L'ordinateur Raspberry Pi</h1>
 
   <SequencePresentation
-    title="Approfondir la programmation pour contrôler des systèmes automatisés"
+    title="Le Raspberry Pi 5 : analyser l'environnement et choisir selon des critères"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment programmer un système automatisé pour qu'il réagisse intelligemment à son environnement ?"
+    question="Comment identifier les interacteurs d'un objet technique et choisir le modèle le mieux adapté à un besoin ?"
   />
 
   <ActivityLinks sequenceNumber={6} activities={activities} level={level} />

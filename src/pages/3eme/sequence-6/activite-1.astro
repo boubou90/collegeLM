@@ -4,56 +4,161 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl: string }[] = [
+  {
+    title: "Activité 1 — Le Raspberry Pi 5 : interacteurs, choix raisonné et mesure de performance",
+    pdfUrl: "/documents/3eme/sequence-6/activite-1/activite-1.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 6 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-6`} />
-  <h1>Séquence 6 — Programmation avancée · Activité 1</h1>
+  <h1>Séquence 6 – L'OST idéal : L'ordinateur Raspberry Pi · Activité 1</h1>
 
   <ActivitySection
-    title="Les logigrammes et les algorithmes"
-    description="Comment représenter un algorithme sous forme de logigramme ? Un logigramme est une représentation graphique d'un algorithme qui utilise des symboles normalisés : ovale pour le début/fin, rectangle pour une action, losange pour une condition (test), et flèches pour le sens du déroulement. Dans cette activité, tu apprendras à lire et à construire des logigrammes pour des situations variées : allumer une lampe en fonction de la luminosité, déclencher une alarme si un capteur détecte une intrusion, gérer l'ouverture automatique d'une barrière. Tu découvriras comment passer d'un problème exprimé en langage naturel à un algorithme rigoureux représenté graphiquement."
+    title="Le Raspberry Pi 5 : interacteurs, choix raisonné et mesure de performance"
+    description="Durée : 1h — Comment identifier les interacteurs extérieurs d'un objet ou système technique et analyser ses interactions avec son environnement ? À travers l'étude du Raspberry Pi 5 dans un projet de maison connectée, tu apprendras à repérer tout ce qui interagit avec un objet technique."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={2}
     sequenceHref="/3eme/sequence-6"
-    sequenceLabel="Séquence 6 — Programmation avancée"
+    sequenceLabel="Séquence 6 – L'OST idéal : L'ordinateur Raspberry Pi"
     retenir={{
       definitions: [
-        { term: "Algorithme", def: "Suite finie et ordonnée d'instructions permettant de résoudre un problème ou d'accomplir une tâche." },
-        { term: "Logigramme", def: "Représentation graphique d'un algorithme utilisant des symboles normalisés (rectangle = action, losange = condition)." },
-        { term: "Test logique (condition)", def: "Question dont la réponse est Vrai ou Faux, qui oriente le déroulement du programme." },
+        { term: "Interacteur extérieur", def: "Tout élément qui interagit avec un objet ou système technique depuis l'extérieur : usager, donnée, autre objet technique ou élément de l'environnement." },
+        { term: "Usager", def: "Personne humaine qui utilise directement l'objet ou système technique." },
+        { term: "Données", def: "Informations qui entrent dans le système ou qu'il produit (fichiers, mesures, signaux…)." },
+        { term: "Autre objet technique", def: "Objet ou dispositif technique qui échange des informations ou de l'énergie avec le système étudié (capteur, écran, réseau…)." },
+        { term: "Élément de l'environnement", def: "Grandeur physique du milieu extérieur agissant sur le système (température, lumière, humidité…)." },
       ],
       points: [
-        "3 structures algorithmiques de base : séquence (instructions à la suite), condition (si/sinon), boucle (répéter).",
-        "Logigramme : rectangle = instruction, losange = condition/test, flèches = déroulement.",
-        "Avant de coder, écrire l'algorithme en langage naturel ou en logigramme.",
+        "Un objet ou système technique ne fonctionne jamais seul : il interagit avec son environnement.",
+        "Les interacteurs extérieurs se classent en quatre catégories : usager, données, autre objet technique, élément de l'environnement.",
+        "Identifier les interacteurs permet de comprendre les fonctions du système et de choisir les composants nécessaires.",
+        "Le Raspberry Pi 5 peut interagir avec des capteurs GPIO, un écran, un smartphone, un réseau ou des éléments de l'environnement selon le projet.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Algorithme et logigramme — la pensée avant le code</h3>
-      <p>Avant d'écrire une seule ligne de code, un bon programmeur <strong>conçoit l'algorithme</strong> : la suite logique des étapes nécessaires pour résoudre un problème. Le <strong>logigramme</strong> est la représentation graphique de cet algorithme — il permet de visualiser le déroulement du programme et d'identifier les erreurs de logique avant de coder.</p>
 
-      <h3>Les symboles normalisés du logigramme</h3>
-      <ul>
-        <li><strong>Ovale</strong> : début ou fin du programme (DÉBUT / FIN).</li>
-        <li><strong>Rectangle</strong> : action ou instruction à exécuter (ex : "Allumer la LED").</li>
-        <li><strong>Losange</strong> : condition ou test (question à laquelle on répond Vrai/Faux). Deux sorties : OUI et NON.</li>
-        <li><strong>Flèches</strong> : sens du déroulement du programme.</li>
-        <li><strong>Parallélogramme</strong> : entrée/sortie (lire un capteur, afficher un résultat).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">OST2 — Analyser l'environnement d'un OST</span>
+        <span class="competence-tag">OST21</span>
+        <span class="competence-tag">OST2a — Les interacteurs extérieurs</span>
+      </div>
 
-      <h3>Les 3 structures algorithmiques de base</h3>
-      <ol>
-        <li><strong>Séquence</strong> : exécution des instructions les unes après les autres, dans l'ordre.</li>
-        <li><strong>Condition (si/sinon)</strong> : exécuter un bloc ou un autre selon le résultat d'un test. Le losange dans le logigramme.</li>
-        <li><strong>Boucle (répéter)</strong> : répéter un bloc d'instructions un certain nombre de fois ou tant qu'une condition est vraie.</li>
-      </ol>
+      <!-- ══════════ OBJECTIF ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation de départ</h3>
+        <p>Un lycéen souhaite réaliser un projet de <strong>maison connectée</strong>. Il veut utiliser un <strong>Raspberry Pi 5</strong> pour piloter des équipements, surveiller des capteurs et afficher des informations. Avant de commencer, il doit analyser <strong>avec quoi</strong> son système va interagir.</p>
+        <div class="problematique-box">
+          <strong>Question centrale :</strong> Comment identifier tous les éléments qui interagissent avec le Raspberry Pi 5 dans ce projet ?
+        </div>
+      </div>
 
-      <h3>Exemple — Barrière automatique</h3>
-      <p>DÉBUT → Détecter une voiture (capteur) → Si voiture détectée ? OUI → Ouvrir la barrière → Attendre 5 secondes → Fermer la barrière → NON → Rester fermée → Retour au début (boucle). Ce logigramme simple illustre les 3 structures : séquence, condition, boucle.</p>
+      <!-- ══════════ NOTION D'INTERACTEUR ══════════ -->
+      <div class="section-bloc">
+        <h3>🔗 Qu'est-ce qu'un interacteur extérieur ?</h3>
+        <p>Un <strong>interacteur extérieur</strong> est tout élément qui échange quelque chose avec un objet ou système technique (OST) depuis l'extérieur : une information, de l'énergie, une action.</p>
+        <p>On distingue <strong>quatre catégories</strong> d'interacteurs extérieurs :</p>
+
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">👤</div>
+            <div class="categorie-titre">Usager</div>
+            <div class="categorie-desc">Personne humaine qui utilise directement le système</div>
+            <div class="categorie-exemple">Ex : l'élève qui configure le Raspberry Pi</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">📊</div>
+            <div class="categorie-titre">Données</div>
+            <div class="categorie-desc">Informations qui entrent dans le système ou qu'il produit</div>
+            <div class="categorie-exemple">Ex : mesures de capteurs, fichiers, commandes</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">🖥️</div>
+            <div class="categorie-titre">Autre objet technique</div>
+            <div class="categorie-desc">Dispositif ou équipement échangeant avec le système</div>
+            <div class="categorie-exemple">Ex : caméra, écran, smartphone, réseau</div>
+          </div>
+          <div class="categorie-carte environnement">
+            <div class="categorie-icone">🌡️</div>
+            <div class="categorie-titre">Élément de l'environnement</div>
+            <div class="categorie-desc">Grandeur physique du milieu agissant sur le système</div>
+            <div class="categorie-exemple">Ex : température ambiante, humidité, luminosité</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ INTERACTEURS DU RPI5 ══════════ -->
+      <div class="section-bloc">
+        <h3>🍓 Les interacteurs du Raspberry Pi 5</h3>
+        <p>Dans un projet de maison connectée, le Raspberry Pi 5 peut interagir avec de nombreux éléments. En voici des exemples regroupés par catégorie :</p>
+
+        <div class="interacteurs-liste">
+          <div class="interacteur-groupe usager-bg">
+            <div class="interacteur-groupe-titre">👤 Usager</div>
+            <ul>
+              <li>L'utilisateur</li>
+            </ul>
+          </div>
+          <div class="interacteur-groupe donnees-bg">
+            <div class="interacteur-groupe-titre">📊 Données</div>
+            <ul>
+              <li>Mesures des capteurs (température, humidité…)</li>
+              <li>Informations affichées ou transmises à l'utilisateur</li>
+            </ul>
+          </div>
+          <div class="interacteur-groupe objet-bg">
+            <div class="interacteur-groupe-titre">🖥️ Autres objets techniques</div>
+            <ul>
+              <li>Smartphone (commande à distance)</li>
+              <li>Caméra (surveillance)</li>
+              <li>Écran (affichage)</li>
+              <li>Réseau (Wi-Fi, Ethernet)</li>
+              <li>Capteurs connectés aux broches GPIO</li>
+              <li>Alimentation électrique</li>
+            </ul>
+          </div>
+          <div class="interacteur-groupe env-bg">
+            <div class="interacteur-groupe-titre">🌡️ Éléments de l'environnement</div>
+            <ul>
+              <li>Température ambiante (peut influencer les performances)</li>
+              <li>Conditions de l'environnement physique</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ SUPERVISION ══════════ -->
+      <div class="section-bloc">
+        <h3>📡 L'intérêt de la supervision</h3>
+        <p>Dans un projet connecté, le Raspberry Pi 5 peut <strong>collecter, traiter et transmettre des informations</strong> en temps réel. Cette capacité de supervision présente plusieurs intérêts :</p>
+        <ul class="supervision-liste">
+          <li>Afficher des mesures (température, état des équipements) à l'utilisateur.</li>
+          <li>Envoyer des alertes si une valeur dépasse un seuil.</li>
+          <li>Enregistrer des données pour les analyser ultérieurement.</li>
+          <li>Piloter à distance des équipements de la maison.</li>
+        </ul>
+        <p class="section-info">La représentation des interacteurs sous forme de schéma permet de visualiser toutes les interactions et de ne rien oublier lors de la conception du système.</p>
+      </div>
+
+      <!-- ══════════ DÉMARCHE ══════════ -->
+      <div class="section-bloc">
+        <h3>🔍 Analyser et choisir à partir des interactions</h3>
+        <p>L'identification des interacteurs extérieurs permet d'effectuer un <strong>choix raisonné</strong> :</p>
+        <ul class="demarche-liste">
+          <li>Identifier le besoin et les fonctions attendues du système.</li>
+          <li>Lister tous les interacteurs possibles pour ce projet.</li>
+          <li>Classer chaque interacteur dans sa catégorie.</li>
+          <li>Repérer les interactions principales et les contraintes qu'elles imposent.</li>
+          <li>En déduire les composants nécessaires et les caractéristiques à respecter.</li>
+        </ul>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -63,5 +168,172 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager       { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees      { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet        { background: #fef3c7; border-color: #fcd34d; }
+  .categorie-carte.environnement { background: #fdf2f8; border-color: #f0abfc; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-exemple {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-style: italic;
+  }
+
+  /* ── Interacteurs ── */
+  .interacteurs-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+
+  .interacteur-groupe {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .interacteur-groupe.usager-bg      { background: #eff6ff; border-left: 3px solid #3b82f6; }
+  .interacteur-groupe.donnees-bg     { background: #f0fdf4; border-left: 3px solid #22c55e; }
+  .interacteur-groupe.objet-bg       { background: #fef9f0; border-left: 3px solid #f59e0b; }
+  .interacteur-groupe.env-bg         { background: #fdf2f8; border-left: 3px solid #d946ef; }
+
+  .interacteur-groupe-titre {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+    font-size: 0.88rem;
+  }
+
+  .interacteur-groupe ul {
+    padding-left: 1.1rem;
+    margin: 0;
+    color: #334155;
+  }
+
+  /* ── Supervision ── */
+  .supervision-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
   }
 </style>

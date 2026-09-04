@@ -4,64 +4,200 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl: string }[] = [
+  {
+    title: "Activité 2 — Comparer pour mieux choisir",
+    pdfUrl: "/documents/3eme/sequence-6/activite-2/activite-2.pdf"
+  },
+  {
+    title: "Document ressource — Comparatif Raspberry Pi 5",
+    pdfUrl: "/documents/3eme/sequence-6/activite-2/Document_ressource_Comparatif_RaspberryPi5.pdf"
+  },
+  {
+    title: "Fichier LibreOffice Calc — Tableau multicritère",
+    pdfUrl: "/documents/3eme/sequence-6/activite-2/Activit%C3%A9%20libre%20office.ods"
+  }
+];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 6 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-6`} />
-  <h1>Séquence 6 — Programmation avancée · Activité 2</h1>
+  <h1>Séquence 6 – L'OST idéal : L'ordinateur Raspberry Pi · Activité 2</h1>
 
   <ActivitySection
-    title="Variables, boucles et conditions"
-    description="Comment utiliser les variables, boucles et conditions en programmation ? Cette activité approfondit les structures fondamentales de la programmation. Tu travailleras sur les variables (stocker et modifier une valeur), les conditions (si… alors… sinon…) et les boucles (répéter… tant que…). À travers des exercices progressifs sur Scratch ou Python, tu programmeras des comportements de plus en plus complexes : clignotement d'une LED selon un capteur, comptage d'événements, affichage d'un message selon une condition. Chaque programme sera testé et débogué. L'objectif est de comprendre que tout comportement automatique repose sur ces trois structures de base."
+    title="Comparer pour mieux choisir"
+    description="Durée : 1h30 — Comment choisir entre plusieurs modèles d'un même objet technique lorsque chaque version présente des avantages différents ? Cette activité t'apprend à utiliser une démarche multicritère pour comparer les quatre versions du Raspberry Pi 5 et argumenter un choix raisonné."
     documents={documents}
     activityNumber={2}
-    totalActivities={4}
+    totalActivities={2}
     sequenceHref="/3eme/sequence-6"
-    sequenceLabel="Séquence 6 — Programmation avancée"
+    sequenceLabel="Séquence 6 – L'OST idéal : L'ordinateur Raspberry Pi"
     retenir={{
       definitions: [
-        { term: "Variable", def: "Espace mémoire nommé qui stocke une valeur (nombre, texte, booléen) pouvant changer au cours du programme." },
-        { term: "Boucle while", def: "Répète un bloc d'instructions tant qu'une condition est vraie." },
-        { term: "Boucle for", def: "Répète un bloc d'instructions un nombre défini de fois." },
-        { term: "Condition if/else", def: "Exécute un bloc si la condition est vraie (if), un autre bloc sinon (else)." },
+        { term: "Choix multicritère", def: "Démarche qui consiste à comparer plusieurs solutions ou modèles en prenant en compte simultanément plusieurs critères, et non un seul." },
+        { term: "Critère", def: "Caractéristique retenue pour comparer et évaluer des solutions (coût, performance, consommation, durée de vie…)." },
+        { term: "Pondération", def: "Attribution d'un coefficient à chaque critère pour exprimer son importance relative dans la décision." },
+        { term: "RAM (mémoire vive)", def: "Mémoire de travail du système. Plus la RAM est importante, plus le système peut gérer de tâches simultanément." },
       ],
       points: [
-        "Nommer les variables avec des noms explicites (ex : temperature, compteur, estAllume).",
-        "while = 'tant que' ; for = 'répéter N fois' ; if/else = 'si… alors… sinon…'",
-        "Attention à l'initialisation des variables avant de les utiliser.",
+        "Les quatre versions du Raspberry Pi 5 (1 Go, 2 Go, 4 Go, 8 Go) partagent le même processeur et les mêmes connectiques.",
+        "La quantité de RAM est la principale différence entre les modèles.",
+        "Le modèle le plus performant n'est pas automatiquement le meilleur choix : le coût, la consommation et l'usage prévu doivent être pris en compte.",
+        "La démarche multicritère permet de prendre une décision argumentée en évitant de baser le choix sur un seul facteur.",
+        "La pondération des critères reflète les priorités du projet.",
+        "Le choix final doit toujours être justifié par plusieurs critères, pas seulement par les performances brutes.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Les variables — la mémoire du programme</h3>
-      <p>Une <strong>variable</strong> est une case mémoire avec un nom et une valeur qui peut changer au cours du programme. On peut la comparer à une boîte étiquetée : l'étiquette est le nom, le contenu est la valeur. Exemples :</p>
-      <ul>
-        <li><code>temperature = 22</code> → stocke la valeur 22 dans la variable "temperature".</li>
-        <li><code>compteur = 0</code> → initialise un compteur à zéro avant une boucle.</li>
-        <li><code>estAllume = false</code> → variable booléenne (Vrai/Faux) indiquant l'état d'une LED.</li>
-      </ul>
 
-      <h3>Les conditions (if/else)</h3>
-      <p>La structure <strong>if/else</strong> permet d'exécuter des instructions différentes selon une condition :</p>
-      <ul>
-        <li><code>if (temperature &gt; 25) {'{'}  allumerVentilateur(); {'}'} else {'{'}  arreterVentilateur(); {'}'}</code></li>
-        <li>Si la condition est vraie → bloc "if". Si fausse → bloc "else" (facultatif).</li>
-        <li>On peut enchaîner : <code>else if (condition2)</code> pour tester plusieurs cas.</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">OST3 — Caractériser et choisir un OST selon différents critères</span>
+        <span class="competence-tag">OST31</span>
+        <span class="competence-tag">OST32</span>
+        <span class="competence-tag">OST33</span>
+        <span class="competence-tag">OST34</span>
+        <span class="competence-tag">OST3a</span>
+        <span class="competence-tag">OST3b</span>
+        <span class="competence-tag">OST3e</span>
+        <span class="competence-tag">OST3f</span>
+        <span class="competence-tag cps">CPS — Penser de façon critique · Éviter de baser une décision sur un seul critère</span>
+      </div>
 
-      <h3>Les boucles (for et while)</h3>
-      <ul>
-        <li><strong>Boucle for</strong> : répète un nombre <em>connu</em> de fois. Ex : <code>for (i=0; i&lt;10; i++)</code> → répète 10 fois.</li>
-        <li><strong>Boucle while</strong> : répète <em>tant qu'</em>une condition est vraie. Ex : <code>while (bouton == APPUYE)</code> → continue tant que le bouton est appuyé.</li>
-      </ul>
+      <!-- ══════════ OBJECTIF ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation</h3>
+        <p>Le Raspberry Pi 5 existe en <strong>quatre versions</strong> différentes selon la quantité de RAM : <strong>1 Go, 2 Go, 4 Go et 8 Go</strong>. Ces versions ont des prix, des performances et des usages différents. Pour choisir le modèle adapté à un projet donné, il ne suffit pas de prendre « le plus puissant » : il faut comparer selon plusieurs critères.</p>
+        <div class="problematique-box">
+          <strong>Question centrale :</strong> Comment choisir le modèle de Raspberry Pi 5 le mieux adapté à un besoin, en utilisant une démarche multicritère ?
+        </div>
+      </div>
 
-      <h3>Règles de bonne pratique</h3>
-      <ul>
-        <li>Toujours <strong>initialiser</strong> les variables avant de les utiliser.</li>
-        <li>Choisir des <strong>noms explicites</strong> : <code>vitesseMoteur</code> plutôt que <code>v</code> ou <code>x</code>.</li>
-        <li>Attention aux boucles infinies : vérifier que la condition de sortie peut être atteinte.</li>
-      </ul>
+      <!-- ══════════ CE QUE PARTAGENT LES 4 VERSIONS ══════════ -->
+      <div class="section-bloc">
+        <h3>🔩 Ce que les quatre versions ont en commun</h3>
+        <p>Les quatre modèles du Raspberry Pi 5 partagent les mêmes caractéristiques de base :</p>
+        <ul class="commun-liste">
+          <li>Le même <strong>processeur</strong>.</li>
+          <li>Les mêmes <strong>connectiques</strong>.</li>
+          <li>Le même <strong>format</strong> de carte.</li>
+        </ul>
+        <p class="section-info">La principale différence entre les modèles est la <strong>quantité de RAM (mémoire vive)</strong>. C'est ce paramètre qui détermine combien de tâches peuvent être gérées simultanément.</p>
+      </div>
+
+      <!-- ══════════ CRITÈRES DE COMPARAISON ══════════ -->
+      <div class="section-bloc">
+        <h3>📋 Les critères de comparaison</h3>
+        <p>Pour choisir de façon raisonnée, on étudie plusieurs critères :</p>
+
+        <div class="criteres-grille">
+          <div class="critere-carte perf">
+            <div class="critere-icone">⚡</div>
+            <div class="critere-titre">Performance / RAM</div>
+            <div class="critere-desc">Davantage de RAM permet de gérer davantage de tâches simultanément. Le choix du modèle dépend des besoins du projet.</div>
+          </div>
+          <div class="critere-carte cout">
+            <div class="critere-icone">💶</div>
+            <div class="critere-titre">Coût / Budget</div>
+            <div class="critere-desc">Le prix augmente avec la quantité de RAM. Le budget disponible est un critère qui peut limiter le choix, même si un modèle plus puissant serait préférable techniquement.</div>
+          </div>
+          <div class="critere-carte energie">
+            <div class="critere-icone">🔋</div>
+            <div class="critere-titre">Consommation énergétique</div>
+            <div class="critere-desc">La consommation d'énergie varie selon les modèles et les usages. C'est un critère important pour un projet fonctionnant en continu.</div>
+          </div>
+          <div class="critere-carte reparabilite">
+            <div class="critere-icone">🔧</div>
+            <div class="critere-titre">Réparabilité / Durée de vie</div>
+            <div class="critere-desc">La durée de vie prévue et la possibilité de réparer ou remplacer le matériel entrent en compte dans une démarche responsable.</div>
+          </div>
+          <div class="critere-carte polyvalence">
+            <div class="critere-icone">🔀</div>
+            <div class="critere-titre">Polyvalence d'usage</div>
+            <div class="critere-desc">Certains modèles sont adaptés à des usages très spécifiques (affichage simple, capteurs), d'autres permettent de gérer des projets plus complexes.</div>
+          </div>
+          <div class="critere-carte durabilite">
+            <div class="critere-icone">♻️</div>
+            <div class="critere-titre">Durabilité / Recyclabilité</div>
+            <div class="critere-desc">La durée de vie du matériel et ses conditions de recyclage en fin de vie s'inscrivent dans une démarche de développement durable. Un matériel durable réduit les déchets et les coûts sur le long terme.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ DÉMARCHE MULTICRITÈRE ══════════ -->
+      <div class="section-bloc">
+        <h3>📐 La démarche multicritère en 7 étapes</h3>
+        <p>Pour comparer les modèles de façon rigoureuse, on suit une démarche structurée :</p>
+
+        <div class="etapes-liste">
+          <div class="etape-item">
+            <div class="etape-num">1</div>
+            <div class="etape-contenu">
+              <strong>Identifier le besoin</strong><br>
+              <span>Quel est le projet ? Quelles fonctions le système doit-il assurer ?</span>
+            </div>
+          </div>
+          <div class="etape-item">
+            <div class="etape-num">2</div>
+            <div class="etape-contenu">
+              <strong>Identifier les critères</strong><br>
+              <span>Lister les caractéristiques qui comptent pour ce projet.</span>
+            </div>
+          </div>
+          <div class="etape-item">
+            <div class="etape-num">3</div>
+            <div class="etape-contenu">
+              <strong>Comparer les modèles</strong><br>
+              <span>Rassembler les données techniques pour chaque version (cf. document ressource).</span>
+            </div>
+          </div>
+          <div class="etape-item">
+            <div class="etape-num">4</div>
+            <div class="etape-contenu">
+              <strong>Attribuer les performances selon les critères</strong><br>
+              <span>Pour chaque critère, évaluer chaque modèle (note, observation ou valeur réelle).</span>
+            </div>
+          </div>
+          <div class="etape-item">
+            <div class="etape-num">5</div>
+            <div class="etape-contenu">
+              <strong>Pondérer les critères</strong><br>
+              <span>Si certains critères comptent plus que d'autres, leur attribuer un coefficient plus élevé.</span>
+            </div>
+          </div>
+          <div class="etape-item">
+            <div class="etape-num">6</div>
+            <div class="etape-contenu">
+              <strong>Calculer le score</strong><br>
+              <span>Multiplier chaque note par son coefficient et calculer le total pour chaque modèle.</span>
+            </div>
+          </div>
+          <div class="etape-item">
+            <div class="etape-num">7</div>
+            <div class="etape-contenu">
+              <strong>Argumenter le choix final</strong><br>
+              <span>Justifier la décision en s'appuyant sur les critères, pas uniquement sur le score.</span>
+            </div>
+          </div>
+        </div>
+        <p class="section-info">Le tableau multicritère peut être rempli dans le fichier LibreOffice Calc fourni avec l'activité. À partir de ce tableau, tu rédigeras une recommandation argumentée que tu présenteras à la classe.</p>
+      </div>
+
+      <!-- ══════════ POINT CPS ══════════ -->
+      <div class="section-bloc">
+        <h3>🧠 Penser de façon critique</h3>
+        <p>Le modèle ayant les <strong>meilleures performances brutes</strong> n'est pas automatiquement le meilleur choix. Un bon choix technique prend en compte :</p>
+        <ul class="critique-liste">
+          <li>Le <strong>coût</strong> : dépenser plus que le besoin ne le justifie n'est pas rationnel.</li>
+          <li>La <strong>consommation</strong> : un système fonctionnant en continu doit être économe.</li>
+          <li>La <strong>durée de vie</strong> et la réparabilité : un matériel durable est préférable.</li>
+          <li>La <strong>polyvalence</strong> : un modèle adapté à l'usage évite le surdimensionnement.</li>
+        </ul>
+        <p class="section-info">Baser une décision sur un seul critère (par exemple uniquement la performance) est une erreur de raisonnement que la démarche multicritère permet d'éviter. La dimension du développement durable — durabilité du matériel, recyclabilité, consommation énergétique — fait partie intégrante d'un choix responsable.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -71,5 +207,175 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── En commun ── */
+  .commun-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Critères ── */
+  .criteres-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .critere-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .critere-carte.perf        { background: #eff6ff; border-color: #93c5fd; }
+  .critere-carte.cout        { background: #f0fdf4; border-color: #86efac; }
+  .critere-carte.energie     { background: #fef9f0; border-color: #fcd34d; }
+  .critere-carte.reparabilite { background: #fdf2f8; border-color: #f0abfc; }
+  .critere-carte.polyvalence  { background: #f5f3ff; border-color: #c4b5fd; }
+  .critere-carte.durabilite   { background: #f0fdfa; border-color: #5eead4; }
+
+  .critere-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .critere-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .critere-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* ── Étapes ── */
+  .etapes-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .etape-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.65rem 0.9rem;
+    background: #f8fafc;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .etape-num {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #1e3a8a;
+    font-family: monospace;
+    min-width: 1.25rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .etape-contenu span {
+    font-size: 0.82rem;
+    color: #475569;
+  }
+
+  /* ── CPS ── */
+  .critique-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
   }
 </style>
