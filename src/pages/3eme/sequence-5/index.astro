@@ -4,39 +4,27 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves explorent l'histoire de l'innovation technologique et analysent son impact sur la société. Ils comprennent comment les innovations répondent à des besoins sociaux, économiques et environnementaux, et imaginent eux-mêmes une solution innovante :`;
+const description = `Dans cette séquence, les élèves explorent le smartphone comme système de création, de stockage et de partage de fichiers numériques. Ils comprennent comment les données circulent dans les réseaux et sont stockées dans des infrastructures numériques, avant d'analyser les incidences du stockage et de la circulation massive des données :`;
 
 const activities = [
   {
-    title: "L'histoire de l'innovation",
-    description: "Comment les innovations technologiques ont-elles transformé notre société à travers le temps ?"
-  },
-  {
-    title: "Impact sociétal et éthique",
-    description: "Quels sont les impacts sociaux, économiques et environnementaux des innovations technologiques ?"
-  },
-  {
-    title: "Projet : innover pour un besoin réel",
-    description: "Comment proposer une solution innovante pour répondre à un besoin identifié ?"
-  },
-  {
-    title: "Ressources — Innovation et société",
-    description: "Documents et ressources complémentaires sur l'innovation et son impact sociétal"
+    title: "Data : le poids caché de nos vies numériques",
+    description: "Comment des fichiers qui ne pèsent (presque) rien dans nos téléphones peuvent-ils avoir un poids énorme pour la société ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 5 — Innovation et société - 3ème" level={level}>
+<ClassLayout title="Séquence 5 – Datas : Le poids caché de nos vies numériques - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 5 — Innovation et société</h1>
+  <h1>Séquence 5 – Datas : Le poids caché de nos vies numériques</h1>
 
   <SequencePresentation
-    title="Comprendre l'impact des innovations technologiques sur notre société"
+    title="Du smartphone aux centres de données : quand nos fichiers voyagent dans le monde entier"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Dans quelle mesure les innovations technologiques transforment-elles notre société, et comment en évaluer les impacts ?"
+    question="Comment des fichiers qui ne pèsent (presque) rien dans nos téléphones peuvent-ils avoir un poids énorme pour la société ?"
   />
 
   <ActivityLinks sequenceNumber={5} activities={activities} level={level} />

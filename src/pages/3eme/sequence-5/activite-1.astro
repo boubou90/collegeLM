@@ -4,58 +4,319 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl: string }[] = [
+  {
+    title: "Activité 1 — Data : le poids caché de nos vies numériques",
+    pdfUrl: "/documents/3eme/sequence-5/activite-1/activite-1.pdf"
+  },
+  {
+    title: "Fiche connaissance OST1i — Bit, octet et leurs multiples",
+    pdfUrl: "/documents/3eme/sequence-5/activite-1/OST1i-Systeme-dinformation-et-stockage-des-donnees-_-unite-de-quantite-dinformation-_-bit-octet-et-leurs-multiples.pdf"
+  },
+  {
+    title: "Fiche connaissance OST1j — Ordre de grandeur de la taille des fichiers",
+    pdfUrl: "/documents/3eme/sequence-5/activite-1/OST1j-Systeme-dinformation-et-stockage-des-donnees-_-ordre-de-grandeur-de-la-taille-dun-fichier-image-dun-fichier-son-dune-video.pdf"
+  },
+  {
+    title: "Fiche connaissance OST1k — Incidences liées au stockage, au flux des données et aux réseaux",
+    pdfUrl: "/documents/3eme/sequence-5/activite-1/OST1k-Systeme-dinformation-et-stockage-des-donnees-_-incidences-liees-au-stockage-au-flux-des-donnees-et-aux-reseaux-dinformation.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 5 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-5`} />
-  <h1>Séquence 5 — Innovation et société · Activité 1</h1>
+  <h1>Séquence 5 – Datas : Le poids caché de nos vies numériques · Activité 1</h1>
 
   <ActivitySection
-    title="L'histoire de l'innovation"
-    description="Comment les innovations technologiques ont-elles transformé notre société à travers le temps ? Dans cette activité, tu exploreras les grandes révolutions technologiques : la machine à vapeur (XVIIIe siècle), l'électricité (XIXe), le moteur à explosion, l'électronique et l'informatique (XXe), puis le numérique et l'intelligence artificielle (XXIe). Tu construiras une frise chronologique illustrée qui met en relation chaque innovation majeure avec les changements sociaux, économiques et environnementaux qu'elle a entraînés. Cette perspective historique permet de comprendre que les technologies d'aujourd'hui répondent à des besoins humains fondamentaux."
+    title="Data : le poids caché de nos vies numériques"
+    description="Durée : 1h30 — Comment des fichiers qui ne pèsent (presque) rien dans nos téléphones peuvent-ils avoir un poids énorme pour la société ? À travers la situation de Léa, tu comprendras comment les fichiers numériques se mesurent, circulent et sont stockés, et quelles en sont les incidences pour la société."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={1}
     sequenceHref="/3eme/sequence-5"
-    sequenceLabel="Séquence 5 — Innovation et société"
+    sequenceLabel="Séquence 5 – Datas : Le poids caché de nos vies numériques"
     retenir={{
       definitions: [
-        { term: "Innovation", def: "Amélioration ou nouveauté technologique introduite avec succès sur le marché ou dans la société." },
-        { term: "Invention", def: "Création d'un dispositif ou d'un procédé nouveau, protégée par un brevet." },
-        { term: "Brevet d'invention", def: "Titre de propriété industrielle qui protège une invention pendant 20 ans." },
-        { term: "Obsolescence", def: "Fait pour un produit de devenir dépassé ou moins utile, souvent à cause d'une innovation." },
+        { term: "Bit", def: "La plus petite unité d'information numérique. Un bit ne peut prendre que deux valeurs : 0 ou 1." },
+        { term: "Octet", def: "Unité de base pour mesurer la quantité d'information. Un octet = 8 bits." },
+        { term: "Compression", def: "La compression est un moyen de réduire la taille d'un fichier." },
+        { term: "Bande passante", def: "Quantité maximale de données pouvant circuler sur un réseau par unité de temps." },
+        { term: "Stockage", def: "Conservation des données numériques sur un support numérique." },
+        { term: "Centre de données (data center)", def: "Infrastructure physique regroupant des serveurs et des systèmes de stockage pour héberger des données numériques." },
       ],
       points: [
-        "Innovation ≠ invention : l'invention devient innovation quand elle est adoptée par la société.",
-        "Les innovations s'accélèrent depuis la révolution industrielle (18ᵉ siècle).",
-        "Une innovation peut être de rupture (radicalement nouvelle) ou incrémentale (amélioration progressive).",
+        "Le bit est la plus petite unité d'information ; il vaut 0 ou 1.",
+        "Un octet = 8 bits. Les multiples : Ko, Mo, Go, To.",
+        "La taille d'un fichier dépend notamment du format, de la résolution, de la compression et de la durée.",
+        "Plus un fichier est volumineux, plus il demande d'espace de stockage et de temps pour circuler.",
+        "Le stockage et la circulation massive des données ont des incidences sur les réseaux, la sécurité, les coûts et l'énergie.",
+        "Le numérique joue un rôle stratégique dans la société (OST15).",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Les grandes révolutions technologiques</h3>
-      <p>L'histoire des innovations technologiques est marquée par des <strong>révolutions</strong> qui ont profondément transformé nos sociétés. Chaque époque a ses innovations emblématiques :</p>
-      <ul>
-        <li><strong>XVIIIe siècle</strong> : machine à vapeur (James Watt, 1769) → révolution industrielle, mécanisation du travail.</li>
-        <li><strong>XIXe siècle</strong> : électricité (Edison, Tesla), téléphone (Bell) → transformation des communications.</li>
-        <li><strong>XXe siècle</strong> : moteur à explosion, électronique, informatique → mobilité de masse, révolution numérique.</li>
-        <li><strong>XXIe siècle</strong> : Internet, smartphone, intelligence artificielle → société de l'information.</li>
-      </ul>
 
-      <h3>Innovation vs. Invention</h3>
-      <p>Il faut distinguer deux notions proches mais différentes :</p>
-      <ul>
-        <li>L'<strong>invention</strong> est la création d'une nouveauté (protégée par un brevet pendant 20 ans).</li>
-        <li>L'<strong>innovation</strong> est une invention qui a été adoptée avec succès par la société. Une invention peut rester sans suite ; l'innovation transforme le marché ou les usages.</li>
-      </ul>
-      <p>Exemple : l'écran tactile a été inventé bien avant le smartphone, mais c'est l'iPhone (2007) qui a véritablement <em>innové</em> en rendant cette technologie accessible et utilisable pour tous.</p>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">OST1 — Liens entre usages et évolutions technologiques</span>
+        <span class="competence-tag">T2 — Usages et impacts sociétaux du numérique</span>
+        <span class="competence-tag">OST15 — Argumentation sur la stratégie numérique</span>
+        <span class="competence-tag">OST1i — Bit, octet et multiples</span>
+        <span class="competence-tag">OST1j — Taille des fichiers</span>
+        <span class="competence-tag">OST1k — Incidences du stockage et des réseaux</span>
+        <span class="competence-tag cps">CPS — Choix responsables · Décisions constructives</span>
+      </div>
 
-      <h3>Types d'innovations</h3>
-      <ul>
-        <li><strong>Innovation de rupture</strong> : révolution technologique qui remet en cause les usages existants (ex : passage du courrier papier à l'email).</li>
-        <li><strong>Innovation incrémentale</strong> : amélioration progressive d'une technologie existante (ex : amélioration de la batterie du smartphone chaque année).</li>
-      </ul>
+      <!-- ══════════ OBJECTIF ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Objectif</h3>
+        <p>Léa rentre d'un concert. Depuis son smartphone, elle envoie à ses amis :</p>
+        <ul class="lea-liste">
+          <li>🎥 une vidéo de 2 minutes</li>
+          <li>📸 15 photos</li>
+          <li>🎙️ un message vocal</li>
+        </ul>
+        <p>Ces fichiers lui semblent légers — ils tiennent dans son téléphone. Pourtant, dès qu'elle appuie sur « Envoyer », ils quittent l'appareil, circulent dans des réseaux et sont stockés dans des infrastructures numériques.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment des fichiers qui ne pèsent (presque) rien dans nos téléphones peuvent-ils avoir un poids énorme pour la société ?
+        </div>
+      </div>
+
+      <!-- ══════════ PARCOURS D'UNE DONNÉE ══════════ -->
+      <div class="section-bloc">
+        <h3>📱 Le parcours d'une donnée</h3>
+        <p>Quand Léa envoie un fichier, celui-ci ne se déplace pas directement d'un téléphone à un autre. Il suit un parcours qui mobilise plusieurs éléments du système d'information :</p>
+
+        <div class="parcours-chaine">
+          <div class="parcours-etape">
+            <div class="parcours-icone">📱</div>
+            <div class="parcours-label"><strong>Smartphone</strong><br><span>création du fichier</span></div>
+          </div>
+          <div class="parcours-fleche">→</div>
+          <div class="parcours-etape">
+            <div class="parcours-icone">📡</div>
+            <div class="parcours-label"><strong>Réseau</strong><br><span>transmission des données</span></div>
+          </div>
+          <div class="parcours-fleche">→</div>
+          <div class="parcours-etape">
+            <div class="parcours-icone">🖥️</div>
+            <div class="parcours-label"><strong>Serveurs</strong><br><span>stockage et traitement</span></div>
+          </div>
+          <div class="parcours-fleche">→</div>
+          <div class="parcours-etape">
+            <div class="parcours-icone">📲</div>
+            <div class="parcours-label"><strong>Destinataire</strong><br><span>réception et affichage</span></div>
+          </div>
+        </div>
+
+        <p class="section-info">À chaque étape, le fichier mobilise de la capacité de réseau et de l'espace de stockage. Plus les fichiers sont nombreux et volumineux, plus ces besoins sont importants.</p>
+      </div>
+
+      <!-- ══════════ MESURE DE L'INFORMATION ══════════ -->
+      <div class="section-bloc">
+        <h3>💾 Comment mesure-t-on la quantité d'information ?</h3>
+        <p>Pour mesurer la quantité d'information contenue dans un fichier numérique, on utilise des unités standardisées. La plus petite est le <strong>bit</strong>.</p>
+
+        <div class="unite-base">
+          <div class="unite-bit">
+            <span class="unite-icone">⚡</span>
+            <div>
+              <strong>Le bit</strong> est l'unité élémentaire d'information. Il ne peut prendre que deux valeurs : <strong>0</strong> ou <strong>1</strong>.
+            </div>
+          </div>
+          <div class="unite-octet">
+            <span class="unite-icone">🔢</span>
+            <div>
+              <strong>L'octet</strong> regroupe <strong>8 bits</strong>. C'est l'unité de base couramment utilisée pour mesurer la taille des fichiers.
+            </div>
+          </div>
+        </div>
+
+        <h4>Les multiples de l'octet</h4>
+        <div class="multiples-grille">
+          <div class="multiple-carte">
+            <div class="multiple-symbole">Ko</div>
+            <div class="multiple-nom">Kilo-octet</div>
+            <div class="multiple-val">≈ 1 000 octets</div>
+          </div>
+          <div class="multiple-carte">
+            <div class="multiple-symbole">Mo</div>
+            <div class="multiple-nom">Méga-octet</div>
+            <div class="multiple-val">≈ 1 000 Ko</div>
+          </div>
+          <div class="multiple-carte">
+            <div class="multiple-symbole">Go</div>
+            <div class="multiple-nom">Giga-octet</div>
+            <div class="multiple-val">≈ 1 000 Mo</div>
+          </div>
+          <div class="multiple-carte accent">
+            <div class="multiple-symbole">To</div>
+            <div class="multiple-nom">Téra-octet</div>
+            <div class="multiple-val">≈ 1 000 Go</div>
+          </div>
+        </div>
+        <p class="section-info">À retenir : <strong>1 octet = 8 bits</strong>. Les multiples permettent d'exprimer des quantités d'information de plus en plus grandes.</p>
+      </div>
+
+      <!-- ══════════ TAILLE DES FICHIERS ══════════ -->
+      <div class="section-bloc">
+        <h3>📦 Pourquoi un fichier est-il plus ou moins lourd ?</h3>
+        <p>Tous les fichiers numériques n'ont pas la même taille. Celle-ci dépend de plusieurs paramètres :</p>
+
+        <div class="facteurs-liste">
+          <div class="facteur-item">🖼️ <strong>Format</strong> — chaque format compresse les données différemment.</div>
+          <div class="facteur-item">🔲 <strong>Résolution</strong> — plus une image a de pixels, plus elle est lourde.</div>
+          <div class="facteur-item">🗜️ <strong>Compression</strong> — une compression plus forte réduit la taille mais peut diminuer la qualité.</div>
+          <div class="facteur-item">⏱️ <strong>Durée</strong> — pour le son et la vidéo, plus le fichier est long, plus il est volumineux.</div>
+        </div>
+
+        <h4>Ordres de grandeur (source : OST1j)</h4>
+        <div class="tailles-grille">
+          <div class="taille-carte image">
+            <div class="taille-icone">🖼️</div>
+            <div class="taille-titre">Image</div>
+            <div class="taille-detail">Photo basse résolution<br><strong>1 à 5 Mo</strong></div>
+            <div class="taille-detail">Photo haute résolution<br><strong>10 à 50 Mo</strong></div>
+          </div>
+          <div class="taille-carte son">
+            <div class="taille-icone">🎵</div>
+            <div class="taille-titre">Son</div>
+            <div class="taille-detail">Chanson<br><strong>≈ 1 Mo/min</strong></div>
+          </div>
+          <div class="taille-carte video">
+            <div class="taille-icone">🎬</div>
+            <div class="taille-titre">Vidéo</div>
+            <div class="taille-detail">Vidéo YouTube HD<br><strong>100 Mo à 1 Go/min</strong></div>
+            <div class="taille-detail">Film HD<br><strong>1 à 2 Go/min</strong></div>
+          </div>
+        </div>
+        <p class="section-info">Ces valeurs sont des ordres de grandeur : la taille réelle varie selon le format et les paramètres de compression choisis.</p>
+      </div>
+
+      <!-- ══════════ INCIDENCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📊 Plus de données = plusieurs incidences</h3>
+        <p>La multiplication des fichiers numériques produit des effets à plusieurs niveaux. La fiche OST1k distingue trois domaines :</p>
+
+        <div class="incidences-grille">
+          <div class="incidence-bloc stockage">
+            <div class="incidence-titre">🗄️ Stockage</div>
+            <ul>
+              <li>Confidentialité et sécurité des données</li>
+              <li>Coût du stockage</li>
+              <li>Qualité des données conservées</li>
+              <li>Obsolescence des données</li>
+            </ul>
+          </div>
+          <div class="incidence-bloc flux">
+            <div class="incidence-titre">📶 Flux des données</div>
+            <ul>
+              <li>Bande passante et congestion du réseau</li>
+              <li>Sécurité des communications</li>
+              <li>Vie privée et protection des données personnelles</li>
+              <li>Qualité de service</li>
+            </ul>
+          </div>
+          <div class="incidence-bloc reseaux">
+            <div class="incidence-titre">🌐 Réseaux</div>
+            <ul>
+              <li>Fiabilité et disponibilité</li>
+              <li>Sécurité des infrastructures</li>
+              <li>Complexité croissante</li>
+              <li>Obsolescence des technologies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ OÙ VONT LES DONNÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>🌐 Où vont les données ?</h3>
+        <p>Lorsque Léa envoie ses fichiers, ils ne restent pas dans son téléphone. Ils passent par trois éléments principaux :</p>
+
+        <div class="destinations-liste">
+          <div class="destination-item">
+            <span class="destination-icone">📡</span>
+            <div>
+              <strong>Les réseaux</strong><br>
+              Ils transportent les données d'un appareil à un autre.
+            </div>
+          </div>
+          <div class="destination-item">
+            <span class="destination-icone">🖥️</span>
+            <div>
+              <strong>Les serveurs et infrastructures de stockage</strong><br>
+              Ils conservent les fichiers et les mettent à disposition des utilisateurs.
+            </div>
+          </div>
+          <div class="destination-item">
+            <span class="destination-icone">🏭</span>
+            <div>
+              <strong>Les centres de données (data centers)</strong><br>
+              Ils regroupent de nombreux serveurs pour stocker des données numériques.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ PETIT EXEMPLE ══════════ -->
+      <div class="section-bloc">
+        <h3>🧮 Un petit exemple</h3>
+        <p>Pour t'aider à raisonner sur les tailles de fichiers, voici les hypothèses utilisées dans la fiche activité :</p>
+
+        <div class="hypotheses-box">
+          <div class="hypothese-item">🎥 Vidéo HD ≈ <strong>250 Mo/min</strong></div>
+          <div class="hypothese-item">📸 Photo ≈ <strong>4 Mo</strong></div>
+          <div class="hypothese-item">📶 Débit ≈ <strong>5 Mo/s</strong></div>
+          <div class="hypothese-item">📏 1 Go = <strong>1 000 Mo</strong></div>
+        </div>
+
+        <div class="exemple-calcul">
+          <p><strong>Application aux fichiers de Léa :</strong></p>
+          <ul>
+            <li>Vidéo de 2 minutes : 2 × 250 Mo = <strong>500 Mo</strong></li>
+            <li>15 photos : 15 × 4 Mo = <strong>60 Mo</strong></li>
+            <li>Total approximatif : <strong>560 Mo</strong></li>
+            <li>Temps de transmission à 5 Mo/s : 560 ÷ 5 = <strong>112 secondes</strong> (soit environ 2 minutes)</li>
+          </ul>
+          <p class="calcul-note">Ces chiffres sont des estimations basées sur les hypothèses de l'activité. En réalité, la compression et la qualité réseau influencent fortement ces valeurs.</p>
+        </div>
+      </div>
+
+      <!-- ══════════ IMPACT ══════════ -->
+      <div class="section-bloc">
+        <h3>⚠️ Le numérique a aussi des incidences</h3>
+        <p>La situation de Léa est celle de milliards d'utilisateurs chaque jour. La multiplication de ces échanges a des effets à l'échelle de la société :</p>
+        <ul class="impacts-liste">
+          <li>Des besoins croissants en <strong>espace de stockage</strong> (serveurs, centres de données).</li>
+          <li>Une sollicitation accrue des <strong>réseaux</strong>, pouvant entraîner des congestions.</li>
+          <li>Des enjeux de <strong>sécurité</strong> : protection des données personnelles, risques liés à la sécurité des données.</li>
+          <li>Des <strong>coûts</strong> liés à l'hébergement et à la maintenance des infrastructures.</li>
+        </ul>
+        <p class="section-info">Ces incidences ne signifient pas que le numérique est négatif : il apporte des possibilités considérables. L'activité te demande d'analyser ces effets de façon équilibrée, en pesant les avantages et les inconvénients.</p>
+      </div>
+
+      <!-- ══════════ RESSOURCES VIDÉO ══════════ -->
+      <div class="section-bloc">
+        <h3>🎬 Ressources vidéo</h3>
+        <ul class="resource-links">
+          <li>
+            <strong>Ressource vidéo 1</strong><br>
+            <a href="https://edurl.fr/3cSwXBMr" target="_blank" rel="noopener noreferrer">▶ Accéder à la ressource</a>
+          </li>
+          <li>
+            <strong>Ressource vidéo 2</strong><br>
+            <a href="https://edurl.fr/SstLHX6N" target="_blank" rel="noopener noreferrer">▶ Accéder à la ressource</a>
+          </li>
+          <li>
+            <strong>Ressource vidéo 3</strong><br>
+            <a href="https://edurl.fr/7xFX3zQW" target="_blank" rel="noopener noreferrer">▶ Accéder à la ressource</a>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -65,5 +326,394 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-bloc h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .lea-liste {
+    list-style: none;
+    padding: 0.4rem 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Parcours ── */
+  .parcours-chaine {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  .parcours-etape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 90px;
+  }
+
+  .parcours-icone { font-size: 2rem; }
+
+  .parcours-label {
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #334155;
+  }
+
+  .parcours-label span { font-size: 0.72rem; color: #64748b; }
+
+  .parcours-fleche {
+    font-size: 1.4rem;
+    color: #1e3a8a;
+    font-weight: 700;
+    padding-top: 0.75rem;
+  }
+
+  /* ── Unités ── */
+  .unite-base {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.75rem 0 1rem;
+  }
+
+  .unite-bit,
+  .unite-octet {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    border-left: 3px solid #1e3a8a;
+    background: #f8fafc;
+  }
+
+  .unite-icone { font-size: 1.5rem; flex-shrink: 0; }
+
+  .multiples-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+
+  .multiple-carte {
+    background: #f0f4ff;
+    border: 1px solid #c7d7f9;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .multiple-carte.accent {
+    background: #dbeafe;
+    border-color: #93c5fd;
+  }
+
+  .multiple-symbole {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #1e3a8a;
+    font-family: monospace;
+  }
+
+  .multiple-nom {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #334155;
+    margin: 0.2rem 0;
+  }
+
+  .multiple-val {
+    font-size: 0.72rem;
+    color: #64748b;
+  }
+
+  /* ── Facteurs ── */
+  .facteurs-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0.75rem 0 1rem;
+  }
+
+  .facteur-item {
+    padding: 0.5rem 0.9rem;
+    background: #f8fafc;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* ── Tailles des fichiers ── */
+  .tailles-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .taille-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    text-align: center;
+    border: 1px solid;
+  }
+
+  .taille-carte.image { background: #fef3c7; border-color: #fcd34d; }
+  .taille-carte.son   { background: #f0fdf4; border-color: #86efac; }
+  .taille-carte.video { background: #fdf2f8; border-color: #f0abfc; }
+
+  .taille-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .taille-titre {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+  }
+
+  .taille-detail {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-top: 0.3rem;
+  }
+
+  /* ── Incidences ── */
+  .incidences-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .incidence-bloc {
+    border-radius: 0.5rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid;
+  }
+
+  .incidence-bloc.stockage { background: #fef9f0; border-color: #fcd34d; }
+  .incidence-bloc.flux     { background: #f0fdf4; border-color: #86efac; }
+  .incidence-bloc.reseaux  { background: #eff6ff; border-color: #93c5fd; }
+
+  .incidence-titre {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #1e293b;
+    margin-bottom: 0.6rem;
+  }
+
+  .incidence-bloc ul {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    padding-left: 1.1rem;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* ── Où vont les données ── */
+  .destinations-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+
+  .destination-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: #f8fafc;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .destination-icone { font-size: 1.4rem; flex-shrink: 0; }
+
+  /* ── Exemple ── */
+  .hypotheses-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 0.5rem;
+  }
+
+  .hypothese-item {
+    font-size: 0.875rem;
+    padding: 0.3rem 0.8rem;
+    background: #fef3c7;
+    border-radius: 999px;
+    color: #78350f;
+  }
+
+  .exemple-calcul {
+    background: #f8fafc;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.9rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .exemple-calcul ul {
+    padding-left: 1.25rem;
+    margin: 0.4rem 0;
+  }
+
+  .calcul-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-style: italic;
+  }
+
+  /* ── Impacts ── */
+  .impacts-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+  }
+
+  /* ── Ressources vidéo ── */
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    padding: 0.75rem 1rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .resource-links a {
+    color: #1e3a8a;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resource-links a:hover {
+    color: #2e56b4;
+  }
+
+  @media (max-width: 600px) {
+    .parcours-chaine { flex-direction: column; align-items: center; }
+    .parcours-fleche { transform: rotate(90deg); }
   }
 </style>
