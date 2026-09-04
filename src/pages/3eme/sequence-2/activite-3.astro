@@ -4,53 +4,112 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents = [
+  {
+    title: "Activité 3 — L'IA dans notre poche : usages, biais et responsabilité",
+    pdfUrl: "/documents/3eme/sequence-2/activite-3/activite-3.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 3 - Séquence 2 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-2`} />
-  <h1>Séquence 2 — Systèmes techniques · Activité 3</h1>
+  <h1>Séquence 2 – Le smartphone, entre innovation et responsabilité · Activité 3</h1>
 
   <ActivitySection
-    title="Fonctions et interactions"
-    description="Comment analyser les interactions entre les composants d'un système technique ? Dans cette activité, tu traces les flux d'énergie et d'information qui circulent entre les composants du système. Tu réaliseras des schémas de chaînes d'énergie (source → convertisseur → transmetteur → actionneur) et de chaînes d'information (capteur → traitement → commande). Tu identifieras les grandeurs physiques échangées (tension, courant, force, vitesse…) et tu expliqueras comment chaque composant contribue à la réalisation de la fonction globale du système. Cette activité prépare aux questions de l'épreuve du Brevet."
+    title="L'IA dans notre poche : comment les assistants vocaux transforment notre quotidien ?"
+    description="Durée : 1h30 — Thématique T1 – L'évolution des OST — Compétence OST14. Une nouvelle application de messagerie, LexIA, intègre une intelligence artificielle capable de traduire automatiquement les conversations, de proposer des réponses toutes faites et de filtrer les messages considérés comme offensants. Certains utilisateurs trouvent ces fonctions pratiques, tandis que d'autres dénoncent des erreurs de traduction, des messages mal interprétés et des blocages injustifiés. Dans cette activité, tu exploreras les types d'apprentissage de l'IA, la notion de biais, et les effets de ces technologies sur la société."
     documents={documents}
     activityNumber={3}
-    totalActivities={4}
+    totalActivities={3}
     sequenceHref="/3eme/sequence-2"
-    sequenceLabel="Séquence 2 — Les systèmes techniques"
+    sequenceLabel="Séquence 2 — Le smartphone, entre innovation et responsabilité"
     retenir={{
       definitions: [
-        { term: "Fonction principale (FP)", def: "Raison d'être du système : le service qu'il rend à l'utilisateur en mettant en relation deux milieux extérieurs." },
-        { term: "Fonction contrainte (FC)", def: "Condition que doit respecter le système vis-à-vis d'un milieu extérieur (norme, sécurité, environnement…)." },
-        { term: "Interaction", def: "Relation d'échange entre deux sous-systèmes ou entre un sous-système et son environnement." },
+        { term: "Intelligence artificielle (IA)", def: "Système informatique capable d'apprendre à partir de données et de réaliser des tâches qui nécessitent habituellement l'intelligence humaine." },
+        { term: "Apprentissage supervisé", def: "Type d'apprentissage où l'IA s'entraîne sur des exemples étiquetés (données + réponses correctes). Ex : filtre anti-spam." },
+        { term: "Apprentissage non supervisé", def: "L'IA trouve seule des structures dans les données, sans exemples préétiquetés. Ex : regroupement d'utilisateurs par comportement." },
+        { term: "Apprentissage par renforcement", def: "L'IA apprend par essais et erreurs en recevant des récompenses ou des pénalités. Ex : agent jouant aux échecs." },
+        { term: "Biais algorithmique", def: "Erreur systématique dans les résultats d'une IA, causée par des données d'entraînement non représentatives ou par des choix de conception." },
       ],
       points: [
-        "FP = ce que le système fait pour l'utilisateur ; FC = ce à quoi le système doit se conformer.",
-        "Les interactions s'analysent avec le diagramme pieuvre (à approfondir en séquence 3).",
-        "Un système peut avoir plusieurs FP et de nombreuses FC.",
+        "3 types d'apprentissage : supervisé (exemples étiquetés), non supervisé (structures cachées), renforcement (essais/erreurs).",
+        "Usages de l'IA dans le smartphone : géolocalisation, traduction, identification, calcul de trajet, reconnaissance faciale.",
+        "Un biais algorithmique peut amplifier des inégalités existantes — il est crucial de l'identifier et de le corriger.",
+        "OST14 : argumenter sur l'incidence des contraintes sociétales sur les OST.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Les flux dans un système technique</h3>
-      <p>Un système technique est traversé par des <strong>flux</strong> : flux d'énergie (électrique, mécanique, thermique…) et flux d'information (signaux de commande, données des capteurs). Ces flux circulent entre les composants selon des <strong>chaînes</strong> qu'on peut représenter graphiquement.</p>
+      <h3>Situation déclenchante — L'application LexIA</h3>
+      <p>Une nouvelle application de messagerie, <strong>LexIA</strong>, intègre une intelligence artificielle capable de traduire automatiquement les conversations, de proposer des réponses toutes faites et de filtrer les messages considérés comme offensants. Certains utilisateurs trouvent ces fonctions pratiques, tandis que d'autres dénoncent des <strong>erreurs de traduction</strong>, des messages mal interprétés et des <strong>blocages injustifiés</strong> de certains contenus. Des associations s'interrogent sur les biais de l'IA et sur les conséquences de ces choix techniques pour les utilisateurs.</p>
 
-      <h3>La chaîne d'énergie</h3>
-      <p>La chaîne d'énergie décrit le chemin de l'énergie à travers le système :</p>
+      <h3>Les grands types d'apprentissage de l'IA</h3>
       <ul>
-        <li><strong>Source d'énergie</strong> (batterie, secteur) → <strong>Convertisseur</strong> (moteur, résistance) → <strong>Transmetteur</strong> (courroie, engrenage) → <strong>Actionneur</strong> (roue, bras, ventilateur)</li>
-      </ul>
-      <p>À chaque étape, on précise les grandeurs physiques échangées : <em>tension (V), courant (A), force (N), vitesse (m/s)</em>.</p>
-
-      <h3>La chaîne d'information</h3>
-      <p>La chaîne d'information décrit comment les décisions sont prises :</p>
-      <ul>
-        <li><strong>Capteur</strong> (détecte une information) → <strong>Traitement</strong> (microcontrôleur compare et décide) → <strong>Commande</strong> (envoie l'ordre à la partie opérative)</li>
+        <li><strong>Apprentissage supervisé</strong> : l'IA s'entraîne sur des milliers d'exemples étiquetés. Un filtre anti-spam apprend à reconnaître les spams car on lui a montré des milliers d'emails classés "spam" / "pas spam". LexIA utilise ce type pour filtrer les messages offensants.</li>
+        <li><strong>Apprentissage non supervisé</strong> : l'IA découvre seule des structures dans les données, sans réponses préétablies. Utile pour regrouper des utilisateurs par profil ou détecter des comportements inhabituels.</li>
+        <li><strong>Apprentissage par renforcement</strong> : l'IA apprend en interagissant avec son environnement et en recevant des récompenses. Utilisé pour les agents conversationnels qui s'améliorent à chaque interaction.</li>
       </ul>
 
-      <h3>Fonctions principales et contraintes</h3>
-      <p>Les <strong>fonctions principales (FP)</strong> définissent pourquoi le système existe — elles répondent au besoin de l'utilisateur. Les <strong>fonctions contraintes (FC)</strong> sont des exigences à respecter vis-à-vis de l'environnement : normes de sécurité, résistance à l'eau, poids maximal. Un aspirateur doit aspirer (FP) ET être silencieux, léger et économe (FC). Ces interactions entre composants et fonctions se représentent ensuite avec le diagramme pieuvre (séquence 3).</p>
+      <h3>Usages de l'IA dans les moyens de communication</h3>
+      <ul>
+        <li><strong>Géolocalisation</strong> : prédiction du trajet le plus rapide en fonction du trafic en temps réel.</li>
+        <li><strong>Traduction automatique</strong> : reconnaissance du contexte et adaptation de la langue (LexIA).</li>
+        <li><strong>Identification</strong> : reconnaissance faciale pour déverrouiller le téléphone ou identifier une personne sur une photo.</li>
+        <li><strong>Calcul de trajet</strong> : optimisation d'itinéraires multi-modaux (marche + transports + voiture).</li>
+        <li><strong>Assistants vocaux</strong> : compréhension du langage naturel et génération de réponses pertinentes.</li>
+      </ul>
+
+      <h3>La notion de biais algorithmique</h3>
+      <p>Un <strong>biais</strong> est une erreur systématique dans les résultats d'une IA. Il apparaît lorsque les données d'entraînement ne sont pas représentatives de la réalité ou lorsque des choix de conception défavorisent certains groupes. Exemple célèbre : des systèmes de <strong>reconnaissance faciale</strong> ont montré des taux d'erreur beaucoup plus élevés sur les personnes à peau foncée, car les données d'entraînement comportaient principalement des visages de personnes à peau claire.</p>
+
+      <h3>Conséquences des biais dans LexIA</h3>
+      <p>Dans le cas de LexIA, les biais peuvent prendre plusieurs formes :</p>
+      <ul>
+        <li><strong>Biais de traduction</strong> : certains dialectes ou langues régionales sont moins bien représentés dans les données d'entraînement → erreurs de traduction plus fréquentes pour ces communautés.</li>
+        <li><strong>Biais de modération</strong> : des expressions culturelles ou argotiques sont bloquées à tort car le filtre n'a pas appris leur contexte positif.</li>
+        <li><strong>Biais de recommandation</strong> : les réponses suggérées reflètent les biais des données collectées (âge, genre, culture).</li>
+      </ul>
+
+      <h3>Débat — « Les biais de l'IA : un mal nécessaire ? »</h3>
+      <p>Certains défenseurs de l'IA estiment que les biais sont inévitables dans tout système apprenant et que leurs avantages compensent leurs limites. D'autres affirment qu'un biais dans un outil utilisé par des millions de personnes peut amplifier des inégalités à grande échelle. Le débat porte aussi sur la <strong>transparence algorithmique</strong> : les utilisateurs ont-ils le droit de savoir comment les décisions de l'IA sont prises ?</p>
+
+      <h3>Films et séries recommandés sur l'IA</h3>
+      <ul>
+        <li><em>Her</em> (2013) — Une IA développe une relation avec son utilisateur.</li>
+        <li><em>Ex Machina</em> (2014) — Les frontières entre intelligence humaine et artificielle.</li>
+        <li><em>Black Mirror</em> — Épisodes sur les dérives des technologies numériques.</li>
+        <li><em>Coded Bias</em> (2020, documentaire) — Les biais raciaux dans les systèmes de reconnaissance faciale.</li>
+      </ul>
+
+      <h3>Propositions d'amélioration responsable</h3>
+      <p>Pour rendre LexIA plus responsable, on peut proposer :</p>
+      <ul>
+        <li>Diversifier les données d'entraînement pour représenter toutes les langues et cultures.</li>
+        <li>Permettre aux utilisateurs de <strong>signaler un biais</strong> et d'en comprendre la cause.</li>
+        <li>Mettre en place une <strong>supervision humaine</strong> pour les cas ambigus.</li>
+        <li>Rendre les critères de modération <strong>publics et auditables</strong>.</li>
+      </ul>
+
+      <h3>Ressources</h3>
+      <ul class="resource-links">
+        <li>
+          <strong>OST1e</strong> — Les grands types d'apprentissage des intelligences artificielles et leurs usages possibles<br>
+          <a href="https://podeduc.apps.education.fr/video/113245-ost1e-les-grands-types-dapprentissage-des-intelligences-artificielles-et-leurs-usages-possibles" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1e</a>
+        </li>
+        <li>
+          <strong>OST1f</strong> — Les incidences sociétales, notamment l'étude du biais et de l'effet de l'usage d'une intelligence artificielle<br>
+          <a href="https://podeduc.apps.education.fr/video/113242-ost1f-les-incidences-societales-notamment-letude-du-biais-et-de-leffet-de-lusage-dune-intelligence-artificielle-ia" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1f</a>
+        </li>
+        <li>
+          <strong>FOST1e · FOST1f</strong> — Fiches de connaissances<br>
+          <a href="https://www.app.sti-ac-bordeaux.fr/" target="_blank" rel="noopener noreferrer">↗ Accéder aux fiches (app.sti-ac-bordeaux.fr)</a>
+        </li>
+        <li>
+          <strong>QVOST1e · QVOST1f</strong> — Quiz de vérification<br>
+          <a href="https://www.app.sti-ac-bordeaux.fr/" target="_blank" rel="noopener noreferrer">↗ Accéder aux quiz (app.sti-ac-bordeaux.fr)</a>
+        </li>
+      </ul>
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -60,5 +119,34 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    padding: 0.75rem 1rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .resource-links a {
+    color: #1e3a8a;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resource-links a:hover {
+    color: #2e56b4;
   }
 </style>

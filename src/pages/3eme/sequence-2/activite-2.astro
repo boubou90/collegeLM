@@ -4,55 +4,88 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents = [
+  {
+    title: "Activité 2 — Du téléphone au smartphone : innovations et ruptures",
+    pdfUrl: "/documents/3eme/sequence-2/activite-2/activite-2.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 2 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-2`} />
-  <h1>Séquence 2 — Systèmes techniques · Activité 2</h1>
+  <h1>Séquence 2 – Le smartphone, entre innovation et responsabilité · Activité 2</h1>
 
   <ActivitySection
-    title="Structure et composants d'un système"
-    description="Comment identifier et décrire les composants d'un système technique ? Dans cette activité, tu approfondis l'analyse structurelle d'un système en décomposant ses sous-systèmes et ses composants élémentaires. Tu utiliseras un schéma de décomposition (arbre ou tableau) pour représenter la hiérarchie du système étudié. Chaque composant sera décrit : nature, rôle, matériau ou technologie. Tu apprendras à faire la distinction entre la partie commande (qui traite l'information) et la partie opérative (qui effectue l'action). Cette méthode de décomposition systémique est fondamentale en technologie et en ingénierie."
+    title="Du téléphone au smartphone – Identifier les innovations et les ruptures"
+    description="Durée : 1h30 — Thématique T1 – L'évolution des OST. Comment la lignée du téléphone illustre-t-elle les grandes ruptures technologiques et les contraintes sociétales ? Dans cette activité, tu construiras une frise chronologique de la famille du téléphone (du télégraphe au smartphone), tu distingueras invention et innovation, et tu analyseras comment les besoins et les contraintes de la société ont guidé l'évolution de ces objets. En N4, tu concevras un smartphone idéal répondant à 3 enjeux sociétaux actuels."
     documents={documents}
     activityNumber={2}
-    totalActivities={4}
+    totalActivities={3}
     sequenceHref="/3eme/sequence-2"
-    sequenceLabel="Séquence 2 — Les systèmes techniques"
+    sequenceLabel="Séquence 2 — Le smartphone, entre innovation et responsabilité"
     retenir={{
       definitions: [
-        { term: "Composant", def: "Élément constitutif d'un système qui remplit une fonction précise." },
-        { term: "Sous-système", def: "Partie d'un système qui peut elle-même être décomposée en éléments plus simples." },
-        { term: "Structure fonctionnelle", def: "Décomposition hiérarchique du système en sous-systèmes et composants." },
+        { term: "Invention", def: "Création d'un dispositif ou d'un procédé nouveau, souvent protégée par un brevet. Elle n'a pas encore été adoptée par la société." },
+        { term: "Innovation", def: "Invention qui a été introduite avec succès sur le marché ou dans les usages sociaux. C'est le passage de l'idée à l'usage réel." },
+        { term: "Lignée d'OST", def: "Suite d'objets ou de systèmes techniques qui se succèdent dans le temps en améliorant ou en remplaçant la génération précédente." },
+        { term: "Rupture technologique", def: "Innovation qui bouleverse radicalement les usages existants et rend les générations précédentes obsolètes." },
+        { term: "Contrainte sociétale", def: "Exigence imposée par la société (lois, environnement, valeurs, besoins) qui oriente l'évolution des objets techniques." },
       ],
       points: [
-        "Décomposer un système du global vers le détail : système → sous-systèmes → composants.",
-        "Chaque composant a un rôle précis dans la chaîne d'énergie ou d'information.",
-        "La structure fonctionnelle s'représente sous forme d'arborescence.",
+        "Invention ≠ Innovation : l'invention devient innovation quand elle est adoptée par la société.",
+        "La lignée du téléphone : Télégraphe → Téléphone fixe → Fax → Téléphone mobile → Smartphone.",
+        "Chaque rupture correspond à un besoin sociétal nouveau ou à une découverte scientifique majeure.",
+        "OST11 : identifier les ruptures | OST12 : relier science et technologie | OST13 : argumenter sur les effets sociaux.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>La décomposition structurelle d'un système</h3>
-      <p>Pour analyser un système complexe, on le <strong>décompose du global vers le détail</strong> : système → sous-systèmes → composants élémentaires. Cette démarche, représentée par une <strong>arborescence</strong>, permet de comprendre qui fait quoi dans le système.</p>
+      <h3>Invention et innovation : deux notions à distinguer</h3>
+      <p>Une <strong>invention</strong> est la création d'une nouveauté technique, souvent protégée par un brevet. Mais une invention ne devient une <strong>innovation</strong> que lorsqu'elle est adoptée avec succès dans la société et transforme réellement les usages. Exemple : l'écran tactile a été inventé bien avant le smartphone — c'est l'iPhone (2007) qui l'a <em>innové</em> en le rendant accessible à des millions d'utilisateurs.</p>
 
-      <h3>Partie commande vs. partie opérative</h3>
-      <p>Tout système technique comporte deux parties fondamentales :</p>
+      <h3>Développement durable et évolution des objets</h3>
+      <p>Les évolutions technologiques sont de plus en plus guidées par les <strong>impératifs du développement durable</strong> : réduire la consommation d'énergie, allonger la durée de vie des appareils, favoriser les matériaux recyclables. Ces contraintes deviennent elles-mêmes des moteurs d'innovation.</p>
+
+      <h3>La frise chronologique de la famille du téléphone</h3>
+      <p>La lignée des objets de communication relie des générations successives d'objets qui partagent la même fonction fondamentale : <strong>permettre à des personnes éloignées de communiquer</strong>.</p>
       <ul>
-        <li><strong>Partie commande (PC)</strong> : traite les informations et envoie les ordres. Elle contient le microcontrôleur, les capteurs, les boutons. Ex : le tableau de bord d'une machine à laver.</li>
-        <li><strong>Partie opérative (PO)</strong> : reçoit les ordres et effectue l'action sur la matière d'œuvre. Elle contient les moteurs, les résistances, les pompes. Ex : le tambour et la pompe de la machine à laver.</li>
+        <li><strong>Télégraphe (1837)</strong> — Innovation majeure : transmission de signaux codés à distance par fil électrique. Besoin sociétal : accélérer les communications commerciales et militaires sur de longues distances.</li>
+        <li><strong>Téléphone fixe (1876)</strong> — Innovation majeure : transmission de la voix humaine en temps réel. Besoin sociétal : communication directe et naturelle entre individus éloignés.</li>
+        <li><strong>Fax (1964)</strong> — Innovation majeure : transmission de documents écrits et d'images par ligne téléphonique. Besoin sociétal : partager des documents à distance sans délai postal.</li>
+        <li><strong>Téléphone mobile (1983)</strong> — Innovation majeure : communication sans fil, liberté de déplacement. Besoin sociétal : rester joignable hors du domicile, en mobilité.</li>
+        <li><strong>Smartphone (2007)</strong> — Innovation de rupture : fusion en un seul objet du téléphone, d'Internet, de l'appareil photo, du GPS et de l'ordinateur. Besoin sociétal : accès permanent et universel à l'information et aux services numériques.</li>
       </ul>
 
-      <h3>Les composants et leurs rôles</h3>
-      <p>Chaque composant d'un système a un rôle précis. Pour les décrire, on indique :</p>
-      <ul>
-        <li>Sa <strong>nature</strong> : moteur, capteur, résistance, poulie…</li>
-        <li>Son <strong>rôle</strong> : convertir l'énergie électrique en énergie mécanique, détecter un obstacle…</li>
-        <li>Sa <strong>position dans la chaîne</strong> : partie commande ou partie opérative.</li>
-      </ul>
+      <h3>Contraintes sociétales et évolution des OST</h3>
+      <p>Les <strong>contraintes sociétales</strong> — réglementations, valeurs culturelles, crises économiques, enjeux environnementaux — ont fortement orienté l'évolution des objets de communication. Exemples : les normes de rayonnement ont limité la puissance des ondes ; les préoccupations environnementales ont conduit à des smartphones plus réparables ; les besoins d'accessibilité ont imposé des interfaces simplifiées.</p>
 
-      <h3>Représentation en arborescence</h3>
-      <p>L'arborescence représente la hiérarchie du système avec des boîtes reliées par des traits. Au sommet : le <strong>système complet</strong>. En dessous : les <strong>sous-systèmes</strong> (alimentation, moteur, interface). Plus bas : les <strong>composants élémentaires</strong> (batterie, câble, bouton). Cette représentation est utilisée en ingénierie industrielle pour documenter les produits complexes.</p>
+      <h3>Le smartphone du futur 2030 (niveau N4)</h3>
+      <p>En t'appuyant sur les tendances actuelles et les enjeux sociétaux identifiés, conçois un <strong>smartphone idéal pour 2030</strong> qui réponde à 3 enjeux majeurs (ex : sobriété énergétique, inclusion numérique, vie privée) tout en intégrant des innovations réalistes.</p>
+
+      <h3>Ressources</h3>
+      <ul class="resource-links">
+        <li>
+          <strong>OST1a</strong> — Les éléments qui participent à l'évolution des besoins : invention, innovation, développement durable<br>
+          <a href="https://podeduc.apps.education.fr/video/113251-ost1a-les-elements-qui-participent-a-levolution-des-besoins-invention-innovation-developpement-durable" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1a</a>
+        </li>
+        <li>
+          <strong>OST1c</strong> — La famille et la lignée d'OST<br>
+          <a href="https://podeduc.apps.education.fr/video/113247-ost1c-la-famille-et-la-lignee-dost" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1c</a>
+        </li>
+        <li>
+          <strong>OST1d</strong> — Les contraintes sociétales<br>
+          <a href="https://podeduc.apps.education.fr/video/113246-ost1d-les-contraintes-societales" target="_blank" rel="noopener noreferrer">▶ Voir la vidéo OST1d</a>
+        </li>
+        <li>
+          <strong>FOST1a · FOST1c · FOST1d</strong> — Fiches de connaissances<br>
+          <a href="https://www.app.sti-ac-bordeaux.fr/" target="_blank" rel="noopener noreferrer">↗ Accéder aux fiches (app.sti-ac-bordeaux.fr)</a>
+        </li>
+        <li>
+          <strong>QVOST1a · QVOST1c · QVOST1d</strong> — Quiz de vérification<br>
+          <a href="https://www.app.sti-ac-bordeaux.fr/" target="_blank" rel="noopener noreferrer">↗ Accéder aux quiz (app.sti-ac-bordeaux.fr)</a>
+        </li>
+      </ul>
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -62,5 +95,34 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  .resource-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    padding: 0.75rem 1rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .resource-links a {
+    color: #1e3a8a;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .resource-links a:hover {
+    color: #2e56b4;
   }
 </style>

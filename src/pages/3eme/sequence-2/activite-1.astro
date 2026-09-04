@@ -4,58 +4,69 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents = [
+  {
+    title: "Activité 1 — Le smartphone, entre innovation et responsabilité",
+    pdfUrl: "/documents/3eme/sequence-2/activite-1/activite-1.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 2 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-2`} />
-  <h1>Séquence 2 — Systèmes techniques · Activité 1</h1>
+  <h1>Séquence 2 – Le smartphone, entre innovation et responsabilité · Activité 1</h1>
 
   <ActivitySection
-    title="Qu'est-ce qu'un système technique ?"
-    description="Comment reconnaître et définir un système technique ? Dans cette activité de lancement, tu découvres ce qu'est un système technique : un ensemble organisé d'objets, de matériaux et de logiciels qui transforme de l'énergie ou de l'information pour remplir une fonction précise. À partir d'exemples du quotidien (ascenseur, machine à laver, distributeur automatique…), tu apprendras à distinguer un objet technique isolé d'un système complet. Tu renseigneras des fiches d'analyse pour chaque exemple en identifiant la matière d'œuvre d'entrée, la matière d'œuvre de sortie, et la valeur ajoutée apportée par le système."
+    title="Le smartphone : entre innovation et responsabilité"
+    description="Lancement de séquence (30 min) — Mon grand-père m'a montré son ancien téléphone : un gros boîtier relié par un fil, posé dans l'entrée, que toute la famille se partageait. Aujourd'hui, mon smartphone tient dans ma main, je l'emmène partout, il me géolocalise, traduit mes messages et reconnaît même mon visage pour se déverrouiller. Comment un simple appareil pour « téléphoner » est-il devenu tout ça ? Lors de ce lancement de séquence, tu observeras les transformations de l'objet de communication, tu identifieras les problèmes que ces évolutions soulèvent, et tu formuleras des hypothèses pour y répondre."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={3}
     sequenceHref="/3eme/sequence-2"
-    sequenceLabel="Séquence 2 — Les systèmes techniques"
+    sequenceLabel="Séquence 2 — Le smartphone, entre innovation et responsabilité"
     retenir={{
       definitions: [
-        { term: "Système technique", def: "Ensemble organisé d'objets, de matériaux et de logiciels qui transforme une matière d'œuvre pour rendre service." },
-        { term: "Objet technique", def: "Objet conçu et fabriqué par l'être humain pour répondre à un besoin." },
-        { term: "Fonction d'usage", def: "Ce pour quoi le système a été conçu : le service qu'il rend à l'utilisateur." },
+        { term: "Innovation", def: "Amélioration ou nouveauté technologique introduite avec succès dans la société ou sur le marché." },
+        { term: "Responsabilité numérique", def: "Prise en compte des effets sociaux, environnementaux et éthiques liés à l'usage des technologies numériques." },
+        { term: "Objet de communication", def: "Objet technique dont la fonction principale est de permettre l'échange d'informations entre des personnes." },
       ],
       points: [
-        "Un système technique = ensemble organisé (pas juste un objet isolé) qui transforme une MO.",
-        "Distinguer l'objet isolé (ex : moteur seul) du système complet (ex : aspirateur entier).",
-        "La fonction d'usage répond à la question : 'À quoi sert-il ?'",
+        "Observer avant de conclure : noter les différences entre téléphone fixe et smartphone sans juger immédiatement.",
+        "Formuler le problème clairement : comment poser une bonne question de recherche à partir d'une observation ?",
+        "Distinguer ce qui a changé (fonctions, usages, taille, technologies) de ce qui est resté constant (besoin de communiquer).",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Définition d'un système technique</h3>
-      <p>Un <strong>système technique</strong> est un ensemble organisé d'objets, de matériaux et parfois de logiciels qui coopèrent pour remplir une <strong>fonction d'usage</strong> précise. Contrairement à un simple objet isolé (un moteur seul), un système intègre plusieurs composants : un distributeur automatique combine une unité de paiement, un système de réfrigération, un mécanisme de distribution et une interface utilisateur.</p>
+      <h3>Situation déclenchante</h3>
+      <p>« Mon grand-père m'a montré son ancien téléphone : un gros boîtier relié par un fil, posé dans l'entrée, que toute la famille se partageait. Aujourd'hui, mon smartphone tient dans ma main, je l'emmène partout, il me géolocalise, traduit mes messages et reconnaît même mon visage pour se déverrouiller. Comment un simple appareil pour "téléphoner" est-il devenu tout ça ? »</p>
 
-      <h3>La matière d'œuvre</h3>
-      <p>Dans tout système, on distingue ce qui entre (<strong>matière d'œuvre d'entrée</strong>), la transformation effectuée, et ce qui sort (<strong>matière d'œuvre de sortie</strong>). La valeur ajoutée est le service apporté. Exemples :</p>
+      <h3>Constats et observations</h3>
+      <p>À partir de cette situation, on peut faire plusieurs constats :</p>
       <ul>
-        <li><strong>Machine à laver</strong> : entrée = linge sale + eau + lessive → sortie = linge propre et essoré.</li>
-        <li><strong>Ascenseur</strong> : entrée = personne au rez-de-chaussée → sortie = personne à l'étage voulu.</li>
-        <li><strong>Four à micro-ondes</strong> : entrée = aliment froid → sortie = aliment chaud.</li>
+        <li>Le <strong>téléphone fixe</strong> remplissait une seule fonction : passer et recevoir des appels voix. Il était partagé, volumineux, et relié à un réseau filaire.</li>
+        <li>Le <strong>smartphone actuel</strong> cumule des dizaines de fonctions : appels, messages, photos, navigation GPS, traduction, paiement sans contact, reconnaissance faciale, connexion à Internet…</li>
+        <li>La <strong>taille</strong> a radicalement diminué alors que les <strong>capacités</strong> ont explosé.</li>
+        <li>L'usage est devenu <strong>individuel et permanent</strong> : on l'emporte partout, en permanence.</li>
       </ul>
 
-      <h3>Objet technique vs. système technique</h3>
-      <p>Un <strong>moteur électrique seul</strong> est un objet technique. Une <strong>machine à laver</strong> qui intègre ce moteur avec un tambour, une pompe, des résistances et un programme est un système technique. Le système accomplit une tâche complète, impossible avec un seul composant.</p>
+      <h3>Problème à résoudre</h3>
+      <p>Ces observations soulèvent une question centrale : <strong>quels mécanismes expliquent cette transformation radicale d'un objet de communication ?</strong> Et au-delà de la technique : ces évolutions sont-elles toujours souhaitables ? Qui en décide ? Qui en bénéficie ? Qui en subit les conséquences ?</p>
 
-      <h3>Méthode d'analyse — tableau fonctionnel</h3>
-      <p>Pour analyser un système, on complète un tableau d'analyse identifiant :</p>
+      <h3>Idées pour le résoudre</h3>
+      <ul>
+        <li>Étudier l'histoire et la <strong>lignée d'objets</strong> qui ont précédé le smartphone (du télégraphe à aujourd'hui).</li>
+        <li>Comprendre la différence entre <strong>invention</strong> et <strong>innovation</strong>, et identifier les <strong>ruptures technologiques</strong>.</li>
+        <li>Analyser les <strong>effets sociétaux</strong> : ce que ces technologies ont changé dans nos vies, nos relations, notre rapport à l'information.</li>
+        <li>Interroger le rôle de l'<strong>intelligence artificielle</strong> intégrée dans les smartphones modernes.</li>
+      </ul>
+
+      <h3>Idées retenues pour la séquence</h3>
+      <p>La séquence s'articule autour de deux grandes investigations :</p>
       <ol>
-        <li>La <strong>fonction d'usage</strong> : à quoi sert-il ?</li>
-        <li>La <strong>matière d'œuvre d'entrée</strong> : qu'est-ce qui entre ?</li>
-        <li>La <strong>valeur ajoutée</strong> : quelle transformation est effectuée ?</li>
-        <li>La <strong>matière d'œuvre de sortie</strong> : qu'est-ce qui sort ?</li>
+        <li><strong>Activité 2</strong> — Retracer la lignée du téléphone et identifier les innovations de rupture et les contraintes sociétales qui ont guidé son évolution.</li>
+        <li><strong>Activité 3</strong> — Analyser l'intégration de l'IA dans le smartphone, comprendre ses types d'apprentissage et évaluer ses biais et effets sur la société.</li>
       </ol>
-      <p>Entraîne-toi sur les exemples suivants : aspirateur robot, lave-vaisselle, imprimante 3D. Cette méthode s'applique à tous les systèmes, du plus simple (grille-pain) au plus complexe (centrale électrique).</p>
     </div>
   </ActivitySection>
 </ClassLayout>
