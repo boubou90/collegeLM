@@ -4,53 +4,28 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Dans cette séquence, les élèves apprennent à collecter, trier et analyser des données; comparer des principes techniques pour une même fonction technique.";
+const description = "Comprendre l’évolution des outils d’écriture en étudiant leurs fonctions, leurs principes techniques, leurs familles et leurs lignées.";
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Comment comparer les évolutions technologiques d'un objet technique ?"
-  },
-  {
-    title: "Collecte et analyse",
-    description: "Comment savoir comment les objets étaient avant ?"
-  },
-  {
-    title: "Comparaison technique",
-    description: "Comment regrouper et comparer les objets techniques ?"
-  },
-  {
-    title: "Évaluation",
-    description: "Cette évaluation porte sur les compétences acquises concernant l'évolution des objets techniques, leur analyse et leur comparaison.",
-    type: "evaluation" as const
+    title: "Comprendre l'évolution des outils d'écriture",
+    description: "Comprendre l’évolution des outils d’écriture en étudiant leurs fonctions, leurs principes techniques, leurs familles et leurs lignées."
   }
 ];
 ---
 
-<ClassLayout title="Séquence 3 — Évolution des objets techniques - 5ème" level="5eme">
+<ClassLayout title="Séquence 3 – Comprendre l'évolution des outils d'écriture - 5ème" level="5eme">
   <BackButton href="/5eme" />
-  <h1>Séquence 3 — Évolution des objets techniques</h1>
+  <h1>Séquence 3 – Comprendre l'évolution des outils d'écriture</h1>
 
   <SequencePresentation
-    title="Comprendre comment les objets techniques évoluent pour répondre aux besoins de la société"
+    title="Comprendre l'évolution des outils d'écriture"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment expliquer et justifier l'évolution d'un objet technique à travers le temps ?"
+    question="Comment faire pour classer ces outils d'écriture et expliquer leurs évolutions ?"
   />
 
   <ActivityLinks sequenceNumber={3} activities={activities} level="5eme" />
-
-  <a href="/5eme/sequence-3/resources" class="resources-link" data-aos="fade-up">
-    <div class="resources-icon">📚</div>
-    <div class="resources-content">
-      <h3>Ressources de la séquence</h3>
-      <p>Documents et ressources complémentaires</p>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" class="resources-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M5 12h14"></path>
-      <path d="m12 5 7 7-7 7"></path>
-    </svg>
-  </a>
 </ClassLayout>
 
 <style>
@@ -58,90 +33,5 @@ const activities = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
-  }
-
-  .resources-link {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    margin-top: 1rem;
-    background: white;
-    border-radius: 1rem;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-  }
-
-  .resources-link:hover {
-    transform: translateX(10px);
-    background: var(--primary);
-    color: white;
-  }
-
-  .resources-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: var(--primary);
-    color: white;
-    border-radius: 0.75rem;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
-
-  .resources-link:hover .resources-icon {
-    background: white;
-    color: var(--primary);
-  }
-
-  .resources-content {
-    flex: 1;
-  }
-
-  .resources-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .resources-content p {
-    color: #64748b;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .resources-link:hover .resources-content p {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .resources-arrow {
-    width: 1.5rem;
-    height: 1.5rem;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-  }
-
-  .resources-link:hover .resources-arrow {
-    transform: translateX(5px);
-  }
-
-  :global([data-theme="dark"]) .resources-link {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-  }
-
-  @media (max-width: 768px) {
-    .resources-link {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .resources-arrow {
-      align-self: flex-end;
-    }
   }
 </style>

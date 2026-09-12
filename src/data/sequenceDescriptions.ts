@@ -4,7 +4,7 @@ export const sequenceDescriptions: Record<string, SeqInfo[]> = {
   '5eme': [
     { emoji: '🌐', title: 'Le réseau informatique',      desc: 'Exploiter le réseau du collège pour travailler et communiquer efficacement.' },
     { emoji: '💻', title: 'Faire bon usage des outils numériques', desc: 'Organiser ses fichiers, choisir le bon format, agir face aux usages dangereux du numérique et protéger ses données personnelles.' },
-    { emoji: '⚙️', title: 'Évolution des objets',        desc: "Comprendre comment les objets techniques évoluent pour répondre aux besoins." },
+    { emoji: '⚙️', title: 'Comprendre l’évolution des outils d’écriture', desc: 'Comprendre l’évolution des outils d’écriture en étudiant leurs fonctions, leurs principes techniques, leurs familles et leurs lignées.' },
     { emoji: '🖱️', title: 'La souris',                  desc: "Analyser les interactions d'un objet technique avec son environnement." },
     { emoji: '💡', title: 'Choisir un OST — Lampes',     desc: 'Comparer et choisir un objet technique selon des critères définis.' },
     { emoji: '⚡', title: 'Défi énergétique',             desc: "Alimenter un habitat en énergie dans une zone isolée : un défi technique réel." },

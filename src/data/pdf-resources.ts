@@ -96,79 +96,8 @@ export const sequence2Resources: SequenceResources = {
   ]
 };
 
-// Sequence 3 Resources
-export const sequence3Resources: SequenceResources = {
-  courseResources: [
-    {
-      title: "Évolution des objets techniques",
-      description: "Comprendre les principes d'évolution des objets techniques",
-      pdfUrl: "/documents/5eme/sequence-3/resources/evolution-objets.pdf"
-    },
-    {
-      title: "Méthodes d'analyse",
-      description: "Guide pour analyser et comparer les objets techniques",
-      pdfUrl: "/documents/5eme/sequence-3/resources/methodes-analyse.pdf"
-    },
-    {
-      title: "Principes techniques",
-      description: "Les différents principes techniques et leur comparaison",
-      pdfUrl: "/documents/5eme/sequence-3/resources/principes-techniques.pdf"
-    }
-  ],
-  studentResources: [
-    {
-      title: "Trame Page de Garde",
-      description: "Modèle de page de garde à utiliser pour vos documents",
-      pdfUrl: "/documents/5eme/sequence-3/resources/trame-pdg.pdf"
-    },
-    {
-      title: "Guide de recherche historique",
-      description: "Comment effectuer des recherches sur l'histoire des objets",
-      pdfUrl: "/documents/5eme/sequence-3/resources/guide-recherche.pdf"
-    },
-    {
-      title: "Fiche méthode - Analyse comparative",
-      description: "Comment comparer efficacement différents objets techniques",
-      pdfUrl: "/documents/5eme/sequence-3/resources/methode-analyse.pdf"
-    },
-    {
-      title: "Exercices supplémentaires",
-      description: "Exercices d'entraînement sur l'évolution des objets",
-      pdfUrl: "/documents/5eme/sequence-3/resources/exercices-supplementaires.pdf"
-    }
-  ]
-};
-
 // Activity Documents
 export interface ActivityDocument {
   title: string;
   pdfUrl: string;
 }
-
-// Sequence 3 Activity Documents
-export const sequence3ActivityDocuments = {
-  activity1: [
-    {
-      title: "Évolution des objets techniques",
-      pdfUrl: "/documents/5eme/sequence-3/activite-1/evolution-objets.pdf"
-    }
-  ],
-  activity2: [
-    {
-      title: "Méthodes de recherche historique",
-      pdfUrl: "/documents/5eme/sequence-3/activite-2/methodes-recherche.pdf"
-    }
-  ],
-  activity3: [
-    {
-      title: "Comparaison des principes techniques",
-      pdfUrl: "/documents/5eme/sequence-3/activite-3/comparaison-technique.pdf"
-    }
-  ],
-  activity4: [
-    {
-      title: "Évaluation des compétences",
-      pdfUrl: "/documents/5eme/sequence-3/activite-4/evaluation.pdf"
-    }
-  ]
-};
