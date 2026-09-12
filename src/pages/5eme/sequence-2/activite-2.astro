@@ -5,23 +5,23 @@ import BackButton from '../../../components/BackButton.astro';
 
 const documents = [
   {
-    title: "Guide - Organisation des fichiers",
-    pdfUrl: "/documents/5eme/sequence-2/activite-2/guide-organisation.pdf"
+    title: "Activité 2 — Choisir un format de fichier et gérer les droits d'accès",
+    pdfUrl: "/documents/5eme/sequence-2/activite-2/activite-2.pdf"
   },
   {
-    title: "Exercices pratiques",
-    pdfUrl: "/documents/5eme/sequence-2/activite-2/exercices.pdf"
+    title: "Ressource — Les principales extensions de fichiers",
+    imageUrl: "/documents/5eme/sequence-2/activite-2/ic%C3%B4nes%20usuels.png"
   }
 ];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 2 - 5ème" level="5eme">
   <BackButton href="/5eme/sequence-2" />
-  <h1>Activité 2 - Sauvegarde et organisation</h1>
-  
+  <h1>Activité 2 - Choisir un format de fichier et gérer les droits d'accès</h1>
+
   <ActivitySection
-    title="Comment sauvegarder et organiser ses données numériques ?"
-    description="Apprenez à organiser vos fichiers efficacement, à créer une arborescence claire et à mettre en place une stratégie de sauvegarde de vos données."
+    title="Choisir un format de fichier et gérer les droits d'accès"
+    description="Durée : 1h15 — Un élève de cinquième ne peut pas ouvrir un fichier reçu car il ne connaît pas son format. Cette activité te fait découvrir les extensions et formats de fichiers, pour apprendre à choisir le bon format selon la situation et à comprendre les droits d'accès sur un fichier partagé."
     documents={documents}
     activityNumber={2}
     totalActivities={6}
@@ -29,43 +29,106 @@ const documents = [
     sequenceLabel="Séquence 2 — Outils numériques"
     retenir={{
       definitions: [
-        { term: "Sauvegarde 3-2-1", def: "Règle de sauvegarde : 3 copies, sur 2 supports différents, dont 1 copie hors site (cloud, disque externe ailleurs)." },
-        { term: "Arborescence de fichiers", def: "Organisation hiérarchique des dossiers et fichiers en forme d'arbre, du répertoire racine vers les sous-dossiers." },
-        { term: "Format de fichier", def: "Structure standardisée d'un fichier déterminant l'application capable de l'ouvrir (ex : .pdf, .docx, .jpg, .mp4)." },
+        { term: "Extension de fichier", def: "Suite de caractères placée après le point, à la fin du nom d'un fichier (ex : .docx, .jpg) : elle indique le type de fichier." },
+        { term: "Format de fichier", def: "Manière dont les données d'un fichier sont organisées, associée à un ou plusieurs logiciels capables de l'ouvrir." },
+        { term: "Droit de lecture", def: "Autorisation permettant d'ouvrir et de consulter un fichier, sans pouvoir le modifier." },
+        { term: "Droit d'écriture", def: "Autorisation permettant de modifier le contenu d'un fichier." },
       ],
       points: [
-        "Règle 3-2-1 : 3 copies, sur 2 supports différents (ex: PC + clé USB), dont 1 hors site (cloud).",
-        "Nommer les fichiers de façon explicite : 2024-01-15_exposé_histoire.docx plutôt que 'document1'.",
-        "Organiser ses dossiers par projet ou par matière pour retrouver ses fichiers facilement.",
+        "L'extension d'un fichier (après le point) permet de reconnaître son type et le logiciel capable de l'ouvrir.",
+        "Un même contenu peut exister sous plusieurs formats : le format à choisir dépend de l'usage (modifier, partager, imprimer…).",
+        "Un fichier partagé peut être accessible en lecture seule, en lecture et écriture, ou pas du tout, selon les droits accordés à chaque utilisateur.",
       ],
     }}
   >
     <div class="activity-content">
-      <h3>La règle de sauvegarde 3-2-1</h3>
-      <p>La règle <strong>3-2-1</strong> est la méthode de sauvegarde recommandée par les experts en sécurité informatique :</p>
-      <ul>
-        <li><strong>3 copies</strong> de ses données (l'original + 2 sauvegardes).</li>
-        <li>Sur <strong>2 supports différents</strong> (ex : PC + disque dur externe).</li>
-        <li>Dont <strong>1 copie hors site</strong> (cloud, disque dur stocké ailleurs) pour se protéger en cas d'incendie ou de vol.</li>
-      </ul>
-      <p>Cette règle protège contre tous les scénarios de perte : panne matérielle, vol, incendie, ransomware (virus qui chiffre les fichiers).</p>
 
-      <h3>Organisation des fichiers : l'arborescence</h3>
-      <p>Une bonne <strong>arborescence de fichiers</strong> est organisée comme un arbre : un dossier racine, des dossiers de premier niveau (Matières, Projets, Personnel…), puis des sous-dossiers. Règles d'or :</p>
-      <ul>
-        <li>Nommer les fichiers de façon explicite : <code>2024-01-15_exposé_géographie.docx</code> plutôt que <code>document1.docx</code>.</li>
-        <li>Inclure la date dans le nom de fichier (format AAAA-MM-JJ pour un classement chronologique automatique).</li>
-        <li>Ne pas mettre d'accents ni d'espaces dans les noms de dossiers/fichiers (préfère les tirets ou underscores).</li>
-        <li>Ne jamais stocker des fichiers importants sur le bureau de l'ordinateur (risque de perte lors d'une réinstallation).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T2 — Usages et impacts sociétaux du numérique</span>
+        <span class="competence-tag">OST1 — Décrire les liens entre usages et évolutions technologiques des OST</span>
+        <span class="competence-tag">OST14 — Recenser des données, les identifier, les classer, les représenter, les stocker dans des fichiers, les retrouver dans une arborescence</span>
+        <span class="competence-tag">OST1h — Extension et format de fichiers, droits d'écriture et de lecture</span>
+        <span class="competence-tag cps">CPS — Prendre des décisions constructives · Capacité à faire des choix responsables</span>
+      </div>
 
-      <h3>Les formats de fichiers courants</h3>
-      <ul>
-        <li><strong>Documents texte</strong> : .docx (Word), .odt (LibreOffice), .pdf (non modifiable, idéal pour partager).</li>
-        <li><strong>Images</strong> : .jpg (photos, compressé), .png (qualité, transparence), .svg (vectoriel, redimensionnable).</li>
-        <li><strong>Présentations</strong> : .pptx (PowerPoint), .odp (LibreOffice), .pdf.</li>
-        <li><strong>Vidéos</strong> : .mp4 (le plus compatible), .avi, .mov.</li>
-      </ul>
+      <!-- ══════════ SITUATION ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation de départ</h3>
+        <p>Un élève de cinquième ne peut pas ouvrir un fichier reçu car il ne connaît pas son <strong>format</strong>.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment reconnaître le format d'un fichier et choisir le format adapté à chaque situation ?
+        </div>
+      </div>
+
+      <!-- ══════════ EXTENSION DE FICHIER ══════════ -->
+      <div class="section-bloc">
+        <h3>🔤 Qu'est-ce qu'une extension de fichier ?</h3>
+        <p>Chaque fichier informatique possède une <strong>extension</strong> : une suite de caractères placée <strong>après le point</strong>, à la fin de son nom (par exemple dans <code>rapport.docx</code>, l'extension est <code>.docx</code>). Elle indique le <strong>type</strong> du fichier et permet à l'ordinateur de savoir avec quel logiciel l'ouvrir.</p>
+        <p class="section-info">Ta fiche d'activité te propose plusieurs définitions possibles de l'extension d'un fichier : à toi de trouver la bonne.</p>
+      </div>
+
+      <!-- ══════════ PROPRIÉTÉS D'UN FICHIER ══════════ -->
+      <div class="section-bloc">
+        <h3>📋 Les propriétés d'un fichier</h3>
+        <p>Un fichier ne se résume pas à son contenu : il possède aussi des <strong>propriétés</strong> que l'on peut consulter dans l'explorateur de fichiers :</p>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">🏷️</div>
+            <div class="categorie-titre">Nom du fichier</div>
+            <div class="categorie-desc">Le nom donné au fichier, sans son extension.</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">🔤</div>
+            <div class="categorie-titre">Extension</div>
+            <div class="categorie-desc">Ce qui suit le point : elle indique le type de fichier.</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">⚖️</div>
+            <div class="categorie-titre">Taille (poids)</div>
+            <div class="categorie-desc">La quantité d'espace occupée par le fichier, souvent en Ko ou Mo.</div>
+          </div>
+          <div class="categorie-carte environnement">
+            <div class="categorie-icone">📅</div>
+            <div class="categorie-titre">Date de modification</div>
+            <div class="categorie-desc">La date de la dernière modification du fichier.</div>
+          </div>
+        </div>
+        <p class="section-info">Ta fiche d'activité te demande de retrouver ces informations pour plusieurs fichiers d'exemple : observe attentivement chaque capture d'écran.</p>
+      </div>
+
+      <!-- ══════════ FORMATS DE FICHIERS ══════════ -->
+      <div class="section-bloc">
+        <h3>🗃️ Les principaux formats de fichiers</h3>
+        <p>Il existe de nombreux types de fichiers, chacun avec ses propres extensions possibles : fichiers texte, images, musique, vidéos, tableurs… La ressource ci-dessous présente les principales extensions rencontrées pour chaque type de fichier.</p>
+        <img
+          src="/documents/5eme/sequence-2/activite-2/ic%C3%B4nes%20usuels.png"
+          alt="Les principales extensions de fichiers"
+          class="resource-image"
+        />
+        <p class="section-info">Appuie-toi sur cette ressource pour compléter, sur ta fiche, le tableau des extensions possibles pour chaque type de fichier (texte, image, musique, vidéo, tableur).</p>
+      </div>
+
+      <!-- ══════════ CHOISIR UN FORMAT ADAPTÉ ══════════ -->
+      <div class="section-bloc">
+        <h3>🧭 Choisir un format adapté à une situation</h3>
+        <p>Le choix d'un format dépend de <strong>l'usage</strong> que l'on veut en faire : un fichier destiné à être modifié n'a pas besoin du même format qu'un fichier destiné à être partagé sans pouvoir être modifié, ou qu'un fichier destiné à être imprimé.</p>
+        <p class="section-info">Ta fiche d'activité te propose plusieurs situations (écrire une lettre modifiable, envoyer une photo, écouter une chanson, présenter un exposé, partager un document non modifiable) : pour chacune, identifie le format le plus adapté et explique ton choix.</p>
+      </div>
+
+      <!-- ══════════ DROITS D'ACCÈS ══════════ -->
+      <div class="section-bloc">
+        <h3>🔐 Les droits d'accès sur un fichier</h3>
+        <p>Lorsqu'un fichier est partagé (par exemple via un cloud), chaque utilisateur peut avoir des <strong>droits différents</strong> sur ce fichier :</p>
+        <ul class="demarche-liste">
+          <li><strong>Droit de lecture</strong> : l'utilisateur peut ouvrir et consulter le fichier, mais pas le modifier.</li>
+          <li><strong>Droit d'écriture</strong> : l'utilisateur peut modifier le contenu du fichier.</li>
+          <li><strong>Aucun droit</strong> : l'utilisateur ne peut même pas ouvrir le fichier.</li>
+        </ul>
+        <p class="section-info">Ta fiche d'activité présente une situation où plusieurs élèves ont des droits différents sur un même fichier partagé : à toi d'expliquer pourquoi, et ce qu'il faudrait modifier pour que tous puissent travailler dessus.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -75,5 +138,137 @@ const documents = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager       { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees      { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet        { background: #fef3c7; border-color: #fcd34d; }
+  .categorie-carte.environnement { background: #fdf2f8; border-color: #f0abfc; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Image ressource ── */
+  .resource-image {
+    display: block;
+    max-width: 100%;
+    margin-top: 0.75rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
   }
 </style>
