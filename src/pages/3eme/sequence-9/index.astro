@@ -4,39 +4,27 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves conçoivent et programment des systèmes robotisés et automatisés. Ils analysent le rôle des capteurs et des actionneurs, puis programment des comportements autonomes pour relever un défi robotique en équipe :`;
+const description = `Dans cette séquence, les élèves découvrent comment un vélo à assistance électrique (VAE) connecté collecte, représente et traite ses données de trajet. Ils apprennent le vocabulaire des données, la représentation binaire et le code ASCII, puis exploitent un jeu de données réel avec LibreOffice Calc :`;
 
 const activities = [
   {
-    title: "Analyse d'un système robotisé",
-    description: "Comment analyser la structure et les composants d'un système robotisé ?"
-  },
-  {
-    title: "Capteurs, actionneurs et effecteurs",
-    description: "Quel est le rôle des capteurs, actionneurs et effecteurs dans un système automatisé ?"
-  },
-  {
-    title: "Défi robotique — programmer l'autonomie",
-    description: "Comment programmer un robot pour qu'il réalise une mission en autonomie ?"
-  },
-  {
-    title: "Ressources — Robotique et automatismes",
-    description: "Documents et ressources complémentaires sur la robotique et les systèmes automatisés"
+    title: "La vie du VAE racontée par ses données",
+    description: "Comment un VAE collecte-t-il, représente-t-il et traite-t-il ses données pour rendre compte de son fonctionnement ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 9 — Robotique et automatismes - 3ème" level={level}>
+<ClassLayout title="Séquence 9 – La vie du VAE racontée par ses données - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 9 — Robotique et automatismes</h1>
+  <h1>Séquence 9 – La vie du VAE racontée par ses données</h1>
 
   <SequencePresentation
-    title="Concevoir et programmer des systèmes robotisés et automatisés"
+    title="Le VAE connecté : structurer et traiter ses données"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment concevoir et programmer un système robotisé pour qu'il réalise une mission en autonomie ?"
+    question="Comment un VAE collecte-t-il, représente-t-il et traite-t-il ses données pour rendre compte de son fonctionnement ?"
   />
 
   <ActivityLinks sequenceNumber={9} activities={activities} level={level} />

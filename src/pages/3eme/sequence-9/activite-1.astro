@@ -4,62 +4,215 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
+  {
+    title: "Activité 1 — La vie du VAE racontée par ses données",
+    pdfUrl: "/documents/3eme/sequence-9/activite-1/activite-1.pdf"
+  },
+  {
+    title: "SFC1j — Vocabulaire des données",
+    pdfUrl: "/documents/3eme/sequence-9/activite-1/SFC1j-Vocabulaire-des-donnees-numeriques-_-objet-_-descripteur-_-collection-liste-_-type-mot_chaine-de-caracteres-nombre-et-bool.pdf"
+  },
+  {
+    title: "SFC1k — Le bit et la représentation binaire",
+    pdfUrl: "/documents/3eme/sequence-9/activite-1/SFC1k-Representation-des-donnees-_-le-bit-_-element-minimum-dinformation-representation-par-les-symboles-0-et-1.pdf"
+  },
+  {
+    title: "SFC1l — Booléens, ASCII et nombres entiers",
+    pdfUrl: "/documents/3eme/sequence-9/activite-1/SFC1l-Representation-des-donnees-_-representation-des-booleens-des-mots-code-ASCII-etendu-des-nombres-entiers-naturels.pdf"
+  },
+  {
+    title: "SFC1m — Traitement des données avec un tableur",
+    pdfUrl: "/documents/3eme/sequence-9/activite-1/SFC1m-Traitement-des-donnees-_-mise-en-forme-et-traitement-de-donnees-calculs-filtre-tri-dans-un-logiciel-tableur.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 9 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-9`} />
-  <h1>Séquence 9 — Robotique et automatismes · Activité 1</h1>
+  <h1>Séquence 9 – La vie du VAE racontée par ses données · Activité 1</h1>
 
   <ActivitySection
-    title="Analyse d'un système robotisé"
-    description="Comment analyser la structure et les composants d'un système robotisé ? Dans cette activité de découverte, tu étudies un robot réel (ou une maquette) en réalisant son analyse fonctionnelle complète. Tu identifieras sa structure mécanique (liaisons, degrés de liberté), ses actionneurs (moteurs, vérins, servomoteurs), ses capteurs (distance, couleur, contact, lumière) et son unité de traitement (microcontrôleur ou processeur). Tu renseigneras une fiche technique détaillée et tu traceras les chaînes d'énergie et d'information du robot. Cette analyse préalable est indispensable avant de modifier ou programmer le système dans les activités suivantes."
+    title="La vie du VAE racontée par ses données"
+    description="Durée : 1h30 — Ils dorment dans nos garages, grimpent les côtes sans broncher et ont transformé nos trajets quotidiens. Mais que racontent vraiment nos vélos électriques quand on les laisse parler ? Cette activité te fait découvrir les données produites par un VAE connecté, leur représentation numérique, puis leur traitement dans un tableur."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={1}
     sequenceHref="/3eme/sequence-9"
-    sequenceLabel="Séquence 9 — Robotique et automatismes"
+    sequenceLabel="Séquence 9 – La vie du VAE racontée par ses données"
     retenir={{
       definitions: [
-        { term: "Robot", def: "Système automatisé capable d'effectuer des tâches de manière autonome ou semi-autonome en interagissant avec son environnement." },
-        { term: "Système automatisé", def: "Système qui effectue une tâche sans intervention humaine directe, selon un programme préétabli." },
-        { term: "Capteur", def: "Composant qui acquiert une information sur l'environnement et la convertit en signal électrique." },
-        { term: "Actionneur", def: "Composant qui transforme l'énergie en mouvement ou en action physique (moteur, servomoteur, pompe…)." },
+        { term: "Objet", def: "Une information que l'on peut stocker et traiter : dans le fichier du VAE, chaque ligne (chaque mesure) est un objet." },
+        { term: "Descripteur", def: "Le nom d'une caractéristique mesurée, par exemple la vitesse ou la température." },
+        { term: "Collection", def: "Un ensemble d'objets du même type, par exemple toutes les mesures d'un trajet." },
+        { term: "Booléen", def: "Une donnée qui n'a que deux valeurs possibles : Vrai ou Faux (souvent notées 1 ou 0)." },
+        { term: "Bit", def: "L'élément minimum d'information, représenté par le symbole 0 ou 1." },
+        { term: "Octet", def: "Un groupe de 8 bits ; c'est la taille d'un caractère codé en ASCII." },
+        { term: "Code ASCII", def: "Un système qui associe à chaque caractère (lettre, chiffre, symbole) un code numérique, que l'on peut aussi écrire en binaire." },
       ],
       points: [
-        "Chaîne d'information d'un robot : Capter → Traiter → Agir.",
-        "Chaîne d'énergie : Alimenter → Distribuer → Convertir → Transmettre (même structure que séquence 1).",
-        "Un robot = une chaîne d'information ET une chaîne d'énergie qui fonctionnent ensemble.",
+        "Un VAE connecté enregistre des centaines de mesures horodatées par trajet : position GPS, vitesse, niveau de batterie, température…",
+        "Chaque descripteur d'un fichier de données a un type : texte/chaîne de caractères, nombre, ou booléen.",
+        "Toute donnée est finalement codée en binaire (des 0 et des 1) pour être stockée ou transmise.",
+        "Un tableur permet de nettoyer, trier, filtrer et calculer des statistiques sur un jeu de données.",
+        "Avant d'exploiter un jeu de données, il faut vérifier sa qualité : repérer les valeurs manquantes ou impossibles.",
+        "Les données de trajet (position, horaires) sont des données personnelles qui posent des questions de vie privée.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Qu'est-ce qu'un robot ?</h3>
-      <p>Un <strong>robot</strong> est un système automatisé capable d'effectuer des tâches en interagissant avec son environnement, de manière autonome ou semi-autonome. Les robots sont présents dans tous les secteurs : industrie (bras robotisés), médecine (chirurgie assistée), exploration (rovers martiens), logistique (entrepôts Amazon), et même dans nos maisons (aspirateur robot).</p>
 
-      <h3>Les chaînes d'un robot</h3>
-      <p>Tout robot possède les deux mêmes chaînes que les systèmes vus en séquence 1 :</p>
-      <ul>
-        <li><strong>Chaîne d'information</strong> : Capter (capteurs) → Traiter (microcontrôleur) → Agir (actionneurs).</li>
-        <li><strong>Chaîne d'énergie</strong> : Alimenter (batterie/secteur) → Distribuer → Convertir (moteurs) → Transmettre (roues, bras).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">SFC1 — Décrire et caractériser l'organisation interne d'un OST (énergies, données)</span>
+        <span class="competence-tag">T9 — Structuration et traitement des données</span>
+        <span class="competence-tag">SFC15 — Représenter sous forme de données les informations d'un OST</span>
+        <span class="competence-tag">SFC16 — Mise en forme, transmission, stockage des données</span>
+        <span class="competence-tag">SFC1j</span>
+        <span class="competence-tag">SFC1k</span>
+        <span class="competence-tag">SFC1l</span>
+        <span class="competence-tag">SFC1m</span>
+        <span class="competence-tag cps">CPS — Esprit critique : évaluer la fiabilité et la qualité des données</span>
+      </div>
 
-      <h3>Les composants à identifier</h3>
-      <ul>
-        <li><strong>Structure mécanique</strong> : châssis, liaisons (pivot, glissière), degrés de liberté.</li>
-        <li><strong>Capteurs</strong> : distance (ultrasons, infrarouge), couleur, contact (bouton-poussoir), lumière, température…</li>
-        <li><strong>Actionneurs</strong> : moteurs DC (rotation continue), servomoteurs (angle précis), vérins (mouvement linéaire).</li>
-        <li><strong>Unité de traitement</strong> : microcontrôleur (Arduino, micro:bit) ou processeur (Raspberry Pi).</li>
-      </ul>
+      <!-- ══════════ SITUATION / PROBLÉMATIQUE ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation de départ</h3>
+        <p>Un vélo à assistance électrique (VAE) connecté enregistre en permanence des données invisibles pendant chaque trajet : kilomètres parcourus, pics de vitesse, usure de la batterie, habitudes de recharge… Derrière l'assistance au pédalage se cache un véritable trésor de données.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment un VAE collecte-t-il, représente-t-il et traite-t-il ses données pour rendre compte de son fonctionnement ?
+        </div>
+      </div>
 
-      <h3>Méthode d'analyse d'un système robotisé</h3>
-      <ol>
-        <li>Identifier la fonction d'usage : que fait le robot ? Pour qui ?</li>
-        <li>Lister tous les capteurs et leur grandeur mesurée.</li>
-        <li>Lister tous les actionneurs et leur action produite.</li>
-        <li>Tracer la chaîne d'information et la chaîne d'énergie.</li>
-        <li>Compléter la fiche technique : alimentation, vitesse max, autonomie…</li>
-      </ol>
+      <!-- ══════════ COMMENT UN VAE PRODUIT DES DONNÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>📡 Comment un VAE produit des données</h3>
+        <p>Le VAE possède des capteurs et un système embarqué qui mesurent en continu différentes grandeurs pendant le trajet, puis enregistrent chaque mesure avec l'instant où elle a été prise (on parle de mesure <strong>horodatée</strong>). Ces mesures s'accumulent au fil du trajet pour former un fichier de données.</p>
+      </div>
+
+      <!-- ══════════ VOCABULAIRE DES DONNÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>📖 Objet, descripteur, collection : le vocabulaire des données</h3>
+        <p>Pour parler correctement d'un fichier de données, on utilise un vocabulaire précis :</p>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">📏</div>
+            <div class="categorie-titre">Objet</div>
+            <div class="categorie-desc">Une information que l'on peut stocker et traiter. Ici, chaque mesure du VAE est un objet.</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">🏷️</div>
+            <div class="categorie-titre">Descripteur</div>
+            <div class="categorie-desc">Le nom d'une caractéristique mesurée, par exemple la vitesse ou la température.</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">📚</div>
+            <div class="categorie-titre">Collection</div>
+            <div class="categorie-desc">Un ensemble d'objets du même type, par exemple toutes les mesures d'un trajet.</div>
+          </div>
+          <div class="categorie-carte environnement">
+            <div class="categorie-icone">✅</div>
+            <div class="categorie-titre">Booléen</div>
+            <div class="categorie-desc">Une donnée qui n'a que deux valeurs possibles : Vrai ou Faux.</div>
+          </div>
+        </div>
+        <p class="section-info">Le fichier « Données du VAE » présente plusieurs descripteurs, par exemple : <code>timestamp</code>, <code>lat</code>, <code>lon</code>, <code>speed_kmh</code>, <code>batt_pct</code>, <code>temp_c</code>, <code>assist_on</code>. À toi de retrouver, pour chacun d'eux, à quel type de donnée il correspond.</p>
+      </div>
+
+      <!-- ══════════ TYPES DE DONNÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>🔤 Les types de données</h3>
+        <p>Chaque descripteur a un <strong>type</strong>, qui indique la nature de la valeur qu'il contient :</p>
+        <ul class="demarche-liste">
+          <li><strong>Texte / chaîne de caractères</strong> : une suite de caractères (lettres, chiffres, symboles).</li>
+          <li><strong>Nombre</strong> : une valeur numérique, entière ou décimale.</li>
+          <li><strong>Booléen</strong> : une valeur qui ne peut être que Vrai ou Faux (1 ou 0).</li>
+        </ul>
+        <p class="section-info">Observe attentivement la forme de chaque exemple de valeur dans le fichier de données pour déterminer son type : c'est exactement ce que te demande ta fiche d'activité.</p>
+      </div>
+
+      <!-- ══════════ REPRÉSENTATION BINAIRE ══════════ -->
+      <div class="section-bloc">
+        <h3>💾 Le bit et la représentation binaire</h3>
+        <p>Un ordinateur ne connaît que deux états : 0 et 1. Cette unité minimale d'information s'appelle un <strong>bit</strong>. En regroupant 8 bits, on obtient un <strong>octet</strong>, qui permet de représenter un caractère ou un petit nombre.</p>
+        <p>Pour convertir un nombre décimal en binaire, on peut le diviser successivement par 2 et noter les restes obtenus, jusqu'à ce que le quotient soit nul. Ta fiche d'activité te propose un exemple détaillé de cette méthode : suis-la pas à pas pour convertir les nombres demandés.</p>
+      </div>
+
+      <!-- ══════════ ASCII ══════════ -->
+      <div class="section-bloc">
+        <h3>🔡 Le code ASCII</h3>
+        <p>Les mots et les chaînes de caractères ne sont pas stockés tels quels : chaque caractère est associé à un <strong>code numérique</strong> (le code ASCII), que l'on peut écrire en décimal, en hexadécimal ou en binaire. Une table de conversion ASCII simplifiée est fournie dans le fichier « Données du VAE » pour t'aider à encoder les caractères demandés.</p>
+        <p class="section-info">Rappel donné dans ta fiche : un caractère ASCII occupe toujours <strong>1 octet, soit 8 bits</strong>. Cette règle te permettra aussi de calculer la taille d'une chaîne de caractères.</p>
+      </div>
+
+      <!-- ══════════ ORGANISATION D'UN FICHIER DE DONNÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>🗂️ L'organisation d'un fichier de données</h3>
+        <p>Le fichier exporté par l'application du VAE est organisé comme un tableau : <strong>chaque colonne correspond à un descripteur</strong> (timestamp, vitesse, batterie…) et <strong>chaque ligne correspond à une mesure</strong> enregistrée à un instant donné. L'ensemble de ces lignes forme la collection des mesures du trajet.</p>
+      </div>
+
+      <!-- ══════════ DÉMARCHE TABLEUR ══════════ -->
+      <div class="section-bloc">
+        <h3>📊 Exploiter les données avec LibreOffice Calc</h3>
+        <p>Une fois les types de données identifiés, il faut exploiter réellement le fichier. Voici la démarche générale que tu vas suivre avec le tableau « Données VAE 3ème » :</p>
+        <ol class="demarche-numerotee">
+          <li>Ouvrir les données dans LibreOffice Calc.</li>
+          <li>Identifier les descripteurs (les colonnes).</li>
+          <li>Vérifier les types de données de chaque colonne.</li>
+          <li>Repérer les données incohérentes ou suspectes.</li>
+          <li>Nettoyer les données (supprimer les valeurs incohérentes).</li>
+          <li>Trier et filtrer le tableau selon les besoins.</li>
+          <li>Effectuer les calculs demandés (à l'aide des formules du tableur).</li>
+          <li>Représenter les données sous forme de graphique.</li>
+          <li>Interpréter les résultats obtenus.</li>
+          <li>Réfléchir à la qualité et à la fiabilité des données.</li>
+        </ol>
+        <p class="section-info">Ta fiche d'activité te fournit les formules utiles (somme, moyenne, minimum, maximum, nombre de valeurs) ainsi que la procédure pour filtrer avec l'AutoFiltre. C'est à toi d'identifier les valeurs suspectes et de mener les calculs : cette page ne donne pas les résultats attendus.</p>
+      </div>
+
+      <!-- ══════════ QUALITÉ ET FIABILITÉ ══════════ -->
+      <div class="section-bloc">
+        <h3>🧠 Qualité et fiabilité des données</h3>
+        <p>Un jeu de données réel n'est jamais parfait : certaines valeurs peuvent être <strong>manquantes</strong>, <strong>incohérentes</strong> ou <strong>physiquement impossibles</strong> (par exemple une vitesse ou un niveau de batterie qui n'a pas de sens). Avant d'exploiter un jeu de données, il est indispensable de les <strong>repérer et de les traiter</strong>, pour ne pas fausser les calculs et les graphiques réalisés ensuite.</p>
+        <p class="section-info">Cette démarche mobilise ton <strong>esprit critique</strong> : ne considère jamais une donnée comme fiable sans la questionner.</p>
+      </div>
+
+      <!-- ══════════ VIE PRIVÉE ══════════ -->
+      <div class="section-bloc">
+        <h3>🔒 Données personnelles et vie privée</h3>
+        <p>Les données de trajet d'un VAE connecté peuvent contenir des informations sur les <strong>déplacements d'une personne</strong> : sa position GPS, les horaires de ses trajets, la fréquence de ses déplacements. Stockées dans un cloud, ces données soulèvent des questions de vie privée.</p>
+        <p class="section-info">À toi de réfléchir : quelles données du VAE peuvent être considérées comme des données personnelles ? Quels risques leur stockage peut-il entraîner ? Comment pourrait-on limiter ces risques ? Ta fiche d'activité t'invite à répondre à ces questions (l'usage d'une IA générative est autorisé pour t'aider à trouver des idées).</p>
+      </div>
+
+      <!-- ══════════ SIMULATION VAE ══════════ -->
+      <div class="section-bloc">
+        <h3>🚲 Simulation interactive</h3>
+        <p>Teste différents modes d'assistance et observe les données produites par le VAE.</p>
+        <a href="/documents/3eme/sequence-9/activite-1/simulation_vae_finale.html" target="_blank" rel="noopener noreferrer" class="simulation-btn">
+          🚲 Lancer la simulation VAE
+        </a>
+      </div>
+
+      <!-- ══════════ RESSOURCES PÉDAGOGIQUES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Ressources pédagogiques</h3>
+        <p>Documents complémentaires à utiliser pendant l'activité :</p>
+        <div class="ressources-grille">
+          <div class="ressource-carte">
+            <div class="ressource-type">📄 Fiche ressource</div>
+            <div class="ressource-titre">Données du VAE (extrait + table ASCII simplifiée)</div>
+            <a href="/documents/3eme/sequence-9/activite-1/donn%C3%A9es%20du%20VAE.docx" download class="ressource-btn">Télécharger le document →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">📊 Tableur</div>
+            <div class="ressource-titre">Tableau Données VAE 3ème (version élève)</div>
+            <a href="/documents/3eme/sequence-9/activite-1/Tableau_Donnees_VAE_3eme_eleve.xlsx" download class="ressource-btn">Télécharger le tableur →</a>
+          </div>
+        </div>
+        <p class="section-info">Les fiches de connaissances SFC1j, SFC1k, SFC1l et SFC1m sont consultables ci-dessus, dans les documents de l'activité.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -69,5 +222,213 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories (vocabulaire) ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager       { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees      { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet        { background: #fef3c7; border-color: #fcd34d; }
+  .categorie-carte.environnement { background: #fdf2f8; border-color: #f0abfc; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste,
+  .demarche-numerotee {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  code {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+    font-size: 0.85em;
+  }
+
+  /* ── Bouton simulation ── */
+  .simulation-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, #1e40af, #7c3aed);
+    color: #fff;
+    border-radius: 0.6rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .simulation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  }
+
+  /* ── Ressources ── */
+  .ressources-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+  }
+
+  .ressource-carte {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .ressource-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ressource-titre {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .ressource-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 0.55rem 0.9rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .ressource-btn:hover {
+    background: #1e40af;
   }
 </style>
