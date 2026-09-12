@@ -4,42 +4,33 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Dans cette séquence, les élèves apprennent à faire bon usage des outils numériques. L'accent est mis sur la sécurité numérique, la gestion des données et la responsabilité en ligne.";
+const description = "Organiser ses fichiers, choisir le bon format et gérer les droits d'accès, agir face aux usages dangereux du numérique et protéger ses données personnelles.";
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Un couple se fait cambrioler et voler son ordinateur : Exploiter les outils numériques et en faire bon usage"
+    title: "Organiser ses données dans un environnement numérique",
+    description: "Comment organiser ses fichiers et dossiers pour les retrouver facilement ?"
   },
   {
-    title: "Sauvegarde et organisation",
-    description: "Comment sauvegarder et organiser ses données numériques ?"
+    title: "Choisir un format de fichier et gérer les droits d'accès",
+    description: "Comment reconnaître le format d'un fichier et choisir le format adapté à chaque situation ?"
   },
   {
-    title: "Systèmes d'information",
-    description: "Décrire le rôle des systèmes d'information dans le partage d'information"
+    title: "Agir face aux usages dangereux du numérique",
+    description: "Comment reconnaître une situation de cyberviolence et agir face à celle-ci ?"
   },
   {
-    title: "Sécurité numérique",
-    description: "Se protéger et protéger ses données"
-  },
-  {
-    title: "Cyber-violence",
-    description: "Agir face à la cyber violence"
-  },
-  {
-    title: "Évaluation",
-    description: "Évaluation sur les usages et impacts sociétaux du numérique, portant sur les différentes compétences acquises au cours de la séquence.",
-    type: "evaluation" as const
+    title: "Se protéger et protéger ses données",
+    description: "Comment construire un bouclier numérique efficace pour protéger ses données ?"
   }
 ];
 ---
 
-<ClassLayout title="Séquence 2 - 5ème" level="5eme">
+<ClassLayout title="Séquence 2 – Faire bon usage des outils numériques - 5ème" level="5eme">
   <BackButton href="/5eme" />
-  <h1>Séquence 2</h1>
-  
-  <SequencePresentation 
+  <h1>Séquence 2 – Faire bon usage des outils numériques</h1>
+
+  <SequencePresentation
     title="Présentation de la séquence"
     description={description}
     activities={activities.map(a => a.description)}
