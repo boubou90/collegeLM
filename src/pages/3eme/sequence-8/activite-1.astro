@@ -4,61 +4,102 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
+  {
+    title: "Activité 1 — Les secrets d'un mBot",
+    pdfUrl: "/documents/3eme/sequence-8/activite-1/activite-1.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 8 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-8`} />
-  <h1>Séquence 8 — Réseaux et communication · Activité 1</h1>
+  <h1>Séquence 8 – Les secrets du mBot · Activité 1</h1>
 
   <ActivitySection
-    title="Architecture et topologie des réseaux"
-    description="Comment sont organisés les réseaux informatiques et quelles sont leurs topologies ? Un réseau informatique est un ensemble d'équipements (ordinateurs, serveurs, routeurs, switches…) interconnectés pour partager des ressources et communiquer. Dans cette activité, tu étudieras les différentes topologies de réseaux (en étoile, en bus, en anneau, maillé) et identifieras les équipements d'interconnexion (switch, routeur, point d'accès Wi-Fi). Tu réaliseras le schéma du réseau du collège et tu comprendras la différence entre réseau local (LAN), réseau étendu (WAN) et Internet. Cette activité te donnera une vision concrète de l'infrastructure numérique qui t'entoure au quotidien."
+    title="Les secrets d'un mBot"
+    description="Durée : 0h30 — Cette activité de lancement te fait découvrir le robot mBot, l'objet technique que tu vas étudier tout au long de la séquence. Tu vas observer une situation, formuler un problème technique et proposer des idées pour le résoudre, avant de partir à la découverte de son fonctionnement et de ses matériaux."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={3}
     sequenceHref="/3eme/sequence-8"
-    sequenceLabel="Séquence 8 — Réseaux et communication"
+    sequenceLabel="Séquence 8 – Les secrets du mBot"
     retenir={{
       definitions: [
-        { term: "Réseau informatique", def: "Ensemble d'équipements (ordinateurs, serveurs, smartphones…) interconnectés pour partager des ressources et communiquer." },
-        { term: "Topologie", def: "Structure physique ou logique d'un réseau décrivant comment les équipements sont reliés entre eux." },
-        { term: "Switch (commutateur)", def: "Équipement réseau qui relie plusieurs appareils dans un réseau local et dirige les données vers le bon destinataire." },
-        { term: "Routeur", def: "Équipement qui interconnecte plusieurs réseaux et détermine le chemin optimal pour acheminer les données." },
+        { term: "Objet technique", def: "Objet fabriqué par l'être humain pour répondre à un besoin, qui a été conçu, fabriqué puis, un jour, jeté ou recyclé." },
+        { term: "Problème technique", def: "Question concrète que l'on cherche à résoudre en observant le fonctionnement ou les limites d'un objet technique." },
+        { term: "Résolution créative", def: "Démarche qui consiste à observer, formuler un problème, proposer plusieurs idées, puis choisir et améliorer la plus adaptée." },
       ],
       points: [
-        "3 topologies classiques : étoile (la plus répandue), bus, anneau.",
-        "Réseau local (LAN) : relie des équipements dans un bâtiment ; Internet : réseau mondial de réseaux.",
-        "Switch = dans un réseau local ; Routeur = entre plusieurs réseaux (ex : box internet).",
+        "Le robot mBot est un objet technique qui, comme tous les objets, est fabriqué, utilisé puis, un jour, jeté.",
+        "Cette séquence explore deux pistes : comment le robot fonctionne (activité 2) et quels matériaux le composent et avec quel impact sur l'environnement (activité 3).",
+        "Résoudre un problème technique de façon créative, c'est observer, formuler un problème, proposer plusieurs idées puis choisir et améliorer une solution.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Un réseau informatique — définition et composants</h3>
-      <p>Un <strong>réseau informatique</strong> est un ensemble d'équipements numériques interconnectés pour partager des ressources (fichiers, imprimantes, connexion Internet) et communiquer. Le réseau du collège, ta box Internet à la maison, et Internet lui-même sont des exemples de réseaux de tailles différentes.</p>
 
-      <h3>Les topologies de réseaux</h3>
-      <p>La <strong>topologie</strong> décrit comment les équipements sont reliés entre eux :</p>
-      <ul>
-        <li><strong>Topologie en étoile</strong> (la plus répandue) : tous les équipements sont reliés à un équipement central (switch). Si le switch tombe, tout le réseau est coupé, mais les pannes d'un poste n'affectent pas les autres.</li>
-        <li><strong>Topologie en bus</strong> : tous les équipements partagent un même câble. Simple mais vulnérable — une coupure coupe tout le réseau.</li>
-        <li><strong>Topologie en anneau</strong> : les équipements sont reliés en boucle. Les données circulent dans un sens. Peu utilisée aujourd'hui.</li>
-        <li><strong>Topologie maillée</strong> : chaque équipement est relié à plusieurs autres — très résistante aux pannes, utilisée dans les réseaux militaires et Internet.</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T6 — Chaîne d'énergie</span>
+        <span class="competence-tag">T7 — Matériaux et procédés</span>
+        <span class="competence-tag">T8 — Fonctions, solutions et constituants de la chaîne d'information</span>
+        <span class="competence-tag cps">CPS C3 — Prendre des décisions constructives · C32 — Résoudre un problème de façon créative</span>
+      </div>
 
-      <h3>Les équipements clés</h3>
-      <ul>
-        <li><strong>Switch (commutateur)</strong> : relie les équipements d'un réseau local. Il lit les adresses MAC pour diriger les données vers le bon destinataire.</li>
-        <li><strong>Routeur</strong> : interconnecte plusieurs réseaux (ex : ton réseau local ↔ Internet). Ta box Internet est un routeur.</li>
-        <li><strong>Point d'accès Wi-Fi</strong> : permet la connexion sans fil dans le réseau local.</li>
-      </ul>
+      <!-- ══════════ OBJECTIF ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Pourquoi étudier le mBot ?</h3>
+        <p>Le <strong>mBot</strong> est un petit robot mobile : il roule, détecte son environnement et réagit tout seul. C'est un objet technique idéal pour découvrir à la fois <strong>comment un système technique fonctionne</strong> (moteurs, capteurs, chaîne d'énergie, chaîne d'information) et <strong>de quoi il est fait</strong> (matériaux, impact environnemental). Cette première activité te sert d'introduction avant d'entrer dans le détail au fil des deux activités suivantes.</p>
+      </div>
 
-      <h3>LAN, WAN, Internet</h3>
-      <ul>
-        <li><strong>LAN</strong> (Local Area Network) : réseau local d'une salle, d'un bâtiment ou d'un campus.</li>
-        <li><strong>WAN</strong> (Wide Area Network) : réseau étendu sur une grande zone géographique.</li>
-        <li><strong>Internet</strong> : réseau mondial de réseaux, interconnectés via des routeurs et des câbles sous-marins.</li>
-      </ul>
+      <!-- ══════════ SITUATION ══════════ -->
+      <div class="section-bloc">
+        <h3>📺 Ce que tu vas observer</h3>
+        <p>La séance démarre par le visionnage d'une <strong>vidéo</strong> qui montre que nos objets technologiques du quotidien sont fabriqués, utilisés, puis — un jour — jetés en fin de vie.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment fonctionnent tous ces objets ? Comment limiter l'accumulation des déchets ?
+        </div>
+      </div>
+
+      <!-- ══════════ CE QU'ILS VONT CHERCHER À COMPRENDRE ══════════ -->
+      <div class="section-bloc">
+        <h3>🔍 Ce que tu vas chercher à comprendre</h3>
+        <p>À partir de cette observation, deux pistes d'étude vont être suivies pour un robot mBot démonté, à l'aide de sa notice d'utilisation :</p>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">⚙️</div>
+            <div class="categorie-titre">Comment il fonctionne</div>
+            <div class="categorie-desc">Ses moteurs, ses capteurs, sa chaîne d'énergie et sa chaîne d'information — étudiés dans l'activité 2.</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">🌍</div>
+            <div class="categorie-titre">De quoi il est fait</div>
+            <div class="categorie-desc">Ses matériaux et leur impact sur l'environnement — étudiés dans l'activité 3.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ DÉMARCHE ══════════ -->
+      <div class="section-bloc">
+        <h3>💡 La démarche de résolution créative</h3>
+        <p>Pour formuler et résoudre un problème technique, la fiche d'activité te guide en 4 étapes :</p>
+        <ul class="demarche-liste">
+          <li><strong>Constats, observations</strong> — qu'as-tu remarqué dans la vidéo ?</li>
+          <li><strong>Problème à résoudre</strong> — quelle question technique se pose ?</li>
+          <li><strong>Idées pour le résoudre</strong> — quelles pistes peux-tu imaginer ?</li>
+          <li><strong>Idées retenues</strong> — quelles idées choisis-tu de creuser dans la suite de la séquence ?</li>
+        </ul>
+        <p class="section-info">Cette démarche mobilise ta compétence psychosociale <strong>C3.2</strong> : résoudre un problème technique de façon créative, en proposant puis en améliorant plusieurs solutions.</p>
+      </div>
+
+      <!-- ══════════ À RETENIR AVANT DE COMMENCER ══════════ -->
+      <div class="section-bloc">
+        <h3>🧭 Avant de commencer la fiche</h3>
+        <p>Cette page ne remplace pas la fiche d'activité : elle te donne le contexte pour bien démarrer. Les zones "constats", "problème", "idées" et "idées retenues" sont à compléter directement sur ta fiche, à partir de ce que tu auras observé dans la vidéo.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -68,5 +109,126 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager  { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees { background: #f0fdf4; border-color: #86efac; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
   }
 </style>

@@ -4,39 +4,35 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves étudient les réseaux de communication numériques : leur architecture, leur topologie, et les protocoles qui permettent aux machines de communiquer. Ils maîtrisent les notions d'adressage IP essentielles pour comprendre le fonctionnement d'Internet :`;
+const description = `Dans cette séquence, les élèves étudient le robot mBot pour comprendre comment il fonctionne (chaîne d'énergie, chaîne d'information) puis analysent les matériaux qui le composent et leur incidence sur l'environnement. Le support d'étude est le robot mBot :`;
 
 const activities = [
   {
-    title: "Architecture et topologie des réseaux",
-    description: "Comment sont organisés les réseaux informatiques et quelles sont leurs topologies ?"
+    title: "Les secrets d'un mBot",
+    description: "Comment fonctionnent tous ces objets techniques ? Comment limiter l'accumulation des déchets ?"
   },
   {
-    title: "L'adressage IP et les masques de sous-réseau",
-    description: "Comment fonctionne l'adressage IP et comment configurer un réseau local ?"
+    title: "Analyse fonctionnelle du robot mBot",
+    description: "Comment le robot mBot fait-il pour transformer une information (distance, lumière…) en mouvement ?"
   },
   {
-    title: "Les protocoles de communication",
-    description: "Quels sont les protocoles qui permettent aux machines de communiquer sur un réseau ?"
-  },
-  {
-    title: "Ressources — Réseaux et communication",
-    description: "Documents et ressources complémentaires sur les réseaux et leurs protocoles"
+    title: "Analyse environnementale",
+    description: "Pourquoi les concepteurs n'ont-ils pas fabriqué toutes les pièces du robot avec le même matériau ? Tous ces matériaux sont-ils bons pour l'environnement ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 8 — Réseaux et communication - 3ème" level={level}>
+<ClassLayout title="Séquence 8 – Les secrets du mBot - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 8 — Réseaux et communication</h1>
+  <h1>Séquence 8 – Les secrets du mBot</h1>
 
   <SequencePresentation
-    title="Étudier les réseaux de communication et leurs protocoles"
+    title="Le robot mBot : comprendre son fonctionnement et analyser ses matériaux"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment les équipements numériques communiquent-ils entre eux sur un réseau informatique ?"
+    question="Comment fonctionnent tous ces objets techniques et comment limiter l'accumulation des déchets ?"
   />
 
   <ActivityLinks sequenceNumber={8} activities={activities} level={level} />

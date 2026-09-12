@@ -4,51 +4,166 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
+  {
+    title: "Activité 3 — Analyse environnementale",
+    pdfUrl: "/documents/3eme/sequence-8/activite-3/activite-3.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 3 - Séquence 8 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-8`} />
-  <h1>Séquence 8 — Réseaux et communication · Activité 3</h1>
+  <h1>Séquence 8 – Les secrets du mBot · Activité 3</h1>
 
   <ActivitySection
-    title="Les protocoles de communication"
-    description="Quels sont les protocoles qui permettent aux machines de communiquer sur un réseau ? Un protocole est un ensemble de règles que deux machines doivent respecter pour se comprendre. Dans cette activité, tu étudieras les principaux protocoles de la suite TCP/IP : IP (adressage), TCP (transmission fiable), UDP (transmission rapide), HTTP/HTTPS (web), DNS (noms de domaine), SMTP/IMAP (messagerie). Tu réaliseras une analogie avec les règles de la communication humaine pour mieux comprendre ces protocoles. Tu apprendras également à utiliser des outils d'analyse réseau pour observer les échanges de données entre machines, et tu comprendras pourquoi le chiffrement (HTTPS) est essentiel pour la sécurité sur Internet."
+    title="Analyse environnementale"
+    description="Durée : 1h20 — Le robot mbot est composé de beaucoup de pièces différentes, et plusieurs matériaux sont présents. Pourquoi les concepteurs n'ont-ils pas fabriqué toutes les pièces avec le même matériau ? Tous ces matériaux sont-ils bons pour l'environnement ? Cette activité t'aide à comprendre comment on choisit un matériau et comment on évalue son incidence environnementale."
     documents={documents}
     activityNumber={3}
-    totalActivities={4}
+    totalActivities={3}
     sequenceHref="/3eme/sequence-8"
-    sequenceLabel="Séquence 8 — Réseaux et communication"
+    sequenceLabel="Séquence 8 – Les secrets du mBot"
     retenir={{
       definitions: [
-        { term: "Protocole de communication", def: "Ensemble de règles définissant comment les données sont échangées entre équipements sur un réseau." },
-        { term: "TCP/IP", def: "Protocole fondamental d'Internet : TCP garantit la livraison des données, IP gère leur acheminement." },
-        { term: "HTTP/HTTPS", def: "Protocoles du Web : HTTP = non chiffré, HTTPS = chiffré et sécurisé (cadenas dans le navigateur)." },
-        { term: "Paquet de données", def: "Unité de transmission : les données sont découpées en paquets numérotés, envoyés séparément et réassemblés à l'arrivée." },
+        { term: "Incidence environnementale", def: "Ensemble des effets qu'un matériau ou un objet technique a sur l'environnement, à toutes les étapes de son cycle de vie." },
+        { term: "Masse volumique", def: "Masse d'un matériau par unité de volume (en g/cm³) : plus elle est faible, plus le matériau est léger." },
+        { term: "Résistance à la traction", def: "Capacité d'un matériau à résister à un effort qui tend à l'étirer, sans se rompre (en MPa ou N/mm²)." },
+        { term: "Recyclabilité", def: "Capacité d'un matériau à être collecté et transformé pour fabriquer de nouveaux produits en fin de vie." },
+        { term: "Cycle de vie", def: "Ensemble des étapes de la vie d'un objet : extraction des matières premières, fabrication, transport, utilisation, fin de vie." },
       ],
       points: [
-        "TCP/IP = protocole de base d'Internet : toutes les communications l'utilisent.",
-        "Les données voyagent en paquets (et non en un bloc) → plus efficace et résistant aux pannes.",
-        "Toujours privilégier HTTPS (cadenas vert) pour les sites où tu entres des informations personnelles.",
+        "Chaque matériau possède des propriétés différentes : masse volumique, résistance, coût, recyclabilité, impact CO₂ de fabrication.",
+        "Le choix d'un matériau dépend de contraintes techniques, économiques et environnementales.",
+        "Aluminium, acier et carbone sont trois matériaux envisageables pour le châssis d'un robot, avec des propriétés très différentes.",
+        "L'incidence environnementale d'un matériau s'évalue sur l'ensemble de son cycle de vie : extraction, transport, utilisation, fin de vie.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Un protocole — des règles communes pour communiquer</h3>
-      <p>Un <strong>protocole</strong> est un ensemble de règles que deux machines acceptent de respecter pour se comprendre. C'est comme une langue commune : si deux ordinateurs utilisent des protocoles différents, ils ne peuvent pas communiquer. La suite <strong>TCP/IP</strong> est la base de toutes les communications sur Internet.</p>
 
-      <h3>Les principaux protocoles à connaître</h3>
-      <ul>
-        <li><strong>IP</strong> (Internet Protocol) : gère l'adressage et l'acheminement des données. Chaque paquet est routé indépendamment.</li>
-        <li><strong>TCP</strong> (Transmission Control Protocol) : garantit la livraison fiable et dans l'ordre. Utilisé pour le Web, l'email. Lent mais fiable.</li>
-        <li><strong>UDP</strong> (User Datagram Protocol) : transmission rapide sans garantie de livraison. Utilisé pour la vidéo en streaming, les jeux en ligne.</li>
-        <li><strong>HTTP</strong> : protocole du Web — échange de pages web entre navigateur et serveur. Non chiffré.</li>
-        <li><strong>HTTPS</strong> : version sécurisée de HTTP — les données sont chiffrées (cadenas vert). Obligatoire pour les paiements et données personnelles.</li>
-        <li><strong>DNS</strong> : traduit les noms de domaine en adresses IP.</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T7 — Matériaux et procédés</span>
+        <span class="competence-tag">SFC1 — Décrire la structure et le comportement d'un OST</span>
+        <span class="competence-tag">SFC12 — Justifier le choix d'un matériau et de son procédé de mise en forme</span>
+        <span class="competence-tag">SFC1h — L'incidence environnementale</span>
+      </div>
 
-      <h3>Les données voyagent en paquets</h3>
-      <p>Sur Internet, les données ne voyagent pas en un seul bloc : elles sont découpées en <strong>paquets numérotés</strong>, envoyés séparément par des chemins potentiellement différents, et réassemblés à l'arrivée. Cette technique (commutation de paquets) rend Internet très résistant aux pannes — si un chemin est bloqué, les paquets trouvent un autre itinéraire.</p>
+      <!-- ══════════ OBJECTIF / SITUATION ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation</h3>
+        <p>Le robot <strong>mBot</strong> est composé de beaucoup de pièces différentes, et plusieurs matériaux sont présents.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Pourquoi les concepteurs n'ont-ils pas fabriqué toutes les pièces avec le même matériau ? Tous ces matériaux sont-ils bons pour l'environnement ?
+        </div>
+      </div>
+
+      <!-- ══════════ POURQUOI PLUSIEURS MATÉRIAUX ══════════ -->
+      <div class="section-bloc">
+        <h3>🧩 Pourquoi un robot utilise plusieurs matériaux</h3>
+        <p>Un objet technique comme le mBot regroupe des pièces qui n'ont pas toutes le même rôle : certaines doivent être <strong>résistantes</strong>, d'autres <strong>légères</strong>, d'autres <strong>faciles à fabriquer</strong> ou encore <strong>recyclables</strong>. Comme un seul matériau ne peut pas cumuler toutes ces qualités, les concepteurs choisissent, pièce par pièce, le matériau le plus adapté.</p>
+      </div>
+
+      <!-- ══════════ PROPRIÉTÉS ET CRITÈRES ══════════ -->
+      <div class="section-bloc">
+        <h3>📊 Les critères pour choisir un matériau</h3>
+        <p>Pour comparer des matériaux envisageables pour une même pièce (par exemple le châssis du robot), on étudie plusieurs critères :</p>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">⚖️</div>
+            <div class="categorie-titre">Masse volumique</div>
+            <div class="categorie-desc">La masse du matériau par unité de volume — un critère de légèreté.</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">💪</div>
+            <div class="categorie-titre">Résistance à la traction</div>
+            <div class="categorie-desc">La capacité du matériau à résister à un effort sans se rompre.</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">💶</div>
+            <div class="categorie-titre">Coût de fabrication</div>
+            <div class="categorie-desc">Le prix pour produire une pièce dans ce matériau.</div>
+          </div>
+          <div class="categorie-carte environnement">
+            <div class="categorie-icone">♻️</div>
+            <div class="categorie-titre">Recyclabilité</div>
+            <div class="categorie-desc">La capacité du matériau à être recyclé en fin de vie.</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">🏭</div>
+            <div class="categorie-titre">Impact CO₂ de fabrication</div>
+            <div class="categorie-desc">La quantité de CO₂ émise pour produire le matériau.</div>
+          </div>
+        </div>
+        <p class="section-info">La fiche d'activité te donne les valeurs de ces critères pour trois matériaux envisagés pour le châssis du robot : <strong>l'aluminium</strong>, <strong>l'acier</strong> et <strong>le carbone</strong>. À toi de les reporter dans le tableau de ta fiche pour comparer ces trois matériaux.</p>
+      </div>
+
+      <!-- ══════════ CONTRAINTES DE CHOIX ══════════ -->
+      <div class="section-bloc">
+        <h3>⚖️ Contraintes techniques, économiques et environnementales</h3>
+        <p>Choisir un matériau, c'est trouver un <strong>compromis</strong> entre plusieurs types de contraintes :</p>
+        <ul class="demarche-liste">
+          <li><strong>Contraintes techniques</strong> : le matériau doit être assez résistant et adapté à la fonction de la pièce.</li>
+          <li><strong>Contraintes économiques</strong> : le coût de fabrication doit rester raisonnable.</li>
+          <li><strong>Contraintes environnementales</strong> : l'impact sur l'environnement (émissions de CO₂, recyclabilité…) doit être limité.</li>
+        </ul>
+        <p class="section-info">Un matériau très résistant n'est pas forcément le meilleur choix s'il est trop coûteux ou trop polluant à produire : c'est pour cela qu'il faut comparer plusieurs critères en même temps, et non un seul.</p>
+      </div>
+
+      <!-- ══════════ INCIDENCE ENVIRONNEMENTALE ══════════ -->
+      <div class="section-bloc">
+        <h3>🌍 L'incidence environnementale : qu'est-ce que c'est ?</h3>
+        <p>L'<strong>incidence environnementale</strong> d'un objet ou d'un matériau, c'est l'ensemble des effets qu'il a sur l'environnement — que ce soit lors de sa fabrication, de son transport, de son utilisation ou de sa fin de vie. Un matériau qui semble anodin à utiliser peut avoir eu un impact important bien avant d'arriver dans le robot, par exemple lors de son extraction ou de sa production.</p>
+      </div>
+
+      <!-- ══════════ CYCLE DE VIE ══════════ -->
+      <div class="section-bloc">
+        <h3>♻️ Le cycle de vie, pour évaluer l'incidence environnementale</h3>
+        <p>Pour évaluer correctement l'incidence environnementale d'un matériau, il faut considérer l'ensemble de son <strong>cycle de vie</strong>, et pas seulement le moment où il est utilisé. Trois étapes sont notamment étudiées dans cette activité :</p>
+        <ul class="demarche-liste">
+          <li><strong>Extraction</strong> — l'extraction des matières premières a elle-même un coût environnemental (énergie, transformation du milieu naturel…).</li>
+          <li><strong>Transport</strong> — déplacer les matériaux ou les pièces d'un lieu à un autre consomme de l'énergie et émet des gaz à effet de serre.</li>
+          <li><strong>Fin de vie</strong> — un matériau non recyclé en fin de vie devient un déchet, alors qu'un matériau recyclable peut être réutilisé.</li>
+        </ul>
+        <p class="section-info">Pour chacune de ces étapes, on peut identifier un impact négatif sur l'environnement, puis réfléchir à une action permettant de le réduire : c'est exactement ce que te demande la fiche d'activité.</p>
+      </div>
+
+      <!-- ══════════ POURQUOI LA RECYCLABILITÉ COMPTE ══════════ -->
+      <div class="section-bloc">
+        <h3>♻️ Pourquoi la recyclabilité est importante</h3>
+        <p>Un matériau recyclable peut être collecté puis transformé pour fabriquer de nouveaux produits, au lieu de devenir un déchet. Cela permet de <strong>préserver les ressources naturelles</strong> et de <strong>limiter la quantité de déchets</strong> produite par les objets techniques en fin de vie, comme évoqué dans la vidéo de lancement de la séquence.</p>
+      </div>
+
+      <!-- ══════════ RESSOURCE VIDÉO ══════════ -->
+      <div class="section-bloc">
+        <h3>🎬 Ressource vidéo</h3>
+        <p>Une vidéo ressource sur l'incidence environnementale des objets et systèmes techniques est disponible ci-dessous pour t'aider à répondre aux questions N1 de ta fiche.</p>
+        <video controls preload="metadata" class="video-ressource">
+          <source src="/documents/3eme/sequence-8/activite-3/Robot%20impact%20environnemental.mp4" type="video/mp4" />
+          Ton navigateur ne peut pas lire cette vidéo.
+        </video>
+      </div>
+
+      <!-- ══════════ RESSOURCES COMPLÉMENTAIRES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Ressources complémentaires</h3>
+        <p>Retrouve ci-dessous une vidéo et une fiche complémentaires sur l'incidence environnementale des objets et systèmes techniques.</p>
+        <div class="ressources-grille">
+          <div class="ressource-carte">
+            <div class="ressource-type">🎬 Vidéo</div>
+            <div class="ressource-titre">SFC1h — L'incidence environnementale</div>
+            <a href="https://podeduc.apps.education.fr/video/113107-sfc1h-lincidence-environnementale/" target="_blank" rel="noopener noreferrer" class="ressource-btn">Regarder la vidéo →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">📄 Fiche ressource</div>
+            <div class="ressource-titre">SFC1h — L'incidence environnementale</div>
+            <a href="https://nuage01.apps.education.fr/index.php/s/rw7p8wb63N5fPbX?dir=/&editing=false&openfile=true" target="_blank" rel="noopener noreferrer" class="ressource-btn">Ouvrir la ressource →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -58,5 +173,187 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories / critères ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager       { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees      { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet        { background: #fef3c7; border-color: #fcd34d; }
+  .categorie-carte.environnement { background: #fdf2f8; border-color: #f0abfc; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Vidéo ── */
+  .video-ressource {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    margin-top: 0.75rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  /* ── Ressources ── */
+  .ressources-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+  }
+
+  .ressource-carte {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .ressource-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ressource-titre {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .ressource-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 0.55rem 0.9rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .ressource-btn:hover {
+    background: #1e40af;
   }
 </style>

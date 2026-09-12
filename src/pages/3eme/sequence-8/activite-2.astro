@@ -4,56 +4,196 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
+  {
+    title: "Activité 2 — Analyse fonctionnelle du robot mBot",
+    pdfUrl: "/documents/3eme/sequence-8/activite-2/activite-2.pdf"
+  }
+];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 8 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-8`} />
-  <h1>Séquence 8 — Réseaux et communication · Activité 2</h1>
+  <h1>Séquence 8 – Les secrets du mBot · Activité 2</h1>
 
   <ActivitySection
-    title="L'adressage IP et les masques de sous-réseau"
-    description="Comment fonctionne l'adressage IP et comment configurer un réseau local ? Chaque équipement connecté à un réseau possède une adresse IP unique qui l'identifie. Dans cette activité, tu apprendras à lire et interpréter une adresse IPv4 (4 octets en notation décimale pointée), à comprendre le rôle du masque de sous-réseau et de la passerelle par défaut. Tu configureras les paramètres réseau de machines virtuelles pour créer un réseau local fonctionnel et tu vérifieras la connectivité avec la commande ping. Tu aborderas également la distinction entre adresses IP privées (LAN) et publiques (Internet), et le rôle du protocole DHCP qui attribue les adresses automatiquement."
+    title="Analyse fonctionnelle du robot mBot"
+    description="Durée : 1h30 — Le robot mBot peut détecter son environnement et se déplacer tout seul. Mais comment fait-il pour transformer une information (distance, lumière…) en mouvement ? Cette activité te fait découvrir les mécanismes de transmission du mouvement et les constituants de la chaîne d'information du robot."
     documents={documents}
     activityNumber={2}
-    totalActivities={4}
+    totalActivities={3}
     sequenceHref="/3eme/sequence-8"
-    sequenceLabel="Séquence 8 — Réseaux et communication"
+    sequenceLabel="Séquence 8 – Les secrets du mBot"
     retenir={{
       definitions: [
-        { term: "Adresse IP", def: "Identifiant numérique unique attribué à chaque équipement sur un réseau (ex : 192.168.1.10)." },
-        { term: "Masque de sous-réseau", def: "Valeur associée à l'adresse IP qui distingue la partie réseau de la partie hôte (ex : 255.255.255.0)." },
-        { term: "Passerelle (gateway)", def: "Adresse du routeur qui permet de sortir du réseau local vers Internet." },
-        { term: "DNS (Domain Name System)", def: "Service qui traduit les noms de domaine (ex : google.com) en adresses IP." },
+        { term: "Mécanisme de transmission", def: "Élément qui transmet (et parfois transforme) un mouvement d'une pièce à une autre, par exemple du moteur vers les roues." },
+        { term: "Chaîne d'information", def: "Ensemble des fonctions qui permettent d'acquérir une information, de la traiter, puis de la communiquer." },
+        { term: "Chaîne d'énergie", def: "Ensemble des fonctions qui permettent d'alimenter, distribuer, convertir et transmettre l'énergie jusqu'au mouvement." },
+        { term: "Capteur", def: "Constituant qui mesure une grandeur physique (distance, lumière, présence d'une ligne noire…) et la transforme en information." },
+        { term: "Microcontrôleur", def: "Constituant qui traite les informations reçues des capteurs et élabore les ordres envoyés à la chaîne d'énergie." },
       ],
       points: [
-        "Format d'une adresse IPv4 : 4 nombres de 0 à 255 séparés par des points (ex : 192.168.0.1).",
-        "DHCP attribue automatiquement une adresse IP à chaque appareil qui se connecte.",
-        "Sans DNS, il faudrait retenir les adresses IP de tous les sites : c'est le 'annuaire' d'Internet.",
+        "Le mBot possède des moteurs qui font tourner les roues, et plusieurs capteurs qui mesurent des grandeurs physiques (distance, lumière, ligne noire…).",
+        "Trois mécanismes de transmission existent dans les systèmes techniques : engrenages, courroies, chaînes.",
+        "La chaîne d'information : Acquérir → Traiter → Communiquer.",
+        "La chaîne d'énergie : Alimenter → Distribuer → Convertir → Transmettre → mouvement.",
+        "La chaîne d'information envoie des ordres vers la chaîne d'énergie : les deux chaînes fonctionnent ensemble.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>L'adresse IP — l'identité numérique</h3>
-      <p>Chaque équipement connecté à un réseau possède une <strong>adresse IP</strong> unique qui l'identifie, comme une adresse postale. En IPv4, une adresse est composée de <strong>4 octets</strong> (valeurs de 0 à 255) séparés par des points : ex. 192.168.1.10.</p>
 
-      <h3>Les plages d'adresses IP privées</h3>
-      <p>Les adresses privées sont utilisées dans les réseaux locaux (non accessibles depuis Internet) :</p>
-      <ul>
-        <li>192.168.0.0 à 192.168.255.255 (la plus courante, utilisée dans les box Internet).</li>
-        <li>172.16.0.0 à 172.31.255.255.</li>
-        <li>10.0.0.0 à 10.255.255.255 (utilisée dans les grandes entreprises).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T6 — Chaîne d'énergie</span>
+        <span class="competence-tag">T8 — Fonctions, solutions et constituants de la chaîne d'information</span>
+        <span class="competence-tag">SFC1 — Décrire la structure et le comportement d'un OST</span>
+        <span class="competence-tag">SFC11 — Chaîne d'énergie (schéma bloc)</span>
+        <span class="competence-tag">SFC13 — Chaîne d'information</span>
+        <span class="competence-tag">SFC1d — Mécanismes de transmission</span>
+        <span class="competence-tag">SFC1i — Fonctions des constituants</span>
+      </div>
 
-      <h3>Le masque de sous-réseau</h3>
-      <p>Le <strong>masque de sous-réseau</strong> (ex : 255.255.255.0) indique quelle partie de l'adresse IP identifie le réseau et quelle partie identifie l'équipement (hôte). Deux machines sur le même réseau local ont la même "partie réseau" dans leur adresse IP.</p>
+      <!-- ══════════ OBJECTIF / SITUATION ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation</h3>
+        <p>Le robot <strong>mBot</strong> peut détecter son environnement et se déplacer tout seul, sans que personne ne le télécommande.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment le robot mBot fait-il pour transformer une information (distance, lumière…) en mouvement ?
+        </div>
+        <p>Le mBot possède des <strong>moteurs</strong> qui permettent de faire tourner les roues afin de se déplacer, et plusieurs <strong>capteurs</strong> capables de mesurer des grandeurs physiques comme la distance, la lumière, ou la présence d'une ligne noire.</p>
+      </div>
 
-      <h3>DHCP et DNS — les services réseau essentiels</h3>
-      <ul>
-        <li><strong>DHCP</strong> : attribue automatiquement une adresse IP à chaque appareil qui se connecte. Sans DHCP, il faudrait configurer manuellement chaque adresse IP — très fastidieux !</li>
-        <li><strong>DNS</strong> (Domain Name System) : traduit les noms de domaine lisibles (google.com) en adresses IP (142.250.74.46). C'est l'annuaire téléphonique d'Internet.</li>
-        <li><strong>Passerelle</strong> : adresse du routeur qui permet de "sortir" du réseau local vers Internet (généralement 192.168.1.1 ou 192.168.0.1).</li>
-      </ul>
+      <!-- ══════════ MOTEURS ET TRANSMISSION ══════════ -->
+      <div class="section-bloc">
+        <h3>⚙️ Le rôle des moteurs et des mécanismes de transmission</h3>
+        <p>Un moteur transforme l'énergie électrique en mouvement de rotation, mais ce mouvement doit ensuite être <strong>transmis</strong> jusqu'aux roues. C'est le rôle d'un <strong>mécanisme de transmission</strong> : transmettre, et parfois transformer, un mouvement d'une pièce à une autre.</p>
+        <p>Trois mécanismes de transmission sont à connaître :</p>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">⚙️</div>
+            <div class="categorie-titre">Engrenages</div>
+            <div class="categorie-desc">Deux roues dentées qui s'engrènent pour transmettre un mouvement de rotation.</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">➰</div>
+            <div class="categorie-titre">Courroie</div>
+            <div class="categorie-desc">Une bande souple qui relie deux poulies pour transmettre un mouvement à distance.</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">🔗</div>
+            <div class="categorie-titre">Chaîne</div>
+            <div class="categorie-desc">Une suite de maillons articulés qui relie deux pignons dentés.</div>
+          </div>
+        </div>
+        <p class="section-info">La fiche d'activité te montre trois images de mécanismes : à toi de reconnaître lequel est un engrenage, lequel est une courroie et lequel est une chaîne.</p>
+      </div>
+
+      <!-- ══════════ CAPTEURS ══════════ -->
+      <div class="section-bloc">
+        <h3>📡 Le rôle des capteurs</h3>
+        <p>Un <strong>capteur</strong> mesure une grandeur physique de l'environnement et la transforme en information utilisable par le robot. Le mBot utilise notamment des capteurs de <strong>distance</strong>, de <strong>lumière</strong>, et de <strong>détection d'une ligne noire</strong> (pour suivre un tracé au sol).</p>
+      </div>
+
+      <!-- ══════════ CHAÎNE D'INFORMATION ══════════ -->
+      <div class="section-bloc">
+        <h3>🧠 La chaîne d'information</h3>
+        <p>La <strong>chaîne d'information</strong> décrit comment un système traite les informations qu'il reçoit, avant de donner des ordres :</p>
+        <div class="chaine-schema">
+          <div class="chaine-etape">INFORMATIONS</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc acquerir">ACQUÉRIR</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc traiter">TRAITER</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc communiquer">COMMUNIQUER</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-etape">ORDRES</div>
+        </div>
+        <ul class="demarche-liste">
+          <li><strong>Acquérir</strong> : les capteurs mesurent une grandeur physique (distance, lumière…) et la transforment en information.</li>
+          <li><strong>Traiter</strong> : le <strong>microcontrôleur</strong> analyse les informations reçues et décide de la réponse à apporter.</li>
+          <li><strong>Communiquer</strong> : le système transmet un signal à l'utilisateur (afficheur, voyant…) et/ou envoie un ordre vers la chaîne d'énergie.</li>
+        </ul>
+        <p class="section-info">Une interface entre l'humain et la machine (IHM) — boutons, afficheurs… — permet aussi à l'utilisateur d'échanger avec le robot.</p>
+      </div>
+
+      <!-- ══════════ CHAÎNE D'ÉNERGIE ══════════ -->
+      <div class="section-bloc">
+        <h3>🔋 La chaîne d'énergie</h3>
+        <p>La <strong>chaîne d'énergie</strong> décrit comment l'énergie est transformée, étape par étape, jusqu'à produire un mouvement :</p>
+        <div class="chaine-schema">
+          <div class="chaine-etape">ÉNERGIE</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc energie">ALIMENTER</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc energie">DISTRIBUER</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc energie">CONVERTIR</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-bloc energie">TRANSMETTRE</div>
+          <div class="chaine-fleche">→</div>
+          <div class="chaine-etape">MOUVEMENT</div>
+        </div>
+        <ul class="demarche-liste">
+          <li><strong>Alimenter</strong> : fournir l'énergie électrique (ex : des piles).</li>
+          <li><strong>Distribuer</strong> : acheminer l'énergie au bon endroit (ex : des câbles).</li>
+          <li><strong>Convertir</strong> : transformer l'énergie électrique en énergie mécanique (ex : le moteur).</li>
+          <li><strong>Transmettre</strong> : transmettre ce mouvement jusqu'aux roues, grâce à un <strong>mécanisme de transmission</strong> (engrenage, courroie ou chaîne).</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ ACTIONNEURS ══════════ -->
+      <div class="section-bloc">
+        <h3>🦾 Le rôle des actionneurs</h3>
+        <p>Un <strong>actionneur</strong> est le constituant qui réalise concrètement une action commandée par le microcontrôleur : dans le mBot, c'est par exemple un moteur qui fait tourner une roue, ou une LED qui s'allume.</p>
+      </div>
+
+      <!-- ══════════ LIEN ENTRE LES DEUX CHAÎNES ══════════ -->
+      <div class="section-bloc">
+        <h3>🔗 Le lien entre chaîne d'information et chaîne d'énergie</h3>
+        <p>Ces deux chaînes ne fonctionnent pas séparément : la chaîne d'information <strong>acquiert</strong> et <strong>traite</strong> des informations, puis envoie des <strong>ordres</strong> vers la chaîne d'énergie, qui les transforme en <strong>mouvement</strong>. C'est cette coopération qui permet au mBot de réagir seul à son environnement — par exemple, ralentir en détectant un obstacle avec son capteur de distance.</p>
+      </div>
+
+      <!-- ══════════ RESSOURCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Ressources complémentaires</h3>
+        <p>Le robot mBot utilisé en classe est accompagné de notices d'utilisation. Tu trouveras également ci-dessous des ressources vidéo et des fiches complémentaires sur les notions de cette activité.</p>
+        <div class="ressources-grille">
+          <div class="ressource-carte">
+            <div class="ressource-type">📘 Notice</div>
+            <div class="ressource-titre">Notice d'utilisation mBot V2</div>
+            <a href="https://ent2d.ac-bordeaux.fr/disciplines/sti-college/wp-content/uploads/sites/63/2023/01/Notice-dutilisation-mBot-V2.pdf" target="_blank" rel="noopener noreferrer" class="ressource-btn">Consulter la notice →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">📘 Notice</div>
+            <div class="ressource-titre">Notice d'utilisation mBot V1</div>
+            <a href="https://ent2d.ac-bordeaux.fr/disciplines/sti-college/wp-content/uploads/sites/63/2022/11/Notice-dutilisation-mBot-V1.docx.pdf" target="_blank" rel="noopener noreferrer" class="ressource-btn">Consulter la notice →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">🎬 Vidéo</div>
+            <div class="ressource-titre">SFC1d — Mécanismes de transmission et de transformation des mouvements</div>
+            <a href="https://podeduc.apps.education.fr/video/113140-sfc1d-sfc1d-les-mecanismes-de-transmission-et-de-transformation-de-mouvements-engrenages-courroies-chaines/" target="_blank" rel="noopener noreferrer" class="ressource-btn">Regarder la vidéo →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">🎬 Vidéo</div>
+            <div class="ressource-titre">SFC1i — Fonctions des constituants de la chaîne d'information</div>
+            <a href="https://podeduc.apps.education.fr/video/113105-sfc1i-les-fonctions-des-constituants-suivants-capteurs-temperature-presence-distance-etc-microcontroleur-composants-dune-interface-entre-lhumain-et-la-machine-ihm-boutons-afficheurs/" target="_blank" rel="noopener noreferrer" class="ressource-btn">Regarder la vidéo →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">📄 Fiche ressource</div>
+            <div class="ressource-titre">SFC1d — Fiche ressource</div>
+            <a href="https://nuage01.apps.education.fr/index.php/s/2x4oPnnoGSWpNiZ?dir=/&editing=false&openfile=true" target="_blank" rel="noopener noreferrer" class="ressource-btn">Ouvrir la ressource →</a>
+          </div>
+          <div class="ressource-carte">
+            <div class="ressource-type">📄 Fiche ressource</div>
+            <div class="ressource-titre">SFC1i — Fiche ressource</div>
+            <a href="https://nuage01.apps.education.fr/index.php/s/CZzJjbTiL2GwB68?dir=/&editing=false&openfile=true" target="_blank" rel="noopener noreferrer" class="ressource-btn">Ouvrir la ressource →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -63,5 +203,230 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories (mécanismes) ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager  { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet   { background: #fef3c7; border-color: #fcd34d; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* ── Schéma de chaîne ── */
+  .chaine-schema {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 0.6rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  .chaine-etape {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #1e293b;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .chaine-fleche {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    font-weight: 700;
+  }
+
+  .chaine-bloc {
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .chaine-bloc.acquerir,
+  .chaine-bloc.traiter,
+  .chaine-bloc.communiquer {
+    background: #f97316;
+  }
+
+  .chaine-bloc.energie {
+    background: #1e3a8a;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Ressources ── */
+  .ressources-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+  }
+
+  .ressource-carte {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .ressource-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ressource-titre {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .ressource-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 0.55rem 0.9rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .ressource-btn:hover {
+    background: #1e40af;
+  }
+
+  @media (max-width: 640px) {
+    .chaine-schema {
+      flex-direction: column;
+    }
+    .chaine-fleche {
+      transform: rotate(90deg);
+    }
   }
 </style>
