@@ -5,23 +5,31 @@ import BackButton from '../../../components/BackButton.astro';
 
 const documents = [
   {
-    title: "Guide de cybersécurité",
-    pdfUrl: "/documents/5eme/sequence-2/activite-4/cybersecurite.pdf"
+    title: "Activité 4 — Se protéger et protéger ses données",
+    pdfUrl: "/documents/5eme/sequence-2/activite-4/activite-4.pdf"
   },
   {
-    title: "Propriété intellectuelle",
-    pdfUrl: "/documents/5eme/sequence-2/activite-4/propriete-intellectuelle.pdf"
+    title: "Bouclier de protection — 4 conseils pour protéger ses données",
+    pdfUrl: "/documents/5eme/sequence-2/activite-4/Bouclier%20de%20protection.pdf"
+  },
+  {
+    title: "Combien de temps faut-il à un pirate pour trouver ton mot de passe ?",
+    imageUrl: "/documents/5eme/sequence-2/activite-4/temps%20mdp.jpg"
+  },
+  {
+    title: "Fiche de connaissances — OST1l : protection des données personnelles",
+    imageUrl: "/documents/5eme/sequence-2/activite-4/Protection%20des%20donn%C3%A9es%20personnelles.png"
   }
 ];
 ---
 
 <ClassLayout title="Activité 4 - Séquence 2 - 5ème" level="5eme">
   <BackButton href="/5eme/sequence-2" />
-  <h1>Activité 4 - Sécurité numérique</h1>
-  
+  <h1>Activité 4 - Se protéger et protéger ses données</h1>
+
   <ActivitySection
     title="Se protéger et protéger ses données"
-    description="Apprenez les règles essentielles de la cybersécurité et du respect de la propriété intellectuelle pour une utilisation sûre et responsable du numérique."
+    description="Durée : 55 min — À travers les exercices suivants, tu vas apprendre à construire un bouclier numérique efficace. Découvre comment transformer un mot de passe fragile en un véritable coffre-fort, et comprends pourquoi il est crucial de protéger tes données personnelles."
     documents={documents}
     activityNumber={4}
     totalActivities={6}
@@ -29,42 +37,129 @@ const documents = [
     sequenceLabel="Séquence 2 — Outils numériques"
     retenir={{
       definitions: [
-        { term: "Mot de passe fort", def: "Mot de passe d'au moins 12 caractères combinant majuscules, minuscules, chiffres et symboles, unique pour chaque service." },
-        { term: "Authentification à deux facteurs (2FA)", def: "Méthode de sécurité nécessitant deux preuves d'identité : mot de passe + code SMS ou application." },
-        { term: "HTTPS", def: "Version sécurisée du protocole HTTP : les données échangées sont chiffrées (cadenas vert dans le navigateur)." },
+        { term: "Donnée personnelle", def: "Toute information concernant une personne, comme le nom, l'adresse, le numéro de téléphone ou des photos privées." },
+        { term: "Trace numérique", def: "Information laissée sur Internet, comme l'historique de navigation, les cookies ou les messages sur les réseaux sociaux." },
+        { term: "Identification", def: "Processus qui permet de déterminer l'identité d'une personne." },
+        { term: "Authentification", def: "Processus qui permet d'autoriser des accès à des ressources informatiques." },
       ],
       points: [
-        "Mot de passe fort = minuscules + MAJUSCULES + chiffres + symboles, au moins 12 caractères.",
-        "Ne jamais réutiliser le même mot de passe sur plusieurs sites.",
-        "Vérifier le HTTPS (cadenas) avant de saisir des informations personnelles ou bancaires.",
+        "Un mot de passe sécurisé comporte au moins 12 caractères, avec majuscules, minuscules, chiffres et caractères spéciaux.",
+        "Les cookies récoltent des informations sur ta navigation ; tu peux les refuser, les limiter ou les effacer.",
+        "Un bon pseudonyme ne comporte ni prénom, ni nom, ni date de naissance, ni code postal.",
+        "La cybersécurité vise à protéger nos données personnelles et nos traces numériques face aux dangers du numérique.",
       ],
     }}
   >
     <div class="activity-content">
-      <h3>Créer des mots de passe forts</h3>
-      <p>Un <strong>mot de passe fort</strong> est la première ligne de défense de tes comptes. Pour qu'il soit efficace :</p>
-      <ul>
-        <li>Au moins <strong>12 caractères</strong> (plus c'est long, plus c'est sûr).</li>
-        <li>Mélanger <strong>majuscules, minuscules, chiffres et symboles</strong> (!, @, #, $…).</li>
-        <li><strong>Un mot de passe unique par service</strong> : si un site est piraté, les autres comptes restent protégés.</li>
-        <li>Ne pas utiliser d'informations personnelles (prénom, date de naissance, nom de chien).</li>
-      </ul>
-      <p>Astuce : utilise une <strong>phrase de passe</strong>. Exemple : <code>J'aime3GatouxEnChocolat!</code> — facile à retenir, très difficile à deviner.</p>
 
-      <h3>L'authentification à deux facteurs (2FA)</h3>
-      <p>Le <strong>2FA (Two-Factor Authentication)</strong> ajoute une deuxième vérification après le mot de passe : un code envoyé par SMS, une application d'authentification (Google Authenticator, Authy) ou une clé physique USB. Même si quelqu'un vole ton mot de passe, il ne peut pas se connecter sans le second facteur.</p>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T2 — Usages et impacts sociétaux du numérique</span>
+        <span class="competence-tag">OST15 — Identifier les règles permettant de sécuriser un environnement numérique</span>
+        <span class="competence-tag">OST1l — Cybersécurité : protection des données personnelles, traces numériques, identification, authentification, respect de la propriété intellectuelle</span>
+      </div>
 
-      <h3>Reconnaître les tentatives de phishing</h3>
-      <p>Le <strong>phishing</strong> (hameçonnage) est une technique où des cybercriminels envoient de faux emails ou créent de faux sites pour voler tes identifiants. Signes d'alerte :</p>
-      <ul>
-        <li>L'adresse email de l'expéditeur est bizarre ou ressemble à une vraie (ex : no-reply@g00gle.com).</li>
-        <li>Le lien dans le mail ne correspond pas au site officiel.</li>
-        <li>Le message crée une urgence : "Votre compte sera supprimé dans 24h !"</li>
-        <li>Des fautes d'orthographe et une mise en page étrange.</li>
-      </ul>
+      <!-- ══════════ SITUATION ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation de départ</h3>
+        <p>Ta fiche d'activité présente une situation vécue en classe : des élèves se connectent à l'<strong>ENT</strong> et à <strong>Pronote</strong>, tandis qu'un smartphone affiche une alerte à propos d'une modification de mot de passe.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment construire un bouclier numérique efficace pour protéger ses données ?
+        </div>
+      </div>
 
-      <h3>La propriété intellectuelle et le droit d'auteur</h3>
-      <p>Toute création numérique (texte, image, musique, vidéo, logiciel) est protégée par le <strong>droit d'auteur</strong> dès sa création. Utiliser une image trouvée sur Google sans autorisation peut être illégal. Les licences <strong>Creative Commons</strong> permettent aux auteurs d'indiquer clairement ce qu'ils autorisent (partage, modification, usage commercial ou non).</p>
+      <!-- ══════════ MOT DE PASSE SÉCURISÉ ══════════ -->
+      <div class="section-bloc">
+        <h3>🔑 Identifier un mot de passe sécurisé</h3>
+        <p>Un mot de passe n'est pas sécurisé simplement parce qu'il est difficile à taper : il doit respecter plusieurs règles pour résister aux tentatives de piratage. D'après la ressource « Bouclier de protection », un mot de passe « en béton » doit comporter :</p>
+        <ul class="demarche-liste">
+          <li><strong>12 caractères</strong> minimum ;</li>
+          <li>des <strong>majuscules et des minuscules</strong> ;</li>
+          <li>des <strong>chiffres</strong> ;</li>
+          <li>des <strong>caractères spéciaux</strong> ($, *, !…).</li>
+        </ul>
+        <p class="section-info">Ta fiche te demande d'entourer, parmi une liste de propositions, les mots de passe qui te semblent sécurisés, puis d'expliquer de quoi doit être composé un bon mot de passe.</p>
+      </div>
+
+      <!-- ══════════ TEMPS DE PIRATAGE ══════════ -->
+      <div class="section-bloc">
+        <h3>⏱️ Combien de temps pour deviner un mot de passe ?</h3>
+        <p>Plus un mot de passe est <strong>long</strong> et <strong>varié</strong> (majuscules, minuscules, chiffres, symboles), plus il est long à deviner pour un pirate. La ressource ci-dessous te permet de comparer le temps nécessaire selon le nombre et le type de caractères utilisés.</p>
+        <p class="section-info">Utilise cette ressource pour créer un mot de passe sécurisé et répondre aux questions de ta fiche sur le temps qu'il mettrait à être découvert.</p>
+      </div>
+
+      <!-- ══════════ RÈGLES DE SÉCURITÉ / DONNÉES PERSONNELLES ══════════ -->
+      <div class="section-bloc">
+        <h3>🧩 Les règles de sécurité et les données personnelles</h3>
+        <p>Utiliser un mot de passe faible ou réutiliser le même partout expose tes comptes à des risques. Il est important de comprendre ce qu'est une <strong>donnée personnelle</strong> : toute information qui concerne une personne, comme son nom, son adresse, son numéro de téléphone ou des photos privées.</p>
+        <p class="section-info">Ta fiche te demande d'expliquer pourquoi certains mots de passe sont dangereux, et ce qu'est une donnée personnelle.</p>
+      </div>
+
+      <!-- ══════════ BOUCLIER DE PROTECTION ══════════ -->
+      <div class="section-bloc">
+        <h3>🛡️ Le bouclier de protection : 4 conseils</h3>
+        <p>Quand tu navigues sur Internet, tu laisses des « miettes d'informations » sur toi, un peu partout. La ressource « Bouclier de protection » propose 4 conseils pour garder tes données pour toi :</p>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">🔑</div>
+            <div class="categorie-titre">La loi du mot de passe</div>
+            <div class="categorie-desc">12 caractères, majuscules, minuscules, chiffres, caractères spéciaux.</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">🙅</div>
+            <div class="categorie-titre">Tu n'es pas obligé de tout dire</div>
+            <div class="categorie-desc">Désactive les fonctionnalités dont tu n'as pas besoin, comme la géolocalisation.</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">🍪</div>
+            <div class="categorie-titre">Tu as le choix</div>
+            <div class="categorie-desc">Refuse, limite ou efface régulièrement les cookies de ton navigateur.</div>
+          </div>
+          <div class="categorie-carte environnement">
+            <div class="categorie-icone">🎭</div>
+            <div class="categorie-titre">Le pseudo, c'est la base</div>
+            <div class="categorie-desc">Un bon pseudonyme ne comporte ni prénom, ni nom, ni date de naissance, ni code postal.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ TRACES DE NAVIGATION ══════════ -->
+      <div class="section-bloc">
+        <h3>🌐 Effacer ses traces de navigation</h3>
+        <p>Les <strong>cookies</strong>, ces petits traceurs présents sur les sites Internet, récoltent des informations sur ta navigation. Dans les paramètres de ton navigateur (rubrique « Vie privée et sécurité »), tu peux effacer les cookies et l'historique de navigation, ou utiliser la <strong>navigation privée</strong> pour limiter les traces laissées.</p>
+        <p class="section-info">Ta fiche te guide pas à pas pour effacer les cookies et l'historique sur Firefox, puis te demande de réfléchir à l'intérêt de la navigation privée.</p>
+      </div>
+
+      <!-- ══════════ FICHE DE CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📖 Fiche de connaissances — OST1l</h3>
+        <p>La cybersécurité vise à protéger nos données face aux dangers du numérique. Elle distingue notamment :</p>
+        <ul class="demarche-liste">
+          <li><strong>Données personnelles</strong> : informations concernant une personne (nom, adresse, téléphone, photos privées…).</li>
+          <li><strong>Traces numériques</strong> : informations laissées sur Internet (historique, cookies, messages…).</li>
+          <li><strong>Géolocalisation</strong> : position géographique déterminée grâce au GPS ou à l'adresse IP.</li>
+          <li><strong>Identification</strong> : processus qui permet de déterminer l'identité d'une personne.</li>
+          <li><strong>Authentification</strong> : processus qui permet d'autoriser des accès à des ressources informatiques.</li>
+          <li><strong>Propriété intellectuelle</strong> : ensemble des droits qui protègent les créations intellectuelles (inventions, œuvres littéraires et artistiques, logiciels).</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ JUSTIFIER SES CHOIX ══════════ -->
+      <div class="section-bloc">
+        <h3>✅ Justifier ses choix en matière de sécurité</h3>
+        <p>Créer un mot de passe sécurisé ou effacer ses traces de navigation ne suffit pas : il faut aussi être capable d'<strong>expliquer pourquoi</strong> ces choix protègent réellement tes données.</p>
+        <p class="section-info">Ta fiche te demande de justifier pourquoi ton mot de passe est sécurisé, et pourquoi il est utile d'effacer ses traces de navigation et de choisir la navigation privée.</p>
+      </div>
+
+      <!-- ══════════ RESSOURCE EXTERNE ══════════ -->
+      <div class="section-bloc">
+        <h3>🔗 Ressource</h3>
+        <ul class="demarche-liste">
+          <li><a href="https://www.cnil.fr/fr/generer-un-mot-de-passe-solide" target="_blank" rel="noopener noreferrer">CNIL — Générer un mot de passe solide</a></li>
+        </ul>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -74,5 +169,128 @@ const documents = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager       { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees      { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet        { background: #fef3c7; border-color: #fcd34d; }
+  .categorie-carte.environnement { background: #fdf2f8; border-color: #f0abfc; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  .demarche-liste a {
+    color: #1e3a8a;
+    font-weight: 600;
   }
 </style>
