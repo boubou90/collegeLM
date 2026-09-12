@@ -4,39 +4,31 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = `Dans cette séquence, les élèves analysent les différentes formes d'énergies, leurs transformations et les enjeux du développement durable. Ils comparent les solutions énergétiques fossiles et renouvelables pour proposer des choix responsables et argumentés :`;
+const description = `Dans cette séquence, les élèves analysent l'environnement d'un objet ou système technique en identifiant ses interacteurs extérieurs, puis apprennent à choisir un OST selon plusieurs critères grâce à une démarche multicritère et raisonnée. Les supports d'étude sont la trottinette électrique et le vélo à assistance électrique (VAE) :`;
 
 const activities = [
   {
-    title: "Les formes d'énergies et leurs transformations",
-    description: "Comment les énergies se transforment-elles dans les systèmes techniques ?"
+    title: "L’OST dans son environnement : interacteurs, choix raisonné et développement durable",
+    description: "Comment les interacteurs extérieurs influencent-ils l'utilisation et le fonctionnement d'une trottinette électrique ?"
   },
   {
-    title: "L'efficacité énergétique",
-    description: "Comment mesurer et améliorer l'efficacité énergétique d'un système ?"
-  },
-  {
-    title: "Les énergies renouvelables et le bilan carbone",
-    description: "Pourquoi et comment passer aux énergies renouvelables pour réduire notre empreinte carbone ?"
-  },
-  {
-    title: "Ressources — Énergie et développement durable",
-    description: "Documents et ressources complémentaires sur l'énergie et le développement durable"
+    title: "Comparer pour mieux choisir",
+    description: "Comment choisir le VAE le plus adapté au libre-service qui correspondrait le mieux aux attentes de la municipalité ?"
   }
 ];
 
 const level = "3eme";
 ---
 
-<ClassLayout title="Séquence 7 — Énergie et développement durable - 3ème" level={level}>
+<ClassLayout title="Séquence 7 – L’OST idéal : Trottinette électrique et VAE - 3ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 7 — Énergie et développement durable</h1>
+  <h1>Séquence 7 – L’OST idéal : Trottinette électrique et VAE</h1>
 
   <SequencePresentation
-    title="Analyser les enjeux énergétiques et explorer les solutions durables"
+    title="La trottinette électrique et le VAE : analyser l'environnement et choisir selon des critères"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment faire des choix énergétiques responsables pour réduire notre impact sur l'environnement ?"
+    question="Comment identifier les interacteurs d'un objet technique et choisir le modèle le mieux adapté à un besoin ?"
   />
 
   <ActivityLinks sequenceNumber={7} activities={activities} level={level} />

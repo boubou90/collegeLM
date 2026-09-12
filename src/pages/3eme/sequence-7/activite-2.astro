@@ -4,55 +4,217 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
+  {
+    title: "Activité 2 — Comparer pour mieux choisir",
+    pdfUrl: "/documents/3eme/sequence-7/activite-2/activite-2.pdf"
+  },
+  {
+    title: "Comparatif VAE — 4 modèles",
+    imageUrl: "/documents/3eme/sequence-7/activite-2/comparatif%20VAE.png"
+  },
+  {
+    title: "Fichier LibreOffice Calc — Tableau multicritère",
+    pdfUrl: "/documents/3eme/sequence-7/activite-2/Activit%C3%A9%20libre%20office.ods"
+  },
+  {
+    title: "Trame LibreOffice Impress — Diaporama de recommandation",
+    pdfUrl: "/documents/3eme/sequence-7/activite-2/Trame_diaporama_VAE_finalisee.odp"
+  }
+];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 7 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-7`} />
-  <h1>Séquence 7 — Énergie et développement durable · Activité 2</h1>
+  <h1>Séquence 7 – L’OST idéal : Trottinette électrique et VAE · Activité 2</h1>
 
   <ActivitySection
-    title="L'efficacité énergétique"
-    description="Comment mesurer et améliorer l'efficacité énergétique d'un système ? L'efficacité énergétique (ou rendement) mesure la proportion d'énergie utile produite par rapport à l'énergie consommée. Dans cette activité, tu calcules le rendement de différents systèmes (ampoule LED vs incandescente, moteur électrique, chaudière…) et tu compares leurs performances. Tu réaliseras une enquête sur la consommation énergétique du collège et proposeras des solutions pour la réduire. Tu apprendras à lire une étiquette énergie européenne, à interpréter des données de consommation et à argumenter pour des choix technologiques plus sobres en énergie."
+    title="Comparer pour mieux choisir"
+    description="Durée : 1h30 — Comment choisir le VAE le plus adapté au libre-service qui correspondrait le mieux aux attentes de la municipalité ? Cette activité t'apprend à exploiter une documentation technique, à comparer quatre modèles de vélos à assistance électrique selon plusieurs critères, puis à formuler une recommandation argumentée à l'aide de LibreOffice Calc et Impress."
     documents={documents}
     activityNumber={2}
-    totalActivities={4}
+    totalActivities={2}
     sequenceHref="/3eme/sequence-7"
-    sequenceLabel="Séquence 7 — Énergie et développement durable"
+    sequenceLabel="Séquence 7 – L’OST idéal : Trottinette électrique et VAE"
     retenir={{
       definitions: [
-        { term: "Puissance (P)", def: "Quantité d'énergie transférée par unité de temps. P = U × I (en Watts, W)." },
-        { term: "Énergie consommée (E)", def: "Produit de la puissance par la durée d'utilisation. E = P × t (en Wh ou kWh)." },
-        { term: "Efficacité énergétique", def: "Capacité d'un système à produire le même effet utile en consommant moins d'énergie." },
+        { term: "Documentation technique", def: "Ensemble des documents décrivant les caractéristiques, l'usage et l'entretien d'un objet ou système technique." },
+        { term: "Notice technique", def: "Document accompagnant un produit, expliquant son fonctionnement et ses conditions d'utilisation." },
+        { term: "Indice de réparabilité", def: "Note qui indique dans quelle mesure un produit peut être réparé (disponibilité des pièces, facilité de démontage…)." },
+        { term: "Choix multicritère", def: "Démarche qui consiste à comparer plusieurs solutions en prenant en compte simultanément plusieurs critères, et non un seul." },
+        { term: "Coefficient (pondération)", def: "Valeur attribuée à un critère pour exprimer son importance relative dans la décision finale." },
       ],
       points: [
-        "P = U × I (Watts) ; E = P × t (Wattheures) ; 1 kWh = 1000 Wh.",
-        "Améliorer l'efficacité = même service rendu avec moins d'énergie consommée.",
-        "Exemples : LED vs ampoule à incandescence, bâtiments BBC (basse consommation).",
+        "Un seul critère (par exemple l'autonomie) ne suffit jamais à justifier un choix d'OST : il faut comparer plusieurs critères.",
+        "L'indice de réparabilité et l'indice énergétique sont liés au développement durable d'un objet technique.",
+        "Le cycle de vie d'un VAE comprend : extraction/fabrication des matières premières, fabrication, transport, utilisation, fin de vie/recyclage.",
+        "Dans LibreOffice Calc, le score total se calcule en multipliant chaque note par son coefficient, puis en additionnant les résultats.",
+        "La recommandation finale doit être argumentée à partir du tableau rempli, pas seulement du score le plus élevé.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Puissance et énergie — les deux grandeurs clés</h3>
-      <p>Ces deux grandeurs sont souvent confondues mais sont bien distinctes :</p>
-      <ul>
-        <li><strong>Puissance (P)</strong> en Watts (W) : quantité d'énergie transférée <em>par unité de temps</em>. C'est "la vitesse à laquelle l'énergie est utilisée". Formule : P = U × I (tension × intensité).</li>
-        <li><strong>Énergie (E)</strong> en Wh ou kWh : quantité totale d'énergie consommée. Formule : E = P × t (puissance × durée).</li>
-      </ul>
-      <p>Exemple : une ampoule de 60 W allumée pendant 5 heures consomme E = 60 × 5 = 300 Wh = 0,3 kWh.</p>
 
-      <h3>Comparaison LED vs. ampoule à incandescence</h3>
-      <ul>
-        <li>Ampoule incandescente 60 W : 8 % de l'énergie → lumière, 92 % → chaleur (très mauvais rendement).</li>
-        <li>Ampoule LED 9 W équivalente : même luminosité, rendement bien supérieur, 85 % moins d'énergie.</li>
-        <li>Sur 1000 h d'utilisation : l'incandescente consomme 60 kWh, la LED seulement 9 kWh.</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">OST3 — Caractériser et choisir un OST selon différents critères</span>
+        <span class="competence-tag">T4 — Le choix d'un OST dans un contexte de développement durable</span>
+        <span class="competence-tag">T5 — La performance d'un OST</span>
+        <span class="competence-tag">OST31</span>
+        <span class="competence-tag">OST32</span>
+        <span class="competence-tag">OST33</span>
+        <span class="competence-tag">OST34</span>
+        <span class="competence-tag">OST3a</span>
+        <span class="competence-tag">OST3b</span>
+        <span class="competence-tag">OST3e</span>
+        <span class="competence-tag">OST3f</span>
+        <span class="competence-tag cps">CPS — Savoir penser de façon critique</span>
+      </div>
 
-      <h3>L'étiquette énergie européenne</h3>
-      <p>L'étiquette énergie (de A à G) permet de comparer rapidement l'efficacité énergétique des appareils électroménagers, ampoules, téléviseurs… La classe A est la plus efficace. Depuis 2021, l'échelle a été révisée : les anciens "A+++" sont devenus "B" ou "C" pour laisser de la place aux futurs progrès technologiques.</p>
+      <!-- ══════════ SITUATION ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation : des VAE en libre-service pour la commune</h3>
+        <p>Une municipalité souhaite mettre à disposition des <strong>vélos à assistance électrique (VAE) en libre-service</strong> pour les habitants. Quatre modèles ont été présélectionnés, mais ils ne possèdent pas les mêmes caractéristiques : autonomie, coût, réparabilité, consommation d'énergie ou impacts environnementaux.</p>
+        <p>La municipalité demande à votre équipe de technologie d'analyser les différents modèles et de proposer une <strong>recommandation argumentée</strong>.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment choisir le VAE le plus adapté au libre-service qui correspondrait le mieux aux attentes de la municipalité ?
+        </div>
+      </div>
 
-      <h3>Agir sur sa consommation</h3>
-      <p>Améliorer l'efficacité énergétique : passer aux LED, améliorer l'isolation thermique des bâtiments, choisir des appareils bien classés, éteindre les veilles. Ces actions réduisent la consommation tout en gardant le même niveau de service.</p>
+      <!-- ══════════ DOCUMENTATION TECHNIQUE ══════════ -->
+      <div class="section-bloc">
+        <h3>📘 Pourquoi utiliser une documentation technique ?</h3>
+        <p>Avant de comparer les modèles, il faut savoir lire une <strong>documentation technique</strong> et une <strong>notice technique</strong> : ce sont ces documents qui rassemblent les caractéristiques, les performances et les conditions d'utilisation d'un objet technique, indispensables pour comparer objectivement plusieurs solutions.</p>
+      </div>
+
+      <!-- ══════════ CRITÈRES DE CHOIX ══════════ -->
+      <div class="section-bloc">
+        <h3>📋 Les critères de choix</h3>
+        <p>Pour choisir un VAE de façon raisonnée, une municipalité doit prendre en compte plusieurs critères :</p>
+        <div class="criteres-grille">
+          <div class="critere-carte perf">
+            <div class="critere-icone">🔋</div>
+            <div class="critere-titre">Autonomie</div>
+            <div class="critere-desc">Distance que le VAE peut parcourir avec une charge de batterie.</div>
+          </div>
+          <div class="critere-carte cout">
+            <div class="critere-icone">💶</div>
+            <div class="critere-titre">Coût / Budget</div>
+            <div class="critere-desc">Prix d'achat et coût d'entretien estimé chaque année.</div>
+          </div>
+          <div class="critere-carte reparabilite">
+            <div class="critere-icone">🔧</div>
+            <div class="critere-titre">Indice de réparabilité</div>
+            <div class="critere-desc">Capacité du VAE à être réparé facilement (pièces disponibles, entretien).</div>
+          </div>
+          <div class="critere-carte energie">
+            <div class="critere-icone">⚡</div>
+            <div class="critere-titre">Consommation d'énergie</div>
+            <div class="critere-desc">Énergie nécessaire au fonctionnement du moteur d'assistance.</div>
+          </div>
+          <div class="critere-carte durabilite">
+            <div class="critere-icone">🌍</div>
+            <div class="critere-titre">Impact environnemental</div>
+            <div class="critere-desc">Matériaux recyclables, recyclage de la batterie, empreinte du cycle de vie.</div>
+          </div>
+          <div class="critere-carte polyvalence">
+            <div class="critere-icone">⭐</div>
+            <div class="critere-titre">Qualité, efficacité, durabilité, recyclabilité, performances</div>
+            <div class="critere-desc">Critères complémentaires qui affinent la comparaison entre modèles.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ CYCLE DE VIE ══════════ -->
+      <div class="section-bloc">
+        <h3>♻️ Le cycle de vie d'un VAE</h3>
+        <p>Un VAE, comme tout objet technique, suit un <strong>cycle de vie</strong> qui ne se limite pas à son utilisation. Il comprend notamment les étapes suivantes :</p>
+        <ul class="demarche-liste">
+          <li>Utilisation</li>
+          <li>Extraction ou fabrication des matières premières</li>
+          <li>Fin de vie / recyclage</li>
+          <li>Fabrication</li>
+          <li>Transport</li>
+        </ul>
+        <p class="section-info">À toi de retrouver, dans la fiche d'activité, l'ordre dans lequel ces étapes se déroulent réellement. Prendre en compte le cycle de vie complet, et pas seulement l'utilisation, fait partie d'un choix responsable dans une démarche de développement durable.</p>
+      </div>
+
+      <!-- ══════════ COMPARER LES 4 MODÈLES ══════════ -->
+      <div class="section-bloc">
+        <h3>🚲 Comparer les quatre modèles</h3>
+        <p>Le document ressource « Comparatif VAE » présente quatre modèles présélectionnés, avec pour chacun leurs caractéristiques techniques, leur indice de réparabilité, leur impact environnemental et leur prix. Ce comparatif est la base de toute la comparaison multicritère de cette activité.</p>
+        <p class="section-info">Le modèle avec la <strong>meilleure autonomie</strong> n'est pas automatiquement le meilleur choix : il faut aussi regarder le coût, la réparabilité et l'impact environnemental avant de conclure.</p>
+      </div>
+
+      <!-- ══════════ ÉVALUATION MULTICRITÈRE ══════════ -->
+      <div class="section-bloc">
+        <h3>📐 Construire une évaluation multicritère</h3>
+        <p>Pour comparer objectivement les quatre modèles, on attribue à chaque critère une <strong>note sur 5</strong>, selon l'échelle suivante :</p>
+        <ul class="demarche-liste">
+          <li><strong>1/5</strong> → critère peu ou pas satisfaisant ;</li>
+          <li><strong>2/5</strong> → critère moyennement satisfaisant ;</li>
+          <li><strong>3/5</strong> → critère satisfaisant ;</li>
+          <li><strong>4/5</strong> → critère très satisfaisant ;</li>
+          <li><strong>5/5</strong> → critère excellent.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ LIBREOFFICE CALC ══════════ -->
+      <div class="section-bloc">
+        <h3>🧮 Utiliser LibreOffice Calc</h3>
+        <p>Le fichier LibreOffice Calc fourni permet de saisir les notes de chaque modèle pour chaque critère, puis de calculer <strong>automatiquement le score total</strong> à l'aide d'une formule.</p>
+        <p class="section-info">Avant d'appliquer les coefficients, le score total d'un modèle correspond simplement à la <strong>somme des notes</strong> obtenues sur chaque critère.</p>
+      </div>
+
+      <!-- ══════════ COEFFICIENTS ══════════ -->
+      <div class="section-bloc">
+        <h3>⚖️ Prendre en compte les coefficients</h3>
+        <p>Certains critères comptent davantage que d'autres pour la municipalité. Le document indique par exemple :</p>
+        <ul class="demarche-liste">
+          <li>un <strong>coefficient 2</strong> pour l'indice de réparabilité ;</li>
+          <li>un <strong>coefficient 3</strong> pour le budget.</li>
+        </ul>
+        <p class="section-info">Avec des coefficients, le score total se calcule en <strong>multipliant chaque note par son coefficient</strong>, puis en additionnant les résultats obtenus pour chaque critère.</p>
+      </div>
+
+      <!-- ══════════ ANALYSER LES RÉSULTATS ══════════ -->
+      <div class="section-bloc">
+        <h3>🔍 Analyser les résultats</h3>
+        <p>Une fois le tableau complété, on observe les scores obtenus pour identifier le <strong>modèle le mieux classé</strong> et le <strong>modèle le moins bien classé</strong>. Ce classement doit ensuite être expliqué : quels critères ont fait la différence ? Le modèle avec le meilleur score correspond-il vraiment aux priorités de la municipalité ?</p>
+      </div>
+
+      <!-- ══════════ RECOMMANDATION ══════════ -->
+      <div class="section-bloc">
+        <h3>🏛️ Formuler une recommandation</h3>
+        <p>À partir du tableau rempli, votre équipe doit préparer une <strong>recommandation argumentée</strong> à destination du conseil municipal, en s'appuyant sur au moins plusieurs critères du comparatif et pas uniquement sur le score final.</p>
+      </div>
+
+      <!-- ══════════ LIBREOFFICE IMPRESS ══════════ -->
+      <div class="section-bloc">
+        <h3>🖥️ Préparer le diaporama avec LibreOffice Impress</h3>
+        <p>Pour présenter votre recommandation au conseil municipal, vous réaliserez un diaporama à l'aide de la trame LibreOffice Impress fournie. Il devra obligatoirement contenir :</p>
+        <ul class="demarche-liste">
+          <li>le <strong>modèle retenu</strong> ;</li>
+          <li>une <strong>image du vélo choisi</strong> ;</li>
+          <li>le <strong>tableau rempli</strong> lors de l'évaluation multicritère ;</li>
+          <li><strong>au moins 3 critères expliqués</strong> ;</li>
+          <li>une <strong>conclusion argumentée</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ DÉVELOPPEMENT DURABLE ══════════ -->
+      <div class="section-bloc">
+        <h3>🌱 Développement durable</h3>
+        <p>L'indice de réparabilité et l'indice énergétique permettent d'évaluer un objet technique au regard du <strong>développement durable</strong> : plus un objet est réparable et économe en énergie, plus son impact environnemental sur l'ensemble de son cycle de vie est réduit. Ces critères doivent peser dans la décision, au même titre que le coût ou l'autonomie.</p>
+      </div>
+
+      <!-- ══════════ CPS ══════════ -->
+      <div class="section-bloc">
+        <h3>🧠 Savoir penser de façon critique</h3>
+        <p>Se focaliser uniquement sur un critère comme l'<strong>autonomie</strong> peut biaiser une décision. Une pensée critique consiste à comparer plusieurs critères, à interroger chaque résultat et à justifier son choix final avec des arguments solides plutôt qu'avec une seule caractéristique séduisante.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -62,5 +224,131 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Critères ── */
+  .criteres-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .critere-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .critere-carte.perf        { background: #eff6ff; border-color: #93c5fd; }
+  .critere-carte.cout        { background: #f0fdf4; border-color: #86efac; }
+  .critere-carte.energie     { background: #fef9f0; border-color: #fcd34d; }
+  .critere-carte.reparabilite { background: #fdf2f8; border-color: #f0abfc; }
+  .critere-carte.polyvalence  { background: #f5f3ff; border-color: #c4b5fd; }
+  .critere-carte.durabilite   { background: #f0fdfa; border-color: #5eead4; }
+
+  .critere-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .critere-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .critere-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
   }
 </style>

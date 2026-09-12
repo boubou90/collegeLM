@@ -4,61 +4,183 @@ import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "3eme";
-const documents = [];
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
+  {
+    title: "Activité 1 — L’OST dans son environnement : interacteurs, choix raisonné et développement durable",
+    pdfUrl: "/documents/3eme/sequence-7/activite-1/activite-1.pdf"
+  },
+  {
+    title: "Comparatif Trottinettes — 4 modèles",
+    imageUrl: "/documents/3eme/sequence-7/activite-1/Comparatif%20Trottinettes.png"
+  }
+];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 7 - 3ème" level={level}>
   <BackButton href={`/${level}/sequence-7`} />
-  <h1>Séquence 7 — Énergie et développement durable · Activité 1</h1>
+  <h1>Séquence 7 – L’OST idéal : Trottinette électrique et VAE · Activité 1</h1>
 
   <ActivitySection
-    title="Les formes d'énergies et leurs transformations"
-    description="Comment les énergies se transforment-elles dans les systèmes techniques ? L'énergie existe sous de nombreuses formes : électrique, mécanique, thermique, chimique, lumineuse, nucléaire… Dans cette activité, tu étudies comment les systèmes techniques transforment l'énergie d'une forme à une autre. À travers des exemples concrets (moteur électrique, panneau solaire, pile, ampoule), tu traceras les chaînes de conversion énergétique et identifieras les pertes (rendement). Tu comprendras pourquoi aucune transformation n'est parfaite et comment maximiser l'efficacité d'un système pour limiter le gaspillage d'énergie."
+    title="L’OST dans son environnement : interacteurs, choix raisonné et développement durable"
+    description="Durée : 1h — Comment les interacteurs extérieurs influencent-ils l'utilisation et le fonctionnement d'une trottinette électrique ? À travers une situation vécue par un élève un jour de pluie, tu apprendras à repérer tout ce qui interagit avec cet objet technique et à t'en servir pour faire un choix raisonné."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={2}
     sequenceHref="/3eme/sequence-7"
-    sequenceLabel="Séquence 7 — Énergie et développement durable"
+    sequenceLabel="Séquence 7 – L’OST idéal : Trottinette électrique et VAE"
     retenir={{
       definitions: [
-        { term: "Énergie électrique", def: "Forme d'énergie liée au déplacement des électrons dans un conducteur, mesurée en joules (J) ou en wattheures (Wh)." },
-        { term: "Énergie mécanique", def: "Énergie associée au mouvement (cinétique) ou à la position (potentielle) d'un objet." },
-        { term: "Rendement (η)", def: "Rapport entre l'énergie utile produite et l'énergie consommée : η = Pu / Pe × 100 %." },
+        { term: "Interacteur extérieur", def: "Tout élément qui interagit avec un objet ou système technique depuis l'extérieur : usager, donnée, autre objet technique ou élément de l'environnement." },
+        { term: "Usager", def: "Personne humaine qui utilise directement l'objet ou système technique." },
+        { term: "Données", def: "Informations qui entrent dans le système ou qu'il produit (autonomie, vitesse, distance, alertes…)." },
+        { term: "Autre objet technique", def: "Objet ou dispositif technique qui échange des informations ou de l'énergie avec le système étudié (smartphone, application mobile…)." },
+        { term: "Élément de l'environnement", def: "Grandeur ou condition du milieu extérieur agissant sur le système (météo, route…)." },
       ],
       points: [
-        "L'énergie se conserve : elle se transforme mais ne se crée ni ne se détruit (1ʳᵉ loi de thermodynamique).",
-        "Rendement toujours < 100 % : il y a toujours des pertes (chaleur, bruit, frottements…).",
-        "Identifier les conversions d'énergie dans la chaîne d'énergie (séquence 1) : électrique → mécanique → …",
+        "Une trottinette électrique ne fonctionne pas seule : elle interagit en permanence avec son environnement.",
+        "Les interacteurs extérieurs se classent en quatre catégories : usager, données, autres objets techniques, éléments de l'environnement.",
+        "L'application mobile affiche des données utiles (batterie, autonomie, vitesse) qui aident l'utilisateur à anticiper son trajet.",
+        "Un choix raisonné d'OST s'appuie sur plusieurs critères liés à ces interacteurs, et non sur une seule caractéristique.",
       ]
     }}
   >
     <div class="activity-content">
-      <h3>Les formes d'énergie</h3>
-      <p>L'énergie existe sous de <strong>nombreuses formes</strong> qui peuvent se transformer les unes en les autres. Les principales formes d'énergie à connaître :</p>
-      <ul>
-        <li><strong>Énergie électrique</strong> : liée au déplacement des électrons (prise de courant, batterie).</li>
-        <li><strong>Énergie mécanique</strong> : liée au mouvement (cinétique) ou à la position (potentielle).</li>
-        <li><strong>Énergie thermique</strong> : liée à la chaleur (radiateur, moteur à combustion).</li>
-        <li><strong>Énergie chimique</strong> : stockée dans les combustibles, les piles, les batteries.</li>
-        <li><strong>Énergie lumineuse</strong> : rayonnement électromagnétique (Soleil, LED, ampoule).</li>
-        <li><strong>Énergie nucléaire</strong> : libérée par la fission ou la fusion des noyaux atomiques.</li>
-      </ul>
 
-      <h3>Les conversions d'énergie — exemples</h3>
-      <ul>
-        <li><strong>Moteur électrique</strong> : énergie électrique → énergie mécanique (+ chaleur perdue).</li>
-        <li><strong>Panneau solaire photovoltaïque</strong> : énergie lumineuse → énergie électrique.</li>
-        <li><strong>Pile</strong> : énergie chimique → énergie électrique.</li>
-        <li><strong>Ampoule LED</strong> : énergie électrique → énergie lumineuse (+ un peu de chaleur).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">OST2 — Analyser l'environnement d'un OST</span>
+        <span class="competence-tag">T3 — L'OST dans son environnement</span>
+        <span class="competence-tag">OST21 — Décrire l'expérience de l'utilisateur d'un OST</span>
+        <span class="competence-tag">OST2a — Les interacteurs extérieurs</span>
+        <span class="competence-tag cps">CPS C3.2 — Résolution de problèmes : identifier des solutions et choisir la plus adaptée</span>
+      </div>
 
-      <h3>Le rendement — toujours inférieur à 100 %</h3>
-      <p>Lors de chaque conversion, une partie de l'énergie est <strong>perdue sous forme de chaleur, de vibrations ou de bruit</strong>. Le rendement mesure l'efficacité de la conversion :</p>
-      <ul>
-        <li>η = (Énergie utile / Énergie consommée) × 100 %</li>
-        <li>Exemple : un moteur électrique avec η = 85 % consomme 100 J et produit 85 J d'énergie mécanique, 15 J sont perdus en chaleur.</li>
-        <li>Le rendement est toujours compris entre 0 % et 100 % (jamais 100 % — principe physique fondamental).</li>
-      </ul>
+      <!-- ══════════ OBJECTIF ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation de départ</h3>
+        <p>Un élève utilise chaque jour sa <strong>trottinette électrique</strong> pour se rendre au collège. Un matin de forte pluie, il remarque que l'<strong>autonomie diminue plus vite que d'habitude</strong> et que son <strong>smartphone</strong> lui affiche une alerte signalant une chaussée glissante.</p>
+        <p>Il se demande pourquoi sa trottinette ne fonctionne pas exactement de la même manière selon les conditions d'utilisation, et comment elle obtient toutes ces informations.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment les interacteurs extérieurs influencent-ils l'utilisation et le fonctionnement d'une trottinette électrique ?
+        </div>
+      </div>
+
+      <!-- ══════════ NOTION D'INTERACTEUR ══════════ -->
+      <div class="section-bloc">
+        <h3>🔗 Qu'est-ce qu'un interacteur extérieur ?</h3>
+        <p>Un objet technique interagit avec des éléments extérieurs. Ces interactions se font grâce à des <strong>échanges de matière, d'énergie ou d'informations</strong>. Un <strong>interacteur extérieur</strong> est donc tout élément qui échange quelque chose avec l'objet technique depuis l'extérieur.</p>
+      </div>
+
+      <!-- ══════════ 4 CATÉGORIES ══════════ -->
+      <div class="section-bloc">
+        <h3>📂 Les 4 catégories d'interacteurs</h3>
+        <div class="categories-grille">
+          <div class="categorie-carte usager">
+            <div class="categorie-icone">👤</div>
+            <div class="categorie-titre">Usager</div>
+            <div class="categorie-desc">Personne humaine qui utilise directement le système</div>
+            <div class="categorie-exemple">Ex : l'utilisateur de la trottinette</div>
+          </div>
+          <div class="categorie-carte donnees">
+            <div class="categorie-icone">📊</div>
+            <div class="categorie-titre">Données</div>
+            <div class="categorie-desc">Informations qui entrent dans le système ou qu'il produit</div>
+            <div class="categorie-exemple">Ex : niveau de batterie, autonomie, vitesse</div>
+          </div>
+          <div class="categorie-carte objet">
+            <div class="categorie-icone">📱</div>
+            <div class="categorie-titre">Autres objets techniques</div>
+            <div class="categorie-desc">Dispositif échangeant des informations ou de l'énergie avec le système</div>
+            <div class="categorie-exemple">Ex : smartphone, application mobile, feu tricolore</div>
+          </div>
+          <div class="categorie-carte environnement">
+            <div class="categorie-icone">🌦️</div>
+            <div class="categorie-titre">Éléments de l'environnement</div>
+            <div class="categorie-desc">Grandeur ou condition du milieu agissant sur le système</div>
+            <div class="categorie-exemple">Ex : météo, route</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ INTERACTIONS DE LA TROTTINETTE ══════════ -->
+      <div class="section-bloc">
+        <h3>🛴 Les interactions de la trottinette avec son environnement</h3>
+        <p>Une trottinette électrique interagit en permanence avec différents éléments de son environnement. En voici des exemples regroupés par catégorie :</p>
+        <div class="interacteurs-liste">
+          <div class="interacteur-groupe usager-bg">
+            <div class="interacteur-groupe-titre">👤 Usager</div>
+            <ul>
+              <li>L'utilisateur de la trottinette</li>
+            </ul>
+          </div>
+          <div class="interacteur-groupe donnees-bg">
+            <div class="interacteur-groupe-titre">📊 Données</div>
+            <ul>
+              <li>Niveau de batterie et autonomie restante</li>
+              <li>Vitesse et distance parcourue</li>
+              <li>Alerte de sécurité (état de la route)</li>
+            </ul>
+          </div>
+          <div class="interacteur-groupe objet-bg">
+            <div class="interacteur-groupe-titre">📱 Autres objets techniques</div>
+            <ul>
+              <li>Smartphone et application mobile</li>
+              <li>Mobilier urbain, feu tricolore</li>
+            </ul>
+          </div>
+          <div class="interacteur-groupe env-bg">
+            <div class="interacteur-groupe-titre">🌦️ Éléments de l'environnement</div>
+            <ul>
+              <li>La route (surface, état)</li>
+              <li>La météo (pluie)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ INFORMATIONS UTILISÉES / TRANSMISES ══════════ -->
+      <div class="section-bloc">
+        <h3>📡 Les informations utilisées ou transmises</h3>
+        <p>Lorsque l'utilisateur consulte l'application de la trottinette sur son smartphone, plusieurs <strong>données</strong> sont affichées en temps réel : niveau de batterie, autonomie estimée, vitesse actuelle, distance parcourue, durée du trajet…</p>
+        <p class="section-info">Avoir ces informations en temps réel permet à l'utilisateur d'<strong>anticiper</strong> : par exemple, vérifier avant de partir qu'il reste assez d'autonomie pour finir un trajet, même si la pluie la fait diminuer plus vite que prévu.</p>
+      </div>
+
+      <!-- ══════════ ANALYSER UNE SITUATION ══════════ -->
+      <div class="section-bloc">
+        <h3>🔍 Analyser une situation d'utilisation</h3>
+        <p>Pour comprendre le fonctionnement d'une trottinette électrique, il faut savoir <strong>identifier, dans une situation donnée, quels interacteurs entrent en jeu</strong> et à quelle catégorie ils appartiennent : un schéma simple (usagers / données / autres objets / environnement) permet de visualiser toutes ces interactions autour de l'objet technique.</p>
+      </div>
+
+      <!-- ══════════ CHOISIR SELON UN BESOIN ══════════ -->
+      <div class="section-bloc">
+        <h3>🧭 Choisir une trottinette selon un besoin</h3>
+        <p>Avant d'acheter une trottinette électrique, on peut comparer plusieurs modèles selon des besoins précis, par exemple :</p>
+        <ul class="demarche-liste">
+          <li>Connaître clairement l'autonomie restante avant de partir ;</li>
+          <li>Rester sûre à utiliser quelles que soient les conditions météo ;</li>
+          <li>Disposer d'une application mobile performante et fiable ;</li>
+          <li>Offrir un éclairage suffisant pour les déplacements de nuit.</li>
+        </ul>
+        <p class="section-info">Pour chaque besoin, on peut retrouver l'<strong>interacteur extérieur</strong> concerné et sa <strong>catégorie</strong>, puis s'appuyer sur le comparatif de trottinettes pour identifier la caractéristique correspondante.</p>
+      </div>
+
+      <!-- ══════════ DÉVELOPPEMENT DURABLE ══════════ -->
+      <div class="section-bloc">
+        <h3>🌱 Développement durable et choix raisonné</h3>
+        <p>Faire un <strong>choix raisonné</strong> d'objet technique, ce n'est pas se fier à une seule caractéristique : c'est comparer plusieurs critères importants pour l'usage prévu (autonomie, sécurité, fiabilité, éclairage…) avant de décider. Cette démarche prépare celle, plus complète, de l'activité suivante sur le choix multicritère d'un VAE.</p>
+      </div>
+
+      <!-- ══════════ RESSOURCES ══════════ -->
+      <div class="section-bloc">
+        <h3>🔗 Fiches de connaissances et quiz auto-correctifs</h3>
+        <p>OST2a — Les interacteurs extérieurs : usagers, données, autres objets, éléments de l'environnement.</p>
+        <ul class="demarche-liste">
+          <li><a href="https://edurl.fr/sYqUyLIc" target="_blank" rel="noopener noreferrer">edurl.fr/sYqUyLIc</a> — Fiche de connaissances / quiz auto-correctif</li>
+          <li><a href="https://edurl.fr/pbmUNWr" target="_blank" rel="noopener noreferrer">edurl.fr/pbmUNWr</a> — Fiche de connaissances / quiz auto-correctif</li>
+        </ul>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -68,5 +190,173 @@ const documents = [];
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Catégories ── */
+  .categories-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .categorie-carte {
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .categorie-carte.usager       { background: #eff6ff; border-color: #93c5fd; }
+  .categorie-carte.donnees      { background: #f0fdf4; border-color: #86efac; }
+  .categorie-carte.objet        { background: #fef3c7; border-color: #fcd34d; }
+  .categorie-carte.environnement { background: #fdf2f8; border-color: #f0abfc; }
+
+  .categorie-icone { font-size: 1.75rem; margin-bottom: 0.3rem; }
+
+  .categorie-titre {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-desc {
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+
+  .categorie-exemple {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-style: italic;
+  }
+
+  /* ── Interacteurs ── */
+  .interacteurs-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+
+  .interacteur-groupe {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .interacteur-groupe.usager-bg      { background: #eff6ff; border-left: 3px solid #3b82f6; }
+  .interacteur-groupe.donnees-bg     { background: #f0fdf4; border-left: 3px solid #22c55e; }
+  .interacteur-groupe.objet-bg       { background: #fef9f0; border-left: 3px solid #f59e0b; }
+  .interacteur-groupe.env-bg         { background: #fdf2f8; border-left: 3px solid #d946ef; }
+
+  .interacteur-groupe-titre {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+    font-size: 0.88rem;
+  }
+
+  .interacteur-groupe ul {
+    padding-left: 1.1rem;
+    margin: 0;
+    color: #334155;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  .demarche-liste a {
+    color: #1e3a8a;
+    font-weight: 600;
   }
 </style>
