@@ -5,46 +5,29 @@ import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
 const level = "5eme";
-const description = `Cette séquence est consacrée à la modélisation 3D avec le logiciel SketchUp et à l'analyse technique. Elle permet aux élèves de découvrir les outils de conception assistée par ordinateur tout en apprenant à analyser et comparer des solutions techniques.
+const description = `Cette séquence porte sur l'analyse des interactions d'une souris informatique avec son environnement et sur la prise en compte des contraintes de conception, notamment l'ergonomie.
 
-Les élèves progressent à travers plusieurs étapes :
-- Découverte des outils de visualisation de SketchUp
-- Apprentissage des méthodes d'analyse technique (diagrammes "Bête à Cornes" et "Pieuvre")
-- Maîtrise des techniques de construction 3D (points de construction, extrusion)
-- Application des connaissances pour modéliser un auvent de terrasse
+Les élèves identifient les éléments en interaction avec la souris, analysent les contraintes liées à l'utilisateur, à l'environnement et au fonctionnement, puis proposent et justifient une solution de conception.
 
-Un accent particulier est mis sur la méthodologie de travail, avec l'élaboration d'une "feuille de route" avant la modélisation, permettant aux élèves de structurer leur démarche et d'anticiper les étapes de construction.`;
+La séquence s'appuie sur une activité unique de 1h30.`;
 
 const activities = [
   {
-    title: "Fiche de lancement de séquence",
-    description: "S4-A1-Fiche de lancement de séquence"
-  },
-  {
-    title: "Choix d'une structure adaptée",
-    description: "S4-A2-Comment-choisir-une-structure-adaptée-à-un-usage"
-  },
-  {
-    title: "Modification d'une modélisation",
-    description: "S4-A3-Comment-modifier-une-modélisation-de-structure"
-  },
-  {
-    title: "Guide SketchUp",
-    description: "Guide complet pour maîtriser les fonctionnalités essentielles de SketchUp et réaliser tes projets de modélisation 3D.",
-    type: "ressource" as const
+    title: "La souris informatique : interactions, contraintes et ergonomie",
+    description: "Comprendre les interactions d'une souris informatique avec son environnement et les contraintes de conception liées à son ergonomie."
   }
 ];
 ---
 
-<ClassLayout title="Séquence 4 - 5ème" level={level}>
+<ClassLayout title="Séquence 4 – La souris informatique : interactions, contraintes et ergonomie - 5ème" level={level}>
   <BackButton href={`/${level}`} />
-  <h1>Séquence 4</h1>
-  
-  <SequencePresentation 
-    title="Modélisation 3D et Analyse Technique"
+  <h1>Séquence 4 – La souris informatique : interactions, contraintes et ergonomie</h1>
+
+  <SequencePresentation
+    title="La souris informatique : interactions, contraintes et ergonomie"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment concevoir et modéliser un objet technique en 3D avec un logiciel de CAO comme SketchUp ?"
+    question="Comment la prise en compte de l'environnement et de l'utilisateur influence-t-elle la conception d'une souris informatique ?"
   />
 
   <ActivityLinks sequenceNumber={4} activities={activities} level={level} />

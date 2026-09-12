@@ -3,72 +3,144 @@ import ClassLayout from '../../../layouts/ClassLayout.astro';
 import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const level = "5eme";
 const documents = [
   {
-    title: "Fiche de lancement",
-    pdfUrl: "/documents/5eme/sequence-4/activite-1/fiche-lancement.pdf"
+    title: "Activité 1 — La souris informatique : interactions, contraintes et ergonomie",
+    pdfUrl: "/documents/5eme/sequence-4/activite-1/activite-1.pdf"
   }
 ];
-
-// Log pour déboguer
-console.log("Documents de l'activité:", documents);
 ---
 
-<ClassLayout title="Activité 1 - Séquence 4 - 5ème" level={level}>
-  <BackButton href={`/${level}/sequence-4`} />
-  <h1>Activité 1 - Lancement de séquence</h1>
-  
+<ClassLayout title="Activité 1 - Séquence 4 - 5ème" level="5eme">
+  <BackButton href="/5eme/sequence-4" />
+  <h1>Activité 1 - La souris informatique : interactions, contraintes et ergonomie</h1>
+
   <ActivitySection
-    title="Introduction à la modélisation 3D"
-    description="Découverte du logiciel SketchUp et de ses outils de visualisation. Cette activité permet de comprendre les bases de la modélisation 3D et l'importance de l'analyse technique dans la conception."
+    title="La souris informatique : interactions, contraintes et ergonomie"
+    description="Durée : 1h30 — Léo est un mordu d'informatique. Depuis quelques semaines, il passe beaucoup de temps sur son ordinateur pour ses projets scolaires et ses loisirs. Cependant, il commence à ressentir des fourmillements et une douleur persistante au poignet droit. Son professeur de Technologie lui explique que sa souris actuelle n'est peut-être pas adaptée à sa morphologie ni à son environnement de travail. Léo doit comprendre comment une souris interagit avec ce qui l'entoure pour choisir ou concevoir un modèle qui ne le blessera pas."
     documents={documents}
     activityNumber={1}
-    totalActivities={4}
+    totalActivities={1}
     sequenceHref="/5eme/sequence-4"
-    sequenceLabel="Séquence 4 — Modélisation 3D et SketchUp"
+    sequenceLabel="Séquence 4 — La souris informatique : interactions, contraintes et ergonomie"
     retenir={{
       definitions: [
-        { term: "SketchUp", def: "Logiciel de modélisation 3D grand public et éducatif, utilisé pour concevoir des objets, bâtiments et structures." },
-        { term: "CAO (Conception Assistée par Ordinateur)", def: "Utilisation d'un logiciel pour concevoir, modéliser et simuler des objets techniques en 3D." },
-        { term: "Feuille de route", def: "Document préparatoire listant les étapes à réaliser avant de commencer la modélisation." },
+        { term: "Interacteur extérieur", def: "Élément (usager, donnée, autre objet, élément de l'environnement) qui interagit avec un objet technique lors de son fonctionnement." },
+        { term: "Mode de représentation", def: "Façon de représenter une solution technique : croquis, schéma, graphique, algorithme, modélisation." },
+        { term: "Contrainte", def: "Exigence que doit respecter un objet technique, issue de normes, d'un cahier des charges, de labels ou de certifications." },
+        { term: "Ergonomie", def: "Adaptation d'un objet à son utilisateur, pour son confort et sa sécurité d'usage." },
       ],
       points: [
-        "Démarche : analyser l'objet → établir une feuille de route → modéliser étape par étape.",
-        "Avant de commencer : identifier les formes de base (boîtes, cylindres…) qui composent l'objet.",
-        "SketchUp = outils principaux : Pousser/Tirer (extrusion), Sélectionner, Orbite, Mesure.",
+        "Les interacteurs extérieurs d'un OST se classent en 4 catégories : usagers, données, autres objets, éléments de l'environnement.",
+        "Un cahier des charges regroupe les contraintes à respecter : fonctionnement, esthétique, environnement, économie, ergonomie.",
+        "Le croquis est un mode de représentation rapide, à main levée, pour partager une idée de solution.",
+        "Justifier un choix de conception, c'est vérifier que l'objet répond bien à chaque contrainte du cahier des charges.",
       ],
     }}
   >
     <div class="activity-content">
-      <h3>Qu'est-ce que la modélisation 3D ?</h3>
-      <p>La <strong>modélisation 3D</strong> consiste à créer une représentation numérique tridimensionnelle d'un objet sur un ordinateur. Elle est utilisée dans tous les domaines de la conception : architecture, design de produit, jeux vidéo, cinéma, ingénierie. En technologie, la modélisation 3D permet de concevoir et valider un objet avant de le fabriquer.</p>
 
-      <h3>SketchUp : un logiciel de CAO accessible</h3>
-      <p><strong>SketchUp</strong> est un logiciel de Conception Assistée par Ordinateur (CAO) intuitif, largement utilisé dans l'enseignement et l'architecture. Ses principaux avantages :</p>
-      <ul>
-        <li>Interface simple, accessible dès le collège.</li>
-        <li>Version gratuite en ligne (SketchUp Free).</li>
-        <li>Basé sur le dessin direct en 3D (pas de saisie de paramètres complexes).</li>
-        <li>Export vers d'autres formats (STL pour l'impression 3D, PDF, images).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T3 — L'OST dans son environnement</span>
+        <span class="competence-tag">OST2 — Décrire les interactions entre un objet ou un système technique, son environnement et les utilisateurs</span>
+        <span class="competence-tag">Faire la liste des interacteurs extérieurs d'un OST</span>
+        <span class="competence-tag">Repérer et expliquer les choix de conception dans les domaines de l'ergonomie et de la sécurité ou en lien avec des objectifs de développement durable</span>
+        <span class="competence-tag cps">CPS — Prendre des décisions responsables</span>
+      </div>
 
-      <h3>Les outils fondamentaux de SketchUp</h3>
-      <ul>
-        <li><strong>Orbite</strong> : faire tourner la vue pour voir l'objet sous tous les angles.</li>
-        <li><strong>Sélectionner</strong> : cliquer sur un objet pour le sélectionner (clic simple = face, double clic = face + contour, triple clic = tout l'objet).</li>
-        <li><strong>Tracer des lignes</strong> : dessiner des arêtes pour créer des formes 2D.</li>
-        <li><strong>Pousser/Tirer</strong> : outil principal pour extruder une surface 2D et créer un volume 3D.</li>
-        <li><strong>Mesure / Cotation</strong> : vérifier et afficher les dimensions du modèle.</li>
-      </ul>
+      <!-- ══════════ CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📖 Connaissances travaillées</h3>
+        <ul class="demarche-liste">
+          <li>Les interacteurs extérieurs : usagers, données, autres objets, éléments de l'environnement.</li>
+          <li>Les modes de représentation : croquis, schéma, graphique, algorithme, modélisation.</li>
+          <li>Les contraintes : prise en compte des exigences issues des normes ou d'un cahier des charges, labels et certifications.</li>
+          <li>L'ergonomie liée à l'usage.</li>
+        </ul>
+      </div>
 
-      <h3>La démarche de modélisation</h3>
-      <ol>
-        <li><strong>Analyser l'objet</strong> : identifier les formes géométriques simples qui le composent (boîtes, cylindres, prismes).</li>
-        <li><strong>Établir une feuille de route</strong> : planifier l'ordre des opérations avant de commencer.</li>
-        <li><strong>Modéliser étape par étape</strong> : construire la forme de base, puis ajouter les détails.</li>
-        <li><strong>Vérifier les dimensions</strong> : utiliser l'outil mesure pour contrôler les cotes.</li>
-      </ol>
+      <!-- ══════════ SITUATION / PROBLÉMATIQUE ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation déclenchante</h3>
+        <p><strong>Léo</strong> est un mordu d'informatique. Depuis quelques semaines, il passe beaucoup de temps sur son ordinateur pour ses projets scolaires et ses loisirs. Cependant, il commence à ressentir des <strong>fourmillements</strong> et une <strong>douleur persistante au poignet droit</strong>. Son professeur de Technologie lui explique que sa souris actuelle n'est peut-être pas adaptée à sa morphologie ni à son environnement de travail. Léo doit comprendre comment une souris interagit avec ce qui l'entoure pour choisir ou concevoir un modèle qui ne le blessera pas.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment une souris interagit-elle avec son environnement, et quelles contraintes doit-elle respecter pour être ergonomique ?
+        </div>
+      </div>
+
+      <!-- ══════════ N1 / N2 ══════════ -->
+      <div class="section-bloc">
+        <h3>🔎 Activités N1 / N2 — Interacteurs et contraintes</h3>
+        <p>Pour choisir ou dessiner une solution, il faut d'abord lister tout ce qui « touche » ou influence la souris lors de son utilisation : ce sont les <strong>interacteurs</strong>.</p>
+        <p class="niveau-label">N1 — Analyser l'environnement de la souris <span class="niveau-ressource">(vidéo ressource — code app élève : VOST2a)</span></p>
+        <ul class="demarche-liste">
+          <li>À l'aide de la vidéo ressource et du diagramme des cas d'utilisation, relie chaque interacteur à sa catégorie : <strong>usagers</strong>, <strong>données</strong>, <strong>autres objets</strong>, <strong>éléments de l'environnement</strong>.</li>
+          <li>Identifie et cite l'origine des contraintes que l'objet devra respecter.</li>
+        </ul>
+        <p class="niveau-label">N2 — Analyser les contraintes de conception et l'ergonomie <span class="niveau-ressource">(vidéos ressources — codes app élève : VOST2c, VOST2d)</span></p>
+        <ul class="demarche-liste">
+          <li>Complète le <strong>diagramme des exigences</strong> incomplet du cahier des charges avec les informations manquantes : doit respecter des normes de sécurité, ergonomie, &lt; 90 €, transmission sans fil.</li>
+          <li>Définis l'<strong>ergonomie</strong> en une phrase simple. En quoi une souris « verticale » est-elle plus ergonomique pour le poignet de Léo ?</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ N3 / N4 ══════════ -->
+      <div class="section-bloc">
+        <h3>✏️ Activités N3 / N4 — Représenter et justifier</h3>
+        <p>Maintenant que les interacteurs extérieurs et les contraintes de conception sont identifiés, il s'agit de concevoir une souris ergonomique qui répond à ces exigences, en utilisant un mode de représentation normalisé : <strong>le croquis</strong>.</p>
+        <p class="niveau-label">N3 — Représenter une solution par un croquis <span class="niveau-ressource">(code app élève : VOST2b)</span></p>
+        <ul class="demarche-liste">
+          <li>Après avoir consulté la ressource, réalise ou recherche sur Internet le croquis de la souris en respectant les contraintes identifiées.</li>
+        </ul>
+        <p class="niveau-label">N4 — Justifier les choix de conception et vérifier le cahier des charges</p>
+        <ul class="demarche-liste">
+          <li>Quel est l'interacteur extérieur qui influence le plus le choix de cette forme ?</li>
+          <li>À l'aide du tableau des contraintes, vérifie et indique quelles contraintes sont respectées. Coche la case si c'est validé et justifie ton choix pour la contrainte « Ergonomie ».</li>
+        </ul>
+        <p class="section-info">Contraintes à vérifier : <strong>fonctionnement</strong>, <strong>esthétique</strong>, <strong>environnementale</strong>, <strong>économique</strong>, <strong>ergonomie</strong>.</p>
+      </div>
+
+      <!-- ══════════ VIDÉO RESSOURCE ══════════ -->
+      <div class="section-bloc">
+        <h3>🎬 Vidéo ressource — L'ergonomie liée à l'usage</h3>
+        <p>Cette vidéo t'aide à comprendre ce qu'est l'ergonomie et pourquoi une souris verticale peut être plus adaptée au poignet de Léo.</p>
+        <video controls preload="metadata" class="video-ressource">
+          <source src="/documents/5eme/sequence-4/activite-1/La%20souris%20ergonomique.mp4" type="video/mp4" />
+          Ton navigateur ne peut pas lire cette vidéo.
+        </video>
+      </div>
+
+      <!-- ══════════ SYNTHÈSE ══════════ -->
+      <div class="section-bloc">
+        <h3>📝 Ma synthèse</h3>
+        <ul class="demarche-liste">
+          <li>En regardant le tableau de l'activité 1 : est-ce que la souris fonctionne toute seule ? Cite quatre interacteurs différents qui ont un lien direct avec elle lors de son utilisation.</li>
+          <li>Pourquoi le concepteur n'a-t-il pas dessiné une souris en forme de cube parfait ? Quel est l'objectif de donner une forme arrondie ou verticale à cet objet ? (Aide-toi du mot « confort ».)</li>
+          <li>Est-ce que l'inventeur de la souris est totalement libre de faire ce qu'il veut ? Quelles sont les « règles » ou les limites qu'il doit respecter (prix, sécurité, taille de la main) ? Dans quel document officiel toutes ces règles sont-elles regroupées ?</li>
+          <li>Pour partager ton idée de nouvelle souris avec tes camarades, as-tu eu besoin de réaliser un plan ultraprécis, ou un dessin rapide à main levée a-t-il suffi ? Comment appelle-t-on ce type de dessin technique ?</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ CPS ══════════ -->
+      <div class="section-bloc">
+        <h3>🧭 Je développe ma compétence CPS : prendre des décisions responsables</h3>
+        <p>Compétence cognitive — capacité à prendre des décisions responsables (en auto-évaluation) :</p>
+        <ul class="demarche-liste">
+          <li><strong>N1</strong> — Je sais quelles sont les options possibles.</li>
+          <li><strong>N2</strong> — Je réfléchis aux conséquences de mes choix.</li>
+          <li><strong>N3</strong> — Je choisis en pensant à mes valeurs.</li>
+          <li><strong>N4</strong> — Je fais des choix responsables régulièrement.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ FICHES DE CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Fiches de connaissances et quiz</h3>
+        <p class="section-info">Ta fiche d'activité renvoie, par code d'accès sur l'application élève, aux fiches de connaissances <strong>OST2a</strong> (interacteurs extérieurs — code FOST2a), <strong>OST2b</strong> (modes de représentation — code FOST2b), <strong>OST2c</strong> (contraintes — code FOST2c) et <strong>OST2c — l'ergonomie</strong> (code FOST2d), ainsi qu'à un quiz autocorrectif pour chacune d'elles (codes QVOST2a à QVOST2d).</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -78,5 +150,117 @@ console.log("Documents de l'activité:", documents);
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Niveaux N1-N4 ── */
+  .niveau-label {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 1rem 0 0.35rem;
+    font-size: 0.92rem;
+  }
+
+  .niveau-ressource {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Vidéo ── */
+  .video-ressource {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    margin-top: 0.75rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
   }
 </style>
