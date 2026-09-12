@@ -5,19 +5,39 @@ import BackButton from '../../../components/BackButton.astro';
 
 const documents = [
   {
-    title: "Évolution des objets techniques",
-    pdfUrl: "/documents/5eme/sequence-3/activite-1/evolution-objets.pdf"
+    title: "Activité 1 — Comprendre l'évolution des outils d'écriture",
+    pdfUrl: "/documents/5eme/sequence-3/activite-1/activite-1.pdf"
+  },
+  {
+    title: "OST1b — La fonction technique, le principe technique",
+    pdfUrl: "/documents/5eme/sequence-3/activite-1/OST1b-La-fonction-technique-le-principe-technique.pdf"
+  },
+  {
+    title: "OST1c — La famille et la lignée d'OST",
+    pdfUrl: "/documents/5eme/sequence-3/activite-1/OST1c-la-famille-et-la-lignee-dOST.pdf"
+  },
+  {
+    title: "Document 1 — Le stylo, une histoire de mécanismes",
+    imageUrl: "/documents/5eme/sequence-3/activite-1/Histoire%20écriture%20doc%201.jpg"
+  },
+  {
+    title: "Document 2 — L'histoire du stylo à travers les âges",
+    imageUrl: "/documents/5eme/sequence-3/activite-1/Histoire%20écriture%20doc%202.jpg"
+  },
+  {
+    title: "Document 3 — Tableau de synthèse historique des outils d'écriture",
+    pdfUrl: "/documents/5eme/sequence-3/activite-1/Doc%203%20sur%20histoire%20écriture.pdf"
   }
 ];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 3 - 5ème" level="5eme">
   <BackButton href="/5eme/sequence-3" />
-  <h1>Activité 1 - Lancement de séquence</h1>
-  
+  <h1>Activité 1 - Comprendre l'évolution des outils d'écriture</h1>
+
   <ActivitySection
-    title="Comment comparer les évolutions technologiques d'un objet technique ?"
-    description="Dans cette activité, nous allons découvrir différents objets techniques et leurs évolutions au fil du temps, pour comprendre comment la technologie s'adapte aux besoins des utilisateurs."
+    title="Comprendre l'évolution des outils d'écriture"
+    description="Durée : 1h30 — Le Musée d'Aquitaine à Bordeaux organise une exposition temporaire sur l'histoire de l'écriture. Le conservateur vient de recevoir un carton contenant des outils d'écriture de différentes époques (un calame, une plume d'oie, un porte-plume et un stylo-bille), mais les étiquettes descriptives ont été égarées. Pour aider les visiteurs à comprendre comment l'Homme a amélioré ces outils, tu dois réaliser un panneau d'exposition expliquant le passage d'une technique à une autre."
     documents={documents}
     activityNumber={1}
     totalActivities={4}
@@ -25,45 +45,114 @@ const documents = [
     sequenceLabel="Séquence 3 — Évolution des objets techniques"
     retenir={{
       definitions: [
-        { term: "Objet technique (OT)", def: "Objet conçu et fabriqué par l'être humain pour répondre à un besoin précis." },
-        { term: "Principe technique", def: "Solution technique adoptée pour réaliser une fonction (ex : faire tourner un moteur par induction électromagnétique)." },
-        { term: "Critère de comparaison", def: "Caractéristique choisie pour comparer différents objets ou générations d'un même objet (poids, taille, consommation…)." },
+        { term: "Fonction technique", def: "Action qui réalise tout ou partie de la fonction d'usage de l'OST. Elle s'exprime par un verbe à l'infinitif suivi d'un complément (ex : « stocker l'encre »)." },
+        { term: "Principe technique", def: "Explique de quelle manière fonctionne un OST : quel phénomène scientifique ou quelle technique est utilisé (ex : dépôt d'encre par capillarité, par bille tournante)." },
+        { term: "Famille d'objets", def: "Regroupe tous les OST qui répondent à un même besoin avec la même fonction d'usage (ex : la famille des outils d'écriture)." },
+        { term: "Lignée d'objets", def: "Montre, dans l'ordre chronologique du plus ancien au plus récent, les objets d'une même famille qui fonctionnent avec le même principe technique." },
       ],
       points: [
-        "Un OT évolue pour mieux satisfaire les besoins des utilisateurs ou s'adapter aux contraintes de son époque.",
-        "Repérer les changements entre les générations : forme, matériaux, énergie, fonctions, performances.",
-        "L'évolution peut être liée à une invention, une innovation ou une contrainte environnementale.",
+        "Une fonction technique répond à la question « Comment assurer la fonction d'usage ? » ; un principe technique répond à « Quel phénomène est utilisé ? ».",
+        "Le porte-plume stocke l'encre à l'extérieur (on la trempe), le stylo-plume la stocke dans un réservoir interne : même fonction technique, principes différents.",
+        "Le stylo-bille régule le débit d'encre grâce à une bille tournante, plus performante que la fente du stylo-plume sur des supports variés.",
+        "L'évolution des outils d'écriture (calame → plume d'oie → stylo-plume → stylo-bille → stylo numérique) répond toujours à un besoin de simplifier la vie de l'utilisateur.",
       ],
     }}
   >
     <div class="activity-content">
-      <h3>Pourquoi les objets techniques évoluent-ils ?</h3>
-      <p>Les <strong>objets techniques</strong> évoluent constamment pour répondre à de nouveaux besoins, exploiter de nouvelles technologies ou s'adapter à de nouvelles contraintes (environnementales, économiques, légales). Comparer les différentes générations d'un objet permet de comprendre ces changements et d'identifier les tendances technologiques.</p>
 
-      <h3>Les facteurs d'évolution des objets techniques</h3>
-      <ul>
-        <li><strong>Évolution des besoins</strong> : les utilisateurs veulent plus de confort, de fonctionnalités, de légèreté (ex : téléphone fixe → portable → smartphone).</li>
-        <li><strong>Progrès scientifiques</strong> : de nouveaux matériaux ou phénomènes physiques permettent de nouvelles solutions (ex : LEDs remplacent les ampoules à incandescence).</li>
-        <li><strong>Contraintes environnementales</strong> : réduire la consommation d'énergie, utiliser des matériaux recyclables, limiter les déchets.</li>
-        <li><strong>Contraintes économiques</strong> : réduire le coût de fabrication, augmenter la durée de vie.</li>
-        <li><strong>Réglementation</strong> : normes de sécurité, directives européennes (ex : interdiction des ampoules à incandescence).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T1 — L'évolution des OST</span>
+        <span class="competence-tag">OST1 — Décrire les liens entre usages et évolutions technologiques des objets et des systèmes techniques</span>
+        <span class="competence-tag">OST11 — Collecter, trier et analyser des données</span>
+        <span class="competence-tag">OST12 — Comparer des principes techniques pour une même fonction technique</span>
+        <span class="competence-tag">OST1b — La fonction technique, le principe technique</span>
+        <span class="competence-tag">OST1c — La famille et la lignée d'OST</span>
+        <span class="competence-tag cps">CPS — Communiquer de façon constructive</span>
+      </div>
 
-      <h3>Méthode de comparaison d'objets techniques</h3>
-      <p>Pour comparer les générations d'un objet technique, tu utiliseras un <strong>tableau comparatif</strong> avec des critères identiques pour chaque génération :</p>
-      <ol>
-        <li>Identifier l'objet technique et sa fonction principale.</li>
-        <li>Lister les générations dans l'ordre chronologique.</li>
-        <li>Choisir les critères de comparaison pertinents (forme, matériaux, énergie, performances, fonctions, prix).</li>
-        <li>Remplir le tableau et identifier les tendances d'évolution.</li>
-      </ol>
+      <!-- ══════════ SITUATION / PROBLÉMATIQUE ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation déclenchante</h3>
+        <p>Le <strong>Musée d'Aquitaine</strong> à Bordeaux organise une exposition temporaire sur l'histoire de l'écriture. Le conservateur vient de recevoir un carton contenant des outils d'écriture de différentes époques (un <strong>calame</strong>, une <strong>plume d'oie</strong>, un <strong>porte-plume</strong> et un <strong>stylo-bille</strong>). Cependant, les étiquettes descriptives ont été égarées. Pour aider les visiteurs à comprendre comment l'Homme a amélioré ces outils, tu dois réaliser un <strong>panneau d'exposition</strong> expliquant le passage d'une technique à une autre.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment faire pour classer ces outils d'écriture et expliquer leurs évolutions ?
+        </div>
+        <p class="section-info">Sur ta fiche d'activité, note tes premiers <strong>constats/observations</strong>, formule ton <strong>problème à résoudre</strong> (« Comment … »), puis note tes <strong>idées pour le résoudre</strong>, avant de commencer les activités.</p>
+      </div>
 
-      <h3>Exemples d'évolutions technologiques</h3>
-      <ul>
-        <li><strong>Éclairage</strong> : bougie → lampe à huile → ampoule à incandescence → ampoule fluo-compacte → LED. Tendance : consommation énergétique divisée par 10.</li>
-        <li><strong>Téléphone</strong> : téléphone fixe → téléphone portable → smartphone. Tendance : miniaturisation et multifonction.</li>
-        <li><strong>Stockage de musique</strong> : vinyle → cassette → CD → MP3 → streaming. Tendance : dématérialisation.</li>
-      </ul>
+      <!-- ══════════ N1 / N2 ══════════ -->
+      <div class="section-bloc">
+        <h3>🔎 Activités N1 / N2 — Reconnaître, identifier, expliquer</h3>
+        <p>Pour organiser l'exposition, il faut d'abord savoir <strong>classer ces objets</strong> et identifier leurs points communs.</p>
+        <p class="niveau-label">N1 — Reconnaître et identifier <span class="niveau-ressource">(ressource : OST1c)</span></p>
+        <ul class="demarche-liste">
+          <li>Parmi les objets présentés, nomme ceux qui appartiennent à la <strong>famille</strong> des « outils d'écriture ».</li>
+          <li>Nomme une <strong>lignée</strong> d'objets au sein de cette famille.</li>
+          <li>Indique la <strong>fonction d'usage</strong> commune à tous ces objets.</li>
+        </ul>
+        <p class="niveau-label">N2 — Identifier et expliquer <span class="niveau-ressource">(ressource : OST1b)</span></p>
+        <ul class="demarche-liste">
+          <li>Explique avec tes mots la différence entre une <strong>fonction technique</strong> et un <strong>principe technique</strong>.</li>
+          <li>Pour la fonction technique « Stocker l'encre » : explique la différence de principe technique entre un <strong>porte-plume</strong> et un <strong>stylo-plume</strong> (où se trouve l'encre ?).</li>
+          <li>Explique la différence entre une <strong>famille d'objets</strong> et une <strong>lignée d'objets</strong> en utilisant l'exemple des outils d'écriture.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ N3 / N4 ══════════ -->
+      <div class="section-bloc">
+        <h3>🖋️ Activités N3 / N4 — Collecter, comparer, présenter</h3>
+        <p>Pour finaliser le projet du musée, il faut expliquer précisément comment les ingénieurs ont résolu les problèmes de fuites d'encre et d'autonomie, en comparant les mécanismes internes et en utilisant la synthèse historique.</p>
+        <p class="niveau-label">N3a — Collecter et analyser <span class="niveau-ressource">(Document 1)</span></p>
+        <ul class="demarche-liste">
+          <li>Identifie, sur le Document 1, l'élément qui permet de <strong>réguler le débit d'encre</strong> du stylo-bille.</li>
+          <li>Explique pourquoi ce système est plus performant que la <strong>fente</strong> du stylo-plume pour écrire sur des supports différents (ex : papier vertical).</li>
+        </ul>
+        <p class="niveau-label">N3b — Collecter et calculer <span class="niveau-ressource">(Document 2)</span></p>
+        <ul class="demarche-liste">
+          <li>Relève, sur la frise chronologique du Document 2, les <strong>dates d'apparition</strong> du stylo-plume et du stylo-bille.</li>
+          <li>Calcule le temps qu'il a fallu à l'Homme pour passer de l'encre <strong>liquide</strong> à l'encre <strong>visqueuse</strong> (plus épaisse).</li>
+        </ul>
+        <p class="niveau-label">N4a — Comparer <span class="niveau-ressource">(Document 3)</span></p>
+        <ul class="demarche-liste">
+          <li>Compare le <strong>crayon</strong> et le <strong>stylo-bille</strong> à partir du Document 3.</li>
+          <li>Explique en quoi leurs principes techniques différents (trace déposée par frottement pour le crayon / dépôt d'encre pour le stylo) influencent la <strong>précision</strong>, la possibilité de <strong>modifier le tracé</strong> et leurs usages (dessin, schéma, prise de notes).</li>
+          <li>Justifie dans quels cas chaque objet est le plus adapté.</li>
+        </ul>
+        <p class="niveau-label">N4b — Justifier</p>
+        <ul class="demarche-liste">
+          <li>Le conservateur du musée affirme que « l'évolution technique cherche toujours à simplifier la vie de l'utilisateur ». En t'appuyant sur le Document 3, justifie cette affirmation en expliquant le passage du <strong>stylo-plume</strong> au <strong>stylo numérique</strong>.</li>
+          <li>Quels sont les deux besoins auxquels répond le stylo numérique aujourd'hui ?</li>
+        </ul>
+        <p class="niveau-label niveau-plus">N4+ — Réaliser</p>
+        <p class="section-info">Réalise le <strong>panneau d'exposition</strong> du musée : sur une feuille A4 au format paysage, crée une affiche expliquant le passage d'une technique d'écriture à une autre.</p>
+      </div>
+
+      <!-- ══════════ SYNTHÈSE ══════════ -->
+      <div class="section-bloc">
+        <h3>📝 Ma synthèse</h3>
+        <p class="section-info">Explique ce que l'on peut dire de l'évolution des outils d'écriture en te servant des mots-clés suivants : <strong>« Fonction technique »</strong> / <strong>« Principe technique »</strong> / <strong>« Famille »</strong> / <strong>« Lignée »</strong>.</p>
+      </div>
+
+      <!-- ══════════ CPS ══════════ -->
+      <div class="section-bloc">
+        <h3>🗣️ Je développe ma compétence CPS : communiquer de façon constructive</h3>
+        <p>Compétences sociales — capacité à communiquer efficacement (en auto-évaluation) :</p>
+        <ul class="demarche-liste">
+          <li><strong>N1</strong> — Je sais partager une information simple avec mes mots.</li>
+          <li><strong>N2</strong> — Je sais expliquer clairement une idée ou une observation.</li>
+          <li><strong>N3</strong> — Je sais organiser mes informations pour présenter une comparaison ou une analyse.</li>
+          <li><strong>N4</strong> — Je sais communiquer une explication complète, structurée et compréhensible par tous.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ FICHES DE CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Fiches de connaissances et quiz</h3>
+        <p class="section-info">Les fiches de connaissances <strong>OST1b</strong> (la fonction technique, le principe technique) et <strong>OST1c</strong> (la famille et la lignée d'OST) sont consultables ci-dessus, dans les documents de l'activité. Un quiz auto-correctif est associé à chacune d'elles sur ta fiche (accès par QR code).</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -73,5 +162,111 @@ const documents = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Niveaux N1-N4 ── */
+  .niveau-label {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 1rem 0 0.35rem;
+    font-size: 0.92rem;
+  }
+
+  .niveau-label.niveau-plus {
+    color: #7c3aed;
+  }
+
+  .niveau-ressource {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
   }
 </style>
