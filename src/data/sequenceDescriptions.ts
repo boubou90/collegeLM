@@ -31,7 +31,7 @@ export const sequenceDescriptions: Record<string, SeqInfo[]> = {
     { emoji: '🍓', title: "L'OST idéal : L'ordinateur Raspberry Pi",                     desc: "Comprendre l'impact des innovations technologiques sur notre société." },
     { emoji: '🛴', title: "L'OST idéal : Trottinette électrique et VAE",                 desc: 'Approfondir la programmation pour contrôler des systèmes automatisés.' },
     { emoji: '🤖', title: 'Les secrets du mBot',                                          desc: 'Analyser les enjeux énergétiques et explorer les solutions durables.' },
-    { emoji: '📊', title: 'La vie du VAE en données',                                     desc: 'Étudier les réseaux de communication et leurs protocoles.' },
+    { emoji: '📊', title: 'La vie du VAE en données',                                     desc: "Exploiter les données d'un VAE connecté : descripteurs, représentation binaire et ASCII, nettoyage, tri et calculs dans un tableur, avec une réflexion sur la qualité des données et la vie privée." },
     { emoji: '🔗', title: 'Les chemins de l\'information',                                desc: 'Concevoir et programmer des systèmes robotisés et automatisés.' },
     { emoji: '🪟', title: "Le volet à lames orientables à l'ère de l'IA",                desc: "Consolider toutes les notions pour réussir l'épreuve de technologie." },
   ],
