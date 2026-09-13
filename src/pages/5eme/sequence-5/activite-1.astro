@@ -5,67 +5,182 @@ import BackButton from '../../../components/BackButton.astro';
 
 const documents = [
   {
-    title: "Lancement de Séquence",
-    pdfUrl: "/documents/5eme/sequence-5/activite-1/Fiche-de-lancement-de-sequence.pdf"
+    title: "📄 Cycle de vie d'une lampe",
+    pdfUrl: "/documents/5eme/sequence-5/activite-1/cycledevielampebubble.pdf"
+  },
+  {
+    title: "📘 Fiche connaissance — OST3d : Les piliers du développement durable et le cycle de vie d'un OST",
+    pdfUrl: "/documents/5eme/sequence-5/connaissances/OST3d-les-piliers-du-developpement-durable-et-les-differentes-etapes-du-cycle-de-vie-dun-OST.pdf"
+  },
+  {
+    title: "💡 Notice de la lampe BUBBLE",
+    pdfUrl: "/documents/5eme/sequence-5/activite-1/Bubble-lamp-LH70-QSG-2024-Web.pdf"
+  },
+  {
+    title: "📘 Fiche connaissance — OST3a : Les composantes d'une notice et d'une documentation technique",
+    pdfUrl: "/documents/5eme/sequence-5/connaissances/OST3a-les-composantes-dune-notice-et-dune-documentation-technique-et-leur-organisation.pdf"
+  },
+  {
+    title: "📋 Fiche produit LEDEÏKA",
+    pdfUrl: "/documents/5eme/sequence-5/activite-1/FICHE%20PRODUIT%20-%20LEDA%C3%8FKA%20-%20FR.pdf"
+  },
+  {
+    title: "📋 Fiche produit LED TWIN",
+    pdfUrl: "/documents/5eme/sequence-5/activite-1/FICHE%20PRODUIT%20-%20LEDTWIN%20N%20-%20FR.pdf"
+  },
+  {
+    title: "🖼️ Lampe BUBBLE",
+    imageUrl: "/documents/5eme/sequence-5/activite-1/BUBBLE.jpg"
   }
 ];
 ---
 
 <ClassLayout title="Activité 1 - Séquence 5 - 5ème" level="5eme">
   <BackButton href="/5eme/sequence-5" />
-  <h1>Activité 1 - La souris : son intéraction avec son environnement</h1>
-  
+  <h1>Activité 1 - Comment choisir un objet performant et respectueux de l'environnement ?</h1>
+
   <ActivitySection
-    title="Comment bien choisir ma souris informatique ?"
-    description="Dans cette activité, nous allons découvrir d'un manière générale la souris informatique, quelle souris choisir parmis tous les modèles exsistants"
+    title="Comment choisir un objet performant et respectueux de l'environnement ?"
+    description="Durée : 1h00 — Tes parents veulent t'acheter une nouvelle lampe de bureau pour la rentrée. En magasin, des dizaines de modèles s'offrent à vous, avec des logos « écologiques » et une notice pleine de symboles. Comment savoir si cette lampe respecte vraiment l'environnement, du début à la fin de sa vie ?"
     documents={documents}
     activityNumber={1}
-    totalActivities={5}
+    totalActivities={2}
     sequenceHref="/5eme/sequence-5"
-    sequenceLabel="Séquence 5 — La souris et l'OST"
+    sequenceLabel="Séquence 5 — Choisir un objet technique performant et respectueux de l'environnement"
     retenir={{
       definitions: [
-        { term: "OST (Objet ou Système Technique)", def: "Objet ou système conçu par l'être humain pour répondre à un besoin en interagissant avec son environnement." },
-        { term: "Interface homme-machine", def: "Ensemble des éléments (écran, boutons, clavier, souris…) permettant à l'utilisateur d'interagir avec un système informatique." },
-        { term: "Ergonomie", def: "Science qui adapte les outils, postes de travail et interfaces aux caractéristiques et capacités des utilisateurs." },
+        { term: "Cycle de vie d'un OST", def: "Ensemble des grandes étapes de la vie d'un objet technique : extraction des matières premières, fabrication, distribution/transport, utilisation, fin de vie / recyclage." },
+        { term: "Notice / documentation technique", def: "Document fourni avec un objet technique, organisé en rubriques (caractéristiques techniques, fonctionnement, consignes de sécurité, entretien, recyclage, garantie, contacts SAV) qui permet de comprendre comment l'utiliser et l'entretenir." },
+        { term: "Développement durable", def: "Façon de concevoir, produire et utiliser les objets techniques en limitant leur impact sur l'environnement, du début à la fin de leur cycle de vie." },
       ],
       points: [
-        "Choisir un OST = analyser ses fonctions, ses contraintes et son impact sur l'utilisateur et l'environnement.",
-        "La souris = interface homme-machine pour contrôler le curseur à l'écran.",
-        "L'ergonomie prévient les troubles musculo-squelettiques (TMS) liés à une mauvaise utilisation.",
+        "Un objet technique passe par 5 grandes étapes : extraction des matières premières, fabrication, distribution/transport, utilisation, fin de vie/recyclage.",
+        "La notice ou la documentation technique regroupe plusieurs rubriques : caractéristiques techniques, fonctionnement, consignes de sécurité, entretien, recyclage, garantie.",
+        "Pour choisir un objet respectueux de l'environnement, on regarde les matériaux utilisés, la source d'énergie et la durée de vie annoncée.",
+        "Comparer deux fiches techniques permet de justifier un choix éco-responsable à l'aide de données précises (matériaux, durée de vie, recyclabilité, classe énergétique).",
       ],
     }}
   >
     <div class="activity-content">
-      <h3>La souris : un objet ou système technique (OST)</h3>
-      <p>La <strong>souris informatique</strong> est un objet technique omniprésent dans notre quotidien numérique. C'est une interface homme-machine qui permet de contrôler le curseur à l'écran en déplaçant un pointeur. Elle a beaucoup évolué depuis sa création dans les années 1960 : boule mécanique → optique → laser → sans fil.</p>
 
-      <h3>Les différents types de souris</h3>
-      <ul>
-        <li><strong>Souris optique filaire</strong> : la plus courante, précise, pas de pile à changer. Limitée par le câble.</li>
-        <li><strong>Souris sans fil (Bluetooth ou USB)</strong> : liberté de mouvement, mais pile ou batterie à recharger.</li>
-        <li><strong>Souris ergonomique</strong> : forme adaptée à l'anatomie pour réduire les douleurs au poignet.</li>
-        <li><strong>Souris gaming</strong> : haute précision (DPI réglable), boutons supplémentaires, rafraîchissement élevé.</li>
-        <li><strong>Trackpad (touchpad)</strong> : surface tactile intégrée aux ordinateurs portables.</li>
-        <li><strong>Trackball</strong> : boule que l'on fait rouler avec les doigts sans déplacer la souris.</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T4 — Le choix d'un objet technique dans un contexte de développement durable</span>
+        <span class="competence-tag">T5 — La performance d'un OST</span>
+        <span class="competence-tag">OST3 — Caractériser et choisir un objet ou un système technique selon différents critères</span>
+        <span class="competence-tag">OST31 — Repérer pour un OST les matériaux, les sources et les formes d'énergie, le traitement de l'information</span>
+        <span class="competence-tag">OST32 — Identifier les étapes du cycle de vie d'un OST influencées par les choix de matériaux et d'énergie</span>
+        <span class="competence-tag cps">CPS — C31 : Capacité à faire des choix responsables</span>
+      </div>
 
-      <h3>Choisir la bonne souris</h3>
-      <p>Le choix d'une souris dépend de plusieurs critères :</p>
-      <ul>
-        <li><strong>Usage</strong> : bureautique (précision modérée), graphisme (haute précision), gaming (DPI élevé).</li>
-        <li><strong>Ergonomie</strong> : droitier ou gaucher, taille de la main, préhension (palmaire, digitale, crayon).</li>
-        <li><strong>Connectivité</strong> : filaire (fiabilité) ou sans fil (liberté).</li>
-        <li><strong>DPI</strong> : sensibilité du capteur. 800 DPI = usage standard ; 1600+ DPI = gaming ou grands écrans.</li>
-        <li><strong>Environnement</strong> : surface de travail (tapis de souris recommandé), compatibilité du système d'exploitation.</li>
-      </ul>
+      <!-- ══════════ CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📖 Connaissances travaillées</h3>
+        <ul class="demarche-liste">
+          <li><strong>OST3a</strong> — Les composantes d'une notice et d'une documentation technique et leur organisation.</li>
+          <li><strong>OST3d</strong> — Les piliers du développement durable et les différentes étapes du cycle de vie d'un OST.</li>
+        </ul>
+      </div>
 
-      <h3>Analyse fonctionnelle de la souris (bête à cornes)</h3>
-      <ul>
-        <li><strong>À qui rend-elle service ?</strong> → À l'utilisateur d'un ordinateur.</li>
-        <li><strong>Sur quoi agit-elle ?</strong> → Sur le curseur à l'écran.</li>
-        <li><strong>Dans quel but ?</strong> → Permettre de sélectionner, cliquer et naviguer dans une interface graphique.</li>
-      </ul>
+      <!-- ══════════ SITUATION / PROBLÉMATIQUE ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation déclenchante</h3>
+        <p>C'est la rentrée scolaire ! Pour aménager ton coin travail à la maison, tes parents décident de t'acheter une nouvelle lampe de bureau. En magasin, vous découvrez des dizaines de modèles : certaines sont en <strong>plastique brillant</strong>, d'autres en <strong>bois recyclé</strong>, certaines fonctionnent avec une <strong>batterie rechargeable</strong>, d'autres se branchent sur secteur. Les étiquettes affichent des logos « écologiques », « durables » ou « basse consommation ». Mais sur la boîte, il y a aussi une notice très complexe pleine de symboles, et un graphique montrant le « cycle de vie » du produit.</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment savoir si cette lampe respecte vraiment l'environnement du début à la fin de sa vie, et comment va-t-on réussir à l'utiliser et à l'entretenir correctement sans tout casser ?
+        </div>
+      </div>
+
+      <!-- ══════════ CONSTATS / PROBLÈME / IDÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>🧐 Mes constats, mes observations</h3>
+        <p class="section-info">Note ce que tu remarques sur les emballages des lampes : matériaux annoncés, logos, symboles présents sur la notice, graphique du « cycle de vie »…</p>
+        <h3>❓ Mon problème à résoudre</h3>
+        <p class="section-info">Reformule avec tes mots la question posée par tes parents.</p>
+        <h3>💡 Mes idées pour le résoudre</h3>
+        <ul class="demarche-liste">
+          <li>Lister les matériaux de la lampe (plastique, bois, métal…) et regarder si on peut les recycler en fin de vie.</li>
+          <li>Étudier la notice technique de la lampe pour savoir comment elle marche, quelle énergie elle consomme, et comment la réparer sans la jeter.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ N1 / N2 ══════════ -->
+      <div class="section-bloc">
+        <h3>🔎 Activités N1 / N2 — Le cycle de vie et la notice technique</h3>
+        <p>Pour choisir un objet technique durable, il est nécessaire de connaître son cycle de vie et de s'interroger sur ses impacts sur l'environnement.</p>
+
+        <p class="niveau-label">N1 — Identifier les étapes du cycle de vie d'un objet technique <span class="niveau-ressource">(vidéo ressource : Cycle de vie d'un objet technique · fiche de connaissance OST3d)</span></p>
+        <ul class="demarche-liste">
+          <li><strong>N1a</strong> — À partir du schéma et de la vidéo « cycle de vie d'un OST », complète les grandes étapes du cycle de vie d'un objet technique : extraction des matières premières, fabrication, distribution/transport, utilisation, fin de vie / recyclage.</li>
+          <li><strong>N1b</strong> — À quelle étape du cycle de vie peuvent être associées ces actions ? La fabrication d'une lampe, son utilisation dans une maison, son recyclage.</li>
+        </ul>
+
+        <p class="niveau-label">N2 — Lire une documentation technique pour y repérer les matériaux et l'énergie <span class="niveau-ressource">(vidéo ressource : Les composantes d'une notice et d'une documentation technique · fiche de connaissance OST3a)</span></p>
+        <ul class="demarche-liste">
+          <li><strong>N2a</strong> — À partir de la vidéo « Les composantes d'une notice et d'une documentation technique », cite au moins trois grandes rubriques qui organisent généralement une notice : nom et référence du produit, contenu de l'emballage, fonctionnement et mode d'emploi, consignes de sécurité, entretien/nettoyage/dépannage, conditions de garantie, coordonnées du fabricant et du SAV, table des matières.</li>
+          <li><strong>N2b</strong> — Le vocabulaire technique : relie chaque partie de la notice d'utilisation à l'exemple qui lui correspond — <em>Caractéristiques techniques</em> ↔ « Tension : 230V, Puissance de l'ampoule : 5W » ; <em>Consignes de sécurité</em> ↔ « Ne pas utiliser la lampe près d'un lavabo ou d'un point d'eau » ; <em>Recyclage / Fin de vie</em> ↔ « Déposez votre lampe cassée dans un bac de recyclage DEEE ».</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ N3 / N4 ══════════ -->
+      <div class="section-bloc">
+        <h3>✏️ Activités N3 / N4 — Exploiter les fiches techniques</h3>
+        <p>Maintenant que tu sais ce qu'est une notice ou une fiche technique, pourras-tu trouver les informations utiles ?</p>
+
+        <p class="niveau-label">N3 — Sélectionner les bonnes informations dans une notice <span class="niveau-ressource">(notice de la lampe BUBBLE, fiche ressource « cycle de vie de la lampe BUBBLE »)</span></p>
+        <p class="section-info">Extrait de la notice : « Fonctionnement : Branchez l'adaptateur secteur 12V sur une prise murale. Appuyez sur le bouton tactile situé sur le socle en plastique recyclé (ABS) pour l'allumer. Le bras en aluminium est articulé pour diriger la lumière. L'éclairage est assuré par 12 LED basse consommation. »</p>
+        <ul class="demarche-liste">
+          <li><strong>N3a</strong> — À partir de cet extrait, repère et nomme : la source d'énergie qui permet à la lampe de fonctionner ; deux matériaux différents utilisés pour la fabriquer ; un autre usage de l'énergie que permet cette lampe.</li>
+          <li><strong>N3b</strong> — À l'aide de la fiche ressource, écris les étapes du cycle de vie les plus influencées par le choix des matériaux.</li>
+          <li><strong>N3c</strong> — À l'aide de la fiche ressource, écris les étapes du cycle de vie les plus influencées par le choix de l'énergie.</li>
+          <li><strong>N3d</strong> — À partir de la fiche technique de la lampe <strong>LEDEÏKA</strong>, repère : l'énergie utilisée par la lampe ; les matériaux qui la constituent ; la partie de la lampe qui permet de régler l'intensité d'éclairage ; la source lumineuse.</li>
+        </ul>
+
+        <p class="niveau-label">N4 — Faire un choix éco-responsable <span class="niveau-ressource">(fiches techniques des lampes LEDEÏKA et LED TWIN)</span></p>
+        <p class="section-info">Le collège souhaite acheter de nouvelles lampes pour le CDI. Tu dois aider le professeur à choisir en comparant la documentation technique de deux lampes.</p>
+        <ul class="demarche-liste">
+          <li><strong>N4a</strong> — À partir de la fiche technique des deux lampes, repère les informations utiles pour savoir si elles sont respectueuses de la planète (matériaux, énergie, garantie, durée de vie de l'ampoule, origine, classe énergétique, indice de réparabilité).</li>
+          <li><strong>N4b</strong> — Quelle lampe te semble la plus respectueuse de la planète ? Justifie ton choix avec des données issues des deux documents.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ RESSOURCES ══════════ -->
+      <div class="section-bloc">
+        <h3>🎬 Ressources utilisées dans cette activité</h3>
+        <p class="section-info">
+          Les documents ci-dessous (cycle de vie de la lampe BUBBLE, notice de la lampe BUBBLE, fiches produit LEDEÏKA et LED TWIN, photo de la lampe BUBBLE) sont disponibles à la fin de cette page.<br />
+          Les vidéos « Cycle de vie d'un objet technique » et « Les composantes d'une notice et d'une documentation technique et leur organisation » ne sont pas encore disponibles sur le site.
+        </p>
+      </div>
+
+      <!-- ══════════ SYNTHÈSE ══════════ -->
+      <div class="section-bloc">
+        <h3>📝 Ma synthèse</h3>
+        <ul class="demarche-liste">
+          <li>Tous les objets techniques possèdent un cycle de vie, dont les étapes principales sont : ...</li>
+          <li>Pour choisir un objet technique durable, on peut consulter deux types de documents : ...</li>
+          <li>Les informations qu'on peut trouver dans ces documents sont : ...</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ CPS ══════════ -->
+      <div class="section-bloc">
+        <h3>🧭 Je développe ma compétence CPS : C31 — Capacité à faire des choix responsables</h3>
+        <ul class="demarche-liste">
+          <li><strong>N1</strong> — Je choisis sans réfléchir.</li>
+          <li><strong>N2</strong> — Je choisis avec aide, sans expliquer.</li>
+          <li><strong>N3</strong> — Je justifie mon choix avec un critère.</li>
+          <li><strong>N4</strong> — Je compare plusieurs solutions et j'argumente.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ FICHES DE CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Fiches de connaissances et quiz</h3>
+        <p class="section-info">Cette activité s'appuie sur les fiches de connaissances <strong>OST3a</strong> (les composantes d'une notice et d'une documentation technique et leur organisation) et <strong>OST3d</strong> (les piliers du développement durable et les différentes étapes du cycle de vie d'un OST), disponibles ci-dessus, ainsi que sur un quiz autocorrectif associé à chacune d'elles. Le quiz sera ajouté au site dans une prochaine étape.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -75,5 +190,107 @@ const documents = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Niveaux N1-N4 ── */
+  .niveau-label {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 1rem 0 0.35rem;
+    font-size: 0.92rem;
+  }
+
+  .niveau-ressource {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
   }
 </style>

@@ -4,28 +4,16 @@ import SequencePresentation from '../../../components/SequencePresentation.astro
 import ActivityLinks from '../../../components/ActivityLinks.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const description = "Dans cette séquence, les élèves sont sensibilisés et reconnaissent les actions réciproques s'exerçant entre l’objet et son environnement extérieur…";
+const description = "Cette séquence permet aux élèves d'apprendre à choisir un objet technique performant et respectueux de l'environnement, en s'appuyant sur l'étude de lampes de bureau : identifier le cycle de vie d'un objet technique, exploiter une notice ou une documentation technique, puis comparer des critères de performance pour justifier un choix éco-responsable. Elle comporte deux activités d'une heure chacune, permettant d'étudier le cycle de vie, le développement durable, la documentation technique et les critères de performance d'un objet technique.";
 
 const activities = [
   {
-    title: "Lancement de séquence",
-    description: "Comment bien choisir ma souris informatique ?"
+    title: "Comment choisir un objet performant et respectueux de l'environnement ?",
+    description: "Identifier le cycle de vie d'un objet technique, exploiter une notice ou une documentation technique et repérer les matériaux et les sources d'énergie pour faire un choix plus respectueux de l'environnement."
   },
   {
-    title: "identifier les composants du réseau informatique",
-    description: "Comment Identifier les composants du réseau informatique ?"
-  },
-  {
-    title: "Utiliser facilement et en sécurité l’objet technique, communiquer sur sa forme",
-    description: "omment éviter les douleurs au poignet lors de l'utilisation d'une souris informatique ?"
-  },
-  {
-    title: "Fiches de connaissance",
-    description: "OST dans son environnement"
-  },
-  {
-    title: "Ressources",
-    description: "La souris ergonomique"
+    title: "Le choix d'une lampe performante et qui prend soin de la planète",
+    description: "Identifier des critères de performance et les utiliser pour comparer et choisir un objet technique adapté à un besoin."
   }
 ];
 ---
@@ -33,12 +21,12 @@ const activities = [
 <ClassLayout title="Séquence 5 - 5ème" level="5eme">
   <BackButton href="/5eme" />
   <h1>Séquence 5</h1>
-  
-  <SequencePresentation 
+
+  <SequencePresentation
     title="Présentation de la séquence"
     description={description}
     activities={activities.map(a => a.description)}
-    question="Comment analyser les interactions d'un objet technique avec son environnement pour mieux le choisir ?"
+    question="Comment choisir un objet technique performant et respectueux de l'environnement ?"
   />
 
   <ActivityLinks sequenceNumber={5} activities={activities} level="5eme" />

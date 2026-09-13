@@ -3,59 +3,168 @@ import ClassLayout from '../../../layouts/ClassLayout.astro';
 import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
 
-const documents = [
+const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
   {
-    title: "Identifier les composants du réseau informatique",
-    pdfUrl: "/documents/5eme/sequence-5/activite-2/Identifier-les-interacteurs-exterieurs.pdf"
+    title: "📘 Fiche connaissance — OST3f : Les critères de performance d'un OST",
+    pdfUrl: "/documents/5eme/sequence-5/connaissances/OST3f-les-criteres-de-performance-dun-OST-grandeurs-mesurables-_-vitesse-autonomie-energetique.pdf"
+  },
+  {
+    title: "📊 Tableau comparatif des ampoules",
+    pdfUrl: "/documents/5eme/sequence-5/activite-2/Tableau%20comparatif%20ampoules.pdf"
   }
 ];
 ---
 
 <ClassLayout title="Activité 2 - Séquence 5 - 5ème" level="5eme">
   <BackButton href="/5eme/sequence-5" />
-  <h1>Activité 2 - La souris : son interaction avec son environnement</h1>
-  
+  <h1>Activité 2 - Le choix d'une lampe performante et qui prend soin de la planète</h1>
+
   <ActivitySection
-    title="Comment identifier les composants du réseau informatique ?"
-    description="La souris d’ordinateur a des interactions avec plusieurs éléments extérieurs. Pour bien choisir ma souris, je dois les identifier ou les définir."
+    title="Le choix d'une lampe performante et qui prend soin de la planète"
+    description="Durée : 1h00 — Dans la salle de classe, l'ampoule du plafonnier ne fonctionne plus. Le professeur doit la remplacer. Au magasin, plusieurs types de lampes sont disponibles : LED, halogène, fluocompacte… Comment choisir la lampe la plus adaptée pour éclairer la classe tout en limitant son impact sur l'environnement ?"
     documents={documents}
     activityNumber={2}
-    totalActivities={5}
+    totalActivities={2}
     sequenceHref="/5eme/sequence-5"
-    sequenceLabel="Séquence 5 — La souris et l'OST"
+    sequenceLabel="Séquence 5 — Choisir un objet technique performant et respectueux de l'environnement"
     retenir={{
       definitions: [
-        { term: "Adresse MAC", def: "Identifiant physique unique gravé sur chaque carte réseau (format : A1:B2:C3:D4:E5:F6)." },
-        { term: "Switch (commutateur)", def: "Équipement réseau qui lit les adresses MAC pour diriger les données vers le bon port/équipement." },
-        { term: "Câble RJ45", def: "Câble réseau normalisé à 8 fils torsadés, utilisé pour les connexions Ethernet (jusqu'à 1 Gb/s)." },
+        { term: "Performance d'un OST", def: "Capacité d'un objet ou système technique à répondre à un besoin." },
+        { term: "Critère de performance", def: "Grandeur mesurable qui permet d'évaluer un objet technique : vitesse, autonomie, fiabilité, confort, impact environnemental, consommation électrique, performance lumineuse…" },
       ],
       points: [
-        "Chaque appareil du réseau a une adresse MAC unique : c'est son identifiant physique.",
-        "Le switch crée une table d'adresses MAC pour diriger intelligemment les trames vers le bon destinataire.",
-        "Connexion Ethernet (câble RJ45) = plus fiable et rapide que le WiFi pour un réseau de salle.",
+        "Pour mesurer une performance, il faut choisir les bons critères, choisir les bons appareils à comparer, puis suivre un protocole précis.",
+        "Pour choisir un OST, on peut comparer les performances de plusieurs objets à l'aide de critères adaptés au besoin.",
+        "Ces critères permettent de choisir l'objet le plus adapté au besoin, tout en tenant compte de son impact environnemental.",
       ],
     }}
   >
     <div class="activity-content">
-      <h3>Les interactions de la souris avec son environnement</h3>
-      <p>Tout objet technique interagit avec des <strong>éléments extérieurs</strong> appelés interacteurs. Pour la souris informatique, ces interacteurs sont nombreux : l'utilisateur, l'ordinateur, le tapis de souris, le système d'exploitation, l'écran... Identifier ces interactions est la première étape de l'analyse fonctionnelle.</p>
 
-      <h3>Le diagramme pieuvre de la souris</h3>
-      <p>La souris est au centre du diagramme. Chaque "patte" relie la souris à un interacteur extérieur :</p>
-      <ul>
-        <li><strong>FP (Fonction Principale)</strong> : Permettre à l'utilisateur de contrôler le curseur à l'écran. (2 interacteurs : utilisateur + écran/logiciel)</li>
-        <li><strong>FC1</strong> : S'adapter à la morphologie de la main de l'utilisateur (ergonomie).</li>
-        <li><strong>FC2</strong> : Fonctionner sur différentes surfaces (tapis, bureau).</li>
-        <li><strong>FC3</strong> : Être compatible avec le système d'exploitation (drivers).</li>
-        <li><strong>FC4</strong> : Résister à l'usure et aux manipulations répétées.</li>
-        <li><strong>FC5</strong> : Respecter les normes électriques et environnementales (RoHS, CE).</li>
-      </ul>
+      <!-- ══════════ COMPÉTENCES ══════════ -->
+      <div class="competences-box">
+        <span class="competences-titre">Compétences travaillées</span>
+        <span class="competence-tag">T4 — Le choix d'un objet technique dans un contexte de développement durable</span>
+        <span class="competence-tag">T5 — La performance d'un OST</span>
+        <span class="competence-tag">OST3 — Caractériser et choisir un objet ou un système technique selon différents critères</span>
+        <span class="competence-tag">OST33 — Choisir un OST parmi plusieurs propositions en vue de répondre à un besoin</span>
+        <span class="competence-tag cps">CPS — S22 : Développer des attitudes et comportements (acceptation, collaboration, coopération, entraide…)</span>
+      </div>
 
-      <h3>Le réseau informatique et la souris</h3>
-      <p>Dans un contexte réseau, la souris interagit aussi avec le système d'information du collège. Les données de mouvements sont traitées localement par le pilote (driver) de la souris, puis transmises au système d'exploitation qui met à jour la position du curseur. Dans un environnement réseau, les applications accessibles via le réseau répondent aux clics de souris via le protocole TCP/IP.</p>
+      <!-- ══════════ CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📖 Connaissances travaillées</h3>
+        <ul class="demarche-liste">
+          <li><strong>OST3f</strong> — Les critères de performance d'un OST (grandeurs mesurables : vitesse, autonomie énergétique…).</li>
+        </ul>
+      </div>
 
-      <h3>Adresse MAC et identification réseau</h3>
-      <p>Chaque carte réseau d'un ordinateur possède une <strong>adresse MAC</strong> unique. Le switch du réseau local utilise ces adresses pour diriger les trames de données vers le bon ordinateur. C'est différent de l'adresse IP qui est attribuée logiquement et peut changer, tandis que l'adresse MAC est gravée physiquement sur la carte réseau.</p>
+      <!-- ══════════ SITUATION / PROBLÉMATIQUE ══════════ -->
+      <div class="section-bloc objectif">
+        <h3>🎯 Situation déclenchante</h3>
+        <p>Dans la salle de classe, l'ampoule du plafonnier ne fonctionne plus. Le professeur doit la remplacer. Au magasin, plusieurs types de lampes sont disponibles : <strong>LED</strong>, <strong>halogène</strong>, <strong>fluocompacte</strong>…</p>
+        <div class="problematique-box">
+          <strong>Problématique :</strong> Comment choisir la lampe la plus adaptée pour éclairer la classe tout en limitant son impact sur l'environnement ?
+        </div>
+      </div>
+
+      <!-- ══════════ CONSTATS / PROBLÈME / IDÉES ══════════ -->
+      <div class="section-bloc">
+        <h3>🧐 Mes constats, mes observations</h3>
+        <p class="section-info">N'ayant plus de lumière, il faut choisir une nouvelle lampe, mais il y a beaucoup de choix.</p>
+        <h3>❓ Mon problème à résoudre</h3>
+        <p class="section-info">Reformule avec tes mots la question posée par le professeur.</p>
+        <h3>💡 Mes idées pour le résoudre</h3>
+        <ul class="demarche-liste">
+          <li>Acheter et tester plusieurs lampes.</li>
+          <li>Lire les étiquettes.</li>
+          <li>Comparer avec l'ancienne ampoule avant de la jeter dans le carton dédié.</li>
+          <li>Demander conseil à un vendeur.</li>
+          <li>Rechercher des informations sur internet.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ N1 / N2 ══════════ -->
+      <div class="section-bloc">
+        <h3>🔎 Activités N1 / N2 — Identifier des critères de performance</h3>
+        <p>Pour choisir la lampe la plus adaptée pour éclairer la classe tout en limitant son impact sur l'environnement, il est nécessaire de s'interroger sur les performances attendues pour cette lampe.</p>
+
+        <p class="niveau-label">N1 — Identifier des critères de performance d'un objet technique <span class="niveau-ressource">(vidéo ressource : critères de performance d'un OST · fiche de connaissance OST3f)</span></p>
+        <p class="section-info">🎬 Critères de performance d'un objet technique</p>
+        <video controls preload="metadata" class="video-ressource">
+          <source src="/documents/5eme/sequence-5/activite-2/critere-de-performance-d-un-ost.mp4" type="video/mp4" />
+          Ton navigateur ne peut pas lire cette vidéo.
+        </video>
+        <ul class="demarche-liste">
+          <li><strong>N1a</strong> — À partir de la vidéo « critères de performance d'un OST », explique ce qu'est la performance d'un objet technique.</li>
+          <li><strong>N1b</strong> — Donne 3 exemples de critères de performance (vitesse, autonomie, fiabilité, confort, impact environnemental…).</li>
+          <li><strong>N1c</strong> — Que faut-il faire pour mesurer une performance ? Choisir les bons critères ; choisir les bons appareils ; suivre un protocole précis.</li>
+        </ul>
+
+        <p class="niveau-label">N2 — Identifier et expliquer les critères permettant de choisir un objet technique</p>
+        <ul class="demarche-liste">
+          <li><strong>N2a</strong> — Parmi ces critères — performance lumineuse, autonomie, fiabilité, consommation électrique — entoure les 2 qui te semblent les plus intéressants pour mesurer la performance d'une lampe.</li>
+          <li><strong>N2b</strong> — Pourquoi as-tu choisi ces critères ?</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ N3 / N4 ══════════ -->
+      <div class="section-bloc">
+        <h3>✏️ Activités N3 / N4 — Choisir un objet technique</h3>
+        <p>Vous allez maintenant choisir la lampe la plus adaptée à notre besoin, c'est-à-dire la plus performante et qui a le moins d'impact sur la planète.</p>
+
+        <p class="niveau-label">N3 — Choisir un OST parmi plusieurs propositions en vue de répondre à un besoin <span class="niveau-ressource">(tableau comparatif d'ampoules)</span></p>
+        <ul class="demarche-liste">
+          <li><strong>N3a</strong> — À l'aide du tableau comparatif d'ampoules, choisis l'ampoule qui correspond à notre besoin et explique ton choix par un texte court.</li>
+        </ul>
+
+        <p class="niveau-label">N4 — Réinvestir mes connaissances pour choisir un OST <span class="niveau-ressource">(tableau comparatif de téléphones portables)</span></p>
+        <img
+          src="/documents/5eme/sequence-5/activite-2/comparatif-telephones.png"
+          alt="Tableau comparatif de téléphones portables : modèle, capacité, temps de recharge, prix"
+          class="resource-image"
+        />
+        <ul class="demarche-liste">
+          <li><strong>N4a</strong> — En observant le tableau comparatif de téléphones portables, choisis le téléphone qui te semble le plus performant et le plus respectueux de la planète. Justifie ton choix en utilisant au moins deux critères.</li>
+          <li><strong>N4b</strong> — Quels autres critères pourraient te permettre d'améliorer ton choix ?</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ RESSOURCES ══════════ -->
+      <div class="section-bloc">
+        <h3>🎬 Ressources utilisées dans cette activité</h3>
+        <p class="section-info">
+          📊 Tableau comparatif des ampoules · 📱 Comparatif des téléphones · 🎬 Critères de performance d'un objet technique : les trois ressources sont disponibles ci-dessus et ci-dessous.
+        </p>
+      </div>
+
+      <!-- ══════════ SYNTHÈSE ══════════ -->
+      <div class="section-bloc">
+        <h3>📝 Ma synthèse</h3>
+        <ul class="demarche-liste">
+          <li>La performance d'un OST se définit par la capacité d'un OST à répondre à un besoin.</li>
+          <li>Pour choisir un OST, on peut comparer les performances de plusieurs objets en utilisant des critères comme : vitesse, autonomie, fiabilité, confort, impact environnemental, consommation électrique, performance lumineuse…</li>
+          <li>Ces critères permettent de choisir l'objet le plus adapté au besoin.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ CPS ══════════ -->
+      <div class="section-bloc">
+        <h3>🧭 Je développe ma compétence CPS : S22 — Développer des attitudes et comportements</h3>
+        <ul class="demarche-liste">
+          <li><strong>N1</strong> — Je ne participe pas au groupe.</li>
+          <li><strong>N2</strong> — Je participe un peu.</li>
+          <li><strong>N3</strong> — Je coopère activement.</li>
+          <li><strong>N4</strong> — J'aide le groupe à avancer.</li>
+        </ul>
+      </div>
+
+      <!-- ══════════ FICHES DE CONNAISSANCES ══════════ -->
+      <div class="section-bloc">
+        <h3>📚 Fiches de connaissances et quiz</h3>
+        <p class="section-info">Cette activité s'appuie sur la fiche de connaissances <strong>OST3f</strong> (les critères de performance d'un OST — grandeurs mesurables : vitesse, autonomie énergétique…), disponible ci-dessus, ainsi que sur un quiz autocorrectif associé. Le quiz sera ajouté au site dans une prochaine étape.</p>
+      </div>
+
     </div>
   </ActivitySection>
 </ClassLayout>
@@ -65,5 +174,126 @@ const documents = [
     text-align: center;
     color: #1e3a8a;
     margin-bottom: 2rem;
+  }
+
+  /* ── Compétences ── */
+  .competences-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #f0f4ff;
+    border-radius: 0.5rem;
+    border: 1px solid #c7d7f9;
+  }
+
+  .competences-titre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+
+  .competence-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+
+  .competence-tag.cps {
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  /* ── Sections ── */
+  .section-bloc {
+    margin: 1.75rem 0;
+  }
+
+  .section-bloc h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #dbeafe;
+  }
+
+  .section-info {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: #f1f5fb;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.88rem;
+    color: #1e3a8a;
+    line-height: 1.6;
+  }
+
+  /* ── Objectif ── */
+  .objectif {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .problematique-box {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── Niveaux N1-N4 ── */
+  .niveau-label {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 1rem 0 0.35rem;
+    font-size: 0.92rem;
+  }
+
+  .niveau-ressource {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  /* ── Démarche ── */
+  .demarche-liste {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    color: #334155;
+    margin: 0.5rem 0;
+  }
+
+  /* ── Image ressource ── */
+  .resource-image {
+    display: block;
+    max-width: 100%;
+    margin-top: 0.75rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  /* ── Vidéo ── */
+  .video-ressource {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    margin-top: 0.75rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
   }
 </style>
