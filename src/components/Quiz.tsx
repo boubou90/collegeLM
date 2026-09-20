@@ -123,7 +123,7 @@ export default function Quiz() {
   };
 
   const container: React.CSSProperties = {
-    background: 'white',
+    background: 'var(--card-bg)',
     borderRadius: '1rem',
     padding: '2rem',
     marginTop: '2rem',
