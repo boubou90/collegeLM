@@ -111,7 +111,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
   };
 
   const container: React.CSSProperties = {
-    background: 'white',
+    background: 'var(--card-bg)',
     borderRadius: '1rem',
     padding: '2rem',
     marginTop: '2rem',
@@ -255,7 +255,7 @@ export default function SequenceQuiz({ questions, sequenceTitle, level, sequence
       </div>
 
       {/* Question */}
-      <p style={{ color: '#1e293b', fontSize: '1.1rem', fontWeight: 600, lineHeight: 1.5, marginBottom: '1.5rem' }}>
+      <p style={{ color: 'var(--text)', fontSize: '1.1rem', fontWeight: 600, lineHeight: 1.5, marginBottom: '1.5rem' }}>
         {q.q}
       </p>
 

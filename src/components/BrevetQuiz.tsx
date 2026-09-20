@@ -109,7 +109,7 @@ export default function BrevetQuiz() {
   const accentColor = '#F97316';
 
   const container: React.CSSProperties = {
-    background: 'white', borderRadius: '1rem',
+    background: 'var(--card-bg)', borderRadius: '1rem',
     padding: '2rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
     maxWidth: '700px', margin: '2rem auto',
   };
@@ -210,7 +210,7 @@ export default function BrevetQuiz() {
         }} />
       </div>
 
-      <p style={{ color: '#1e293b', fontSize: '1.05rem', fontWeight: 600, lineHeight: 1.5, marginBottom: '1.5rem' }}>
+      <p style={{ color: 'var(--text)', fontSize: '1.05rem', fontWeight: 600, lineHeight: 1.5, marginBottom: '1.5rem' }}>
         {q.q}
       </p>
 
