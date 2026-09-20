@@ -237,9 +237,9 @@ const courseSchema = JSON.stringify({
     font-weight: 600;
   }
 
-  [data-theme="dark"] .breadcrumb a { color: #94a3b8; }
-  [data-theme="dark"] .breadcrumb a:hover { color: #93c5fd; }
-  [data-theme="dark"] .breadcrumb span { color: #64748b; }
+  :global([data-theme="dark"]) .breadcrumb a { color: #94a3b8; }
+  :global([data-theme="dark"]) .breadcrumb a:hover { color: #93c5fd; }
+  :global([data-theme="dark"]) .breadcrumb span { color: #64748b; }
 
   .top-nav {
     display: flex;
@@ -252,7 +252,7 @@ const courseSchema = JSON.stringify({
     margin-bottom: 2rem;
   }
 
-  [data-theme="dark"] .top-nav {
+  :global([data-theme="dark"]) .top-nav {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
   }
