@@ -706,7 +706,7 @@ import Search from '../components/Search';
 	.level-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25rem;
+		gap: 1rem;
 	}
 
 	.level-card {
@@ -715,7 +715,7 @@ import Search from '../components/Search';
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		padding: 2.25rem 1.25rem;
+		padding: 1.5rem 1.25rem;
 		background: var(--card-bg);
 		border: 1px solid var(--border-color);
 		border-radius: var(--radius-lg);
@@ -723,26 +723,26 @@ import Search from '../components/Search';
 		text-decoration: none;
 		box-shadow: var(--shadow-sm);
 		overflow: hidden;
-		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
 	}
 
 	.level-card-glow {
 		position: absolute;
-		inset: -40% -40% auto -40%;
-		height: 140%;
+		inset: -15% -15% auto -15%;
+		height: 130%;
 		border-radius: 50%;
 		opacity: 0;
 		transition: opacity 0.35s ease;
 		pointer-events: none;
 	}
 
-	.level-card--5eme .level-card-glow { background: radial-gradient(circle, rgba(59,130,246,0.22), transparent 70%); }
-	.level-card--4eme .level-card-glow { background: radial-gradient(circle, rgba(16,185,129,0.22), transparent 70%); }
-	.level-card--3eme .level-card-glow { background: radial-gradient(circle, rgba(249,115,22,0.22), transparent 70%); }
+	.level-card--5eme .level-card-glow { background: radial-gradient(circle, rgba(59,130,246,0.16), transparent 70%); }
+	.level-card--4eme .level-card-glow { background: radial-gradient(circle, rgba(16,185,129,0.16), transparent 70%); }
+	.level-card--3eme .level-card-glow { background: radial-gradient(circle, rgba(249,115,22,0.16), transparent 70%); }
 
 	.level-card:hover,
 	.level-card:focus-visible {
-		transform: translateY(-7px) scale(1.015);
+		transform: translateY(-4px);
 		box-shadow: var(--shadow-lg);
 	}
 
@@ -751,7 +751,7 @@ import Search from '../components/Search';
 	}
 
 	.level-card:hover .level-icon {
-		transform: scale(1.12) rotate(-4deg);
+		transform: scale(1.1);
 	}
 
 	.level-card:focus-visible {
@@ -773,17 +773,17 @@ import Search from '../components/Search';
 	.level-card--3eme { border-top-color: #F97316; }
 
 	.level-icon {
-		width: 3rem;
-		height: 3rem;
+		width: 2.5rem;
+		height: 2.5rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 50%;
-		margin-bottom: 0.75rem;
-		transition: transform 0.3s ease;
+		border-radius: 0.65rem;
+		margin-bottom: 0.55rem;
+		transition: transform 0.25s ease;
 	}
 
-	.level-icon svg { width: 1.6rem; height: 1.6rem; }
+	.level-icon svg { width: 1.35rem; height: 1.35rem; }
 
 	.level-card--5eme .level-icon { background: rgba(59,130,246,0.14); color: #3B82F6; }
 	.level-card--4eme .level-icon { background: rgba(16,185,129,0.14); color: #10B981; }
@@ -794,13 +794,13 @@ import Search from '../components/Search';
 	:global([data-theme="dark"]) .level-card--3eme .level-icon { background: rgba(249,115,22,0.18); color: #fb923c; }
 
 	.level-badge {
-		font-size: 2.5rem;
+		font-size: 1.5rem;
 		font-weight: 800;
 		line-height: 1;
 	}
 
 	.level-badge-suffix {
-		font-size: 1.2rem;
+		font-size: 0.85rem;
 		font-weight: 700;
 		margin-left: 0.1rem;
 	}
@@ -815,20 +815,22 @@ import Search from '../components/Search';
 
 	.level-card-title {
 		font-size: 1.1rem;
+		line-height: 1.25;
 		color: var(--text);
-		margin-top: 0.6rem;
+		margin-top: 0.3rem;
 	}
 
 	.level-card-desc {
-		margin-top: 0.5rem;
+		margin-top: 0.4rem;
 		color: var(--ink-2);
 		font-size: 0.88rem;
-		line-height: 1.45;
+		line-height: 1.4;
 	}
 
 	.level-card-stat {
-		margin-top: 0.85rem;
-		font-size: 0.72rem;
+		margin-top: 0.6rem;
+		font-size: 0.7rem;
+		line-height: 1.2;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -836,13 +838,14 @@ import Search from '../components/Search';
 		background: var(--background);
 		border: 1px solid var(--border-color);
 		border-radius: 999px;
-		padding: 0.25rem 0.75rem;
+		padding: 0.2rem 0.7rem;
 	}
 
 	.level-card-cta {
-		margin-top: 1.1rem;
+		margin-top: 0.6rem;
 		font-weight: 700;
-		font-size: 0.9rem;
+		font-size: 0.88rem;
+		line-height: 1.2;
 		color: var(--primary-dark);
 	}
 
