@@ -7,20 +7,53 @@ import Search from '../components/Search';
 
 <Layout title="Cours Technologie Collège 5e 4e 3e | Collège Louise Michel Paris" description="Cours de technologie gratuits pour les collégiens : 5ème, 4ème, 3ème. Séquences, activités, quiz et préparation au Brevet — Collège Louise Michel Paris.">
 	<main>
+		<div class="page-inner">
+
 		<header class="hero" data-aos="fade-down">
-			<!-- Emojis flottants décoratifs -->
-			<div class="hero-emoji" style="left: 4%; top: 18%">⚙️</div>
-			<div class="hero-emoji hero-emoji-2" style="right: 5%; top: 14%">🤖</div>
-			<div class="hero-emoji hero-emoji-3" style="left: 7%; bottom: 16%">💡</div>
-			<div class="hero-emoji hero-emoji-4" style="right: 6%; bottom: 20%">🔬</div>
+			<!-- Décor : blobs animés + grille tech + spotlight -->
+			<div class="hero-decor" aria-hidden="true">
+				<div class="hero-spotlight"></div>
+				<div class="hero-blob hero-blob-1"></div>
+				<div class="hero-blob hero-blob-2"></div>
+				<div class="hero-grid"></div>
+			</div>
 			<div class="hero-content">
 				<div class="hero-text">
-					<h1 class="title">La technologie au collège</h1>
-					<p class="hero-subtitle">Découvre • Comprends • Crée</p>
+					<p class="hero-eyebrow">Collège Louise Michel · Paris</p>
+					<h1 class="title">La technologie au Collège Louise Michel</h1>
 					<p class="hero-tagline">
-						Un site pédagogique pour accompagner les élèves de la 5<sup>e</sup> à la 3<sup>e</sup> :
-						cours, activités, quiz et préparation au Brevet.
+						Apprends, crée, programme et progresse : cours, activités, quiz et préparation au Brevet pour les élèves de la 5<sup>e</sup> à la 3<sup>e</sup>.
 					</p>
+					<div class="hero-cta-group">
+						<a href="#niveaux" class="hero-cta hero-cta-primary">
+							Découvrir mon niveau <span aria-hidden="true">→</span>
+						</a>
+						<a href="https://www.revizon.net/" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary">
+							Réviser avec RevizON<span class="sr-only"> (nouvel onglet)</span>
+						</a>
+					</div>
+					<ul class="hero-concepts" role="list">
+						<li>Créer</li>
+						<li>Programmer</li>
+						<li>Résoudre</li>
+						<li>Comprendre</li>
+					</ul>
+				</div>
+
+				<!-- Illustration Hero : asset graphique fourni (PNG avec transparence),
+					 masquée sous 640px pour garder un Hero mobile sobre et déjà éprouvé.
+					 L'annotation manuscrite est un élément HTML indépendant (pas de texte
+					 gravé dans le PNG) ; elle est nichée dans le même conteneur pour
+					 partager son masquage automatique sous 640px. -->
+				<div class="hero-visual">
+					<p class="hero-note">
+						Construire aujourd'hui<br />les talents de demain&nbsp;!
+						<svg class="hero-note-arrow" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+							<path d="M4 6C10 20 20 28 34 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+							<path d="M26 30L34 32L31 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</p>
+					<img src="/images/hero-technology.png" alt="" class="hero-illustration" width="1672" height="941" loading="eager" />
 				</div>
 			</div>
 		</header>
@@ -28,125 +61,27 @@ import Search from '../components/Search';
 		<div class="content-wrapper">
 			<div class="main-content">
 
-				<!-- Sélecteur de profil -->
-				<section class="profile-selector-section" data-aos="fade-up" aria-labelledby="profile-title">
-					<h2 id="profile-title" class="profile-title">Bienvenue&nbsp;! Tu es…</h2>
-					<div id="profile-selector" role="group" aria-label="Choisis ton profil">
-						<button type="button" data-profile="eleve" data-target="#niveaux" class="profile-card profile-card--eleve" aria-pressed="false">
-							<span class="profile-icon" aria-hidden="true">👦</span>
-							<span class="profile-name">Élève</span>
-							<span class="profile-desc">Accède à tes cours, activités, quiz et révisions.</span>
-						</button>
-						<button type="button" data-profile="parent" data-target="#ressources" class="profile-card profile-card--parent" aria-pressed="false">
-							<span class="profile-icon" aria-hidden="true">👨‍👩‍👧</span>
-							<span class="profile-name">Parent</span>
-							<span class="profile-desc">Retrouvez les ressources et informations utiles pour accompagner votre enfant.</span>
-						</button>
-						<button type="button" data-profile="enseignant" data-target="#methodologie" class="profile-card profile-card--enseignant" aria-pressed="false">
-							<span class="profile-icon" aria-hidden="true">👩‍🏫</span>
-							<span class="profile-name">Enseignant</span>
-							<span class="profile-desc">Découvrez les ressources pédagogiques et la démarche utilisée.</span>
-						</button>
-					</div>
-				</section>
-
-				<script>
-					const saved = localStorage.getItem('userProfile');
-					const buttons = document.querySelectorAll<HTMLButtonElement>('.profile-card');
-
-					if (saved) {
-						buttons.forEach(btn => {
-							if (btn.dataset.profile === saved) {
-								btn.classList.add('profile-card--active');
-								btn.setAttribute('aria-pressed', 'true');
-							}
-						});
-					}
-
-					buttons.forEach(btn => {
-						btn.addEventListener('click', () => {
-							buttons.forEach(b => {
-								b.classList.remove('profile-card--active');
-								b.setAttribute('aria-pressed', 'false');
-							});
-							btn.classList.add('profile-card--active');
-							btn.setAttribute('aria-pressed', 'true');
-							localStorage.setItem('userProfile', btn.dataset.profile!);
-							const target = document.querySelector(btn.dataset.target!);
-							if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-						});
-					});
-				</script>
-
-				<!-- Accès rapides -->
-				<nav class="quick-links-section" data-aos="fade-up" aria-labelledby="quick-links-title">
-					<h2 id="quick-links-title" class="section-title">Que veux-tu faire&nbsp;?</h2>
-					<ul class="quick-links-grid" role="list">
-						<li>
-							<a href="#niveaux" class="quick-link-card">
-								<span class="qlc-icon" aria-hidden="true">📚</span>
-								<span class="qlc-label">Cours</span>
-								<span class="qlc-desc">Choisis ton niveau</span>
-							</a>
-						</li>
-						<li>
-							<a href="/4eme/sequence-1/activite-4" class="quick-link-card">
-								<span class="qlc-icon" aria-hidden="true">🧪</span>
-								<span class="qlc-label">Activités</span>
-								<span class="qlc-desc">Travaux pratiques</span>
-							</a>
-						</li>
-						<li>
-							<a href="#quiz" class="quick-link-card">
-								<span class="qlc-icon" aria-hidden="true">🧠</span>
-								<span class="qlc-label">Quiz</span>
-								<span class="qlc-desc">Teste-toi</span>
-							</a>
-						</li>
-						<li>
-							<a href="/3eme/brevet" class="quick-link-card">
-								<span class="qlc-icon" aria-hidden="true">🏆</span>
-								<span class="qlc-label">Brevet</span>
-								<span class="qlc-desc">Prépare l'épreuve</span>
-							</a>
-						</li>
-						<li>
-							<a href="/3eme/orientation" class="quick-link-card">
-								<span class="qlc-icon" aria-hidden="true">🎓</span>
-								<span class="qlc-label">Orientation</span>
-								<span class="qlc-desc">Après la 3ème</span>
-							</a>
-						</li>
-						<li>
-							<a href="#recherche" class="quick-link-card">
-								<span class="qlc-icon" aria-hidden="true">🔎</span>
-								<span class="qlc-label">Recherche</span>
-								<span class="qlc-desc">Trouve une ressource</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-
-				<!-- Recherche -->
-				<section class="search-section" id="recherche" data-aos="fade-up" aria-labelledby="search-title">
-					<h2 id="search-title" class="section-title">Rechercher une ressource</h2>
-					<div class="home-search-wrap">
-						<Search client:load />
-					</div>
-				</section>
-
 				<!-- Choix du niveau -->
 				<section class="level-section" id="niveaux" data-aos="fade-up" aria-labelledby="level-title">
-					<h2 id="level-title" class="section-title">Choisis ton niveau</h2>
+					<h2 id="level-title" class="section-title">Je suis en…</h2>
+					<p class="section-subtitle">Choisis ta classe pour retrouver toutes tes séquences.</p>
 					<div class="level-grid">
 						<a href="/5eme" class="level-card level-card--5eme" data-aos="fade-up" data-aos-delay="100">
+							<span class="level-card-glow" aria-hidden="true"></span>
+							<span class="level-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+							</span>
 							<span class="level-badge">5<span class="level-badge-suffix">ème</span></span>
 							<h3 class="level-card-title">Classe de 5<sup>e</sup></h3>
-							<p class="level-card-desc">Découverte des réseaux, objets techniques et modélisation 3D</p>
-							<span class="level-card-stat">10 séquences</span>
+							<p class="level-card-desc">Réseaux informatiques, objets techniques et modélisation 3D</p>
+							<span class="level-card-stat">7 séquences</span>
 							<span class="level-card-cta">Découvrir <span aria-hidden="true">→</span></span>
 						</a>
 						<a href="/4eme" class="level-card level-card--4eme" data-aos="fade-up" data-aos-delay="200">
+							<span class="level-card-glow" aria-hidden="true"></span>
+							<span class="level-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+							</span>
 							<span class="level-badge">4<span class="level-badge-suffix">ème</span></span>
 							<h3 class="level-card-title">Classe de 4<sup>e</sup></h3>
 							<p class="level-card-desc">Systèmes automatiques, programmation et analyse fonctionnelle</p>
@@ -154,189 +89,203 @@ import Search from '../components/Search';
 							<span class="level-card-cta">Découvrir <span aria-hidden="true">→</span></span>
 						</a>
 						<a href="/3eme" class="level-card level-card--3eme" data-aos="fade-up" data-aos-delay="300">
+							<span class="level-card-glow" aria-hidden="true"></span>
+							<span class="level-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4-8 4-8-4 8-4Z"/><path d="M4 11l8 4 8-4M4 15l8 4 8-4"/></svg>
+							</span>
 							<span class="level-badge">3<span class="level-badge-suffix">ème</span></span>
 							<h3 class="level-card-title">Classe de 3<sup>e</sup></h3>
 							<p class="level-card-desc">Préparation au Brevet, orientation et projets techniques avancés</p>
-							<span class="level-card-stat">10 séquences</span>
+							<span class="level-card-stat">9 séquences</span>
 							<span class="level-card-cta">Découvrir <span aria-hidden="true">→</span></span>
 						</a>
 					</div>
 				</section>
 
-				<!-- Brevet & Orientation (spécial 3e) -->
-				<section class="showcase-section" data-aos="fade-up" aria-label="Ressources spéciales 3ème">
-					<p class="showcase-eyebrow">Spécial 3<sup>e</sup></p>
-					<div class="showcase-grid">
-						<a href="/3eme/brevet" class="showcase-card showcase-card--brevet">
-							<span class="showcase-icon" aria-hidden="true">🎯</span>
-							<h3 class="showcase-title">Prépare ton Brevet</h3>
-							<p class="showcase-desc">Sujets d'entraînement, corrigés et fiches de révision pour l'épreuve de technologie.</p>
-							<span class="showcase-cta">Voir la préparation <span aria-hidden="true">→</span></span>
-						</a>
-						<a href="/3eme/orientation" class="showcase-card showcase-card--orientation">
-							<span class="showcase-icon" aria-hidden="true">🎓</span>
-							<h3 class="showcase-title">Prépare ton orientation</h3>
-							<p class="showcase-desc">Lycées, filières et affectation après la 3ème pour bien choisir la suite.</p>
-							<span class="showcase-cta">Découvrir l'orientation <span aria-hidden="true">→</span></span>
-						</a>
+				<!-- RevizON — section produit premium -->
+				<section class="revizon-section" id="revizon" data-aos="fade-up" aria-labelledby="revizon-title">
+					<div class="revizon-decor" aria-hidden="true"></div>
+					<div class="revizon-inner">
+						<div class="revizon-visual">
+							<span class="revizon-visual-ring" aria-hidden="true"></span>
+							<div class="revizon-badge-wrap">
+								<img src="/images/logo-revizon.png" alt="Logo RevizON" class="revizon-logo" width="100" height="100" loading="lazy" />
+							</div>
+						</div>
+						<div class="revizon-content">
+							<p class="revizon-eyebrow">Ton application pour réussir le Brevet</p>
+							<h2 id="revizon-title" class="revizon-title">
+								<svg class="revizon-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c3 2 5 6 5 10 0 2-1 4-2 5l-3 3-3-3c-1-1-2-3-2-5 0-4 2-8 5-10Z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 17l-2 4M15 17l2 4"/></svg>
+								Prépare ton Brevet avec RevizON
+							</h2>
+							<p class="revizon-desc">
+								RevizON est l'application de révision pour réussir le Brevet, notamment pensée pour les élèves de 3<sup>e</sup>.
+							</p>
+							<ul class="revizon-benefits" role="list">
+								<li class="revizon-benefit"><span class="revizon-benefit-icon" aria-hidden="true">✓</span>Quiz par matière</li>
+								<li class="revizon-benefit"><span class="revizon-benefit-icon" aria-hidden="true">✓</span>Fiches de révision</li>
+								<li class="revizon-benefit"><span class="revizon-benefit-icon" aria-hidden="true">✓</span>Exercices progressifs</li>
+								<li class="revizon-benefit"><span class="revizon-benefit-icon" aria-hidden="true">✓</span>Suivi de progression</li>
+							</ul>
+							<a href="https://www.revizon.net/" target="_blank" rel="noopener noreferrer" class="revizon-cta">
+								Découvrir RevizON <span aria-hidden="true">→</span><span class="sr-only"> (nouvel onglet)</span>
+							</a>
+						</div>
+						<!-- Véritable capture de l'application RevizON (aucun contenu recréé
+							 en HTML) — le cadre reste décoratif, l'information réelle est
+							 déjà présente dans le texte et les bénéfices ci-contre. -->
+						<div class="revizon-phone" aria-hidden="true">
+							<div class="revizon-phone-notch"></div>
+							<div class="revizon-phone-screen">
+								<img src="/images/revizon-app.png" alt="" width="1320" height="2868" loading="lazy" />
+							</div>
+						</div>
 					</div>
+				</section>
+
+				<!-- Tout pour apprendre et réussir -->
+				<section class="learn-section" id="ressources" data-aos="fade-up" aria-labelledby="learn-title">
+					<h2 id="learn-title" class="section-title">Tout pour apprendre et réussir</h2>
+					<ul class="learn-grid" role="list">
+						<li>
+							<a href="#niveaux" class="learn-card learn-card--cours">
+								<span class="learn-icon-tile learn-icon-tile--cours" aria-hidden="true"><span class="learn-icon">📚</span></span>
+								<span class="learn-label">Cours</span>
+								<span class="learn-desc">Comprends les notions essentielles</span>
+							</a>
+						</li>
+						<li>
+							<a href="/4eme/sequence-1/activite-4" class="learn-card learn-card--activites">
+								<span class="learn-icon-tile learn-icon-tile--activites" aria-hidden="true"><span class="learn-icon">🧪</span></span>
+								<span class="learn-label">Activités</span>
+								<span class="learn-desc">Mets tes connaissances en pratique</span>
+							</a>
+						</li>
+						<li>
+							<a href="#quiz" class="learn-card learn-card--quiz">
+								<span class="learn-icon-tile learn-icon-tile--quiz" aria-hidden="true"><span class="learn-icon">🧠</span></span>
+								<span class="learn-label">Quiz</span>
+								<span class="learn-desc">Teste ce que tu as retenu</span>
+							</a>
+						</li>
+						<li>
+							<a href="#revizon" class="learn-card learn-card--revizon" aria-label="Réviser avec RevizON">
+								<span class="learn-icon-tile learn-icon-tile--revizon" aria-hidden="true"><span class="learn-icon">🚀</span></span>
+								<span class="learn-label">Réviser</span>
+								<span class="learn-desc">avec RevizON</span>
+							</a>
+						</li>
+						<li>
+							<a href="/3eme/brevet" class="learn-card learn-card--brevet">
+								<span class="learn-icon-tile learn-icon-tile--brevet" aria-hidden="true"><span class="learn-icon">🏆</span></span>
+								<span class="learn-label">Brevet</span>
+								<span class="learn-desc">Entraîne-toi pour l'épreuve</span>
+							</a>
+						</li>
+						<li>
+							<a href="/3eme/orientation" class="learn-card learn-card--orientation">
+								<span class="learn-icon-tile learn-icon-tile--orientation" aria-hidden="true"><span class="learn-icon">🎓</span></span>
+								<span class="learn-label">Orientation</span>
+								<span class="learn-desc">Prépare ton avenir</span>
+							</a>
+						</li>
+					</ul>
 				</section>
 
 				<!-- Publicité -->
-				<GoogleAd slot="4342760910" format="auto" />
+				<div class="ad-slot">
+					<span class="ad-slot-label">Publicité</span>
+					<div class="ad-slot-frame">
+						<GoogleAd slot="4342760910" format="auto" />
+					</div>
+				</div>
 
-				<!-- Quiz -->
-				<section class="quiz-section" id="quiz" data-aos="fade-up" aria-labelledby="quiz-title">
-					<h2 id="quiz-title" class="section-title">Teste tes connaissances</h2>
-					<Quiz client:load />
+				<!-- Recherche + Quiz côte à côte sur desktop -->
+				<div class="search-quiz-grid">
+					<section class="search-section" id="recherche" data-aos="fade-up" aria-labelledby="search-title">
+						<h2 id="search-title" class="section-title">Rechercher une ressource</h2>
+						<div class="home-search-wrap">
+							<Search client:load />
+						</div>
+					</section>
+
+					<section class="quiz-section" id="quiz" data-aos="fade-up" aria-labelledby="quiz-title">
+						<h2 id="quiz-title" class="section-title">Teste tes connaissances</h2>
+						<Quiz client:load />
+					</section>
+				</div>
+
+				<!-- Orientation 3e -->
+				<section class="orientation-section" data-aos="fade-up" aria-labelledby="orientation-title">
+					<div class="orientation-card">
+						<div class="orientation-decor" aria-hidden="true"></div>
+						<img src="/images/logo-orientation3e.png" alt="Logo Orientation 3e" class="orientation-logo" width="72" height="72" loading="lazy" />
+						<div class="orientation-content">
+							<p class="orientation-eyebrow">Outil d'aide à l'orientation</p>
+							<h2 id="orientation-title" class="orientation-title">
+								<svg class="orientation-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5 13 13l-3.5 1.5L11 11l3.5-1.5Z"/></svg>
+								Orientation 3e&nbsp;: choisis ton avenir
+							</h2>
+							<p class="orientation-desc">
+								Orientation 3e t'aide à y voir plus clair sur les filières, les lycées et les choix à faire après la 3<sup>e</sup>.
+							</p>
+							<a href="https://www.orientation3e.com/" target="_blank" rel="noopener noreferrer" class="orientation-cta">
+								Découvrir Orientation 3e <span aria-hidden="true">→</span><span class="sr-only"> (nouvel onglet)</span>
+							</a>
+						</div>
+						<p class="orientation-note">Ton avenir<br />commence ici&nbsp;!</p>
+					</div>
 				</section>
 
-				<section class="intro-section" data-aos="fade-up">
-					<h2>Bienvenue sur le site de technologie du Collège Louise Michel</h2>
-					<p class="intro-text">
-						Ce site est dédié aux élèves, parents et enseignants qui souhaitent approfondir leurs connaissances en technologie au collège. Vous y trouverez des ressources pédagogiques complètes, des activités pratiques et des supports de cours pour les classes de 5ème, 4ème et 3ème.
-					</p>
-					<p class="intro-text">
-						La technologie est une discipline essentielle qui permet de comprendre le monde qui nous entoure et de développer des compétences cruciales pour l'avenir. Notre approche pédagogique combine théorie et pratique pour une meilleure compréhension des concepts.
-					</p>
-				</section>
-
-				<section class="presentation" data-aos="fade-up">
+				<section class="intro-section" id="methodologie" data-aos="fade-up">
 					<h2>La technologie au collège : une discipline essentielle</h2>
-					<div class="presentation-content">
-						<p class="presentation-lead">
-							La technologie est une discipline fondamentale qui permet aux élèves de comprendre le monde qui les entoure. Elle développe :
-						</p>
-						<ul class="benefits-list" role="list">
-							<li>
-								<span class="list-card-icon" aria-hidden="true">✓</span>
-								<span><strong>La créativité et l'innovation</strong> à travers des projets concrets comme la conception d'objets techniques, la programmation de robots ou la modélisation 3D</span>
+					<div class="intro-columns">
+						<ul class="concept-chips" role="list">
+							<li class="concept-chip concept-chip--creer">
+								<span class="concept-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+								Créer
 							</li>
-							<li>
-								<span class="list-card-icon" aria-hidden="true">✓</span>
-								<span><strong>L'esprit critique et la démarche scientifique</strong> par l'analyse de systèmes techniques, la résolution de problèmes et l'expérimentation</span>
+							<li class="concept-chip concept-chip--programmer">
+								<span class="concept-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></span>
+								Programmer
 							</li>
-							<li>
-								<span class="list-card-icon" aria-hidden="true">✓</span>
-								<span><strong>Les compétences numériques essentielles</strong> incluant la programmation, la modélisation et l'utilisation d'outils de conception assistée par ordinateur</span>
+							<li class="concept-chip concept-chip--resoudre">
+								<span class="concept-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></span>
+								Résoudre
 							</li>
-							<li>
-								<span class="list-card-icon" aria-hidden="true">✓</span>
-								<span><strong>La capacité à travailler en équipe</strong> grâce à des projets collaboratifs qui simulent des situations professionnelles réelles</span>
+							<li class="concept-chip concept-chip--comprendre">
+								<span class="concept-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.3 1 2.5h6c0-1.2.4-1.9 1-2.5A6 6 0 0 0 12 2Z"/></svg></span>
+								Comprendre
 							</li>
 						</ul>
-						<p class="presentation-lead">
-							Notre approche pédagogique combine théorie et pratique, permettant aux élèves de :
-						</p>
-						<ul class="approach-list" role="list">
-							<li>
-								<span class="list-card-icon" aria-hidden="true">→</span>
-								<span><strong>Réaliser des projets techniques innovants</strong> qui répondent à des problématiques concrètes et actuelles</span>
-							</li>
-							<li>
-								<span class="list-card-icon" aria-hidden="true">→</span>
-								<span><strong>Utiliser des outils numériques modernes</strong> comme les logiciels de CAO, les plateformes de programmation et les imprimantes 3D</span>
-							</li>
-							<li>
-								<span class="list-card-icon" aria-hidden="true">→</span>
-								<span><strong>Comprendre les enjeux technologiques actuels</strong> tels que le développement durable, l'intelligence artificielle et la robotique</span>
-							</li>
-							<li>
-								<span class="list-card-icon" aria-hidden="true">→</span>
-								<span><strong>Développer des compétences pour leur futur</strong> qui seront valorisées dans leurs études supérieures et leur vie professionnelle</span>
-							</li>
-						</ul>
+						<div class="intro-text-col">
+							<p class="intro-text">
+								Toutes nos ressources sont alignées sur le programme officiel de technologie de l'Éducation Nationale.
+							</p>
+							<p class="intro-text">
+								Notre approche combine théorie et pratique pour développer la créativité, l'esprit critique et les compétences numériques à travers des projets concrets : programmation, robotique, modélisation 3D.
+							</p>
+						</div>
 					</div>
+					<ul class="methodology-compact" role="list">
+						<li class="methodology-compact-item">
+							<h3>L'apprentissage par projet</h3>
+							<p>Des projets concrets, de l'analyse du besoin jusqu'au prototype fonctionnel.</p>
+						</li>
+						<li class="methodology-compact-item">
+							<h3>La démarche d'investigation</h3>
+							<p>Observer, questionner, expérimenter pour construire ses connaissances activement.</p>
+						</li>
+						<li class="methodology-compact-item">
+							<h3>L'interdisciplinarité</h3>
+							<p>Des liens avec les mathématiques, la physique et les arts plastiques.</p>
+						</li>
+						<li class="methodology-compact-item">
+							<h3>L'évaluation formative</h3>
+							<p>Des retours réguliers pour identifier points forts et axes de progrès.</p>
+						</li>
+					</ul>
 					<div class="signature">HB</div>
-				</section>
-
-				<section class="program-highlights" data-aos="fade-up">
-					<h2>Points forts du programme</h2>
-					<div class="highlights-grid">
-						<div class="highlight-card">
-							<h3>Classe de 5ème</h3>
-							<ul>
-								<li>Découverte des réseaux informatiques et de leur fonctionnement</li>
-								<li>Analyse des objets techniques et de leur évolution</li>
-								<li>Initiation à la modélisation 3D avec SketchUp</li>
-								<li>Sensibilisation aux enjeux de la sécurité numérique</li>
-							</ul>
-						</div>
-						<div class="highlight-card">
-							<h3>Classe de 4ème</h3>
-							<ul>
-								<li>Étude des systèmes automatiques et de leur programmation</li>
-								<li>Analyse fonctionnelle avec les diagrammes "Bête à Cornes" et "Pieuvre"</li>
-								<li>Projets pratiques comme la conception d'une barrière automatique</li>
-								<li>Découverte des principes de l'électronique et de la domotique</li>
-							</ul>
-						</div>
-						<div class="highlight-card">
-							<h3>Classe de 3ème</h3>
-							<ul>
-								<li>Préparation aux épreuves de technologie du Brevet</li>
-								<li>Projets techniques avancés intégrant programmation et conception</li>
-								<li>Orientation post-3ème et découverte des filières technologiques</li>
-								<li>Approfondissement des chaînes d'énergie et d'information</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-				<section class="methodology" id="methodologie" data-aos="fade-up">
-					<h2>Notre méthodologie pédagogique</h2>
-					<div class="methodology-content">
-						<p>
-							Notre enseignement de la technologie repose sur une approche par compétences qui permet aux élèves de développer des savoir-faire concrets et transférables. Nous privilégions :
-						</p>
-						<div class="methodology-grid">
-							<div class="methodology-item">
-								<h3>L'apprentissage par projet</h3>
-								<p>Les élèves travaillent sur des projets concrets qui les amènent à résoudre des problèmes techniques réels, depuis l'analyse du besoin jusqu'à la réalisation d'un prototype fonctionnel.</p>
-							</div>
-							<div class="methodology-item">
-								<h3>La démarche d'investigation</h3>
-								<p>Nous encourageons les élèves à observer, questionner, expérimenter et analyser pour construire leurs connaissances de manière active et développer leur esprit critique.</p>
-							</div>
-							<div class="methodology-item">
-								<h3>L'interdisciplinarité</h3>
-								<p>Nos activités font appel à des connaissances et compétences issues de différentes disciplines (mathématiques, physique, arts plastiques...) pour montrer les liens entre la technologie et les autres domaines.</p>
-							</div>
-							<div class="methodology-item">
-								<h3>L'évaluation formative</h3>
-								<p>Nous privilégions une évaluation qui accompagne l'apprentissage, avec des retours réguliers permettant aux élèves d'identifier leurs points forts et leurs axes d'amélioration.</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="resources-section" id="ressources" data-aos="fade-up">
-					<h2>Ressources pédagogiques</h2>
-					<p class="resources-intro">
-						Notre site propose une variété de ressources pédagogiques pour accompagner l'apprentissage de la technologie :
-					</p>
-					<div class="resources-grid">
-						<div class="resource-card">
-							<h3>Fiches de cours</h3>
-							<p>Documents synthétiques présentant les notions essentielles du programme de technologie, avec des explications claires et des illustrations.</p>
-							<a href="/5eme/sequence-1/resources" class="resource-link">Voir un exemple</a>
-						</div>
-						<div class="resource-card">
-							<h3>Activités pratiques</h3>
-							<p>Exercices et travaux pratiques permettant d'appliquer les connaissances théoriques à des situations concrètes et de développer des compétences techniques.</p>
-							<a href="/4eme/sequence-1/activite-4" class="resource-link">Voir un exemple</a>
-						</div>
-						<div class="resource-card">
-							<h3>Préparation au Brevet</h3>
-							<p>Sujets d'entraînement, fiches de révision et conseils méthodologiques pour réussir l'épreuve de technologie du Brevet des collèges.</p>
-							<a href="/3eme/brevet" class="resource-link">Accéder aux ressources</a>
-						</div>
-						<div class="resource-card">
-							<h3>Orientation</h3>
-							<p>Informations sur les filières technologiques post-3ème, les lycées professionnels et généraux, et les métiers liés à la technologie.</p>
-							<a href="/3eme/orientation" class="resource-link">Découvrir les options</a>
-						</div>
-					</div>
 				</section>
 
 				<!-- Liens utiles (également disponibles dans la barre du haut) -->
@@ -349,6 +298,7 @@ import Search from '../components/Search';
 							<img src="/images/logo-college.svg" alt="Logo Collège Louise Michel" class="useful-link-logo" />
 							<span class="useful-link-name">Collège Louise Michel</span>
 							<span class="useful-link-sub">Site officiel</span>
+							<span class="sr-only"> (nouvel onglet)</span>
 						</a>
 						<a href="https://www.parisclassenumerique.fr/"
 						   target="_blank" rel="noopener noreferrer"
@@ -356,6 +306,7 @@ import Search from '../components/Search';
 							<img src="/images/logo-pcn.png" alt="Logo Paris Classe Numérique" class="useful-link-logo" />
 							<span class="useful-link-name">PCN / Pronote</span>
 							<span class="useful-link-sub">Notes &amp; absences</span>
+							<span class="sr-only"> (nouvel onglet)</span>
 						</a>
 						<a href="https://www.ac-paris.fr/"
 						   target="_blank" rel="noopener noreferrer"
@@ -363,32 +314,77 @@ import Search from '../components/Search';
 							<img src="/images/logo-academie.svg" alt="Logo Académie de Paris" class="useful-link-logo" />
 							<span class="useful-link-name">Académie de Paris</span>
 							<span class="useful-link-sub">Infos officielles</span>
+							<span class="sr-only"> (nouvel onglet)</span>
 						</a>
 						<a href="https://www.orientation3e.com/"
 						   target="_blank" rel="noopener noreferrer"
 						   class="useful-link-card">
 							<img src="/images/logo-orientation3e.png" alt="Logo Orientation 3e" class="useful-link-logo" />
 							<span class="useful-link-name">Orientation 3e</span>
+							<span class="sr-only"> (nouvel onglet)</span>
 						</a>
 					</div>
 				</section>
 
 			</div>
 		</div>
+
+		</div>
 	</main>
 </Layout>
 
 <style>
+	/*
+	 * Direction artistique "EdTech premium" : deux thèmes cohérents, pilotés
+	 * par le même attribut data-theme que Layout.astro utilise déjà pour le
+	 * reste du site. On redéfinit ici les variables CSS existantes
+	 * (--background, --card-bg, --text, --primary...) au niveau de <main> :
+	 * palette CLAIRE par défaut ci-dessous, palette SOMBRE en override sous
+	 * :global([data-theme="dark"]) main. Comme ce sont des variables
+	 * héritées normalement (indépendamment du scoping Astro), tous les
+	 * composants de cette page qui les utilisent déjà (y compris les
+	 * overrides globaux ciblant Search.tsx) basculent automatiquement avec
+	 * le thème actif, sans dupliquer de règles ni toucher Layout.astro.
+	 */
 	main {
+		width: 100%;
+		--radius-md: 1rem;
+		--radius-lg: 1.25rem;
+		--radius-xl: 1.75rem;
+		/* Palette CLAIRE (par défaut) */
+		--background: #F8FAFC;
+		--card-bg: #FFFFFF;
+		--border-color: #E2E8F0;
+		--text: #1E293B;
+		--primary: #2563EB;
+		--primary-dark: #1E3A8A;
+		--ink-2: #475569;
+		--ink-3: #64748B;
+		--shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+		--shadow-md: 0 6px 20px rgba(15, 23, 42, 0.08);
+		--shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.14);
+		background: var(--background);
+	}
+
+	:global([data-theme="dark"]) main {
+		/* Palette SOMBRE (override) */
+		--background: #0B1225;
+		--card-bg: #18243A;
+		--border-color: #24324A;
+		--text: #F1F5F9;
+		--primary: #3B82F6;
+		--primary-dark: #60A5FA;
+		--ink-2: #CBD5E1;
+		--ink-3: #94A3B8;
+		--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.03);
+		--shadow-md: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
+		--shadow-lg: 0 26px 55px rgba(0, 0, 0, 0.5), 0 0 32px rgba(59, 130, 246, 0.12);
+	}
+
+	.page-inner {
 		max-width: 1600px;
 		margin: 0 auto;
 		padding: 1rem;
-		--radius-md: 1rem;
-		--radius-lg: 1.25rem;
-		--shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-		--shadow-md: 0 6px 20px rgba(15, 23, 42, 0.08);
-		--ink-2: #475569;
-		--ink-3: #64748b;
 	}
 
 	.content-wrapper {
@@ -406,18 +402,38 @@ import Search from '../components/Search';
 		font-weight: 800;
 		color: var(--primary-dark);
 		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.section-subtitle {
+		text-align: center;
+		color: var(--ink-3);
+		font-size: 0.95rem;
 		margin-bottom: 1.5rem;
 	}
 
-	/* ── Hero ── */
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	/* ══════════ Hero ══════════ */
 	.hero {
 		position: relative;
-		background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 100%);
-		border-radius: 1.5rem;
+		background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 60%, #6d28d9 100%);
+		border-radius: var(--radius-xl);
 		margin: 1rem auto;
-		max-width: 1000px;
+		max-width: 1200px;
 		overflow: hidden;
-		box-shadow: 0 20px 40px rgba(30, 58, 138, 0.18);
+		box-shadow: 0 25px 50px rgba(30, 58, 138, 0.28);
+		isolation: isolate;
 	}
 
 	.hero::before {
@@ -425,213 +441,766 @@ import Search from '../components/Search';
 		position: absolute;
 		inset: 0;
 		background:
-			radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.25) 0%, transparent 50%),
-			radial-gradient(circle at 80% 70%, rgba(129, 140, 248, 0.22) 0%, transparent 50%);
+			radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.28) 0%, transparent 50%),
+			radial-gradient(circle at 80% 70%, rgba(129, 140, 248, 0.24) 0%, transparent 50%);
 		pointer-events: none;
 		z-index: 0;
 	}
 
-	/* Emojis flottants */
-	.hero-emoji {
+	.hero-decor {
 		position: absolute;
-		font-size: 2.2rem;
-		opacity: 0.15;
-		pointer-events: none;
-		user-select: none;
-		animation: float 5s ease-in-out infinite;
+		inset: 0;
+		overflow: hidden;
 		z-index: 0;
 	}
-	.hero-emoji-2 { animation-delay: 1s; }
-	.hero-emoji-3 { animation-delay: 2s; }
-	.hero-emoji-4 { animation-delay: 3s; }
+
+	.hero-spotlight {
+		position: absolute;
+		top: -25%;
+		left: 30%;
+		width: 520px;
+		height: 520px;
+		max-width: 140%;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 65%);
+		pointer-events: none;
+	}
+
+	.hero-blob {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(40px);
+		opacity: 0.35;
+		will-change: transform;
+	}
+
+	.hero-blob-1 {
+		width: 260px;
+		height: 260px;
+		background: #60a5fa;
+		top: -60px;
+		left: -60px;
+		animation: blobFloat 9s ease-in-out infinite;
+	}
+
+	.hero-blob-2 {
+		width: 220px;
+		height: 220px;
+		background: #a78bfa;
+		bottom: -70px;
+		right: -40px;
+		animation: blobFloat 11s ease-in-out infinite reverse;
+	}
+
+	.hero-grid {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+		background-size: 36px 36px;
+		mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+		-webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+	}
+
+	@keyframes blobFloat {
+		0%, 100% { transform: translate(0, 0) scale(1); }
+		50% { transform: translate(18px, -14px) scale(1.08); }
+	}
 
 	.hero-content {
 		position: relative;
-		padding: 3rem 2.5rem;
+		padding: 3.25rem 2.5rem;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+		gap: 2rem;
 		z-index: 2;
 	}
 
 	.hero-text {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		gap: 0.85rem;
-		max-width: 640px;
+		align-items: flex-start;
+		gap: 1rem;
+		max-width: 500px;
+		text-align: left;
+	}
+
+	.hero-eyebrow {
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 0.78rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin: 0;
+		animation: fadeInUp 0.7s ease-out both;
 	}
 
 	.title {
-		font-size: clamp(2rem, 5vw, 3.25rem);
+		font-size: clamp(1.9rem, 3.4vw, 2.75rem);
 		font-weight: 800;
-		text-align: center;
+		text-align: left;
 		color: #ffffff;
 		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 		letter-spacing: -0.02em;
 		margin: 0;
 		padding: 0;
-		animation: fadeInUp 0.8s ease-out both;
-	}
-
-	.hero-subtitle {
-		color: rgba(255, 255, 255, 0.92);
-		font-size: 1.2rem;
-		font-weight: 600;
-		letter-spacing: 0.04em;
-		margin: 0;
-		animation: fadeInUp 0.8s ease-out 0.15s both;
+		animation: fadeInUp 0.8s ease-out 0.1s both;
 	}
 
 	.hero-tagline {
-		color: rgba(255, 255, 255, 0.8);
-		font-size: 0.95rem;
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 1rem;
 		line-height: 1.6;
-		text-align: center;
+		text-align: left;
 		margin: 0;
-		animation: fadeInUp 0.8s ease-out 0.3s both;
+		max-width: 480px;
+		animation: fadeInUp 0.8s ease-out 0.25s both;
+	}
+
+	.hero-cta-group {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.85rem;
+		justify-content: flex-start;
+		margin-top: 0.5rem;
+		animation: fadeInUp 0.8s ease-out 0.4s both;
+	}
+
+	.hero-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		border-radius: 999px;
+		text-decoration: none;
+		transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+	}
+
+	.hero-cta-primary {
+		padding: 0.85rem 1.6rem;
+		font-weight: 700;
+		font-size: 0.98rem;
+		background: #ffffff;
+		color: #1e3a8a;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	}
+
+	.hero-cta-primary:hover,
+	.hero-cta-primary:focus-visible {
+		transform: translateY(-3px);
+		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
+	}
+
+	.hero-cta-secondary {
+		padding: 0.7rem 1.35rem;
+		font-weight: 600;
+		font-size: 0.88rem;
+		background: transparent;
+		color: rgba(255, 255, 255, 0.9);
+		border: 1.5px solid rgba(255, 255, 255, 0.4);
+	}
+
+	.hero-cta-secondary:hover,
+	.hero-cta-secondary:focus-visible {
+		background: rgba(255, 255, 255, 0.12);
+		border-color: rgba(255, 255, 255, 0.65);
+		transform: translateY(-2px);
+	}
+
+	.hero-cta:focus-visible {
+		outline: 3px solid #ffffff;
+		outline-offset: 3px;
 	}
 
 	@keyframes fadeInUp {
-		from { opacity: 0; transform: translateY(16px); }
-		to { opacity: 1; transform: translateY(0); }
+		from { opacity: 0; transform: translateY(16px) scale(0.98); }
+		to { opacity: 1; transform: translateY(0) scale(1); }
 	}
 
-	@keyframes float {
-		0%, 100% { transform: translateY(0px); }
-		50% { transform: translateY(-8px); }
+	/* Illustration Hero (asset PNG fourni, transparence conservée) */
+	.hero-visual {
+		position: relative;
+		flex-shrink: 0;
+		width: 500px;
+		max-width: 45%;
+		display: none;
+		align-self: flex-end;
 	}
 
-	/* ── Sélecteur de profil ── */
-	.profile-selector-section {
-		text-align: center;
-		padding: 1.75rem 1rem 0.5rem;
+	.hero-illustration {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 
-	.profile-title {
-		font-size: 1.1rem;
-		color: var(--ink-2);
+	.hero-note {
+		position: absolute;
+		top: -1.65rem;
+		right: 0.5rem;
+		max-width: 190px;
+		margin: 0;
+		font-family: 'Brush Script MT', cursive;
+		font-size: 1rem;
+		line-height: 1.3;
+		color: #ffffff;
+		text-align: right;
+		transform: rotate(-4deg);
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.hero-note-arrow {
+		display: block;
+		width: 32px;
+		height: 32px;
+		margin: 0.1rem 0 0 auto;
+		color: #ffffff;
+		opacity: 0.85;
+	}
+
+	.hero-concepts {
+		list-style: none;
+		margin: 0.9rem 0 0;
+		padding: 0 0 0 0.85rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		border-left: 2px solid #fb923c;
+	}
+
+	.hero-concepts li {
+		font-size: 0.68rem;
 		font-weight: 700;
-		margin-bottom: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgba(255, 255, 255, 0.75);
 	}
 
-	#profile-selector {
+	@media (min-width: 640px) {
+		.hero-visual {
+			display: flex;
+		}
+	}
+
+	/* ══════════ Choix du niveau ══════════ */
+	.level-section {
+		margin-top: 2.75rem;
+	}
+
+	.level-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 0.9rem;
+		gap: 1.25rem;
 	}
 
-	.profile-card {
+	.level-card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.4rem;
-		padding: 1.25rem 0.9rem;
-		border-radius: var(--radius-md);
-		border: 2px solid var(--border-color);
+		text-align: center;
+		padding: 2.25rem 1.25rem;
 		background: var(--card-bg);
-		cursor: pointer;
-		font-family: inherit;
-		transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+		border: 1px solid var(--border-color);
+		border-radius: var(--radius-lg);
+		border-top: 4px solid transparent;
+		text-decoration: none;
 		box-shadow: var(--shadow-sm);
+		overflow: hidden;
+		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
 	}
 
-	.profile-card:hover,
-	.profile-card:focus-visible {
-		transform: translateY(-3px);
-		box-shadow: var(--shadow-md);
+	.level-card-glow {
+		position: absolute;
+		inset: -40% -40% auto -40%;
+		height: 140%;
+		border-radius: 50%;
+		opacity: 0;
+		transition: opacity 0.35s ease;
+		pointer-events: none;
 	}
 
-	.profile-card:focus-visible {
+	.level-card--5eme .level-card-glow { background: radial-gradient(circle, rgba(59,130,246,0.22), transparent 70%); }
+	.level-card--4eme .level-card-glow { background: radial-gradient(circle, rgba(16,185,129,0.22), transparent 70%); }
+	.level-card--3eme .level-card-glow { background: radial-gradient(circle, rgba(249,115,22,0.22), transparent 70%); }
+
+	.level-card:hover,
+	.level-card:focus-visible {
+		transform: translateY(-7px) scale(1.015);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.level-card:hover .level-card-glow {
+		opacity: 1;
+	}
+
+	.level-card:hover .level-icon {
+		transform: scale(1.12) rotate(-4deg);
+	}
+
+	.level-card:focus-visible {
 		outline: 3px solid var(--primary);
 		outline-offset: 2px;
 	}
 
-	.profile-card--eleve:hover, .profile-card--eleve.profile-card--active { border-color: #3b82f6; }
-	.profile-card--parent:hover, .profile-card--parent.profile-card--active { border-color: #10b981; }
-	.profile-card--enseignant:hover, .profile-card--enseignant.profile-card--active { border-color: #7c3aed; }
-
-	.profile-card--active {
-		box-shadow: var(--shadow-md);
+	.level-card-cta span[aria-hidden] {
+		display: inline-block;
+		transition: transform 0.25s ease;
 	}
 
-	.profile-icon {
-		font-size: 1.9rem;
+	.level-card:hover .level-card-cta span[aria-hidden] {
+		transform: translateX(4px);
+	}
+
+	.level-card--5eme { border-top-color: #3B82F6; }
+	.level-card--4eme { border-top-color: #10B981; }
+	.level-card--3eme { border-top-color: #F97316; }
+
+	.level-icon {
+		width: 3rem;
+		height: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		margin-bottom: 0.75rem;
+		transition: transform 0.3s ease;
+	}
+
+	.level-icon svg { width: 1.6rem; height: 1.6rem; }
+
+	.level-card--5eme .level-icon { background: rgba(59,130,246,0.14); color: #3B82F6; }
+	.level-card--4eme .level-icon { background: rgba(16,185,129,0.14); color: #10B981; }
+	.level-card--3eme .level-icon { background: rgba(249,115,22,0.14); color: #F97316; }
+
+	:global([data-theme="dark"]) .level-card--5eme .level-icon { background: rgba(59,130,246,0.18); color: #60a5fa; }
+	:global([data-theme="dark"]) .level-card--4eme .level-icon { background: rgba(16,185,129,0.18); color: #34d399; }
+	:global([data-theme="dark"]) .level-card--3eme .level-icon { background: rgba(249,115,22,0.18); color: #fb923c; }
+
+	.level-badge {
+		font-size: 2.5rem;
+		font-weight: 800;
 		line-height: 1;
 	}
 
-	.profile-name {
+	.level-badge-suffix {
+		font-size: 1.2rem;
 		font-weight: 700;
-		font-size: 0.98rem;
+		margin-left: 0.1rem;
+	}
+
+	.level-card--5eme .level-badge { color: #3B82F6; }
+	.level-card--4eme .level-badge { color: #10B981; }
+	.level-card--3eme .level-badge { color: #F97316; }
+
+	:global([data-theme="dark"]) .level-card--5eme .level-badge { color: #60a5fa; }
+	:global([data-theme="dark"]) .level-card--4eme .level-badge { color: #34d399; }
+	:global([data-theme="dark"]) .level-card--3eme .level-badge { color: #fb923c; }
+
+	.level-card-title {
+		font-size: 1.1rem;
 		color: var(--text);
+		margin-top: 0.6rem;
 	}
 
-	.profile-desc {
-		font-size: 0.78rem;
+	.level-card-desc {
+		margin-top: 0.5rem;
+		color: var(--ink-2);
+		font-size: 0.88rem;
+		line-height: 1.45;
+	}
+
+	.level-card-stat {
+		margin-top: 0.85rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 		color: var(--ink-3);
-		line-height: 1.35;
+		background: var(--background);
+		border: 1px solid var(--border-color);
+		border-radius: 999px;
+		padding: 0.25rem 0.75rem;
 	}
 
-	/* ── Accès rapides ── */
-	.quick-links-section {
-		margin-top: 2.25rem;
+	.level-card-cta {
+		margin-top: 1.1rem;
+		font-weight: 700;
+		font-size: 0.9rem;
+		color: var(--primary-dark);
 	}
 
-	.quick-links-grid {
+	/* ══════════ RevizON ══════════ */
+	.revizon-section {
+		position: relative;
+		margin-top: 3rem;
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 45%, #1e3a8a 100%);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.revizon-decor {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(circle at 15% 20%, rgba(167,139,250,0.35) 0%, transparent 45%),
+			radial-gradient(circle at 85% 80%, rgba(96,165,250,0.3) 0%, transparent 45%),
+			radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+		background-size: auto, auto, 26px 26px;
+		pointer-events: none;
+	}
+
+	.revizon-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 2.25rem;
+		padding: 2.75rem;
+		z-index: 1;
+	}
+
+	.revizon-visual {
+		position: relative;
+		flex-shrink: 0;
+		width: 160px;
+		height: 160px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.revizon-visual-ring {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		border: 1.5px dashed rgba(255, 255, 255, 0.35);
+		animation: ringSpin 24s linear infinite;
+	}
+
+	@keyframes ringSpin {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	.revizon-badge-wrap {
+		position: relative;
+		width: 128px;
+		height: 128px;
+		border-radius: var(--radius-lg);
+		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+	}
+
+	.revizon-logo {
+		width: 100px;
+		height: 100px;
+		object-fit: contain;
+		border-radius: 1rem;
+	}
+
+	.revizon-content {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.revizon-eyebrow {
+		color: rgba(255, 255, 255, 0.92);
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin: 0 0 0.5rem;
+	}
+
+	.revizon-title {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		color: #ffffff;
+		font-size: 1.45rem;
+		font-weight: 800;
+		margin: 0 0 0.6rem;
+		line-height: 1.25;
+	}
+
+	.revizon-title-icon {
+		width: 1.3em;
+		height: 1.3em;
+		flex-shrink: 0;
+		color: #fbbf24;
+	}
+
+	.revizon-desc {
+		color: rgba(255, 255, 255, 0.92);
+		font-size: 0.92rem;
+		line-height: 1.55;
+		margin: 0 0 1.1rem;
+		max-width: 480px;
+	}
+
+	.revizon-benefits {
+		list-style: none;
+		margin: 0 0 1.5rem;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.revizon-benefit {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		background: rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(255, 255, 255, 0.24);
+		border-radius: 999px;
+		padding: 0.45rem 0.95rem;
+		color: rgba(255, 255, 255, 0.96);
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+
+	.revizon-benefit-icon {
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.15rem;
+		height: 1.15rem;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.2);
+		font-size: 0.66rem;
+		font-weight: 700;
+	}
+
+	.revizon-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		background: #ffffff;
+		color: #4c1d95;
+		font-weight: 800;
+		font-size: 0.92rem;
+		padding: 0.8rem 1.5rem;
+		border-radius: 999px;
+		text-decoration: none;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.revizon-cta:hover,
+	.revizon-cta:focus-visible {
+		transform: translateY(-3px);
+		box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+	}
+
+	.revizon-cta:focus-visible {
+		outline: 3px solid #ffffff;
+		outline-offset: 3px;
+	}
+
+	/* Cadre smartphone (visible seulement sur grand écran, décoratif) —
+	   contient la véritable capture de l'application, jamais recréée en HTML. */
+	.revizon-phone {
+		display: none;
+		flex-shrink: 0;
+		width: 152px;
+		background: #0b1225;
+		border: 3px solid #2a2558;
+		border-radius: 1.4rem;
+		padding: 1.3rem 0.75rem 0.75rem;
+		position: relative;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+	}
+
+	.revizon-phone-notch {
+		position: absolute;
+		top: 0.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 38px;
+		height: 5px;
+		border-radius: 3px;
+		background: #2a2558;
+		z-index: 1;
+	}
+
+	.revizon-phone-screen {
+		display: block;
+		width: 100%;
+		border-radius: 0.9rem;
+		overflow: hidden;
+		line-height: 0;
+	}
+
+	.revizon-phone-screen img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	@media (min-width: 1100px) {
+		.revizon-phone {
+			display: block;
+		}
+	}
+
+	/* ══════════ Tout pour apprendre et réussir ══════════ */
+	.learn-section {
+		margin-top: 3rem;
+	}
+
+	.learn-grid {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 0.75rem;
+		gap: 0.85rem;
 	}
 
-	.quick-link-card {
+	.learn-card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.25rem;
+		gap: 0.4rem;
 		height: 100%;
-		padding: 1rem 0.5rem;
+		padding: 1.15rem 0.6rem;
 		background: var(--card-bg);
 		border: 1px solid var(--border-color);
+		border-top: 3px solid transparent;
 		border-radius: var(--radius-md);
 		text-decoration: none;
 		box-shadow: var(--shadow-sm);
-		transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+		transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 	}
 
-	.quick-link-card:hover,
-	.quick-link-card:focus-visible {
-		transform: translateY(-3px);
+	.learn-card:hover,
+	.learn-card:focus-visible {
+		transform: translateY(-4px);
 		box-shadow: var(--shadow-md);
 		border-color: var(--primary);
 	}
 
-	.quick-link-card:focus-visible {
-		outline: 3px solid var(--primary);
-		outline-offset: 2px;
+	/* Liseré supérieur permanent, fin et sans glow, sur les 6 cartes —
+	   repère de couleur discret propre à chaque fonction. */
+	.learn-card--cours { border-top-color: #3B82F6; }
+	.learn-card--activites { border-top-color: #10B981; }
+	.learn-card--quiz { border-top-color: #7c3aed; }
+	.learn-card--revizon { border-top-color: #ec4899; }
+	.learn-card--brevet { border-top-color: #F97316; }
+	.learn-card--orientation { border-top-color: #6366f1; }
+
+	.learn-card--cours:hover { border-color: #3B82F6; }
+	.learn-card--activites:hover { border-color: #10B981; }
+	.learn-card--quiz:hover { border-color: #7c3aed; }
+	.learn-card--revizon:hover { border-color: #ec4899; }
+	.learn-card--brevet:hover { border-color: #F97316; }
+	.learn-card--orientation:hover { border-color: #6366f1; }
+
+	.learn-icon-tile {
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 0.65rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.25s ease;
 	}
 
-	.qlc-icon {
-		font-size: 1.6rem;
+	.learn-card:hover .learn-icon-tile {
+		transform: scale(1.1);
 	}
 
-	.qlc-label {
+	.learn-icon-tile--cours { background: rgba(59,130,246,0.18); }
+	.learn-icon-tile--activites { background: rgba(16,185,129,0.18); }
+	.learn-icon-tile--quiz { background: rgba(124,58,237,0.2); }
+	.learn-icon-tile--revizon { background: rgba(236,72,153,0.2); }
+	.learn-icon-tile--brevet { background: rgba(249,115,22,0.18); }
+	.learn-icon-tile--orientation { background: rgba(99,102,241,0.2); }
+
+	.learn-icon {
+		font-size: 1.3rem;
+	}
+
+	.learn-label {
 		font-weight: 700;
-		font-size: 0.9rem;
+		font-size: 0.92rem;
 		color: var(--text);
 	}
 
-	.qlc-desc {
-		font-size: 0.72rem;
+	.learn-desc {
+		font-size: 0.74rem;
 		color: var(--ink-3);
 		text-align: center;
 	}
 
-	/* ── Recherche ── */
+	/* ══════════ Publicité ══════════ */
+	.ad-slot {
+		margin: 2rem auto 0;
+		max-width: 468px;
+		padding-block: 0.65rem;
+		border-top: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.ad-slot-label {
+		font-size: 0.6rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--ink-3);
+		opacity: 0.7;
+	}
+
+	.ad-slot-frame {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	/* ══════════ Recherche + Quiz ══════════ */
+	.search-quiz-grid {
+		margin-top: 3rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+		align-items: stretch;
+	}
+
+	.search-quiz-grid .search-section,
+	.search-quiz-grid .quiz-section {
+		margin-top: 0;
+	}
+
 	.search-section {
-		margin-top: 2.5rem;
+		background:
+			radial-gradient(rgba(37, 99, 235, 0.07) 1px, transparent 1px),
+			linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+		background-size: 22px 22px, auto;
+		border: 1px solid #dbeafe;
+		border-radius: var(--radius-xl);
+		padding: 2rem 1.5rem;
+	}
+
+	:global([data-theme="dark"]) .search-section {
+		background:
+			radial-gradient(rgba(96, 165, 250, 0.12) 1px, transparent 1px),
+			linear-gradient(135deg, #142348 0%, #161b34 100%);
+		background-size: 22px 22px, auto;
+		border-color: rgba(59, 130, 246, 0.28);
 	}
 
 	/*
@@ -643,6 +1212,8 @@ import Search from '../components/Search';
 	 * /5eme). On ne touche pas à Search.tsx ni à search.css (autres
 	 * composants) : on redonne ici un style fonctionnel à l'instance de la
 	 * page d'accueil uniquement, via :global() scopé à .home-search-wrap.
+	 * Ces règles héritent aussi automatiquement du thème sombre de la page
+	 * via var(--card-bg)/var(--text)/var(--border-color).
 	 */
 	.home-search-wrap :global(.search-container) {
 		position: static;
@@ -661,7 +1232,7 @@ import Search from '../components/Search';
 		position: relative;
 		display: flex;
 		align-items: center;
-		max-width: 640px;
+		max-width: 100%;
 		margin: 0 auto;
 		padding: 0;
 	}
@@ -669,7 +1240,7 @@ import Search from '../components/Search';
 	.home-search-wrap :global(.search-icon) {
 		position: absolute;
 		left: 1.1rem;
-		color: var(--primary);
+		color: var(--primary-dark);
 		pointer-events: none;
 		z-index: 1;
 	}
@@ -694,7 +1265,7 @@ import Search from '../components/Search';
 	.home-search-wrap :global(.search-input:focus) {
 		outline: none;
 		border-color: var(--primary);
-		box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+		box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 	}
 
 	.home-search-wrap :global(.search-input:hover:not(:focus)) {
@@ -798,196 +1369,195 @@ import Search from '../components/Search';
 		font-style: italic;
 	}
 
-	@media (max-width: 480px) {
-		.home-search-wrap :global(.search-input) {
-			font-size: 0.92rem;
-			padding: 0.8rem 2.75rem 0.8rem 2.5rem;
-		}
-		.home-search-wrap :global(.search-icon) {
-			left: 0.9rem;
-		}
-	}
-
-	/* ── Choix du niveau ── */
-	.level-section {
-		margin-top: 2.5rem;
-	}
-
-	.level-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25rem;
-	}
-
-	.level-card {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding: 2rem 1.25rem;
-		background: var(--card-bg);
-		border-radius: var(--radius-lg);
-		border-top: 4px solid transparent;
-		text-decoration: none;
-		box-shadow: var(--shadow-sm);
-		transition: transform 0.25s ease, box-shadow 0.25s ease;
-	}
-
-	.level-card:hover,
-	.level-card:focus-visible {
-		transform: translateY(-5px);
-		box-shadow: var(--shadow-md);
-	}
-
-	.level-card:focus-visible {
-		outline: 3px solid var(--primary);
-		outline-offset: 2px;
-	}
-
-	.level-card--5eme { border-top-color: #3B82F6; }
-	.level-card--4eme { border-top-color: #10B981; }
-	.level-card--3eme { border-top-color: #F97316; }
-
-	.level-badge {
-		font-size: 2.75rem;
-		font-weight: 800;
-		line-height: 1;
-	}
-
-	.level-badge-suffix {
-		font-size: 1.3rem;
-		font-weight: 700;
-		margin-left: 0.1rem;
-	}
-
-	.level-card--5eme .level-badge { color: #3B82F6; }
-	.level-card--4eme .level-badge { color: #10B981; }
-	.level-card--3eme .level-badge { color: #F97316; }
-
-	.level-card-title {
-		font-size: 1.1rem;
-		color: var(--text);
-		margin-top: 0.6rem;
-	}
-
-	.level-card-desc {
-		margin-top: 0.5rem;
-		color: var(--ink-2);
-		font-size: 0.88rem;
-		line-height: 1.45;
-	}
-
-	.level-card-stat {
-		margin-top: 0.85rem;
-		font-size: 0.72rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: var(--ink-3);
-		background: var(--background);
-		border: 1px solid var(--border-color);
-		border-radius: 999px;
-		padding: 0.25rem 0.75rem;
-	}
-
-	.level-card-cta {
-		margin-top: 1.1rem;
-		font-weight: 700;
-		font-size: 0.9rem;
-		color: var(--primary);
-	}
-
-	/* ── Brevet & Orientation ── */
-	.showcase-section {
-		margin-top: 2.5rem;
-	}
-
-	.showcase-eyebrow {
-		text-align: center;
-		font-size: 0.75rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--ink-3);
-		margin-bottom: 0.75rem;
-	}
-
-	.showcase-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.25rem;
-	}
-
-	.showcase-card {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 1.5rem;
-		border-radius: var(--radius-lg);
-		text-decoration: none;
-		box-shadow: var(--shadow-sm);
-		border: 1px solid var(--border-color);
-		transition: transform 0.25s ease, box-shadow 0.25s ease;
-	}
-
-	.showcase-card:hover,
-	.showcase-card:focus-visible {
-		transform: translateY(-4px);
-		box-shadow: var(--shadow-md);
-	}
-
-	.showcase-card:focus-visible {
-		outline: 3px solid var(--primary);
-		outline-offset: 2px;
-	}
-
-	.showcase-card--brevet {
-		background: #fff7ed;
-		border-color: #fed7aa;
-	}
-
-	.showcase-card--orientation {
-		background: #eef2ff;
-		border-color: #c7d2fe;
-	}
-
-	.showcase-icon {
-		font-size: 1.9rem;
-	}
-
-	.showcase-title {
-		font-size: 1.15rem;
-		margin-top: 0.6rem;
-		color: var(--text);
-	}
-
-	.showcase-card--brevet .showcase-title { color: #9a3412; }
-	.showcase-card--orientation .showcase-title { color: #3730a3; }
-
-	.showcase-desc {
-		margin-top: 0.5rem;
-		font-size: 0.88rem;
-		line-height: 1.5;
-		color: var(--ink-2);
-	}
-
-	.showcase-cta {
-		margin-top: 1rem;
-		font-weight: 700;
-		font-size: 0.88rem;
-	}
-
-	.showcase-card--brevet .showcase-cta { color: #ea580c; }
-	.showcase-card--orientation .showcase-cta { color: #4338ca; }
-
-	/* ── Quiz ── */
+	/* ══════════ Quiz ══════════ */
 	.quiz-section {
+		background:
+			radial-gradient(rgba(236, 72, 153, 0.06) 1px, transparent 1px),
+			linear-gradient(135deg, #fff7ed 0%, #fef9e7 100%);
+		background-size: 22px 22px, auto;
+		border: 1px solid #fde68a;
+		border-radius: var(--radius-xl);
+		padding: 2rem 1.5rem;
+	}
+
+	:global([data-theme="dark"]) .quiz-section {
+		background:
+			radial-gradient(rgba(236, 72, 153, 0.12) 1px, transparent 1px),
+			linear-gradient(135deg, #3a1740 0%, #1f1730 100%);
+		background-size: 22px 22px, auto;
+		border-color: rgba(236, 72, 153, 0.28);
+	}
+
+	/* ══════════ Orientation 3e ══════════ */
+	.orientation-section {
 		margin-top: 3rem;
 	}
 
-	/* ── Intro ── */
+	.orientation-card {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+		border: 1px solid #c7d2fe;
+		border-radius: var(--radius-lg);
+		padding: 1.75rem 2rem;
+		box-shadow: var(--shadow-sm);
+		overflow: hidden;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	:global([data-theme="dark"]) .orientation-card {
+		background: linear-gradient(135deg, #151a35 0%, #1b1f42 100%);
+		border-color: rgba(99, 102, 241, 0.3);
+	}
+
+	.orientation-card:hover {
+		transform: translateY(-3px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.orientation-decor {
+		position: absolute;
+		top: -35%;
+		right: -8%;
+		width: 220px;
+		height: 220px;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 70%);
+		pointer-events: none;
+	}
+
+	:global([data-theme="dark"]) .orientation-decor {
+		background: radial-gradient(circle, rgba(99,102,241,0.22) 0%, transparent 70%);
+	}
+
+	.orientation-logo {
+		position: relative;
+		flex-shrink: 0;
+		width: 72px;
+		height: 72px;
+		object-fit: cover;
+		border-radius: 1rem;
+		box-shadow: var(--shadow-sm);
+		border: 1px solid rgba(99, 102, 241, 0.35);
+	}
+
+	.orientation-content {
+		position: relative;
+		flex: 1;
+		min-width: 0;
+	}
+
+	.orientation-eyebrow {
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+		color: #4338ca;
+		margin: 0 0 0.35rem;
+	}
+
+	:global([data-theme="dark"]) .orientation-eyebrow {
+		color: #a5b4fc;
+	}
+
+	.orientation-title {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		font-size: 1.2rem;
+		font-weight: 800;
+		color: #3730a3;
+		margin: 0 0 0.5rem;
+	}
+
+	:global([data-theme="dark"]) .orientation-title {
+		color: #ffffff;
+	}
+
+	.orientation-title-icon {
+		width: 1.15em;
+		height: 1.15em;
+		flex-shrink: 0;
+		color: #4338ca;
+	}
+
+	:global([data-theme="dark"]) .orientation-title-icon {
+		color: #a5b4fc;
+	}
+
+	.orientation-desc {
+		color: var(--ink-2);
+		font-size: 0.9rem;
+		line-height: 1.55;
+		margin: 0 0 1.1rem;
+	}
+
+	.orientation-cta {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-weight: 700;
+		font-size: 0.86rem;
+		color: #4338ca;
+		background: #ffffff;
+		border: 1.5px solid #c7d2fe;
+		padding: 0.55rem 1.15rem;
+		border-radius: 999px;
+		text-decoration: none;
+		transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.orientation-cta:hover,
+	.orientation-cta:focus-visible {
+		transform: translateY(-2px);
+		border-color: #4338ca;
+		box-shadow: 0 8px 18px rgba(67, 56, 202, 0.18);
+	}
+
+	:global([data-theme="dark"]) .orientation-cta {
+		color: #ffffff;
+		background: rgba(99, 102, 241, 0.9);
+		border-color: rgba(165, 180, 252, 0.5);
+	}
+
+	:global([data-theme="dark"]) .orientation-cta:hover,
+	:global([data-theme="dark"]) .orientation-cta:focus-visible {
+		background: rgba(99, 102, 241, 1);
+		border-color: rgba(165, 180, 252, 0.5);
+		box-shadow: 0 8px 18px rgba(67, 56, 202, 0.35);
+	}
+
+	.orientation-note {
+		display: none;
+		position: relative;
+		flex-shrink: 0;
+		font-family: 'Brush Script MT', cursive;
+		font-size: 0.98rem;
+		color: #6366f1;
+		text-align: right;
+		line-height: 1.3;
+		transform: rotate(-2deg);
+		margin: 0;
+	}
+
+	:global([data-theme="dark"]) .orientation-note {
+		color: #c7d2fe;
+	}
+
+	@media (min-width: 900px) {
+		.orientation-note {
+			display: block;
+		}
+	}
+
+	/* ══════════ Intro / méthodologie (compact) ══════════ */
 	.intro-section {
 		background: var(--card-bg);
+		border: 1px solid var(--border-color);
 		padding: 2rem;
 		border-radius: var(--radius-lg);
 		margin-top: 3rem;
@@ -996,268 +1566,137 @@ import Search from '../components/Search';
 
 	.intro-section h2 {
 		color: var(--primary-dark);
-		margin-bottom: 1rem;
-		font-size: 1.8rem;
+		margin-bottom: 1.25rem;
+		font-size: 1.6rem;
 		text-align: center;
 	}
 
-	.intro-text {
-		color: var(--ink-2);
-		line-height: 1.8;
-		margin-bottom: 1rem;
-		font-size: 1.05rem;
+	.intro-columns {
+		display: grid;
+		grid-template-columns: minmax(220px, 320px) 1fr;
+		gap: 2rem;
+		align-items: center;
+		margin-bottom: 1.75rem;
 	}
 
-	/* ── Présentation ── */
-	.presentation {
-		max-width: 800px;
-		margin: 3rem auto 0;
-		padding: 2rem;
-		background: var(--card-bg);
-		border-radius: var(--radius-lg);
+	.concept-chips {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.65rem;
+	}
+
+	.intro-text-col {
+		min-width: 0;
+	}
+
+	.concept-chip {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		background: var(--background);
+		border: 1px solid var(--border-color);
+		border-radius: var(--radius-md);
+		padding: 0.9rem 0.5rem;
+		font-size: 0.78rem;
+		font-weight: 700;
+		color: var(--text);
+		text-align: center;
+		transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	}
+
+	.concept-chip:hover {
+		transform: translateY(-3px);
 		box-shadow: var(--shadow-sm);
 	}
 
-	.presentation h2 {
-		color: var(--primary-dark);
-		margin-bottom: 1rem;
-		font-size: 1.8rem;
-		text-align: center;
-	}
-
-	.presentation-content {
-		margin-top: 1.5rem;
-	}
-
-	.presentation-lead {
-		color: var(--ink-2);
-		line-height: 1.7;
-		margin: 1.25rem 0 0.75rem;
-	}
-
-	.benefits-list, .approach-list {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 1rem;
-		display: grid;
-		gap: 0.75rem;
-	}
-
-	.benefits-list li, .approach-list li {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.75rem;
-		padding: 0.9rem 1rem;
-		background: var(--background);
-		border: 1px solid var(--border-color);
-		border-radius: 0.75rem;
-		line-height: 1.55;
-		color: var(--text);
-		font-size: 0.92rem;
-	}
-
-	.list-card-icon {
-		flex-shrink: 0;
+	.concept-chip-icon {
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 0.65rem;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 1.6rem;
-		height: 1.6rem;
-		border-radius: 50%;
-		background: var(--primary);
-		color: white;
-		font-size: 0.85rem;
+	}
+
+	.concept-chip-icon svg {
+		width: 1.1rem;
+		height: 1.1rem;
+	}
+
+	.concept-chip--creer .concept-chip-icon { background: rgba(251,191,36,0.18); color: #fbbf24; }
+	.concept-chip--programmer .concept-chip-icon { background: rgba(59,130,246,0.18); color: #60a5fa; }
+	.concept-chip--resoudre .concept-chip-icon { background: rgba(16,185,129,0.18); color: #34d399; }
+	.concept-chip--comprendre .concept-chip-icon { background: rgba(52,211,153,0.18); color: #6ee7b7; }
+
+	.concept-chip--creer:hover { border-color: #fbbf24; }
+	.concept-chip--programmer:hover { border-color: #60a5fa; }
+	.concept-chip--resoudre:hover { border-color: #34d399; }
+	.concept-chip--comprendre:hover { border-color: #6ee7b7; }
+
+	.intro-text {
+		color: var(--ink-2);
+		line-height: 1.65;
+		margin: 0 0 0.85rem;
+		font-size: 0.92rem;
+		text-align: left;
+	}
+
+	.intro-text:last-of-type {
+		margin-bottom: 0;
+	}
+
+	/* Méthodologie : liste compacte (titre + description sur une même
+	   ligne, séparateur fin) au lieu de grandes cartes — même contenu,
+	   présentation beaucoup plus discrète et moins haute. */
+	.methodology-compact {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2rem;
+	}
+
+	.methodology-compact-item {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.4rem;
+		padding: 0.65rem 0;
+		border-top: 1px solid var(--border-color);
+	}
+
+	.methodology-compact-item h3 {
+		flex-shrink: 0;
+		color: var(--primary-dark);
+		font-size: 0.86rem;
 		font-weight: 700;
+		margin: 0;
+	}
+
+	.methodology-compact-item p {
+		color: var(--ink-2);
+		line-height: 1.5;
+		font-size: 0.86rem;
+		margin: 0;
 	}
 
 	.signature {
 		font-family: 'Brush Script MT', cursive;
 		font-size: 2rem;
-		color: var(--primary);
+		color: var(--primary-dark);
 		text-align: right;
 		margin-top: 1.5rem;
 		font-weight: bold;
 	}
 
-	/* ── Points forts ── */
-	.program-highlights {
-		margin-top: 4rem;
-	}
-
-	.program-highlights h2 {
-		color: var(--primary-dark);
-		margin-bottom: 2rem;
-		font-size: 1.8rem;
-		text-align: center;
-	}
-
-	.highlights-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.highlight-card {
-		background: var(--card-bg);
-		padding: 1.5rem;
-		border-radius: var(--radius-md);
-		box-shadow: var(--shadow-sm);
-	}
-
-	.highlight-card h3 {
-		color: var(--primary);
-		margin-bottom: 1rem;
-		font-size: 1.25rem;
-		border-bottom: 2px solid var(--primary);
-		padding-bottom: 0.5rem;
-	}
-
-	.highlight-card ul {
-		list-style: none;
-		padding-left: 0;
-	}
-
-	.highlight-card li {
-		position: relative;
-		padding-left: 1.4rem;
-		margin-bottom: 0.75rem;
-		line-height: 1.55;
-		color: var(--text);
-		font-size: 0.92rem;
-	}
-
-	.highlight-card li::before {
-		content: "•";
-		position: absolute;
-		left: 0;
-		color: var(--primary);
-		font-weight: bold;
-	}
-
-	/* ── Méthodologie ── */
-	.methodology {
-		margin-top: 4rem;
-	}
-
-	.methodology h2 {
-		color: var(--primary-dark);
-		margin-bottom: 2rem;
-		font-size: 1.8rem;
-		text-align: center;
-	}
-
-	.methodology-content p {
-		text-align: center;
-		max-width: 800px;
-		margin: 0 auto 2rem;
-		color: var(--ink-2);
-		line-height: 1.8;
-	}
-
-	.methodology-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.methodology-item {
-		background: var(--card-bg);
-		padding: 1.5rem;
-		border-radius: var(--radius-md);
-		box-shadow: var(--shadow-sm);
-		transition: transform 0.25s ease;
-	}
-
-	.methodology-item:hover {
-		transform: translateY(-4px);
-	}
-
-	.methodology-item h3 {
-		color: var(--primary);
-		margin-bottom: 0.75rem;
-		font-size: 1.1rem;
-	}
-
-	.methodology-item p {
-		color: var(--ink-2);
-		line-height: 1.6;
-		font-size: 0.92rem;
-	}
-
-	/* ── Ressources ── */
-	.resources-section {
-		margin-top: 4rem;
-		margin-bottom: 3rem;
-	}
-
-	.resources-section h2 {
-		color: var(--primary-dark);
-		margin-bottom: 1rem;
-		font-size: 1.8rem;
-		text-align: center;
-	}
-
-	.resources-intro {
-		text-align: center;
-		max-width: 800px;
-		margin: 0 auto 2rem;
-		color: var(--ink-2);
-		line-height: 1.8;
-	}
-
-	.resources-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.resource-card {
-		background: var(--card-bg);
-		padding: 1.5rem;
-		border-radius: var(--radius-md);
-		box-shadow: var(--shadow-sm);
-		transition: transform 0.25s ease;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.resource-card:hover {
-		transform: translateY(-4px);
-	}
-
-	.resource-card h3 {
-		color: var(--primary);
-		margin-bottom: 0.75rem;
-		font-size: 1.1rem;
-	}
-
-	.resource-card p {
-		color: var(--ink-2);
-		line-height: 1.6;
-		margin-bottom: 1.25rem;
-		flex-grow: 1;
-		font-size: 0.92rem;
-	}
-
-	.resource-link {
-		display: inline-block;
-		padding: 0.7rem 1.1rem;
-		background: var(--primary);
-		color: white;
-		text-decoration: none;
-		border-radius: 0.5rem;
-		transition: background 0.2s ease;
-		font-size: 0.88rem;
-		text-align: center;
-	}
-
-	.resource-link:hover {
-		background: var(--primary-dark);
-	}
-
-	/* ── Liens utiles ── */
+	/* ══════════ Liens utiles ══════════ */
 	.useful-links-section {
-		margin-top: 2rem;
+		margin-top: 2.5rem;
 		text-align: center;
 	}
 
@@ -1272,9 +1711,9 @@ import Search from '../components/Search';
 
 	.useful-links-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: 0.75rem;
-		max-width: 600px;
+		max-width: 640px;
 		margin: 0 auto;
 	}
 
@@ -1304,107 +1743,258 @@ import Search from '../components/Search';
 	}
 
 	.useful-link-logo {
-		height: 44px;
+		height: 40px;
 		width: auto;
 		object-fit: contain;
+		background: #ffffff;
+		border-radius: 0.4rem;
+		padding: 2px;
 	}
 
 	.useful-link-name {
-		font-size: 0.76rem;
+		font-size: 0.72rem;
 		font-weight: 700;
-		color: var(--primary-dark);
+		color: var(--text);
 		text-align: center;
 		line-height: 1.2;
 	}
 
 	.useful-link-sub {
-		font-size: 0.66rem;
+		font-size: 0.64rem;
 		color: var(--ink-3);
 	}
 
-	/* ── Dark mode (nouveaux blocs) ── */
-	:global([data-theme="dark"]) .profile-card,
-	:global([data-theme="dark"]) .quick-link-card,
-	:global([data-theme="dark"]) .level-card,
-	:global([data-theme="dark"]) .useful-link-card {
-		border-color: var(--border-color);
+	/* ══════════ Grand écran (réduit les marges vides latérales) ══════════ */
+	@media (min-width: 1440px) {
+		.main-content {
+			max-width: 1100px;
+		}
+
+		.hero,
+		.revizon-section {
+			max-width: 1280px;
+		}
 	}
 
-	:global([data-theme="dark"]) .level-card-stat,
-	:global([data-theme="dark"]) .benefits-list li,
-	:global([data-theme="dark"]) .approach-list li {
-		background: var(--background);
-		border-color: var(--border-color);
+	/* ══════════ Responsive ══════════ */
+	@media (max-width: 900px) {
+		.search-quiz-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
-	:global([data-theme="dark"]) .showcase-card--brevet {
-		background: #2a1a0f;
-		border-color: #7c2d12;
-	}
-
-	:global([data-theme="dark"]) .showcase-card--orientation {
-		background: #1e1b3a;
-		border-color: #3730a3;
-	}
-
-	:global([data-theme="dark"]) .showcase-card--brevet .showcase-title { color: #fdba74; }
-	:global([data-theme="dark"]) .showcase-card--orientation .showcase-title { color: #a5b4fc; }
-	:global([data-theme="dark"]) .showcase-card--brevet .showcase-desc,
-	:global([data-theme="dark"]) .showcase-card--orientation .showcase-desc {
-		color: #cbd5e1;
-	}
-
-	/* ── Responsive ── */
 	@media (max-width: 768px) {
 		.hero {
 			margin: 0.5rem;
-			border-radius: 1rem;
-		}
-
-		.hero-emoji {
-			display: none;
+			border-radius: 1.1rem;
 		}
 
 		.hero-content {
-			padding: 2rem 1.5rem;
+			padding: 2.25rem 1.5rem;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.hero-text {
+			align-items: center;
+			text-align: center;
+			max-width: 100%;
+		}
+
+		.hero-eyebrow, .title, .hero-tagline {
+			text-align: center;
+		}
+
+		.hero-cta-group {
+			justify-content: center;
+			width: 100%;
+		}
+
+		.hero-concepts {
+			align-items: center;
+			border-left: none;
+			padding-left: 0;
+		}
+
+		.hero-visual {
+			width: 100%;
+			max-width: 280px;
+			margin: 1.5rem auto 0;
+			align-self: center;
 		}
 
 		.title {
-			font-size: 2rem;
+			font-size: 1.9rem;
 		}
 
-		/* Tablette : grilles à 3/2 colonnes fixes -> auto-fit, pour éviter
+		.hero-cta-primary {
+			padding: 0.75rem 1.35rem;
+			font-size: 0.9rem;
+		}
+
+		.hero-cta-secondary {
+			padding: 0.6rem 1.1rem;
+			font-size: 0.82rem;
+		}
+
+		/* Tablette : grille à 3 colonnes fixes -> auto-fit, pour éviter
 		   qu'une carte unique par ligne gâche la largeur disponible (~768px).
 		   Repasse naturellement à 1 colonne sur mobile plus étroit. */
-		#profile-selector,
 		.level-grid {
 			grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 		}
 
-		.showcase-grid {
-			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		.learn-grid {
+			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.quick-links-grid {
-			grid-template-columns: repeat(2, 1fr);
+		.revizon-inner {
+			padding: 2rem 1.75rem;
+			gap: 1.5rem;
+		}
+
+		.search-section,
+		.quiz-section {
+			padding: 1.75rem 1.5rem;
+		}
+
+		.orientation-card {
+			flex-direction: column;
+			text-align: center;
+			gap: 1rem;
+		}
+
+		.useful-links-grid {
+			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 
 	@media (max-width: 560px) {
-		#profile-selector,
-		.level-grid,
-		.showcase-grid {
+		.level-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.revizon-inner {
+			flex-direction: column;
+			text-align: center;
+			padding: 2rem 1.5rem;
+		}
+
+		.revizon-benefits {
+			justify-content: center;
+		}
+
+		.revizon-title,
+		.orientation-title {
+			justify-content: center;
+		}
+
+		.intro-columns {
+			grid-template-columns: 1fr;
+			gap: 1.25rem;
+		}
+
+		.intro-text {
+			text-align: center;
+		}
+
+		.methodology-compact {
 			grid-template-columns: 1fr;
 		}
 	}
 
 	@media (max-width: 480px) {
 		.useful-links-grid {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			gap: 0.5rem;
 		}
-		.useful-link-card { padding: 0.7rem 0.3rem; }
-		.useful-link-name { font-size: 0.68rem; }
+		.useful-link-card { padding: 0.6rem 0.3rem; }
+		.useful-link-name { font-size: 0.6rem; }
 		.useful-link-sub { display: none; }
+
+		.hero-cta-group {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.hero-cta {
+			justify-content: center;
+		}
+
+		.search-section,
+		.quiz-section {
+			padding: 1.5rem 1.1rem;
+		}
+	}
+
+	/* ══════════ prefers-reduced-motion ══════════ */
+	@media (prefers-reduced-motion: reduce) {
+		.hero-blob,
+		.revizon-visual-ring,
+		.title,
+		.hero-eyebrow,
+		.hero-tagline,
+		.hero-cta-group {
+			animation: none !important;
+		}
+
+		.level-card,
+		.learn-card,
+		.learn-icon-tile,
+		.orientation-card,
+		.orientation-cta,
+		.useful-link-card,
+		.concept-chip,
+		.hero-cta,
+		.revizon-cta,
+		.level-icon,
+		.level-card-cta span[aria-hidden] {
+			transition: none !important;
+		}
+
+		.level-card:hover,
+		.learn-card:hover,
+		.orientation-card:hover,
+		.orientation-cta:hover,
+		.hero-cta:hover,
+		.revizon-cta:hover,
+		.concept-chip:hover,
+		.level-card:hover .level-card-cta span[aria-hidden] {
+			transform: none !important;
+		}
 	}
 </style>
+
+<script>
+	// Léger parallaxe du hero — désactivé si prefers-reduced-motion, et
+	// seulement actif pendant que le hero est visible (perf).
+	const heroEl = document.querySelector<HTMLElement>('.hero');
+	const blobs = document.querySelectorAll<HTMLElement>('.hero-blob');
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (heroEl && blobs.length && !prefersReducedMotion) {
+		let ticking = false;
+		let heroVisible = true;
+
+		const onScroll = () => {
+			if (ticking) return;
+			ticking = true;
+			requestAnimationFrame(() => {
+				if (heroVisible) {
+					const offset = window.scrollY * 0.08;
+					blobs.forEach((blob, i) => {
+						blob.style.transform = `translateY(${i % 2 === 0 ? offset : -offset}px)`;
+					});
+				}
+				ticking = false;
+			});
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			heroVisible = entries[0]?.isIntersecting ?? false;
+		}, { threshold: 0 });
+
+		observer.observe(heroEl);
+		window.addEventListener('scroll', onScroll, { passive: true });
+	}
+</script>
