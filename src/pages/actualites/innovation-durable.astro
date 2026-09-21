@@ -81,6 +81,10 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 0.9rem;
   }
 
+  :global([data-theme="dark"]) .date {
+    color: #94a3b8;
+  }
+
   .article-image {
     width: 100%;
     height: auto;
@@ -93,6 +97,10 @@ import Layout from '../../layouts/Layout.astro';
     line-height: 1.6;
     color: #444;
     margin-bottom: 2rem;
+  }
+
+  :global([data-theme="dark"]) .introduction {
+    color: var(--text);
   }
 
   .main-content h2 {
