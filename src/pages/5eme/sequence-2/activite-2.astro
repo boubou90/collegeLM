@@ -153,6 +153,12 @@ const documents = [
     border: 1px solid #c7d7f9;
   }
 
+  :global([data-theme="dark"]) .competences-box {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+  }
+
   .competences-titre {
     font-size: 0.75rem;
     font-weight: 700;
@@ -160,6 +166,10 @@ const documents = [
     text-transform: uppercase;
     letter-spacing: 0.05em;
     width: 100%;
+  }
+
+  :global([data-theme="dark"]) .competences-titre {
+    color: var(--text);
   }
 
   .competence-tag {
@@ -171,9 +181,19 @@ const documents = [
     padding: 0.2rem 0.65rem;
   }
 
+  :global([data-theme="dark"]) .competence-tag {
+    background: #1e3a5f;
+    color: var(--primary-dark);
+  }
+
   .competence-tag.cps {
     background: #ede9fe;
     color: #5b21b6;
+  }
+
+  :global([data-theme="dark"]) .competence-tag.cps {
+    background: #312e81;
+    color: #c4b5fd;
   }
 
   /* ── Sections ── */
@@ -190,6 +210,11 @@ const documents = [
     border-bottom: 2px solid #dbeafe;
   }
 
+  :global([data-theme="dark"]) .section-bloc h3 {
+    color: var(--primary-dark);
+    border-bottom-color: var(--border-color);
+  }
+
   .section-info {
     margin-top: 0.75rem;
     padding: 0.6rem 0.9rem;
@@ -201,12 +226,24 @@ const documents = [
     line-height: 1.6;
   }
 
+  :global([data-theme="dark"]) .section-info {
+    background: #1e3a5f;
+    color: var(--text);
+    border-left-color: var(--primary-dark);
+  }
+
   /* ── Objectif ── */
   .objectif {
     background: #f8faff;
     border: 1px solid #dbeafe;
     border-radius: 0.6rem;
     padding: 1rem 1.25rem;
+  }
+
+  :global([data-theme="dark"]) .objectif {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
   }
 
   .problematique-box {
@@ -261,6 +298,10 @@ const documents = [
     padding-left: 1.25rem;
     color: #334155;
     margin: 0.5rem 0;
+  }
+
+  :global([data-theme="dark"]) .demarche-liste {
+    color: var(--text);
   }
 
   /* ── Image ressource ── */

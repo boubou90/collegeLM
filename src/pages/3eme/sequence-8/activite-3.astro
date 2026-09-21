@@ -188,6 +188,12 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
     border: 1px solid #c7d7f9;
   }
 
+  :global([data-theme="dark"]) .competences-box {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+  }
+
   .competences-titre {
     font-size: 0.75rem;
     font-weight: 700;
@@ -197,6 +203,10 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
     width: 100%;
   }
 
+  :global([data-theme="dark"]) .competences-titre {
+    color: var(--text);
+  }
+
   .competence-tag {
     font-size: 0.78rem;
     font-weight: 600;
@@ -204,6 +214,11 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
     background: #dbeafe;
     border-radius: 999px;
     padding: 0.2rem 0.65rem;
+  }
+
+  :global([data-theme="dark"]) .competence-tag {
+    background: #1e3a5f;
+    color: var(--primary-dark);
   }
 
   /* ── Sections ── */
@@ -220,6 +235,11 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
     border-bottom: 2px solid #dbeafe;
   }
 
+  :global([data-theme="dark"]) .section-bloc h3 {
+    color: var(--primary-dark);
+    border-bottom-color: var(--border-color);
+  }
+
   .section-info {
     margin-top: 0.75rem;
     padding: 0.6rem 0.9rem;
@@ -231,12 +251,24 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
     line-height: 1.6;
   }
 
+  :global([data-theme="dark"]) .section-info {
+    background: #1e3a5f;
+    color: var(--text);
+    border-left-color: var(--primary-dark);
+  }
+
   /* ── Objectif ── */
   .objectif {
     background: #f8faff;
     border: 1px solid #dbeafe;
     border-radius: 0.6rem;
     padding: 1rem 1.25rem;
+  }
+
+  :global([data-theme="dark"]) .objectif {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
   }
 
   .problematique-box {
@@ -291,6 +323,10 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
     padding-left: 1.25rem;
     color: #334155;
     margin: 0.5rem 0;
+  }
+
+  :global([data-theme="dark"]) .demarche-liste {
+    color: var(--text);
   }
 
   /* ── Vidéo ── */
