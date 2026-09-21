@@ -152,6 +152,10 @@ import Layout from '../../layouts/Layout.astro';
 		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 	}
 
+	:global([data-theme="dark"]) .article-content {
+		background: var(--card-bg);
+	}
+
 	.article-image {
 		width: 100%;
 		height: auto;
@@ -164,6 +168,10 @@ import Layout from '../../layouts/Layout.astro';
 		line-height: 1.8;
 		color: #1e293b;
 		margin-bottom: 2rem;
+	}
+
+	:global([data-theme="dark"]) .introduction p {
+		color: var(--text);
 	}
 
 	.details h2 {
@@ -230,10 +238,18 @@ import Layout from '../../layouts/Layout.astro';
 		border-left: 3px solid var(--primary);
 	}
 
+	:global([data-theme="dark"]) .prizes li {
+		background: var(--card-bg);
+	}
+
 	.conclusion {
 		margin-top: 2rem;
 		padding-top: 2rem;
 		border-top: 1px solid #e2e8f0;
+	}
+
+	:global([data-theme="dark"]) .conclusion {
+		border-top-color: var(--border-color);
 	}
 
 	.conclusion p {
