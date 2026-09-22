@@ -15,6 +15,35 @@ const GENERIC_ACCESS_ERROR = 'Accès au corrigé impossible.';
 const SIGNED_URL_EXPIRY_SECONDS = 5 * 60;
 const BUCKET_NAME = 'corrections';
 
+function diagnoseServiceRoleKey(key: string | undefined) {
+  const present = !!key;
+  console.log(`[CORRECTION-DIAG] SUPABASE_SERVICE_ROLE_KEY présente : ${present}`);
+  if (!present || !key) return;
+
+  const segments = key.split('.');
+  const isJwt = segments.length === 3;
+  console.log(`[CORRECTION-DIAG] Format JWT détecté : ${isJwt}`);
+  console.log(`[CORRECTION-DIAG] Longueur de la clé : ${key.length}`);
+
+  if (isJwt) {
+    try {
+      const payloadJson = Buffer.from(segments[1], 'base64url').toString('utf8');
+      const payload = JSON.parse(payloadJson);
+      const role = typeof payload.role === 'string' ? payload.role : 'inconnu';
+      const iss = typeof payload.iss === 'string' ? payload.iss : 'inconnu';
+      console.log(`[CORRECTION-DIAG] Claim role : ${role}`);
+      console.log(`[CORRECTION-DIAG] Claim iss : ${iss}`);
+    } catch {
+      console.log('[CORRECTION-DIAG] Échec du décodage du payload JWT.');
+    }
+  } else {
+    let prefixType = 'inconnu';
+    if (key.startsWith('sb_publishable_')) prefixType = 'sb_publishable_';
+    else if (key.startsWith('sb_secret_')) prefixType = 'sb_secret_';
+    console.log(`[CORRECTION-DIAG] Préfixe de type : ${prefixType}`);
+  }
+}
+
 function jsonResponse(statusCode: number, body: Record<string, unknown>) {
   console.log(`[CORRECTION-DIAG] Réponse HTTP renvoyée : ${statusCode}`);
   return {
@@ -51,6 +80,8 @@ export async function handler(event: NetlifyEvent) {
 
   const supabaseUrl = process.env.SUPABASE_URL;
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  diagnoseServiceRoleKey(supabaseServiceRoleKey);
 
   if (!supabaseUrl || !supabaseServiceRoleKey) {
     return jsonResponse(500, { success: false, error: 'Erreur interne.' });
