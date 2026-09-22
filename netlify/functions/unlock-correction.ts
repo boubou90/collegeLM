@@ -131,34 +131,12 @@ export async function handler(event: NetlifyEvent) {
 
     const { data: correction, error: queryError } = await supabase
       .from('corrections')
-      .select('activity_id, active, pdf_path, access_code_hash')
-      .limit(10);
-
-    console.log(
-      '[CORRECTION-DIAG] Lignes retournées :',
-      correction?.length ?? 0
-    );
-    console.log(
-      '[CORRECTION-DIAG] activity_id retournés :',
-      correction?.map((row) => row.activity_id) ?? []
-    );
+      .select('access_code_hash, pdf_path')
+      .eq('activity_id', activityId)
+      .eq('active', true)
+      .maybeSingle();
 
     console.log(`[CORRECTION-DIAG] Requête Supabase — queryError présent : ${!!queryError} | correction trouvée : ${!!correction}`);
-
-    // --- ARRÊT TEMPORAIRE DE DIAGNOSTIC ---
-    // Le code ci-dessous (utilisation de `correction` comme objet unique) est
-    // volontairement rendu inaccessible tant que ce diagnostic est en place.
-    if (queryError) {
-      return jsonResponse(500, { success: false, diagnostic: 'query_error' });
-    }
-
-    return jsonResponse(200, {
-      success: true,
-      diagnostic: 'table_read',
-      rowCount: correction?.length ?? 0,
-      activityIds: correction?.map((row) => row.activity_id) ?? [],
-    });
-    // --- FIN DE L'ARRÊT TEMPORAIRE DE DIAGNOSTIC ---
 
     if (queryError) {
       return jsonResponse(500, { success: false, error: 'Erreur interne.' });
