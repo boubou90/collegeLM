@@ -44,6 +44,44 @@ function diagnoseServiceRoleKey(key: string | undefined) {
   }
 }
 
+function diagnoseProjectConsistency(url: string | undefined, key: string | undefined) {
+  let hostname: string | null = null;
+  if (url) {
+    try {
+      hostname = new URL(url).hostname;
+      console.log(`[CORRECTION-DIAG] SUPABASE_URL hostname : ${hostname}`);
+    } catch {
+      console.log('[CORRECTION-DIAG] SUPABASE_URL présente mais invalide (hostname illisible).');
+    }
+  } else {
+    console.log('[CORRECTION-DIAG] SUPABASE_URL absente.');
+  }
+
+  let ref: string | null = null;
+  if (key) {
+    const segments = key.split('.');
+    if (segments.length === 3) {
+      try {
+        const payload = JSON.parse(Buffer.from(segments[1], 'base64url').toString('utf8'));
+        ref = typeof payload.ref === 'string' ? payload.ref : null;
+        const aud = typeof payload.aud === 'string' ? payload.aud : null;
+        console.log(`[CORRECTION-DIAG] Claim ref : ${ref ?? 'absent'}`);
+        console.log(`[CORRECTION-DIAG] Claim aud : ${aud ?? 'absent'}`);
+      } catch {
+        console.log('[CORRECTION-DIAG] Échec du décodage du payload JWT pour ref/aud.');
+      }
+    }
+  }
+
+  let coherence: string;
+  if (hostname && ref) {
+    coherence = hostname.startsWith(`${ref}.supabase.co`) ? 'true' : 'false';
+  } else {
+    coherence = 'inconnue';
+  }
+  console.log(`[CORRECTION-DIAG] Cohérence projet : ${coherence}`);
+}
+
 function jsonResponse(statusCode: number, body: Record<string, unknown>) {
   console.log(`[CORRECTION-DIAG] Réponse HTTP renvoyée : ${statusCode}`);
   return {
@@ -82,6 +120,7 @@ export async function handler(event: NetlifyEvent) {
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   diagnoseServiceRoleKey(supabaseServiceRoleKey);
+  diagnoseProjectConsistency(supabaseUrl, supabaseServiceRoleKey);
 
   if (!supabaseUrl || !supabaseServiceRoleKey) {
     return jsonResponse(500, { success: false, error: 'Erreur interne.' });
