@@ -16,6 +16,7 @@ const SIGNED_URL_EXPIRY_SECONDS = 5 * 60;
 const BUCKET_NAME = 'corrections';
 
 function jsonResponse(statusCode: number, body: Record<string, unknown>) {
+  console.log(`[CORRECTION-DIAG] Réponse HTTP renvoyée : ${statusCode}`);
   return {
     statusCode,
     headers: { 'Content-Type': 'application/json' },
@@ -24,6 +25,8 @@ function jsonResponse(statusCode: number, body: Record<string, unknown>) {
 }
 
 export async function handler(event: NetlifyEvent) {
+  console.log(`[CORRECTION-DIAG] Entrée dans la Function — méthode HTTP : ${event.httpMethod}`);
+
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { success: false, error: 'Méthode non autorisée.' });
   }
@@ -44,6 +47,8 @@ export async function handler(event: NetlifyEvent) {
     return jsonResponse(400, { success: false, error: 'Requête invalide.' });
   }
 
+  console.log(`[CORRECTION-DIAG] activityId reçu : ${activityId}`);
+
   const supabaseUrl = process.env.SUPABASE_URL;
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -61,6 +66,8 @@ export async function handler(event: NetlifyEvent) {
       .eq('active', true)
       .maybeSingle();
 
+    console.log(`[CORRECTION-DIAG] Requête Supabase — queryError présent : ${!!queryError} | correction trouvée : ${!!correction}`);
+
     if (queryError) {
       return jsonResponse(500, { success: false, error: 'Erreur interne.' });
     }
@@ -69,7 +76,11 @@ export async function handler(event: NetlifyEvent) {
       return jsonResponse(401, { success: false, error: GENERIC_ACCESS_ERROR });
     }
 
+    console.log(`[CORRECTION-DIAG] Hash présent, longueur : ${correction.access_code_hash?.length ?? 0}`);
+
     const codeMatches = await bcrypt.compare(code, correction.access_code_hash);
+
+    console.log(`[CORRECTION-DIAG] Résultat bcrypt.compare : ${codeMatches}`);
 
     if (!codeMatches) {
       return jsonResponse(401, { success: false, error: GENERIC_ACCESS_ERROR });
@@ -79,6 +90,8 @@ export async function handler(event: NetlifyEvent) {
       .storage
       .from(BUCKET_NAME)
       .createSignedUrl(correction.pdf_path, SIGNED_URL_EXPIRY_SECONDS);
+
+    console.log(`[CORRECTION-DIAG] createSignedUrl — succès : ${!signedUrlError && !!signedUrlData}`);
 
     if (signedUrlError || !signedUrlData) {
       return jsonResponse(500, { success: false, error: 'Erreur interne.' });
