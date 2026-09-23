@@ -2,6 +2,7 @@
 import ClassLayout from '../../../layouts/ClassLayout.astro';
 import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
+import CorrectionUnlock from '../../../components/CorrectionUnlock.tsx';
 
 const documents = [
   {
@@ -111,6 +112,11 @@ const documents = [
 
     </div>
   </ActivitySection>
+
+  <CorrectionUnlock
+    client:load
+    activityId="5eme/sequence-2/activite-3"
+  />
 </ClassLayout>
 
 <style>
