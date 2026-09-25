@@ -2,6 +2,7 @@
 import ClassLayout from '../../../layouts/ClassLayout.astro';
 import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
+import CorrectionUnlock from '../../../components/CorrectionUnlock.tsx';
 
 const documents = [
   {
@@ -65,6 +66,11 @@ const documents = [
       <p>Les ampoules fluocompactes contiennent du mercure (substance dangereuse) et ne doivent jamais être jetées à la poubelle ordinaire. Elles doivent être déposées dans les points de collecte DEEE (signalés par le symbole poubelle barrée). Les LEDs, sans mercure, sont plus faciles à recycler mais contiennent tout de même des terres rares.</p>
     </div>
   </ActivitySection>
+
+  <CorrectionUnlock
+    client:load
+    activityId="5eme/sequence-6/activite-2"
+  />
 </ClassLayout>
 
 <style>
