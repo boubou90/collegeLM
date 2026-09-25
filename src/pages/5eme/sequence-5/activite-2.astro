@@ -2,6 +2,7 @@
 import ClassLayout from '../../../layouts/ClassLayout.astro';
 import ActivitySection from '../../../components/ActivitySection.astro';
 import BackButton from '../../../components/BackButton.astro';
+import CorrectionUnlock from '../../../components/CorrectionUnlock.tsx';
 
 const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
   {
@@ -171,6 +172,11 @@ const documents: { title: string; pdfUrl?: string; imageUrl?: string }[] = [
 
     </div>
   </ActivitySection>
+
+  <CorrectionUnlock
+    client:load
+    activityId="5eme/sequence-5/activite-2"
+  />
 </ClassLayout>
 
 <style>
